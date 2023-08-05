@@ -8,9 +8,9 @@ export default function Rooms() {
       <DrawerAppBar />
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
-        <div>
+        <Box>
           <Button variant="contained">Hello World</Button>
-        </div>
+        </Box>
       </Box>
     </>
   )
