@@ -10,9 +10,6 @@ query GetRoomPage(
     endTime: end_time
     
     roomPersons: room_persons(
-      where: {
-        room_id: { _eq: $roomId }
-      }
       order_by: {
         person: {
           name: asc
@@ -26,9 +23,6 @@ query GetRoomPage(
     }
     
     roomYouTubeLives: room_youtube_lives(
-      where: {
-        room_id: { _eq: $roomId }
-      }
       order_by: {
         person: {
           name: asc
@@ -42,6 +36,15 @@ query GetRoomPage(
       }
       youtubeVideoId: youtube_video_id
       title
+    }
+
+    matches(
+      order_by: {
+        start_time: asc
+      }
+    ) {
+      id
+      start_time
     }
   }
 }

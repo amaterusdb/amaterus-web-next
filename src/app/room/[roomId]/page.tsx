@@ -83,10 +83,38 @@ export default function RoomPage({
                           {youtubeLive.title}
                         </Link>
                       </TableCell>
-                      <TableCell component="th" scope="row">
+                      <TableCell>
                         {youtubeLive.person != null ? (
                           <Link href={`/person/${youtubeLive.person.id}/`}>
                             {youtubeLive.person.name}
+                          </Link>
+                        ): ""}
+                      </TableCell>
+                    </TableRow>
+                  )))}
+                </TableBody>
+              </Table>
+            </Box>
+            <Typography variant="h5" component="h3" sx={{ mt: 3 }}>
+              試合
+            </Typography>
+            <Box sx={{ mt: 2 }}>
+              <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell>開始時間</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {room.matches.map(match => ((
+                    <TableRow
+                      key={match.id}
+                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                    >
+                      <TableCell>
+                        {match.start_time != null ? (
+                          <Link href={`/match/${match.id}/`}>
+                            {format(parseISO(match.start_time), "HH:mm")}
                           </Link>
                         ): ""}
                       </TableCell>

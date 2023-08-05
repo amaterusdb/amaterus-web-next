@@ -5043,7 +5043,7 @@ export type GetRoomPageQueryVariables = Exact<{
 }>;
 
 
-export type GetRoomPageQuery = { __typename?: 'query_root', room?: { __typename?: 'rooms', id: any, name: string, startTime?: any | null, endTime?: any | null, roomPersons: Array<{ __typename?: 'room_persons', person: { __typename?: 'persons', id: any, name: string } }>, roomYouTubeLives: Array<{ __typename?: 'room_youtube_lives', id: any, title?: string | null, youtubeVideoId: string, person?: { __typename?: 'persons', id: any, name: string } | null }> } | null };
+export type GetRoomPageQuery = { __typename?: 'query_root', room?: { __typename?: 'rooms', id: any, name: string, startTime?: any | null, endTime?: any | null, roomPersons: Array<{ __typename?: 'room_persons', person: { __typename?: 'persons', id: any, name: string } }>, roomYouTubeLives: Array<{ __typename?: 'room_youtube_lives', id: any, title?: string | null, youtubeVideoId: string, person?: { __typename?: 'persons', id: any, name: string } | null }>, matches: Array<{ __typename?: 'matches', id: any, start_time: any }> } | null };
 
 export type GetRoomListPageQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -5058,19 +5058,13 @@ export const GetRoomPageDocument = gql`
     name
     startTime: start_time
     endTime: end_time
-    roomPersons: room_persons(
-      where: {room_id: {_eq: $roomId}}
-      order_by: {person: {name: asc}}
-    ) {
+    roomPersons: room_persons(order_by: {person: {name: asc}}) {
       person {
         id
         name
       }
     }
-    roomYouTubeLives: room_youtube_lives(
-      where: {room_id: {_eq: $roomId}}
-      order_by: {person: {name: asc}}
-    ) {
+    roomYouTubeLives: room_youtube_lives(order_by: {person: {name: asc}}) {
       id
       person {
         id
@@ -5078,6 +5072,10 @@ export const GetRoomPageDocument = gql`
       }
       youtubeVideoId: youtube_video_id
       title
+    }
+    matches(order_by: {start_time: asc}) {
+      id
+      start_time
     }
   }
 }
