@@ -1,0 +1,28 @@
+query GetRoomPage(
+  $roomId: uuid!
+) {
+  room: rooms_by_pk(
+    id: $roomId
+  ) {
+    id
+    name
+    startTime: start_time
+    endTime: end_time
+    
+    roomPersons: room_persons(
+      where: {
+        room_id: { _eq: $roomId }
+      }
+      order_by: {
+        person: {
+          name: asc
+        }
+      }
+    ) {
+      person {
+        id
+        name
+      }
+    }
+  }
+}

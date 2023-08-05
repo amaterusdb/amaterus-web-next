@@ -7,7 +7,7 @@ import Link from 'next/link'
 import { parseISO, format } from 'date-fns'
 
 
-export default function RoomList() {
+export default function RoomListPage() {
   const { data } = useGetRoomListPageQuery();
   const rooms = data?.rooms;
 
@@ -40,7 +40,7 @@ export default function RoomList() {
                       </Link>
                     </TableCell>
                     <TableCell>
-                      {format(parseISO(room.startTime), "yyyy-MM-dd HH:mm:SS")}
+                      {format(parseISO(room.startTime), "yyyy-MM-dd HH:mm")}
                     </TableCell>
                   </TableRow>
                 </>

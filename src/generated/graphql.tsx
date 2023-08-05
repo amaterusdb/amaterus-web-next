@@ -5038,12 +5038,66 @@ export type Uuid_Comparison_Exp = {
   _nin?: InputMaybe<Array<Scalars['uuid']['input']>>;
 };
 
+export type GetRoomPageQueryVariables = Exact<{
+  roomId: Scalars['uuid']['input'];
+}>;
+
+
+export type GetRoomPageQuery = { __typename?: 'query_root', room?: { __typename?: 'rooms', id: any, name: string, startTime?: any | null, endTime?: any | null, roomPersons: Array<{ __typename?: 'room_persons', person: { __typename?: 'persons', id: any, name: string } }> } | null };
+
 export type GetRoomListPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetRoomListPageQuery = { __typename?: 'query_root', rooms: Array<{ __typename?: 'rooms', id: any, name: string, startTime?: any | null, endTime?: any | null }> };
 
 
+export const GetRoomPageDocument = gql`
+    query GetRoomPage($roomId: uuid!) {
+  room: rooms_by_pk(id: $roomId) {
+    id
+    name
+    startTime: start_time
+    endTime: end_time
+    roomPersons: room_persons(
+      where: {room_id: {_eq: $roomId}}
+      order_by: {person: {name: asc}}
+    ) {
+      person {
+        id
+        name
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetRoomPageQuery__
+ *
+ * To run a query within a React component, call `useGetRoomPageQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetRoomPageQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetRoomPageQuery({
+ *   variables: {
+ *      roomId: // value for 'roomId'
+ *   },
+ * });
+ */
+export function useGetRoomPageQuery(baseOptions: Apollo.QueryHookOptions<GetRoomPageQuery, GetRoomPageQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetRoomPageQuery, GetRoomPageQueryVariables>(GetRoomPageDocument, options);
+      }
+export function useGetRoomPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetRoomPageQuery, GetRoomPageQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetRoomPageQuery, GetRoomPageQueryVariables>(GetRoomPageDocument, options);
+        }
+export type GetRoomPageQueryHookResult = ReturnType<typeof useGetRoomPageQuery>;
+export type GetRoomPageLazyQueryHookResult = ReturnType<typeof useGetRoomPageLazyQuery>;
+export type GetRoomPageQueryResult = Apollo.QueryResult<GetRoomPageQuery, GetRoomPageQueryVariables>;
 export const GetRoomListPageDocument = gql`
     query GetRoomListPage {
   rooms {
