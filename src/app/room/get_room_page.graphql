@@ -1,0 +1,8 @@
+query GetRoomListPage {
+  rooms {
+    id
+    name
+    start_time
+    end_time
+  }
+}

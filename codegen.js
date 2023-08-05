@@ -1,17 +1,17 @@
-const NEXT_PUBLIC_AMATERUS_HASURA_GRAPHQL_ENDPOINT = process.env.NEXT_PUBLIC_AMATERUS_HASURA_GRAPHQL_ENDPOINT
+const NEXT_PUBLIC_AMATERUS_HASURA_GRAPHQL_SCHEMA_URL = process.env.NEXT_PUBLIC_AMATERUS_HASURA_GRAPHQL_SCHEMA_URL
 const AMATERUS_HASURA_GRAPHQL_ADMIN_SECRET = process.env.AMATERUS_HASURA_GRAPHQL_ADMIN_SECRET
 
 module.exports = {
   schema: [
       {
-        [NEXT_PUBLIC_AMATERUS_HASURA_GRAPHQL_ENDPOINT]: {
+        [NEXT_PUBLIC_AMATERUS_HASURA_GRAPHQL_SCHEMA_URL]: {
               headers: {
                   "X-Hasura-Admin-Secret": AMATERUS_HASURA_GRAPHQL_ADMIN_SECRET,
               },
           },
       },
   ],
-  documents: ['./src/**/*.tsx', './src/**/*.ts'],
+  documents: ['./src/**/*.graphql'],
   overwrite: true,
   generates: {
       './src/generated/graphql.tsx': {
