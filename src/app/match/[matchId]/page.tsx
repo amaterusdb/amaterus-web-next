@@ -30,7 +30,7 @@ export default function PersonPage({
         {match != null ? (
           <>
             <Typography variant="h4" component="h2">
-              {match.room.name} {format(parseISO(match.startTime), "yyyy-MM-dd HH:mm:ss")}
+              {match.room.name} {format(parseISO(match.startTime), "yyyy-MM-dd HH:mm")}
             </Typography>
             <Typography variant="h5" component="h3" sx={{ mt: 3 }}>
               放送アーカイブ
