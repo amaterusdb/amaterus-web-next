@@ -47,18 +47,50 @@ export default function RoomPage({
                 </TableHead>
                 <TableBody>
                   {room.roomPersons.map(roomPerson => ((
-                    <>
-                      <TableRow
-                        key={roomPerson.person.id}
-                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                      >
-                        <TableCell component="th" scope="row">
-                          <Link href={`/person/${roomPerson.person.id}/`}>
-                            {roomPerson.person.name}
+                    <TableRow
+                      key={roomPerson.person.id}
+                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                    >
+                      <TableCell component="th" scope="row">
+                        <Link href={`/person/${roomPerson.person.id}/`}>
+                          {roomPerson.person.name}
+                        </Link>
+                      </TableCell>
+                    </TableRow>
+                  )))}
+                </TableBody>
+              </Table>
+            </Box>
+            <Typography variant="h5" component="h3" sx={{ mt: 3 }}>
+              放送アーカイブ
+            </Typography>
+            <Box sx={{ mt: 2 }}>
+              <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
+                <TableHead>
+                  <TableRow>
+                    <TableCell>タイトル</TableCell>
+                    <TableCell>放送者</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {room.roomYouTubeLives.map(youtubeLive => ((
+                    <TableRow
+                      key={youtubeLive.id}
+                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                    >
+                      <TableCell component="th" scope="row">
+                        <Link href={`https://www.youtube.com/watch?v=${youtubeLive.youtubeVideoId}`}>
+                          {youtubeLive.title}
+                        </Link>
+                      </TableCell>
+                      <TableCell component="th" scope="row">
+                        {youtubeLive.person != null ? (
+                          <Link href={`/person/${youtubeLive.person.id}/`}>
+                            {youtubeLive.person.name}
                           </Link>
-                        </TableCell>
-                      </TableRow>
-                    </>
+                        ): ""}
+                      </TableCell>
+                    </TableRow>
                   )))}
                 </TableBody>
               </Table>

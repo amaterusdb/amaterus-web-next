@@ -24,5 +24,24 @@ query GetRoomPage(
         name
       }
     }
+    
+    roomYouTubeLives: room_youtube_lives(
+      where: {
+        room_id: { _eq: $roomId }
+      }
+      order_by: {
+        person: {
+          name: asc
+        }
+      }
+    ) {
+      id
+      person {
+        id
+        name
+      }
+      youtubeVideoId: youtube_video_id
+      title
+    }
   }
 }
