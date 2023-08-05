@@ -1,0 +1,66 @@
+query GetPersonPage(
+  $personId: uuid!
+) {
+  person: persons_by_pk(
+    id: $personId
+  ) {
+    id
+    name
+
+    personTwitterAccounts: person_twitter_accounts(
+      order_by: {
+        twitter_user_id: asc
+      }
+    ) {
+      id
+      twitter_screen_name
+      twitter_user_id
+      name
+    }
+
+    personNiconicoAccounts: person_niconico_accounts(
+      order_by: {
+        niconico_account_id: asc
+      }
+    ) {
+      id
+      niconico_account_id
+      name
+    }
+
+    personNiconicoCommunities: person_niconico_communities(
+      order_by: {
+        niconico_community_id: asc
+      }
+    ) {
+      id
+      niconico_community_id
+      name
+    }
+
+    personYoutubeChannels: person_youtube_channels(
+      order_by: {
+        youtube_channel_id: asc
+      }
+    ) {
+      id
+      youtube_channel_id
+      youtube_channel_handle
+      name
+    }
+
+    roomPersons: room_persons(
+      order_by: {
+        room: {
+          start_time: desc
+        }
+      }
+    ) {
+      room {
+        id
+        name
+        start_time
+      }
+    }
+  }
+}

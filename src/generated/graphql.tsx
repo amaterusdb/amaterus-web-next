@@ -5038,6 +5038,13 @@ export type Uuid_Comparison_Exp = {
   _nin?: InputMaybe<Array<Scalars['uuid']['input']>>;
 };
 
+export type GetPersonPageQueryVariables = Exact<{
+  personId: Scalars['uuid']['input'];
+}>;
+
+
+export type GetPersonPageQuery = { __typename?: 'query_root', person?: { __typename?: 'persons', id: any, name: string, personTwitterAccounts: Array<{ __typename?: 'person_twitter_accounts', id: any, twitter_screen_name: string, twitter_user_id?: any | null, name?: string | null }>, personNiconicoAccounts: Array<{ __typename?: 'person_niconico_accounts', id: any, niconico_account_id: number, name?: string | null }>, personNiconicoCommunities: Array<{ __typename?: 'person_niconico_communities', id: any, niconico_community_id: number, name?: string | null }>, personYoutubeChannels: Array<{ __typename?: 'person_youtube_channels', id: any, youtube_channel_id: string, youtube_channel_handle?: string | null, name?: string | null }>, roomPersons: Array<{ __typename?: 'room_persons', room: { __typename?: 'rooms', id: any, name: string, start_time?: any | null } }> } | null };
+
 export type GetRoomPageQueryVariables = Exact<{
   roomId: Scalars['uuid']['input'];
 }>;
@@ -5051,6 +5058,77 @@ export type GetRoomListPageQueryVariables = Exact<{ [key: string]: never; }>;
 export type GetRoomListPageQuery = { __typename?: 'query_root', rooms: Array<{ __typename?: 'rooms', id: any, name: string, startTime?: any | null, endTime?: any | null }> };
 
 
+export const GetPersonPageDocument = gql`
+    query GetPersonPage($personId: uuid!) {
+  person: persons_by_pk(id: $personId) {
+    id
+    name
+    personTwitterAccounts: person_twitter_accounts(order_by: {twitter_user_id: asc}) {
+      id
+      twitter_screen_name
+      twitter_user_id
+      name
+    }
+    personNiconicoAccounts: person_niconico_accounts(
+      order_by: {niconico_account_id: asc}
+    ) {
+      id
+      niconico_account_id
+      name
+    }
+    personNiconicoCommunities: person_niconico_communities(
+      order_by: {niconico_community_id: asc}
+    ) {
+      id
+      niconico_community_id
+      name
+    }
+    personYoutubeChannels: person_youtube_channels(
+      order_by: {youtube_channel_id: asc}
+    ) {
+      id
+      youtube_channel_id
+      youtube_channel_handle
+      name
+    }
+    roomPersons: room_persons(order_by: {room: {start_time: desc}}) {
+      room {
+        id
+        name
+        start_time
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetPersonPageQuery__
+ *
+ * To run a query within a React component, call `useGetPersonPageQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetPersonPageQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetPersonPageQuery({
+ *   variables: {
+ *      personId: // value for 'personId'
+ *   },
+ * });
+ */
+export function useGetPersonPageQuery(baseOptions: Apollo.QueryHookOptions<GetPersonPageQuery, GetPersonPageQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetPersonPageQuery, GetPersonPageQueryVariables>(GetPersonPageDocument, options);
+      }
+export function useGetPersonPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetPersonPageQuery, GetPersonPageQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetPersonPageQuery, GetPersonPageQueryVariables>(GetPersonPageDocument, options);
+        }
+export type GetPersonPageQueryHookResult = ReturnType<typeof useGetPersonPageQuery>;
+export type GetPersonPageLazyQueryHookResult = ReturnType<typeof useGetPersonPageLazyQuery>;
+export type GetPersonPageQueryResult = Apollo.QueryResult<GetPersonPageQuery, GetPersonPageQueryVariables>;
 export const GetRoomPageDocument = gql`
     query GetRoomPage($roomId: uuid!) {
   room: rooms_by_pk(id: $roomId) {
