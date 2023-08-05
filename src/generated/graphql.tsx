@@ -1192,7 +1192,6 @@ export type Mutation_RootUpdate_Person_Niconico_Communities_ManyArgs = {
 
 /** mutation root */
 export type Mutation_RootUpdate_Person_Twitter_AccountsArgs = {
-  _inc?: InputMaybe<Person_Twitter_Accounts_Inc_Input>;
   _set?: InputMaybe<Person_Twitter_Accounts_Set_Input>;
   where: Person_Twitter_Accounts_Bool_Exp;
 };
@@ -1200,7 +1199,6 @@ export type Mutation_RootUpdate_Person_Twitter_AccountsArgs = {
 
 /** mutation root */
 export type Mutation_RootUpdate_Person_Twitter_Accounts_By_PkArgs = {
-  _inc?: InputMaybe<Person_Twitter_Accounts_Inc_Input>;
   _set?: InputMaybe<Person_Twitter_Accounts_Set_Input>;
   pk_columns: Person_Twitter_Accounts_Pk_Columns_Input;
 };
@@ -2049,7 +2047,7 @@ export type Person_Twitter_Accounts = {
   person: Persons;
   person_id: Scalars['uuid']['output'];
   twitter_screen_name: Scalars['String']['output'];
-  twitter_user_id?: Maybe<Scalars['bigint']['output']>;
+  twitter_user_id?: Maybe<Scalars['String']['output']>;
   updated_at: Scalars['timestamptz']['output'];
 };
 
@@ -2074,17 +2072,9 @@ export type Person_Twitter_Accounts_Aggregate_Bool_Exp_Count = {
 /** aggregate fields of "person_twitter_accounts" */
 export type Person_Twitter_Accounts_Aggregate_Fields = {
   __typename?: 'person_twitter_accounts_aggregate_fields';
-  avg?: Maybe<Person_Twitter_Accounts_Avg_Fields>;
   count: Scalars['Int']['output'];
   max?: Maybe<Person_Twitter_Accounts_Max_Fields>;
   min?: Maybe<Person_Twitter_Accounts_Min_Fields>;
-  stddev?: Maybe<Person_Twitter_Accounts_Stddev_Fields>;
-  stddev_pop?: Maybe<Person_Twitter_Accounts_Stddev_Pop_Fields>;
-  stddev_samp?: Maybe<Person_Twitter_Accounts_Stddev_Samp_Fields>;
-  sum?: Maybe<Person_Twitter_Accounts_Sum_Fields>;
-  var_pop?: Maybe<Person_Twitter_Accounts_Var_Pop_Fields>;
-  var_samp?: Maybe<Person_Twitter_Accounts_Var_Samp_Fields>;
-  variance?: Maybe<Person_Twitter_Accounts_Variance_Fields>;
 };
 
 
@@ -2096,17 +2086,9 @@ export type Person_Twitter_Accounts_Aggregate_FieldsCountArgs = {
 
 /** order by aggregate values of table "person_twitter_accounts" */
 export type Person_Twitter_Accounts_Aggregate_Order_By = {
-  avg?: InputMaybe<Person_Twitter_Accounts_Avg_Order_By>;
   count?: InputMaybe<Order_By>;
   max?: InputMaybe<Person_Twitter_Accounts_Max_Order_By>;
   min?: InputMaybe<Person_Twitter_Accounts_Min_Order_By>;
-  stddev?: InputMaybe<Person_Twitter_Accounts_Stddev_Order_By>;
-  stddev_pop?: InputMaybe<Person_Twitter_Accounts_Stddev_Pop_Order_By>;
-  stddev_samp?: InputMaybe<Person_Twitter_Accounts_Stddev_Samp_Order_By>;
-  sum?: InputMaybe<Person_Twitter_Accounts_Sum_Order_By>;
-  var_pop?: InputMaybe<Person_Twitter_Accounts_Var_Pop_Order_By>;
-  var_samp?: InputMaybe<Person_Twitter_Accounts_Var_Samp_Order_By>;
-  variance?: InputMaybe<Person_Twitter_Accounts_Variance_Order_By>;
 };
 
 /** input type for inserting array relation for remote table "person_twitter_accounts" */
@@ -2114,17 +2096,6 @@ export type Person_Twitter_Accounts_Arr_Rel_Insert_Input = {
   data: Array<Person_Twitter_Accounts_Insert_Input>;
   /** upsert condition */
   on_conflict?: InputMaybe<Person_Twitter_Accounts_On_Conflict>;
-};
-
-/** aggregate avg on columns */
-export type Person_Twitter_Accounts_Avg_Fields = {
-  __typename?: 'person_twitter_accounts_avg_fields';
-  twitter_user_id?: Maybe<Scalars['Float']['output']>;
-};
-
-/** order by avg() on columns of table "person_twitter_accounts" */
-export type Person_Twitter_Accounts_Avg_Order_By = {
-  twitter_user_id?: InputMaybe<Order_By>;
 };
 
 /** Boolean expression to filter rows from the table "person_twitter_accounts". All fields are combined with a logical 'AND'. */
@@ -2138,7 +2109,7 @@ export type Person_Twitter_Accounts_Bool_Exp = {
   person?: InputMaybe<Persons_Bool_Exp>;
   person_id?: InputMaybe<Uuid_Comparison_Exp>;
   twitter_screen_name?: InputMaybe<String_Comparison_Exp>;
-  twitter_user_id?: InputMaybe<Bigint_Comparison_Exp>;
+  twitter_user_id?: InputMaybe<String_Comparison_Exp>;
   updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
 };
 
@@ -2152,11 +2123,6 @@ export enum Person_Twitter_Accounts_Constraint {
   PersonTwitterAccountsPkey = 'person_twitter_accounts_pkey'
 }
 
-/** input type for incrementing numeric columns in table "person_twitter_accounts" */
-export type Person_Twitter_Accounts_Inc_Input = {
-  twitter_user_id?: InputMaybe<Scalars['bigint']['input']>;
-};
-
 /** input type for inserting data into table "person_twitter_accounts" */
 export type Person_Twitter_Accounts_Insert_Input = {
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
@@ -2165,7 +2131,7 @@ export type Person_Twitter_Accounts_Insert_Input = {
   person?: InputMaybe<Persons_Obj_Rel_Insert_Input>;
   person_id?: InputMaybe<Scalars['uuid']['input']>;
   twitter_screen_name?: InputMaybe<Scalars['String']['input']>;
-  twitter_user_id?: InputMaybe<Scalars['bigint']['input']>;
+  twitter_user_id?: InputMaybe<Scalars['String']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
 };
 
@@ -2177,7 +2143,7 @@ export type Person_Twitter_Accounts_Max_Fields = {
   name?: Maybe<Scalars['String']['output']>;
   person_id?: Maybe<Scalars['uuid']['output']>;
   twitter_screen_name?: Maybe<Scalars['String']['output']>;
-  twitter_user_id?: Maybe<Scalars['bigint']['output']>;
+  twitter_user_id?: Maybe<Scalars['String']['output']>;
   updated_at?: Maybe<Scalars['timestamptz']['output']>;
 };
 
@@ -2200,7 +2166,7 @@ export type Person_Twitter_Accounts_Min_Fields = {
   name?: Maybe<Scalars['String']['output']>;
   person_id?: Maybe<Scalars['uuid']['output']>;
   twitter_screen_name?: Maybe<Scalars['String']['output']>;
-  twitter_user_id?: Maybe<Scalars['bigint']['output']>;
+  twitter_user_id?: Maybe<Scalars['String']['output']>;
   updated_at?: Maybe<Scalars['timestamptz']['output']>;
 };
 
@@ -2273,41 +2239,8 @@ export type Person_Twitter_Accounts_Set_Input = {
   name?: InputMaybe<Scalars['String']['input']>;
   person_id?: InputMaybe<Scalars['uuid']['input']>;
   twitter_screen_name?: InputMaybe<Scalars['String']['input']>;
-  twitter_user_id?: InputMaybe<Scalars['bigint']['input']>;
+  twitter_user_id?: InputMaybe<Scalars['String']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
-};
-
-/** aggregate stddev on columns */
-export type Person_Twitter_Accounts_Stddev_Fields = {
-  __typename?: 'person_twitter_accounts_stddev_fields';
-  twitter_user_id?: Maybe<Scalars['Float']['output']>;
-};
-
-/** order by stddev() on columns of table "person_twitter_accounts" */
-export type Person_Twitter_Accounts_Stddev_Order_By = {
-  twitter_user_id?: InputMaybe<Order_By>;
-};
-
-/** aggregate stddev_pop on columns */
-export type Person_Twitter_Accounts_Stddev_Pop_Fields = {
-  __typename?: 'person_twitter_accounts_stddev_pop_fields';
-  twitter_user_id?: Maybe<Scalars['Float']['output']>;
-};
-
-/** order by stddev_pop() on columns of table "person_twitter_accounts" */
-export type Person_Twitter_Accounts_Stddev_Pop_Order_By = {
-  twitter_user_id?: InputMaybe<Order_By>;
-};
-
-/** aggregate stddev_samp on columns */
-export type Person_Twitter_Accounts_Stddev_Samp_Fields = {
-  __typename?: 'person_twitter_accounts_stddev_samp_fields';
-  twitter_user_id?: Maybe<Scalars['Float']['output']>;
-};
-
-/** order by stddev_samp() on columns of table "person_twitter_accounts" */
-export type Person_Twitter_Accounts_Stddev_Samp_Order_By = {
-  twitter_user_id?: InputMaybe<Order_By>;
 };
 
 /** Streaming cursor of the table "person_twitter_accounts" */
@@ -2325,19 +2258,8 @@ export type Person_Twitter_Accounts_Stream_Cursor_Value_Input = {
   name?: InputMaybe<Scalars['String']['input']>;
   person_id?: InputMaybe<Scalars['uuid']['input']>;
   twitter_screen_name?: InputMaybe<Scalars['String']['input']>;
-  twitter_user_id?: InputMaybe<Scalars['bigint']['input']>;
+  twitter_user_id?: InputMaybe<Scalars['String']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
-};
-
-/** aggregate sum on columns */
-export type Person_Twitter_Accounts_Sum_Fields = {
-  __typename?: 'person_twitter_accounts_sum_fields';
-  twitter_user_id?: Maybe<Scalars['bigint']['output']>;
-};
-
-/** order by sum() on columns of table "person_twitter_accounts" */
-export type Person_Twitter_Accounts_Sum_Order_By = {
-  twitter_user_id?: InputMaybe<Order_By>;
 };
 
 /** update columns of table "person_twitter_accounts" */
@@ -2359,45 +2281,10 @@ export enum Person_Twitter_Accounts_Update_Column {
 }
 
 export type Person_Twitter_Accounts_Updates = {
-  /** increments the numeric columns with given value of the filtered values */
-  _inc?: InputMaybe<Person_Twitter_Accounts_Inc_Input>;
   /** sets the columns of the filtered rows to the given values */
   _set?: InputMaybe<Person_Twitter_Accounts_Set_Input>;
   /** filter the rows which have to be updated */
   where: Person_Twitter_Accounts_Bool_Exp;
-};
-
-/** aggregate var_pop on columns */
-export type Person_Twitter_Accounts_Var_Pop_Fields = {
-  __typename?: 'person_twitter_accounts_var_pop_fields';
-  twitter_user_id?: Maybe<Scalars['Float']['output']>;
-};
-
-/** order by var_pop() on columns of table "person_twitter_accounts" */
-export type Person_Twitter_Accounts_Var_Pop_Order_By = {
-  twitter_user_id?: InputMaybe<Order_By>;
-};
-
-/** aggregate var_samp on columns */
-export type Person_Twitter_Accounts_Var_Samp_Fields = {
-  __typename?: 'person_twitter_accounts_var_samp_fields';
-  twitter_user_id?: Maybe<Scalars['Float']['output']>;
-};
-
-/** order by var_samp() on columns of table "person_twitter_accounts" */
-export type Person_Twitter_Accounts_Var_Samp_Order_By = {
-  twitter_user_id?: InputMaybe<Order_By>;
-};
-
-/** aggregate variance on columns */
-export type Person_Twitter_Accounts_Variance_Fields = {
-  __typename?: 'person_twitter_accounts_variance_fields';
-  twitter_user_id?: Maybe<Scalars['Float']['output']>;
-};
-
-/** order by variance() on columns of table "person_twitter_accounts" */
-export type Person_Twitter_Accounts_Variance_Order_By = {
-  twitter_user_id?: InputMaybe<Order_By>;
 };
 
 /** columns and relationships of "person_youtube_channels" */
@@ -5038,12 +4925,19 @@ export type Uuid_Comparison_Exp = {
   _nin?: InputMaybe<Array<Scalars['uuid']['input']>>;
 };
 
+export type GetMatchPageQueryVariables = Exact<{
+  matchId: Scalars['uuid']['input'];
+}>;
+
+
+export type GetMatchPageQuery = { __typename?: 'query_root', match?: { __typename?: 'matches', id: any, startTime: any, isAborted?: boolean | null, matchPlayers: Array<{ __typename?: 'match_players', id: any, nickname: string, person?: { __typename?: 'persons', id: any } | null }>, room: { __typename?: 'rooms', id: any, name: string, startTime?: any | null, roomYoutubeLives: Array<{ __typename?: 'room_youtube_lives', id: any, title?: string | null, youtubeVideoId: string, startTime?: any | null, person?: { __typename?: 'persons', id: any, name: string } | null }> } } | null };
+
 export type GetPersonPageQueryVariables = Exact<{
   personId: Scalars['uuid']['input'];
 }>;
 
 
-export type GetPersonPageQuery = { __typename?: 'query_root', person?: { __typename?: 'persons', id: any, name: string, personTwitterAccounts: Array<{ __typename?: 'person_twitter_accounts', id: any, twitter_screen_name: string, twitter_user_id?: any | null, name?: string | null }>, personNiconicoAccounts: Array<{ __typename?: 'person_niconico_accounts', id: any, niconico_account_id: number, name?: string | null }>, personNiconicoCommunities: Array<{ __typename?: 'person_niconico_communities', id: any, niconico_community_id: number, name?: string | null }>, personYoutubeChannels: Array<{ __typename?: 'person_youtube_channels', id: any, youtube_channel_id: string, youtube_channel_handle?: string | null, name?: string | null }>, roomPersons: Array<{ __typename?: 'room_persons', room: { __typename?: 'rooms', id: any, name: string, start_time?: any | null } }> } | null };
+export type GetPersonPageQuery = { __typename?: 'query_root', person?: { __typename?: 'persons', id: any, name: string, personTwitterAccounts: Array<{ __typename?: 'person_twitter_accounts', id: any, twitter_screen_name: string, twitter_user_id?: string | null, name?: string | null }>, personNiconicoAccounts: Array<{ __typename?: 'person_niconico_accounts', id: any, niconico_account_id: number, name?: string | null }>, personNiconicoCommunities: Array<{ __typename?: 'person_niconico_communities', id: any, niconico_community_id: number, name?: string | null }>, personYoutubeChannels: Array<{ __typename?: 'person_youtube_channels', id: any, youtube_channel_id: string, youtube_channel_handle?: string | null, name?: string | null }>, roomPersons: Array<{ __typename?: 'room_persons', room: { __typename?: 'rooms', id: any, name: string, start_time?: any | null } }> } | null };
 
 export type GetRoomPageQueryVariables = Exact<{
   roomId: Scalars['uuid']['input'];
@@ -5058,6 +4952,65 @@ export type GetRoomListPageQueryVariables = Exact<{ [key: string]: never; }>;
 export type GetRoomListPageQuery = { __typename?: 'query_root', rooms: Array<{ __typename?: 'rooms', id: any, name: string, startTime?: any | null, endTime?: any | null }> };
 
 
+export const GetMatchPageDocument = gql`
+    query GetMatchPage($matchId: uuid!) {
+  match: matches_by_pk(id: $matchId) {
+    id
+    startTime: start_time
+    isAborted: is_aborted
+    matchPlayers: match_players(order_by: {nickname: asc}) {
+      id
+      nickname
+      person {
+        id
+      }
+    }
+    room {
+      id
+      name
+      startTime: start_time
+      roomYoutubeLives: room_youtube_lives {
+        id
+        youtubeVideoId: youtube_video_id
+        startTime: start_time
+        title
+        person {
+          id
+          name
+        }
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetMatchPageQuery__
+ *
+ * To run a query within a React component, call `useGetMatchPageQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetMatchPageQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetMatchPageQuery({
+ *   variables: {
+ *      matchId: // value for 'matchId'
+ *   },
+ * });
+ */
+export function useGetMatchPageQuery(baseOptions: Apollo.QueryHookOptions<GetMatchPageQuery, GetMatchPageQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetMatchPageQuery, GetMatchPageQueryVariables>(GetMatchPageDocument, options);
+      }
+export function useGetMatchPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetMatchPageQuery, GetMatchPageQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetMatchPageQuery, GetMatchPageQueryVariables>(GetMatchPageDocument, options);
+        }
+export type GetMatchPageQueryHookResult = ReturnType<typeof useGetMatchPageQuery>;
+export type GetMatchPageLazyQueryHookResult = ReturnType<typeof useGetMatchPageLazyQuery>;
+export type GetMatchPageQueryResult = Apollo.QueryResult<GetMatchPageQuery, GetMatchPageQueryVariables>;
 export const GetPersonPageDocument = gql`
     query GetPersonPage($personId: uuid!) {
   person: persons_by_pk(id: $personId) {

@@ -1,0 +1,39 @@
+query GetMatchPage(
+  $matchId: uuid!
+) {
+  match: matches_by_pk(
+    id: $matchId
+  ) {
+    id
+    startTime: start_time
+    isAborted: is_aborted
+
+    matchPlayers: match_players(
+      order_by: {
+        nickname: asc
+      }
+    ) {
+      id
+      nickname
+      person {
+        id
+      }
+    }
+
+    room {
+      id
+      name
+      startTime: start_time
+      roomYoutubeLives: room_youtube_lives {
+        id
+        youtubeVideoId: youtube_video_id
+        startTime: start_time
+        title
+        person {
+          id
+          name
+        }
+      }
+    }
+  }
+}
