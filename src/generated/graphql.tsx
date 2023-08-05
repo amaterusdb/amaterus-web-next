@@ -5041,7 +5041,7 @@ export type Uuid_Comparison_Exp = {
 export type GetRoomListPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetRoomListPageQuery = { __typename?: 'query_root', rooms: Array<{ __typename?: 'rooms', id: any, name: string, start_time?: any | null, end_time?: any | null }> };
+export type GetRoomListPageQuery = { __typename?: 'query_root', rooms: Array<{ __typename?: 'rooms', id: any, name: string, startTime?: any | null, endTime?: any | null }> };
 
 
 export const GetRoomListPageDocument = gql`
@@ -5049,8 +5049,8 @@ export const GetRoomListPageDocument = gql`
   rooms {
     id
     name
-    start_time
-    end_time
+    startTime: start_time
+    endTime: end_time
   }
 }
     `;

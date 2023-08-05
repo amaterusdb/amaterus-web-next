@@ -2,7 +2,7 @@ query GetRoomListPage {
   rooms {
     id
     name
-    start_time
-    end_time
+    startTime: start_time
+    endTime: end_time
   }
 }
