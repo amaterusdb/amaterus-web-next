@@ -2,8 +2,9 @@
 
 import Button from '@mui/material/Button'
 import DrawerAppBar from '@/components/drawer_app_bar'
-import { Box, Toolbar, Typography } from '@mui/material'
+import { Box, Table, TableBody, TableCell, TableHead, TableRow, Toolbar, Typography } from '@mui/material'
 import { useGetRoomListPageQuery } from '@/generated/graphql'
+import Link from 'next/link'
 
 export default function RoomList() {
   const { data } = useGetRoomListPageQuery();
@@ -15,15 +16,36 @@ export default function RoomList() {
       <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
         <Typography variant="h4" component="h2">
-          Room List
+          部屋リスト
         </Typography>
         <Box sx={{ mt: 2 }}>
-          {rooms?.map(room => ((
-            <>
-              {room.id}
-            </>
-          )))}
-          <Button variant="contained">Hello World</Button>
+          <Table sx={{ minWidth: 650 }} aria-label="simple table">
+            <TableHead>
+              <TableRow>
+                <TableCell>部屋名</TableCell>
+                <TableCell>開催日時</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rooms?.map(room => ((
+                <>
+                  <TableRow
+                    key={room.id}
+                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                  >
+                    <TableCell component="th" scope="row">
+                      <Link href={`/room/${room.id}/`}>
+                        {room.name}
+                      </Link>
+                    </TableCell>
+                    <TableCell>
+                      {room.startTime}
+                    </TableCell>
+                  </TableRow>
+                </>
+              )))}
+            </TableBody>
+          </Table>
         </Box>
       </Box>
     </>
