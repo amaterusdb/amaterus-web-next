@@ -1,0 +1,5 @@
+query GetRoomPageStaticParam {
+  rooms {
+    id
+  }
+}

@@ -4946,6 +4946,11 @@ export type GetRoomPageQueryVariables = Exact<{
 
 export type GetRoomPageQuery = { __typename?: 'query_root', room?: { __typename?: 'rooms', id: any, name: string, startTime?: any | null, endTime?: any | null, roomPersons: Array<{ __typename?: 'room_persons', person: { __typename?: 'persons', id: any, name: string } }>, roomYouTubeLives: Array<{ __typename?: 'room_youtube_lives', id: any, title?: string | null, youtubeVideoId: string, person?: { __typename?: 'persons', id: any, name: string } | null }>, matches: Array<{ __typename?: 'matches', id: any, start_time: any }> } | null };
 
+export type GetRoomPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetRoomPageStaticParamQuery = { __typename?: 'query_root', rooms: Array<{ __typename?: 'rooms', id: any }> };
+
 export type GetRoomListPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -5139,6 +5144,40 @@ export function useGetRoomPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOption
 export type GetRoomPageQueryHookResult = ReturnType<typeof useGetRoomPageQuery>;
 export type GetRoomPageLazyQueryHookResult = ReturnType<typeof useGetRoomPageLazyQuery>;
 export type GetRoomPageQueryResult = Apollo.QueryResult<GetRoomPageQuery, GetRoomPageQueryVariables>;
+export const GetRoomPageStaticParamDocument = gql`
+    query GetRoomPageStaticParam {
+  rooms {
+    id
+  }
+}
+    `;
+
+/**
+ * __useGetRoomPageStaticParamQuery__
+ *
+ * To run a query within a React component, call `useGetRoomPageStaticParamQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetRoomPageStaticParamQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetRoomPageStaticParamQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetRoomPageStaticParamQuery(baseOptions?: Apollo.QueryHookOptions<GetRoomPageStaticParamQuery, GetRoomPageStaticParamQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetRoomPageStaticParamQuery, GetRoomPageStaticParamQueryVariables>(GetRoomPageStaticParamDocument, options);
+      }
+export function useGetRoomPageStaticParamLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetRoomPageStaticParamQuery, GetRoomPageStaticParamQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetRoomPageStaticParamQuery, GetRoomPageStaticParamQueryVariables>(GetRoomPageStaticParamDocument, options);
+        }
+export type GetRoomPageStaticParamQueryHookResult = ReturnType<typeof useGetRoomPageStaticParamQuery>;
+export type GetRoomPageStaticParamLazyQueryHookResult = ReturnType<typeof useGetRoomPageStaticParamLazyQuery>;
+export type GetRoomPageStaticParamQueryResult = Apollo.QueryResult<GetRoomPageStaticParamQuery, GetRoomPageStaticParamQueryVariables>;
 export const GetRoomListPageDocument = gql`
     query GetRoomListPage {
   rooms {

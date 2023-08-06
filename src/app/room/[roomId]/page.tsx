@@ -2,10 +2,26 @@
 
 import DrawerAppBar from '@/components/drawer_app_bar'
 import { Box, Table, TableBody, TableCell, TableHead, TableRow, Toolbar, Typography } from '@mui/material'
-import { useGetRoomPageQuery } from '@/generated/graphql'
 import Link from 'next/link'
 import { parseISO, format } from 'date-fns'
+import { createApolloClient } from '@/lib/apollo'
+import { useGetRoomPageQuery, GetRoomPageStaticParamDocument, GetRoomPageStaticParamQueryResult } from '@/generated/graphql'
 
+export async function generateStaticParams() {
+  const apolloClient = createApolloClient()
+  
+  const { data } = await apolloClient.query<GetRoomPageStaticParamQueryResult>({
+    query: GetRoomPageStaticParamDocument
+  })
+  const rooms = data.data?.rooms
+  if (rooms == null) {
+    throw Error()
+  }
+
+  return rooms.map(room => ({
+    roomId: String(room.id),
+  }))
+}
 
 export default function RoomPage({
   params
