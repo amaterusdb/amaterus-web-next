@@ -65,7 +65,10 @@ export default function DrawerAppBar() {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            <Link href="/room/">
+            <Link href="/room/" style={{
+              color: "inherit",
+              textDecoration: "inherit",
+            }}>
               Amaterus
             </Link>
           </Typography>
