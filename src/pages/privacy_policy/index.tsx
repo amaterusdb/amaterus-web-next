@@ -24,7 +24,7 @@ export default function PrivacyPolicyPage() {
               Amaterus
             </MuiLink>
           </NextLink>
-          <Typography color='text.primary'>Privacy Policy</Typography>
+          <Typography color='text.primary'>プライバシーポリシー</Typography>
         </Breadcrumbs>
         <Typography variant='h4' component='h2' sx={{ mt: 2 }}>
           プライバシーポリシー
