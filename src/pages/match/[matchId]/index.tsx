@@ -96,11 +96,7 @@ export default function MatchPage({ matchId }: { matchId: string }) {
               {match.room.name}
             </MuiLink>
           </NextLink>
-          <NextLink href={`/room/${match.room.id}/#matches`} passHref legacyBehavior>
-            <MuiLink underline='hover' color='inherit'>
-              試合リスト
-            </MuiLink>
-          </NextLink>
+          <Typography>試合リスト</Typography>
           <Typography color='text.primary'>
             試合 {format(parseISO(match.startTime), 'yyyy-MM-dd HH:mm:ss')}
           </Typography>
