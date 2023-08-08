@@ -12,7 +12,7 @@ export async function getStaticPaths() {
   })
   const persons = data.data?.persons
   if (persons == null) {
-    throw Error()
+    throw Error("Invalid response for GetPersonPageStaticParamQuery")
   }
 
   const paths = persons.map(person => ({

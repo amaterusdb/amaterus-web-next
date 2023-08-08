@@ -14,7 +14,7 @@ export async function getStaticPaths() {
   })
   const matches = data.data?.matches
   if (matches == null) {
-    throw Error()
+    throw Error("Invalid response for GetMatchPageStaticParamQuery")
   }
 
   const paths = matches.map(match => ({

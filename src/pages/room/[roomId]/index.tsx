@@ -13,7 +13,7 @@ export async function getStaticPaths() {
   })
   const rooms = data.data?.rooms
   if (rooms == null) {
-    throw Error()
+    throw Error("Invalid response for GetRoomPageStaticParamQuery")
   }
 
   const paths = rooms.map(room => ({
