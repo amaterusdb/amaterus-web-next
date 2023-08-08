@@ -34,7 +34,9 @@ export default function AboutPage() {
           Amaterusは、ゲーム「Among Us」のプライベートゲームマッチに関する、
           個人運営のファンサイトです。
         </Typography>
-        <Typography sx={{ mt: 2 }}>プライベートゲームマッチの運営元とは関係ありません。</Typography>
+        <Typography sx={{ mt: 2 }}>
+          Innerslothおよびプライベートゲームマッチの運営元とは関係ありません。
+        </Typography>
         <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
           免責事項
         </Typography>
