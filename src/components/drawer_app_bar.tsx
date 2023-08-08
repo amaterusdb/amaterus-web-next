@@ -35,7 +35,7 @@ const navItems: NavItem[] = [
   },
   {
     text: 'About',
-    href: 'https://twitter.com/aoirint',
+    href: '/about',
   },
 ]
 
