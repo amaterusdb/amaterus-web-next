@@ -143,7 +143,7 @@ export default function PrivacyPolicyPage() {
           プラットフォーム間のデータ共有
         </Typography>
         <Typography sx={{ mt: 2 }}>
-          埋め込まれたTwitter（X）投稿に関するデータは、このウェブサイト/アプリのサーバーではなく、Twitter（X）のサーバーから直接取得される場合があります。
+          埋め込まれたTwitter（X）投稿に関するデータは、このウェブサイト/アプリのサーバーではなく、Twitter（X）のサーバーから直接取得されます。
           この際、ユーザーのウェブブラウジングに関する情報（たとえば、IPアドレスや閲覧履歴）が、Twitter（X）と共有される可能性があります。
         </Typography>
         <Typography variant='h6' component='h4' sx={{ mt: 3 }}>
