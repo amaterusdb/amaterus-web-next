@@ -147,19 +147,27 @@ export default function RoomPage({ roomId }: { roomId: string }) {
           <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
             <TableHead>
               <TableRow>
-                <TableCell>開始時間</TableCell>
+                <TableCell>開始日時</TableCell>
+                <TableCell>終了日時</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {room.matches.map((match) => (
                 <TableRow key={match.id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
                   <TableCell>
-                    {match.start_time != null ? (
+                    {match.startTime != null ? (
                       <NextLink href={`/match/${match.id}/`} passHref legacyBehavior>
                         <MuiLink>
-                          {format(parseISO(match.start_time), 'yyyy-MM-dd HH:mm:ss')}
+                          {format(parseISO(match.startTime), 'yyyy-MM-dd HH:mm:ss')}
                         </MuiLink>
                       </NextLink>
+                    ) : (
+                      ''
+                    )}
+                  </TableCell>
+                  <TableCell>
+                    {match.endTime != null ? (
+                      <>{format(parseISO(match.endTime), 'yyyy-MM-dd HH:mm:ss')}</>
                     ) : (
                       ''
                     )}
