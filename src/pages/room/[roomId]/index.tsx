@@ -172,7 +172,7 @@ export default function RoomPage({ roomId }: { roomId: string }) {
           <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
             <TableHead>
               <TableRow>
-                <TableCell>タイトル</TableCell>
+                <TableCell>放送タイトル</TableCell>
                 <TableCell>放送者</TableCell>
               </TableRow>
             </TableHead>
