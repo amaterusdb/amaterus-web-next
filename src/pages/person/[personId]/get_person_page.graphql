@@ -18,6 +18,16 @@ query GetPersonPage(
       name
     }
 
+    personFediverseAccounts: person_fediverse_accounts(
+      order_by: {
+        fediverse_acct: asc
+      }
+    ) {
+      id
+      fediverseAcct: fediverse_acct
+      name
+    }
+
     personNiconicoAccounts: person_niconico_accounts(
       order_by: {
         niconico_account_id: asc

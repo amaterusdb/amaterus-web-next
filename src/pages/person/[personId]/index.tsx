@@ -126,6 +126,43 @@ export default function PersonPage({ personId }: { personId: string }) {
           </Table>
         </Box>
         <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+          Fediverse
+        </Typography>
+        <Box sx={{ mt: 2 }}>
+          <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
+            <TableHead>
+              <TableRow>
+                <TableCell>アカウント</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {person.personFediverseAccounts.map((personFediverseAccount) => {
+                const fediverseAcct = personFediverseAccount.fediverseAcct // @example@example.com
+                const fediverseAcctSplit = fediverseAcct.split(/@/, 3)
+                const fediverseAcctUser = fediverseAcctSplit[1] ?? ''
+                const fediverseAcctDomain = fediverseAcctSplit[2] ?? ''
+
+                return (
+                  <TableRow
+                    key={personFediverseAccount.id}
+                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                  >
+                    <TableCell component='th' scope='row'>
+                      <NextLink
+                        href={`https://${fediverseAcctDomain}/@${fediverseAcctUser}`}
+                        passHref
+                        legacyBehavior
+                      >
+                        <MuiLink>{fediverseAcct}</MuiLink>
+                      </NextLink>
+                    </TableCell>
+                  </TableRow>
+                )
+              })}
+            </TableBody>
+          </Table>
+        </Box>
+        <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
           ニコニコ動画
         </Typography>
         <Box sx={{ mt: 2 }}>
