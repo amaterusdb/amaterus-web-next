@@ -5,9 +5,9 @@ import { parseISO, format } from 'date-fns'
 import { createApolloClient } from '@/lib/apollo'
 import { useGetRoomPageQuery, GetRoomPageStaticParamDocument, GetRoomPageStaticParamQueryResult } from '@/generated/graphql'
 
-export async function generateStaticParams() {
+export async function getStaticPaths() {
   const apolloClient = createApolloClient()
-  
+
   const { data } = await apolloClient.query<GetRoomPageStaticParamQueryResult>({
     query: GetRoomPageStaticParamDocument
   })
@@ -16,9 +16,16 @@ export async function generateStaticParams() {
     throw Error()
   }
 
-  return rooms.map(room => ({
-    roomId: String(room.id),
+  const paths = rooms.map(room => ({
+    params: {
+      roomId: String(room.id),
+    },
   }))
+
+  return {
+    paths,
+    fallback: false,
+  }
 }
 
 export default function RoomPage({

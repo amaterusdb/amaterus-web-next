@@ -1,11 +1,35 @@
 import DrawerAppBar from '@/components/drawer_app_bar'
 import { Box, Table, TableBody, TableCell, TableHead, TableRow, Toolbar, Typography } from '@mui/material'
-import { useGetMatchPageQuery } from '@/generated/graphql'
+import { GetMatchPageStaticParamDocument, GetMatchPageStaticParamQueryResult, useGetMatchPageQuery } from '@/generated/graphql'
 import Link from 'next/link'
 import { parseISO, format, intervalToDuration } from 'date-fns'
+import { createApolloClient } from '@/lib/apollo'
 
 
-export default function PersonPage({
+export async function getStaticPaths() {
+  const apolloClient = createApolloClient()
+
+  const { data } = await apolloClient.query<GetMatchPageStaticParamQueryResult>({
+    query: GetMatchPageStaticParamDocument
+  })
+  const matches = data.data?.matches
+  if (matches == null) {
+    throw Error()
+  }
+
+  const paths = matches.map(match => ({
+    params: {
+      matchId: String(match.id),
+    },
+  }))
+
+  return {
+    paths,
+    fallback: false,
+  }
+}
+
+export default function MatchPage({
   params
 }: {
   params: {

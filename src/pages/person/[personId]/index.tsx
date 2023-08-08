@@ -1,8 +1,31 @@
 import DrawerAppBar from '@/components/drawer_app_bar'
 import { Box, Table, TableBody, TableCell, TableHead, TableRow, Toolbar, Typography } from '@mui/material'
-import { useGetPersonPageQuery } from '@/generated/graphql'
+import { GetPersonPageStaticParamQueryResult, useGetPersonPageQuery, GetPersonPageStaticParamDocument } from '@/generated/graphql'
 import Link from 'next/link'
+import { createApolloClient } from '@/lib/apollo'
 
+export async function getStaticPaths() {
+  const apolloClient = createApolloClient()
+
+  const { data } = await apolloClient.query<GetPersonPageStaticParamQueryResult>({
+    query: GetPersonPageStaticParamDocument
+  })
+  const persons = data.data?.persons
+  if (persons == null) {
+    throw Error()
+  }
+
+  const paths = persons.map(person => ({
+    params: {
+      personId: String(person.id),
+    },
+  }))
+
+  return {
+    paths,
+    fallback: false,
+  }
+}
 
 export default function PersonPage({
   params

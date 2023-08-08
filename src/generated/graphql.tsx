@@ -15,7 +15,6 @@ export type Scalars = {
   Boolean: { input: boolean; output: boolean; }
   Int: { input: number; output: number; }
   Float: { input: number; output: number; }
-  bigint: { input: any; output: any; }
   timestamptz: { input: any; output: any; }
   uuid: { input: any; output: any; }
 };
@@ -77,19 +76,6 @@ export type String_Comparison_Exp = {
   _regex?: InputMaybe<Scalars['String']['input']>;
   /** does the column match the given SQL regular expression */
   _similar?: InputMaybe<Scalars['String']['input']>;
-};
-
-/** Boolean expression to compare columns of type "bigint". All fields are combined with logical 'AND'. */
-export type Bigint_Comparison_Exp = {
-  _eq?: InputMaybe<Scalars['bigint']['input']>;
-  _gt?: InputMaybe<Scalars['bigint']['input']>;
-  _gte?: InputMaybe<Scalars['bigint']['input']>;
-  _in?: InputMaybe<Array<Scalars['bigint']['input']>>;
-  _is_null?: InputMaybe<Scalars['Boolean']['input']>;
-  _lt?: InputMaybe<Scalars['bigint']['input']>;
-  _lte?: InputMaybe<Scalars['bigint']['input']>;
-  _neq?: InputMaybe<Scalars['bigint']['input']>;
-  _nin?: InputMaybe<Array<Scalars['bigint']['input']>>;
 };
 
 /** ordering argument of a cursor */
@@ -3455,12 +3441,12 @@ export type Room_Twitter_Announcements = {
   room: Rooms;
   room_id: Scalars['uuid']['output'];
   tweet_embed_html?: Maybe<Scalars['String']['output']>;
-  tweet_id: Scalars['bigint']['output'];
+  tweet_id: Scalars['String']['output'];
   tweet_image_index?: Maybe<Scalars['Int']['output']>;
   tweet_image_url?: Maybe<Scalars['String']['output']>;
   tweet_time?: Maybe<Scalars['timestamptz']['output']>;
   twitter_screen_name?: Maybe<Scalars['String']['output']>;
-  twitter_user_id?: Maybe<Scalars['bigint']['output']>;
+  twitter_user_id?: Maybe<Scalars['String']['output']>;
   updated_at: Scalars['timestamptz']['output'];
 };
 
@@ -3530,16 +3516,12 @@ export type Room_Twitter_Announcements_Arr_Rel_Insert_Input = {
 /** aggregate avg on columns */
 export type Room_Twitter_Announcements_Avg_Fields = {
   __typename?: 'room_twitter_announcements_avg_fields';
-  tweet_id?: Maybe<Scalars['Float']['output']>;
   tweet_image_index?: Maybe<Scalars['Float']['output']>;
-  twitter_user_id?: Maybe<Scalars['Float']['output']>;
 };
 
 /** order by avg() on columns of table "room_twitter_announcements" */
 export type Room_Twitter_Announcements_Avg_Order_By = {
-  tweet_id?: InputMaybe<Order_By>;
   tweet_image_index?: InputMaybe<Order_By>;
-  twitter_user_id?: InputMaybe<Order_By>;
 };
 
 /** Boolean expression to filter rows from the table "room_twitter_announcements". All fields are combined with a logical 'AND'. */
@@ -3552,12 +3534,12 @@ export type Room_Twitter_Announcements_Bool_Exp = {
   room?: InputMaybe<Rooms_Bool_Exp>;
   room_id?: InputMaybe<Uuid_Comparison_Exp>;
   tweet_embed_html?: InputMaybe<String_Comparison_Exp>;
-  tweet_id?: InputMaybe<Bigint_Comparison_Exp>;
+  tweet_id?: InputMaybe<String_Comparison_Exp>;
   tweet_image_index?: InputMaybe<Int_Comparison_Exp>;
   tweet_image_url?: InputMaybe<String_Comparison_Exp>;
   tweet_time?: InputMaybe<Timestamptz_Comparison_Exp>;
   twitter_screen_name?: InputMaybe<String_Comparison_Exp>;
-  twitter_user_id?: InputMaybe<Bigint_Comparison_Exp>;
+  twitter_user_id?: InputMaybe<String_Comparison_Exp>;
   updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
 };
 
@@ -3571,9 +3553,7 @@ export enum Room_Twitter_Announcements_Constraint {
 
 /** input type for incrementing numeric columns in table "room_twitter_announcements" */
 export type Room_Twitter_Announcements_Inc_Input = {
-  tweet_id?: InputMaybe<Scalars['bigint']['input']>;
   tweet_image_index?: InputMaybe<Scalars['Int']['input']>;
-  twitter_user_id?: InputMaybe<Scalars['bigint']['input']>;
 };
 
 /** input type for inserting data into table "room_twitter_announcements" */
@@ -3583,12 +3563,12 @@ export type Room_Twitter_Announcements_Insert_Input = {
   room?: InputMaybe<Rooms_Obj_Rel_Insert_Input>;
   room_id?: InputMaybe<Scalars['uuid']['input']>;
   tweet_embed_html?: InputMaybe<Scalars['String']['input']>;
-  tweet_id?: InputMaybe<Scalars['bigint']['input']>;
+  tweet_id?: InputMaybe<Scalars['String']['input']>;
   tweet_image_index?: InputMaybe<Scalars['Int']['input']>;
   tweet_image_url?: InputMaybe<Scalars['String']['input']>;
   tweet_time?: InputMaybe<Scalars['timestamptz']['input']>;
   twitter_screen_name?: InputMaybe<Scalars['String']['input']>;
-  twitter_user_id?: InputMaybe<Scalars['bigint']['input']>;
+  twitter_user_id?: InputMaybe<Scalars['String']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
 };
 
@@ -3599,12 +3579,12 @@ export type Room_Twitter_Announcements_Max_Fields = {
   id?: Maybe<Scalars['uuid']['output']>;
   room_id?: Maybe<Scalars['uuid']['output']>;
   tweet_embed_html?: Maybe<Scalars['String']['output']>;
-  tweet_id?: Maybe<Scalars['bigint']['output']>;
+  tweet_id?: Maybe<Scalars['String']['output']>;
   tweet_image_index?: Maybe<Scalars['Int']['output']>;
   tweet_image_url?: Maybe<Scalars['String']['output']>;
   tweet_time?: Maybe<Scalars['timestamptz']['output']>;
   twitter_screen_name?: Maybe<Scalars['String']['output']>;
-  twitter_user_id?: Maybe<Scalars['bigint']['output']>;
+  twitter_user_id?: Maybe<Scalars['String']['output']>;
   updated_at?: Maybe<Scalars['timestamptz']['output']>;
 };
 
@@ -3630,12 +3610,12 @@ export type Room_Twitter_Announcements_Min_Fields = {
   id?: Maybe<Scalars['uuid']['output']>;
   room_id?: Maybe<Scalars['uuid']['output']>;
   tweet_embed_html?: Maybe<Scalars['String']['output']>;
-  tweet_id?: Maybe<Scalars['bigint']['output']>;
+  tweet_id?: Maybe<Scalars['String']['output']>;
   tweet_image_index?: Maybe<Scalars['Int']['output']>;
   tweet_image_url?: Maybe<Scalars['String']['output']>;
   tweet_time?: Maybe<Scalars['timestamptz']['output']>;
   twitter_screen_name?: Maybe<Scalars['String']['output']>;
-  twitter_user_id?: Maybe<Scalars['bigint']['output']>;
+  twitter_user_id?: Maybe<Scalars['String']['output']>;
   updated_at?: Maybe<Scalars['timestamptz']['output']>;
 };
 
@@ -3723,58 +3703,46 @@ export type Room_Twitter_Announcements_Set_Input = {
   id?: InputMaybe<Scalars['uuid']['input']>;
   room_id?: InputMaybe<Scalars['uuid']['input']>;
   tweet_embed_html?: InputMaybe<Scalars['String']['input']>;
-  tweet_id?: InputMaybe<Scalars['bigint']['input']>;
+  tweet_id?: InputMaybe<Scalars['String']['input']>;
   tweet_image_index?: InputMaybe<Scalars['Int']['input']>;
   tweet_image_url?: InputMaybe<Scalars['String']['input']>;
   tweet_time?: InputMaybe<Scalars['timestamptz']['input']>;
   twitter_screen_name?: InputMaybe<Scalars['String']['input']>;
-  twitter_user_id?: InputMaybe<Scalars['bigint']['input']>;
+  twitter_user_id?: InputMaybe<Scalars['String']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
 };
 
 /** aggregate stddev on columns */
 export type Room_Twitter_Announcements_Stddev_Fields = {
   __typename?: 'room_twitter_announcements_stddev_fields';
-  tweet_id?: Maybe<Scalars['Float']['output']>;
   tweet_image_index?: Maybe<Scalars['Float']['output']>;
-  twitter_user_id?: Maybe<Scalars['Float']['output']>;
 };
 
 /** order by stddev() on columns of table "room_twitter_announcements" */
 export type Room_Twitter_Announcements_Stddev_Order_By = {
-  tweet_id?: InputMaybe<Order_By>;
   tweet_image_index?: InputMaybe<Order_By>;
-  twitter_user_id?: InputMaybe<Order_By>;
 };
 
 /** aggregate stddev_pop on columns */
 export type Room_Twitter_Announcements_Stddev_Pop_Fields = {
   __typename?: 'room_twitter_announcements_stddev_pop_fields';
-  tweet_id?: Maybe<Scalars['Float']['output']>;
   tweet_image_index?: Maybe<Scalars['Float']['output']>;
-  twitter_user_id?: Maybe<Scalars['Float']['output']>;
 };
 
 /** order by stddev_pop() on columns of table "room_twitter_announcements" */
 export type Room_Twitter_Announcements_Stddev_Pop_Order_By = {
-  tweet_id?: InputMaybe<Order_By>;
   tweet_image_index?: InputMaybe<Order_By>;
-  twitter_user_id?: InputMaybe<Order_By>;
 };
 
 /** aggregate stddev_samp on columns */
 export type Room_Twitter_Announcements_Stddev_Samp_Fields = {
   __typename?: 'room_twitter_announcements_stddev_samp_fields';
-  tweet_id?: Maybe<Scalars['Float']['output']>;
   tweet_image_index?: Maybe<Scalars['Float']['output']>;
-  twitter_user_id?: Maybe<Scalars['Float']['output']>;
 };
 
 /** order by stddev_samp() on columns of table "room_twitter_announcements" */
 export type Room_Twitter_Announcements_Stddev_Samp_Order_By = {
-  tweet_id?: InputMaybe<Order_By>;
   tweet_image_index?: InputMaybe<Order_By>;
-  twitter_user_id?: InputMaybe<Order_By>;
 };
 
 /** Streaming cursor of the table "room_twitter_announcements" */
@@ -3791,28 +3759,24 @@ export type Room_Twitter_Announcements_Stream_Cursor_Value_Input = {
   id?: InputMaybe<Scalars['uuid']['input']>;
   room_id?: InputMaybe<Scalars['uuid']['input']>;
   tweet_embed_html?: InputMaybe<Scalars['String']['input']>;
-  tweet_id?: InputMaybe<Scalars['bigint']['input']>;
+  tweet_id?: InputMaybe<Scalars['String']['input']>;
   tweet_image_index?: InputMaybe<Scalars['Int']['input']>;
   tweet_image_url?: InputMaybe<Scalars['String']['input']>;
   tweet_time?: InputMaybe<Scalars['timestamptz']['input']>;
   twitter_screen_name?: InputMaybe<Scalars['String']['input']>;
-  twitter_user_id?: InputMaybe<Scalars['bigint']['input']>;
+  twitter_user_id?: InputMaybe<Scalars['String']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
 };
 
 /** aggregate sum on columns */
 export type Room_Twitter_Announcements_Sum_Fields = {
   __typename?: 'room_twitter_announcements_sum_fields';
-  tweet_id?: Maybe<Scalars['bigint']['output']>;
   tweet_image_index?: Maybe<Scalars['Int']['output']>;
-  twitter_user_id?: Maybe<Scalars['bigint']['output']>;
 };
 
 /** order by sum() on columns of table "room_twitter_announcements" */
 export type Room_Twitter_Announcements_Sum_Order_By = {
-  tweet_id?: InputMaybe<Order_By>;
   tweet_image_index?: InputMaybe<Order_By>;
-  twitter_user_id?: InputMaybe<Order_By>;
 };
 
 /** update columns of table "room_twitter_announcements" */
@@ -3853,46 +3817,34 @@ export type Room_Twitter_Announcements_Updates = {
 /** aggregate var_pop on columns */
 export type Room_Twitter_Announcements_Var_Pop_Fields = {
   __typename?: 'room_twitter_announcements_var_pop_fields';
-  tweet_id?: Maybe<Scalars['Float']['output']>;
   tweet_image_index?: Maybe<Scalars['Float']['output']>;
-  twitter_user_id?: Maybe<Scalars['Float']['output']>;
 };
 
 /** order by var_pop() on columns of table "room_twitter_announcements" */
 export type Room_Twitter_Announcements_Var_Pop_Order_By = {
-  tweet_id?: InputMaybe<Order_By>;
   tweet_image_index?: InputMaybe<Order_By>;
-  twitter_user_id?: InputMaybe<Order_By>;
 };
 
 /** aggregate var_samp on columns */
 export type Room_Twitter_Announcements_Var_Samp_Fields = {
   __typename?: 'room_twitter_announcements_var_samp_fields';
-  tweet_id?: Maybe<Scalars['Float']['output']>;
   tweet_image_index?: Maybe<Scalars['Float']['output']>;
-  twitter_user_id?: Maybe<Scalars['Float']['output']>;
 };
 
 /** order by var_samp() on columns of table "room_twitter_announcements" */
 export type Room_Twitter_Announcements_Var_Samp_Order_By = {
-  tweet_id?: InputMaybe<Order_By>;
   tweet_image_index?: InputMaybe<Order_By>;
-  twitter_user_id?: InputMaybe<Order_By>;
 };
 
 /** aggregate variance on columns */
 export type Room_Twitter_Announcements_Variance_Fields = {
   __typename?: 'room_twitter_announcements_variance_fields';
-  tweet_id?: Maybe<Scalars['Float']['output']>;
   tweet_image_index?: Maybe<Scalars['Float']['output']>;
-  twitter_user_id?: Maybe<Scalars['Float']['output']>;
 };
 
 /** order by variance() on columns of table "room_twitter_announcements" */
 export type Room_Twitter_Announcements_Variance_Order_By = {
-  tweet_id?: InputMaybe<Order_By>;
   tweet_image_index?: InputMaybe<Order_By>;
-  twitter_user_id?: InputMaybe<Order_By>;
 };
 
 /** columns and relationships of "room_youtube_lives" */
@@ -4932,12 +4884,22 @@ export type GetMatchPageQueryVariables = Exact<{
 
 export type GetMatchPageQuery = { __typename?: 'query_root', match?: { __typename?: 'matches', id: any, startTime: any, isAborted?: boolean | null, matchPlayers: Array<{ __typename?: 'match_players', id: any, nickname: string, person?: { __typename?: 'persons', id: any } | null }>, room: { __typename?: 'rooms', id: any, name: string, startTime?: any | null, roomYoutubeLives: Array<{ __typename?: 'room_youtube_lives', id: any, title?: string | null, youtubeVideoId: string, startTime?: any | null, person?: { __typename?: 'persons', id: any, name: string } | null }> } } | null };
 
+export type GetMatchPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetMatchPageStaticParamQuery = { __typename?: 'query_root', matches: Array<{ __typename?: 'matches', id: any }> };
+
 export type GetPersonPageQueryVariables = Exact<{
   personId: Scalars['uuid']['input'];
 }>;
 
 
 export type GetPersonPageQuery = { __typename?: 'query_root', person?: { __typename?: 'persons', id: any, name: string, personTwitterAccounts: Array<{ __typename?: 'person_twitter_accounts', id: any, twitter_screen_name: string, twitter_user_id?: string | null, name?: string | null }>, personNiconicoAccounts: Array<{ __typename?: 'person_niconico_accounts', id: any, niconico_account_id: number, name?: string | null }>, personNiconicoCommunities: Array<{ __typename?: 'person_niconico_communities', id: any, niconico_community_id: number, name?: string | null }>, personYoutubeChannels: Array<{ __typename?: 'person_youtube_channels', id: any, youtube_channel_id: string, youtube_channel_handle?: string | null, name?: string | null }>, roomPersons: Array<{ __typename?: 'room_persons', room: { __typename?: 'rooms', id: any, name: string, start_time?: any | null } }> } | null };
+
+export type GetPersonPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetPersonPageStaticParamQuery = { __typename?: 'query_root', persons: Array<{ __typename?: 'persons', id: any }> };
 
 export type GetRoomPageQueryVariables = Exact<{
   roomId: Scalars['uuid']['input'];
@@ -5016,6 +4978,40 @@ export function useGetMatchPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptio
 export type GetMatchPageQueryHookResult = ReturnType<typeof useGetMatchPageQuery>;
 export type GetMatchPageLazyQueryHookResult = ReturnType<typeof useGetMatchPageLazyQuery>;
 export type GetMatchPageQueryResult = Apollo.QueryResult<GetMatchPageQuery, GetMatchPageQueryVariables>;
+export const GetMatchPageStaticParamDocument = gql`
+    query GetMatchPageStaticParam {
+  matches {
+    id
+  }
+}
+    `;
+
+/**
+ * __useGetMatchPageStaticParamQuery__
+ *
+ * To run a query within a React component, call `useGetMatchPageStaticParamQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetMatchPageStaticParamQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetMatchPageStaticParamQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetMatchPageStaticParamQuery(baseOptions?: Apollo.QueryHookOptions<GetMatchPageStaticParamQuery, GetMatchPageStaticParamQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetMatchPageStaticParamQuery, GetMatchPageStaticParamQueryVariables>(GetMatchPageStaticParamDocument, options);
+      }
+export function useGetMatchPageStaticParamLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetMatchPageStaticParamQuery, GetMatchPageStaticParamQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetMatchPageStaticParamQuery, GetMatchPageStaticParamQueryVariables>(GetMatchPageStaticParamDocument, options);
+        }
+export type GetMatchPageStaticParamQueryHookResult = ReturnType<typeof useGetMatchPageStaticParamQuery>;
+export type GetMatchPageStaticParamLazyQueryHookResult = ReturnType<typeof useGetMatchPageStaticParamLazyQuery>;
+export type GetMatchPageStaticParamQueryResult = Apollo.QueryResult<GetMatchPageStaticParamQuery, GetMatchPageStaticParamQueryVariables>;
 export const GetPersonPageDocument = gql`
     query GetPersonPage($personId: uuid!) {
   person: persons_by_pk(id: $personId) {
@@ -5087,6 +5083,40 @@ export function useGetPersonPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOpti
 export type GetPersonPageQueryHookResult = ReturnType<typeof useGetPersonPageQuery>;
 export type GetPersonPageLazyQueryHookResult = ReturnType<typeof useGetPersonPageLazyQuery>;
 export type GetPersonPageQueryResult = Apollo.QueryResult<GetPersonPageQuery, GetPersonPageQueryVariables>;
+export const GetPersonPageStaticParamDocument = gql`
+    query GetPersonPageStaticParam {
+  persons {
+    id
+  }
+}
+    `;
+
+/**
+ * __useGetPersonPageStaticParamQuery__
+ *
+ * To run a query within a React component, call `useGetPersonPageStaticParamQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetPersonPageStaticParamQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetPersonPageStaticParamQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetPersonPageStaticParamQuery(baseOptions?: Apollo.QueryHookOptions<GetPersonPageStaticParamQuery, GetPersonPageStaticParamQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetPersonPageStaticParamQuery, GetPersonPageStaticParamQueryVariables>(GetPersonPageStaticParamDocument, options);
+      }
+export function useGetPersonPageStaticParamLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetPersonPageStaticParamQuery, GetPersonPageStaticParamQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetPersonPageStaticParamQuery, GetPersonPageStaticParamQueryVariables>(GetPersonPageStaticParamDocument, options);
+        }
+export type GetPersonPageStaticParamQueryHookResult = ReturnType<typeof useGetPersonPageStaticParamQuery>;
+export type GetPersonPageStaticParamLazyQueryHookResult = ReturnType<typeof useGetPersonPageStaticParamLazyQuery>;
+export type GetPersonPageStaticParamQueryResult = Apollo.QueryResult<GetPersonPageStaticParamQuery, GetPersonPageStaticParamQueryVariables>;
 export const GetRoomPageDocument = gql`
     query GetRoomPage($roomId: uuid!) {
   room: rooms_by_pk(id: $roomId) {
