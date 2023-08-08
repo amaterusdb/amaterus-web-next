@@ -84,7 +84,7 @@ export default function PrivacyPolicyPage() {
           </NextLink>
           」をご参照ください。
         </Typography>
-        <Typography variant='h5' component='h3' sx={{ mt: 5 }}>
+        <Typography variant='h5' component='h3' sx={{ mt: 6 }}>
           YouTubeの投稿を埋め込む機能について
         </Typography>
         <Typography sx={{ mt: 2 }}>
@@ -125,14 +125,14 @@ export default function PrivacyPolicyPage() {
           </NextLink>
           」をご参照ください。
         </Typography>
-        <Typography variant='h5' component='h3' sx={{ mt: 5 }}>
+        <Typography variant='h5' component='h3' sx={{ mt: 6 }}>
           Twitter（X）の投稿を埋め込む機能について
         </Typography>
         <Typography sx={{ mt: 2 }}>
           このウェブサイト/アプリでは、Twitter（X）の投稿を埋め込む機能を使用して、関連する情報やコンテンツを提供しています。
           以下では、この機能に関する情報をお知らせします。
         </Typography>
-        <Typography variant='h6' component='h4' sx={{ mt: 3 }}>
+        <Typography variant='h6' component='h4' sx={{ mt: 4 }}>
           埋め込み機能の目的
         </Typography>
         <Typography sx={{ mt: 2 }}>
@@ -146,7 +146,7 @@ export default function PrivacyPolicyPage() {
           埋め込まれたTwitter（X）投稿に関するデータは、このウェブサイト/アプリのサーバーではなく、Twitter（X）のサーバーから直接取得されます。
           この際、ユーザーのウェブブラウジングに関する情報（たとえば、IPアドレスや閲覧履歴）が、Twitter（X）と共有される可能性があります。
         </Typography>
-        <Typography variant='h6' component='h4' sx={{ mt: 3 }}>
+        <Typography variant='h6' component='h4' sx={{ mt: 4 }}>
           Twitter（X）のプライバシーポリシー
         </Typography>
         <Typography sx={{ mt: 2 }}>
