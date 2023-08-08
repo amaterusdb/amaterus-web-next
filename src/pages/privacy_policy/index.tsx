@@ -82,7 +82,7 @@ export default function PrivacyPolicyPage() {
           Twitter（X）の投稿を埋め込む機能について
         </Typography>
         <Typography sx={{ mt: 2 }}>
-          このウェブサイト/アプリでは、Twitter（X）の投稿を埋め込む機能を利用して、関連する情報やコンテンツを提供しています。
+          このウェブサイト/アプリでは、Twitter（X）の投稿を埋め込む機能を使用して、関連する情報やコンテンツを提供しています。
           以下では、この機能に関する情報をお知らせします。
         </Typography>
         <Typography variant='h6' component='h4' sx={{ mt: 3 }}>
