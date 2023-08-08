@@ -1,8 +1,8 @@
-import DrawerAppBar from '@/components/drawer_app_bar'
 import { Box, Table, TableBody, TableCell, TableHead, TableRow, Toolbar, Typography } from '@mui/material'
-import { GetMatchPageStaticParamDocument, GetMatchPageStaticParamQuery, useGetMatchPageQuery } from '@/generated/graphql'
-import Link from 'next/link'
 import { parseISO, format, intervalToDuration } from 'date-fns'
+import Link from 'next/link'
+import DrawerAppBar from '@/components/drawer_app_bar'
+import { GetMatchPageStaticParamDocument, GetMatchPageStaticParamQuery, useGetMatchPageQuery } from '@/generated/graphql'
 import { createApolloClient } from '@/lib/apollo'
 
 
