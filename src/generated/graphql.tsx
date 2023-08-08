@@ -4906,7 +4906,7 @@ export type GetRoomPageQueryVariables = Exact<{
 }>;
 
 
-export type GetRoomPageQuery = { __typename?: 'query_root', room?: { __typename?: 'rooms', id: any, name: string, startTime?: any | null, endTime?: any | null, roomPersons: Array<{ __typename?: 'room_persons', person: { __typename?: 'persons', id: any, name: string } }>, roomYouTubeLives: Array<{ __typename?: 'room_youtube_lives', id: any, title?: string | null, youtubeVideoId: string, person?: { __typename?: 'persons', id: any, name: string } | null }>, matches: Array<{ __typename?: 'matches', id: any, start_time: any }> } | null };
+export type GetRoomPageQuery = { __typename?: 'query_root', room?: { __typename?: 'rooms', id: any, name: string, startTime?: any | null, endTime?: any | null, roomTwitterAnnouncements: Array<{ __typename?: 'room_twitter_announcements', id: any, tweetId: string }>, roomPersons: Array<{ __typename?: 'room_persons', person: { __typename?: 'persons', id: any, name: string } }>, roomYouTubeLives: Array<{ __typename?: 'room_youtube_lives', id: any, title?: string | null, youtubeVideoId: string, person?: { __typename?: 'persons', id: any, name: string } | null }>, matches: Array<{ __typename?: 'matches', id: any, start_time: any }> } | null };
 
 export type GetRoomPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -5124,6 +5124,10 @@ export const GetRoomPageDocument = gql`
     name
     startTime: start_time
     endTime: end_time
+    roomTwitterAnnouncements: room_twitter_announcements {
+      id
+      tweetId: tweet_id
+    }
     roomPersons: room_persons(order_by: {person: {name: asc}}) {
       person {
         id

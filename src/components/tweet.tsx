@@ -1,21 +1,21 @@
 // based on https://zenn.dev/ciffelia/articles/next-embed-tweet
 import React, { useEffect, useRef } from 'react'
 
-export const Tweet: React.FC<{ id: string }> = ({ id }) => {
+export const Tweet: React.FC<{ tweetId: string }> = ({ tweetId }) => {
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     // @ts-expect-error
     window.twttr?.widgets.load(ref.current)
-  }, [id])
+  }, [tweetId])
 
-  return <div dangerouslySetInnerHTML={{ __html: generateEmbedHtml(id) }} ref={ref} />
+  return <div dangerouslySetInnerHTML={{ __html: generateEmbedHtml(tweetId) }} ref={ref} />
 }
 
-const generateEmbedHtml = (id: string): string => {
-  if (!/^\d+$/u.test(id)) {
-    throw new Error(`Invalid tweet ID: ${id}`)
+const generateEmbedHtml = (tweetId: string): string => {
+  if (!/^\d+$/u.test(tweetId)) {
+    throw new Error(`Invalid tweet ID: ${tweetId}`)
   }
 
-  return `<blockquote class="twitter-tweet"><a href="https://twitter.com/i/status/${id}"></a></blockquote>`
+  return `<blockquote class="twitter-tweet"><a href="https://twitter.com/i/status/${tweetId}"></a></blockquote>`
 }

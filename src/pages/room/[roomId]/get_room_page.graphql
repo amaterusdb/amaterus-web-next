@@ -8,7 +8,12 @@ query GetRoomPage(
     name
     startTime: start_time
     endTime: end_time
-    
+
+    roomTwitterAnnouncements: room_twitter_announcements {
+      id
+      tweetId: tweet_id
+    }
+
     roomPersons: room_persons(
       order_by: {
         person: {

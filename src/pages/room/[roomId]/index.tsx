@@ -13,6 +13,7 @@ import {
 import { parseISO, format } from 'date-fns'
 import NextLink from 'next/link'
 import DrawerAppBar from '@/components/drawer_app_bar'
+import { Tweet } from '@/components/tweet'
 import {
   useGetRoomPageQuery,
   GetRoomPageStaticParamDocument,
@@ -99,6 +100,14 @@ export default function RoomPage({ roomId }: { roomId: string }) {
         <Typography variant='body1' sx={{ mt: 2 }}>
           開催日時: {format(parseISO(room.startTime), 'yyyy-MM-dd HH:mm')}
         </Typography>
+        <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+          告知
+        </Typography>
+        {room.roomTwitterAnnouncements.map((roomTwitterAnnouncement) => (
+          <Box key={roomTwitterAnnouncement.id} sx={{ mt: 2 }}>
+            <Tweet tweetId={roomTwitterAnnouncement.tweetId} />
+          </Box>
+        ))}
         <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
           参加者
         </Typography>
