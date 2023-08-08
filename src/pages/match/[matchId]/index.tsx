@@ -109,6 +109,44 @@ export default function MatchPage({ matchId }: { matchId: string }) {
           試合 {format(parseISO(match.startTime), 'yyyy-MM-dd HH:mm:ss')}
         </Typography>
         <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+          プレイヤー
+        </Typography>
+        <Box sx={{ mt: 2 }}>
+          <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
+            <TableHead>
+              <TableRow>
+                <TableCell>名前</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {match.matchPlayers.map((matchPlayer) => {
+                return (
+                  <TableRow
+                    key={matchPlayer.id}
+                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                  >
+                    <TableCell component='th' scope='row'>
+                      <Typography>
+                        {matchPlayer.person?.id != null ? (
+                          <NextLink
+                            href={`/person/${matchPlayer.person?.id}`}
+                            passHref
+                            legacyBehavior
+                          >
+                            <MuiLink>{matchPlayer.nickname}</MuiLink>
+                          </NextLink>
+                        ) : (
+                          <>{matchPlayer.nickname}</>
+                        )}
+                      </Typography>
+                    </TableCell>
+                  </TableRow>
+                )
+              })}
+            </TableBody>
+          </Table>
+        </Box>
+        <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
           放送アーカイブ
         </Typography>
         <Box sx={{ mt: 2 }}>
