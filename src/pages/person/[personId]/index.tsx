@@ -2,7 +2,6 @@ import DrawerAppBar from '@/components/drawer_app_bar'
 import { Box, Table, TableBody, TableCell, TableHead, TableRow, Toolbar, Typography } from '@mui/material'
 import { useGetPersonPageQuery } from '@/generated/graphql'
 import Link from 'next/link'
-import { parseISO, format } from 'date-fns'
 
 
 export default function PersonPage({
