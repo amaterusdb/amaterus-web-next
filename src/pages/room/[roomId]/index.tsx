@@ -180,7 +180,9 @@ export default function RoomPage({ roomId }: { roomId: string }) {
                   <TableCell>
                     {match.start_time != null ? (
                       <NextLink href={`/match/${match.id}/`} passHref>
-                        <MuiLink>{format(parseISO(match.start_time), 'yyyy-MM-dd HH:mm:ss')}</MuiLink>
+                        <MuiLink>
+                          {format(parseISO(match.start_time), 'yyyy-MM-dd HH:mm:ss')}
+                        </MuiLink>
                       </NextLink>
                     ) : (
                       ''
