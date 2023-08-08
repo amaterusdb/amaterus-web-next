@@ -68,7 +68,7 @@ export default function PrivacyPolicyPage() {
           Googleのプライバシーポリシー
         </Typography>
         <Typography sx={{ mt: 2 }}>
-          Googleによるデータ収集や処理についての詳細は、
+          Googleによるデータ収集や処理についての詳細は、「
           <NextLink
             href='https://policies.google.com/technologies/partner-sites'
             passHref
@@ -78,11 +78,11 @@ export default function PrivacyPolicyPage() {
               Googleのサービスを使用するサイトやアプリから収集した情報のGoogleによる使用
             </MuiLink>
           </NextLink>
-          や
+          」や「
           <NextLink href='https://policies.google.com/privacy' passHref legacyBehavior>
             <MuiLink>Googleのプライバシーポリシー</MuiLink>
           </NextLink>
-          をご参照ください。
+          」をご参照ください。
         </Typography>
         <Typography variant='h5' component='h3' sx={{ mt: 5 }}>
           YouTubeの投稿を埋め込む機能について
@@ -109,7 +109,7 @@ export default function PrivacyPolicyPage() {
           YouTube/Googleのプライバシーポリシー
         </Typography>
         <Typography sx={{ mt: 2 }}>
-          YouTube/Googleによるデータ収集や処理についての詳細は、
+          YouTube/Googleによるデータ収集や処理についての詳細は、「
           <NextLink
             href='https://policies.google.com/technologies/partner-sites'
             passHref
@@ -119,11 +119,11 @@ export default function PrivacyPolicyPage() {
               Googleのサービスを使用するサイトやアプリから収集した情報のGoogleによる使用
             </MuiLink>
           </NextLink>
-          や
+          」や「
           <NextLink href='https://policies.google.com/privacy' passHref legacyBehavior>
             <MuiLink>Googleのプライバシーポリシー</MuiLink>
           </NextLink>
-          をご参照ください。
+          」をご参照ください。
         </Typography>
         <Typography variant='h5' component='h3' sx={{ mt: 5 }}>
           Twitter（X）の投稿を埋め込む機能について
@@ -150,11 +150,11 @@ export default function PrivacyPolicyPage() {
           Twitter（X）のプライバシーポリシー
         </Typography>
         <Typography sx={{ mt: 2 }}>
-          Twitter（X）によるデータ収集や処理についての詳細は、
+          Twitter（X）によるデータ収集や処理についての詳細は、「
           <NextLink href='https://twitter.com/privacy' passHref legacyBehavior>
             <MuiLink>Twitter（X）のプライバシーポリシー</MuiLink>
           </NextLink>
-          をご参照ください。
+          」をご参照ください。
         </Typography>
       </Box>
     </>
