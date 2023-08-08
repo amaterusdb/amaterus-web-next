@@ -79,7 +79,7 @@ export default function PrivacyPolicyPage() {
           をご参照ください。
         </Typography>
         <Typography variant='h5' component='h3' sx={{ mt: 5 }}>
-          Twitter（X）の投稿を埋め込む機能の使用について
+          Twitter（X）の投稿を埋め込む機能について
         </Typography>
         <Typography sx={{ mt: 2 }}>
           このウェブサイト/アプリでは、Twitter（X）の投稿を埋め込む機能を利用して、関連する情報やコンテンツを提供しています。
