@@ -66,7 +66,7 @@ export default function DrawerAppBar() {
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
             <Link
-              href='/room/'
+              href='/'
               style={{
                 color: 'inherit',
                 textDecoration: 'inherit',
