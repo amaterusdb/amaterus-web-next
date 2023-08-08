@@ -45,19 +45,17 @@ export default function RoomListPage() {
             </TableHead>
             <TableBody>
               {rooms?.map((room) => (
-                <>
-                  <TableRow
-                    key={room.id}
-                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                  >
-                    <TableCell component='th' scope='row'>
-                      <NextLink href={`/room/${room.id}/`} passHref legacyBehavior>
-                        <MuiLink>{room.name}</MuiLink>
-                      </NextLink>
-                    </TableCell>
-                    <TableCell>{format(parseISO(room.startTime), 'yyyy-MM-dd HH:mm')}</TableCell>
-                  </TableRow>
-                </>
+                <TableRow
+                  key={room.id}
+                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                >
+                  <TableCell component='th' scope='row'>
+                    <NextLink href={`/room/${room.id}/`} passHref legacyBehavior>
+                      <MuiLink>{room.name}</MuiLink>
+                    </NextLink>
+                  </TableCell>
+                  <TableCell>{format(parseISO(room.startTime), 'yyyy-MM-dd HH:mm')}</TableCell>
+                </TableRow>
               ))}
             </TableBody>
           </Table>
