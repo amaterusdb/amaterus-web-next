@@ -116,6 +116,7 @@ export default function MatchPage({ matchId }: { matchId: string }) {
             <TableHead>
               <TableRow>
                 <TableCell>放送タイトル</TableCell>
+                <TableCell>放送者</TableCell>
                 <TableCell>開始時間</TableCell>
               </TableRow>
             </TableHead>
@@ -144,6 +145,15 @@ export default function MatchPage({ matchId }: { matchId: string }) {
                       >
                         <MuiLink>{roomYoutubeLive.title}</MuiLink>
                       </NextLink>
+                    </TableCell>
+                    <TableCell>
+                      {roomYoutubeLive.person != null ? (
+                        <NextLink href={`/person/${roomYoutubeLive.person.id}/`} passHref>
+                          <MuiLink>{roomYoutubeLive.person.name}</MuiLink>
+                        </NextLink>
+                      ) : (
+                        ''
+                      )}
                     </TableCell>
                     <TableCell component='th' scope='row'>
                       <NextLink
