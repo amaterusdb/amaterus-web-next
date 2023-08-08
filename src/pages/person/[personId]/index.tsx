@@ -92,7 +92,7 @@ export default function PersonPage({ personId }: { personId: string }) {
           </NextLink>
           <Typography color='text.primary'>{person.name}</Typography>
         </Breadcrumbs>
-        <Typography variant='h4' component='h2'>
+        <Typography variant='h4' component='h2' sx={{ mt: 2 }}>
           {person.name}
         </Typography>
         <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
