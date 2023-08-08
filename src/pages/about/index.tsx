@@ -31,7 +31,7 @@ export default function AboutPage() {
           サイト概要
         </Typography>
         <Typography sx={{ mt: 2 }}>
-          Amaterusは、ゲーム「Among Us」のプライベートゲームマッチに関する、
+          このウェブサイト「Amaterus」は、ゲーム「Among Us」のプライベートゲームマッチに関する、
           個人運営のファンサイトです。
         </Typography>
         <Typography sx={{ mt: 2 }}>
