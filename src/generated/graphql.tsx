@@ -5210,7 +5210,7 @@ export type GetRoomPageStaticParamLazyQueryHookResult = ReturnType<typeof useGet
 export type GetRoomPageStaticParamQueryResult = Apollo.QueryResult<GetRoomPageStaticParamQuery, GetRoomPageStaticParamQueryVariables>;
 export const GetRoomListPageDocument = gql`
     query GetRoomListPage {
-  rooms {
+  rooms(order_by: {start_time: desc}) {
     id
     name
     startTime: start_time

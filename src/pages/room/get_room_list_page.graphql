@@ -1,5 +1,9 @@
 query GetRoomListPage {
-  rooms {
+  rooms(
+    order_by: {
+      start_time: desc
+    }
+  ) {
     id
     name
     startTime: start_time
