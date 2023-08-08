@@ -4882,7 +4882,7 @@ export type GetMatchPageQueryVariables = Exact<{
 }>;
 
 
-export type GetMatchPageQuery = { __typename?: 'query_root', match?: { __typename?: 'matches', id: any, startTime: any, isAborted?: boolean | null, matchPlayers: Array<{ __typename?: 'match_players', id: any, nickname: string, person?: { __typename?: 'persons', id: any } | null }>, room: { __typename?: 'rooms', id: any, name: string, startTime?: any | null, roomYoutubeLives: Array<{ __typename?: 'room_youtube_lives', id: any, title?: string | null, youtubeVideoId: string, startTime?: any | null, person?: { __typename?: 'persons', id: any, name: string } | null }> } } | null };
+export type GetMatchPageQuery = { __typename?: 'query_root', match?: { __typename?: 'matches', id: any, startTime: any, endTime?: any | null, isAborted?: boolean | null, matchPlayers: Array<{ __typename?: 'match_players', id: any, nickname: string, person?: { __typename?: 'persons', id: any } | null }>, room: { __typename?: 'rooms', id: any, name: string, startTime?: any | null, roomYoutubeLives: Array<{ __typename?: 'room_youtube_lives', id: any, title?: string | null, youtubeVideoId: string, startTime?: any | null, person?: { __typename?: 'persons', id: any, name: string } | null }> } } | null };
 
 export type GetMatchPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -4924,6 +4924,7 @@ export const GetMatchPageDocument = gql`
   match: matches_by_pk(id: $matchId) {
     id
     startTime: start_time
+    endTime: end_time
     isAborted: is_aborted
     matchPlayers: match_players(order_by: {nickname: asc}) {
       id

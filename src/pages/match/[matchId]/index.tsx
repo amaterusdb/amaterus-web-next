@@ -157,20 +157,31 @@ export default function MatchPage({ matchId }: { matchId: string }) {
                 <TableCell>放送タイトル</TableCell>
                 <TableCell>放送者</TableCell>
                 <TableCell>開始時間</TableCell>
+                <TableCell>終了時間</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {match.room.roomYoutubeLives.map((roomYoutubeLive) => {
-                const duration = intervalToDuration({
+                const localStartTime = intervalToDuration({
                   start: parseISO(roomYoutubeLive.startTime),
                   end: parseISO(match.startTime),
                 })
+                const localEndTime = intervalToDuration({
+                  start: parseISO(roomYoutubeLive.startTime),
+                  end: parseISO(match.endTime),
+                })
 
-                const localStartTimeHours = duration.hours ?? 0
-                const localStartTimeMinutes = duration.minutes ?? 0
-                const localStartTimeSeconds = duration.seconds ?? 0
-                const localStartSeconds =
+                const localStartTimeHours = localStartTime.hours ?? 0
+                const localStartTimeMinutes = localStartTime.minutes ?? 0
+                const localStartTimeSeconds = localStartTime.seconds ?? 0
+                const localStartTimeTotalSeconds =
                   localStartTimeHours * 3600 + localStartTimeMinutes * 60 + localStartTimeSeconds
+
+                const localEndTimeHours = localEndTime.hours ?? 0
+                const localEndTimeMinutes = localEndTime.minutes ?? 0
+                const localEndTimeSeconds = localEndTime.seconds ?? 0
+                const localEndTimeTotalSeconds =
+                  localEndTimeHours * 3600 + localEndTimeMinutes * 60 + localEndTimeSeconds
 
                 return (
                   <TableRow
@@ -201,7 +212,7 @@ export default function MatchPage({ matchId }: { matchId: string }) {
                     </TableCell>
                     <TableCell component='th' scope='row'>
                       <NextLink
-                        href={`https://www.youtube.com/watch?v=${roomYoutubeLive.youtubeVideoId}&t=${localStartSeconds}s`}
+                        href={`https://www.youtube.com/watch?v=${roomYoutubeLive.youtubeVideoId}&t=${localStartTimeTotalSeconds}s`}
                         passHref
                         legacyBehavior
                       >
@@ -209,6 +220,19 @@ export default function MatchPage({ matchId }: { matchId: string }) {
                           {String(localStartTimeHours).padStart(2, '0')}:
                           {String(localStartTimeMinutes).padStart(2, '0')}:
                           {String(localStartTimeSeconds).padStart(2, '0')}
+                        </MuiLink>
+                      </NextLink>
+                    </TableCell>
+                    <TableCell component='th' scope='row'>
+                      <NextLink
+                        href={`https://www.youtube.com/watch?v=${roomYoutubeLive.youtubeVideoId}&t=${localEndTimeTotalSeconds}s`}
+                        passHref
+                        legacyBehavior
+                      >
+                        <MuiLink>
+                          {String(localEndTimeHours).padStart(2, '0')}:
+                          {String(localEndTimeMinutes).padStart(2, '0')}:
+                          {String(localEndTimeSeconds).padStart(2, '0')}
                         </MuiLink>
                       </NextLink>
                     </TableCell>
