@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix",
+    "format": "next lint --fix && prettier --write './**/*.{js,jsx,ts,tsx,json}'",
     "generate": "graphql-codegen --require dotenv/config --config codegen.js dotenv_config_path=.env.local"
   },
   "dependencies": {
