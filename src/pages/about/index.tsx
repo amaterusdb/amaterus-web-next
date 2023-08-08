@@ -41,6 +41,15 @@ export default function AboutPage() {
           免責事項
         </Typography>
         <Typography sx={{ mt: 2 }}>
+          このウェブサイト/アプリのコンテンツは、可能な限り正確な情報を提供するよう努めていますが、
+          情報の正確性、信頼性、完全性について保証するものではありません。
+          このウェブサイト/アプリを利用することで生じるいかなる損害やトラブルについても責任を負いかねます。
+        </Typography>
+        <Typography sx={{ mt: 2 }}>
+          このウェブサイト/アプリのコンテンツやデザインは予告なく変更されることがあります。
+          また、技術的な問題やその他の都合により、このウェブサイト/アプリの提供を一時的または恒久的に中断することがあることをご了承ください。
+        </Typography>
+        <Typography sx={{ mt: 2 }}>
           This site is not affiliated with Among Us or Innersloth LLC and is not endorsed otherwise
           sponsored by Innersloth LLC. Portions of the materials contained herein are property of
           Innersloth LLC. © Innersloth LLC.
