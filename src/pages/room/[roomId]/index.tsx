@@ -86,7 +86,7 @@ export default function RoomPage({ roomId }: { roomId: string }) {
               Amaterus
             </MuiLink>
           </NextLink>
-          <NextLink href='/' passHref legacyBehavior>
+          <NextLink href='/room/' passHref legacyBehavior>
             <MuiLink underline='hover' color='inherit'>
               部屋リスト
             </MuiLink>
