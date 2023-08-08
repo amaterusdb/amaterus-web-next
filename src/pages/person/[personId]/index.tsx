@@ -1,16 +1,16 @@
 import DrawerAppBar from '@/components/drawer_app_bar'
 import { Box, Table, TableBody, TableCell, TableHead, TableRow, Toolbar, Typography } from '@mui/material'
-import { GetPersonPageStaticParamQueryResult, useGetPersonPageQuery, GetPersonPageStaticParamDocument } from '@/generated/graphql'
+import { GetPersonPageStaticParamQuery, useGetPersonPageQuery, GetPersonPageStaticParamDocument } from '@/generated/graphql'
 import Link from 'next/link'
 import { createApolloClient } from '@/lib/apollo'
 
 export async function getStaticPaths() {
   const apolloClient = createApolloClient()
 
-  const { data } = await apolloClient.query<GetPersonPageStaticParamQueryResult>({
+  const { data } = await apolloClient.query<GetPersonPageStaticParamQuery>({
     query: GetPersonPageStaticParamDocument
   })
-  const persons = data.data?.persons
+  const persons = data?.persons
   if (persons == null) {
     throw Error("Invalid response for GetPersonPageStaticParamQuery")
   }

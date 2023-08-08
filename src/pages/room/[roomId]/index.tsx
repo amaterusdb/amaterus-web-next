@@ -3,15 +3,15 @@ import { Box, Table, TableBody, TableCell, TableHead, TableRow, Toolbar, Typogra
 import Link from 'next/link'
 import { parseISO, format } from 'date-fns'
 import { createApolloClient } from '@/lib/apollo'
-import { useGetRoomPageQuery, GetRoomPageStaticParamDocument, GetRoomPageStaticParamQueryResult, GetRoomPageQueryResult, GetRoomPageDocument } from '@/generated/graphql'
+import { useGetRoomPageQuery, GetRoomPageStaticParamDocument, GetRoomPageStaticParamQuery } from '@/generated/graphql'
 
 export async function getStaticPaths() {
   const apolloClient = createApolloClient()
 
-  const { data } = await apolloClient.query<GetRoomPageStaticParamQueryResult>({
+  const { data } = await apolloClient.query<GetRoomPageStaticParamQuery>({
     query: GetRoomPageStaticParamDocument
   })
-  const rooms = data.data?.rooms
+  const rooms = data?.rooms
   if (rooms == null) {
     throw Error("Invalid response for GetRoomPageStaticParamQuery")
   }

@@ -1,6 +1,6 @@
 import DrawerAppBar from '@/components/drawer_app_bar'
 import { Box, Table, TableBody, TableCell, TableHead, TableRow, Toolbar, Typography } from '@mui/material'
-import { GetMatchPageStaticParamDocument, GetMatchPageStaticParamQueryResult, useGetMatchPageQuery } from '@/generated/graphql'
+import { GetMatchPageStaticParamDocument, GetMatchPageStaticParamQuery, useGetMatchPageQuery } from '@/generated/graphql'
 import Link from 'next/link'
 import { parseISO, format, intervalToDuration } from 'date-fns'
 import { createApolloClient } from '@/lib/apollo'
@@ -9,10 +9,10 @@ import { createApolloClient } from '@/lib/apollo'
 export async function getStaticPaths() {
   const apolloClient = createApolloClient()
 
-  const { data } = await apolloClient.query<GetMatchPageStaticParamQueryResult>({
+  const { data } = await apolloClient.query<GetMatchPageStaticParamQuery>({
     query: GetMatchPageStaticParamDocument
   })
-  const matches = data.data?.matches
+  const matches = data?.matches
   if (matches == null) {
     throw Error("Invalid response for GetMatchPageStaticParamQuery")
   }
