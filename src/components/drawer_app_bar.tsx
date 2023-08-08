@@ -2,20 +2,23 @@
 
 // Based on https://mui.com/material-ui/react-app-bar/#responsive-app-bar-with-drawer
 import MenuIcon from '@mui/icons-material/Menu'
-import AppBar from '@mui/material/AppBar'
-import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
-import CssBaseline from '@mui/material/CssBaseline'
-import Divider from '@mui/material/Divider'
-import Drawer from '@mui/material/Drawer'
-import IconButton from '@mui/material/IconButton'
-import List from '@mui/material/List'
-import ListItem from '@mui/material/ListItem'
-import ListItemButton from '@mui/material/ListItemButton'
-import ListItemText from '@mui/material/ListItemText'
-import Toolbar from '@mui/material/Toolbar'
-import Typography from '@mui/material/Typography'
-import Link from 'next/link'
+import {
+  AppBar,
+  Box,
+  Button,
+  CssBaseline,
+  Divider,
+  Drawer,
+  IconButton,
+  List,
+  ListItem,
+  ListItemButton,
+  ListItemText,
+  Toolbar,
+  Typography,
+  Link as MuiLink,
+} from '@mui/material'
+import NextLink from 'next/link'
 import * as React from 'react'
 
 const drawerWidth = 240
@@ -65,15 +68,11 @@ export default function DrawerAppBar() {
             component='div'
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            <Link
-              href='/'
-              style={{
-                color: 'inherit',
-                textDecoration: 'inherit',
-              }}
-            >
-              Amaterus
-            </Link>
+            <NextLink href='/' passHref legacyBehavior>
+              <MuiLink underline='none' color='inherit'>
+                Amaterus
+              </MuiLink>
+            </NextLink>
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
