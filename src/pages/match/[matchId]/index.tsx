@@ -1,23 +1,35 @@
-import { Box, Table, TableBody, TableCell, TableHead, TableRow, Toolbar, Typography } from '@mui/material'
+import {
+  Box,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+  Toolbar,
+  Typography,
+} from '@mui/material'
 import { parseISO, format, intervalToDuration } from 'date-fns'
 import Link from 'next/link'
 import DrawerAppBar from '@/components/drawer_app_bar'
-import { GetMatchPageStaticParamDocument, GetMatchPageStaticParamQuery, useGetMatchPageQuery } from '@/generated/graphql'
+import {
+  GetMatchPageStaticParamDocument,
+  GetMatchPageStaticParamQuery,
+  useGetMatchPageQuery,
+} from '@/generated/graphql'
 import { createApolloClient } from '@/lib/apollo'
-
 
 export async function getStaticPaths() {
   const apolloClient = createApolloClient()
 
   const { data } = await apolloClient.query<GetMatchPageStaticParamQuery>({
-    query: GetMatchPageStaticParamDocument
+    query: GetMatchPageStaticParamDocument,
   })
   const matches = data?.matches
   if (matches == null) {
-    throw Error("Invalid response for GetMatchPageStaticParamQuery")
+    throw Error('Invalid response for GetMatchPageStaticParamQuery')
   }
 
-  const paths = matches.map(match => ({
+  const paths = matches.map((match) => ({
     params: {
       matchId: String(match.id),
     },
@@ -30,7 +42,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({
-  params
+  params,
 }: {
   params: {
     matchId: string
@@ -45,11 +57,7 @@ export async function getStaticProps({
   }
 }
 
-export default function MatchPage({
-  matchId
-}: {
-  matchId: string
-}) {
+export default function MatchPage({ matchId }: { matchId: string }) {
   const { data } = useGetMatchPageQuery({
     variables: {
       matchId,
@@ -61,18 +69,18 @@ export default function MatchPage({
   return (
     <>
       <DrawerAppBar />
-      <Box component="main" sx={{ p: 3 }}>
+      <Box component='main' sx={{ p: 3 }}>
         <Toolbar />
         {match != null ? (
           <>
-            <Typography variant="h4" component="h2">
-              {match.room.name} {format(parseISO(match.startTime), "yyyy-MM-dd HH:mm")}
+            <Typography variant='h4' component='h2'>
+              {match.room.name} {format(parseISO(match.startTime), 'yyyy-MM-dd HH:mm')}
             </Typography>
-            <Typography variant="h5" component="h3" sx={{ mt: 3 }}>
+            <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
               放送アーカイブ
             </Typography>
             <Box sx={{ mt: 2 }}>
-              <Table sx={{ minWidth: 650 }} size="small" aria-label="simple table">
+              <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
                 <TableHead>
                   <TableRow>
                     <TableCell>放送タイトル</TableCell>
@@ -80,30 +88,39 @@ export default function MatchPage({
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {match.room.roomYoutubeLives.map(roomYoutubeLive => {
+                  {match.room.roomYoutubeLives.map((roomYoutubeLive) => {
                     const duration = intervalToDuration({
                       start: parseISO(roomYoutubeLive.startTime),
                       end: parseISO(match.startTime),
                     })
 
-                    const localStartTimeHours = duration.hours ?? 0;
-                    const localStartTimeMinutes = duration.minutes ?? 0;
-                    const localStartTimeSeconds = duration.seconds ?? 0;
-                    const localStartSeconds = localStartTimeHours * 3600 + localStartTimeMinutes * 60 + localStartTimeSeconds;
+                    const localStartTimeHours = duration.hours ?? 0
+                    const localStartTimeMinutes = duration.minutes ?? 0
+                    const localStartTimeSeconds = duration.seconds ?? 0
+                    const localStartSeconds =
+                      localStartTimeHours * 3600 +
+                      localStartTimeMinutes * 60 +
+                      localStartTimeSeconds
 
                     return (
                       <TableRow
                         key={roomYoutubeLive.id}
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                       >
-                        <TableCell component="th" scope="row">
-                          <Link href={`https://www.youtube.com/watch?v=${roomYoutubeLive.youtubeVideoId}`}>
+                        <TableCell component='th' scope='row'>
+                          <Link
+                            href={`https://www.youtube.com/watch?v=${roomYoutubeLive.youtubeVideoId}`}
+                          >
                             {roomYoutubeLive.title}
                           </Link>
                         </TableCell>
-                        <TableCell component="th" scope="row">
-                          <Link href={`https://www.youtube.com/watch?v=${roomYoutubeLive.youtubeVideoId}&t=${localStartSeconds}s`}>
-                            {String(localStartTimeHours).padStart(2, "0")}:{String(localStartTimeMinutes).padStart(2, "0")}:{String(localStartTimeSeconds).padStart(2, "0")}
+                        <TableCell component='th' scope='row'>
+                          <Link
+                            href={`https://www.youtube.com/watch?v=${roomYoutubeLive.youtubeVideoId}&t=${localStartSeconds}s`}
+                          >
+                            {String(localStartTimeHours).padStart(2, '0')}:
+                            {String(localStartTimeMinutes).padStart(2, '0')}:
+                            {String(localStartTimeSeconds).padStart(2, '0')}
                           </Link>
                         </TableCell>
                       </TableRow>
@@ -113,7 +130,9 @@ export default function MatchPage({
               </Table>
             </Box>
           </>
-        ) : ""}
+        ) : (
+          ''
+        )}
       </Box>
     </>
   )
