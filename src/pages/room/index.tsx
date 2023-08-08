@@ -26,7 +26,7 @@ export default function RoomListPage() {
           部屋リスト
         </Typography>
         <Box sx={{ mt: 2 }}>
-          <Table sx={{ minWidth: 650 }} aria-label='simple table'>
+          <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
             <TableHead>
               <TableRow>
                 <TableCell>部屋名</TableCell>
