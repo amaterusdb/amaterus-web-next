@@ -22,7 +22,22 @@ import NextLink from 'next/link'
 import * as React from 'react'
 
 const drawerWidth = 240
-const navItems = ['Home', 'About', 'Contact']
+
+type NavItem = {
+  text: string
+  href: string
+}
+
+const navItems: NavItem[] = [
+  {
+    text: 'Home',
+    href: '/',
+  },
+  {
+    text: 'About',
+    href: 'https://twitter.com/aoirint',
+  },
+]
 
 export default function DrawerAppBar() {
   const [mobileOpen, setMobileOpen] = React.useState(false)
@@ -34,14 +49,24 @@ export default function DrawerAppBar() {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant='h6' sx={{ my: 2 }}>
-        Amaterus
+        <NextLink href='/' passHref legacyBehavior>
+          <MuiLink underline='none' color='inherit'>
+            Amaterus
+          </MuiLink>
+        </NextLink>
       </Typography>
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding>
+          <ListItem key={item.text} disablePadding>
             <ListItemButton sx={{ textAlign: 'center' }}>
-              <ListItemText primary={item} />
+              <ListItemText>
+                <NextLink href={item.href} passHref legacyBehavior>
+                  <MuiLink underline='none' color='inherit'>
+                    {item.text}
+                  </MuiLink>
+                </NextLink>
+              </ListItemText>
             </ListItemButton>
           </ListItem>
         ))}
@@ -76,8 +101,12 @@ export default function DrawerAppBar() {
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: '#fff' }}>
-                {item}
+              <Button key={item.text} sx={{ color: '#fff' }}>
+                <NextLink href={item.href} passHref legacyBehavior>
+                  <MuiLink underline='none' color='inherit'>
+                    {item.text}
+                  </MuiLink>
+                </NextLink>
               </Button>
             ))}
           </Box>
