@@ -128,7 +128,7 @@ export default function MatchPage({ matchId }: { matchId: string }) {
                     <TableCell component='th' scope='row'>
                       {matchPlayer.person?.id != null ? (
                         <NextLink
-                          href={`/person/${matchPlayer.person?.id}`}
+                          href={`/person/${matchPlayer.person.id}/`}
                           passHref
                           legacyBehavior
                         >
