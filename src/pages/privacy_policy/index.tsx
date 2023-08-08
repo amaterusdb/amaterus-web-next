@@ -64,6 +64,20 @@ export default function PrivacyPolicyPage() {
           多くのウェブブラウザは、クッキーの受け入れを制御するオプションを提供しています。
           ユーザーはブラウザの設定を変更してクッキーの使用を制限できますが、その場合、一部のウェブサイト/アプリの機能が制限される可能性があります。
         </Typography>
+        <Typography variant='h6' component='h4' sx={{ mt: 3 }}>
+          Googleのプライバシーポリシー
+        </Typography>
+        <Typography sx={{ mt: 2 }}>
+          Googleによるデータ収集や処理についての詳細は、
+          <NextLink
+            href='https://policies.google.com/technologies/partner-sites'
+            passHref
+            legacyBehavior
+          >
+            <MuiLink>Googleのプライバシーポリシー</MuiLink>
+          </NextLink>
+          をご参照ください。
+        </Typography>
         <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
           Twitter（X）の投稿を埋め込む機能の使用について
         </Typography>
@@ -84,7 +98,12 @@ export default function PrivacyPolicyPage() {
         <Typography sx={{ mt: 2 }}>
           埋め込まれたTwitter（X）投稿に関するデータは、このウェブサイト/アプリのサーバーではなく、Twitter（X）のサーバーから直接取得される場合があります。
           この際、ユーザーのウェブブラウジングに関する情報（たとえば、IPアドレスや閲覧履歴）が、Twitter（X）と共有される可能性があります。
-          Twitter（X）の埋め込みコンテンツに関するデータ収集や処理についての詳細は、
+        </Typography>
+        <Typography variant='h6' component='h4' sx={{ mt: 3 }}>
+          Twitter（X）のプライバシーポリシー
+        </Typography>
+        <Typography sx={{ mt: 2 }}>
+          Twitter（X）によるデータ収集や処理についての詳細は、
           <NextLink href='https://twitter.com/privacy' passHref legacyBehavior>
             <MuiLink>Twitter（X）のプライバシーポリシー</MuiLink>
           </NextLink>
