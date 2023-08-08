@@ -1,5 +1,3 @@
-"use client"
-
 import DrawerAppBar from '@/components/drawer_app_bar'
 import { Box, Table, TableBody, TableCell, TableHead, TableRow, Toolbar, Typography } from '@mui/material'
 import { useGetMatchPageQuery } from '@/generated/graphql'
