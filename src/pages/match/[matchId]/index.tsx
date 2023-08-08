@@ -7,9 +7,10 @@ import {
   TableRow,
   Toolbar,
   Typography,
+  Link as MuiLink,
 } from '@mui/material'
 import { parseISO, format, intervalToDuration } from 'date-fns'
-import Link from 'next/link'
+import NextLink from 'next/link'
 import DrawerAppBar from '@/components/drawer_app_bar'
 import {
   GetMatchPageStaticParamDocument,
@@ -108,20 +109,24 @@ export default function MatchPage({ matchId }: { matchId: string }) {
                         sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                       >
                         <TableCell component='th' scope='row'>
-                          <Link
+                          <NextLink
                             href={`https://www.youtube.com/watch?v=${roomYoutubeLive.youtubeVideoId}`}
+                            passHref
                           >
-                            {roomYoutubeLive.title}
-                          </Link>
+                            <MuiLink>{roomYoutubeLive.title}</MuiLink>
+                          </NextLink>
                         </TableCell>
                         <TableCell component='th' scope='row'>
-                          <Link
+                          <NextLink
                             href={`https://www.youtube.com/watch?v=${roomYoutubeLive.youtubeVideoId}&t=${localStartSeconds}s`}
+                            passHref
                           >
-                            {String(localStartTimeHours).padStart(2, '0')}:
-                            {String(localStartTimeMinutes).padStart(2, '0')}:
-                            {String(localStartTimeSeconds).padStart(2, '0')}
-                          </Link>
+                            <MuiLink>
+                              {String(localStartTimeHours).padStart(2, '0')}:
+                              {String(localStartTimeMinutes).padStart(2, '0')}:
+                              {String(localStartTimeSeconds).padStart(2, '0')}
+                            </MuiLink>
+                          </NextLink>
                         </TableCell>
                       </TableRow>
                     )

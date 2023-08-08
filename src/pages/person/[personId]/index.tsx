@@ -7,8 +7,9 @@ import {
   TableRow,
   Toolbar,
   Typography,
+  Link as MuiLink,
 } from '@mui/material'
-import Link from 'next/link'
+import NextLink from 'next/link'
 import DrawerAppBar from '@/components/drawer_app_bar'
 import {
   GetPersonPageStaticParamQuery,
@@ -92,11 +93,12 @@ export default function PersonPage({ personId }: { personId: string }) {
                       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                     >
                       <TableCell component='th' scope='row'>
-                        <Link
+                        <NextLink
                           href={`https://twitter.com/intent/user?user_id=${personTwitterAccount.twitter_user_id}`}
+                          passHref
                         >
-                          @{personTwitterAccount.twitter_screen_name}
-                        </Link>
+                          <MuiLink>@{personTwitterAccount.twitter_screen_name}</MuiLink>
+                        </NextLink>
                       </TableCell>
                     </TableRow>
                   ))}
@@ -120,11 +122,12 @@ export default function PersonPage({ personId }: { personId: string }) {
                       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                     >
                       <TableCell component='th' scope='row'>
-                        <Link
+                        <NextLink
                           href={`https://www.nicovideo.jp/user/${personNiconicoAccount.niconico_account_id}`}
+                          passHref
                         >
-                          {personNiconicoAccount.name}
-                        </Link>
+                          <MuiLink>{personNiconicoAccount.name}</MuiLink>
+                        </NextLink>
                       </TableCell>
                     </TableRow>
                   ))}
@@ -148,11 +151,12 @@ export default function PersonPage({ personId }: { personId: string }) {
                       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                     >
                       <TableCell component='th' scope='row'>
-                        <Link
+                        <NextLink
                           href={`https://com.nicovideo.jp/community/co${personNiconicoCommunity.niconico_community_id}`}
+                          passHref
                         >
-                          {personNiconicoCommunity.name}
-                        </Link>
+                          <MuiLink>{personNiconicoCommunity.name}</MuiLink>
+                        </NextLink>
                       </TableCell>
                     </TableRow>
                   ))}
@@ -176,11 +180,12 @@ export default function PersonPage({ personId }: { personId: string }) {
                       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                     >
                       <TableCell component='th' scope='row'>
-                        <Link
+                        <NextLink
                           href={`https://www.youtube.com/channel/${personYoutubeChannel.youtube_channel_id}`}
+                          passHref
                         >
-                          {personYoutubeChannel.name}
-                        </Link>
+                          <MuiLink>{personYoutubeChannel.name}</MuiLink>
+                        </NextLink>
                       </TableCell>
                     </TableRow>
                   ))}

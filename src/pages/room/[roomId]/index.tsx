@@ -7,9 +7,10 @@ import {
   TableRow,
   Toolbar,
   Typography,
+  Link as MuiLink,
 } from '@mui/material'
 import { parseISO, format } from 'date-fns'
-import Link from 'next/link'
+import NextLink from 'next/link'
 import DrawerAppBar from '@/components/drawer_app_bar'
 import {
   useGetRoomPageQuery,
@@ -96,9 +97,9 @@ export default function RoomPage({ roomId }: { roomId: string }) {
                       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                     >
                       <TableCell component='th' scope='row'>
-                        <Link href={`/person/${roomPerson.person.id}/`}>
-                          {roomPerson.person.name}
-                        </Link>
+                        <NextLink href={`/person/${roomPerson.person.id}/`} passHref>
+                          <MuiLink>{roomPerson.person.name}</MuiLink>
+                        </NextLink>
                       </TableCell>
                     </TableRow>
                   ))}
@@ -123,17 +124,18 @@ export default function RoomPage({ roomId }: { roomId: string }) {
                       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                     >
                       <TableCell component='th' scope='row'>
-                        <Link
+                        <NextLink
                           href={`https://www.youtube.com/watch?v=${youtubeLive.youtubeVideoId}`}
+                          passHref
                         >
-                          {youtubeLive.title}
-                        </Link>
+                          <MuiLink>{youtubeLive.title}</MuiLink>
+                        </NextLink>
                       </TableCell>
                       <TableCell>
                         {youtubeLive.person != null ? (
-                          <Link href={`/person/${youtubeLive.person.id}/`}>
-                            {youtubeLive.person.name}
-                          </Link>
+                          <NextLink href={`/person/${youtubeLive.person.id}/`} passHref>
+                            <MuiLink>{youtubeLive.person.name}</MuiLink>
+                          </NextLink>
                         ) : (
                           ''
                         )}
@@ -161,9 +163,9 @@ export default function RoomPage({ roomId }: { roomId: string }) {
                     >
                       <TableCell>
                         {match.start_time != null ? (
-                          <Link href={`/match/${match.id}/`}>
-                            {format(parseISO(match.start_time), 'HH:mm')}
-                          </Link>
+                          <NextLink href={`/match/${match.id}/`} passHref>
+                            <MuiLink>{format(parseISO(match.start_time), 'HH:mm')}</MuiLink>
+                          </NextLink>
                         ) : (
                           ''
                         )}

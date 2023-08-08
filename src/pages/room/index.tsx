@@ -7,9 +7,10 @@ import {
   TableRow,
   Toolbar,
   Typography,
+  Link as MuiLink,
 } from '@mui/material'
 import { parseISO, format } from 'date-fns'
-import Link from 'next/link'
+import NextLink from 'next/link'
 import DrawerAppBar from '@/components/drawer_app_bar'
 import { useGetRoomListPageQuery } from '@/generated/graphql'
 
@@ -41,7 +42,9 @@ export default function RoomListPage() {
                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                   >
                     <TableCell component='th' scope='row'>
-                      <Link href={`/room/${room.id}/`}>{room.name}</Link>
+                      <NextLink href={`/room/${room.id}/`} passHref>
+                        <MuiLink>{room.name}</MuiLink>
+                      </NextLink>
                     </TableCell>
                     <TableCell>{format(parseISO(room.startTime), 'yyyy-MM-dd HH:mm')}</TableCell>
                   </TableRow>
