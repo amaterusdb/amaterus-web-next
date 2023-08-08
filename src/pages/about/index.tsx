@@ -25,10 +25,10 @@ export default function AboutPage() {
               Amaterus
             </MuiLink>
           </NextLink>
-          <Typography color='text.primary'>About</Typography>
+          <Typography color='text.primary'>サイト概要</Typography>
         </Breadcrumbs>
         <Typography variant='h4' component='h2' sx={{ mt: 2 }}>
-          About
+          サイト概要
         </Typography>
         <Typography sx={{ mt: 2 }}>
           Amaterusは、ゲーム「Among Us」のプライベートゲームマッチに関する、
