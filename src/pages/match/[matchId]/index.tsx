@@ -126,19 +126,17 @@ export default function MatchPage({ matchId }: { matchId: string }) {
                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                   >
                     <TableCell component='th' scope='row'>
-                      <Typography>
-                        {matchPlayer.person?.id != null ? (
-                          <NextLink
-                            href={`/person/${matchPlayer.person?.id}`}
-                            passHref
-                            legacyBehavior
-                          >
-                            <MuiLink>{matchPlayer.nickname}</MuiLink>
-                          </NextLink>
-                        ) : (
-                          <>{matchPlayer.nickname}</>
-                        )}
-                      </Typography>
+                      {matchPlayer.person?.id != null ? (
+                        <NextLink
+                          href={`/person/${matchPlayer.person?.id}`}
+                          passHref
+                          legacyBehavior
+                        >
+                          <MuiLink>{matchPlayer.nickname}</MuiLink>
+                        </NextLink>
+                      ) : (
+                        <>{matchPlayer.nickname}</>
+                      )}
                     </TableCell>
                   </TableRow>
                 )
