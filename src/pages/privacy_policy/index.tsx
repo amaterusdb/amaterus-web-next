@@ -89,8 +89,8 @@ export default function PrivacyPolicyPage() {
           埋め込み機能の目的
         </Typography>
         <Typography sx={{ mt: 2 }}>
-          このウェブサイト/アプリでは、Twitter（X）上で公開されたコンテンツをウェブページ上で表示するために、埋め込み機能を使用しています。
-          これにより、関連するコンテンツをシームレスに閲覧できるようにし、ユーザーの利便性を向上させています。
+          このウェブサイト/アプリでは、Twitter（X）上で公開されたコンテンツをシームレスに閲覧できるようにし、ユーザーの利便性を向上させるために、
+          Twitter（X）が提供する埋め込み機能を使用しています。
         </Typography>
         <Typography variant='h6' component='h4' sx={{ mt: 3 }}>
           プラットフォーム間のデータ共有
