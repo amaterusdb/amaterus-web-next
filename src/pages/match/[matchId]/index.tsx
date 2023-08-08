@@ -79,7 +79,10 @@ export default function MatchPage({ matchId }: { matchId: string }) {
   return (
     <>
       <Head>
-        <title>試合/{format(parseISO(match.startTime), 'yyyy-MM-dd HH:mm:ss')} - Amaterus</title>
+        <title>
+          試合/{format(parseISO(match.startTime), 'yyyy-MM-dd HH:mm:ss')} - 部屋/{match.room.name} -
+          Amaterus
+        </title>
       </Head>
       <DrawerAppBar />
       <Box component='main' sx={{ p: 3 }}>
