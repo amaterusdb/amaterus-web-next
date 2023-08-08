@@ -8,10 +8,7 @@ export default function HomePage() {
       <DrawerAppBar />
       <Box component='main' sx={{ p: 3 }}>
         <Toolbar />
-        <Breadcrumbs aria-label='breadcrumb'>
-          <Typography color='text.primary'>Amaterus</Typography>
-        </Breadcrumbs>
-        <Typography variant='h4' component='h2' sx={{ mt: 2 }}>
+        <Typography variant='h4' component='h2'>
           Amaterus
         </Typography>
         <Typography sx={{ mt: 2 }}>
