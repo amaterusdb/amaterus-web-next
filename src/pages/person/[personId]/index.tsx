@@ -85,11 +85,7 @@ export default function PersonPage({ personId }: { personId: string }) {
               Amaterus
             </MuiLink>
           </NextLink>
-          <NextLink href='/person/' passHref legacyBehavior>
-            <MuiLink underline='hover' color='inherit'>
-              人物リスト
-            </MuiLink>
-          </NextLink>
+          <Typography>人物リスト</Typography>
           <Typography color='text.primary'>{person.name}</Typography>
         </Breadcrumbs>
         <Typography variant='h4' component='h2' sx={{ mt: 2 }}>
