@@ -74,6 +74,53 @@ export default function PrivacyPolicyPage() {
             passHref
             legacyBehavior
           >
+            <MuiLink>
+              Googleのサービスを使用するサイトやアプリから収集した情報のGoogleによる使用
+            </MuiLink>
+          </NextLink>
+          や
+          <NextLink href='https://policies.google.com/privacy' passHref legacyBehavior>
+            <MuiLink>Googleのプライバシーポリシー</MuiLink>
+          </NextLink>
+          をご参照ください。
+        </Typography>
+        <Typography variant='h5' component='h3' sx={{ mt: 5 }}>
+          YouTubeの投稿を埋め込む機能について
+        </Typography>
+        <Typography sx={{ mt: 2 }}>
+          このウェブサイト/アプリでは、YouTubeの投稿を埋め込む機能を使用して、関連する情報やコンテンツを提供しています。
+          以下では、この機能に関する情報をお知らせします。
+        </Typography>
+        <Typography variant='h6' component='h4' sx={{ mt: 3 }}>
+          埋め込み機能の目的
+        </Typography>
+        <Typography sx={{ mt: 2 }}>
+          このウェブサイト/アプリでは、YouTube上で公開されたコンテンツをシームレスに閲覧できるようにし、ユーザーの利便性を向上させるために、
+          YouTubeが提供する埋め込み機能を使用しています。
+        </Typography>
+        <Typography variant='h6' component='h4' sx={{ mt: 3 }}>
+          プラットフォーム間のデータ共有
+        </Typography>
+        <Typography sx={{ mt: 2 }}>
+          埋め込まれたYouTube投稿に関するデータは、このウェブサイト/アプリのサーバーではなく、YouTubeのサーバーから直接取得されます。
+          この際、ユーザーのウェブブラウジングに関する情報（たとえば、IPアドレスや閲覧履歴）が、YouTube/Googleと共有される可能性があります。
+        </Typography>
+        <Typography variant='h6' component='h4' sx={{ mt: 3 }}>
+          YouTube/Googleのプライバシーポリシー
+        </Typography>
+        <Typography sx={{ mt: 2 }}>
+          YouTube/Googleによるデータ収集や処理についての詳細は、
+          <NextLink
+            href='https://policies.google.com/technologies/partner-sites'
+            passHref
+            legacyBehavior
+          >
+            <MuiLink>
+              Googleのサービスを使用するサイトやアプリから収集した情報のGoogleによる使用
+            </MuiLink>
+          </NextLink>
+          や
+          <NextLink href='https://policies.google.com/privacy' passHref legacyBehavior>
             <MuiLink>Googleのプライバシーポリシー</MuiLink>
           </NextLink>
           をご参照ください。
