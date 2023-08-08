@@ -30,6 +30,19 @@ export default function PrivacyPolicyPage() {
           プライバシーポリシー
         </Typography>
         <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+          特定の人物に関する情報の掲載について
+        </Typography>
+        <Typography sx={{ mt: 2 }}>
+          このウェブサイト/アプリは、ファンサイトの性質上、特定の人物に関する情報（プロフィール名やSNSアカウントなど）を掲載することがあります。
+          掲載に際しては、その個人のプライバシーを尊重します。
+          可能な限り公に入手可能な情報を使用し、個人の私生活に関する詳細な情報は掲載しないよう配慮します。
+          また、公に入手可能な情報であっても、その人物や所属するグループに迷惑をかけることがないように、掲載の是非を慎重に判断することに努めます。
+        </Typography>
+        <Typography sx={{ mt: 2 }}>
+          あなたがこのウェブサイトに掲載された人物であり、プライバシー等に基づいて内容の変更や削除を希望する場合は、
+          本人と確認できる形で、具体的に変更を希望する内容を管理者に連絡してください。
+        </Typography>
+        <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
           Googleアナリティクスの使用について
         </Typography>
         <Typography sx={{ mt: 2 }}>
