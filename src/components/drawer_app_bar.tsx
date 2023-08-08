@@ -34,8 +34,12 @@ const navItems: NavItem[] = [
     href: '/',
   },
   {
+    text: 'Privacy Policy',
+    href: '/privacy_policy/',
+  },
+  {
     text: 'About',
-    href: '/about',
+    href: '/about/',
   },
 ]
 
