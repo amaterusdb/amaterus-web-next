@@ -8,6 +8,7 @@ import {
   Toolbar,
   Typography,
   Link as MuiLink,
+  Breadcrumbs,
 } from '@mui/material'
 import { parseISO, format } from 'date-fns'
 import NextLink from 'next/link'
@@ -23,7 +24,15 @@ export default function RoomListPage() {
       <DrawerAppBar />
       <Box component='main' sx={{ p: 3 }}>
         <Toolbar />
-        <Typography variant='h4' component='h2'>
+        <Breadcrumbs aria-label='breadcrumb'>
+          <NextLink href='/' passHref legacyBehavior>
+            <MuiLink underline='hover' color='inherit'>
+              Amaterus
+            </MuiLink>
+          </NextLink>
+          <Typography color='text.primary'>部屋リスト</Typography>
+        </Breadcrumbs>
+        <Typography variant='h4' component='h2' sx={{ mt: 2 }}>
           部屋リスト
         </Typography>
         <Box sx={{ mt: 2 }}>
