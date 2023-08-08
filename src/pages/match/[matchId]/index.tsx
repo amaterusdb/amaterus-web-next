@@ -8,6 +8,7 @@ import {
   Toolbar,
   Typography,
   Link as MuiLink,
+  Breadcrumbs,
 } from '@mui/material'
 import { parseISO, format, intervalToDuration } from 'date-fns'
 import NextLink from 'next/link'
@@ -79,8 +80,33 @@ export default function MatchPage({ matchId }: { matchId: string }) {
       <DrawerAppBar />
       <Box component='main' sx={{ p: 3 }}>
         <Toolbar />
-        <Typography variant='h4' component='h2'>
-          {match.room.name} {format(parseISO(match.startTime), 'yyyy-MM-dd HH:mm')}
+        <Breadcrumbs aria-label='breadcrumb'>
+          <NextLink href='/' passHref legacyBehavior>
+            <MuiLink underline='hover' color='inherit'>
+              Amaterus
+            </MuiLink>
+          </NextLink>
+          <NextLink href='/room/' passHref legacyBehavior>
+            <MuiLink underline='hover' color='inherit'>
+              部屋リスト
+            </MuiLink>
+          </NextLink>
+          <NextLink href={`/room/${match.room.id}/`} passHref legacyBehavior>
+            <MuiLink underline='hover' color='inherit'>
+              {match.room.name}
+            </MuiLink>
+          </NextLink>
+          <NextLink href={`/room/${match.room.id}/#matches`} passHref legacyBehavior>
+            <MuiLink underline='hover' color='inherit'>
+              試合リスト
+            </MuiLink>
+          </NextLink>
+          <Typography color='text.primary'>
+            試合 {format(parseISO(match.startTime), 'yyyy-MM-dd HH:mm:ss')}
+          </Typography>
+        </Breadcrumbs>
+        <Typography variant='h4' component='h2' sx={{ mt: 2 }}>
+          試合 {format(parseISO(match.startTime), 'yyyy-MM-dd HH:mm:ss')}
         </Typography>
         <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
           放送アーカイブ

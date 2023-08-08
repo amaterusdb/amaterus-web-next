@@ -8,6 +8,7 @@ import {
   Toolbar,
   Typography,
   Link as MuiLink,
+  Breadcrumbs,
 } from '@mui/material'
 import NextLink from 'next/link'
 import DrawerAppBar from '@/components/drawer_app_bar'
@@ -78,6 +79,19 @@ export default function PersonPage({ personId }: { personId: string }) {
       <DrawerAppBar />
       <Box component='main' sx={{ p: 3 }}>
         <Toolbar />
+        <Breadcrumbs aria-label='breadcrumb'>
+          <NextLink href='/' passHref legacyBehavior>
+            <MuiLink underline='hover' color='inherit'>
+              Amaterus
+            </MuiLink>
+          </NextLink>
+          <NextLink href='/person/' passHref legacyBehavior>
+            <MuiLink underline='hover' color='inherit'>
+              人物リスト
+            </MuiLink>
+          </NextLink>
+          <Typography color='text.primary'>{person.name}</Typography>
+        </Breadcrumbs>
         <Typography variant='h4' component='h2'>
           {person.name}
         </Typography>
