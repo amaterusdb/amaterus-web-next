@@ -125,7 +125,7 @@ export default function RoomPage({ roomId }: { roomId: string }) {
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 >
                   <TableCell component='th' scope='row'>
-                    <NextLink href={`/person/${roomPerson.person.id}/`} passHref>
+                    <NextLink href={`/person/${roomPerson.person.id}/`} passHref legacyBehavior>
                       <MuiLink>{roomPerson.person.name}</MuiLink>
                     </NextLink>
                   </TableCell>
@@ -155,13 +155,14 @@ export default function RoomPage({ roomId }: { roomId: string }) {
                     <NextLink
                       href={`https://www.youtube.com/watch?v=${youtubeLive.youtubeVideoId}`}
                       passHref
+                      legacyBehavior
                     >
                       <MuiLink>{youtubeLive.title}</MuiLink>
                     </NextLink>
                   </TableCell>
                   <TableCell>
                     {youtubeLive.person != null ? (
-                      <NextLink href={`/person/${youtubeLive.person.id}/`} passHref>
+                      <NextLink href={`/person/${youtubeLive.person.id}/`} passHref legacyBehavior>
                         <MuiLink>{youtubeLive.person.name}</MuiLink>
                       </NextLink>
                     ) : (
@@ -188,7 +189,7 @@ export default function RoomPage({ roomId }: { roomId: string }) {
                 <TableRow key={match.id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
                   <TableCell>
                     {match.start_time != null ? (
-                      <NextLink href={`/match/${match.id}/`} passHref>
+                      <NextLink href={`/match/${match.id}/`} passHref legacyBehavior>
                         <MuiLink>
                           {format(parseISO(match.start_time), 'yyyy-MM-dd HH:mm:ss')}
                         </MuiLink>

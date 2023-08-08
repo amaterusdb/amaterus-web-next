@@ -142,13 +142,18 @@ export default function MatchPage({ matchId }: { matchId: string }) {
                       <NextLink
                         href={`https://www.youtube.com/watch?v=${roomYoutubeLive.youtubeVideoId}`}
                         passHref
+                        legacyBehavior
                       >
                         <MuiLink>{roomYoutubeLive.title}</MuiLink>
                       </NextLink>
                     </TableCell>
                     <TableCell>
                       {roomYoutubeLive.person != null ? (
-                        <NextLink href={`/person/${roomYoutubeLive.person.id}/`} passHref>
+                        <NextLink
+                          href={`/person/${roomYoutubeLive.person.id}/`}
+                          passHref
+                          legacyBehavior
+                        >
                           <MuiLink>{roomYoutubeLive.person.name}</MuiLink>
                         </NextLink>
                       ) : (
@@ -159,6 +164,7 @@ export default function MatchPage({ matchId }: { matchId: string }) {
                       <NextLink
                         href={`https://www.youtube.com/watch?v=${roomYoutubeLive.youtubeVideoId}&t=${localStartSeconds}s`}
                         passHref
+                        legacyBehavior
                       >
                         <MuiLink>
                           {String(localStartTimeHours).padStart(2, '0')}:

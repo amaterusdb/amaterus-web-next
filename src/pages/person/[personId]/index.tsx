@@ -115,6 +115,7 @@ export default function PersonPage({ personId }: { personId: string }) {
                     <NextLink
                       href={`https://twitter.com/intent/user?user_id=${personTwitterAccount.twitter_user_id}`}
                       passHref
+                      legacyBehavior
                     >
                       <MuiLink>@{personTwitterAccount.twitter_screen_name}</MuiLink>
                     </NextLink>
@@ -144,6 +145,7 @@ export default function PersonPage({ personId }: { personId: string }) {
                     <NextLink
                       href={`https://www.nicovideo.jp/user/${personNiconicoAccount.niconico_account_id}`}
                       passHref
+                      legacyBehavior
                     >
                       <MuiLink>{personNiconicoAccount.name}</MuiLink>
                     </NextLink>
@@ -173,6 +175,7 @@ export default function PersonPage({ personId }: { personId: string }) {
                     <NextLink
                       href={`https://com.nicovideo.jp/community/co${personNiconicoCommunity.niconico_community_id}`}
                       passHref
+                      legacyBehavior
                     >
                       <MuiLink>{personNiconicoCommunity.name}</MuiLink>
                     </NextLink>
@@ -202,6 +205,7 @@ export default function PersonPage({ personId }: { personId: string }) {
                     <NextLink
                       href={`https://www.youtube.com/channel/${personYoutubeChannel.youtube_channel_id}`}
                       passHref
+                      legacyBehavior
                     >
                       <MuiLink>{personYoutubeChannel.name}</MuiLink>
                     </NextLink>
