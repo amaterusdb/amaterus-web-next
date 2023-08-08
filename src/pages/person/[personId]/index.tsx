@@ -92,7 +92,7 @@ export default function PersonPage({ personId }: { personId: string }) {
           {person.name}
         </Typography>
         <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
-          Twitter
+          Twitter (X)
         </Typography>
         <Box sx={{ mt: 2 }}>
           <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
