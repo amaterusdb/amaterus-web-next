@@ -10,12 +10,16 @@ import {
   TableCell,
   TableBody,
 } from '@mui/material'
+import Head from 'next/head'
 import NextLink from 'next/link'
 import DrawerAppBar from '@/components/drawer_app_bar'
 
 export default function AboutPage() {
   return (
     <>
+      <Head>
+        <title>サイト概要 - Amaterus</title>
+      </Head>
       <DrawerAppBar />
       <Box component='main' sx={{ p: 3 }}>
         <Toolbar />

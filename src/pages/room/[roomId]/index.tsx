@@ -11,6 +11,7 @@ import {
   Breadcrumbs,
 } from '@mui/material'
 import { parseISO, format } from 'date-fns'
+import Head from 'next/head'
 import NextLink from 'next/link'
 import Script from 'next/script'
 import DrawerAppBar from '@/components/drawer_app_bar'
@@ -79,6 +80,9 @@ export default function RoomPage({ roomId }: { roomId: string }) {
 
   return (
     <>
+      <Head>
+        <title>部屋/{room.name} - Amaterus</title>
+      </Head>
       <Script src='https://platform.twitter.com/widgets.js' strategy='lazyOnload' />
       <DrawerAppBar />
       <Box component='main' sx={{ p: 3 }}>

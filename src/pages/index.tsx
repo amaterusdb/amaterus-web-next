@@ -1,10 +1,14 @@
 import { Box, Toolbar, Typography, Link as MuiLink, Breadcrumbs } from '@mui/material'
+import Head from 'next/head'
 import NextLink from 'next/link'
 import DrawerAppBar from '@/components/drawer_app_bar'
 
 export default function HomePage() {
   return (
     <>
+      <Head>
+        <title>Amaterus</title>
+      </Head>
       <DrawerAppBar />
       <Box component='main' sx={{ p: 3 }}>
         <Toolbar />

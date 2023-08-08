@@ -11,6 +11,7 @@ import {
   Breadcrumbs,
 } from '@mui/material'
 import { parseISO, format } from 'date-fns'
+import Head from 'next/head'
 import NextLink from 'next/link'
 import DrawerAppBar from '@/components/drawer_app_bar'
 import { useGetRoomListPageQuery } from '@/generated/graphql'
@@ -21,6 +22,9 @@ export default function RoomListPage() {
 
   return (
     <>
+      <Head>
+        <title>部屋リスト - Amaterus</title>
+      </Head>
       <DrawerAppBar />
       <Box component='main' sx={{ p: 3 }}>
         <Toolbar />

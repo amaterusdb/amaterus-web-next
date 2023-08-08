@@ -10,6 +10,7 @@ import {
   Link as MuiLink,
   Breadcrumbs,
 } from '@mui/material'
+import Head from 'next/head'
 import NextLink from 'next/link'
 import DrawerAppBar from '@/components/drawer_app_bar'
 import {
@@ -76,6 +77,9 @@ export default function PersonPage({ personId }: { personId: string }) {
 
   return (
     <>
+      <Head>
+        <title>人物/{person.name} - Amaterus</title>
+      </Head>
       <DrawerAppBar />
       <Box component='main' sx={{ p: 3 }}>
         <Toolbar />

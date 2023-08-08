@@ -11,6 +11,7 @@ import {
   Breadcrumbs,
 } from '@mui/material'
 import { parseISO, format, intervalToDuration } from 'date-fns'
+import Head from 'next/head'
 import NextLink from 'next/link'
 import DrawerAppBar from '@/components/drawer_app_bar'
 import {
@@ -77,6 +78,9 @@ export default function MatchPage({ matchId }: { matchId: string }) {
 
   return (
     <>
+      <Head>
+        <title>試合/{format(parseISO(match.startTime), 'yyyy-MM-dd HH:mm:ss')} - Amaterus</title>
+      </Head>
       <DrawerAppBar />
       <Box component='main' sx={{ p: 3 }}>
         <Toolbar />
