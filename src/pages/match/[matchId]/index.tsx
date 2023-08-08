@@ -29,20 +29,34 @@ export async function getStaticPaths() {
   }
 }
 
-export default function MatchPage({
+export async function getStaticProps({
   params
 }: {
   params: {
     matchId: string
   }
 }) {
+  const matchId = params.matchId
+
+  return {
+    props: {
+      matchId,
+    },
+  }
+}
+
+export default function MatchPage({
+  matchId
+}: {
+  matchId: string
+}) {
   const { data } = useGetMatchPageQuery({
     variables: {
-      matchId: params.matchId,
+      matchId,
     },
-  });
+  })
 
-  const match = data?.match;
+  const match = data?.match
 
   return (
     <>

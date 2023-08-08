@@ -3,7 +3,7 @@ import { Box, Table, TableBody, TableCell, TableHead, TableRow, Toolbar, Typogra
 import Link from 'next/link'
 import { parseISO, format } from 'date-fns'
 import { createApolloClient } from '@/lib/apollo'
-import { useGetRoomPageQuery, GetRoomPageStaticParamDocument, GetRoomPageStaticParamQueryResult } from '@/generated/graphql'
+import { useGetRoomPageQuery, GetRoomPageStaticParamDocument, GetRoomPageStaticParamQueryResult, GetRoomPageQueryResult, GetRoomPageDocument } from '@/generated/graphql'
 
 export async function getStaticPaths() {
   const apolloClient = createApolloClient()
@@ -28,20 +28,34 @@ export async function getStaticPaths() {
   }
 }
 
-export default function RoomPage({
+export async function getStaticProps({
   params
 }: {
   params: {
     roomId: string
   }
 }) {
+  const roomId = params.roomId
+
+  return {
+    props: {
+      roomId,
+    },
+  }
+}
+
+export default function RoomPage({
+  roomId
+}: {
+  roomId: string
+}) {
   const { data } = useGetRoomPageQuery({
     variables: {
-      roomId: params.roomId,
+      roomId,
     },
-  });
+  })
 
-  const room = data?.room;
+  const room = data?.room
 
   return (
     <>

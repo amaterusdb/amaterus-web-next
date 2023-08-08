@@ -27,20 +27,34 @@ export async function getStaticPaths() {
   }
 }
 
-export default function PersonPage({
+export async function getStaticProps({
   params
 }: {
   params: {
     personId: string
   }
 }) {
+  const personId = params.personId
+
+  return {
+    props: {
+      personId,
+    },
+  }
+}
+
+export default function PersonPage({
+  personId
+}: {
+  personId: string
+}) {
   const { data } = useGetPersonPageQuery({
     variables: {
-      personId: params.personId,
+      personId,
     },
-  });
+  })
 
-  const person = data?.person;
+  const person = data?.person
 
   return (
     <>
