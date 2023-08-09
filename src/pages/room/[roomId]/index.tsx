@@ -70,12 +70,20 @@ export default function RoomPage({ roomId }: { roomId: string }) {
   })
 
   if (loading) {
-    return <>Loading...</>
+    return (
+      <Box component='main' sx={{ p: 3 }}>
+        Loading...
+      </Box>
+    )
   }
 
   const room = data?.room
   if (room == null) {
-    return <>No such room found.</>
+    return (
+      <Box component='main' sx={{ p: 3 }}>
+        No such room found.
+      </Box>
+    )
   }
 
   return (

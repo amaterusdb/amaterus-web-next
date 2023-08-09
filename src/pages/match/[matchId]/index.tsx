@@ -68,12 +68,20 @@ export default function MatchPage({ matchId }: { matchId: string }) {
   })
 
   if (loading) {
-    return <>Loading...</>
+    return (
+      <Box component='main' sx={{ p: 3 }}>
+        Loading...
+      </Box>
+    )
   }
 
   const match = data?.match
   if (match == null) {
-    return <>No such match found.</>
+    return (
+      <Box component='main' sx={{ p: 3 }}>
+        No such match found.
+      </Box>
+    )
   }
 
   return (

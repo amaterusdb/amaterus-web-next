@@ -67,12 +67,20 @@ export default function PersonPage({ personId }: { personId: string }) {
   })
 
   if (loading) {
-    return <>Loading...</>
+    return (
+      <Box component='main' sx={{ p: 3 }}>
+        Loading...
+      </Box>
+    )
   }
 
   const person = data?.person
   if (person == null) {
-    return <>No such person found.</>
+    return (
+      <Box component='main' sx={{ p: 3 }}>
+        No such person found.
+      </Box>
+    )
   }
 
   return (
