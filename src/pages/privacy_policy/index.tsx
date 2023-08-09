@@ -44,7 +44,7 @@ export default function PrivacyPolicyPage() {
         </Typography>
         <Typography sx={{ mt: 2 }}>
           あなたがこのウェブサイトに掲載された人物であり、プライバシー等に基づいて内容の変更や削除を希望する場合は、
-          本人と確認できる形で、具体的に変更を希望する内容を管理者に連絡してください。
+          本人と確認できる方法で、具体的に変更を希望する内容を管理者に連絡してください。
         </Typography>
         <Typography variant='h5' component='h3' sx={{ mt: 6 }}>
           Googleアナリティクスの使用について
