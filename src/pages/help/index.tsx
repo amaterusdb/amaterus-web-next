@@ -50,7 +50,7 @@ export default function AboutPage() {
           システムと労力の都合上、これらのずれは修正することが難しいですが、
           実用上は許容できる範囲と考えているため、そのまま提供しています。
         </Typography>
-        <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+        <Typography variant='h5' component='h3' sx={{ mt: 6 }}>
           試合開始時間・終了時間の基準について
         </Typography>
         <Typography sx={{ mt: 2 }}>
