@@ -69,7 +69,8 @@ export default function AboutPage() {
           異なる基準で試合終了時間を設定する場合や、試合終了時間を設定しない場合があります。
         </Typography>
         <Typography sx={{ mt: 2 }}>
-          Among UsのUIに変更があった場合、システムを改修した場合など、状況に応じて基準を変更する場合があります。
+          Among
+          UsのUIに変更があった場合、システムを改修した場合など、状況に応じて基準を変更する場合があります。
         </Typography>
         <Typography variant='h5' component='h3' sx={{ mt: 6 }}>
           参加者の基準について
