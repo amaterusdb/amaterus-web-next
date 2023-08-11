@@ -30,19 +30,19 @@ type NavItem = {
 
 const navItems: NavItem[] = [
   {
-    text: 'Home',
+    text: 'ホーム',
     href: '/',
   },
   {
-    text: 'Help',
+    text: 'ヘルプ',
     href: '/help/',
   },
   {
-    text: 'Privacy Policy',
+    text: 'プライバシーポリシー',
     href: '/privacy_policy/',
   },
   {
-    text: 'About',
+    text: 'サイト概要',
     href: '/about/',
   },
 ]
