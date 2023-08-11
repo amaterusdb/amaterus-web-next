@@ -34,7 +34,10 @@ export default function AboutPage() {
         <Typography variant='h4' component='h2' sx={{ mt: 2 }}>
           ヘルプ
         </Typography>
-        <Typography variant='h5' component='h3' sx={{ mt: 2 }}>
+        <Typography sx={{ mt: 2 }}>
+          このページでは、運用上のメモに近い、細かいサイト仕様について記載します。
+        </Typography>
+        <Typography variant='h5' component='h3' sx={{ mt: 4 }}>
           タイムスタンプの精度について
         </Typography>
         <Typography sx={{ mt: 2 }}>
@@ -67,6 +70,18 @@ export default function AboutPage() {
         </Typography>
         <Typography sx={{ mt: 2 }}>
           Among UsのUIに変更があった場合、システムを改修した場合など、状況に応じて基準を変更する場合があります。
+        </Typography>
+        <Typography variant='h5' component='h3' sx={{ mt: 6 }}>
+          参加者の基準について
+        </Typography>
+        <Typography sx={{ mt: 2 }}>
+          部屋の参加者については、原則として、事前に参加者として告知された人物を掲載しています。
+          ただし、実際の開催において、欠席や飛び入り参加、開催の最初からの交代、開催途中での交代などにより、参加者が変動した場合には、
+          プレイヤーとして試合に参加した人物であることを基準に掲載したり、しなかったりする場合があります。
+          また、試合のプレイヤーとして参加しなかった場合でも、通話やチャットを通じて放送に出演した場合に、参加者として掲載する場合があります。
+        </Typography>
+        <Typography sx={{ mt: 2 }}>
+          試合の参加者については、原則として、プレイヤーとして試合に参加した人物を掲載しています。
         </Typography>
       </Box>
     </>
