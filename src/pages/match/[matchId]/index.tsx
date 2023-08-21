@@ -101,17 +101,13 @@ export default function MatchPage({ matchId }: { matchId: string }) {
               Amaterus
             </MuiLink>
           </NextLink>
-          <NextLink href='/room/' passHref legacyBehavior>
-            <MuiLink underline='hover' color='inherit'>
-              部屋リスト
-            </MuiLink>
-          </NextLink>
+          <Typography>部屋</Typography>
           <NextLink href={`/room/${match.room.id}/`} passHref legacyBehavior>
             <MuiLink underline='hover' color='inherit'>
               {match.room.name}
             </MuiLink>
           </NextLink>
-          <Typography>試合リスト</Typography>
+          <Typography>試合</Typography>
           <Typography color='text.primary'>
             試合 {format(parseISO(match.startTime), 'yyyy-MM-dd HH:mm:ss')}
           </Typography>
