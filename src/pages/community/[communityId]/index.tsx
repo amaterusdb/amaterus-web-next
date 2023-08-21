@@ -100,7 +100,7 @@ export default function RoomPage({ communityId }: { communityId: string }) {
               Amaterus
             </MuiLink>
           </NextLink>
-          <Typography>コミュニティリスト</Typography>
+          <Typography>コミュニティ</Typography>
           <Typography color='text.primary'>{community.name}</Typography>
         </Breadcrumbs>
         <Typography variant='h4' component='h2' sx={{ mt: 2 }}>
