@@ -86,6 +86,9 @@ export default function RoomPage({ roomId }: { roomId: string }) {
     )
   }
 
+  const roomCommunities = room.roomCommunities
+  const firstCommunity = roomCommunities.length > 0 ? roomCommunities[0].community : null
+
   return (
     <>
       <Head>
@@ -101,11 +104,17 @@ export default function RoomPage({ roomId }: { roomId: string }) {
               Amaterus
             </MuiLink>
           </NextLink>
-          <NextLink href='/room/' passHref legacyBehavior>
-            <MuiLink underline='hover' color='inherit'>
-              部屋リスト
-            </MuiLink>
-          </NextLink>
+          <Typography>コミュニティ</Typography>
+          {firstCommunity == null ? (
+            <Typography>未設定</Typography>
+          ) : (
+            <NextLink href={`/community/${firstCommunity.id}`} passHref legacyBehavior>
+              <MuiLink underline='hover' color='inherit'>
+                {firstCommunity.name}
+              </MuiLink>
+            </NextLink>
+          )}
+          <Typography>部屋</Typography>
           <Typography color='text.primary'>{room.name}</Typography>
         </Breadcrumbs>
         <Typography variant='h4' component='h2' sx={{ mt: 2 }}>

@@ -10455,17 +10455,12 @@ export type GetRoomPageQueryVariables = Exact<{
 }>;
 
 
-export type GetRoomPageQuery = { __typename?: 'query_root', room?: { __typename?: 'rooms', id: any, name: string, startTime?: any | null, endTime?: any | null, roomTwitterAnnouncements: Array<{ __typename?: 'room_twitter_announcements', id: any, tweetId: string }>, roomPersons: Array<{ __typename?: 'room_persons', person: { __typename?: 'persons', id: any, name: string } }>, roomYouTubeLives: Array<{ __typename?: 'room_youtube_lives', id: any, title?: string | null, youtubeVideoId: string, person?: { __typename?: 'persons', id: any, name: string } | null }>, matches: Array<{ __typename?: 'matches', id: any, startTime: any, endTime?: any | null }> } | null };
+export type GetRoomPageQuery = { __typename?: 'query_root', room?: { __typename?: 'rooms', id: any, name: string, startTime?: any | null, endTime?: any | null, roomCommunities: Array<{ __typename?: 'room_communities', community: { __typename?: 'communities', id: any, name: string } }>, roomTwitterAnnouncements: Array<{ __typename?: 'room_twitter_announcements', id: any, tweetId: string }>, roomPersons: Array<{ __typename?: 'room_persons', person: { __typename?: 'persons', id: any, name: string } }>, roomYouTubeLives: Array<{ __typename?: 'room_youtube_lives', id: any, title?: string | null, youtubeVideoId: string, person?: { __typename?: 'persons', id: any, name: string } | null }>, matches: Array<{ __typename?: 'matches', id: any, startTime: any, endTime?: any | null }> } | null };
 
 export type GetRoomPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetRoomPageStaticParamQuery = { __typename?: 'query_root', rooms: Array<{ __typename?: 'rooms', id: any }> };
-
-export type GetRoomListPageQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type GetRoomListPageQuery = { __typename?: 'query_root', rooms: Array<{ __typename?: 'rooms', id: any, name: string, startTime?: any | null, endTime?: any | null }> };
 
 
 export const GetCommunityPageDocument = gql`
@@ -10794,6 +10789,12 @@ export const GetRoomPageDocument = gql`
     name
     startTime: start_time
     endTime: end_time
+    roomCommunities: room_communities(order_by: {community: {start_time: asc}}) {
+      community {
+        id
+        name
+      }
+    }
     roomTwitterAnnouncements: room_twitter_announcements {
       id
       tweetId: tweet_id
@@ -10883,40 +10884,3 @@ export function useGetRoomPageStaticParamLazyQuery(baseOptions?: Apollo.LazyQuer
 export type GetRoomPageStaticParamQueryHookResult = ReturnType<typeof useGetRoomPageStaticParamQuery>;
 export type GetRoomPageStaticParamLazyQueryHookResult = ReturnType<typeof useGetRoomPageStaticParamLazyQuery>;
 export type GetRoomPageStaticParamQueryResult = Apollo.QueryResult<GetRoomPageStaticParamQuery, GetRoomPageStaticParamQueryVariables>;
-export const GetRoomListPageDocument = gql`
-    query GetRoomListPage {
-  rooms(order_by: {start_time: desc}) {
-    id
-    name
-    startTime: start_time
-    endTime: end_time
-  }
-}
-    `;
-
-/**
- * __useGetRoomListPageQuery__
- *
- * To run a query within a React component, call `useGetRoomListPageQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetRoomListPageQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useGetRoomListPageQuery({
- *   variables: {
- *   },
- * });
- */
-export function useGetRoomListPageQuery(baseOptions?: Apollo.QueryHookOptions<GetRoomListPageQuery, GetRoomListPageQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetRoomListPageQuery, GetRoomListPageQueryVariables>(GetRoomListPageDocument, options);
-      }
-export function useGetRoomListPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetRoomListPageQuery, GetRoomListPageQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetRoomListPageQuery, GetRoomListPageQueryVariables>(GetRoomListPageDocument, options);
-        }
-export type GetRoomListPageQueryHookResult = ReturnType<typeof useGetRoomListPageQuery>;
-export type GetRoomListPageLazyQueryHookResult = ReturnType<typeof useGetRoomListPageLazyQuery>;
-export type GetRoomListPageQueryResult = Apollo.QueryResult<GetRoomListPageQuery, GetRoomListPageQueryVariables>;

@@ -9,6 +9,19 @@ query GetRoomPage(
     startTime: start_time
     endTime: end_time
 
+    roomCommunities: room_communities(
+      order_by: {
+        community: {
+          start_time: asc
+        }
+      }
+    ) {
+      community {
+        id
+        name
+      }
+    }
+
     roomTwitterAnnouncements: room_twitter_announcements {
       id
       tweetId: tweet_id
