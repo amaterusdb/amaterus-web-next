@@ -176,7 +176,7 @@ export default function RoomPage({ roomId }: { roomId: string }) {
                 >
                   <TableCell>
                     {amongusMatch.startTime != null ? (
-                      <NextLink href={`/match/${amongusMatch.id}/`} passHref legacyBehavior>
+                      <NextLink href={`/amongus_match/${amongusMatch.id}/`} passHref legacyBehavior>
                         <MuiLink>
                           {format(parseISO(amongusMatch.startTime), 'yyyy-MM-dd HH:mm:ss')}
                         </MuiLink>

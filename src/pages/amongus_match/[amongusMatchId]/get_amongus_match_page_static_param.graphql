@@ -1,0 +1,5 @@
+query GetAmongusMatchPageStaticParam {
+  amongusMatches: amongus_matches {
+    id
+  }
+}

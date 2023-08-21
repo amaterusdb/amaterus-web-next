@@ -912,11 +912,11 @@ export type Amongus_Match_Player_Result_Roles_Variance_Order_By = {
 /** columns and relationships of "amongus_match_players" */
 export type Amongus_Match_Players = {
   __typename?: 'amongus_match_players';
+  /** An object relationship */
+  amongus_match: Amongus_Matches;
   amongus_match_id: Scalars['uuid']['output'];
   created_at: Scalars['timestamptz']['output'];
   id: Scalars['uuid']['output'];
-  /** An object relationship */
-  match: Matches;
   nickname: Scalars['String']['output'];
   /** An object relationship */
   person?: Maybe<Persons>;
@@ -929,6 +929,17 @@ export type Amongus_Match_Players_Aggregate = {
   __typename?: 'amongus_match_players_aggregate';
   aggregate?: Maybe<Amongus_Match_Players_Aggregate_Fields>;
   nodes: Array<Amongus_Match_Players>;
+};
+
+export type Amongus_Match_Players_Aggregate_Bool_Exp = {
+  count?: InputMaybe<Amongus_Match_Players_Aggregate_Bool_Exp_Count>;
+};
+
+export type Amongus_Match_Players_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Amongus_Match_Players_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Amongus_Match_Players_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
 };
 
 /** aggregate fields of "amongus_match_players" */
@@ -946,15 +957,29 @@ export type Amongus_Match_Players_Aggregate_FieldsCountArgs = {
   distinct?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
+/** order by aggregate values of table "amongus_match_players" */
+export type Amongus_Match_Players_Aggregate_Order_By = {
+  count?: InputMaybe<Order_By>;
+  max?: InputMaybe<Amongus_Match_Players_Max_Order_By>;
+  min?: InputMaybe<Amongus_Match_Players_Min_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "amongus_match_players" */
+export type Amongus_Match_Players_Arr_Rel_Insert_Input = {
+  data: Array<Amongus_Match_Players_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Amongus_Match_Players_On_Conflict>;
+};
+
 /** Boolean expression to filter rows from the table "amongus_match_players". All fields are combined with a logical 'AND'. */
 export type Amongus_Match_Players_Bool_Exp = {
   _and?: InputMaybe<Array<Amongus_Match_Players_Bool_Exp>>;
   _not?: InputMaybe<Amongus_Match_Players_Bool_Exp>;
   _or?: InputMaybe<Array<Amongus_Match_Players_Bool_Exp>>;
+  amongus_match?: InputMaybe<Amongus_Matches_Bool_Exp>;
   amongus_match_id?: InputMaybe<Uuid_Comparison_Exp>;
   created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
-  match?: InputMaybe<Matches_Bool_Exp>;
   nickname?: InputMaybe<String_Comparison_Exp>;
   person?: InputMaybe<Persons_Bool_Exp>;
   person_id?: InputMaybe<Uuid_Comparison_Exp>;
@@ -973,10 +998,10 @@ export enum Amongus_Match_Players_Constraint {
 
 /** input type for inserting data into table "amongus_match_players" */
 export type Amongus_Match_Players_Insert_Input = {
+  amongus_match?: InputMaybe<Amongus_Matches_Obj_Rel_Insert_Input>;
   amongus_match_id?: InputMaybe<Scalars['uuid']['input']>;
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
-  match?: InputMaybe<Matches_Obj_Rel_Insert_Input>;
   nickname?: InputMaybe<Scalars['String']['input']>;
   person?: InputMaybe<Persons_Obj_Rel_Insert_Input>;
   person_id?: InputMaybe<Scalars['uuid']['input']>;
@@ -994,6 +1019,16 @@ export type Amongus_Match_Players_Max_Fields = {
   updated_at?: Maybe<Scalars['timestamptz']['output']>;
 };
 
+/** order by max() on columns of table "amongus_match_players" */
+export type Amongus_Match_Players_Max_Order_By = {
+  amongus_match_id?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  nickname?: InputMaybe<Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
 /** aggregate min on columns */
 export type Amongus_Match_Players_Min_Fields = {
   __typename?: 'amongus_match_players_min_fields';
@@ -1003,6 +1038,16 @@ export type Amongus_Match_Players_Min_Fields = {
   nickname?: Maybe<Scalars['String']['output']>;
   person_id?: Maybe<Scalars['uuid']['output']>;
   updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by min() on columns of table "amongus_match_players" */
+export type Amongus_Match_Players_Min_Order_By = {
+  amongus_match_id?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  nickname?: InputMaybe<Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
 };
 
 /** response of any mutation on the table "amongus_match_players" */
@@ -1023,10 +1068,10 @@ export type Amongus_Match_Players_On_Conflict = {
 
 /** Ordering options when selecting data from "amongus_match_players". */
 export type Amongus_Match_Players_Order_By = {
+  amongus_match?: InputMaybe<Amongus_Matches_Order_By>;
   amongus_match_id?: InputMaybe<Order_By>;
   created_at?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
-  match?: InputMaybe<Matches_Order_By>;
   nickname?: InputMaybe<Order_By>;
   person?: InputMaybe<Persons_Order_By>;
   person_id?: InputMaybe<Order_By>;
@@ -1111,6 +1156,10 @@ export type Amongus_Matches = {
   /** An object relationship */
   amongus_map?: Maybe<Amongus_Maps>;
   amongus_map_id?: Maybe<Scalars['uuid']['output']>;
+  /** An array relationship */
+  amongus_match_players: Array<Amongus_Match_Players>;
+  /** An aggregate relationship */
+  amongus_match_players_aggregate: Amongus_Match_Players_Aggregate;
   /** An object relationship */
   amongus_vanilla_version?: Maybe<Amongus_Vanilla_Versions>;
   amongus_vanilla_version_id?: Maybe<Scalars['uuid']['output']>;
@@ -1125,6 +1174,26 @@ export type Amongus_Matches = {
   room_id: Scalars['uuid']['output'];
   start_time: Scalars['timestamptz']['output'];
   updated_at: Scalars['timestamptz']['output'];
+};
+
+
+/** columns and relationships of "amongus_matches" */
+export type Amongus_MatchesAmongus_Match_PlayersArgs = {
+  distinct_on?: InputMaybe<Array<Amongus_Match_Players_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Amongus_Match_Players_Order_By>>;
+  where?: InputMaybe<Amongus_Match_Players_Bool_Exp>;
+};
+
+
+/** columns and relationships of "amongus_matches" */
+export type Amongus_MatchesAmongus_Match_Players_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Amongus_Match_Players_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Amongus_Match_Players_Order_By>>;
+  where?: InputMaybe<Amongus_Match_Players_Bool_Exp>;
 };
 
 /** aggregated selection of "amongus_matches" */
@@ -1224,6 +1293,8 @@ export type Amongus_Matches_Bool_Exp = {
   _or?: InputMaybe<Array<Amongus_Matches_Bool_Exp>>;
   amongus_map?: InputMaybe<Amongus_Maps_Bool_Exp>;
   amongus_map_id?: InputMaybe<Uuid_Comparison_Exp>;
+  amongus_match_players?: InputMaybe<Amongus_Match_Players_Bool_Exp>;
+  amongus_match_players_aggregate?: InputMaybe<Amongus_Match_Players_Aggregate_Bool_Exp>;
   amongus_vanilla_version?: InputMaybe<Amongus_Vanilla_Versions_Bool_Exp>;
   amongus_vanilla_version_id?: InputMaybe<Uuid_Comparison_Exp>;
   created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
@@ -1255,6 +1326,7 @@ export type Amongus_Matches_Inc_Input = {
 export type Amongus_Matches_Insert_Input = {
   amongus_map?: InputMaybe<Amongus_Maps_Obj_Rel_Insert_Input>;
   amongus_map_id?: InputMaybe<Scalars['uuid']['input']>;
+  amongus_match_players?: InputMaybe<Amongus_Match_Players_Arr_Rel_Insert_Input>;
   amongus_vanilla_version?: InputMaybe<Amongus_Vanilla_Versions_Obj_Rel_Insert_Input>;
   amongus_vanilla_version_id?: InputMaybe<Scalars['uuid']['input']>;
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
@@ -1332,6 +1404,13 @@ export type Amongus_Matches_Mutation_Response = {
   returning: Array<Amongus_Matches>;
 };
 
+/** input type for inserting object relation for remote table "amongus_matches" */
+export type Amongus_Matches_Obj_Rel_Insert_Input = {
+  data: Amongus_Matches_Insert_Input;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Amongus_Matches_On_Conflict>;
+};
+
 /** on_conflict condition type for table "amongus_matches" */
 export type Amongus_Matches_On_Conflict = {
   constraint: Amongus_Matches_Constraint;
@@ -1343,6 +1422,7 @@ export type Amongus_Matches_On_Conflict = {
 export type Amongus_Matches_Order_By = {
   amongus_map?: InputMaybe<Amongus_Maps_Order_By>;
   amongus_map_id?: InputMaybe<Order_By>;
+  amongus_match_players_aggregate?: InputMaybe<Amongus_Match_Players_Aggregate_Order_By>;
   amongus_vanilla_version?: InputMaybe<Amongus_Vanilla_Versions_Order_By>;
   amongus_vanilla_version_id?: InputMaybe<Order_By>;
   created_at?: InputMaybe<Order_By>;
@@ -7223,9 +7303,9 @@ export type Query_Root = {
   amongus_match_player_result_roles_aggregate: Amongus_Match_Player_Result_Roles_Aggregate;
   /** fetch data from the table: "amongus_match_player_result_roles" using primary key columns */
   amongus_match_player_result_roles_by_pk?: Maybe<Amongus_Match_Player_Result_Roles>;
-  /** fetch data from the table: "amongus_match_players" */
+  /** An array relationship */
   amongus_match_players: Array<Amongus_Match_Players>;
-  /** fetch aggregated fields from the table: "amongus_match_players" */
+  /** An aggregate relationship */
   amongus_match_players_aggregate: Amongus_Match_Players_Aggregate;
   /** fetch data from the table: "amongus_match_players" using primary key columns */
   amongus_match_players_by_pk?: Maybe<Amongus_Match_Players>;
@@ -10293,9 +10373,9 @@ export type Subscription_Root = {
   amongus_match_player_result_roles_by_pk?: Maybe<Amongus_Match_Player_Result_Roles>;
   /** fetch data from the table in a streaming manner: "amongus_match_player_result_roles" */
   amongus_match_player_result_roles_stream: Array<Amongus_Match_Player_Result_Roles>;
-  /** fetch data from the table: "amongus_match_players" */
+  /** An array relationship */
   amongus_match_players: Array<Amongus_Match_Players>;
-  /** fetch aggregated fields from the table: "amongus_match_players" */
+  /** An aggregate relationship */
   amongus_match_players_aggregate: Amongus_Match_Players_Aggregate;
   /** fetch data from the table: "amongus_match_players" using primary key columns */
   amongus_match_players_by_pk?: Maybe<Amongus_Match_Players>;
@@ -11323,6 +11403,18 @@ export type Uuid_Comparison_Exp = {
   _nin?: InputMaybe<Array<Scalars['uuid']['input']>>;
 };
 
+export type GetAmongusMatchPageQueryVariables = Exact<{
+  amongusMatchId: Scalars['uuid']['input'];
+}>;
+
+
+export type GetAmongusMatchPageQuery = { __typename?: 'query_root', amongusMatch?: { __typename?: 'amongus_matches', id: any, startTime: any, endTime?: any | null, amongusMatchPlayers: Array<{ __typename?: 'amongus_match_players', id: any, nickname: string, person?: { __typename?: 'persons', id: any } | null }>, room: { __typename?: 'rooms', id: any, name: string, startTime?: any | null, roomCommunities: Array<{ __typename?: 'room_communities', community: { __typename?: 'communities', id: any, name: string } }>, roomYoutubeLives: Array<{ __typename?: 'room_youtube_lives', id: any, title?: string | null, youtubeVideoId: string, startTime?: any | null, person?: { __typename?: 'persons', id: any, name: string } | null }> } } | null };
+
+export type GetAmongusMatchPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetAmongusMatchPageStaticParamQuery = { __typename?: 'query_root', amongusMatches: Array<{ __typename?: 'amongus_matches', id: any }> };
+
 export type GetCommunityPageQueryVariables = Exact<{
   communityId: Scalars['uuid']['input'];
 }>;
@@ -11339,18 +11431,6 @@ export type GetIndexPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetIndexPageQuery = { __typename?: 'query_root', communities: Array<{ __typename?: 'communities', id: any, name: string }> };
-
-export type GetMatchPageQueryVariables = Exact<{
-  matchId: Scalars['uuid']['input'];
-}>;
-
-
-export type GetMatchPageQuery = { __typename?: 'query_root', match?: { __typename?: 'matches', id: any, startTime: any, endTime?: any | null, matchPlayers: Array<{ __typename?: 'match_players', id: any, nickname: string, person?: { __typename?: 'persons', id: any } | null }>, room: { __typename?: 'rooms', id: any, name: string, startTime?: any | null, roomCommunities: Array<{ __typename?: 'room_communities', community: { __typename?: 'communities', id: any, name: string } }>, roomYoutubeLives: Array<{ __typename?: 'room_youtube_lives', id: any, title?: string | null, youtubeVideoId: string, startTime?: any | null, person?: { __typename?: 'persons', id: any, name: string } | null }> } } | null };
-
-export type GetMatchPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type GetMatchPageStaticParamQuery = { __typename?: 'query_root', matches: Array<{ __typename?: 'matches', id: any }> };
 
 export type GetPersonPageQueryVariables = Exact<{
   personId: Scalars['uuid']['input'];
@@ -11377,6 +11457,105 @@ export type GetRoomPageStaticParamQueryVariables = Exact<{ [key: string]: never;
 export type GetRoomPageStaticParamQuery = { __typename?: 'query_root', rooms: Array<{ __typename?: 'rooms', id: any }> };
 
 
+export const GetAmongusMatchPageDocument = gql`
+    query GetAmongusMatchPage($amongusMatchId: uuid!) {
+  amongusMatch: amongus_matches_by_pk(id: $amongusMatchId) {
+    id
+    startTime: start_time
+    endTime: end_time
+    amongusMatchPlayers: amongus_match_players(order_by: {nickname: asc}) {
+      id
+      nickname
+      person {
+        id
+      }
+    }
+    room {
+      id
+      name
+      startTime: start_time
+      roomCommunities: room_communities(order_by: {community: {start_time: asc}}) {
+        community {
+          id
+          name
+        }
+      }
+      roomYoutubeLives: room_youtube_lives {
+        id
+        youtubeVideoId: youtube_video_id
+        startTime: start_time
+        title
+        person {
+          id
+          name
+        }
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetAmongusMatchPageQuery__
+ *
+ * To run a query within a React component, call `useGetAmongusMatchPageQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetAmongusMatchPageQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetAmongusMatchPageQuery({
+ *   variables: {
+ *      amongusMatchId: // value for 'amongusMatchId'
+ *   },
+ * });
+ */
+export function useGetAmongusMatchPageQuery(baseOptions: Apollo.QueryHookOptions<GetAmongusMatchPageQuery, GetAmongusMatchPageQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetAmongusMatchPageQuery, GetAmongusMatchPageQueryVariables>(GetAmongusMatchPageDocument, options);
+      }
+export function useGetAmongusMatchPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetAmongusMatchPageQuery, GetAmongusMatchPageQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetAmongusMatchPageQuery, GetAmongusMatchPageQueryVariables>(GetAmongusMatchPageDocument, options);
+        }
+export type GetAmongusMatchPageQueryHookResult = ReturnType<typeof useGetAmongusMatchPageQuery>;
+export type GetAmongusMatchPageLazyQueryHookResult = ReturnType<typeof useGetAmongusMatchPageLazyQuery>;
+export type GetAmongusMatchPageQueryResult = Apollo.QueryResult<GetAmongusMatchPageQuery, GetAmongusMatchPageQueryVariables>;
+export const GetAmongusMatchPageStaticParamDocument = gql`
+    query GetAmongusMatchPageStaticParam {
+  amongusMatches: amongus_matches {
+    id
+  }
+}
+    `;
+
+/**
+ * __useGetAmongusMatchPageStaticParamQuery__
+ *
+ * To run a query within a React component, call `useGetAmongusMatchPageStaticParamQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetAmongusMatchPageStaticParamQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetAmongusMatchPageStaticParamQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetAmongusMatchPageStaticParamQuery(baseOptions?: Apollo.QueryHookOptions<GetAmongusMatchPageStaticParamQuery, GetAmongusMatchPageStaticParamQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetAmongusMatchPageStaticParamQuery, GetAmongusMatchPageStaticParamQueryVariables>(GetAmongusMatchPageStaticParamDocument, options);
+      }
+export function useGetAmongusMatchPageStaticParamLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetAmongusMatchPageStaticParamQuery, GetAmongusMatchPageStaticParamQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetAmongusMatchPageStaticParamQuery, GetAmongusMatchPageStaticParamQueryVariables>(GetAmongusMatchPageStaticParamDocument, options);
+        }
+export type GetAmongusMatchPageStaticParamQueryHookResult = ReturnType<typeof useGetAmongusMatchPageStaticParamQuery>;
+export type GetAmongusMatchPageStaticParamLazyQueryHookResult = ReturnType<typeof useGetAmongusMatchPageStaticParamLazyQuery>;
+export type GetAmongusMatchPageStaticParamQueryResult = Apollo.QueryResult<GetAmongusMatchPageStaticParamQuery, GetAmongusMatchPageStaticParamQueryVariables>;
 export const GetCommunityPageDocument = gql`
     query GetCommunityPage($communityId: uuid!) {
   community: communities_by_pk(id: $communityId) {
@@ -11490,105 +11669,6 @@ export function useGetIndexPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptio
 export type GetIndexPageQueryHookResult = ReturnType<typeof useGetIndexPageQuery>;
 export type GetIndexPageLazyQueryHookResult = ReturnType<typeof useGetIndexPageLazyQuery>;
 export type GetIndexPageQueryResult = Apollo.QueryResult<GetIndexPageQuery, GetIndexPageQueryVariables>;
-export const GetMatchPageDocument = gql`
-    query GetMatchPage($matchId: uuid!) {
-  match: matches_by_pk(id: $matchId) {
-    id
-    startTime: start_time
-    endTime: end_time
-    matchPlayers: match_players(order_by: {nickname: asc}) {
-      id
-      nickname
-      person {
-        id
-      }
-    }
-    room {
-      id
-      name
-      startTime: start_time
-      roomCommunities: room_communities(order_by: {community: {start_time: asc}}) {
-        community {
-          id
-          name
-        }
-      }
-      roomYoutubeLives: room_youtube_lives {
-        id
-        youtubeVideoId: youtube_video_id
-        startTime: start_time
-        title
-        person {
-          id
-          name
-        }
-      }
-    }
-  }
-}
-    `;
-
-/**
- * __useGetMatchPageQuery__
- *
- * To run a query within a React component, call `useGetMatchPageQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetMatchPageQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useGetMatchPageQuery({
- *   variables: {
- *      matchId: // value for 'matchId'
- *   },
- * });
- */
-export function useGetMatchPageQuery(baseOptions: Apollo.QueryHookOptions<GetMatchPageQuery, GetMatchPageQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetMatchPageQuery, GetMatchPageQueryVariables>(GetMatchPageDocument, options);
-      }
-export function useGetMatchPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetMatchPageQuery, GetMatchPageQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetMatchPageQuery, GetMatchPageQueryVariables>(GetMatchPageDocument, options);
-        }
-export type GetMatchPageQueryHookResult = ReturnType<typeof useGetMatchPageQuery>;
-export type GetMatchPageLazyQueryHookResult = ReturnType<typeof useGetMatchPageLazyQuery>;
-export type GetMatchPageQueryResult = Apollo.QueryResult<GetMatchPageQuery, GetMatchPageQueryVariables>;
-export const GetMatchPageStaticParamDocument = gql`
-    query GetMatchPageStaticParam {
-  matches {
-    id
-  }
-}
-    `;
-
-/**
- * __useGetMatchPageStaticParamQuery__
- *
- * To run a query within a React component, call `useGetMatchPageStaticParamQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetMatchPageStaticParamQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useGetMatchPageStaticParamQuery({
- *   variables: {
- *   },
- * });
- */
-export function useGetMatchPageStaticParamQuery(baseOptions?: Apollo.QueryHookOptions<GetMatchPageStaticParamQuery, GetMatchPageStaticParamQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetMatchPageStaticParamQuery, GetMatchPageStaticParamQueryVariables>(GetMatchPageStaticParamDocument, options);
-      }
-export function useGetMatchPageStaticParamLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetMatchPageStaticParamQuery, GetMatchPageStaticParamQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetMatchPageStaticParamQuery, GetMatchPageStaticParamQueryVariables>(GetMatchPageStaticParamDocument, options);
-        }
-export type GetMatchPageStaticParamQueryHookResult = ReturnType<typeof useGetMatchPageStaticParamQuery>;
-export type GetMatchPageStaticParamLazyQueryHookResult = ReturnType<typeof useGetMatchPageStaticParamLazyQuery>;
-export type GetMatchPageStaticParamQueryResult = Apollo.QueryResult<GetMatchPageStaticParamQuery, GetMatchPageStaticParamQueryVariables>;
 export const GetPersonPageDocument = gql`
     query GetPersonPage($personId: uuid!) {
   person: persons_by_pk(id: $personId) {

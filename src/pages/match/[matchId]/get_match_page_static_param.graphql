@@ -1,5 +1,0 @@
-query GetMatchPageStaticParam {
-  matches {
-    id
-  }
-}

@@ -1,14 +1,14 @@
-query GetMatchPage(
-  $matchId: uuid!
+query GetAmongusMatchPage(
+  $amongusMatchId: uuid!
 ) {
-  match: matches_by_pk(
-    id: $matchId
+  amongusMatch: amongus_matches_by_pk(
+    id: $amongusMatchId
   ) {
     id
     startTime: start_time
     endTime: end_time
 
-    matchPlayers: match_players(
+    amongusMatchPlayers: amongus_match_players(
       order_by: {
         nickname: asc
       }

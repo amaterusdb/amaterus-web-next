@@ -15,26 +15,26 @@ import Head from 'next/head'
 import NextLink from 'next/link'
 import DrawerAppBar from '@/components/drawer_app_bar'
 import {
-  GetMatchPageStaticParamDocument,
-  GetMatchPageStaticParamQuery,
-  useGetMatchPageQuery,
+  GetAmongusMatchPageStaticParamDocument,
+  GetAmongusMatchPageStaticParamQuery,
+  useGetAmongusMatchPageQuery,
 } from '@/generated/graphql'
 import { createApolloClient } from '@/lib/apollo'
 
 export async function getStaticPaths() {
   const apolloClient = createApolloClient()
 
-  const { data } = await apolloClient.query<GetMatchPageStaticParamQuery>({
-    query: GetMatchPageStaticParamDocument,
+  const { data } = await apolloClient.query<GetAmongusMatchPageStaticParamQuery>({
+    query: GetAmongusMatchPageStaticParamDocument,
   })
-  const matches = data?.matches
-  if (matches == null) {
+  const amongusMatches = data?.amongusMatches
+  if (amongusMatches == null) {
     throw Error('Invalid response for GetMatchPageStaticParamQuery')
   }
 
-  const paths = matches.map((match) => ({
+  const paths = amongusMatches.map((amongusMatch) => ({
     params: {
-      matchId: String(match.id),
+      amongusMatchId: String(amongusMatch.id),
     },
   }))
 
@@ -48,22 +48,22 @@ export async function getStaticProps({
   params,
 }: {
   params: {
-    matchId: string
+    amongusMatchId: string
   }
 }) {
-  const matchId = params.matchId
+  const amongusMatchId = params.amongusMatchId
 
   return {
     props: {
-      matchId,
+      amongusMatchId,
     },
   }
 }
 
-export default function MatchPage({ matchId }: { matchId: string }) {
-  const { data, loading } = useGetMatchPageQuery({
+export default function MatchPage({ amongusMatchId }: { amongusMatchId: string }) {
+  const { data, loading } = useGetAmongusMatchPageQuery({
     variables: {
-      matchId,
+      amongusMatchId,
     },
   })
 
@@ -75,16 +75,16 @@ export default function MatchPage({ matchId }: { matchId: string }) {
     )
   }
 
-  const match = data?.match
-  if (match == null) {
+  const amongusMatch = data?.amongusMatch
+  if (amongusMatch == null) {
     return (
       <Box component='main' sx={{ p: 3 }}>
-        No such match found.
+        No such Among Us match found.
       </Box>
     )
   }
 
-  const room = match.room
+  const room = amongusMatch.room
   const roomCommunities = room?.roomCommunities ?? []
   const firstCommunity = roomCommunities.length > 0 ? roomCommunities[0].community : null
 
@@ -92,8 +92,8 @@ export default function MatchPage({ matchId }: { matchId: string }) {
     <>
       <Head>
         <title>
-          試合/{format(parseISO(match.startTime), 'yyyy-MM-dd HH:mm:ss')} - 部屋/{match.room.name} -
-          Amaterus
+          試合/{format(parseISO(amongusMatch.startTime), 'yyyy-MM-dd HH:mm:ss')} - 部屋/
+          {amongusMatch.room.name} - Amaterus
         </title>
       </Head>
       <DrawerAppBar />
@@ -116,18 +116,18 @@ export default function MatchPage({ matchId }: { matchId: string }) {
             </NextLink>
           )}
           <Typography>部屋</Typography>
-          <NextLink href={`/room/${match.room.id}/`} passHref legacyBehavior>
+          <NextLink href={`/room/${amongusMatch.room.id}/`} passHref legacyBehavior>
             <MuiLink underline='hover' color='inherit'>
-              {match.room.name}
+              {amongusMatch.room.name}
             </MuiLink>
           </NextLink>
           <Typography>試合</Typography>
           <Typography color='text.primary'>
-            試合 {format(parseISO(match.startTime), 'yyyy-MM-dd HH:mm:ss')}
+            試合 {format(parseISO(amongusMatch.startTime), 'yyyy-MM-dd HH:mm:ss')}
           </Typography>
         </Breadcrumbs>
         <Typography variant='h4' component='h2' sx={{ mt: 2 }}>
-          試合 {format(parseISO(match.startTime), 'yyyy-MM-dd HH:mm:ss')}
+          試合 {format(parseISO(amongusMatch.startTime), 'yyyy-MM-dd HH:mm:ss')}
         </Typography>
         <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
           プレイヤー
@@ -140,23 +140,23 @@ export default function MatchPage({ matchId }: { matchId: string }) {
               </TableRow>
             </TableHead>
             <TableBody>
-              {match.matchPlayers.map((matchPlayer) => {
+              {amongusMatch.amongusMatchPlayers.map((amongusMatchPlayer) => {
                 return (
                   <TableRow
-                    key={matchPlayer.id}
+                    key={amongusMatchPlayer.id}
                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                   >
                     <TableCell component='th' scope='row'>
-                      {matchPlayer.person?.id != null ? (
+                      {amongusMatchPlayer.person?.id != null ? (
                         <NextLink
-                          href={`/person/${matchPlayer.person.id}/`}
+                          href={`/person/${amongusMatchPlayer.person.id}/`}
                           passHref
                           legacyBehavior
                         >
-                          <MuiLink>{matchPlayer.nickname}</MuiLink>
+                          <MuiLink>{amongusMatchPlayer.nickname}</MuiLink>
                         </NextLink>
                       ) : (
-                        <>{matchPlayer.nickname}</>
+                        <>{amongusMatchPlayer.nickname}</>
                       )}
                     </TableCell>
                   </TableRow>
@@ -179,14 +179,14 @@ export default function MatchPage({ matchId }: { matchId: string }) {
               </TableRow>
             </TableHead>
             <TableBody>
-              {match.room.roomYoutubeLives.map((roomYoutubeLive) => {
+              {amongusMatch.room.roomYoutubeLives.map((roomYoutubeLive) => {
                 const localStartTime = intervalToDuration({
                   start: parseISO(roomYoutubeLive.startTime),
-                  end: parseISO(match.startTime),
+                  end: parseISO(amongusMatch.startTime),
                 })
                 const localEndTime = intervalToDuration({
                   start: parseISO(roomYoutubeLive.startTime),
-                  end: parseISO(match.endTime),
+                  end: parseISO(amongusMatch.endTime),
                 })
 
                 const localStartTimeHours = localStartTime.hours ?? 0
