@@ -556,11 +556,11 @@ export type Amongus_Match_Mods_Updates = {
 /** リザルト画面でのプレイヤー役職 */
 export type Amongus_Match_Player_Result_Roles = {
   __typename?: 'amongus_match_player_result_roles';
+  amongus_match_id: Scalars['uuid']['output'];
   amongus_role_id: Scalars['uuid']['output'];
   amongus_role_index: Scalars['Int']['output'];
   created_at: Scalars['timestamptz']['output'];
   id: Scalars['uuid']['output'];
-  match_id: Scalars['uuid']['output'];
   person_id: Scalars['uuid']['output'];
   updated_at: Scalars['timestamptz']['output'];
 };
@@ -644,20 +644,20 @@ export type Amongus_Match_Player_Result_Roles_Bool_Exp = {
   _and?: InputMaybe<Array<Amongus_Match_Player_Result_Roles_Bool_Exp>>;
   _not?: InputMaybe<Amongus_Match_Player_Result_Roles_Bool_Exp>;
   _or?: InputMaybe<Array<Amongus_Match_Player_Result_Roles_Bool_Exp>>;
+  amongus_match_id?: InputMaybe<Uuid_Comparison_Exp>;
   amongus_role_id?: InputMaybe<Uuid_Comparison_Exp>;
   amongus_role_index?: InputMaybe<Int_Comparison_Exp>;
   created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
-  match_id?: InputMaybe<Uuid_Comparison_Exp>;
   person_id?: InputMaybe<Uuid_Comparison_Exp>;
   updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
 };
 
 /** unique or primary key constraints on table "amongus_match_player_result_roles" */
 export enum Amongus_Match_Player_Result_Roles_Constraint {
-  /** unique or primary key constraint on columns "amongus_role_id", "match_id", "person_id" */
+  /** unique or primary key constraint on columns "amongus_role_id", "amongus_match_id", "person_id" */
   MatchResultPlayerRolesMatchIdPersonIdPlayerRoleIdKey = 'match_result_player_roles_match_id_person_id_player_role_id_key',
-  /** unique or primary key constraint on columns "match_id", "amongus_role_index", "person_id" */
+  /** unique or primary key constraint on columns "amongus_match_id", "amongus_role_index", "person_id" */
   MatchResultPlayerRolesMatchIdPersonIdPlayerRoleOrKey = 'match_result_player_roles_match_id_person_id_player_role_or_key',
   /** unique or primary key constraint on columns "id" */
   MatchResultPlayerRolesPkey = 'match_result_player_roles_pkey'
@@ -670,11 +670,11 @@ export type Amongus_Match_Player_Result_Roles_Inc_Input = {
 
 /** input type for inserting data into table "amongus_match_player_result_roles" */
 export type Amongus_Match_Player_Result_Roles_Insert_Input = {
+  amongus_match_id?: InputMaybe<Scalars['uuid']['input']>;
   amongus_role_id?: InputMaybe<Scalars['uuid']['input']>;
   amongus_role_index?: InputMaybe<Scalars['Int']['input']>;
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
-  match_id?: InputMaybe<Scalars['uuid']['input']>;
   person_id?: InputMaybe<Scalars['uuid']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
 };
@@ -682,22 +682,22 @@ export type Amongus_Match_Player_Result_Roles_Insert_Input = {
 /** aggregate max on columns */
 export type Amongus_Match_Player_Result_Roles_Max_Fields = {
   __typename?: 'amongus_match_player_result_roles_max_fields';
+  amongus_match_id?: Maybe<Scalars['uuid']['output']>;
   amongus_role_id?: Maybe<Scalars['uuid']['output']>;
   amongus_role_index?: Maybe<Scalars['Int']['output']>;
   created_at?: Maybe<Scalars['timestamptz']['output']>;
   id?: Maybe<Scalars['uuid']['output']>;
-  match_id?: Maybe<Scalars['uuid']['output']>;
   person_id?: Maybe<Scalars['uuid']['output']>;
   updated_at?: Maybe<Scalars['timestamptz']['output']>;
 };
 
 /** order by max() on columns of table "amongus_match_player_result_roles" */
 export type Amongus_Match_Player_Result_Roles_Max_Order_By = {
+  amongus_match_id?: InputMaybe<Order_By>;
   amongus_role_id?: InputMaybe<Order_By>;
   amongus_role_index?: InputMaybe<Order_By>;
   created_at?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
-  match_id?: InputMaybe<Order_By>;
   person_id?: InputMaybe<Order_By>;
   updated_at?: InputMaybe<Order_By>;
 };
@@ -705,22 +705,22 @@ export type Amongus_Match_Player_Result_Roles_Max_Order_By = {
 /** aggregate min on columns */
 export type Amongus_Match_Player_Result_Roles_Min_Fields = {
   __typename?: 'amongus_match_player_result_roles_min_fields';
+  amongus_match_id?: Maybe<Scalars['uuid']['output']>;
   amongus_role_id?: Maybe<Scalars['uuid']['output']>;
   amongus_role_index?: Maybe<Scalars['Int']['output']>;
   created_at?: Maybe<Scalars['timestamptz']['output']>;
   id?: Maybe<Scalars['uuid']['output']>;
-  match_id?: Maybe<Scalars['uuid']['output']>;
   person_id?: Maybe<Scalars['uuid']['output']>;
   updated_at?: Maybe<Scalars['timestamptz']['output']>;
 };
 
 /** order by min() on columns of table "amongus_match_player_result_roles" */
 export type Amongus_Match_Player_Result_Roles_Min_Order_By = {
+  amongus_match_id?: InputMaybe<Order_By>;
   amongus_role_id?: InputMaybe<Order_By>;
   amongus_role_index?: InputMaybe<Order_By>;
   created_at?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
-  match_id?: InputMaybe<Order_By>;
   person_id?: InputMaybe<Order_By>;
   updated_at?: InputMaybe<Order_By>;
 };
@@ -743,11 +743,11 @@ export type Amongus_Match_Player_Result_Roles_On_Conflict = {
 
 /** Ordering options when selecting data from "amongus_match_player_result_roles". */
 export type Amongus_Match_Player_Result_Roles_Order_By = {
+  amongus_match_id?: InputMaybe<Order_By>;
   amongus_role_id?: InputMaybe<Order_By>;
   amongus_role_index?: InputMaybe<Order_By>;
   created_at?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
-  match_id?: InputMaybe<Order_By>;
   person_id?: InputMaybe<Order_By>;
   updated_at?: InputMaybe<Order_By>;
 };
@@ -760,6 +760,8 @@ export type Amongus_Match_Player_Result_Roles_Pk_Columns_Input = {
 /** select columns of table "amongus_match_player_result_roles" */
 export enum Amongus_Match_Player_Result_Roles_Select_Column {
   /** column name */
+  AmongusMatchId = 'amongus_match_id',
+  /** column name */
   AmongusRoleId = 'amongus_role_id',
   /** column name */
   AmongusRoleIndex = 'amongus_role_index',
@@ -768,8 +770,6 @@ export enum Amongus_Match_Player_Result_Roles_Select_Column {
   /** column name */
   Id = 'id',
   /** column name */
-  MatchId = 'match_id',
-  /** column name */
   PersonId = 'person_id',
   /** column name */
   UpdatedAt = 'updated_at'
@@ -777,11 +777,11 @@ export enum Amongus_Match_Player_Result_Roles_Select_Column {
 
 /** input type for updating data in table "amongus_match_player_result_roles" */
 export type Amongus_Match_Player_Result_Roles_Set_Input = {
+  amongus_match_id?: InputMaybe<Scalars['uuid']['input']>;
   amongus_role_id?: InputMaybe<Scalars['uuid']['input']>;
   amongus_role_index?: InputMaybe<Scalars['Int']['input']>;
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
-  match_id?: InputMaybe<Scalars['uuid']['input']>;
   person_id?: InputMaybe<Scalars['uuid']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
 };
@@ -829,11 +829,11 @@ export type Amongus_Match_Player_Result_Roles_Stream_Cursor_Input = {
 
 /** Initial value of the column from where the streaming should start */
 export type Amongus_Match_Player_Result_Roles_Stream_Cursor_Value_Input = {
+  amongus_match_id?: InputMaybe<Scalars['uuid']['input']>;
   amongus_role_id?: InputMaybe<Scalars['uuid']['input']>;
   amongus_role_index?: InputMaybe<Scalars['Int']['input']>;
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
-  match_id?: InputMaybe<Scalars['uuid']['input']>;
   person_id?: InputMaybe<Scalars['uuid']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
 };
@@ -852,6 +852,8 @@ export type Amongus_Match_Player_Result_Roles_Sum_Order_By = {
 /** update columns of table "amongus_match_player_result_roles" */
 export enum Amongus_Match_Player_Result_Roles_Update_Column {
   /** column name */
+  AmongusMatchId = 'amongus_match_id',
+  /** column name */
   AmongusRoleId = 'amongus_role_id',
   /** column name */
   AmongusRoleIndex = 'amongus_role_index',
@@ -859,8 +861,6 @@ export enum Amongus_Match_Player_Result_Roles_Update_Column {
   CreatedAt = 'created_at',
   /** column name */
   Id = 'id',
-  /** column name */
-  MatchId = 'match_id',
   /** column name */
   PersonId = 'person_id',
   /** column name */
@@ -3267,528 +3267,6 @@ export type Games_Updates = {
   where: Games_Bool_Exp;
 };
 
-/** 試合に参加したプレイヤー */
-export type Match_Players = {
-  __typename?: 'match_players';
-  created_at: Scalars['timestamptz']['output'];
-  id: Scalars['uuid']['output'];
-  /** An object relationship */
-  match: Matches;
-  match_id: Scalars['uuid']['output'];
-  nickname: Scalars['String']['output'];
-  /** An object relationship */
-  person?: Maybe<Persons>;
-  person_id?: Maybe<Scalars['uuid']['output']>;
-  updated_at: Scalars['timestamptz']['output'];
-};
-
-/** aggregated selection of "match_players" */
-export type Match_Players_Aggregate = {
-  __typename?: 'match_players_aggregate';
-  aggregate?: Maybe<Match_Players_Aggregate_Fields>;
-  nodes: Array<Match_Players>;
-};
-
-export type Match_Players_Aggregate_Bool_Exp = {
-  count?: InputMaybe<Match_Players_Aggregate_Bool_Exp_Count>;
-};
-
-export type Match_Players_Aggregate_Bool_Exp_Count = {
-  arguments?: InputMaybe<Array<Match_Players_Select_Column>>;
-  distinct?: InputMaybe<Scalars['Boolean']['input']>;
-  filter?: InputMaybe<Match_Players_Bool_Exp>;
-  predicate: Int_Comparison_Exp;
-};
-
-/** aggregate fields of "match_players" */
-export type Match_Players_Aggregate_Fields = {
-  __typename?: 'match_players_aggregate_fields';
-  count: Scalars['Int']['output'];
-  max?: Maybe<Match_Players_Max_Fields>;
-  min?: Maybe<Match_Players_Min_Fields>;
-};
-
-
-/** aggregate fields of "match_players" */
-export type Match_Players_Aggregate_FieldsCountArgs = {
-  columns?: InputMaybe<Array<Match_Players_Select_Column>>;
-  distinct?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-/** order by aggregate values of table "match_players" */
-export type Match_Players_Aggregate_Order_By = {
-  count?: InputMaybe<Order_By>;
-  max?: InputMaybe<Match_Players_Max_Order_By>;
-  min?: InputMaybe<Match_Players_Min_Order_By>;
-};
-
-/** input type for inserting array relation for remote table "match_players" */
-export type Match_Players_Arr_Rel_Insert_Input = {
-  data: Array<Match_Players_Insert_Input>;
-  /** upsert condition */
-  on_conflict?: InputMaybe<Match_Players_On_Conflict>;
-};
-
-/** Boolean expression to filter rows from the table "match_players". All fields are combined with a logical 'AND'. */
-export type Match_Players_Bool_Exp = {
-  _and?: InputMaybe<Array<Match_Players_Bool_Exp>>;
-  _not?: InputMaybe<Match_Players_Bool_Exp>;
-  _or?: InputMaybe<Array<Match_Players_Bool_Exp>>;
-  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
-  id?: InputMaybe<Uuid_Comparison_Exp>;
-  match?: InputMaybe<Matches_Bool_Exp>;
-  match_id?: InputMaybe<Uuid_Comparison_Exp>;
-  nickname?: InputMaybe<String_Comparison_Exp>;
-  person?: InputMaybe<Persons_Bool_Exp>;
-  person_id?: InputMaybe<Uuid_Comparison_Exp>;
-  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
-};
-
-/** unique or primary key constraints on table "match_players" */
-export enum Match_Players_Constraint {
-  /** unique or primary key constraint on columns "nickname", "match_id" */
-  MatchPlayersMatchIdNicknameKey = 'match_players_match_id_nickname_key',
-  /** unique or primary key constraint on columns "match_id", "person_id" */
-  MatchPlayersMatchIdPersonIdKey = 'match_players_match_id_person_id_key',
-  /** unique or primary key constraint on columns "id" */
-  MatchPlayersPkey = 'match_players_pkey'
-}
-
-/** input type for inserting data into table "match_players" */
-export type Match_Players_Insert_Input = {
-  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
-  id?: InputMaybe<Scalars['uuid']['input']>;
-  match?: InputMaybe<Matches_Obj_Rel_Insert_Input>;
-  match_id?: InputMaybe<Scalars['uuid']['input']>;
-  nickname?: InputMaybe<Scalars['String']['input']>;
-  person?: InputMaybe<Persons_Obj_Rel_Insert_Input>;
-  person_id?: InputMaybe<Scalars['uuid']['input']>;
-  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
-};
-
-/** aggregate max on columns */
-export type Match_Players_Max_Fields = {
-  __typename?: 'match_players_max_fields';
-  created_at?: Maybe<Scalars['timestamptz']['output']>;
-  id?: Maybe<Scalars['uuid']['output']>;
-  match_id?: Maybe<Scalars['uuid']['output']>;
-  nickname?: Maybe<Scalars['String']['output']>;
-  person_id?: Maybe<Scalars['uuid']['output']>;
-  updated_at?: Maybe<Scalars['timestamptz']['output']>;
-};
-
-/** order by max() on columns of table "match_players" */
-export type Match_Players_Max_Order_By = {
-  created_at?: InputMaybe<Order_By>;
-  id?: InputMaybe<Order_By>;
-  match_id?: InputMaybe<Order_By>;
-  nickname?: InputMaybe<Order_By>;
-  person_id?: InputMaybe<Order_By>;
-  updated_at?: InputMaybe<Order_By>;
-};
-
-/** aggregate min on columns */
-export type Match_Players_Min_Fields = {
-  __typename?: 'match_players_min_fields';
-  created_at?: Maybe<Scalars['timestamptz']['output']>;
-  id?: Maybe<Scalars['uuid']['output']>;
-  match_id?: Maybe<Scalars['uuid']['output']>;
-  nickname?: Maybe<Scalars['String']['output']>;
-  person_id?: Maybe<Scalars['uuid']['output']>;
-  updated_at?: Maybe<Scalars['timestamptz']['output']>;
-};
-
-/** order by min() on columns of table "match_players" */
-export type Match_Players_Min_Order_By = {
-  created_at?: InputMaybe<Order_By>;
-  id?: InputMaybe<Order_By>;
-  match_id?: InputMaybe<Order_By>;
-  nickname?: InputMaybe<Order_By>;
-  person_id?: InputMaybe<Order_By>;
-  updated_at?: InputMaybe<Order_By>;
-};
-
-/** response of any mutation on the table "match_players" */
-export type Match_Players_Mutation_Response = {
-  __typename?: 'match_players_mutation_response';
-  /** number of rows affected by the mutation */
-  affected_rows: Scalars['Int']['output'];
-  /** data from the rows affected by the mutation */
-  returning: Array<Match_Players>;
-};
-
-/** on_conflict condition type for table "match_players" */
-export type Match_Players_On_Conflict = {
-  constraint: Match_Players_Constraint;
-  update_columns?: Array<Match_Players_Update_Column>;
-  where?: InputMaybe<Match_Players_Bool_Exp>;
-};
-
-/** Ordering options when selecting data from "match_players". */
-export type Match_Players_Order_By = {
-  created_at?: InputMaybe<Order_By>;
-  id?: InputMaybe<Order_By>;
-  match?: InputMaybe<Matches_Order_By>;
-  match_id?: InputMaybe<Order_By>;
-  nickname?: InputMaybe<Order_By>;
-  person?: InputMaybe<Persons_Order_By>;
-  person_id?: InputMaybe<Order_By>;
-  updated_at?: InputMaybe<Order_By>;
-};
-
-/** primary key columns input for table: match_players */
-export type Match_Players_Pk_Columns_Input = {
-  id: Scalars['uuid']['input'];
-};
-
-/** select columns of table "match_players" */
-export enum Match_Players_Select_Column {
-  /** column name */
-  CreatedAt = 'created_at',
-  /** column name */
-  Id = 'id',
-  /** column name */
-  MatchId = 'match_id',
-  /** column name */
-  Nickname = 'nickname',
-  /** column name */
-  PersonId = 'person_id',
-  /** column name */
-  UpdatedAt = 'updated_at'
-}
-
-/** input type for updating data in table "match_players" */
-export type Match_Players_Set_Input = {
-  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
-  id?: InputMaybe<Scalars['uuid']['input']>;
-  match_id?: InputMaybe<Scalars['uuid']['input']>;
-  nickname?: InputMaybe<Scalars['String']['input']>;
-  person_id?: InputMaybe<Scalars['uuid']['input']>;
-  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
-};
-
-/** Streaming cursor of the table "match_players" */
-export type Match_Players_Stream_Cursor_Input = {
-  /** Stream column input with initial value */
-  initial_value: Match_Players_Stream_Cursor_Value_Input;
-  /** cursor ordering */
-  ordering?: InputMaybe<Cursor_Ordering>;
-};
-
-/** Initial value of the column from where the streaming should start */
-export type Match_Players_Stream_Cursor_Value_Input = {
-  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
-  id?: InputMaybe<Scalars['uuid']['input']>;
-  match_id?: InputMaybe<Scalars['uuid']['input']>;
-  nickname?: InputMaybe<Scalars['String']['input']>;
-  person_id?: InputMaybe<Scalars['uuid']['input']>;
-  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
-};
-
-/** update columns of table "match_players" */
-export enum Match_Players_Update_Column {
-  /** column name */
-  CreatedAt = 'created_at',
-  /** column name */
-  Id = 'id',
-  /** column name */
-  MatchId = 'match_id',
-  /** column name */
-  Nickname = 'nickname',
-  /** column name */
-  PersonId = 'person_id',
-  /** column name */
-  UpdatedAt = 'updated_at'
-}
-
-export type Match_Players_Updates = {
-  /** sets the columns of the filtered rows to the given values */
-  _set?: InputMaybe<Match_Players_Set_Input>;
-  /** filter the rows which have to be updated */
-  where: Match_Players_Bool_Exp;
-};
-
-/** 試合 */
-export type Matches = {
-  __typename?: 'matches';
-  created_at: Scalars['timestamptz']['output'];
-  end_time?: Maybe<Scalars['timestamptz']['output']>;
-  id: Scalars['uuid']['output'];
-  /** An array relationship */
-  match_players: Array<Match_Players>;
-  /** An aggregate relationship */
-  match_players_aggregate: Match_Players_Aggregate;
-  name?: Maybe<Scalars['String']['output']>;
-  /** An object relationship */
-  room: Rooms;
-  room_id: Scalars['uuid']['output'];
-  start_time: Scalars['timestamptz']['output'];
-  updated_at: Scalars['timestamptz']['output'];
-};
-
-
-/** 試合 */
-export type MatchesMatch_PlayersArgs = {
-  distinct_on?: InputMaybe<Array<Match_Players_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Match_Players_Order_By>>;
-  where?: InputMaybe<Match_Players_Bool_Exp>;
-};
-
-
-/** 試合 */
-export type MatchesMatch_Players_AggregateArgs = {
-  distinct_on?: InputMaybe<Array<Match_Players_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Match_Players_Order_By>>;
-  where?: InputMaybe<Match_Players_Bool_Exp>;
-};
-
-/** aggregated selection of "matches" */
-export type Matches_Aggregate = {
-  __typename?: 'matches_aggregate';
-  aggregate?: Maybe<Matches_Aggregate_Fields>;
-  nodes: Array<Matches>;
-};
-
-export type Matches_Aggregate_Bool_Exp = {
-  count?: InputMaybe<Matches_Aggregate_Bool_Exp_Count>;
-};
-
-export type Matches_Aggregate_Bool_Exp_Count = {
-  arguments?: InputMaybe<Array<Matches_Select_Column>>;
-  distinct?: InputMaybe<Scalars['Boolean']['input']>;
-  filter?: InputMaybe<Matches_Bool_Exp>;
-  predicate: Int_Comparison_Exp;
-};
-
-/** aggregate fields of "matches" */
-export type Matches_Aggregate_Fields = {
-  __typename?: 'matches_aggregate_fields';
-  count: Scalars['Int']['output'];
-  max?: Maybe<Matches_Max_Fields>;
-  min?: Maybe<Matches_Min_Fields>;
-};
-
-
-/** aggregate fields of "matches" */
-export type Matches_Aggregate_FieldsCountArgs = {
-  columns?: InputMaybe<Array<Matches_Select_Column>>;
-  distinct?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-/** order by aggregate values of table "matches" */
-export type Matches_Aggregate_Order_By = {
-  count?: InputMaybe<Order_By>;
-  max?: InputMaybe<Matches_Max_Order_By>;
-  min?: InputMaybe<Matches_Min_Order_By>;
-};
-
-/** input type for inserting array relation for remote table "matches" */
-export type Matches_Arr_Rel_Insert_Input = {
-  data: Array<Matches_Insert_Input>;
-  /** upsert condition */
-  on_conflict?: InputMaybe<Matches_On_Conflict>;
-};
-
-/** Boolean expression to filter rows from the table "matches". All fields are combined with a logical 'AND'. */
-export type Matches_Bool_Exp = {
-  _and?: InputMaybe<Array<Matches_Bool_Exp>>;
-  _not?: InputMaybe<Matches_Bool_Exp>;
-  _or?: InputMaybe<Array<Matches_Bool_Exp>>;
-  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
-  end_time?: InputMaybe<Timestamptz_Comparison_Exp>;
-  id?: InputMaybe<Uuid_Comparison_Exp>;
-  match_players?: InputMaybe<Match_Players_Bool_Exp>;
-  match_players_aggregate?: InputMaybe<Match_Players_Aggregate_Bool_Exp>;
-  name?: InputMaybe<String_Comparison_Exp>;
-  room?: InputMaybe<Rooms_Bool_Exp>;
-  room_id?: InputMaybe<Uuid_Comparison_Exp>;
-  start_time?: InputMaybe<Timestamptz_Comparison_Exp>;
-  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
-};
-
-/** unique or primary key constraints on table "matches" */
-export enum Matches_Constraint {
-  /** unique or primary key constraint on columns "id" */
-  MatchesPkey = 'matches_pkey'
-}
-
-/** input type for inserting data into table "matches" */
-export type Matches_Insert_Input = {
-  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
-  end_time?: InputMaybe<Scalars['timestamptz']['input']>;
-  id?: InputMaybe<Scalars['uuid']['input']>;
-  match_players?: InputMaybe<Match_Players_Arr_Rel_Insert_Input>;
-  name?: InputMaybe<Scalars['String']['input']>;
-  room?: InputMaybe<Rooms_Obj_Rel_Insert_Input>;
-  room_id?: InputMaybe<Scalars['uuid']['input']>;
-  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
-  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
-};
-
-/** aggregate max on columns */
-export type Matches_Max_Fields = {
-  __typename?: 'matches_max_fields';
-  created_at?: Maybe<Scalars['timestamptz']['output']>;
-  end_time?: Maybe<Scalars['timestamptz']['output']>;
-  id?: Maybe<Scalars['uuid']['output']>;
-  name?: Maybe<Scalars['String']['output']>;
-  room_id?: Maybe<Scalars['uuid']['output']>;
-  start_time?: Maybe<Scalars['timestamptz']['output']>;
-  updated_at?: Maybe<Scalars['timestamptz']['output']>;
-};
-
-/** order by max() on columns of table "matches" */
-export type Matches_Max_Order_By = {
-  created_at?: InputMaybe<Order_By>;
-  end_time?: InputMaybe<Order_By>;
-  id?: InputMaybe<Order_By>;
-  name?: InputMaybe<Order_By>;
-  room_id?: InputMaybe<Order_By>;
-  start_time?: InputMaybe<Order_By>;
-  updated_at?: InputMaybe<Order_By>;
-};
-
-/** aggregate min on columns */
-export type Matches_Min_Fields = {
-  __typename?: 'matches_min_fields';
-  created_at?: Maybe<Scalars['timestamptz']['output']>;
-  end_time?: Maybe<Scalars['timestamptz']['output']>;
-  id?: Maybe<Scalars['uuid']['output']>;
-  name?: Maybe<Scalars['String']['output']>;
-  room_id?: Maybe<Scalars['uuid']['output']>;
-  start_time?: Maybe<Scalars['timestamptz']['output']>;
-  updated_at?: Maybe<Scalars['timestamptz']['output']>;
-};
-
-/** order by min() on columns of table "matches" */
-export type Matches_Min_Order_By = {
-  created_at?: InputMaybe<Order_By>;
-  end_time?: InputMaybe<Order_By>;
-  id?: InputMaybe<Order_By>;
-  name?: InputMaybe<Order_By>;
-  room_id?: InputMaybe<Order_By>;
-  start_time?: InputMaybe<Order_By>;
-  updated_at?: InputMaybe<Order_By>;
-};
-
-/** response of any mutation on the table "matches" */
-export type Matches_Mutation_Response = {
-  __typename?: 'matches_mutation_response';
-  /** number of rows affected by the mutation */
-  affected_rows: Scalars['Int']['output'];
-  /** data from the rows affected by the mutation */
-  returning: Array<Matches>;
-};
-
-/** input type for inserting object relation for remote table "matches" */
-export type Matches_Obj_Rel_Insert_Input = {
-  data: Matches_Insert_Input;
-  /** upsert condition */
-  on_conflict?: InputMaybe<Matches_On_Conflict>;
-};
-
-/** on_conflict condition type for table "matches" */
-export type Matches_On_Conflict = {
-  constraint: Matches_Constraint;
-  update_columns?: Array<Matches_Update_Column>;
-  where?: InputMaybe<Matches_Bool_Exp>;
-};
-
-/** Ordering options when selecting data from "matches". */
-export type Matches_Order_By = {
-  created_at?: InputMaybe<Order_By>;
-  end_time?: InputMaybe<Order_By>;
-  id?: InputMaybe<Order_By>;
-  match_players_aggregate?: InputMaybe<Match_Players_Aggregate_Order_By>;
-  name?: InputMaybe<Order_By>;
-  room?: InputMaybe<Rooms_Order_By>;
-  room_id?: InputMaybe<Order_By>;
-  start_time?: InputMaybe<Order_By>;
-  updated_at?: InputMaybe<Order_By>;
-};
-
-/** primary key columns input for table: matches */
-export type Matches_Pk_Columns_Input = {
-  id: Scalars['uuid']['input'];
-};
-
-/** select columns of table "matches" */
-export enum Matches_Select_Column {
-  /** column name */
-  CreatedAt = 'created_at',
-  /** column name */
-  EndTime = 'end_time',
-  /** column name */
-  Id = 'id',
-  /** column name */
-  Name = 'name',
-  /** column name */
-  RoomId = 'room_id',
-  /** column name */
-  StartTime = 'start_time',
-  /** column name */
-  UpdatedAt = 'updated_at'
-}
-
-/** input type for updating data in table "matches" */
-export type Matches_Set_Input = {
-  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
-  end_time?: InputMaybe<Scalars['timestamptz']['input']>;
-  id?: InputMaybe<Scalars['uuid']['input']>;
-  name?: InputMaybe<Scalars['String']['input']>;
-  room_id?: InputMaybe<Scalars['uuid']['input']>;
-  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
-  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
-};
-
-/** Streaming cursor of the table "matches" */
-export type Matches_Stream_Cursor_Input = {
-  /** Stream column input with initial value */
-  initial_value: Matches_Stream_Cursor_Value_Input;
-  /** cursor ordering */
-  ordering?: InputMaybe<Cursor_Ordering>;
-};
-
-/** Initial value of the column from where the streaming should start */
-export type Matches_Stream_Cursor_Value_Input = {
-  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
-  end_time?: InputMaybe<Scalars['timestamptz']['input']>;
-  id?: InputMaybe<Scalars['uuid']['input']>;
-  name?: InputMaybe<Scalars['String']['input']>;
-  room_id?: InputMaybe<Scalars['uuid']['input']>;
-  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
-  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
-};
-
-/** update columns of table "matches" */
-export enum Matches_Update_Column {
-  /** column name */
-  CreatedAt = 'created_at',
-  /** column name */
-  EndTime = 'end_time',
-  /** column name */
-  Id = 'id',
-  /** column name */
-  Name = 'name',
-  /** column name */
-  RoomId = 'room_id',
-  /** column name */
-  StartTime = 'start_time',
-  /** column name */
-  UpdatedAt = 'updated_at'
-}
-
-export type Matches_Updates = {
-  /** sets the columns of the filtered rows to the given values */
-  _set?: InputMaybe<Matches_Set_Input>;
-  /** filter the rows which have to be updated */
-  where: Matches_Bool_Exp;
-};
-
 /** mutation root */
 export type Mutation_Root = {
   __typename?: 'mutation_root';
@@ -3836,14 +3314,6 @@ export type Mutation_Root = {
   delete_games?: Maybe<Games_Mutation_Response>;
   /** delete single row from the table: "games" */
   delete_games_by_pk?: Maybe<Games>;
-  /** delete data from the table: "match_players" */
-  delete_match_players?: Maybe<Match_Players_Mutation_Response>;
-  /** delete single row from the table: "match_players" */
-  delete_match_players_by_pk?: Maybe<Match_Players>;
-  /** delete data from the table: "matches" */
-  delete_matches?: Maybe<Matches_Mutation_Response>;
-  /** delete single row from the table: "matches" */
-  delete_matches_by_pk?: Maybe<Matches>;
   /** delete data from the table: "person_fediverse_accounts" */
   delete_person_fediverse_accounts?: Maybe<Person_Fediverse_Accounts_Mutation_Response>;
   /** delete single row from the table: "person_fediverse_accounts" */
@@ -3944,14 +3414,6 @@ export type Mutation_Root = {
   insert_games?: Maybe<Games_Mutation_Response>;
   /** insert a single row into the table: "games" */
   insert_games_one?: Maybe<Games>;
-  /** insert data into the table: "match_players" */
-  insert_match_players?: Maybe<Match_Players_Mutation_Response>;
-  /** insert a single row into the table: "match_players" */
-  insert_match_players_one?: Maybe<Match_Players>;
-  /** insert data into the table: "matches" */
-  insert_matches?: Maybe<Matches_Mutation_Response>;
-  /** insert a single row into the table: "matches" */
-  insert_matches_one?: Maybe<Matches>;
   /** insert data into the table: "person_fediverse_accounts" */
   insert_person_fediverse_accounts?: Maybe<Person_Fediverse_Accounts_Mutation_Response>;
   /** insert a single row into the table: "person_fediverse_accounts" */
@@ -4074,18 +3536,6 @@ export type Mutation_Root = {
   update_games_by_pk?: Maybe<Games>;
   /** update multiples rows of table: "games" */
   update_games_many?: Maybe<Array<Maybe<Games_Mutation_Response>>>;
-  /** update data of the table: "match_players" */
-  update_match_players?: Maybe<Match_Players_Mutation_Response>;
-  /** update single row of the table: "match_players" */
-  update_match_players_by_pk?: Maybe<Match_Players>;
-  /** update multiples rows of table: "match_players" */
-  update_match_players_many?: Maybe<Array<Maybe<Match_Players_Mutation_Response>>>;
-  /** update data of the table: "matches" */
-  update_matches?: Maybe<Matches_Mutation_Response>;
-  /** update single row of the table: "matches" */
-  update_matches_by_pk?: Maybe<Matches>;
-  /** update multiples rows of table: "matches" */
-  update_matches_many?: Maybe<Array<Maybe<Matches_Mutation_Response>>>;
   /** update data of the table: "person_fediverse_accounts" */
   update_person_fediverse_accounts?: Maybe<Person_Fediverse_Accounts_Mutation_Response>;
   /** update single row of the table: "person_fediverse_accounts" */
@@ -4301,30 +3751,6 @@ export type Mutation_RootDelete_GamesArgs = {
 
 /** mutation root */
 export type Mutation_RootDelete_Games_By_PkArgs = {
-  id: Scalars['uuid']['input'];
-};
-
-
-/** mutation root */
-export type Mutation_RootDelete_Match_PlayersArgs = {
-  where: Match_Players_Bool_Exp;
-};
-
-
-/** mutation root */
-export type Mutation_RootDelete_Match_Players_By_PkArgs = {
-  id: Scalars['uuid']['input'];
-};
-
-
-/** mutation root */
-export type Mutation_RootDelete_MatchesArgs = {
-  where: Matches_Bool_Exp;
-};
-
-
-/** mutation root */
-export type Mutation_RootDelete_Matches_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
@@ -4648,34 +4074,6 @@ export type Mutation_RootInsert_GamesArgs = {
 export type Mutation_RootInsert_Games_OneArgs = {
   object: Games_Insert_Input;
   on_conflict?: InputMaybe<Games_On_Conflict>;
-};
-
-
-/** mutation root */
-export type Mutation_RootInsert_Match_PlayersArgs = {
-  objects: Array<Match_Players_Insert_Input>;
-  on_conflict?: InputMaybe<Match_Players_On_Conflict>;
-};
-
-
-/** mutation root */
-export type Mutation_RootInsert_Match_Players_OneArgs = {
-  object: Match_Players_Insert_Input;
-  on_conflict?: InputMaybe<Match_Players_On_Conflict>;
-};
-
-
-/** mutation root */
-export type Mutation_RootInsert_MatchesArgs = {
-  objects: Array<Matches_Insert_Input>;
-  on_conflict?: InputMaybe<Matches_On_Conflict>;
-};
-
-
-/** mutation root */
-export type Mutation_RootInsert_Matches_OneArgs = {
-  object: Matches_Insert_Input;
-  on_conflict?: InputMaybe<Matches_On_Conflict>;
 };
 
 
@@ -5098,46 +4496,6 @@ export type Mutation_RootUpdate_Games_By_PkArgs = {
 /** mutation root */
 export type Mutation_RootUpdate_Games_ManyArgs = {
   updates: Array<Games_Updates>;
-};
-
-
-/** mutation root */
-export type Mutation_RootUpdate_Match_PlayersArgs = {
-  _set?: InputMaybe<Match_Players_Set_Input>;
-  where: Match_Players_Bool_Exp;
-};
-
-
-/** mutation root */
-export type Mutation_RootUpdate_Match_Players_By_PkArgs = {
-  _set?: InputMaybe<Match_Players_Set_Input>;
-  pk_columns: Match_Players_Pk_Columns_Input;
-};
-
-
-/** mutation root */
-export type Mutation_RootUpdate_Match_Players_ManyArgs = {
-  updates: Array<Match_Players_Updates>;
-};
-
-
-/** mutation root */
-export type Mutation_RootUpdate_MatchesArgs = {
-  _set?: InputMaybe<Matches_Set_Input>;
-  where: Matches_Bool_Exp;
-};
-
-
-/** mutation root */
-export type Mutation_RootUpdate_Matches_By_PkArgs = {
-  _set?: InputMaybe<Matches_Set_Input>;
-  pk_columns: Matches_Pk_Columns_Input;
-};
-
-
-/** mutation root */
-export type Mutation_RootUpdate_Matches_ManyArgs = {
-  updates: Array<Matches_Updates>;
 };
 
 
@@ -6871,14 +6229,6 @@ export type Persons = {
   __typename?: 'persons';
   created_at: Scalars['timestamptz']['output'];
   id: Scalars['uuid']['output'];
-  /** An array relationship */
-  match_players: Array<Match_Players>;
-  /** An aggregate relationship */
-  match_players_aggregate: Match_Players_Aggregate;
-  /** An array relationship */
-  match_result_player_roles: Array<Amongus_Match_Player_Result_Roles>;
-  /** An aggregate relationship */
-  match_result_player_roles_aggregate: Amongus_Match_Player_Result_Roles_Aggregate;
   name: Scalars['String']['output'];
   /** An array relationship */
   person_fediverse_accounts: Array<Person_Fediverse_Accounts>;
@@ -6909,46 +6259,6 @@ export type Persons = {
   /** An aggregate relationship */
   room_youtube_lives_aggregate: Room_Youtube_Lives_Aggregate;
   updated_at: Scalars['timestamptz']['output'];
-};
-
-
-/** columns and relationships of "persons" */
-export type PersonsMatch_PlayersArgs = {
-  distinct_on?: InputMaybe<Array<Match_Players_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Match_Players_Order_By>>;
-  where?: InputMaybe<Match_Players_Bool_Exp>;
-};
-
-
-/** columns and relationships of "persons" */
-export type PersonsMatch_Players_AggregateArgs = {
-  distinct_on?: InputMaybe<Array<Match_Players_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Match_Players_Order_By>>;
-  where?: InputMaybe<Match_Players_Bool_Exp>;
-};
-
-
-/** columns and relationships of "persons" */
-export type PersonsMatch_Result_Player_RolesArgs = {
-  distinct_on?: InputMaybe<Array<Amongus_Match_Player_Result_Roles_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Amongus_Match_Player_Result_Roles_Order_By>>;
-  where?: InputMaybe<Amongus_Match_Player_Result_Roles_Bool_Exp>;
-};
-
-
-/** columns and relationships of "persons" */
-export type PersonsMatch_Result_Player_Roles_AggregateArgs = {
-  distinct_on?: InputMaybe<Array<Amongus_Match_Player_Result_Roles_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Amongus_Match_Player_Result_Roles_Order_By>>;
-  where?: InputMaybe<Amongus_Match_Player_Result_Roles_Bool_Exp>;
 };
 
 
@@ -7120,10 +6430,6 @@ export type Persons_Bool_Exp = {
   _or?: InputMaybe<Array<Persons_Bool_Exp>>;
   created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
-  match_players?: InputMaybe<Match_Players_Bool_Exp>;
-  match_players_aggregate?: InputMaybe<Match_Players_Aggregate_Bool_Exp>;
-  match_result_player_roles?: InputMaybe<Amongus_Match_Player_Result_Roles_Bool_Exp>;
-  match_result_player_roles_aggregate?: InputMaybe<Amongus_Match_Player_Result_Roles_Aggregate_Bool_Exp>;
   name?: InputMaybe<String_Comparison_Exp>;
   person_fediverse_accounts?: InputMaybe<Person_Fediverse_Accounts_Bool_Exp>;
   person_fediverse_accounts_aggregate?: InputMaybe<Person_Fediverse_Accounts_Aggregate_Bool_Exp>;
@@ -7152,8 +6458,6 @@ export enum Persons_Constraint {
 export type Persons_Insert_Input = {
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
-  match_players?: InputMaybe<Match_Players_Arr_Rel_Insert_Input>;
-  match_result_player_roles?: InputMaybe<Amongus_Match_Player_Result_Roles_Arr_Rel_Insert_Input>;
   name?: InputMaybe<Scalars['String']['input']>;
   person_fediverse_accounts?: InputMaybe<Person_Fediverse_Accounts_Arr_Rel_Insert_Input>;
   person_niconico_accounts?: InputMaybe<Person_Niconico_Accounts_Arr_Rel_Insert_Input>;
@@ -7210,8 +6514,6 @@ export type Persons_On_Conflict = {
 export type Persons_Order_By = {
   created_at?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
-  match_players_aggregate?: InputMaybe<Match_Players_Aggregate_Order_By>;
-  match_result_player_roles_aggregate?: InputMaybe<Amongus_Match_Player_Result_Roles_Aggregate_Order_By>;
   name?: InputMaybe<Order_By>;
   person_fediverse_accounts_aggregate?: InputMaybe<Person_Fediverse_Accounts_Aggregate_Order_By>;
   person_niconico_accounts_aggregate?: InputMaybe<Person_Niconico_Accounts_Aggregate_Order_By>;
@@ -7351,18 +6653,6 @@ export type Query_Root = {
   games_aggregate: Games_Aggregate;
   /** fetch data from the table: "games" using primary key columns */
   games_by_pk?: Maybe<Games>;
-  /** An array relationship */
-  match_players: Array<Match_Players>;
-  /** An aggregate relationship */
-  match_players_aggregate: Match_Players_Aggregate;
-  /** fetch data from the table: "match_players" using primary key columns */
-  match_players_by_pk?: Maybe<Match_Players>;
-  /** An array relationship */
-  matches: Array<Matches>;
-  /** An aggregate relationship */
-  matches_aggregate: Matches_Aggregate;
-  /** fetch data from the table: "matches" using primary key columns */
-  matches_by_pk?: Maybe<Matches>;
   /** An array relationship */
   person_fediverse_accounts: Array<Person_Fediverse_Accounts>;
   /** An aggregate relationship */
@@ -7699,52 +6989,6 @@ export type Query_RootGames_AggregateArgs = {
 
 
 export type Query_RootGames_By_PkArgs = {
-  id: Scalars['uuid']['input'];
-};
-
-
-export type Query_RootMatch_PlayersArgs = {
-  distinct_on?: InputMaybe<Array<Match_Players_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Match_Players_Order_By>>;
-  where?: InputMaybe<Match_Players_Bool_Exp>;
-};
-
-
-export type Query_RootMatch_Players_AggregateArgs = {
-  distinct_on?: InputMaybe<Array<Match_Players_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Match_Players_Order_By>>;
-  where?: InputMaybe<Match_Players_Bool_Exp>;
-};
-
-
-export type Query_RootMatch_Players_By_PkArgs = {
-  id: Scalars['uuid']['input'];
-};
-
-
-export type Query_RootMatchesArgs = {
-  distinct_on?: InputMaybe<Array<Matches_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Matches_Order_By>>;
-  where?: InputMaybe<Matches_Bool_Exp>;
-};
-
-
-export type Query_RootMatches_AggregateArgs = {
-  distinct_on?: InputMaybe<Array<Matches_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Matches_Order_By>>;
-  where?: InputMaybe<Matches_Bool_Exp>;
-};
-
-
-export type Query_RootMatches_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
@@ -9916,10 +9160,6 @@ export type Rooms = {
   created_at: Scalars['timestamptz']['output'];
   end_time?: Maybe<Scalars['timestamptz']['output']>;
   id: Scalars['uuid']['output'];
-  /** An array relationship */
-  matches: Array<Matches>;
-  /** An aggregate relationship */
-  matches_aggregate: Matches_Aggregate;
   name: Scalars['String']['output'];
   /** An array relationship */
   room_communities: Array<Room_Communities>;
@@ -9971,26 +9211,6 @@ export type RoomsAmongus_Matches_AggregateArgs = {
   offset?: InputMaybe<Scalars['Int']['input']>;
   order_by?: InputMaybe<Array<Amongus_Matches_Order_By>>;
   where?: InputMaybe<Amongus_Matches_Bool_Exp>;
-};
-
-
-/** 連続した試合をまとめる単位 */
-export type RoomsMatchesArgs = {
-  distinct_on?: InputMaybe<Array<Matches_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Matches_Order_By>>;
-  where?: InputMaybe<Matches_Bool_Exp>;
-};
-
-
-/** 連続した試合をまとめる単位 */
-export type RoomsMatches_AggregateArgs = {
-  distinct_on?: InputMaybe<Array<Matches_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Matches_Order_By>>;
-  where?: InputMaybe<Matches_Bool_Exp>;
 };
 
 
@@ -10165,8 +9385,6 @@ export type Rooms_Bool_Exp = {
   created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
   end_time?: InputMaybe<Timestamptz_Comparison_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
-  matches?: InputMaybe<Matches_Bool_Exp>;
-  matches_aggregate?: InputMaybe<Matches_Aggregate_Bool_Exp>;
   name?: InputMaybe<String_Comparison_Exp>;
   room_communities?: InputMaybe<Room_Communities_Bool_Exp>;
   room_communities_aggregate?: InputMaybe<Room_Communities_Aggregate_Bool_Exp>;
@@ -10198,7 +9416,6 @@ export type Rooms_Insert_Input = {
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   end_time?: InputMaybe<Scalars['timestamptz']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
-  matches?: InputMaybe<Matches_Arr_Rel_Insert_Input>;
   name?: InputMaybe<Scalars['String']['input']>;
   room_communities?: InputMaybe<Room_Communities_Arr_Rel_Insert_Input>;
   room_maps?: InputMaybe<Room_Maps_Arr_Rel_Insert_Input>;
@@ -10262,7 +9479,6 @@ export type Rooms_Order_By = {
   created_at?: InputMaybe<Order_By>;
   end_time?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
-  matches_aggregate?: InputMaybe<Matches_Aggregate_Order_By>;
   name?: InputMaybe<Order_By>;
   room_communities_aggregate?: InputMaybe<Room_Communities_Aggregate_Order_By>;
   room_maps_aggregate?: InputMaybe<Room_Maps_Aggregate_Order_By>;
@@ -10437,22 +9653,6 @@ export type Subscription_Root = {
   games_by_pk?: Maybe<Games>;
   /** fetch data from the table in a streaming manner: "games" */
   games_stream: Array<Games>;
-  /** An array relationship */
-  match_players: Array<Match_Players>;
-  /** An aggregate relationship */
-  match_players_aggregate: Match_Players_Aggregate;
-  /** fetch data from the table: "match_players" using primary key columns */
-  match_players_by_pk?: Maybe<Match_Players>;
-  /** fetch data from the table in a streaming manner: "match_players" */
-  match_players_stream: Array<Match_Players>;
-  /** An array relationship */
-  matches: Array<Matches>;
-  /** An aggregate relationship */
-  matches_aggregate: Matches_Aggregate;
-  /** fetch data from the table: "matches" using primary key columns */
-  matches_by_pk?: Maybe<Matches>;
-  /** fetch data from the table in a streaming manner: "matches" */
-  matches_stream: Array<Matches>;
   /** An array relationship */
   person_fediverse_accounts: Array<Person_Fediverse_Accounts>;
   /** An aggregate relationship */
@@ -10895,66 +10095,6 @@ export type Subscription_RootGames_StreamArgs = {
   batch_size: Scalars['Int']['input'];
   cursor: Array<InputMaybe<Games_Stream_Cursor_Input>>;
   where?: InputMaybe<Games_Bool_Exp>;
-};
-
-
-export type Subscription_RootMatch_PlayersArgs = {
-  distinct_on?: InputMaybe<Array<Match_Players_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Match_Players_Order_By>>;
-  where?: InputMaybe<Match_Players_Bool_Exp>;
-};
-
-
-export type Subscription_RootMatch_Players_AggregateArgs = {
-  distinct_on?: InputMaybe<Array<Match_Players_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Match_Players_Order_By>>;
-  where?: InputMaybe<Match_Players_Bool_Exp>;
-};
-
-
-export type Subscription_RootMatch_Players_By_PkArgs = {
-  id: Scalars['uuid']['input'];
-};
-
-
-export type Subscription_RootMatch_Players_StreamArgs = {
-  batch_size: Scalars['Int']['input'];
-  cursor: Array<InputMaybe<Match_Players_Stream_Cursor_Input>>;
-  where?: InputMaybe<Match_Players_Bool_Exp>;
-};
-
-
-export type Subscription_RootMatchesArgs = {
-  distinct_on?: InputMaybe<Array<Matches_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Matches_Order_By>>;
-  where?: InputMaybe<Matches_Bool_Exp>;
-};
-
-
-export type Subscription_RootMatches_AggregateArgs = {
-  distinct_on?: InputMaybe<Array<Matches_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Matches_Order_By>>;
-  where?: InputMaybe<Matches_Bool_Exp>;
-};
-
-
-export type Subscription_RootMatches_By_PkArgs = {
-  id: Scalars['uuid']['input'];
-};
-
-
-export type Subscription_RootMatches_StreamArgs = {
-  batch_size: Scalars['Int']['input'];
-  cursor: Array<InputMaybe<Matches_Stream_Cursor_Input>>;
-  where?: InputMaybe<Matches_Bool_Exp>;
 };
 
 
