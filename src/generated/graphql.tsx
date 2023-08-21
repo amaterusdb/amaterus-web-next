@@ -78,6 +78,211 @@ export type String_Comparison_Exp = {
   _similar?: InputMaybe<Scalars['String']['input']>;
 };
 
+/** ふにんがす、なのそん、などの卓 */
+export type Communities = {
+  __typename?: 'communities';
+  created_at: Scalars['timestamptz']['output'];
+  id: Scalars['uuid']['output'];
+  name: Scalars['String']['output'];
+  /** An array relationship */
+  room_communities: Array<Room_Communities>;
+  /** An aggregate relationship */
+  room_communities_aggregate: Room_Communities_Aggregate;
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+
+/** ふにんがす、なのそん、などの卓 */
+export type CommunitiesRoom_CommunitiesArgs = {
+  distinct_on?: InputMaybe<Array<Room_Communities_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Room_Communities_Order_By>>;
+  where?: InputMaybe<Room_Communities_Bool_Exp>;
+};
+
+
+/** ふにんがす、なのそん、などの卓 */
+export type CommunitiesRoom_Communities_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Room_Communities_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Room_Communities_Order_By>>;
+  where?: InputMaybe<Room_Communities_Bool_Exp>;
+};
+
+/** aggregated selection of "communities" */
+export type Communities_Aggregate = {
+  __typename?: 'communities_aggregate';
+  aggregate?: Maybe<Communities_Aggregate_Fields>;
+  nodes: Array<Communities>;
+};
+
+/** aggregate fields of "communities" */
+export type Communities_Aggregate_Fields = {
+  __typename?: 'communities_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Communities_Max_Fields>;
+  min?: Maybe<Communities_Min_Fields>;
+};
+
+
+/** aggregate fields of "communities" */
+export type Communities_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Communities_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** Boolean expression to filter rows from the table "communities". All fields are combined with a logical 'AND'. */
+export type Communities_Bool_Exp = {
+  _and?: InputMaybe<Array<Communities_Bool_Exp>>;
+  _not?: InputMaybe<Communities_Bool_Exp>;
+  _or?: InputMaybe<Array<Communities_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  name?: InputMaybe<String_Comparison_Exp>;
+  room_communities?: InputMaybe<Room_Communities_Bool_Exp>;
+  room_communities_aggregate?: InputMaybe<Room_Communities_Aggregate_Bool_Exp>;
+  start_time?: InputMaybe<Timestamptz_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "communities" */
+export enum Communities_Constraint {
+  /** unique or primary key constraint on columns "id" */
+  CommunitiesPkey = 'communities_pkey'
+}
+
+/** input type for inserting data into table "communities" */
+export type Communities_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  room_communities?: InputMaybe<Room_Communities_Arr_Rel_Insert_Input>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Communities_Max_Fields = {
+  __typename?: 'communities_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** aggregate min on columns */
+export type Communities_Min_Fields = {
+  __typename?: 'communities_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** response of any mutation on the table "communities" */
+export type Communities_Mutation_Response = {
+  __typename?: 'communities_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Communities>;
+};
+
+/** input type for inserting object relation for remote table "communities" */
+export type Communities_Obj_Rel_Insert_Input = {
+  data: Communities_Insert_Input;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Communities_On_Conflict>;
+};
+
+/** on_conflict condition type for table "communities" */
+export type Communities_On_Conflict = {
+  constraint: Communities_Constraint;
+  update_columns?: Array<Communities_Update_Column>;
+  where?: InputMaybe<Communities_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "communities". */
+export type Communities_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  name?: InputMaybe<Order_By>;
+  room_communities_aggregate?: InputMaybe<Room_Communities_Aggregate_Order_By>;
+  start_time?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: communities */
+export type Communities_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "communities" */
+export enum Communities_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Name = 'name',
+  /** column name */
+  StartTime = 'start_time',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "communities" */
+export type Communities_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** Streaming cursor of the table "communities" */
+export type Communities_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Communities_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Communities_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** update columns of table "communities" */
+export enum Communities_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Name = 'name',
+  /** column name */
+  StartTime = 'start_time',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Communities_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Communities_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Communities_Bool_Exp;
+};
+
 /** ordering argument of a cursor */
 export enum Cursor_Ordering {
   /** ascending ordering of the cursor */
@@ -2351,6 +2556,10 @@ export type Mods_Updates = {
 /** mutation root */
 export type Mutation_Root = {
   __typename?: 'mutation_root';
+  /** delete data from the table: "communities" */
+  delete_communities?: Maybe<Communities_Mutation_Response>;
+  /** delete single row from the table: "communities" */
+  delete_communities_by_pk?: Maybe<Communities>;
   /** delete data from the table: "maps" */
   delete_maps?: Maybe<Maps_Mutation_Response>;
   /** delete single row from the table: "maps" */
@@ -2407,6 +2616,10 @@ export type Mutation_Root = {
   delete_player_roles?: Maybe<Player_Roles_Mutation_Response>;
   /** delete single row from the table: "player_roles" */
   delete_player_roles_by_pk?: Maybe<Player_Roles>;
+  /** delete data from the table: "room_communities" */
+  delete_room_communities?: Maybe<Room_Communities_Mutation_Response>;
+  /** delete single row from the table: "room_communities" */
+  delete_room_communities_by_pk?: Maybe<Room_Communities>;
   /** delete data from the table: "room_maps" */
   delete_room_maps?: Maybe<Room_Maps_Mutation_Response>;
   /** delete single row from the table: "room_maps" */
@@ -2439,6 +2652,10 @@ export type Mutation_Root = {
   delete_vanilla_versions?: Maybe<Vanilla_Versions_Mutation_Response>;
   /** delete single row from the table: "vanilla_versions" */
   delete_vanilla_versions_by_pk?: Maybe<Vanilla_Versions>;
+  /** insert data into the table: "communities" */
+  insert_communities?: Maybe<Communities_Mutation_Response>;
+  /** insert a single row into the table: "communities" */
+  insert_communities_one?: Maybe<Communities>;
   /** insert data into the table: "maps" */
   insert_maps?: Maybe<Maps_Mutation_Response>;
   /** insert a single row into the table: "maps" */
@@ -2495,6 +2712,10 @@ export type Mutation_Root = {
   insert_player_roles?: Maybe<Player_Roles_Mutation_Response>;
   /** insert a single row into the table: "player_roles" */
   insert_player_roles_one?: Maybe<Player_Roles>;
+  /** insert data into the table: "room_communities" */
+  insert_room_communities?: Maybe<Room_Communities_Mutation_Response>;
+  /** insert a single row into the table: "room_communities" */
+  insert_room_communities_one?: Maybe<Room_Communities>;
   /** insert data into the table: "room_maps" */
   insert_room_maps?: Maybe<Room_Maps_Mutation_Response>;
   /** insert a single row into the table: "room_maps" */
@@ -2527,6 +2748,12 @@ export type Mutation_Root = {
   insert_vanilla_versions?: Maybe<Vanilla_Versions_Mutation_Response>;
   /** insert a single row into the table: "vanilla_versions" */
   insert_vanilla_versions_one?: Maybe<Vanilla_Versions>;
+  /** update data of the table: "communities" */
+  update_communities?: Maybe<Communities_Mutation_Response>;
+  /** update single row of the table: "communities" */
+  update_communities_by_pk?: Maybe<Communities>;
+  /** update multiples rows of table: "communities" */
+  update_communities_many?: Maybe<Array<Maybe<Communities_Mutation_Response>>>;
   /** update data of the table: "maps" */
   update_maps?: Maybe<Maps_Mutation_Response>;
   /** update single row of the table: "maps" */
@@ -2611,6 +2838,12 @@ export type Mutation_Root = {
   update_player_roles_by_pk?: Maybe<Player_Roles>;
   /** update multiples rows of table: "player_roles" */
   update_player_roles_many?: Maybe<Array<Maybe<Player_Roles_Mutation_Response>>>;
+  /** update data of the table: "room_communities" */
+  update_room_communities?: Maybe<Room_Communities_Mutation_Response>;
+  /** update single row of the table: "room_communities" */
+  update_room_communities_by_pk?: Maybe<Room_Communities>;
+  /** update multiples rows of table: "room_communities" */
+  update_room_communities_many?: Maybe<Array<Maybe<Room_Communities_Mutation_Response>>>;
   /** update data of the table: "room_maps" */
   update_room_maps?: Maybe<Room_Maps_Mutation_Response>;
   /** update single row of the table: "room_maps" */
@@ -2659,6 +2892,18 @@ export type Mutation_Root = {
   update_vanilla_versions_by_pk?: Maybe<Vanilla_Versions>;
   /** update multiples rows of table: "vanilla_versions" */
   update_vanilla_versions_many?: Maybe<Array<Maybe<Vanilla_Versions_Mutation_Response>>>;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_CommunitiesArgs = {
+  where: Communities_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Communities_By_PkArgs = {
+  id: Scalars['uuid']['input'];
 };
 
 
@@ -2831,6 +3076,18 @@ export type Mutation_RootDelete_Player_Roles_By_PkArgs = {
 
 
 /** mutation root */
+export type Mutation_RootDelete_Room_CommunitiesArgs = {
+  where: Room_Communities_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Room_Communities_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
 export type Mutation_RootDelete_Room_MapsArgs = {
   where: Room_Maps_Bool_Exp;
 };
@@ -2923,6 +3180,20 @@ export type Mutation_RootDelete_Vanilla_VersionsArgs = {
 /** mutation root */
 export type Mutation_RootDelete_Vanilla_Versions_By_PkArgs = {
   id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_CommunitiesArgs = {
+  objects: Array<Communities_Insert_Input>;
+  on_conflict?: InputMaybe<Communities_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Communities_OneArgs = {
+  object: Communities_Insert_Input;
+  on_conflict?: InputMaybe<Communities_On_Conflict>;
 };
 
 
@@ -3123,6 +3394,20 @@ export type Mutation_RootInsert_Player_Roles_OneArgs = {
 
 
 /** mutation root */
+export type Mutation_RootInsert_Room_CommunitiesArgs = {
+  objects: Array<Room_Communities_Insert_Input>;
+  on_conflict?: InputMaybe<Room_Communities_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Room_Communities_OneArgs = {
+  object: Room_Communities_Insert_Input;
+  on_conflict?: InputMaybe<Room_Communities_On_Conflict>;
+};
+
+
+/** mutation root */
 export type Mutation_RootInsert_Room_MapsArgs = {
   objects: Array<Room_Maps_Insert_Input>;
   on_conflict?: InputMaybe<Room_Maps_On_Conflict>;
@@ -3231,6 +3516,26 @@ export type Mutation_RootInsert_Vanilla_VersionsArgs = {
 export type Mutation_RootInsert_Vanilla_Versions_OneArgs = {
   object: Vanilla_Versions_Insert_Input;
   on_conflict?: InputMaybe<Vanilla_Versions_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_CommunitiesArgs = {
+  _set?: InputMaybe<Communities_Set_Input>;
+  where: Communities_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Communities_By_PkArgs = {
+  _set?: InputMaybe<Communities_Set_Input>;
+  pk_columns: Communities_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Communities_ManyArgs = {
+  updates: Array<Communities_Updates>;
 };
 
 
@@ -3519,6 +3824,26 @@ export type Mutation_RootUpdate_Player_Roles_By_PkArgs = {
 /** mutation root */
 export type Mutation_RootUpdate_Player_Roles_ManyArgs = {
   updates: Array<Player_Roles_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Room_CommunitiesArgs = {
+  _set?: InputMaybe<Room_Communities_Set_Input>;
+  where: Room_Communities_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Room_Communities_By_PkArgs = {
+  _set?: InputMaybe<Room_Communities_Set_Input>;
+  pk_columns: Room_Communities_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Room_Communities_ManyArgs = {
+  updates: Array<Room_Communities_Updates>;
 };
 
 
@@ -5545,6 +5870,7 @@ export type Player_Roles = {
   __typename?: 'player_roles';
   color_rgb?: Maybe<Scalars['Int']['output']>;
   created_at: Scalars['timestamptz']['output'];
+  document_url?: Maybe<Scalars['String']['output']>;
   id: Scalars['uuid']['output'];
   is_vanilla: Scalars['Boolean']['output'];
   /** An array relationship */
@@ -5675,6 +6001,7 @@ export type Player_Roles_Bool_Exp = {
   _or?: InputMaybe<Array<Player_Roles_Bool_Exp>>;
   color_rgb?: InputMaybe<Int_Comparison_Exp>;
   created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  document_url?: InputMaybe<String_Comparison_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
   is_vanilla?: InputMaybe<Boolean_Comparison_Exp>;
   match_result_player_roles?: InputMaybe<Match_Result_Player_Roles_Bool_Exp>;
@@ -5700,6 +6027,7 @@ export type Player_Roles_Inc_Input = {
 export type Player_Roles_Insert_Input = {
   color_rgb?: InputMaybe<Scalars['Int']['input']>;
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  document_url?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
   is_vanilla?: InputMaybe<Scalars['Boolean']['input']>;
   match_result_player_roles?: InputMaybe<Match_Result_Player_Roles_Arr_Rel_Insert_Input>;
@@ -5714,6 +6042,7 @@ export type Player_Roles_Max_Fields = {
   __typename?: 'player_roles_max_fields';
   color_rgb?: Maybe<Scalars['Int']['output']>;
   created_at?: Maybe<Scalars['timestamptz']['output']>;
+  document_url?: Maybe<Scalars['String']['output']>;
   id?: Maybe<Scalars['uuid']['output']>;
   mod_id?: Maybe<Scalars['uuid']['output']>;
   name?: Maybe<Scalars['String']['output']>;
@@ -5724,6 +6053,7 @@ export type Player_Roles_Max_Fields = {
 export type Player_Roles_Max_Order_By = {
   color_rgb?: InputMaybe<Order_By>;
   created_at?: InputMaybe<Order_By>;
+  document_url?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
   mod_id?: InputMaybe<Order_By>;
   name?: InputMaybe<Order_By>;
@@ -5735,6 +6065,7 @@ export type Player_Roles_Min_Fields = {
   __typename?: 'player_roles_min_fields';
   color_rgb?: Maybe<Scalars['Int']['output']>;
   created_at?: Maybe<Scalars['timestamptz']['output']>;
+  document_url?: Maybe<Scalars['String']['output']>;
   id?: Maybe<Scalars['uuid']['output']>;
   mod_id?: Maybe<Scalars['uuid']['output']>;
   name?: Maybe<Scalars['String']['output']>;
@@ -5745,6 +6076,7 @@ export type Player_Roles_Min_Fields = {
 export type Player_Roles_Min_Order_By = {
   color_rgb?: InputMaybe<Order_By>;
   created_at?: InputMaybe<Order_By>;
+  document_url?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
   mod_id?: InputMaybe<Order_By>;
   name?: InputMaybe<Order_By>;
@@ -5778,6 +6110,7 @@ export type Player_Roles_On_Conflict = {
 export type Player_Roles_Order_By = {
   color_rgb?: InputMaybe<Order_By>;
   created_at?: InputMaybe<Order_By>;
+  document_url?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
   is_vanilla?: InputMaybe<Order_By>;
   match_result_player_roles_aggregate?: InputMaybe<Match_Result_Player_Roles_Aggregate_Order_By>;
@@ -5798,6 +6131,8 @@ export enum Player_Roles_Select_Column {
   ColorRgb = 'color_rgb',
   /** column name */
   CreatedAt = 'created_at',
+  /** column name */
+  DocumentUrl = 'document_url',
   /** column name */
   Id = 'id',
   /** column name */
@@ -5826,6 +6161,7 @@ export enum Player_Roles_Select_Column_Player_Roles_Aggregate_Bool_Exp_Bool_Or_A
 export type Player_Roles_Set_Input = {
   color_rgb?: InputMaybe<Scalars['Int']['input']>;
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  document_url?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
   is_vanilla?: InputMaybe<Scalars['Boolean']['input']>;
   mod_id?: InputMaybe<Scalars['uuid']['input']>;
@@ -5878,6 +6214,7 @@ export type Player_Roles_Stream_Cursor_Input = {
 export type Player_Roles_Stream_Cursor_Value_Input = {
   color_rgb?: InputMaybe<Scalars['Int']['input']>;
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  document_url?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
   is_vanilla?: InputMaybe<Scalars['Boolean']['input']>;
   mod_id?: InputMaybe<Scalars['uuid']['input']>;
@@ -5902,6 +6239,8 @@ export enum Player_Roles_Update_Column {
   ColorRgb = 'color_rgb',
   /** column name */
   CreatedAt = 'created_at',
+  /** column name */
+  DocumentUrl = 'document_url',
   /** column name */
   Id = 'id',
   /** column name */
@@ -5958,6 +6297,12 @@ export type Player_Roles_Variance_Order_By = {
 
 export type Query_Root = {
   __typename?: 'query_root';
+  /** fetch data from the table: "communities" */
+  communities: Array<Communities>;
+  /** fetch aggregated fields from the table: "communities" */
+  communities_aggregate: Communities_Aggregate;
+  /** fetch data from the table: "communities" using primary key columns */
+  communities_by_pk?: Maybe<Communities>;
   /** An array relationship */
   maps: Array<Maps>;
   /** An aggregate relationship */
@@ -6043,6 +6388,12 @@ export type Query_Root = {
   /** fetch data from the table: "player_roles" using primary key columns */
   player_roles_by_pk?: Maybe<Player_Roles>;
   /** An array relationship */
+  room_communities: Array<Room_Communities>;
+  /** An aggregate relationship */
+  room_communities_aggregate: Room_Communities_Aggregate;
+  /** fetch data from the table: "room_communities" using primary key columns */
+  room_communities_by_pk?: Maybe<Room_Communities>;
+  /** An array relationship */
   room_maps: Array<Room_Maps>;
   /** An aggregate relationship */
   room_maps_aggregate: Room_Maps_Aggregate;
@@ -6090,6 +6441,29 @@ export type Query_Root = {
   vanilla_versions_aggregate: Vanilla_Versions_Aggregate;
   /** fetch data from the table: "vanilla_versions" using primary key columns */
   vanilla_versions_by_pk?: Maybe<Vanilla_Versions>;
+};
+
+
+export type Query_RootCommunitiesArgs = {
+  distinct_on?: InputMaybe<Array<Communities_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Communities_Order_By>>;
+  where?: InputMaybe<Communities_Bool_Exp>;
+};
+
+
+export type Query_RootCommunities_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Communities_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Communities_Order_By>>;
+  where?: InputMaybe<Communities_Bool_Exp>;
+};
+
+
+export type Query_RootCommunities_By_PkArgs = {
+  id: Scalars['uuid']['input'];
 };
 
 
@@ -6415,6 +6789,29 @@ export type Query_RootPlayer_Roles_By_PkArgs = {
 };
 
 
+export type Query_RootRoom_CommunitiesArgs = {
+  distinct_on?: InputMaybe<Array<Room_Communities_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Room_Communities_Order_By>>;
+  where?: InputMaybe<Room_Communities_Bool_Exp>;
+};
+
+
+export type Query_RootRoom_Communities_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Room_Communities_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Room_Communities_Order_By>>;
+  where?: InputMaybe<Room_Communities_Bool_Exp>;
+};
+
+
+export type Query_RootRoom_Communities_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
 export type Query_RootRoom_MapsArgs = {
   distinct_on?: InputMaybe<Array<Room_Maps_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -6596,6 +6993,231 @@ export type Query_RootVanilla_Versions_AggregateArgs = {
 
 export type Query_RootVanilla_Versions_By_PkArgs = {
   id: Scalars['uuid']['input'];
+};
+
+/** columns and relationships of "room_communities" */
+export type Room_Communities = {
+  __typename?: 'room_communities';
+  /** An object relationship */
+  community: Communities;
+  community_id: Scalars['uuid']['output'];
+  created_at: Scalars['timestamptz']['output'];
+  id: Scalars['uuid']['output'];
+  /** An object relationship */
+  room: Rooms;
+  room_id: Scalars['uuid']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+/** aggregated selection of "room_communities" */
+export type Room_Communities_Aggregate = {
+  __typename?: 'room_communities_aggregate';
+  aggregate?: Maybe<Room_Communities_Aggregate_Fields>;
+  nodes: Array<Room_Communities>;
+};
+
+export type Room_Communities_Aggregate_Bool_Exp = {
+  count?: InputMaybe<Room_Communities_Aggregate_Bool_Exp_Count>;
+};
+
+export type Room_Communities_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Room_Communities_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Room_Communities_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
+/** aggregate fields of "room_communities" */
+export type Room_Communities_Aggregate_Fields = {
+  __typename?: 'room_communities_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Room_Communities_Max_Fields>;
+  min?: Maybe<Room_Communities_Min_Fields>;
+};
+
+
+/** aggregate fields of "room_communities" */
+export type Room_Communities_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Room_Communities_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** order by aggregate values of table "room_communities" */
+export type Room_Communities_Aggregate_Order_By = {
+  count?: InputMaybe<Order_By>;
+  max?: InputMaybe<Room_Communities_Max_Order_By>;
+  min?: InputMaybe<Room_Communities_Min_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "room_communities" */
+export type Room_Communities_Arr_Rel_Insert_Input = {
+  data: Array<Room_Communities_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Room_Communities_On_Conflict>;
+};
+
+/** Boolean expression to filter rows from the table "room_communities". All fields are combined with a logical 'AND'. */
+export type Room_Communities_Bool_Exp = {
+  _and?: InputMaybe<Array<Room_Communities_Bool_Exp>>;
+  _not?: InputMaybe<Room_Communities_Bool_Exp>;
+  _or?: InputMaybe<Array<Room_Communities_Bool_Exp>>;
+  community?: InputMaybe<Communities_Bool_Exp>;
+  community_id?: InputMaybe<Uuid_Comparison_Exp>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  room?: InputMaybe<Rooms_Bool_Exp>;
+  room_id?: InputMaybe<Uuid_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "room_communities" */
+export enum Room_Communities_Constraint {
+  /** unique or primary key constraint on columns "id" */
+  RoomCommunitiesPkey = 'room_communities_pkey',
+  /** unique or primary key constraint on columns "community_id", "room_id" */
+  RoomCommunitiesRoomIdCommunityIdKey = 'room_communities_room_id_community_id_key'
+}
+
+/** input type for inserting data into table "room_communities" */
+export type Room_Communities_Insert_Input = {
+  community?: InputMaybe<Communities_Obj_Rel_Insert_Input>;
+  community_id?: InputMaybe<Scalars['uuid']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  room?: InputMaybe<Rooms_Obj_Rel_Insert_Input>;
+  room_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Room_Communities_Max_Fields = {
+  __typename?: 'room_communities_max_fields';
+  community_id?: Maybe<Scalars['uuid']['output']>;
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  room_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by max() on columns of table "room_communities" */
+export type Room_Communities_Max_Order_By = {
+  community_id?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  room_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Room_Communities_Min_Fields = {
+  __typename?: 'room_communities_min_fields';
+  community_id?: Maybe<Scalars['uuid']['output']>;
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  room_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by min() on columns of table "room_communities" */
+export type Room_Communities_Min_Order_By = {
+  community_id?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  room_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** response of any mutation on the table "room_communities" */
+export type Room_Communities_Mutation_Response = {
+  __typename?: 'room_communities_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Room_Communities>;
+};
+
+/** on_conflict condition type for table "room_communities" */
+export type Room_Communities_On_Conflict = {
+  constraint: Room_Communities_Constraint;
+  update_columns?: Array<Room_Communities_Update_Column>;
+  where?: InputMaybe<Room_Communities_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "room_communities". */
+export type Room_Communities_Order_By = {
+  community?: InputMaybe<Communities_Order_By>;
+  community_id?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  room?: InputMaybe<Rooms_Order_By>;
+  room_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: room_communities */
+export type Room_Communities_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "room_communities" */
+export enum Room_Communities_Select_Column {
+  /** column name */
+  CommunityId = 'community_id',
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  RoomId = 'room_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "room_communities" */
+export type Room_Communities_Set_Input = {
+  community_id?: InputMaybe<Scalars['uuid']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  room_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** Streaming cursor of the table "room_communities" */
+export type Room_Communities_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Room_Communities_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Room_Communities_Stream_Cursor_Value_Input = {
+  community_id?: InputMaybe<Scalars['uuid']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  room_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** update columns of table "room_communities" */
+export enum Room_Communities_Update_Column {
+  /** column name */
+  CommunityId = 'community_id',
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  RoomId = 'room_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Room_Communities_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Room_Communities_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Room_Communities_Bool_Exp;
 };
 
 /** columns and relationships of "room_maps" */
@@ -8221,6 +8843,10 @@ export type Rooms = {
   matches_aggregate: Matches_Aggregate;
   name: Scalars['String']['output'];
   /** An array relationship */
+  room_communities: Array<Room_Communities>;
+  /** An aggregate relationship */
+  room_communities_aggregate: Room_Communities_Aggregate;
+  /** An array relationship */
   room_maps: Array<Room_Maps>;
   /** An aggregate relationship */
   room_maps_aggregate: Room_Maps_Aggregate;
@@ -8266,6 +8892,26 @@ export type RoomsMatches_AggregateArgs = {
   offset?: InputMaybe<Scalars['Int']['input']>;
   order_by?: InputMaybe<Array<Matches_Order_By>>;
   where?: InputMaybe<Matches_Bool_Exp>;
+};
+
+
+/** 連続した試合をまとめる単位 */
+export type RoomsRoom_CommunitiesArgs = {
+  distinct_on?: InputMaybe<Array<Room_Communities_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Room_Communities_Order_By>>;
+  where?: InputMaybe<Room_Communities_Bool_Exp>;
+};
+
+
+/** 連続した試合をまとめる単位 */
+export type RoomsRoom_Communities_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Room_Communities_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Room_Communities_Order_By>>;
+  where?: InputMaybe<Room_Communities_Bool_Exp>;
 };
 
 
@@ -8421,6 +9067,8 @@ export type Rooms_Bool_Exp = {
   matches?: InputMaybe<Matches_Bool_Exp>;
   matches_aggregate?: InputMaybe<Matches_Aggregate_Bool_Exp>;
   name?: InputMaybe<String_Comparison_Exp>;
+  room_communities?: InputMaybe<Room_Communities_Bool_Exp>;
+  room_communities_aggregate?: InputMaybe<Room_Communities_Aggregate_Bool_Exp>;
   room_maps?: InputMaybe<Room_Maps_Bool_Exp>;
   room_maps_aggregate?: InputMaybe<Room_Maps_Aggregate_Bool_Exp>;
   room_mods?: InputMaybe<Room_Mods_Bool_Exp>;
@@ -8450,6 +9098,7 @@ export type Rooms_Insert_Input = {
   id?: InputMaybe<Scalars['uuid']['input']>;
   matches?: InputMaybe<Matches_Arr_Rel_Insert_Input>;
   name?: InputMaybe<Scalars['String']['input']>;
+  room_communities?: InputMaybe<Room_Communities_Arr_Rel_Insert_Input>;
   room_maps?: InputMaybe<Room_Maps_Arr_Rel_Insert_Input>;
   room_mods?: InputMaybe<Room_Mods_Arr_Rel_Insert_Input>;
   room_persons?: InputMaybe<Room_Persons_Arr_Rel_Insert_Input>;
@@ -8512,6 +9161,7 @@ export type Rooms_Order_By = {
   id?: InputMaybe<Order_By>;
   matches_aggregate?: InputMaybe<Matches_Aggregate_Order_By>;
   name?: InputMaybe<Order_By>;
+  room_communities_aggregate?: InputMaybe<Room_Communities_Aggregate_Order_By>;
   room_maps_aggregate?: InputMaybe<Room_Maps_Aggregate_Order_By>;
   room_mods_aggregate?: InputMaybe<Room_Mods_Aggregate_Order_By>;
   room_persons_aggregate?: InputMaybe<Room_Persons_Aggregate_Order_By>;
@@ -8596,6 +9246,14 @@ export type Rooms_Updates = {
 
 export type Subscription_Root = {
   __typename?: 'subscription_root';
+  /** fetch data from the table: "communities" */
+  communities: Array<Communities>;
+  /** fetch aggregated fields from the table: "communities" */
+  communities_aggregate: Communities_Aggregate;
+  /** fetch data from the table: "communities" using primary key columns */
+  communities_by_pk?: Maybe<Communities>;
+  /** fetch data from the table in a streaming manner: "communities" */
+  communities_stream: Array<Communities>;
   /** An array relationship */
   maps: Array<Maps>;
   /** An aggregate relationship */
@@ -8709,6 +9367,14 @@ export type Subscription_Root = {
   /** fetch data from the table in a streaming manner: "player_roles" */
   player_roles_stream: Array<Player_Roles>;
   /** An array relationship */
+  room_communities: Array<Room_Communities>;
+  /** An aggregate relationship */
+  room_communities_aggregate: Room_Communities_Aggregate;
+  /** fetch data from the table: "room_communities" using primary key columns */
+  room_communities_by_pk?: Maybe<Room_Communities>;
+  /** fetch data from the table in a streaming manner: "room_communities" */
+  room_communities_stream: Array<Room_Communities>;
+  /** An array relationship */
   room_maps: Array<Room_Maps>;
   /** An aggregate relationship */
   room_maps_aggregate: Room_Maps_Aggregate;
@@ -8772,6 +9438,36 @@ export type Subscription_Root = {
   vanilla_versions_by_pk?: Maybe<Vanilla_Versions>;
   /** fetch data from the table in a streaming manner: "vanilla_versions" */
   vanilla_versions_stream: Array<Vanilla_Versions>;
+};
+
+
+export type Subscription_RootCommunitiesArgs = {
+  distinct_on?: InputMaybe<Array<Communities_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Communities_Order_By>>;
+  where?: InputMaybe<Communities_Bool_Exp>;
+};
+
+
+export type Subscription_RootCommunities_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Communities_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Communities_Order_By>>;
+  where?: InputMaybe<Communities_Bool_Exp>;
+};
+
+
+export type Subscription_RootCommunities_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootCommunities_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Communities_Stream_Cursor_Input>>;
+  where?: InputMaybe<Communities_Bool_Exp>;
 };
 
 
@@ -9192,6 +9888,36 @@ export type Subscription_RootPlayer_Roles_StreamArgs = {
   batch_size: Scalars['Int']['input'];
   cursor: Array<InputMaybe<Player_Roles_Stream_Cursor_Input>>;
   where?: InputMaybe<Player_Roles_Bool_Exp>;
+};
+
+
+export type Subscription_RootRoom_CommunitiesArgs = {
+  distinct_on?: InputMaybe<Array<Room_Communities_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Room_Communities_Order_By>>;
+  where?: InputMaybe<Room_Communities_Bool_Exp>;
+};
+
+
+export type Subscription_RootRoom_Communities_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Room_Communities_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Room_Communities_Order_By>>;
+  where?: InputMaybe<Room_Communities_Bool_Exp>;
+};
+
+
+export type Subscription_RootRoom_Communities_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootRoom_Communities_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Room_Communities_Stream_Cursor_Input>>;
+  where?: InputMaybe<Room_Communities_Bool_Exp>;
 };
 
 
@@ -9683,6 +10409,11 @@ export type Vanilla_Versions_Updates = {
   where: Vanilla_Versions_Bool_Exp;
 };
 
+export type GetIndexPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetIndexPageQuery = { __typename?: 'query_root', communities: Array<{ __typename?: 'communities', id: any, name: string }> };
+
 export type GetMatchPageQueryVariables = Exact<{
   matchId: Scalars['uuid']['input'];
 }>;
@@ -9725,6 +10456,41 @@ export type GetRoomListPageQueryVariables = Exact<{ [key: string]: never; }>;
 export type GetRoomListPageQuery = { __typename?: 'query_root', rooms: Array<{ __typename?: 'rooms', id: any, name: string, startTime?: any | null, endTime?: any | null }> };
 
 
+export const GetIndexPageDocument = gql`
+    query GetIndexPage {
+  communities(order_by: {start_time: asc}) {
+    id
+    name
+  }
+}
+    `;
+
+/**
+ * __useGetIndexPageQuery__
+ *
+ * To run a query within a React component, call `useGetIndexPageQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetIndexPageQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetIndexPageQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetIndexPageQuery(baseOptions?: Apollo.QueryHookOptions<GetIndexPageQuery, GetIndexPageQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetIndexPageQuery, GetIndexPageQueryVariables>(GetIndexPageDocument, options);
+      }
+export function useGetIndexPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetIndexPageQuery, GetIndexPageQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetIndexPageQuery, GetIndexPageQueryVariables>(GetIndexPageDocument, options);
+        }
+export type GetIndexPageQueryHookResult = ReturnType<typeof useGetIndexPageQuery>;
+export type GetIndexPageLazyQueryHookResult = ReturnType<typeof useGetIndexPageLazyQuery>;
+export type GetIndexPageQueryResult = Apollo.QueryResult<GetIndexPageQuery, GetIndexPageQueryVariables>;
 export const GetMatchPageDocument = gql`
     query GetMatchPage($matchId: uuid!) {
   match: matches_by_pk(id: $matchId) {

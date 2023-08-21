@@ -1,0 +1,10 @@
+query GetIndexPage {
+  communities(
+    order_by: {
+      start_time: asc
+    }
+  ) {
+    id
+    name
+  }
+}
