@@ -1,0 +1,25 @@
+query GetCommunityPage(
+  $communityId: uuid!
+) {
+  community: communities_by_pk(
+    id: $communityId
+  ) {
+    id
+    name
+
+    roomCommunities: room_communities(
+      order_by: {
+        room: {
+          start_time: desc
+        }
+      }
+    ) {
+      id
+      room {
+        id
+        name
+        startTime: start_time
+      }
+    }
+  }
+}

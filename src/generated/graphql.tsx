@@ -10409,6 +10409,18 @@ export type Vanilla_Versions_Updates = {
   where: Vanilla_Versions_Bool_Exp;
 };
 
+export type GetCommunityPageQueryVariables = Exact<{
+  communityId: Scalars['uuid']['input'];
+}>;
+
+
+export type GetCommunityPageQuery = { __typename?: 'query_root', community?: { __typename?: 'communities', id: any, name: string, roomCommunities: Array<{ __typename?: 'room_communities', id: any, room: { __typename?: 'rooms', id: any, name: string, startTime?: any | null } }> } | null };
+
+export type GetCommunityPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetCommunityPageStaticParamQuery = { __typename?: 'query_root', communities: Array<{ __typename?: 'communities', id: any }> };
+
 export type GetIndexPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -10456,6 +10468,84 @@ export type GetRoomListPageQueryVariables = Exact<{ [key: string]: never; }>;
 export type GetRoomListPageQuery = { __typename?: 'query_root', rooms: Array<{ __typename?: 'rooms', id: any, name: string, startTime?: any | null, endTime?: any | null }> };
 
 
+export const GetCommunityPageDocument = gql`
+    query GetCommunityPage($communityId: uuid!) {
+  community: communities_by_pk(id: $communityId) {
+    id
+    name
+    roomCommunities: room_communities(order_by: {room: {start_time: desc}}) {
+      id
+      room {
+        id
+        name
+        startTime: start_time
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetCommunityPageQuery__
+ *
+ * To run a query within a React component, call `useGetCommunityPageQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetCommunityPageQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetCommunityPageQuery({
+ *   variables: {
+ *      communityId: // value for 'communityId'
+ *   },
+ * });
+ */
+export function useGetCommunityPageQuery(baseOptions: Apollo.QueryHookOptions<GetCommunityPageQuery, GetCommunityPageQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetCommunityPageQuery, GetCommunityPageQueryVariables>(GetCommunityPageDocument, options);
+      }
+export function useGetCommunityPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetCommunityPageQuery, GetCommunityPageQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetCommunityPageQuery, GetCommunityPageQueryVariables>(GetCommunityPageDocument, options);
+        }
+export type GetCommunityPageQueryHookResult = ReturnType<typeof useGetCommunityPageQuery>;
+export type GetCommunityPageLazyQueryHookResult = ReturnType<typeof useGetCommunityPageLazyQuery>;
+export type GetCommunityPageQueryResult = Apollo.QueryResult<GetCommunityPageQuery, GetCommunityPageQueryVariables>;
+export const GetCommunityPageStaticParamDocument = gql`
+    query GetCommunityPageStaticParam {
+  communities {
+    id
+  }
+}
+    `;
+
+/**
+ * __useGetCommunityPageStaticParamQuery__
+ *
+ * To run a query within a React component, call `useGetCommunityPageStaticParamQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetCommunityPageStaticParamQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetCommunityPageStaticParamQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetCommunityPageStaticParamQuery(baseOptions?: Apollo.QueryHookOptions<GetCommunityPageStaticParamQuery, GetCommunityPageStaticParamQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetCommunityPageStaticParamQuery, GetCommunityPageStaticParamQueryVariables>(GetCommunityPageStaticParamDocument, options);
+      }
+export function useGetCommunityPageStaticParamLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetCommunityPageStaticParamQuery, GetCommunityPageStaticParamQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetCommunityPageStaticParamQuery, GetCommunityPageStaticParamQueryVariables>(GetCommunityPageStaticParamDocument, options);
+        }
+export type GetCommunityPageStaticParamQueryHookResult = ReturnType<typeof useGetCommunityPageStaticParamQuery>;
+export type GetCommunityPageStaticParamLazyQueryHookResult = ReturnType<typeof useGetCommunityPageStaticParamLazyQuery>;
+export type GetCommunityPageStaticParamQueryResult = Apollo.QueryResult<GetCommunityPageStaticParamQuery, GetCommunityPageStaticParamQueryVariables>;
 export const GetIndexPageDocument = gql`
     query GetIndexPage {
   communities(order_by: {start_time: asc}) {

@@ -1,0 +1,5 @@
+query GetCommunityPageStaticParam {
+  communities {
+    id
+  }
+}
