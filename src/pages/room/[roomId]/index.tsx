@@ -108,7 +108,7 @@ export default function RoomPage({ roomId }: { roomId: string }) {
           {firstCommunity == null ? (
             <Typography>未設定</Typography>
           ) : (
-            <NextLink href={`/community/${firstCommunity.id}`} passHref legacyBehavior>
+            <NextLink href={`/community/${firstCommunity.id}/`} passHref legacyBehavior>
               <MuiLink underline='hover' color='inherit'>
                 {firstCommunity.name}
               </MuiLink>
