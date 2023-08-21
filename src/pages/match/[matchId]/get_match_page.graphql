@@ -7,7 +7,6 @@ query GetMatchPage(
     id
     startTime: start_time
     endTime: end_time
-    isAborted: is_aborted
 
     matchPlayers: match_players(
       order_by: {

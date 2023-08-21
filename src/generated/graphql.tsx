@@ -84,10 +84,6 @@ export type Amongus_Maps = {
   created_at: Scalars['timestamptz']['output'];
   id: Scalars['uuid']['output'];
   is_vanilla: Scalars['Boolean']['output'];
-  /** An array relationship */
-  matches: Array<Matches>;
-  /** An aggregate relationship */
-  matches_aggregate: Matches_Aggregate;
   /** An object relationship */
   mod?: Maybe<Amongus_Mods>;
   mod_id?: Maybe<Scalars['uuid']['output']>;
@@ -97,26 +93,6 @@ export type Amongus_Maps = {
   /** An aggregate relationship */
   room_maps_aggregate: Room_Maps_Aggregate;
   updated_at: Scalars['timestamptz']['output'];
-};
-
-
-/** columns and relationships of "amongus_maps" */
-export type Amongus_MapsMatchesArgs = {
-  distinct_on?: InputMaybe<Array<Matches_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Matches_Order_By>>;
-  where?: InputMaybe<Matches_Bool_Exp>;
-};
-
-
-/** columns and relationships of "amongus_maps" */
-export type Amongus_MapsMatches_AggregateArgs = {
-  distinct_on?: InputMaybe<Array<Matches_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Matches_Order_By>>;
-  where?: InputMaybe<Matches_Bool_Exp>;
 };
 
 
@@ -210,8 +186,6 @@ export type Amongus_Maps_Bool_Exp = {
   created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
   is_vanilla?: InputMaybe<Boolean_Comparison_Exp>;
-  matches?: InputMaybe<Matches_Bool_Exp>;
-  matches_aggregate?: InputMaybe<Matches_Aggregate_Bool_Exp>;
   mod?: InputMaybe<Amongus_Mods_Bool_Exp>;
   mod_id?: InputMaybe<Uuid_Comparison_Exp>;
   name?: InputMaybe<String_Comparison_Exp>;
@@ -231,7 +205,6 @@ export type Amongus_Maps_Insert_Input = {
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
   is_vanilla?: InputMaybe<Scalars['Boolean']['input']>;
-  matches?: InputMaybe<Matches_Arr_Rel_Insert_Input>;
   mod?: InputMaybe<Amongus_Mods_Obj_Rel_Insert_Input>;
   mod_id?: InputMaybe<Scalars['uuid']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
@@ -305,7 +278,6 @@ export type Amongus_Maps_Order_By = {
   created_at?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
   is_vanilla?: InputMaybe<Order_By>;
-  matches_aggregate?: InputMaybe<Matches_Aggregate_Order_By>;
   mod?: InputMaybe<Amongus_Mods_Order_By>;
   mod_id?: InputMaybe<Order_By>;
   name?: InputMaybe<Order_By>;
@@ -1461,35 +1433,11 @@ export type Amongus_Vanilla_Versions = {
   created_at: Scalars['timestamptz']['output'];
   id: Scalars['uuid']['output'];
   /** An array relationship */
-  matches: Array<Matches>;
-  /** An aggregate relationship */
-  matches_aggregate: Matches_Aggregate;
-  /** An array relationship */
   room_vanilla_versions: Array<Room_Vanilla_Versions>;
   /** An aggregate relationship */
   room_vanilla_versions_aggregate: Room_Vanilla_Versions_Aggregate;
   updated_at: Scalars['timestamptz']['output'];
   version: Scalars['String']['output'];
-};
-
-
-/** columns and relationships of "amongus_vanilla_versions" */
-export type Amongus_Vanilla_VersionsMatchesArgs = {
-  distinct_on?: InputMaybe<Array<Matches_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Matches_Order_By>>;
-  where?: InputMaybe<Matches_Bool_Exp>;
-};
-
-
-/** columns and relationships of "amongus_vanilla_versions" */
-export type Amongus_Vanilla_VersionsMatches_AggregateArgs = {
-  distinct_on?: InputMaybe<Array<Matches_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Matches_Order_By>>;
-  where?: InputMaybe<Matches_Bool_Exp>;
 };
 
 
@@ -1541,8 +1489,6 @@ export type Amongus_Vanilla_Versions_Bool_Exp = {
   _or?: InputMaybe<Array<Amongus_Vanilla_Versions_Bool_Exp>>;
   created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
-  matches?: InputMaybe<Matches_Bool_Exp>;
-  matches_aggregate?: InputMaybe<Matches_Aggregate_Bool_Exp>;
   room_vanilla_versions?: InputMaybe<Room_Vanilla_Versions_Bool_Exp>;
   room_vanilla_versions_aggregate?: InputMaybe<Room_Vanilla_Versions_Aggregate_Bool_Exp>;
   updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
@@ -1561,7 +1507,6 @@ export enum Amongus_Vanilla_Versions_Constraint {
 export type Amongus_Vanilla_Versions_Insert_Input = {
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
-  matches?: InputMaybe<Matches_Arr_Rel_Insert_Input>;
   room_vanilla_versions?: InputMaybe<Room_Vanilla_Versions_Arr_Rel_Insert_Input>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
   version?: InputMaybe<Scalars['String']['input']>;
@@ -1612,7 +1557,6 @@ export type Amongus_Vanilla_Versions_On_Conflict = {
 export type Amongus_Vanilla_Versions_Order_By = {
   created_at?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
-  matches_aggregate?: InputMaybe<Matches_Aggregate_Order_By>;
   room_vanilla_versions_aggregate?: InputMaybe<Room_Vanilla_Versions_Aggregate_Order_By>;
   updated_at?: InputMaybe<Order_By>;
   version?: InputMaybe<Order_By>;
@@ -1890,6 +1834,462 @@ export enum Cursor_Ordering {
   /** descending ordering of the cursor */
   Desc = 'DESC'
 }
+
+/** columns and relationships of "games" */
+export type Games = {
+  __typename?: 'games';
+  apple_app_store_url?: Maybe<Scalars['String']['output']>;
+  created_at: Scalars['timestamptz']['output'];
+  epic_games_url?: Maybe<Scalars['String']['output']>;
+  google_play_store_url?: Maybe<Scalars['String']['output']>;
+  id: Scalars['uuid']['output'];
+  name: Scalars['String']['output'];
+  nintendo_switch_url?: Maybe<Scalars['String']['output']>;
+  playstation_url?: Maybe<Scalars['String']['output']>;
+  steam_url?: Maybe<Scalars['String']['output']>;
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+/** aggregated selection of "games" */
+export type Games_Aggregate = {
+  __typename?: 'games_aggregate';
+  aggregate?: Maybe<Games_Aggregate_Fields>;
+  nodes: Array<Games>;
+};
+
+/** aggregate fields of "games" */
+export type Games_Aggregate_Fields = {
+  __typename?: 'games_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Games_Max_Fields>;
+  min?: Maybe<Games_Min_Fields>;
+};
+
+
+/** aggregate fields of "games" */
+export type Games_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Games_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** Boolean expression to filter rows from the table "games". All fields are combined with a logical 'AND'. */
+export type Games_Bool_Exp = {
+  _and?: InputMaybe<Array<Games_Bool_Exp>>;
+  _not?: InputMaybe<Games_Bool_Exp>;
+  _or?: InputMaybe<Array<Games_Bool_Exp>>;
+  apple_app_store_url?: InputMaybe<String_Comparison_Exp>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  epic_games_url?: InputMaybe<String_Comparison_Exp>;
+  google_play_store_url?: InputMaybe<String_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  name?: InputMaybe<String_Comparison_Exp>;
+  nintendo_switch_url?: InputMaybe<String_Comparison_Exp>;
+  playstation_url?: InputMaybe<String_Comparison_Exp>;
+  steam_url?: InputMaybe<String_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "games" */
+export enum Games_Constraint {
+  /** unique or primary key constraint on columns "id" */
+  GamesPkey = 'games_pkey'
+}
+
+/** input type for inserting data into table "games" */
+export type Games_Insert_Input = {
+  apple_app_store_url?: InputMaybe<Scalars['String']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  epic_games_url?: InputMaybe<Scalars['String']['input']>;
+  google_play_store_url?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  nintendo_switch_url?: InputMaybe<Scalars['String']['input']>;
+  playstation_url?: InputMaybe<Scalars['String']['input']>;
+  steam_url?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Games_Max_Fields = {
+  __typename?: 'games_max_fields';
+  apple_app_store_url?: Maybe<Scalars['String']['output']>;
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  epic_games_url?: Maybe<Scalars['String']['output']>;
+  google_play_store_url?: Maybe<Scalars['String']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  nintendo_switch_url?: Maybe<Scalars['String']['output']>;
+  playstation_url?: Maybe<Scalars['String']['output']>;
+  steam_url?: Maybe<Scalars['String']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** aggregate min on columns */
+export type Games_Min_Fields = {
+  __typename?: 'games_min_fields';
+  apple_app_store_url?: Maybe<Scalars['String']['output']>;
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  epic_games_url?: Maybe<Scalars['String']['output']>;
+  google_play_store_url?: Maybe<Scalars['String']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  nintendo_switch_url?: Maybe<Scalars['String']['output']>;
+  playstation_url?: Maybe<Scalars['String']['output']>;
+  steam_url?: Maybe<Scalars['String']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** response of any mutation on the table "games" */
+export type Games_Mutation_Response = {
+  __typename?: 'games_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Games>;
+};
+
+/** on_conflict condition type for table "games" */
+export type Games_On_Conflict = {
+  constraint: Games_Constraint;
+  update_columns?: Array<Games_Update_Column>;
+  where?: InputMaybe<Games_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "games". */
+export type Games_Order_By = {
+  apple_app_store_url?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  epic_games_url?: InputMaybe<Order_By>;
+  google_play_store_url?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  name?: InputMaybe<Order_By>;
+  nintendo_switch_url?: InputMaybe<Order_By>;
+  playstation_url?: InputMaybe<Order_By>;
+  steam_url?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: games */
+export type Games_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "games" */
+export enum Games_Select_Column {
+  /** column name */
+  AppleAppStoreUrl = 'apple_app_store_url',
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  EpicGamesUrl = 'epic_games_url',
+  /** column name */
+  GooglePlayStoreUrl = 'google_play_store_url',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Name = 'name',
+  /** column name */
+  NintendoSwitchUrl = 'nintendo_switch_url',
+  /** column name */
+  PlaystationUrl = 'playstation_url',
+  /** column name */
+  SteamUrl = 'steam_url',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "games" */
+export type Games_Set_Input = {
+  apple_app_store_url?: InputMaybe<Scalars['String']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  epic_games_url?: InputMaybe<Scalars['String']['input']>;
+  google_play_store_url?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  nintendo_switch_url?: InputMaybe<Scalars['String']['input']>;
+  playstation_url?: InputMaybe<Scalars['String']['input']>;
+  steam_url?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** Streaming cursor of the table "games" */
+export type Games_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Games_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Games_Stream_Cursor_Value_Input = {
+  apple_app_store_url?: InputMaybe<Scalars['String']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  epic_games_url?: InputMaybe<Scalars['String']['input']>;
+  google_play_store_url?: InputMaybe<Scalars['String']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  nintendo_switch_url?: InputMaybe<Scalars['String']['input']>;
+  playstation_url?: InputMaybe<Scalars['String']['input']>;
+  steam_url?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** update columns of table "games" */
+export enum Games_Update_Column {
+  /** column name */
+  AppleAppStoreUrl = 'apple_app_store_url',
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  EpicGamesUrl = 'epic_games_url',
+  /** column name */
+  GooglePlayStoreUrl = 'google_play_store_url',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Name = 'name',
+  /** column name */
+  NintendoSwitchUrl = 'nintendo_switch_url',
+  /** column name */
+  PlaystationUrl = 'playstation_url',
+  /** column name */
+  SteamUrl = 'steam_url',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Games_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Games_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Games_Bool_Exp;
+};
+
+/** columns and relationships of "match_amongus_generals" */
+export type Match_Amongus_Generals = {
+  __typename?: 'match_amongus_generals';
+  /** An object relationship */
+  amongus_map?: Maybe<Amongus_Maps>;
+  amongus_map_id?: Maybe<Scalars['uuid']['output']>;
+  /** An object relationship */
+  amongus_vanilla_version?: Maybe<Amongus_Vanilla_Versions>;
+  amongus_vanilla_version_id?: Maybe<Scalars['uuid']['output']>;
+  created_at: Scalars['timestamptz']['output'];
+  id: Scalars['uuid']['output'];
+  is_aborted?: Maybe<Scalars['Boolean']['output']>;
+  is_vanilla?: Maybe<Scalars['Boolean']['output']>;
+  /** An object relationship */
+  match: Matches;
+  match_id: Scalars['uuid']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+/** aggregated selection of "match_amongus_generals" */
+export type Match_Amongus_Generals_Aggregate = {
+  __typename?: 'match_amongus_generals_aggregate';
+  aggregate?: Maybe<Match_Amongus_Generals_Aggregate_Fields>;
+  nodes: Array<Match_Amongus_Generals>;
+};
+
+/** aggregate fields of "match_amongus_generals" */
+export type Match_Amongus_Generals_Aggregate_Fields = {
+  __typename?: 'match_amongus_generals_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Match_Amongus_Generals_Max_Fields>;
+  min?: Maybe<Match_Amongus_Generals_Min_Fields>;
+};
+
+
+/** aggregate fields of "match_amongus_generals" */
+export type Match_Amongus_Generals_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Match_Amongus_Generals_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** Boolean expression to filter rows from the table "match_amongus_generals". All fields are combined with a logical 'AND'. */
+export type Match_Amongus_Generals_Bool_Exp = {
+  _and?: InputMaybe<Array<Match_Amongus_Generals_Bool_Exp>>;
+  _not?: InputMaybe<Match_Amongus_Generals_Bool_Exp>;
+  _or?: InputMaybe<Array<Match_Amongus_Generals_Bool_Exp>>;
+  amongus_map?: InputMaybe<Amongus_Maps_Bool_Exp>;
+  amongus_map_id?: InputMaybe<Uuid_Comparison_Exp>;
+  amongus_vanilla_version?: InputMaybe<Amongus_Vanilla_Versions_Bool_Exp>;
+  amongus_vanilla_version_id?: InputMaybe<Uuid_Comparison_Exp>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  is_aborted?: InputMaybe<Boolean_Comparison_Exp>;
+  is_vanilla?: InputMaybe<Boolean_Comparison_Exp>;
+  match?: InputMaybe<Matches_Bool_Exp>;
+  match_id?: InputMaybe<Uuid_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "match_amongus_generals" */
+export enum Match_Amongus_Generals_Constraint {
+  /** unique or primary key constraint on columns "match_id" */
+  MatchAmongusMatchIdKey = 'match_amongus_match_id_key',
+  /** unique or primary key constraint on columns "id" */
+  MatchAmongusPkey = 'match_amongus_pkey'
+}
+
+/** input type for inserting data into table "match_amongus_generals" */
+export type Match_Amongus_Generals_Insert_Input = {
+  amongus_map?: InputMaybe<Amongus_Maps_Obj_Rel_Insert_Input>;
+  amongus_map_id?: InputMaybe<Scalars['uuid']['input']>;
+  amongus_vanilla_version?: InputMaybe<Amongus_Vanilla_Versions_Obj_Rel_Insert_Input>;
+  amongus_vanilla_version_id?: InputMaybe<Scalars['uuid']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  is_aborted?: InputMaybe<Scalars['Boolean']['input']>;
+  is_vanilla?: InputMaybe<Scalars['Boolean']['input']>;
+  match?: InputMaybe<Matches_Obj_Rel_Insert_Input>;
+  match_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Match_Amongus_Generals_Max_Fields = {
+  __typename?: 'match_amongus_generals_max_fields';
+  amongus_map_id?: Maybe<Scalars['uuid']['output']>;
+  amongus_vanilla_version_id?: Maybe<Scalars['uuid']['output']>;
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  match_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** aggregate min on columns */
+export type Match_Amongus_Generals_Min_Fields = {
+  __typename?: 'match_amongus_generals_min_fields';
+  amongus_map_id?: Maybe<Scalars['uuid']['output']>;
+  amongus_vanilla_version_id?: Maybe<Scalars['uuid']['output']>;
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  match_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** response of any mutation on the table "match_amongus_generals" */
+export type Match_Amongus_Generals_Mutation_Response = {
+  __typename?: 'match_amongus_generals_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Match_Amongus_Generals>;
+};
+
+/** input type for inserting object relation for remote table "match_amongus_generals" */
+export type Match_Amongus_Generals_Obj_Rel_Insert_Input = {
+  data: Match_Amongus_Generals_Insert_Input;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Match_Amongus_Generals_On_Conflict>;
+};
+
+/** on_conflict condition type for table "match_amongus_generals" */
+export type Match_Amongus_Generals_On_Conflict = {
+  constraint: Match_Amongus_Generals_Constraint;
+  update_columns?: Array<Match_Amongus_Generals_Update_Column>;
+  where?: InputMaybe<Match_Amongus_Generals_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "match_amongus_generals". */
+export type Match_Amongus_Generals_Order_By = {
+  amongus_map?: InputMaybe<Amongus_Maps_Order_By>;
+  amongus_map_id?: InputMaybe<Order_By>;
+  amongus_vanilla_version?: InputMaybe<Amongus_Vanilla_Versions_Order_By>;
+  amongus_vanilla_version_id?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  is_aborted?: InputMaybe<Order_By>;
+  is_vanilla?: InputMaybe<Order_By>;
+  match?: InputMaybe<Matches_Order_By>;
+  match_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: match_amongus_generals */
+export type Match_Amongus_Generals_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "match_amongus_generals" */
+export enum Match_Amongus_Generals_Select_Column {
+  /** column name */
+  AmongusMapId = 'amongus_map_id',
+  /** column name */
+  AmongusVanillaVersionId = 'amongus_vanilla_version_id',
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  IsAborted = 'is_aborted',
+  /** column name */
+  IsVanilla = 'is_vanilla',
+  /** column name */
+  MatchId = 'match_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "match_amongus_generals" */
+export type Match_Amongus_Generals_Set_Input = {
+  amongus_map_id?: InputMaybe<Scalars['uuid']['input']>;
+  amongus_vanilla_version_id?: InputMaybe<Scalars['uuid']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  is_aborted?: InputMaybe<Scalars['Boolean']['input']>;
+  is_vanilla?: InputMaybe<Scalars['Boolean']['input']>;
+  match_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** Streaming cursor of the table "match_amongus_generals" */
+export type Match_Amongus_Generals_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Match_Amongus_Generals_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Match_Amongus_Generals_Stream_Cursor_Value_Input = {
+  amongus_map_id?: InputMaybe<Scalars['uuid']['input']>;
+  amongus_vanilla_version_id?: InputMaybe<Scalars['uuid']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  is_aborted?: InputMaybe<Scalars['Boolean']['input']>;
+  is_vanilla?: InputMaybe<Scalars['Boolean']['input']>;
+  match_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** update columns of table "match_amongus_generals" */
+export enum Match_Amongus_Generals_Update_Column {
+  /** column name */
+  AmongusMapId = 'amongus_map_id',
+  /** column name */
+  AmongusVanillaVersionId = 'amongus_vanilla_version_id',
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  IsAborted = 'is_aborted',
+  /** column name */
+  IsVanilla = 'is_vanilla',
+  /** column name */
+  MatchId = 'match_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Match_Amongus_Generals_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Match_Amongus_Generals_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Match_Amongus_Generals_Bool_Exp;
+};
 
 /** columns and relationships of "match_mods" */
 export type Match_Mods = {
@@ -2785,11 +3185,8 @@ export type Matches = {
   created_at: Scalars['timestamptz']['output'];
   end_time?: Maybe<Scalars['timestamptz']['output']>;
   id: Scalars['uuid']['output'];
-  is_aborted?: Maybe<Scalars['Boolean']['output']>;
-  is_vanilla?: Maybe<Scalars['Boolean']['output']>;
   /** An object relationship */
-  map?: Maybe<Amongus_Maps>;
-  map_id?: Maybe<Scalars['uuid']['output']>;
+  match_amongus_general?: Maybe<Match_Amongus_Generals>;
   /** An array relationship */
   match_mods: Array<Match_Mods>;
   /** An aggregate relationship */
@@ -2808,9 +3205,6 @@ export type Matches = {
   room_id: Scalars['uuid']['output'];
   start_time: Scalars['timestamptz']['output'];
   updated_at: Scalars['timestamptz']['output'];
-  /** An object relationship */
-  vanilla_version?: Maybe<Amongus_Vanilla_Versions>;
-  vanilla_version_id?: Maybe<Scalars['uuid']['output']>;
 };
 
 
@@ -2881,23 +3275,7 @@ export type Matches_Aggregate = {
 };
 
 export type Matches_Aggregate_Bool_Exp = {
-  bool_and?: InputMaybe<Matches_Aggregate_Bool_Exp_Bool_And>;
-  bool_or?: InputMaybe<Matches_Aggregate_Bool_Exp_Bool_Or>;
   count?: InputMaybe<Matches_Aggregate_Bool_Exp_Count>;
-};
-
-export type Matches_Aggregate_Bool_Exp_Bool_And = {
-  arguments: Matches_Select_Column_Matches_Aggregate_Bool_Exp_Bool_And_Arguments_Columns;
-  distinct?: InputMaybe<Scalars['Boolean']['input']>;
-  filter?: InputMaybe<Matches_Bool_Exp>;
-  predicate: Boolean_Comparison_Exp;
-};
-
-export type Matches_Aggregate_Bool_Exp_Bool_Or = {
-  arguments: Matches_Select_Column_Matches_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns;
-  distinct?: InputMaybe<Scalars['Boolean']['input']>;
-  filter?: InputMaybe<Matches_Bool_Exp>;
-  predicate: Boolean_Comparison_Exp;
 };
 
 export type Matches_Aggregate_Bool_Exp_Count = {
@@ -2944,10 +3322,7 @@ export type Matches_Bool_Exp = {
   created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
   end_time?: InputMaybe<Timestamptz_Comparison_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
-  is_aborted?: InputMaybe<Boolean_Comparison_Exp>;
-  is_vanilla?: InputMaybe<Boolean_Comparison_Exp>;
-  map?: InputMaybe<Amongus_Maps_Bool_Exp>;
-  map_id?: InputMaybe<Uuid_Comparison_Exp>;
+  match_amongus_general?: InputMaybe<Match_Amongus_Generals_Bool_Exp>;
   match_mods?: InputMaybe<Match_Mods_Bool_Exp>;
   match_mods_aggregate?: InputMaybe<Match_Mods_Aggregate_Bool_Exp>;
   match_players?: InputMaybe<Match_Players_Bool_Exp>;
@@ -2959,8 +3334,6 @@ export type Matches_Bool_Exp = {
   room_id?: InputMaybe<Uuid_Comparison_Exp>;
   start_time?: InputMaybe<Timestamptz_Comparison_Exp>;
   updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
-  vanilla_version?: InputMaybe<Amongus_Vanilla_Versions_Bool_Exp>;
-  vanilla_version_id?: InputMaybe<Uuid_Comparison_Exp>;
 };
 
 /** unique or primary key constraints on table "matches" */
@@ -2974,10 +3347,7 @@ export type Matches_Insert_Input = {
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   end_time?: InputMaybe<Scalars['timestamptz']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
-  is_aborted?: InputMaybe<Scalars['Boolean']['input']>;
-  is_vanilla?: InputMaybe<Scalars['Boolean']['input']>;
-  map?: InputMaybe<Amongus_Maps_Obj_Rel_Insert_Input>;
-  map_id?: InputMaybe<Scalars['uuid']['input']>;
+  match_amongus_general?: InputMaybe<Match_Amongus_Generals_Obj_Rel_Insert_Input>;
   match_mods?: InputMaybe<Match_Mods_Arr_Rel_Insert_Input>;
   match_players?: InputMaybe<Match_Players_Arr_Rel_Insert_Input>;
   match_result_player_roles?: InputMaybe<Match_Result_Player_Roles_Arr_Rel_Insert_Input>;
@@ -2986,8 +3356,6 @@ export type Matches_Insert_Input = {
   room_id?: InputMaybe<Scalars['uuid']['input']>;
   start_time?: InputMaybe<Scalars['timestamptz']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
-  vanilla_version?: InputMaybe<Amongus_Vanilla_Versions_Obj_Rel_Insert_Input>;
-  vanilla_version_id?: InputMaybe<Scalars['uuid']['input']>;
 };
 
 /** aggregate max on columns */
@@ -2996,12 +3364,10 @@ export type Matches_Max_Fields = {
   created_at?: Maybe<Scalars['timestamptz']['output']>;
   end_time?: Maybe<Scalars['timestamptz']['output']>;
   id?: Maybe<Scalars['uuid']['output']>;
-  map_id?: Maybe<Scalars['uuid']['output']>;
   name?: Maybe<Scalars['String']['output']>;
   room_id?: Maybe<Scalars['uuid']['output']>;
   start_time?: Maybe<Scalars['timestamptz']['output']>;
   updated_at?: Maybe<Scalars['timestamptz']['output']>;
-  vanilla_version_id?: Maybe<Scalars['uuid']['output']>;
 };
 
 /** order by max() on columns of table "matches" */
@@ -3009,12 +3375,10 @@ export type Matches_Max_Order_By = {
   created_at?: InputMaybe<Order_By>;
   end_time?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
-  map_id?: InputMaybe<Order_By>;
   name?: InputMaybe<Order_By>;
   room_id?: InputMaybe<Order_By>;
   start_time?: InputMaybe<Order_By>;
   updated_at?: InputMaybe<Order_By>;
-  vanilla_version_id?: InputMaybe<Order_By>;
 };
 
 /** aggregate min on columns */
@@ -3023,12 +3387,10 @@ export type Matches_Min_Fields = {
   created_at?: Maybe<Scalars['timestamptz']['output']>;
   end_time?: Maybe<Scalars['timestamptz']['output']>;
   id?: Maybe<Scalars['uuid']['output']>;
-  map_id?: Maybe<Scalars['uuid']['output']>;
   name?: Maybe<Scalars['String']['output']>;
   room_id?: Maybe<Scalars['uuid']['output']>;
   start_time?: Maybe<Scalars['timestamptz']['output']>;
   updated_at?: Maybe<Scalars['timestamptz']['output']>;
-  vanilla_version_id?: Maybe<Scalars['uuid']['output']>;
 };
 
 /** order by min() on columns of table "matches" */
@@ -3036,12 +3398,10 @@ export type Matches_Min_Order_By = {
   created_at?: InputMaybe<Order_By>;
   end_time?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
-  map_id?: InputMaybe<Order_By>;
   name?: InputMaybe<Order_By>;
   room_id?: InputMaybe<Order_By>;
   start_time?: InputMaybe<Order_By>;
   updated_at?: InputMaybe<Order_By>;
-  vanilla_version_id?: InputMaybe<Order_By>;
 };
 
 /** response of any mutation on the table "matches" */
@@ -3072,10 +3432,7 @@ export type Matches_Order_By = {
   created_at?: InputMaybe<Order_By>;
   end_time?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
-  is_aborted?: InputMaybe<Order_By>;
-  is_vanilla?: InputMaybe<Order_By>;
-  map?: InputMaybe<Amongus_Maps_Order_By>;
-  map_id?: InputMaybe<Order_By>;
+  match_amongus_general?: InputMaybe<Match_Amongus_Generals_Order_By>;
   match_mods_aggregate?: InputMaybe<Match_Mods_Aggregate_Order_By>;
   match_players_aggregate?: InputMaybe<Match_Players_Aggregate_Order_By>;
   match_result_player_roles_aggregate?: InputMaybe<Match_Result_Player_Roles_Aggregate_Order_By>;
@@ -3084,8 +3441,6 @@ export type Matches_Order_By = {
   room_id?: InputMaybe<Order_By>;
   start_time?: InputMaybe<Order_By>;
   updated_at?: InputMaybe<Order_By>;
-  vanilla_version?: InputMaybe<Amongus_Vanilla_Versions_Order_By>;
-  vanilla_version_id?: InputMaybe<Order_By>;
 };
 
 /** primary key columns input for table: matches */
@@ -3102,37 +3457,13 @@ export enum Matches_Select_Column {
   /** column name */
   Id = 'id',
   /** column name */
-  IsAborted = 'is_aborted',
-  /** column name */
-  IsVanilla = 'is_vanilla',
-  /** column name */
-  MapId = 'map_id',
-  /** column name */
   Name = 'name',
   /** column name */
   RoomId = 'room_id',
   /** column name */
   StartTime = 'start_time',
   /** column name */
-  UpdatedAt = 'updated_at',
-  /** column name */
-  VanillaVersionId = 'vanilla_version_id'
-}
-
-/** select "matches_aggregate_bool_exp_bool_and_arguments_columns" columns of table "matches" */
-export enum Matches_Select_Column_Matches_Aggregate_Bool_Exp_Bool_And_Arguments_Columns {
-  /** column name */
-  IsAborted = 'is_aborted',
-  /** column name */
-  IsVanilla = 'is_vanilla'
-}
-
-/** select "matches_aggregate_bool_exp_bool_or_arguments_columns" columns of table "matches" */
-export enum Matches_Select_Column_Matches_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns {
-  /** column name */
-  IsAborted = 'is_aborted',
-  /** column name */
-  IsVanilla = 'is_vanilla'
+  UpdatedAt = 'updated_at'
 }
 
 /** input type for updating data in table "matches" */
@@ -3140,14 +3471,10 @@ export type Matches_Set_Input = {
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   end_time?: InputMaybe<Scalars['timestamptz']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
-  is_aborted?: InputMaybe<Scalars['Boolean']['input']>;
-  is_vanilla?: InputMaybe<Scalars['Boolean']['input']>;
-  map_id?: InputMaybe<Scalars['uuid']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
   room_id?: InputMaybe<Scalars['uuid']['input']>;
   start_time?: InputMaybe<Scalars['timestamptz']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
-  vanilla_version_id?: InputMaybe<Scalars['uuid']['input']>;
 };
 
 /** Streaming cursor of the table "matches" */
@@ -3163,14 +3490,10 @@ export type Matches_Stream_Cursor_Value_Input = {
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   end_time?: InputMaybe<Scalars['timestamptz']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
-  is_aborted?: InputMaybe<Scalars['Boolean']['input']>;
-  is_vanilla?: InputMaybe<Scalars['Boolean']['input']>;
-  map_id?: InputMaybe<Scalars['uuid']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
   room_id?: InputMaybe<Scalars['uuid']['input']>;
   start_time?: InputMaybe<Scalars['timestamptz']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
-  vanilla_version_id?: InputMaybe<Scalars['uuid']['input']>;
 };
 
 /** update columns of table "matches" */
@@ -3182,21 +3505,13 @@ export enum Matches_Update_Column {
   /** column name */
   Id = 'id',
   /** column name */
-  IsAborted = 'is_aborted',
-  /** column name */
-  IsVanilla = 'is_vanilla',
-  /** column name */
-  MapId = 'map_id',
-  /** column name */
   Name = 'name',
   /** column name */
   RoomId = 'room_id',
   /** column name */
   StartTime = 'start_time',
   /** column name */
-  UpdatedAt = 'updated_at',
-  /** column name */
-  VanillaVersionId = 'vanilla_version_id'
+  UpdatedAt = 'updated_at'
 }
 
 export type Matches_Updates = {
@@ -3233,6 +3548,14 @@ export type Mutation_Root = {
   delete_communities?: Maybe<Communities_Mutation_Response>;
   /** delete single row from the table: "communities" */
   delete_communities_by_pk?: Maybe<Communities>;
+  /** delete data from the table: "games" */
+  delete_games?: Maybe<Games_Mutation_Response>;
+  /** delete single row from the table: "games" */
+  delete_games_by_pk?: Maybe<Games>;
+  /** delete data from the table: "match_amongus_generals" */
+  delete_match_amongus_generals?: Maybe<Match_Amongus_Generals_Mutation_Response>;
+  /** delete single row from the table: "match_amongus_generals" */
+  delete_match_amongus_generals_by_pk?: Maybe<Match_Amongus_Generals>;
   /** delete data from the table: "match_mods" */
   delete_match_mods?: Maybe<Match_Mods_Mutation_Response>;
   /** delete single row from the table: "match_mods" */
@@ -3329,6 +3652,14 @@ export type Mutation_Root = {
   insert_communities?: Maybe<Communities_Mutation_Response>;
   /** insert a single row into the table: "communities" */
   insert_communities_one?: Maybe<Communities>;
+  /** insert data into the table: "games" */
+  insert_games?: Maybe<Games_Mutation_Response>;
+  /** insert a single row into the table: "games" */
+  insert_games_one?: Maybe<Games>;
+  /** insert data into the table: "match_amongus_generals" */
+  insert_match_amongus_generals?: Maybe<Match_Amongus_Generals_Mutation_Response>;
+  /** insert a single row into the table: "match_amongus_generals" */
+  insert_match_amongus_generals_one?: Maybe<Match_Amongus_Generals>;
   /** insert data into the table: "match_mods" */
   insert_match_mods?: Maybe<Match_Mods_Mutation_Response>;
   /** insert a single row into the table: "match_mods" */
@@ -3437,6 +3768,18 @@ export type Mutation_Root = {
   update_communities_by_pk?: Maybe<Communities>;
   /** update multiples rows of table: "communities" */
   update_communities_many?: Maybe<Array<Maybe<Communities_Mutation_Response>>>;
+  /** update data of the table: "games" */
+  update_games?: Maybe<Games_Mutation_Response>;
+  /** update single row of the table: "games" */
+  update_games_by_pk?: Maybe<Games>;
+  /** update multiples rows of table: "games" */
+  update_games_many?: Maybe<Array<Maybe<Games_Mutation_Response>>>;
+  /** update data of the table: "match_amongus_generals" */
+  update_match_amongus_generals?: Maybe<Match_Amongus_Generals_Mutation_Response>;
+  /** update single row of the table: "match_amongus_generals" */
+  update_match_amongus_generals_by_pk?: Maybe<Match_Amongus_Generals>;
+  /** update multiples rows of table: "match_amongus_generals" */
+  update_match_amongus_generals_many?: Maybe<Array<Maybe<Match_Amongus_Generals_Mutation_Response>>>;
   /** update data of the table: "match_mods" */
   update_match_mods?: Maybe<Match_Mods_Mutation_Response>;
   /** update single row of the table: "match_mods" */
@@ -3616,6 +3959,30 @@ export type Mutation_RootDelete_CommunitiesArgs = {
 
 /** mutation root */
 export type Mutation_RootDelete_Communities_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_GamesArgs = {
+  where: Games_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Games_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Match_Amongus_GeneralsArgs = {
+  where: Match_Amongus_Generals_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Match_Amongus_Generals_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
@@ -3917,6 +4284,34 @@ export type Mutation_RootInsert_CommunitiesArgs = {
 export type Mutation_RootInsert_Communities_OneArgs = {
   object: Communities_Insert_Input;
   on_conflict?: InputMaybe<Communities_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_GamesArgs = {
+  objects: Array<Games_Insert_Input>;
+  on_conflict?: InputMaybe<Games_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Games_OneArgs = {
+  object: Games_Insert_Input;
+  on_conflict?: InputMaybe<Games_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Match_Amongus_GeneralsArgs = {
+  objects: Array<Match_Amongus_Generals_Insert_Input>;
+  on_conflict?: InputMaybe<Match_Amongus_Generals_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Match_Amongus_Generals_OneArgs = {
+  object: Match_Amongus_Generals_Insert_Input;
+  on_conflict?: InputMaybe<Match_Amongus_Generals_On_Conflict>;
 };
 
 
@@ -4291,6 +4686,46 @@ export type Mutation_RootUpdate_Communities_By_PkArgs = {
 /** mutation root */
 export type Mutation_RootUpdate_Communities_ManyArgs = {
   updates: Array<Communities_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_GamesArgs = {
+  _set?: InputMaybe<Games_Set_Input>;
+  where: Games_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Games_By_PkArgs = {
+  _set?: InputMaybe<Games_Set_Input>;
+  pk_columns: Games_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Games_ManyArgs = {
+  updates: Array<Games_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Match_Amongus_GeneralsArgs = {
+  _set?: InputMaybe<Match_Amongus_Generals_Set_Input>;
+  where: Match_Amongus_Generals_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Match_Amongus_Generals_By_PkArgs = {
+  _set?: InputMaybe<Match_Amongus_Generals_Set_Input>;
+  pk_columns: Match_Amongus_Generals_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Match_Amongus_Generals_ManyArgs = {
+  updates: Array<Match_Amongus_Generals_Updates>;
 };
 
 
@@ -6556,6 +6991,18 @@ export type Query_Root = {
   communities_aggregate: Communities_Aggregate;
   /** fetch data from the table: "communities" using primary key columns */
   communities_by_pk?: Maybe<Communities>;
+  /** fetch data from the table: "games" */
+  games: Array<Games>;
+  /** fetch aggregated fields from the table: "games" */
+  games_aggregate: Games_Aggregate;
+  /** fetch data from the table: "games" using primary key columns */
+  games_by_pk?: Maybe<Games>;
+  /** fetch data from the table: "match_amongus_generals" */
+  match_amongus_generals: Array<Match_Amongus_Generals>;
+  /** fetch aggregated fields from the table: "match_amongus_generals" */
+  match_amongus_generals_aggregate: Match_Amongus_Generals_Aggregate;
+  /** fetch data from the table: "match_amongus_generals" using primary key columns */
+  match_amongus_generals_by_pk?: Maybe<Match_Amongus_Generals>;
   /** An array relationship */
   match_mods: Array<Match_Mods>;
   /** An aggregate relationship */
@@ -6801,6 +7248,52 @@ export type Query_RootCommunities_AggregateArgs = {
 
 
 export type Query_RootCommunities_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Query_RootGamesArgs = {
+  distinct_on?: InputMaybe<Array<Games_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Games_Order_By>>;
+  where?: InputMaybe<Games_Bool_Exp>;
+};
+
+
+export type Query_RootGames_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Games_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Games_Order_By>>;
+  where?: InputMaybe<Games_Bool_Exp>;
+};
+
+
+export type Query_RootGames_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Query_RootMatch_Amongus_GeneralsArgs = {
+  distinct_on?: InputMaybe<Array<Match_Amongus_Generals_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Match_Amongus_Generals_Order_By>>;
+  where?: InputMaybe<Match_Amongus_Generals_Bool_Exp>;
+};
+
+
+export type Query_RootMatch_Amongus_Generals_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Match_Amongus_Generals_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Match_Amongus_Generals_Order_By>>;
+  where?: InputMaybe<Match_Amongus_Generals_Bool_Exp>;
+};
+
+
+export type Query_RootMatch_Amongus_Generals_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
@@ -9517,6 +10010,22 @@ export type Subscription_Root = {
   communities_by_pk?: Maybe<Communities>;
   /** fetch data from the table in a streaming manner: "communities" */
   communities_stream: Array<Communities>;
+  /** fetch data from the table: "games" */
+  games: Array<Games>;
+  /** fetch aggregated fields from the table: "games" */
+  games_aggregate: Games_Aggregate;
+  /** fetch data from the table: "games" using primary key columns */
+  games_by_pk?: Maybe<Games>;
+  /** fetch data from the table in a streaming manner: "games" */
+  games_stream: Array<Games>;
+  /** fetch data from the table: "match_amongus_generals" */
+  match_amongus_generals: Array<Match_Amongus_Generals>;
+  /** fetch aggregated fields from the table: "match_amongus_generals" */
+  match_amongus_generals_aggregate: Match_Amongus_Generals_Aggregate;
+  /** fetch data from the table: "match_amongus_generals" using primary key columns */
+  match_amongus_generals_by_pk?: Maybe<Match_Amongus_Generals>;
+  /** fetch data from the table in a streaming manner: "match_amongus_generals" */
+  match_amongus_generals_stream: Array<Match_Amongus_Generals>;
   /** An array relationship */
   match_mods: Array<Match_Mods>;
   /** An aggregate relationship */
@@ -9841,6 +10350,66 @@ export type Subscription_RootCommunities_StreamArgs = {
   batch_size: Scalars['Int']['input'];
   cursor: Array<InputMaybe<Communities_Stream_Cursor_Input>>;
   where?: InputMaybe<Communities_Bool_Exp>;
+};
+
+
+export type Subscription_RootGamesArgs = {
+  distinct_on?: InputMaybe<Array<Games_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Games_Order_By>>;
+  where?: InputMaybe<Games_Bool_Exp>;
+};
+
+
+export type Subscription_RootGames_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Games_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Games_Order_By>>;
+  where?: InputMaybe<Games_Bool_Exp>;
+};
+
+
+export type Subscription_RootGames_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootGames_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Games_Stream_Cursor_Input>>;
+  where?: InputMaybe<Games_Bool_Exp>;
+};
+
+
+export type Subscription_RootMatch_Amongus_GeneralsArgs = {
+  distinct_on?: InputMaybe<Array<Match_Amongus_Generals_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Match_Amongus_Generals_Order_By>>;
+  where?: InputMaybe<Match_Amongus_Generals_Bool_Exp>;
+};
+
+
+export type Subscription_RootMatch_Amongus_Generals_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Match_Amongus_Generals_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Match_Amongus_Generals_Order_By>>;
+  where?: InputMaybe<Match_Amongus_Generals_Bool_Exp>;
+};
+
+
+export type Subscription_RootMatch_Amongus_Generals_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootMatch_Amongus_Generals_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Match_Amongus_Generals_Stream_Cursor_Input>>;
+  where?: InputMaybe<Match_Amongus_Generals_Bool_Exp>;
 };
 
 
@@ -10431,7 +11000,7 @@ export type GetMatchPageQueryVariables = Exact<{
 }>;
 
 
-export type GetMatchPageQuery = { __typename?: 'query_root', match?: { __typename?: 'matches', id: any, startTime: any, endTime?: any | null, isAborted?: boolean | null, matchPlayers: Array<{ __typename?: 'match_players', id: any, nickname: string, person?: { __typename?: 'persons', id: any } | null }>, room: { __typename?: 'rooms', id: any, name: string, startTime?: any | null, roomCommunities: Array<{ __typename?: 'room_communities', community: { __typename?: 'communities', id: any, name: string } }>, roomYoutubeLives: Array<{ __typename?: 'room_youtube_lives', id: any, title?: string | null, youtubeVideoId: string, startTime?: any | null, person?: { __typename?: 'persons', id: any, name: string } | null }> } } | null };
+export type GetMatchPageQuery = { __typename?: 'query_root', match?: { __typename?: 'matches', id: any, startTime: any, endTime?: any | null, matchPlayers: Array<{ __typename?: 'match_players', id: any, nickname: string, person?: { __typename?: 'persons', id: any } | null }>, room: { __typename?: 'rooms', id: any, name: string, startTime?: any | null, roomCommunities: Array<{ __typename?: 'room_communities', community: { __typename?: 'communities', id: any, name: string } }>, roomYoutubeLives: Array<{ __typename?: 'room_youtube_lives', id: any, title?: string | null, youtubeVideoId: string, startTime?: any | null, person?: { __typename?: 'persons', id: any, name: string } | null }> } } | null };
 
 export type GetMatchPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -10582,7 +11151,6 @@ export const GetMatchPageDocument = gql`
     id
     startTime: start_time
     endTime: end_time
-    isAborted: is_aborted
     matchPlayers: match_players(order_by: {nickname: asc}) {
       id
       nickname
