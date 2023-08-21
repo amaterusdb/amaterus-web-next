@@ -10431,7 +10431,7 @@ export type GetMatchPageQueryVariables = Exact<{
 }>;
 
 
-export type GetMatchPageQuery = { __typename?: 'query_root', match?: { __typename?: 'matches', id: any, startTime: any, endTime?: any | null, isAborted?: boolean | null, matchPlayers: Array<{ __typename?: 'match_players', id: any, nickname: string, person?: { __typename?: 'persons', id: any } | null }>, room: { __typename?: 'rooms', id: any, name: string, startTime?: any | null, roomYoutubeLives: Array<{ __typename?: 'room_youtube_lives', id: any, title?: string | null, youtubeVideoId: string, startTime?: any | null, person?: { __typename?: 'persons', id: any, name: string } | null }> } } | null };
+export type GetMatchPageQuery = { __typename?: 'query_root', match?: { __typename?: 'matches', id: any, startTime: any, endTime?: any | null, isAborted?: boolean | null, matchPlayers: Array<{ __typename?: 'match_players', id: any, nickname: string, person?: { __typename?: 'persons', id: any } | null }>, room: { __typename?: 'rooms', id: any, name: string, startTime?: any | null, roomCommunities: Array<{ __typename?: 'room_communities', community: { __typename?: 'communities', id: any, name: string } }>, roomYoutubeLives: Array<{ __typename?: 'room_youtube_lives', id: any, title?: string | null, youtubeVideoId: string, startTime?: any | null, person?: { __typename?: 'persons', id: any, name: string } | null }> } } | null };
 
 export type GetMatchPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -10594,6 +10594,12 @@ export const GetMatchPageDocument = gql`
       id
       name
       startTime: start_time
+      roomCommunities: room_communities(order_by: {community: {start_time: asc}}) {
+        community {
+          id
+          name
+        }
+      }
       roomYoutubeLives: room_youtube_lives {
         id
         youtubeVideoId: youtube_video_id

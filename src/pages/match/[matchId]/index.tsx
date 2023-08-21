@@ -84,6 +84,10 @@ export default function MatchPage({ matchId }: { matchId: string }) {
     )
   }
 
+  const room = match.room
+  const roomCommunities = room?.roomCommunities ?? []
+  const firstCommunity = roomCommunities.length > 0 ? roomCommunities[0].community : null
+
   return (
     <>
       <Head>
@@ -101,6 +105,16 @@ export default function MatchPage({ matchId }: { matchId: string }) {
               Amaterus
             </MuiLink>
           </NextLink>
+          <Typography>コミュニティ</Typography>
+          {firstCommunity == null ? (
+            <Typography>未設定</Typography>
+          ) : (
+            <NextLink href={`/community/${firstCommunity.id}`} passHref legacyBehavior>
+              <MuiLink underline='hover' color='inherit'>
+                {firstCommunity.name}
+              </MuiLink>
+            </NextLink>
+          )}
           <Typography>部屋</Typography>
           <NextLink href={`/room/${match.room.id}/`} passHref legacyBehavior>
             <MuiLink underline='hover' color='inherit'>

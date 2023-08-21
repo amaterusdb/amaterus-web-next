@@ -25,6 +25,20 @@ query GetMatchPage(
       id
       name
       startTime: start_time
+
+      roomCommunities: room_communities(
+        order_by: {
+          community: {
+            start_time: asc
+          }
+        }
+      ) {
+        community {
+          id
+          name
+        }
+      }
+
       roomYoutubeLives: room_youtube_lives {
         id
         youtubeVideoId: youtube_video_id
