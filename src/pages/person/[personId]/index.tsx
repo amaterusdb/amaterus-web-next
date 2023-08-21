@@ -97,7 +97,7 @@ export default function PersonPage({ personId }: { personId: string }) {
               Amaterus
             </MuiLink>
           </NextLink>
-          <Typography>人物リスト</Typography>
+          <Typography>人物</Typography>
           <Typography color='text.primary'>{person.name}</Typography>
         </Breadcrumbs>
         <Typography variant='h4' component='h2' sx={{ mt: 2 }}>
