@@ -11369,7 +11369,7 @@ export type GetRoomPageQueryVariables = Exact<{
 }>;
 
 
-export type GetRoomPageQuery = { __typename?: 'query_root', room?: { __typename?: 'rooms', id: any, name: string, startTime?: any | null, endTime?: any | null, roomCommunities: Array<{ __typename?: 'room_communities', community: { __typename?: 'communities', id: any, name: string } }>, roomTwitterAnnouncements: Array<{ __typename?: 'room_twitter_announcements', id: any, tweetId: string }>, roomPersons: Array<{ __typename?: 'room_persons', person: { __typename?: 'persons', id: any, name: string } }>, roomYouTubeLives: Array<{ __typename?: 'room_youtube_lives', id: any, title?: string | null, youtubeVideoId: string, person?: { __typename?: 'persons', id: any, name: string } | null }>, matches: Array<{ __typename?: 'matches', id: any, startTime: any, endTime?: any | null }> } | null };
+export type GetRoomPageQuery = { __typename?: 'query_root', room?: { __typename?: 'rooms', id: any, name: string, startTime?: any | null, endTime?: any | null, roomCommunities: Array<{ __typename?: 'room_communities', community: { __typename?: 'communities', id: any, name: string } }>, roomTwitterAnnouncements: Array<{ __typename?: 'room_twitter_announcements', id: any, tweetId: string }>, roomPersons: Array<{ __typename?: 'room_persons', person: { __typename?: 'persons', id: any, name: string } }>, roomYouTubeLives: Array<{ __typename?: 'room_youtube_lives', id: any, title?: string | null, youtubeVideoId: string, person?: { __typename?: 'persons', id: any, name: string } | null }>, amongusMatches: Array<{ __typename?: 'amongus_matches', id: any, startTime: any, endTime?: any | null }> } | null };
 
 export type GetRoomPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -11733,7 +11733,7 @@ export const GetRoomPageDocument = gql`
       youtubeVideoId: youtube_video_id
       title
     }
-    matches(order_by: {start_time: asc}) {
+    amongusMatches: amongus_matches(order_by: {start_time: asc}) {
       id
       startTime: start_time
       endTime: end_time

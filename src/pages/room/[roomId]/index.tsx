@@ -169,13 +169,16 @@ export default function RoomPage({ roomId }: { roomId: string }) {
               </TableRow>
             </TableHead>
             <TableBody>
-              {room.matches.map((match) => (
-                <TableRow key={match.id} sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
+              {room.amongusMatches.map((amongusMatch) => (
+                <TableRow
+                  key={amongusMatch.id}
+                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                >
                   <TableCell>
-                    {match.startTime != null ? (
-                      <NextLink href={`/match/${match.id}/`} passHref legacyBehavior>
+                    {amongusMatch.startTime != null ? (
+                      <NextLink href={`/match/${amongusMatch.id}/`} passHref legacyBehavior>
                         <MuiLink>
-                          {format(parseISO(match.startTime), 'yyyy-MM-dd HH:mm:ss')}
+                          {format(parseISO(amongusMatch.startTime), 'yyyy-MM-dd HH:mm:ss')}
                         </MuiLink>
                       </NextLink>
                     ) : (
@@ -183,8 +186,8 @@ export default function RoomPage({ roomId }: { roomId: string }) {
                     )}
                   </TableCell>
                   <TableCell>
-                    {match.endTime != null ? (
-                      <>{format(parseISO(match.endTime), 'yyyy-MM-dd HH:mm:ss')}</>
+                    {amongusMatch.endTime != null ? (
+                      <>{format(parseISO(amongusMatch.endTime), 'yyyy-MM-dd HH:mm:ss')}</>
                     ) : (
                       ''
                     )}

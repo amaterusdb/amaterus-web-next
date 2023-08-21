@@ -56,7 +56,7 @@ query GetRoomPage(
       title
     }
 
-    matches(
+    amongusMatches: amongus_matches(
       order_by: {
         start_time: asc
       }
