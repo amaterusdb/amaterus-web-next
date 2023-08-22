@@ -3536,10 +3536,34 @@ export type Mutation_Root = {
   delete_persons?: Maybe<Persons_Mutation_Response>;
   /** delete single row from the table: "persons" */
   delete_persons_by_pk?: Maybe<Persons>;
+  /** delete data from the table: "program_amongus_maps" */
+  delete_program_amongus_maps?: Maybe<Program_Amongus_Maps_Mutation_Response>;
+  /** delete single row from the table: "program_amongus_maps" */
+  delete_program_amongus_maps_by_pk?: Maybe<Program_Amongus_Maps>;
+  /** delete data from the table: "program_amongus_mods" */
+  delete_program_amongus_mods?: Maybe<Program_Amongus_Mods_Mutation_Response>;
+  /** delete single row from the table: "program_amongus_mods" */
+  delete_program_amongus_mods_by_pk?: Maybe<Program_Amongus_Mods>;
+  /** delete data from the table: "program_amongus_vanilla_versions" */
+  delete_program_amongus_vanilla_versions?: Maybe<Program_Amongus_Vanilla_Versions_Mutation_Response>;
+  /** delete single row from the table: "program_amongus_vanilla_versions" */
+  delete_program_amongus_vanilla_versions_by_pk?: Maybe<Program_Amongus_Vanilla_Versions>;
   /** delete data from the table: "program_communities" */
   delete_program_communities?: Maybe<Program_Communities_Mutation_Response>;
   /** delete single row from the table: "program_communities" */
   delete_program_communities_by_pk?: Maybe<Program_Communities>;
+  /** delete data from the table: "program_persons" */
+  delete_program_persons?: Maybe<Program_Persons_Mutation_Response>;
+  /** delete single row from the table: "program_persons" */
+  delete_program_persons_by_pk?: Maybe<Program_Persons>;
+  /** delete data from the table: "program_twitter_announcements" */
+  delete_program_twitter_announcements?: Maybe<Program_Twitter_Announcements_Mutation_Response>;
+  /** delete single row from the table: "program_twitter_announcements" */
+  delete_program_twitter_announcements_by_pk?: Maybe<Program_Twitter_Announcements>;
+  /** delete data from the table: "program_youtube_lives" */
+  delete_program_youtube_lives?: Maybe<Program_Youtube_Lives_Mutation_Response>;
+  /** delete single row from the table: "program_youtube_lives" */
+  delete_program_youtube_lives_by_pk?: Maybe<Program_Youtube_Lives>;
   /** delete data from the table: "programs" */
   delete_programs?: Maybe<Programs_Mutation_Response>;
   /** delete single row from the table: "programs" */
@@ -3580,6 +3604,14 @@ export type Mutation_Root = {
   delete_twitter_accounts?: Maybe<Twitter_Accounts_Mutation_Response>;
   /** delete single row from the table: "twitter_accounts" */
   delete_twitter_accounts_by_pk?: Maybe<Twitter_Accounts>;
+  /** delete data from the table: "twitter_tweet_images" */
+  delete_twitter_tweet_images?: Maybe<Twitter_Tweet_Images_Mutation_Response>;
+  /** delete single row from the table: "twitter_tweet_images" */
+  delete_twitter_tweet_images_by_pk?: Maybe<Twitter_Tweet_Images>;
+  /** delete data from the table: "twitter_tweets" */
+  delete_twitter_tweets?: Maybe<Twitter_Tweets_Mutation_Response>;
+  /** delete single row from the table: "twitter_tweets" */
+  delete_twitter_tweets_by_pk?: Maybe<Twitter_Tweets>;
   /** delete data from the table: "youtube_channels" */
   delete_youtube_channels?: Maybe<Youtube_Channels_Mutation_Response>;
   /** delete single row from the table: "youtube_channels" */
@@ -3668,10 +3700,34 @@ export type Mutation_Root = {
   insert_persons?: Maybe<Persons_Mutation_Response>;
   /** insert a single row into the table: "persons" */
   insert_persons_one?: Maybe<Persons>;
+  /** insert data into the table: "program_amongus_maps" */
+  insert_program_amongus_maps?: Maybe<Program_Amongus_Maps_Mutation_Response>;
+  /** insert a single row into the table: "program_amongus_maps" */
+  insert_program_amongus_maps_one?: Maybe<Program_Amongus_Maps>;
+  /** insert data into the table: "program_amongus_mods" */
+  insert_program_amongus_mods?: Maybe<Program_Amongus_Mods_Mutation_Response>;
+  /** insert a single row into the table: "program_amongus_mods" */
+  insert_program_amongus_mods_one?: Maybe<Program_Amongus_Mods>;
+  /** insert data into the table: "program_amongus_vanilla_versions" */
+  insert_program_amongus_vanilla_versions?: Maybe<Program_Amongus_Vanilla_Versions_Mutation_Response>;
+  /** insert a single row into the table: "program_amongus_vanilla_versions" */
+  insert_program_amongus_vanilla_versions_one?: Maybe<Program_Amongus_Vanilla_Versions>;
   /** insert data into the table: "program_communities" */
   insert_program_communities?: Maybe<Program_Communities_Mutation_Response>;
   /** insert a single row into the table: "program_communities" */
   insert_program_communities_one?: Maybe<Program_Communities>;
+  /** insert data into the table: "program_persons" */
+  insert_program_persons?: Maybe<Program_Persons_Mutation_Response>;
+  /** insert a single row into the table: "program_persons" */
+  insert_program_persons_one?: Maybe<Program_Persons>;
+  /** insert data into the table: "program_twitter_announcements" */
+  insert_program_twitter_announcements?: Maybe<Program_Twitter_Announcements_Mutation_Response>;
+  /** insert a single row into the table: "program_twitter_announcements" */
+  insert_program_twitter_announcements_one?: Maybe<Program_Twitter_Announcements>;
+  /** insert data into the table: "program_youtube_lives" */
+  insert_program_youtube_lives?: Maybe<Program_Youtube_Lives_Mutation_Response>;
+  /** insert a single row into the table: "program_youtube_lives" */
+  insert_program_youtube_lives_one?: Maybe<Program_Youtube_Lives>;
   /** insert data into the table: "programs" */
   insert_programs?: Maybe<Programs_Mutation_Response>;
   /** insert a single row into the table: "programs" */
@@ -3712,6 +3768,14 @@ export type Mutation_Root = {
   insert_twitter_accounts?: Maybe<Twitter_Accounts_Mutation_Response>;
   /** insert a single row into the table: "twitter_accounts" */
   insert_twitter_accounts_one?: Maybe<Twitter_Accounts>;
+  /** insert data into the table: "twitter_tweet_images" */
+  insert_twitter_tweet_images?: Maybe<Twitter_Tweet_Images_Mutation_Response>;
+  /** insert a single row into the table: "twitter_tweet_images" */
+  insert_twitter_tweet_images_one?: Maybe<Twitter_Tweet_Images>;
+  /** insert data into the table: "twitter_tweets" */
+  insert_twitter_tweets?: Maybe<Twitter_Tweets_Mutation_Response>;
+  /** insert a single row into the table: "twitter_tweets" */
+  insert_twitter_tweets_one?: Maybe<Twitter_Tweets>;
   /** insert data into the table: "youtube_channels" */
   insert_youtube_channels?: Maybe<Youtube_Channels_Mutation_Response>;
   /** insert a single row into the table: "youtube_channels" */
@@ -3840,12 +3904,48 @@ export type Mutation_Root = {
   update_persons_by_pk?: Maybe<Persons>;
   /** update multiples rows of table: "persons" */
   update_persons_many?: Maybe<Array<Maybe<Persons_Mutation_Response>>>;
+  /** update data of the table: "program_amongus_maps" */
+  update_program_amongus_maps?: Maybe<Program_Amongus_Maps_Mutation_Response>;
+  /** update single row of the table: "program_amongus_maps" */
+  update_program_amongus_maps_by_pk?: Maybe<Program_Amongus_Maps>;
+  /** update multiples rows of table: "program_amongus_maps" */
+  update_program_amongus_maps_many?: Maybe<Array<Maybe<Program_Amongus_Maps_Mutation_Response>>>;
+  /** update data of the table: "program_amongus_mods" */
+  update_program_amongus_mods?: Maybe<Program_Amongus_Mods_Mutation_Response>;
+  /** update single row of the table: "program_amongus_mods" */
+  update_program_amongus_mods_by_pk?: Maybe<Program_Amongus_Mods>;
+  /** update multiples rows of table: "program_amongus_mods" */
+  update_program_amongus_mods_many?: Maybe<Array<Maybe<Program_Amongus_Mods_Mutation_Response>>>;
+  /** update data of the table: "program_amongus_vanilla_versions" */
+  update_program_amongus_vanilla_versions?: Maybe<Program_Amongus_Vanilla_Versions_Mutation_Response>;
+  /** update single row of the table: "program_amongus_vanilla_versions" */
+  update_program_amongus_vanilla_versions_by_pk?: Maybe<Program_Amongus_Vanilla_Versions>;
+  /** update multiples rows of table: "program_amongus_vanilla_versions" */
+  update_program_amongus_vanilla_versions_many?: Maybe<Array<Maybe<Program_Amongus_Vanilla_Versions_Mutation_Response>>>;
   /** update data of the table: "program_communities" */
   update_program_communities?: Maybe<Program_Communities_Mutation_Response>;
   /** update single row of the table: "program_communities" */
   update_program_communities_by_pk?: Maybe<Program_Communities>;
   /** update multiples rows of table: "program_communities" */
   update_program_communities_many?: Maybe<Array<Maybe<Program_Communities_Mutation_Response>>>;
+  /** update data of the table: "program_persons" */
+  update_program_persons?: Maybe<Program_Persons_Mutation_Response>;
+  /** update single row of the table: "program_persons" */
+  update_program_persons_by_pk?: Maybe<Program_Persons>;
+  /** update multiples rows of table: "program_persons" */
+  update_program_persons_many?: Maybe<Array<Maybe<Program_Persons_Mutation_Response>>>;
+  /** update data of the table: "program_twitter_announcements" */
+  update_program_twitter_announcements?: Maybe<Program_Twitter_Announcements_Mutation_Response>;
+  /** update single row of the table: "program_twitter_announcements" */
+  update_program_twitter_announcements_by_pk?: Maybe<Program_Twitter_Announcements>;
+  /** update multiples rows of table: "program_twitter_announcements" */
+  update_program_twitter_announcements_many?: Maybe<Array<Maybe<Program_Twitter_Announcements_Mutation_Response>>>;
+  /** update data of the table: "program_youtube_lives" */
+  update_program_youtube_lives?: Maybe<Program_Youtube_Lives_Mutation_Response>;
+  /** update single row of the table: "program_youtube_lives" */
+  update_program_youtube_lives_by_pk?: Maybe<Program_Youtube_Lives>;
+  /** update multiples rows of table: "program_youtube_lives" */
+  update_program_youtube_lives_many?: Maybe<Array<Maybe<Program_Youtube_Lives_Mutation_Response>>>;
   /** update data of the table: "programs" */
   update_programs?: Maybe<Programs_Mutation_Response>;
   /** update single row of the table: "programs" */
@@ -3906,6 +4006,18 @@ export type Mutation_Root = {
   update_twitter_accounts_by_pk?: Maybe<Twitter_Accounts>;
   /** update multiples rows of table: "twitter_accounts" */
   update_twitter_accounts_many?: Maybe<Array<Maybe<Twitter_Accounts_Mutation_Response>>>;
+  /** update data of the table: "twitter_tweet_images" */
+  update_twitter_tweet_images?: Maybe<Twitter_Tweet_Images_Mutation_Response>;
+  /** update single row of the table: "twitter_tweet_images" */
+  update_twitter_tweet_images_by_pk?: Maybe<Twitter_Tweet_Images>;
+  /** update multiples rows of table: "twitter_tweet_images" */
+  update_twitter_tweet_images_many?: Maybe<Array<Maybe<Twitter_Tweet_Images_Mutation_Response>>>;
+  /** update data of the table: "twitter_tweets" */
+  update_twitter_tweets?: Maybe<Twitter_Tweets_Mutation_Response>;
+  /** update single row of the table: "twitter_tweets" */
+  update_twitter_tweets_by_pk?: Maybe<Twitter_Tweets>;
+  /** update multiples rows of table: "twitter_tweets" */
+  update_twitter_tweets_many?: Maybe<Array<Maybe<Twitter_Tweets_Mutation_Response>>>;
   /** update data of the table: "youtube_channels" */
   update_youtube_channels?: Maybe<Youtube_Channels_Mutation_Response>;
   /** update single row of the table: "youtube_channels" */
@@ -4162,6 +4274,42 @@ export type Mutation_RootDelete_Persons_By_PkArgs = {
 
 
 /** mutation root */
+export type Mutation_RootDelete_Program_Amongus_MapsArgs = {
+  where: Program_Amongus_Maps_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Program_Amongus_Maps_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Program_Amongus_ModsArgs = {
+  where: Program_Amongus_Mods_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Program_Amongus_Mods_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Program_Amongus_Vanilla_VersionsArgs = {
+  where: Program_Amongus_Vanilla_Versions_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Program_Amongus_Vanilla_Versions_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
 export type Mutation_RootDelete_Program_CommunitiesArgs = {
   where: Program_Communities_Bool_Exp;
 };
@@ -4169,6 +4317,42 @@ export type Mutation_RootDelete_Program_CommunitiesArgs = {
 
 /** mutation root */
 export type Mutation_RootDelete_Program_Communities_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Program_PersonsArgs = {
+  where: Program_Persons_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Program_Persons_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Program_Twitter_AnnouncementsArgs = {
+  where: Program_Twitter_Announcements_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Program_Twitter_Announcements_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Program_Youtube_LivesArgs = {
+  where: Program_Youtube_Lives_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Program_Youtube_Lives_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
@@ -4289,6 +4473,30 @@ export type Mutation_RootDelete_Twitter_AccountsArgs = {
 
 /** mutation root */
 export type Mutation_RootDelete_Twitter_Accounts_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Twitter_Tweet_ImagesArgs = {
+  where: Twitter_Tweet_Images_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Twitter_Tweet_Images_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Twitter_TweetsArgs = {
+  where: Twitter_Tweets_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Twitter_Tweets_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
@@ -4598,6 +4806,48 @@ export type Mutation_RootInsert_Persons_OneArgs = {
 
 
 /** mutation root */
+export type Mutation_RootInsert_Program_Amongus_MapsArgs = {
+  objects: Array<Program_Amongus_Maps_Insert_Input>;
+  on_conflict?: InputMaybe<Program_Amongus_Maps_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Program_Amongus_Maps_OneArgs = {
+  object: Program_Amongus_Maps_Insert_Input;
+  on_conflict?: InputMaybe<Program_Amongus_Maps_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Program_Amongus_ModsArgs = {
+  objects: Array<Program_Amongus_Mods_Insert_Input>;
+  on_conflict?: InputMaybe<Program_Amongus_Mods_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Program_Amongus_Mods_OneArgs = {
+  object: Program_Amongus_Mods_Insert_Input;
+  on_conflict?: InputMaybe<Program_Amongus_Mods_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Program_Amongus_Vanilla_VersionsArgs = {
+  objects: Array<Program_Amongus_Vanilla_Versions_Insert_Input>;
+  on_conflict?: InputMaybe<Program_Amongus_Vanilla_Versions_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Program_Amongus_Vanilla_Versions_OneArgs = {
+  object: Program_Amongus_Vanilla_Versions_Insert_Input;
+  on_conflict?: InputMaybe<Program_Amongus_Vanilla_Versions_On_Conflict>;
+};
+
+
+/** mutation root */
 export type Mutation_RootInsert_Program_CommunitiesArgs = {
   objects: Array<Program_Communities_Insert_Input>;
   on_conflict?: InputMaybe<Program_Communities_On_Conflict>;
@@ -4608,6 +4858,48 @@ export type Mutation_RootInsert_Program_CommunitiesArgs = {
 export type Mutation_RootInsert_Program_Communities_OneArgs = {
   object: Program_Communities_Insert_Input;
   on_conflict?: InputMaybe<Program_Communities_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Program_PersonsArgs = {
+  objects: Array<Program_Persons_Insert_Input>;
+  on_conflict?: InputMaybe<Program_Persons_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Program_Persons_OneArgs = {
+  object: Program_Persons_Insert_Input;
+  on_conflict?: InputMaybe<Program_Persons_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Program_Twitter_AnnouncementsArgs = {
+  objects: Array<Program_Twitter_Announcements_Insert_Input>;
+  on_conflict?: InputMaybe<Program_Twitter_Announcements_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Program_Twitter_Announcements_OneArgs = {
+  object: Program_Twitter_Announcements_Insert_Input;
+  on_conflict?: InputMaybe<Program_Twitter_Announcements_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Program_Youtube_LivesArgs = {
+  objects: Array<Program_Youtube_Lives_Insert_Input>;
+  on_conflict?: InputMaybe<Program_Youtube_Lives_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Program_Youtube_Lives_OneArgs = {
+  object: Program_Youtube_Lives_Insert_Input;
+  on_conflict?: InputMaybe<Program_Youtube_Lives_On_Conflict>;
 };
 
 
@@ -4748,6 +5040,34 @@ export type Mutation_RootInsert_Twitter_AccountsArgs = {
 export type Mutation_RootInsert_Twitter_Accounts_OneArgs = {
   object: Twitter_Accounts_Insert_Input;
   on_conflict?: InputMaybe<Twitter_Accounts_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Twitter_Tweet_ImagesArgs = {
+  objects: Array<Twitter_Tweet_Images_Insert_Input>;
+  on_conflict?: InputMaybe<Twitter_Tweet_Images_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Twitter_Tweet_Images_OneArgs = {
+  object: Twitter_Tweet_Images_Insert_Input;
+  on_conflict?: InputMaybe<Twitter_Tweet_Images_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Twitter_TweetsArgs = {
+  objects: Array<Twitter_Tweets_Insert_Input>;
+  on_conflict?: InputMaybe<Twitter_Tweets_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Twitter_Tweets_OneArgs = {
+  object: Twitter_Tweets_Insert_Input;
+  on_conflict?: InputMaybe<Twitter_Tweets_On_Conflict>;
 };
 
 
@@ -5186,6 +5506,66 @@ export type Mutation_RootUpdate_Persons_ManyArgs = {
 
 
 /** mutation root */
+export type Mutation_RootUpdate_Program_Amongus_MapsArgs = {
+  _set?: InputMaybe<Program_Amongus_Maps_Set_Input>;
+  where: Program_Amongus_Maps_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Program_Amongus_Maps_By_PkArgs = {
+  _set?: InputMaybe<Program_Amongus_Maps_Set_Input>;
+  pk_columns: Program_Amongus_Maps_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Program_Amongus_Maps_ManyArgs = {
+  updates: Array<Program_Amongus_Maps_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Program_Amongus_ModsArgs = {
+  _set?: InputMaybe<Program_Amongus_Mods_Set_Input>;
+  where: Program_Amongus_Mods_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Program_Amongus_Mods_By_PkArgs = {
+  _set?: InputMaybe<Program_Amongus_Mods_Set_Input>;
+  pk_columns: Program_Amongus_Mods_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Program_Amongus_Mods_ManyArgs = {
+  updates: Array<Program_Amongus_Mods_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Program_Amongus_Vanilla_VersionsArgs = {
+  _set?: InputMaybe<Program_Amongus_Vanilla_Versions_Set_Input>;
+  where: Program_Amongus_Vanilla_Versions_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Program_Amongus_Vanilla_Versions_By_PkArgs = {
+  _set?: InputMaybe<Program_Amongus_Vanilla_Versions_Set_Input>;
+  pk_columns: Program_Amongus_Vanilla_Versions_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Program_Amongus_Vanilla_Versions_ManyArgs = {
+  updates: Array<Program_Amongus_Vanilla_Versions_Updates>;
+};
+
+
+/** mutation root */
 export type Mutation_RootUpdate_Program_CommunitiesArgs = {
   _set?: InputMaybe<Program_Communities_Set_Input>;
   where: Program_Communities_Bool_Exp;
@@ -5202,6 +5582,66 @@ export type Mutation_RootUpdate_Program_Communities_By_PkArgs = {
 /** mutation root */
 export type Mutation_RootUpdate_Program_Communities_ManyArgs = {
   updates: Array<Program_Communities_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Program_PersonsArgs = {
+  _set?: InputMaybe<Program_Persons_Set_Input>;
+  where: Program_Persons_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Program_Persons_By_PkArgs = {
+  _set?: InputMaybe<Program_Persons_Set_Input>;
+  pk_columns: Program_Persons_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Program_Persons_ManyArgs = {
+  updates: Array<Program_Persons_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Program_Twitter_AnnouncementsArgs = {
+  _set?: InputMaybe<Program_Twitter_Announcements_Set_Input>;
+  where: Program_Twitter_Announcements_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Program_Twitter_Announcements_By_PkArgs = {
+  _set?: InputMaybe<Program_Twitter_Announcements_Set_Input>;
+  pk_columns: Program_Twitter_Announcements_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Program_Twitter_Announcements_ManyArgs = {
+  updates: Array<Program_Twitter_Announcements_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Program_Youtube_LivesArgs = {
+  _set?: InputMaybe<Program_Youtube_Lives_Set_Input>;
+  where: Program_Youtube_Lives_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Program_Youtube_Lives_By_PkArgs = {
+  _set?: InputMaybe<Program_Youtube_Lives_Set_Input>;
+  pk_columns: Program_Youtube_Lives_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Program_Youtube_Lives_ManyArgs = {
+  updates: Array<Program_Youtube_Lives_Updates>;
 };
 
 
@@ -5404,6 +5844,48 @@ export type Mutation_RootUpdate_Twitter_Accounts_By_PkArgs = {
 /** mutation root */
 export type Mutation_RootUpdate_Twitter_Accounts_ManyArgs = {
   updates: Array<Twitter_Accounts_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Twitter_Tweet_ImagesArgs = {
+  _inc?: InputMaybe<Twitter_Tweet_Images_Inc_Input>;
+  _set?: InputMaybe<Twitter_Tweet_Images_Set_Input>;
+  where: Twitter_Tweet_Images_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Twitter_Tweet_Images_By_PkArgs = {
+  _inc?: InputMaybe<Twitter_Tweet_Images_Inc_Input>;
+  _set?: InputMaybe<Twitter_Tweet_Images_Set_Input>;
+  pk_columns: Twitter_Tweet_Images_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Twitter_Tweet_Images_ManyArgs = {
+  updates: Array<Twitter_Tweet_Images_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Twitter_TweetsArgs = {
+  _set?: InputMaybe<Twitter_Tweets_Set_Input>;
+  where: Twitter_Tweets_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Twitter_Tweets_By_PkArgs = {
+  _set?: InputMaybe<Twitter_Tweets_Set_Input>;
+  pk_columns: Twitter_Tweets_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Twitter_Tweets_ManyArgs = {
+  updates: Array<Twitter_Tweets_Updates>;
 };
 
 
@@ -7306,6 +7788,702 @@ export type Persons_Updates = {
   where: Persons_Bool_Exp;
 };
 
+/** columns and relationships of "program_amongus_maps" */
+export type Program_Amongus_Maps = {
+  __typename?: 'program_amongus_maps';
+  /** An object relationship */
+  amongus_map: Amongus_Maps;
+  amongus_map_id: Scalars['uuid']['output'];
+  created_at: Scalars['timestamptz']['output'];
+  id: Scalars['uuid']['output'];
+  /** An object relationship */
+  program: Programs;
+  program_id: Scalars['uuid']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+/** aggregated selection of "program_amongus_maps" */
+export type Program_Amongus_Maps_Aggregate = {
+  __typename?: 'program_amongus_maps_aggregate';
+  aggregate?: Maybe<Program_Amongus_Maps_Aggregate_Fields>;
+  nodes: Array<Program_Amongus_Maps>;
+};
+
+export type Program_Amongus_Maps_Aggregate_Bool_Exp = {
+  count?: InputMaybe<Program_Amongus_Maps_Aggregate_Bool_Exp_Count>;
+};
+
+export type Program_Amongus_Maps_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Program_Amongus_Maps_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Program_Amongus_Maps_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
+/** aggregate fields of "program_amongus_maps" */
+export type Program_Amongus_Maps_Aggregate_Fields = {
+  __typename?: 'program_amongus_maps_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Program_Amongus_Maps_Max_Fields>;
+  min?: Maybe<Program_Amongus_Maps_Min_Fields>;
+};
+
+
+/** aggregate fields of "program_amongus_maps" */
+export type Program_Amongus_Maps_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Program_Amongus_Maps_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** order by aggregate values of table "program_amongus_maps" */
+export type Program_Amongus_Maps_Aggregate_Order_By = {
+  count?: InputMaybe<Order_By>;
+  max?: InputMaybe<Program_Amongus_Maps_Max_Order_By>;
+  min?: InputMaybe<Program_Amongus_Maps_Min_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "program_amongus_maps" */
+export type Program_Amongus_Maps_Arr_Rel_Insert_Input = {
+  data: Array<Program_Amongus_Maps_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Program_Amongus_Maps_On_Conflict>;
+};
+
+/** Boolean expression to filter rows from the table "program_amongus_maps". All fields are combined with a logical 'AND'. */
+export type Program_Amongus_Maps_Bool_Exp = {
+  _and?: InputMaybe<Array<Program_Amongus_Maps_Bool_Exp>>;
+  _not?: InputMaybe<Program_Amongus_Maps_Bool_Exp>;
+  _or?: InputMaybe<Array<Program_Amongus_Maps_Bool_Exp>>;
+  amongus_map?: InputMaybe<Amongus_Maps_Bool_Exp>;
+  amongus_map_id?: InputMaybe<Uuid_Comparison_Exp>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  program?: InputMaybe<Programs_Bool_Exp>;
+  program_id?: InputMaybe<Uuid_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "program_amongus_maps" */
+export enum Program_Amongus_Maps_Constraint {
+  /** unique or primary key constraint on columns "id" */
+  ProgramAmongusMapsPkey = 'program_amongus_maps_pkey',
+  /** unique or primary key constraint on columns "amongus_map_id", "program_id" */
+  ProgramAmongusMapsProgramIdAmongusMapIdKey = 'program_amongus_maps_program_id_amongus_map_id_key'
+}
+
+/** input type for inserting data into table "program_amongus_maps" */
+export type Program_Amongus_Maps_Insert_Input = {
+  amongus_map?: InputMaybe<Amongus_Maps_Obj_Rel_Insert_Input>;
+  amongus_map_id?: InputMaybe<Scalars['uuid']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  program?: InputMaybe<Programs_Obj_Rel_Insert_Input>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Program_Amongus_Maps_Max_Fields = {
+  __typename?: 'program_amongus_maps_max_fields';
+  amongus_map_id?: Maybe<Scalars['uuid']['output']>;
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  program_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by max() on columns of table "program_amongus_maps" */
+export type Program_Amongus_Maps_Max_Order_By = {
+  amongus_map_id?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Program_Amongus_Maps_Min_Fields = {
+  __typename?: 'program_amongus_maps_min_fields';
+  amongus_map_id?: Maybe<Scalars['uuid']['output']>;
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  program_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by min() on columns of table "program_amongus_maps" */
+export type Program_Amongus_Maps_Min_Order_By = {
+  amongus_map_id?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** response of any mutation on the table "program_amongus_maps" */
+export type Program_Amongus_Maps_Mutation_Response = {
+  __typename?: 'program_amongus_maps_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Program_Amongus_Maps>;
+};
+
+/** on_conflict condition type for table "program_amongus_maps" */
+export type Program_Amongus_Maps_On_Conflict = {
+  constraint: Program_Amongus_Maps_Constraint;
+  update_columns?: Array<Program_Amongus_Maps_Update_Column>;
+  where?: InputMaybe<Program_Amongus_Maps_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "program_amongus_maps". */
+export type Program_Amongus_Maps_Order_By = {
+  amongus_map?: InputMaybe<Amongus_Maps_Order_By>;
+  amongus_map_id?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  program?: InputMaybe<Programs_Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: program_amongus_maps */
+export type Program_Amongus_Maps_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "program_amongus_maps" */
+export enum Program_Amongus_Maps_Select_Column {
+  /** column name */
+  AmongusMapId = 'amongus_map_id',
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  ProgramId = 'program_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "program_amongus_maps" */
+export type Program_Amongus_Maps_Set_Input = {
+  amongus_map_id?: InputMaybe<Scalars['uuid']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** Streaming cursor of the table "program_amongus_maps" */
+export type Program_Amongus_Maps_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Program_Amongus_Maps_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Program_Amongus_Maps_Stream_Cursor_Value_Input = {
+  amongus_map_id?: InputMaybe<Scalars['uuid']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** update columns of table "program_amongus_maps" */
+export enum Program_Amongus_Maps_Update_Column {
+  /** column name */
+  AmongusMapId = 'amongus_map_id',
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  ProgramId = 'program_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Program_Amongus_Maps_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Program_Amongus_Maps_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Program_Amongus_Maps_Bool_Exp;
+};
+
+/** columns and relationships of "program_amongus_mods" */
+export type Program_Amongus_Mods = {
+  __typename?: 'program_amongus_mods';
+  /** An object relationship */
+  amongus_mod: Amongus_Mods;
+  amongus_mod_id: Scalars['uuid']['output'];
+  /** An object relationship */
+  amongus_mod_version?: Maybe<Amongus_Mod_Versions>;
+  amongus_mod_version_id?: Maybe<Scalars['uuid']['output']>;
+  created_at: Scalars['timestamptz']['output'];
+  id: Scalars['uuid']['output'];
+  /** An object relationship */
+  program: Programs;
+  program_id: Scalars['uuid']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+/** aggregated selection of "program_amongus_mods" */
+export type Program_Amongus_Mods_Aggregate = {
+  __typename?: 'program_amongus_mods_aggregate';
+  aggregate?: Maybe<Program_Amongus_Mods_Aggregate_Fields>;
+  nodes: Array<Program_Amongus_Mods>;
+};
+
+export type Program_Amongus_Mods_Aggregate_Bool_Exp = {
+  count?: InputMaybe<Program_Amongus_Mods_Aggregate_Bool_Exp_Count>;
+};
+
+export type Program_Amongus_Mods_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Program_Amongus_Mods_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Program_Amongus_Mods_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
+/** aggregate fields of "program_amongus_mods" */
+export type Program_Amongus_Mods_Aggregate_Fields = {
+  __typename?: 'program_amongus_mods_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Program_Amongus_Mods_Max_Fields>;
+  min?: Maybe<Program_Amongus_Mods_Min_Fields>;
+};
+
+
+/** aggregate fields of "program_amongus_mods" */
+export type Program_Amongus_Mods_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Program_Amongus_Mods_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** order by aggregate values of table "program_amongus_mods" */
+export type Program_Amongus_Mods_Aggregate_Order_By = {
+  count?: InputMaybe<Order_By>;
+  max?: InputMaybe<Program_Amongus_Mods_Max_Order_By>;
+  min?: InputMaybe<Program_Amongus_Mods_Min_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "program_amongus_mods" */
+export type Program_Amongus_Mods_Arr_Rel_Insert_Input = {
+  data: Array<Program_Amongus_Mods_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Program_Amongus_Mods_On_Conflict>;
+};
+
+/** Boolean expression to filter rows from the table "program_amongus_mods". All fields are combined with a logical 'AND'. */
+export type Program_Amongus_Mods_Bool_Exp = {
+  _and?: InputMaybe<Array<Program_Amongus_Mods_Bool_Exp>>;
+  _not?: InputMaybe<Program_Amongus_Mods_Bool_Exp>;
+  _or?: InputMaybe<Array<Program_Amongus_Mods_Bool_Exp>>;
+  amongus_mod?: InputMaybe<Amongus_Mods_Bool_Exp>;
+  amongus_mod_id?: InputMaybe<Uuid_Comparison_Exp>;
+  amongus_mod_version?: InputMaybe<Amongus_Mod_Versions_Bool_Exp>;
+  amongus_mod_version_id?: InputMaybe<Uuid_Comparison_Exp>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  program?: InputMaybe<Programs_Bool_Exp>;
+  program_id?: InputMaybe<Uuid_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "program_amongus_mods" */
+export enum Program_Amongus_Mods_Constraint {
+  /** unique or primary key constraint on columns "id" */
+  ProgramAmongusModsPkey = 'program_amongus_mods_pkey',
+  /** unique or primary key constraint on columns "amongus_mod_version_id", "amongus_mod_id", "program_id" */
+  ProgramAmongusModsProgramIdAmongusModIdAmongusModKey = 'program_amongus_mods_program_id_amongus_mod_id_amongus_mod__key',
+  /** unique or primary key constraint on columns "amongus_mod_id", "program_id" */
+  ProgramAmongusModsProgramIdAmongusModIdKey = 'program_amongus_mods_program_id_amongus_mod_id_key'
+}
+
+/** input type for inserting data into table "program_amongus_mods" */
+export type Program_Amongus_Mods_Insert_Input = {
+  amongus_mod?: InputMaybe<Amongus_Mods_Obj_Rel_Insert_Input>;
+  amongus_mod_id?: InputMaybe<Scalars['uuid']['input']>;
+  amongus_mod_version?: InputMaybe<Amongus_Mod_Versions_Obj_Rel_Insert_Input>;
+  amongus_mod_version_id?: InputMaybe<Scalars['uuid']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  program?: InputMaybe<Programs_Obj_Rel_Insert_Input>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Program_Amongus_Mods_Max_Fields = {
+  __typename?: 'program_amongus_mods_max_fields';
+  amongus_mod_id?: Maybe<Scalars['uuid']['output']>;
+  amongus_mod_version_id?: Maybe<Scalars['uuid']['output']>;
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  program_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by max() on columns of table "program_amongus_mods" */
+export type Program_Amongus_Mods_Max_Order_By = {
+  amongus_mod_id?: InputMaybe<Order_By>;
+  amongus_mod_version_id?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Program_Amongus_Mods_Min_Fields = {
+  __typename?: 'program_amongus_mods_min_fields';
+  amongus_mod_id?: Maybe<Scalars['uuid']['output']>;
+  amongus_mod_version_id?: Maybe<Scalars['uuid']['output']>;
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  program_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by min() on columns of table "program_amongus_mods" */
+export type Program_Amongus_Mods_Min_Order_By = {
+  amongus_mod_id?: InputMaybe<Order_By>;
+  amongus_mod_version_id?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** response of any mutation on the table "program_amongus_mods" */
+export type Program_Amongus_Mods_Mutation_Response = {
+  __typename?: 'program_amongus_mods_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Program_Amongus_Mods>;
+};
+
+/** on_conflict condition type for table "program_amongus_mods" */
+export type Program_Amongus_Mods_On_Conflict = {
+  constraint: Program_Amongus_Mods_Constraint;
+  update_columns?: Array<Program_Amongus_Mods_Update_Column>;
+  where?: InputMaybe<Program_Amongus_Mods_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "program_amongus_mods". */
+export type Program_Amongus_Mods_Order_By = {
+  amongus_mod?: InputMaybe<Amongus_Mods_Order_By>;
+  amongus_mod_id?: InputMaybe<Order_By>;
+  amongus_mod_version?: InputMaybe<Amongus_Mod_Versions_Order_By>;
+  amongus_mod_version_id?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  program?: InputMaybe<Programs_Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: program_amongus_mods */
+export type Program_Amongus_Mods_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "program_amongus_mods" */
+export enum Program_Amongus_Mods_Select_Column {
+  /** column name */
+  AmongusModId = 'amongus_mod_id',
+  /** column name */
+  AmongusModVersionId = 'amongus_mod_version_id',
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  ProgramId = 'program_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "program_amongus_mods" */
+export type Program_Amongus_Mods_Set_Input = {
+  amongus_mod_id?: InputMaybe<Scalars['uuid']['input']>;
+  amongus_mod_version_id?: InputMaybe<Scalars['uuid']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** Streaming cursor of the table "program_amongus_mods" */
+export type Program_Amongus_Mods_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Program_Amongus_Mods_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Program_Amongus_Mods_Stream_Cursor_Value_Input = {
+  amongus_mod_id?: InputMaybe<Scalars['uuid']['input']>;
+  amongus_mod_version_id?: InputMaybe<Scalars['uuid']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** update columns of table "program_amongus_mods" */
+export enum Program_Amongus_Mods_Update_Column {
+  /** column name */
+  AmongusModId = 'amongus_mod_id',
+  /** column name */
+  AmongusModVersionId = 'amongus_mod_version_id',
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  ProgramId = 'program_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Program_Amongus_Mods_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Program_Amongus_Mods_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Program_Amongus_Mods_Bool_Exp;
+};
+
+/** columns and relationships of "program_amongus_vanilla_versions" */
+export type Program_Amongus_Vanilla_Versions = {
+  __typename?: 'program_amongus_vanilla_versions';
+  /** An object relationship */
+  amongus_vanilla_version: Amongus_Vanilla_Versions;
+  amongus_vanilla_version_id: Scalars['uuid']['output'];
+  created_at: Scalars['timestamptz']['output'];
+  id: Scalars['uuid']['output'];
+  /** An object relationship */
+  program: Programs;
+  program_id: Scalars['uuid']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+/** aggregated selection of "program_amongus_vanilla_versions" */
+export type Program_Amongus_Vanilla_Versions_Aggregate = {
+  __typename?: 'program_amongus_vanilla_versions_aggregate';
+  aggregate?: Maybe<Program_Amongus_Vanilla_Versions_Aggregate_Fields>;
+  nodes: Array<Program_Amongus_Vanilla_Versions>;
+};
+
+export type Program_Amongus_Vanilla_Versions_Aggregate_Bool_Exp = {
+  count?: InputMaybe<Program_Amongus_Vanilla_Versions_Aggregate_Bool_Exp_Count>;
+};
+
+export type Program_Amongus_Vanilla_Versions_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Program_Amongus_Vanilla_Versions_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Program_Amongus_Vanilla_Versions_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
+/** aggregate fields of "program_amongus_vanilla_versions" */
+export type Program_Amongus_Vanilla_Versions_Aggregate_Fields = {
+  __typename?: 'program_amongus_vanilla_versions_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Program_Amongus_Vanilla_Versions_Max_Fields>;
+  min?: Maybe<Program_Amongus_Vanilla_Versions_Min_Fields>;
+};
+
+
+/** aggregate fields of "program_amongus_vanilla_versions" */
+export type Program_Amongus_Vanilla_Versions_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Program_Amongus_Vanilla_Versions_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** order by aggregate values of table "program_amongus_vanilla_versions" */
+export type Program_Amongus_Vanilla_Versions_Aggregate_Order_By = {
+  count?: InputMaybe<Order_By>;
+  max?: InputMaybe<Program_Amongus_Vanilla_Versions_Max_Order_By>;
+  min?: InputMaybe<Program_Amongus_Vanilla_Versions_Min_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "program_amongus_vanilla_versions" */
+export type Program_Amongus_Vanilla_Versions_Arr_Rel_Insert_Input = {
+  data: Array<Program_Amongus_Vanilla_Versions_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Program_Amongus_Vanilla_Versions_On_Conflict>;
+};
+
+/** Boolean expression to filter rows from the table "program_amongus_vanilla_versions". All fields are combined with a logical 'AND'. */
+export type Program_Amongus_Vanilla_Versions_Bool_Exp = {
+  _and?: InputMaybe<Array<Program_Amongus_Vanilla_Versions_Bool_Exp>>;
+  _not?: InputMaybe<Program_Amongus_Vanilla_Versions_Bool_Exp>;
+  _or?: InputMaybe<Array<Program_Amongus_Vanilla_Versions_Bool_Exp>>;
+  amongus_vanilla_version?: InputMaybe<Amongus_Vanilla_Versions_Bool_Exp>;
+  amongus_vanilla_version_id?: InputMaybe<Uuid_Comparison_Exp>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  program?: InputMaybe<Programs_Bool_Exp>;
+  program_id?: InputMaybe<Uuid_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "program_amongus_vanilla_versions" */
+export enum Program_Amongus_Vanilla_Versions_Constraint {
+  /** unique or primary key constraint on columns "program_id", "amongus_vanilla_version_id" */
+  ProgramAmongusVanillaVersiProgramIdAmongusVanillaVeKey = 'program_amongus_vanilla_versi_program_id_amongus_vanilla_ve_key',
+  /** unique or primary key constraint on columns "id" */
+  ProgramAmongusVanillaVersionsPkey = 'program_amongus_vanilla_versions_pkey'
+}
+
+/** input type for inserting data into table "program_amongus_vanilla_versions" */
+export type Program_Amongus_Vanilla_Versions_Insert_Input = {
+  amongus_vanilla_version?: InputMaybe<Amongus_Vanilla_Versions_Obj_Rel_Insert_Input>;
+  amongus_vanilla_version_id?: InputMaybe<Scalars['uuid']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  program?: InputMaybe<Programs_Obj_Rel_Insert_Input>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Program_Amongus_Vanilla_Versions_Max_Fields = {
+  __typename?: 'program_amongus_vanilla_versions_max_fields';
+  amongus_vanilla_version_id?: Maybe<Scalars['uuid']['output']>;
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  program_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by max() on columns of table "program_amongus_vanilla_versions" */
+export type Program_Amongus_Vanilla_Versions_Max_Order_By = {
+  amongus_vanilla_version_id?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Program_Amongus_Vanilla_Versions_Min_Fields = {
+  __typename?: 'program_amongus_vanilla_versions_min_fields';
+  amongus_vanilla_version_id?: Maybe<Scalars['uuid']['output']>;
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  program_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by min() on columns of table "program_amongus_vanilla_versions" */
+export type Program_Amongus_Vanilla_Versions_Min_Order_By = {
+  amongus_vanilla_version_id?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** response of any mutation on the table "program_amongus_vanilla_versions" */
+export type Program_Amongus_Vanilla_Versions_Mutation_Response = {
+  __typename?: 'program_amongus_vanilla_versions_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Program_Amongus_Vanilla_Versions>;
+};
+
+/** on_conflict condition type for table "program_amongus_vanilla_versions" */
+export type Program_Amongus_Vanilla_Versions_On_Conflict = {
+  constraint: Program_Amongus_Vanilla_Versions_Constraint;
+  update_columns?: Array<Program_Amongus_Vanilla_Versions_Update_Column>;
+  where?: InputMaybe<Program_Amongus_Vanilla_Versions_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "program_amongus_vanilla_versions". */
+export type Program_Amongus_Vanilla_Versions_Order_By = {
+  amongus_vanilla_version?: InputMaybe<Amongus_Vanilla_Versions_Order_By>;
+  amongus_vanilla_version_id?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  program?: InputMaybe<Programs_Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: program_amongus_vanilla_versions */
+export type Program_Amongus_Vanilla_Versions_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "program_amongus_vanilla_versions" */
+export enum Program_Amongus_Vanilla_Versions_Select_Column {
+  /** column name */
+  AmongusVanillaVersionId = 'amongus_vanilla_version_id',
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  ProgramId = 'program_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "program_amongus_vanilla_versions" */
+export type Program_Amongus_Vanilla_Versions_Set_Input = {
+  amongus_vanilla_version_id?: InputMaybe<Scalars['uuid']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** Streaming cursor of the table "program_amongus_vanilla_versions" */
+export type Program_Amongus_Vanilla_Versions_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Program_Amongus_Vanilla_Versions_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Program_Amongus_Vanilla_Versions_Stream_Cursor_Value_Input = {
+  amongus_vanilla_version_id?: InputMaybe<Scalars['uuid']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** update columns of table "program_amongus_vanilla_versions" */
+export enum Program_Amongus_Vanilla_Versions_Update_Column {
+  /** column name */
+  AmongusVanillaVersionId = 'amongus_vanilla_version_id',
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  ProgramId = 'program_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Program_Amongus_Vanilla_Versions_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Program_Amongus_Vanilla_Versions_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Program_Amongus_Vanilla_Versions_Bool_Exp;
+};
+
 /** columns and relationships of "program_communities" */
 export type Program_Communities = {
   __typename?: 'program_communities';
@@ -7531,6 +8709,702 @@ export type Program_Communities_Updates = {
   where: Program_Communities_Bool_Exp;
 };
 
+/** columns and relationships of "program_persons" */
+export type Program_Persons = {
+  __typename?: 'program_persons';
+  created_at: Scalars['timestamptz']['output'];
+  id: Scalars['uuid']['output'];
+  /** An object relationship */
+  person: Persons;
+  person_id: Scalars['uuid']['output'];
+  /** An object relationship */
+  program: Programs;
+  program_id: Scalars['uuid']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+/** aggregated selection of "program_persons" */
+export type Program_Persons_Aggregate = {
+  __typename?: 'program_persons_aggregate';
+  aggregate?: Maybe<Program_Persons_Aggregate_Fields>;
+  nodes: Array<Program_Persons>;
+};
+
+export type Program_Persons_Aggregate_Bool_Exp = {
+  count?: InputMaybe<Program_Persons_Aggregate_Bool_Exp_Count>;
+};
+
+export type Program_Persons_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Program_Persons_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Program_Persons_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
+/** aggregate fields of "program_persons" */
+export type Program_Persons_Aggregate_Fields = {
+  __typename?: 'program_persons_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Program_Persons_Max_Fields>;
+  min?: Maybe<Program_Persons_Min_Fields>;
+};
+
+
+/** aggregate fields of "program_persons" */
+export type Program_Persons_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Program_Persons_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** order by aggregate values of table "program_persons" */
+export type Program_Persons_Aggregate_Order_By = {
+  count?: InputMaybe<Order_By>;
+  max?: InputMaybe<Program_Persons_Max_Order_By>;
+  min?: InputMaybe<Program_Persons_Min_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "program_persons" */
+export type Program_Persons_Arr_Rel_Insert_Input = {
+  data: Array<Program_Persons_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Program_Persons_On_Conflict>;
+};
+
+/** Boolean expression to filter rows from the table "program_persons". All fields are combined with a logical 'AND'. */
+export type Program_Persons_Bool_Exp = {
+  _and?: InputMaybe<Array<Program_Persons_Bool_Exp>>;
+  _not?: InputMaybe<Program_Persons_Bool_Exp>;
+  _or?: InputMaybe<Array<Program_Persons_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  person?: InputMaybe<Persons_Bool_Exp>;
+  person_id?: InputMaybe<Uuid_Comparison_Exp>;
+  program?: InputMaybe<Programs_Bool_Exp>;
+  program_id?: InputMaybe<Uuid_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "program_persons" */
+export enum Program_Persons_Constraint {
+  /** unique or primary key constraint on columns "id" */
+  ProgramPersonsPkey = 'program_persons_pkey',
+  /** unique or primary key constraint on columns "program_id", "person_id" */
+  ProgramPersonsProgramIdPersonIdKey = 'program_persons_program_id_person_id_key'
+}
+
+/** input type for inserting data into table "program_persons" */
+export type Program_Persons_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  person?: InputMaybe<Persons_Obj_Rel_Insert_Input>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
+  program?: InputMaybe<Programs_Obj_Rel_Insert_Input>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Program_Persons_Max_Fields = {
+  __typename?: 'program_persons_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  person_id?: Maybe<Scalars['uuid']['output']>;
+  program_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by max() on columns of table "program_persons" */
+export type Program_Persons_Max_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Program_Persons_Min_Fields = {
+  __typename?: 'program_persons_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  person_id?: Maybe<Scalars['uuid']['output']>;
+  program_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by min() on columns of table "program_persons" */
+export type Program_Persons_Min_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** response of any mutation on the table "program_persons" */
+export type Program_Persons_Mutation_Response = {
+  __typename?: 'program_persons_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Program_Persons>;
+};
+
+/** on_conflict condition type for table "program_persons" */
+export type Program_Persons_On_Conflict = {
+  constraint: Program_Persons_Constraint;
+  update_columns?: Array<Program_Persons_Update_Column>;
+  where?: InputMaybe<Program_Persons_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "program_persons". */
+export type Program_Persons_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  person?: InputMaybe<Persons_Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  program?: InputMaybe<Programs_Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: program_persons */
+export type Program_Persons_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "program_persons" */
+export enum Program_Persons_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  PersonId = 'person_id',
+  /** column name */
+  ProgramId = 'program_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "program_persons" */
+export type Program_Persons_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** Streaming cursor of the table "program_persons" */
+export type Program_Persons_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Program_Persons_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Program_Persons_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** update columns of table "program_persons" */
+export enum Program_Persons_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  PersonId = 'person_id',
+  /** column name */
+  ProgramId = 'program_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Program_Persons_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Program_Persons_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Program_Persons_Bool_Exp;
+};
+
+/** columns and relationships of "program_twitter_announcements" */
+export type Program_Twitter_Announcements = {
+  __typename?: 'program_twitter_announcements';
+  created_at: Scalars['timestamptz']['output'];
+  id: Scalars['uuid']['output'];
+  /** An object relationship */
+  program: Programs;
+  program_id: Scalars['uuid']['output'];
+  /** An object relationship */
+  twitter_tweet: Twitter_Tweets;
+  twitter_tweet_id: Scalars['uuid']['output'];
+  /** An object relationship */
+  twitter_tweet_image?: Maybe<Twitter_Tweet_Images>;
+  twitter_tweet_image_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+/** aggregated selection of "program_twitter_announcements" */
+export type Program_Twitter_Announcements_Aggregate = {
+  __typename?: 'program_twitter_announcements_aggregate';
+  aggregate?: Maybe<Program_Twitter_Announcements_Aggregate_Fields>;
+  nodes: Array<Program_Twitter_Announcements>;
+};
+
+export type Program_Twitter_Announcements_Aggregate_Bool_Exp = {
+  count?: InputMaybe<Program_Twitter_Announcements_Aggregate_Bool_Exp_Count>;
+};
+
+export type Program_Twitter_Announcements_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Program_Twitter_Announcements_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Program_Twitter_Announcements_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
+/** aggregate fields of "program_twitter_announcements" */
+export type Program_Twitter_Announcements_Aggregate_Fields = {
+  __typename?: 'program_twitter_announcements_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Program_Twitter_Announcements_Max_Fields>;
+  min?: Maybe<Program_Twitter_Announcements_Min_Fields>;
+};
+
+
+/** aggregate fields of "program_twitter_announcements" */
+export type Program_Twitter_Announcements_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Program_Twitter_Announcements_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** order by aggregate values of table "program_twitter_announcements" */
+export type Program_Twitter_Announcements_Aggregate_Order_By = {
+  count?: InputMaybe<Order_By>;
+  max?: InputMaybe<Program_Twitter_Announcements_Max_Order_By>;
+  min?: InputMaybe<Program_Twitter_Announcements_Min_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "program_twitter_announcements" */
+export type Program_Twitter_Announcements_Arr_Rel_Insert_Input = {
+  data: Array<Program_Twitter_Announcements_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Program_Twitter_Announcements_On_Conflict>;
+};
+
+/** Boolean expression to filter rows from the table "program_twitter_announcements". All fields are combined with a logical 'AND'. */
+export type Program_Twitter_Announcements_Bool_Exp = {
+  _and?: InputMaybe<Array<Program_Twitter_Announcements_Bool_Exp>>;
+  _not?: InputMaybe<Program_Twitter_Announcements_Bool_Exp>;
+  _or?: InputMaybe<Array<Program_Twitter_Announcements_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  program?: InputMaybe<Programs_Bool_Exp>;
+  program_id?: InputMaybe<Uuid_Comparison_Exp>;
+  twitter_tweet?: InputMaybe<Twitter_Tweets_Bool_Exp>;
+  twitter_tweet_id?: InputMaybe<Uuid_Comparison_Exp>;
+  twitter_tweet_image?: InputMaybe<Twitter_Tweet_Images_Bool_Exp>;
+  twitter_tweet_image_id?: InputMaybe<Uuid_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "program_twitter_announcements" */
+export enum Program_Twitter_Announcements_Constraint {
+  /** unique or primary key constraint on columns "id" */
+  ProgramTwitterAnnouncementsPkey = 'program_twitter_announcements_pkey',
+  /** unique or primary key constraint on columns "program_id", "twitter_tweet_image_id", "twitter_tweet_id" */
+  ProgramTwitterAnnouncementsProgramIdTwitterTweetIdTwitt = 'program_twitter_announcements_program_id_twitter_tweet_id_twitt',
+  /** unique or primary key constraint on columns "program_id", "twitter_tweet_image_id" */
+  ProgramTwitterAnnouncementsProgramIdTwitterTweetImagKey = 'program_twitter_announcements_program_id_twitter_tweet_imag_key'
+}
+
+/** input type for inserting data into table "program_twitter_announcements" */
+export type Program_Twitter_Announcements_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  program?: InputMaybe<Programs_Obj_Rel_Insert_Input>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  twitter_tweet?: InputMaybe<Twitter_Tweets_Obj_Rel_Insert_Input>;
+  twitter_tweet_id?: InputMaybe<Scalars['uuid']['input']>;
+  twitter_tweet_image?: InputMaybe<Twitter_Tweet_Images_Obj_Rel_Insert_Input>;
+  twitter_tweet_image_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Program_Twitter_Announcements_Max_Fields = {
+  __typename?: 'program_twitter_announcements_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  program_id?: Maybe<Scalars['uuid']['output']>;
+  twitter_tweet_id?: Maybe<Scalars['uuid']['output']>;
+  twitter_tweet_image_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by max() on columns of table "program_twitter_announcements" */
+export type Program_Twitter_Announcements_Max_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  twitter_tweet_id?: InputMaybe<Order_By>;
+  twitter_tweet_image_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Program_Twitter_Announcements_Min_Fields = {
+  __typename?: 'program_twitter_announcements_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  program_id?: Maybe<Scalars['uuid']['output']>;
+  twitter_tweet_id?: Maybe<Scalars['uuid']['output']>;
+  twitter_tweet_image_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by min() on columns of table "program_twitter_announcements" */
+export type Program_Twitter_Announcements_Min_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  twitter_tweet_id?: InputMaybe<Order_By>;
+  twitter_tweet_image_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** response of any mutation on the table "program_twitter_announcements" */
+export type Program_Twitter_Announcements_Mutation_Response = {
+  __typename?: 'program_twitter_announcements_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Program_Twitter_Announcements>;
+};
+
+/** on_conflict condition type for table "program_twitter_announcements" */
+export type Program_Twitter_Announcements_On_Conflict = {
+  constraint: Program_Twitter_Announcements_Constraint;
+  update_columns?: Array<Program_Twitter_Announcements_Update_Column>;
+  where?: InputMaybe<Program_Twitter_Announcements_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "program_twitter_announcements". */
+export type Program_Twitter_Announcements_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  program?: InputMaybe<Programs_Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  twitter_tweet?: InputMaybe<Twitter_Tweets_Order_By>;
+  twitter_tweet_id?: InputMaybe<Order_By>;
+  twitter_tweet_image?: InputMaybe<Twitter_Tweet_Images_Order_By>;
+  twitter_tweet_image_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: program_twitter_announcements */
+export type Program_Twitter_Announcements_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "program_twitter_announcements" */
+export enum Program_Twitter_Announcements_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  ProgramId = 'program_id',
+  /** column name */
+  TwitterTweetId = 'twitter_tweet_id',
+  /** column name */
+  TwitterTweetImageId = 'twitter_tweet_image_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "program_twitter_announcements" */
+export type Program_Twitter_Announcements_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  twitter_tweet_id?: InputMaybe<Scalars['uuid']['input']>;
+  twitter_tweet_image_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** Streaming cursor of the table "program_twitter_announcements" */
+export type Program_Twitter_Announcements_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Program_Twitter_Announcements_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Program_Twitter_Announcements_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  twitter_tweet_id?: InputMaybe<Scalars['uuid']['input']>;
+  twitter_tweet_image_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** update columns of table "program_twitter_announcements" */
+export enum Program_Twitter_Announcements_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  ProgramId = 'program_id',
+  /** column name */
+  TwitterTweetId = 'twitter_tweet_id',
+  /** column name */
+  TwitterTweetImageId = 'twitter_tweet_image_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Program_Twitter_Announcements_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Program_Twitter_Announcements_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Program_Twitter_Announcements_Bool_Exp;
+};
+
+/** columns and relationships of "program_youtube_lives" */
+export type Program_Youtube_Lives = {
+  __typename?: 'program_youtube_lives';
+  created_at: Scalars['timestamptz']['output'];
+  id: Scalars['uuid']['output'];
+  /** An object relationship */
+  program: Programs;
+  program_id: Scalars['uuid']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+  /** An object relationship */
+  youtube_live: Youtube_Lives;
+  youtube_live_id: Scalars['uuid']['output'];
+};
+
+/** aggregated selection of "program_youtube_lives" */
+export type Program_Youtube_Lives_Aggregate = {
+  __typename?: 'program_youtube_lives_aggregate';
+  aggregate?: Maybe<Program_Youtube_Lives_Aggregate_Fields>;
+  nodes: Array<Program_Youtube_Lives>;
+};
+
+export type Program_Youtube_Lives_Aggregate_Bool_Exp = {
+  count?: InputMaybe<Program_Youtube_Lives_Aggregate_Bool_Exp_Count>;
+};
+
+export type Program_Youtube_Lives_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Program_Youtube_Lives_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Program_Youtube_Lives_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
+/** aggregate fields of "program_youtube_lives" */
+export type Program_Youtube_Lives_Aggregate_Fields = {
+  __typename?: 'program_youtube_lives_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Program_Youtube_Lives_Max_Fields>;
+  min?: Maybe<Program_Youtube_Lives_Min_Fields>;
+};
+
+
+/** aggregate fields of "program_youtube_lives" */
+export type Program_Youtube_Lives_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Program_Youtube_Lives_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** order by aggregate values of table "program_youtube_lives" */
+export type Program_Youtube_Lives_Aggregate_Order_By = {
+  count?: InputMaybe<Order_By>;
+  max?: InputMaybe<Program_Youtube_Lives_Max_Order_By>;
+  min?: InputMaybe<Program_Youtube_Lives_Min_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "program_youtube_lives" */
+export type Program_Youtube_Lives_Arr_Rel_Insert_Input = {
+  data: Array<Program_Youtube_Lives_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Program_Youtube_Lives_On_Conflict>;
+};
+
+/** Boolean expression to filter rows from the table "program_youtube_lives". All fields are combined with a logical 'AND'. */
+export type Program_Youtube_Lives_Bool_Exp = {
+  _and?: InputMaybe<Array<Program_Youtube_Lives_Bool_Exp>>;
+  _not?: InputMaybe<Program_Youtube_Lives_Bool_Exp>;
+  _or?: InputMaybe<Array<Program_Youtube_Lives_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  program?: InputMaybe<Programs_Bool_Exp>;
+  program_id?: InputMaybe<Uuid_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  youtube_live?: InputMaybe<Youtube_Lives_Bool_Exp>;
+  youtube_live_id?: InputMaybe<Uuid_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "program_youtube_lives" */
+export enum Program_Youtube_Lives_Constraint {
+  /** unique or primary key constraint on columns "id" */
+  ProgramYoutubeLivesPkey = 'program_youtube_lives_pkey',
+  /** unique or primary key constraint on columns "program_id", "youtube_live_id" */
+  ProgramYoutubeLivesProgramIdYoutubeLiveIdKey = 'program_youtube_lives_program_id_youtube_live_id_key'
+}
+
+/** input type for inserting data into table "program_youtube_lives" */
+export type Program_Youtube_Lives_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  program?: InputMaybe<Programs_Obj_Rel_Insert_Input>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  youtube_live?: InputMaybe<Youtube_Lives_Obj_Rel_Insert_Input>;
+  youtube_live_id?: InputMaybe<Scalars['uuid']['input']>;
+};
+
+/** aggregate max on columns */
+export type Program_Youtube_Lives_Max_Fields = {
+  __typename?: 'program_youtube_lives_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  program_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+  youtube_live_id?: Maybe<Scalars['uuid']['output']>;
+};
+
+/** order by max() on columns of table "program_youtube_lives" */
+export type Program_Youtube_Lives_Max_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+  youtube_live_id?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Program_Youtube_Lives_Min_Fields = {
+  __typename?: 'program_youtube_lives_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  program_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+  youtube_live_id?: Maybe<Scalars['uuid']['output']>;
+};
+
+/** order by min() on columns of table "program_youtube_lives" */
+export type Program_Youtube_Lives_Min_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+  youtube_live_id?: InputMaybe<Order_By>;
+};
+
+/** response of any mutation on the table "program_youtube_lives" */
+export type Program_Youtube_Lives_Mutation_Response = {
+  __typename?: 'program_youtube_lives_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Program_Youtube_Lives>;
+};
+
+/** on_conflict condition type for table "program_youtube_lives" */
+export type Program_Youtube_Lives_On_Conflict = {
+  constraint: Program_Youtube_Lives_Constraint;
+  update_columns?: Array<Program_Youtube_Lives_Update_Column>;
+  where?: InputMaybe<Program_Youtube_Lives_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "program_youtube_lives". */
+export type Program_Youtube_Lives_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  program?: InputMaybe<Programs_Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+  youtube_live?: InputMaybe<Youtube_Lives_Order_By>;
+  youtube_live_id?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: program_youtube_lives */
+export type Program_Youtube_Lives_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "program_youtube_lives" */
+export enum Program_Youtube_Lives_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  ProgramId = 'program_id',
+  /** column name */
+  UpdatedAt = 'updated_at',
+  /** column name */
+  YoutubeLiveId = 'youtube_live_id'
+}
+
+/** input type for updating data in table "program_youtube_lives" */
+export type Program_Youtube_Lives_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  youtube_live_id?: InputMaybe<Scalars['uuid']['input']>;
+};
+
+/** Streaming cursor of the table "program_youtube_lives" */
+export type Program_Youtube_Lives_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Program_Youtube_Lives_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Program_Youtube_Lives_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  youtube_live_id?: InputMaybe<Scalars['uuid']['input']>;
+};
+
+/** update columns of table "program_youtube_lives" */
+export enum Program_Youtube_Lives_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  ProgramId = 'program_id',
+  /** column name */
+  UpdatedAt = 'updated_at',
+  /** column name */
+  YoutubeLiveId = 'youtube_live_id'
+}
+
+export type Program_Youtube_Lives_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Program_Youtube_Lives_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Program_Youtube_Lives_Bool_Exp;
+};
+
 /** columns and relationships of "programs" */
 export type Programs = {
   __typename?: 'programs';
@@ -7541,12 +9415,96 @@ export type Programs = {
   game_id?: Maybe<Scalars['uuid']['output']>;
   id: Scalars['uuid']['output'];
   /** An array relationship */
+  program_amongus_maps: Array<Program_Amongus_Maps>;
+  /** An aggregate relationship */
+  program_amongus_maps_aggregate: Program_Amongus_Maps_Aggregate;
+  /** An array relationship */
+  program_amongus_mods: Array<Program_Amongus_Mods>;
+  /** An aggregate relationship */
+  program_amongus_mods_aggregate: Program_Amongus_Mods_Aggregate;
+  /** An array relationship */
+  program_amongus_vanilla_versions: Array<Program_Amongus_Vanilla_Versions>;
+  /** An aggregate relationship */
+  program_amongus_vanilla_versions_aggregate: Program_Amongus_Vanilla_Versions_Aggregate;
+  /** An array relationship */
   program_communities: Array<Program_Communities>;
   /** An aggregate relationship */
   program_communities_aggregate: Program_Communities_Aggregate;
+  /** An array relationship */
+  program_persons: Array<Program_Persons>;
+  /** An aggregate relationship */
+  program_persons_aggregate: Program_Persons_Aggregate;
+  /** An array relationship */
+  program_twitter_announcements: Array<Program_Twitter_Announcements>;
+  /** An aggregate relationship */
+  program_twitter_announcements_aggregate: Program_Twitter_Announcements_Aggregate;
+  /** An array relationship */
+  program_youtube_lives: Array<Program_Youtube_Lives>;
+  /** An aggregate relationship */
+  program_youtube_lives_aggregate: Program_Youtube_Lives_Aggregate;
   start_time?: Maybe<Scalars['timestamptz']['output']>;
   title: Scalars['String']['output'];
   updated_at: Scalars['timestamptz']['output'];
+};
+
+
+/** columns and relationships of "programs" */
+export type ProgramsProgram_Amongus_MapsArgs = {
+  distinct_on?: InputMaybe<Array<Program_Amongus_Maps_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Amongus_Maps_Order_By>>;
+  where?: InputMaybe<Program_Amongus_Maps_Bool_Exp>;
+};
+
+
+/** columns and relationships of "programs" */
+export type ProgramsProgram_Amongus_Maps_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Amongus_Maps_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Amongus_Maps_Order_By>>;
+  where?: InputMaybe<Program_Amongus_Maps_Bool_Exp>;
+};
+
+
+/** columns and relationships of "programs" */
+export type ProgramsProgram_Amongus_ModsArgs = {
+  distinct_on?: InputMaybe<Array<Program_Amongus_Mods_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Amongus_Mods_Order_By>>;
+  where?: InputMaybe<Program_Amongus_Mods_Bool_Exp>;
+};
+
+
+/** columns and relationships of "programs" */
+export type ProgramsProgram_Amongus_Mods_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Amongus_Mods_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Amongus_Mods_Order_By>>;
+  where?: InputMaybe<Program_Amongus_Mods_Bool_Exp>;
+};
+
+
+/** columns and relationships of "programs" */
+export type ProgramsProgram_Amongus_Vanilla_VersionsArgs = {
+  distinct_on?: InputMaybe<Array<Program_Amongus_Vanilla_Versions_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Amongus_Vanilla_Versions_Order_By>>;
+  where?: InputMaybe<Program_Amongus_Vanilla_Versions_Bool_Exp>;
+};
+
+
+/** columns and relationships of "programs" */
+export type ProgramsProgram_Amongus_Vanilla_Versions_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Amongus_Vanilla_Versions_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Amongus_Vanilla_Versions_Order_By>>;
+  where?: InputMaybe<Program_Amongus_Vanilla_Versions_Bool_Exp>;
 };
 
 
@@ -7567,6 +9525,66 @@ export type ProgramsProgram_Communities_AggregateArgs = {
   offset?: InputMaybe<Scalars['Int']['input']>;
   order_by?: InputMaybe<Array<Program_Communities_Order_By>>;
   where?: InputMaybe<Program_Communities_Bool_Exp>;
+};
+
+
+/** columns and relationships of "programs" */
+export type ProgramsProgram_PersonsArgs = {
+  distinct_on?: InputMaybe<Array<Program_Persons_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Persons_Order_By>>;
+  where?: InputMaybe<Program_Persons_Bool_Exp>;
+};
+
+
+/** columns and relationships of "programs" */
+export type ProgramsProgram_Persons_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Persons_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Persons_Order_By>>;
+  where?: InputMaybe<Program_Persons_Bool_Exp>;
+};
+
+
+/** columns and relationships of "programs" */
+export type ProgramsProgram_Twitter_AnnouncementsArgs = {
+  distinct_on?: InputMaybe<Array<Program_Twitter_Announcements_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Twitter_Announcements_Order_By>>;
+  where?: InputMaybe<Program_Twitter_Announcements_Bool_Exp>;
+};
+
+
+/** columns and relationships of "programs" */
+export type ProgramsProgram_Twitter_Announcements_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Twitter_Announcements_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Twitter_Announcements_Order_By>>;
+  where?: InputMaybe<Program_Twitter_Announcements_Bool_Exp>;
+};
+
+
+/** columns and relationships of "programs" */
+export type ProgramsProgram_Youtube_LivesArgs = {
+  distinct_on?: InputMaybe<Array<Program_Youtube_Lives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Youtube_Lives_Order_By>>;
+  where?: InputMaybe<Program_Youtube_Lives_Bool_Exp>;
+};
+
+
+/** columns and relationships of "programs" */
+export type ProgramsProgram_Youtube_Lives_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Youtube_Lives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Youtube_Lives_Order_By>>;
+  where?: InputMaybe<Program_Youtube_Lives_Bool_Exp>;
 };
 
 /** aggregated selection of "programs" */
@@ -7601,8 +9619,20 @@ export type Programs_Bool_Exp = {
   game?: InputMaybe<Games_Bool_Exp>;
   game_id?: InputMaybe<Uuid_Comparison_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
+  program_amongus_maps?: InputMaybe<Program_Amongus_Maps_Bool_Exp>;
+  program_amongus_maps_aggregate?: InputMaybe<Program_Amongus_Maps_Aggregate_Bool_Exp>;
+  program_amongus_mods?: InputMaybe<Program_Amongus_Mods_Bool_Exp>;
+  program_amongus_mods_aggregate?: InputMaybe<Program_Amongus_Mods_Aggregate_Bool_Exp>;
+  program_amongus_vanilla_versions?: InputMaybe<Program_Amongus_Vanilla_Versions_Bool_Exp>;
+  program_amongus_vanilla_versions_aggregate?: InputMaybe<Program_Amongus_Vanilla_Versions_Aggregate_Bool_Exp>;
   program_communities?: InputMaybe<Program_Communities_Bool_Exp>;
   program_communities_aggregate?: InputMaybe<Program_Communities_Aggregate_Bool_Exp>;
+  program_persons?: InputMaybe<Program_Persons_Bool_Exp>;
+  program_persons_aggregate?: InputMaybe<Program_Persons_Aggregate_Bool_Exp>;
+  program_twitter_announcements?: InputMaybe<Program_Twitter_Announcements_Bool_Exp>;
+  program_twitter_announcements_aggregate?: InputMaybe<Program_Twitter_Announcements_Aggregate_Bool_Exp>;
+  program_youtube_lives?: InputMaybe<Program_Youtube_Lives_Bool_Exp>;
+  program_youtube_lives_aggregate?: InputMaybe<Program_Youtube_Lives_Aggregate_Bool_Exp>;
   start_time?: InputMaybe<Timestamptz_Comparison_Exp>;
   title?: InputMaybe<String_Comparison_Exp>;
   updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
@@ -7621,7 +9651,13 @@ export type Programs_Insert_Input = {
   game?: InputMaybe<Games_Obj_Rel_Insert_Input>;
   game_id?: InputMaybe<Scalars['uuid']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
+  program_amongus_maps?: InputMaybe<Program_Amongus_Maps_Arr_Rel_Insert_Input>;
+  program_amongus_mods?: InputMaybe<Program_Amongus_Mods_Arr_Rel_Insert_Input>;
+  program_amongus_vanilla_versions?: InputMaybe<Program_Amongus_Vanilla_Versions_Arr_Rel_Insert_Input>;
   program_communities?: InputMaybe<Program_Communities_Arr_Rel_Insert_Input>;
+  program_persons?: InputMaybe<Program_Persons_Arr_Rel_Insert_Input>;
+  program_twitter_announcements?: InputMaybe<Program_Twitter_Announcements_Arr_Rel_Insert_Input>;
+  program_youtube_lives?: InputMaybe<Program_Youtube_Lives_Arr_Rel_Insert_Input>;
   start_time?: InputMaybe<Scalars['timestamptz']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
@@ -7681,7 +9717,13 @@ export type Programs_Order_By = {
   game?: InputMaybe<Games_Order_By>;
   game_id?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
+  program_amongus_maps_aggregate?: InputMaybe<Program_Amongus_Maps_Aggregate_Order_By>;
+  program_amongus_mods_aggregate?: InputMaybe<Program_Amongus_Mods_Aggregate_Order_By>;
+  program_amongus_vanilla_versions_aggregate?: InputMaybe<Program_Amongus_Vanilla_Versions_Aggregate_Order_By>;
   program_communities_aggregate?: InputMaybe<Program_Communities_Aggregate_Order_By>;
+  program_persons_aggregate?: InputMaybe<Program_Persons_Aggregate_Order_By>;
+  program_twitter_announcements_aggregate?: InputMaybe<Program_Twitter_Announcements_Aggregate_Order_By>;
+  program_youtube_lives_aggregate?: InputMaybe<Program_Youtube_Lives_Aggregate_Order_By>;
   start_time?: InputMaybe<Order_By>;
   title?: InputMaybe<Order_By>;
   updated_at?: InputMaybe<Order_By>;
@@ -7888,11 +9930,47 @@ export type Query_Root = {
   /** fetch data from the table: "persons" using primary key columns */
   persons_by_pk?: Maybe<Persons>;
   /** An array relationship */
+  program_amongus_maps: Array<Program_Amongus_Maps>;
+  /** An aggregate relationship */
+  program_amongus_maps_aggregate: Program_Amongus_Maps_Aggregate;
+  /** fetch data from the table: "program_amongus_maps" using primary key columns */
+  program_amongus_maps_by_pk?: Maybe<Program_Amongus_Maps>;
+  /** An array relationship */
+  program_amongus_mods: Array<Program_Amongus_Mods>;
+  /** An aggregate relationship */
+  program_amongus_mods_aggregate: Program_Amongus_Mods_Aggregate;
+  /** fetch data from the table: "program_amongus_mods" using primary key columns */
+  program_amongus_mods_by_pk?: Maybe<Program_Amongus_Mods>;
+  /** An array relationship */
+  program_amongus_vanilla_versions: Array<Program_Amongus_Vanilla_Versions>;
+  /** An aggregate relationship */
+  program_amongus_vanilla_versions_aggregate: Program_Amongus_Vanilla_Versions_Aggregate;
+  /** fetch data from the table: "program_amongus_vanilla_versions" using primary key columns */
+  program_amongus_vanilla_versions_by_pk?: Maybe<Program_Amongus_Vanilla_Versions>;
+  /** An array relationship */
   program_communities: Array<Program_Communities>;
   /** An aggregate relationship */
   program_communities_aggregate: Program_Communities_Aggregate;
   /** fetch data from the table: "program_communities" using primary key columns */
   program_communities_by_pk?: Maybe<Program_Communities>;
+  /** An array relationship */
+  program_persons: Array<Program_Persons>;
+  /** An aggregate relationship */
+  program_persons_aggregate: Program_Persons_Aggregate;
+  /** fetch data from the table: "program_persons" using primary key columns */
+  program_persons_by_pk?: Maybe<Program_Persons>;
+  /** An array relationship */
+  program_twitter_announcements: Array<Program_Twitter_Announcements>;
+  /** An aggregate relationship */
+  program_twitter_announcements_aggregate: Program_Twitter_Announcements_Aggregate;
+  /** fetch data from the table: "program_twitter_announcements" using primary key columns */
+  program_twitter_announcements_by_pk?: Maybe<Program_Twitter_Announcements>;
+  /** An array relationship */
+  program_youtube_lives: Array<Program_Youtube_Lives>;
+  /** An aggregate relationship */
+  program_youtube_lives_aggregate: Program_Youtube_Lives_Aggregate;
+  /** fetch data from the table: "program_youtube_lives" using primary key columns */
+  program_youtube_lives_by_pk?: Maybe<Program_Youtube_Lives>;
   /** fetch data from the table: "programs" */
   programs: Array<Programs>;
   /** fetch aggregated fields from the table: "programs" */
@@ -7953,6 +10031,18 @@ export type Query_Root = {
   twitter_accounts_aggregate: Twitter_Accounts_Aggregate;
   /** fetch data from the table: "twitter_accounts" using primary key columns */
   twitter_accounts_by_pk?: Maybe<Twitter_Accounts>;
+  /** fetch data from the table: "twitter_tweet_images" */
+  twitter_tweet_images: Array<Twitter_Tweet_Images>;
+  /** fetch aggregated fields from the table: "twitter_tweet_images" */
+  twitter_tweet_images_aggregate: Twitter_Tweet_Images_Aggregate;
+  /** fetch data from the table: "twitter_tweet_images" using primary key columns */
+  twitter_tweet_images_by_pk?: Maybe<Twitter_Tweet_Images>;
+  /** fetch data from the table: "twitter_tweets" */
+  twitter_tweets: Array<Twitter_Tweets>;
+  /** fetch aggregated fields from the table: "twitter_tweets" */
+  twitter_tweets_aggregate: Twitter_Tweets_Aggregate;
+  /** fetch data from the table: "twitter_tweets" using primary key columns */
+  twitter_tweets_by_pk?: Maybe<Twitter_Tweets>;
   /** fetch data from the table: "youtube_channels" */
   youtube_channels: Array<Youtube_Channels>;
   /** fetch aggregated fields from the table: "youtube_channels" */
@@ -8428,6 +10518,75 @@ export type Query_RootPersons_By_PkArgs = {
 };
 
 
+export type Query_RootProgram_Amongus_MapsArgs = {
+  distinct_on?: InputMaybe<Array<Program_Amongus_Maps_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Amongus_Maps_Order_By>>;
+  where?: InputMaybe<Program_Amongus_Maps_Bool_Exp>;
+};
+
+
+export type Query_RootProgram_Amongus_Maps_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Amongus_Maps_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Amongus_Maps_Order_By>>;
+  where?: InputMaybe<Program_Amongus_Maps_Bool_Exp>;
+};
+
+
+export type Query_RootProgram_Amongus_Maps_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Query_RootProgram_Amongus_ModsArgs = {
+  distinct_on?: InputMaybe<Array<Program_Amongus_Mods_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Amongus_Mods_Order_By>>;
+  where?: InputMaybe<Program_Amongus_Mods_Bool_Exp>;
+};
+
+
+export type Query_RootProgram_Amongus_Mods_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Amongus_Mods_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Amongus_Mods_Order_By>>;
+  where?: InputMaybe<Program_Amongus_Mods_Bool_Exp>;
+};
+
+
+export type Query_RootProgram_Amongus_Mods_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Query_RootProgram_Amongus_Vanilla_VersionsArgs = {
+  distinct_on?: InputMaybe<Array<Program_Amongus_Vanilla_Versions_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Amongus_Vanilla_Versions_Order_By>>;
+  where?: InputMaybe<Program_Amongus_Vanilla_Versions_Bool_Exp>;
+};
+
+
+export type Query_RootProgram_Amongus_Vanilla_Versions_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Amongus_Vanilla_Versions_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Amongus_Vanilla_Versions_Order_By>>;
+  where?: InputMaybe<Program_Amongus_Vanilla_Versions_Bool_Exp>;
+};
+
+
+export type Query_RootProgram_Amongus_Vanilla_Versions_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
 export type Query_RootProgram_CommunitiesArgs = {
   distinct_on?: InputMaybe<Array<Program_Communities_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -8447,6 +10606,75 @@ export type Query_RootProgram_Communities_AggregateArgs = {
 
 
 export type Query_RootProgram_Communities_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Query_RootProgram_PersonsArgs = {
+  distinct_on?: InputMaybe<Array<Program_Persons_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Persons_Order_By>>;
+  where?: InputMaybe<Program_Persons_Bool_Exp>;
+};
+
+
+export type Query_RootProgram_Persons_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Persons_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Persons_Order_By>>;
+  where?: InputMaybe<Program_Persons_Bool_Exp>;
+};
+
+
+export type Query_RootProgram_Persons_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Query_RootProgram_Twitter_AnnouncementsArgs = {
+  distinct_on?: InputMaybe<Array<Program_Twitter_Announcements_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Twitter_Announcements_Order_By>>;
+  where?: InputMaybe<Program_Twitter_Announcements_Bool_Exp>;
+};
+
+
+export type Query_RootProgram_Twitter_Announcements_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Twitter_Announcements_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Twitter_Announcements_Order_By>>;
+  where?: InputMaybe<Program_Twitter_Announcements_Bool_Exp>;
+};
+
+
+export type Query_RootProgram_Twitter_Announcements_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Query_RootProgram_Youtube_LivesArgs = {
+  distinct_on?: InputMaybe<Array<Program_Youtube_Lives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Youtube_Lives_Order_By>>;
+  where?: InputMaybe<Program_Youtube_Lives_Bool_Exp>;
+};
+
+
+export type Query_RootProgram_Youtube_Lives_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Youtube_Lives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Youtube_Lives_Order_By>>;
+  where?: InputMaybe<Program_Youtube_Lives_Bool_Exp>;
+};
+
+
+export type Query_RootProgram_Youtube_Lives_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
@@ -8677,6 +10905,52 @@ export type Query_RootTwitter_Accounts_AggregateArgs = {
 
 
 export type Query_RootTwitter_Accounts_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Query_RootTwitter_Tweet_ImagesArgs = {
+  distinct_on?: InputMaybe<Array<Twitter_Tweet_Images_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Twitter_Tweet_Images_Order_By>>;
+  where?: InputMaybe<Twitter_Tweet_Images_Bool_Exp>;
+};
+
+
+export type Query_RootTwitter_Tweet_Images_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Twitter_Tweet_Images_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Twitter_Tweet_Images_Order_By>>;
+  where?: InputMaybe<Twitter_Tweet_Images_Bool_Exp>;
+};
+
+
+export type Query_RootTwitter_Tweet_Images_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Query_RootTwitter_TweetsArgs = {
+  distinct_on?: InputMaybe<Array<Twitter_Tweets_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Twitter_Tweets_Order_By>>;
+  where?: InputMaybe<Twitter_Tweets_Bool_Exp>;
+};
+
+
+export type Query_RootTwitter_Tweets_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Twitter_Tweets_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Twitter_Tweets_Order_By>>;
+  where?: InputMaybe<Twitter_Tweets_Bool_Exp>;
+};
+
+
+export type Query_RootTwitter_Tweets_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
@@ -11146,6 +13420,30 @@ export type Subscription_Root = {
   /** fetch data from the table in a streaming manner: "persons" */
   persons_stream: Array<Persons>;
   /** An array relationship */
+  program_amongus_maps: Array<Program_Amongus_Maps>;
+  /** An aggregate relationship */
+  program_amongus_maps_aggregate: Program_Amongus_Maps_Aggregate;
+  /** fetch data from the table: "program_amongus_maps" using primary key columns */
+  program_amongus_maps_by_pk?: Maybe<Program_Amongus_Maps>;
+  /** fetch data from the table in a streaming manner: "program_amongus_maps" */
+  program_amongus_maps_stream: Array<Program_Amongus_Maps>;
+  /** An array relationship */
+  program_amongus_mods: Array<Program_Amongus_Mods>;
+  /** An aggregate relationship */
+  program_amongus_mods_aggregate: Program_Amongus_Mods_Aggregate;
+  /** fetch data from the table: "program_amongus_mods" using primary key columns */
+  program_amongus_mods_by_pk?: Maybe<Program_Amongus_Mods>;
+  /** fetch data from the table in a streaming manner: "program_amongus_mods" */
+  program_amongus_mods_stream: Array<Program_Amongus_Mods>;
+  /** An array relationship */
+  program_amongus_vanilla_versions: Array<Program_Amongus_Vanilla_Versions>;
+  /** An aggregate relationship */
+  program_amongus_vanilla_versions_aggregate: Program_Amongus_Vanilla_Versions_Aggregate;
+  /** fetch data from the table: "program_amongus_vanilla_versions" using primary key columns */
+  program_amongus_vanilla_versions_by_pk?: Maybe<Program_Amongus_Vanilla_Versions>;
+  /** fetch data from the table in a streaming manner: "program_amongus_vanilla_versions" */
+  program_amongus_vanilla_versions_stream: Array<Program_Amongus_Vanilla_Versions>;
+  /** An array relationship */
   program_communities: Array<Program_Communities>;
   /** An aggregate relationship */
   program_communities_aggregate: Program_Communities_Aggregate;
@@ -11153,6 +13451,30 @@ export type Subscription_Root = {
   program_communities_by_pk?: Maybe<Program_Communities>;
   /** fetch data from the table in a streaming manner: "program_communities" */
   program_communities_stream: Array<Program_Communities>;
+  /** An array relationship */
+  program_persons: Array<Program_Persons>;
+  /** An aggregate relationship */
+  program_persons_aggregate: Program_Persons_Aggregate;
+  /** fetch data from the table: "program_persons" using primary key columns */
+  program_persons_by_pk?: Maybe<Program_Persons>;
+  /** fetch data from the table in a streaming manner: "program_persons" */
+  program_persons_stream: Array<Program_Persons>;
+  /** An array relationship */
+  program_twitter_announcements: Array<Program_Twitter_Announcements>;
+  /** An aggregate relationship */
+  program_twitter_announcements_aggregate: Program_Twitter_Announcements_Aggregate;
+  /** fetch data from the table: "program_twitter_announcements" using primary key columns */
+  program_twitter_announcements_by_pk?: Maybe<Program_Twitter_Announcements>;
+  /** fetch data from the table in a streaming manner: "program_twitter_announcements" */
+  program_twitter_announcements_stream: Array<Program_Twitter_Announcements>;
+  /** An array relationship */
+  program_youtube_lives: Array<Program_Youtube_Lives>;
+  /** An aggregate relationship */
+  program_youtube_lives_aggregate: Program_Youtube_Lives_Aggregate;
+  /** fetch data from the table: "program_youtube_lives" using primary key columns */
+  program_youtube_lives_by_pk?: Maybe<Program_Youtube_Lives>;
+  /** fetch data from the table in a streaming manner: "program_youtube_lives" */
+  program_youtube_lives_stream: Array<Program_Youtube_Lives>;
   /** fetch data from the table: "programs" */
   programs: Array<Programs>;
   /** fetch aggregated fields from the table: "programs" */
@@ -11233,6 +13555,22 @@ export type Subscription_Root = {
   twitter_accounts_by_pk?: Maybe<Twitter_Accounts>;
   /** fetch data from the table in a streaming manner: "twitter_accounts" */
   twitter_accounts_stream: Array<Twitter_Accounts>;
+  /** fetch data from the table: "twitter_tweet_images" */
+  twitter_tweet_images: Array<Twitter_Tweet_Images>;
+  /** fetch aggregated fields from the table: "twitter_tweet_images" */
+  twitter_tweet_images_aggregate: Twitter_Tweet_Images_Aggregate;
+  /** fetch data from the table: "twitter_tweet_images" using primary key columns */
+  twitter_tweet_images_by_pk?: Maybe<Twitter_Tweet_Images>;
+  /** fetch data from the table in a streaming manner: "twitter_tweet_images" */
+  twitter_tweet_images_stream: Array<Twitter_Tweet_Images>;
+  /** fetch data from the table: "twitter_tweets" */
+  twitter_tweets: Array<Twitter_Tweets>;
+  /** fetch aggregated fields from the table: "twitter_tweets" */
+  twitter_tweets_aggregate: Twitter_Tweets_Aggregate;
+  /** fetch data from the table: "twitter_tweets" using primary key columns */
+  twitter_tweets_by_pk?: Maybe<Twitter_Tweets>;
+  /** fetch data from the table in a streaming manner: "twitter_tweets" */
+  twitter_tweets_stream: Array<Twitter_Tweets>;
   /** fetch data from the table: "youtube_channels" */
   youtube_channels: Array<Youtube_Channels>;
   /** fetch aggregated fields from the table: "youtube_channels" */
@@ -11852,6 +14190,96 @@ export type Subscription_RootPersons_StreamArgs = {
 };
 
 
+export type Subscription_RootProgram_Amongus_MapsArgs = {
+  distinct_on?: InputMaybe<Array<Program_Amongus_Maps_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Amongus_Maps_Order_By>>;
+  where?: InputMaybe<Program_Amongus_Maps_Bool_Exp>;
+};
+
+
+export type Subscription_RootProgram_Amongus_Maps_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Amongus_Maps_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Amongus_Maps_Order_By>>;
+  where?: InputMaybe<Program_Amongus_Maps_Bool_Exp>;
+};
+
+
+export type Subscription_RootProgram_Amongus_Maps_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootProgram_Amongus_Maps_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Program_Amongus_Maps_Stream_Cursor_Input>>;
+  where?: InputMaybe<Program_Amongus_Maps_Bool_Exp>;
+};
+
+
+export type Subscription_RootProgram_Amongus_ModsArgs = {
+  distinct_on?: InputMaybe<Array<Program_Amongus_Mods_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Amongus_Mods_Order_By>>;
+  where?: InputMaybe<Program_Amongus_Mods_Bool_Exp>;
+};
+
+
+export type Subscription_RootProgram_Amongus_Mods_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Amongus_Mods_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Amongus_Mods_Order_By>>;
+  where?: InputMaybe<Program_Amongus_Mods_Bool_Exp>;
+};
+
+
+export type Subscription_RootProgram_Amongus_Mods_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootProgram_Amongus_Mods_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Program_Amongus_Mods_Stream_Cursor_Input>>;
+  where?: InputMaybe<Program_Amongus_Mods_Bool_Exp>;
+};
+
+
+export type Subscription_RootProgram_Amongus_Vanilla_VersionsArgs = {
+  distinct_on?: InputMaybe<Array<Program_Amongus_Vanilla_Versions_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Amongus_Vanilla_Versions_Order_By>>;
+  where?: InputMaybe<Program_Amongus_Vanilla_Versions_Bool_Exp>;
+};
+
+
+export type Subscription_RootProgram_Amongus_Vanilla_Versions_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Amongus_Vanilla_Versions_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Amongus_Vanilla_Versions_Order_By>>;
+  where?: InputMaybe<Program_Amongus_Vanilla_Versions_Bool_Exp>;
+};
+
+
+export type Subscription_RootProgram_Amongus_Vanilla_Versions_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootProgram_Amongus_Vanilla_Versions_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Program_Amongus_Vanilla_Versions_Stream_Cursor_Input>>;
+  where?: InputMaybe<Program_Amongus_Vanilla_Versions_Bool_Exp>;
+};
+
+
 export type Subscription_RootProgram_CommunitiesArgs = {
   distinct_on?: InputMaybe<Array<Program_Communities_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -11879,6 +14307,96 @@ export type Subscription_RootProgram_Communities_StreamArgs = {
   batch_size: Scalars['Int']['input'];
   cursor: Array<InputMaybe<Program_Communities_Stream_Cursor_Input>>;
   where?: InputMaybe<Program_Communities_Bool_Exp>;
+};
+
+
+export type Subscription_RootProgram_PersonsArgs = {
+  distinct_on?: InputMaybe<Array<Program_Persons_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Persons_Order_By>>;
+  where?: InputMaybe<Program_Persons_Bool_Exp>;
+};
+
+
+export type Subscription_RootProgram_Persons_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Persons_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Persons_Order_By>>;
+  where?: InputMaybe<Program_Persons_Bool_Exp>;
+};
+
+
+export type Subscription_RootProgram_Persons_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootProgram_Persons_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Program_Persons_Stream_Cursor_Input>>;
+  where?: InputMaybe<Program_Persons_Bool_Exp>;
+};
+
+
+export type Subscription_RootProgram_Twitter_AnnouncementsArgs = {
+  distinct_on?: InputMaybe<Array<Program_Twitter_Announcements_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Twitter_Announcements_Order_By>>;
+  where?: InputMaybe<Program_Twitter_Announcements_Bool_Exp>;
+};
+
+
+export type Subscription_RootProgram_Twitter_Announcements_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Twitter_Announcements_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Twitter_Announcements_Order_By>>;
+  where?: InputMaybe<Program_Twitter_Announcements_Bool_Exp>;
+};
+
+
+export type Subscription_RootProgram_Twitter_Announcements_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootProgram_Twitter_Announcements_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Program_Twitter_Announcements_Stream_Cursor_Input>>;
+  where?: InputMaybe<Program_Twitter_Announcements_Bool_Exp>;
+};
+
+
+export type Subscription_RootProgram_Youtube_LivesArgs = {
+  distinct_on?: InputMaybe<Array<Program_Youtube_Lives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Youtube_Lives_Order_By>>;
+  where?: InputMaybe<Program_Youtube_Lives_Bool_Exp>;
+};
+
+
+export type Subscription_RootProgram_Youtube_Lives_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Youtube_Lives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Youtube_Lives_Order_By>>;
+  where?: InputMaybe<Program_Youtube_Lives_Bool_Exp>;
+};
+
+
+export type Subscription_RootProgram_Youtube_Lives_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootProgram_Youtube_Lives_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Program_Youtube_Lives_Stream_Cursor_Input>>;
+  where?: InputMaybe<Program_Youtube_Lives_Bool_Exp>;
 };
 
 
@@ -12182,6 +14700,66 @@ export type Subscription_RootTwitter_Accounts_StreamArgs = {
 };
 
 
+export type Subscription_RootTwitter_Tweet_ImagesArgs = {
+  distinct_on?: InputMaybe<Array<Twitter_Tweet_Images_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Twitter_Tweet_Images_Order_By>>;
+  where?: InputMaybe<Twitter_Tweet_Images_Bool_Exp>;
+};
+
+
+export type Subscription_RootTwitter_Tweet_Images_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Twitter_Tweet_Images_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Twitter_Tweet_Images_Order_By>>;
+  where?: InputMaybe<Twitter_Tweet_Images_Bool_Exp>;
+};
+
+
+export type Subscription_RootTwitter_Tweet_Images_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootTwitter_Tweet_Images_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Twitter_Tweet_Images_Stream_Cursor_Input>>;
+  where?: InputMaybe<Twitter_Tweet_Images_Bool_Exp>;
+};
+
+
+export type Subscription_RootTwitter_TweetsArgs = {
+  distinct_on?: InputMaybe<Array<Twitter_Tweets_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Twitter_Tweets_Order_By>>;
+  where?: InputMaybe<Twitter_Tweets_Bool_Exp>;
+};
+
+
+export type Subscription_RootTwitter_Tweets_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Twitter_Tweets_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Twitter_Tweets_Order_By>>;
+  where?: InputMaybe<Twitter_Tweets_Bool_Exp>;
+};
+
+
+export type Subscription_RootTwitter_Tweets_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootTwitter_Tweets_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Twitter_Tweets_Stream_Cursor_Input>>;
+  where?: InputMaybe<Twitter_Tweets_Bool_Exp>;
+};
+
+
 export type Subscription_RootYoutube_ChannelsArgs = {
   distinct_on?: InputMaybe<Array<Youtube_Channels_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -12445,6 +15023,463 @@ export type Twitter_Accounts_Updates = {
   _set?: InputMaybe<Twitter_Accounts_Set_Input>;
   /** filter the rows which have to be updated */
   where: Twitter_Accounts_Bool_Exp;
+};
+
+/** columns and relationships of "twitter_tweet_images" */
+export type Twitter_Tweet_Images = {
+  __typename?: 'twitter_tweet_images';
+  created_at: Scalars['timestamptz']['output'];
+  id: Scalars['uuid']['output'];
+  index: Scalars['Int']['output'];
+  twitter_tweet_id: Scalars['uuid']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+  url: Scalars['String']['output'];
+};
+
+/** aggregated selection of "twitter_tweet_images" */
+export type Twitter_Tweet_Images_Aggregate = {
+  __typename?: 'twitter_tweet_images_aggregate';
+  aggregate?: Maybe<Twitter_Tweet_Images_Aggregate_Fields>;
+  nodes: Array<Twitter_Tweet_Images>;
+};
+
+/** aggregate fields of "twitter_tweet_images" */
+export type Twitter_Tweet_Images_Aggregate_Fields = {
+  __typename?: 'twitter_tweet_images_aggregate_fields';
+  avg?: Maybe<Twitter_Tweet_Images_Avg_Fields>;
+  count: Scalars['Int']['output'];
+  max?: Maybe<Twitter_Tweet_Images_Max_Fields>;
+  min?: Maybe<Twitter_Tweet_Images_Min_Fields>;
+  stddev?: Maybe<Twitter_Tweet_Images_Stddev_Fields>;
+  stddev_pop?: Maybe<Twitter_Tweet_Images_Stddev_Pop_Fields>;
+  stddev_samp?: Maybe<Twitter_Tweet_Images_Stddev_Samp_Fields>;
+  sum?: Maybe<Twitter_Tweet_Images_Sum_Fields>;
+  var_pop?: Maybe<Twitter_Tweet_Images_Var_Pop_Fields>;
+  var_samp?: Maybe<Twitter_Tweet_Images_Var_Samp_Fields>;
+  variance?: Maybe<Twitter_Tweet_Images_Variance_Fields>;
+};
+
+
+/** aggregate fields of "twitter_tweet_images" */
+export type Twitter_Tweet_Images_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Twitter_Tweet_Images_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** aggregate avg on columns */
+export type Twitter_Tweet_Images_Avg_Fields = {
+  __typename?: 'twitter_tweet_images_avg_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** Boolean expression to filter rows from the table "twitter_tweet_images". All fields are combined with a logical 'AND'. */
+export type Twitter_Tweet_Images_Bool_Exp = {
+  _and?: InputMaybe<Array<Twitter_Tweet_Images_Bool_Exp>>;
+  _not?: InputMaybe<Twitter_Tweet_Images_Bool_Exp>;
+  _or?: InputMaybe<Array<Twitter_Tweet_Images_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  index?: InputMaybe<Int_Comparison_Exp>;
+  twitter_tweet_id?: InputMaybe<Uuid_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  url?: InputMaybe<String_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "twitter_tweet_images" */
+export enum Twitter_Tweet_Images_Constraint {
+  /** unique or primary key constraint on columns "id" */
+  TwitterTweetImagesPkey = 'twitter_tweet_images_pkey',
+  /** unique or primary key constraint on columns "index", "twitter_tweet_id" */
+  TwitterTweetImagesTweetIdIndexKey = 'twitter_tweet_images_tweet_id_index_key'
+}
+
+/** input type for incrementing numeric columns in table "twitter_tweet_images" */
+export type Twitter_Tweet_Images_Inc_Input = {
+  index?: InputMaybe<Scalars['Int']['input']>;
+};
+
+/** input type for inserting data into table "twitter_tweet_images" */
+export type Twitter_Tweet_Images_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  index?: InputMaybe<Scalars['Int']['input']>;
+  twitter_tweet_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  url?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** aggregate max on columns */
+export type Twitter_Tweet_Images_Max_Fields = {
+  __typename?: 'twitter_tweet_images_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  index?: Maybe<Scalars['Int']['output']>;
+  twitter_tweet_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+  url?: Maybe<Scalars['String']['output']>;
+};
+
+/** aggregate min on columns */
+export type Twitter_Tweet_Images_Min_Fields = {
+  __typename?: 'twitter_tweet_images_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  index?: Maybe<Scalars['Int']['output']>;
+  twitter_tweet_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+  url?: Maybe<Scalars['String']['output']>;
+};
+
+/** response of any mutation on the table "twitter_tweet_images" */
+export type Twitter_Tweet_Images_Mutation_Response = {
+  __typename?: 'twitter_tweet_images_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Twitter_Tweet_Images>;
+};
+
+/** input type for inserting object relation for remote table "twitter_tweet_images" */
+export type Twitter_Tweet_Images_Obj_Rel_Insert_Input = {
+  data: Twitter_Tweet_Images_Insert_Input;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Twitter_Tweet_Images_On_Conflict>;
+};
+
+/** on_conflict condition type for table "twitter_tweet_images" */
+export type Twitter_Tweet_Images_On_Conflict = {
+  constraint: Twitter_Tweet_Images_Constraint;
+  update_columns?: Array<Twitter_Tweet_Images_Update_Column>;
+  where?: InputMaybe<Twitter_Tweet_Images_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "twitter_tweet_images". */
+export type Twitter_Tweet_Images_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  index?: InputMaybe<Order_By>;
+  twitter_tweet_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+  url?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: twitter_tweet_images */
+export type Twitter_Tweet_Images_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "twitter_tweet_images" */
+export enum Twitter_Tweet_Images_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Index = 'index',
+  /** column name */
+  TwitterTweetId = 'twitter_tweet_id',
+  /** column name */
+  UpdatedAt = 'updated_at',
+  /** column name */
+  Url = 'url'
+}
+
+/** input type for updating data in table "twitter_tweet_images" */
+export type Twitter_Tweet_Images_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  index?: InputMaybe<Scalars['Int']['input']>;
+  twitter_tweet_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  url?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** aggregate stddev on columns */
+export type Twitter_Tweet_Images_Stddev_Fields = {
+  __typename?: 'twitter_tweet_images_stddev_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** aggregate stddev_pop on columns */
+export type Twitter_Tweet_Images_Stddev_Pop_Fields = {
+  __typename?: 'twitter_tweet_images_stddev_pop_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** aggregate stddev_samp on columns */
+export type Twitter_Tweet_Images_Stddev_Samp_Fields = {
+  __typename?: 'twitter_tweet_images_stddev_samp_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** Streaming cursor of the table "twitter_tweet_images" */
+export type Twitter_Tweet_Images_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Twitter_Tweet_Images_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Twitter_Tweet_Images_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  index?: InputMaybe<Scalars['Int']['input']>;
+  twitter_tweet_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  url?: InputMaybe<Scalars['String']['input']>;
+};
+
+/** aggregate sum on columns */
+export type Twitter_Tweet_Images_Sum_Fields = {
+  __typename?: 'twitter_tweet_images_sum_fields';
+  index?: Maybe<Scalars['Int']['output']>;
+};
+
+/** update columns of table "twitter_tweet_images" */
+export enum Twitter_Tweet_Images_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Index = 'index',
+  /** column name */
+  TwitterTweetId = 'twitter_tweet_id',
+  /** column name */
+  UpdatedAt = 'updated_at',
+  /** column name */
+  Url = 'url'
+}
+
+export type Twitter_Tweet_Images_Updates = {
+  /** increments the numeric columns with given value of the filtered values */
+  _inc?: InputMaybe<Twitter_Tweet_Images_Inc_Input>;
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Twitter_Tweet_Images_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Twitter_Tweet_Images_Bool_Exp;
+};
+
+/** aggregate var_pop on columns */
+export type Twitter_Tweet_Images_Var_Pop_Fields = {
+  __typename?: 'twitter_tweet_images_var_pop_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** aggregate var_samp on columns */
+export type Twitter_Tweet_Images_Var_Samp_Fields = {
+  __typename?: 'twitter_tweet_images_var_samp_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** aggregate variance on columns */
+export type Twitter_Tweet_Images_Variance_Fields = {
+  __typename?: 'twitter_tweet_images_variance_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** columns and relationships of "twitter_tweets" */
+export type Twitter_Tweets = {
+  __typename?: 'twitter_tweets';
+  created_at: Scalars['timestamptz']['output'];
+  id: Scalars['uuid']['output'];
+  remote_tweet_id: Scalars['String']['output'];
+  tweet_embed_html: Scalars['String']['output'];
+  tweet_time: Scalars['timestamptz']['output'];
+  twitter_account_id: Scalars['uuid']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+/** aggregated selection of "twitter_tweets" */
+export type Twitter_Tweets_Aggregate = {
+  __typename?: 'twitter_tweets_aggregate';
+  aggregate?: Maybe<Twitter_Tweets_Aggregate_Fields>;
+  nodes: Array<Twitter_Tweets>;
+};
+
+/** aggregate fields of "twitter_tweets" */
+export type Twitter_Tweets_Aggregate_Fields = {
+  __typename?: 'twitter_tweets_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Twitter_Tweets_Max_Fields>;
+  min?: Maybe<Twitter_Tweets_Min_Fields>;
+};
+
+
+/** aggregate fields of "twitter_tweets" */
+export type Twitter_Tweets_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Twitter_Tweets_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** Boolean expression to filter rows from the table "twitter_tweets". All fields are combined with a logical 'AND'. */
+export type Twitter_Tweets_Bool_Exp = {
+  _and?: InputMaybe<Array<Twitter_Tweets_Bool_Exp>>;
+  _not?: InputMaybe<Twitter_Tweets_Bool_Exp>;
+  _or?: InputMaybe<Array<Twitter_Tweets_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  remote_tweet_id?: InputMaybe<String_Comparison_Exp>;
+  tweet_embed_html?: InputMaybe<String_Comparison_Exp>;
+  tweet_time?: InputMaybe<Timestamptz_Comparison_Exp>;
+  twitter_account_id?: InputMaybe<Uuid_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "twitter_tweets" */
+export enum Twitter_Tweets_Constraint {
+  /** unique or primary key constraint on columns "id" */
+  TwitterTweetsPkey = 'twitter_tweets_pkey',
+  /** unique or primary key constraint on columns "remote_tweet_id" */
+  TwitterTweetsRemoteTweetIdKey = 'twitter_tweets_remote_tweet_id_key'
+}
+
+/** input type for inserting data into table "twitter_tweets" */
+export type Twitter_Tweets_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  remote_tweet_id?: InputMaybe<Scalars['String']['input']>;
+  tweet_embed_html?: InputMaybe<Scalars['String']['input']>;
+  tweet_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  twitter_account_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Twitter_Tweets_Max_Fields = {
+  __typename?: 'twitter_tweets_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  remote_tweet_id?: Maybe<Scalars['String']['output']>;
+  tweet_embed_html?: Maybe<Scalars['String']['output']>;
+  tweet_time?: Maybe<Scalars['timestamptz']['output']>;
+  twitter_account_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** aggregate min on columns */
+export type Twitter_Tweets_Min_Fields = {
+  __typename?: 'twitter_tweets_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  remote_tweet_id?: Maybe<Scalars['String']['output']>;
+  tweet_embed_html?: Maybe<Scalars['String']['output']>;
+  tweet_time?: Maybe<Scalars['timestamptz']['output']>;
+  twitter_account_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** response of any mutation on the table "twitter_tweets" */
+export type Twitter_Tweets_Mutation_Response = {
+  __typename?: 'twitter_tweets_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Twitter_Tweets>;
+};
+
+/** input type for inserting object relation for remote table "twitter_tweets" */
+export type Twitter_Tweets_Obj_Rel_Insert_Input = {
+  data: Twitter_Tweets_Insert_Input;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Twitter_Tweets_On_Conflict>;
+};
+
+/** on_conflict condition type for table "twitter_tweets" */
+export type Twitter_Tweets_On_Conflict = {
+  constraint: Twitter_Tweets_Constraint;
+  update_columns?: Array<Twitter_Tweets_Update_Column>;
+  where?: InputMaybe<Twitter_Tweets_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "twitter_tweets". */
+export type Twitter_Tweets_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  remote_tweet_id?: InputMaybe<Order_By>;
+  tweet_embed_html?: InputMaybe<Order_By>;
+  tweet_time?: InputMaybe<Order_By>;
+  twitter_account_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: twitter_tweets */
+export type Twitter_Tweets_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "twitter_tweets" */
+export enum Twitter_Tweets_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  RemoteTweetId = 'remote_tweet_id',
+  /** column name */
+  TweetEmbedHtml = 'tweet_embed_html',
+  /** column name */
+  TweetTime = 'tweet_time',
+  /** column name */
+  TwitterAccountId = 'twitter_account_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "twitter_tweets" */
+export type Twitter_Tweets_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  remote_tweet_id?: InputMaybe<Scalars['String']['input']>;
+  tweet_embed_html?: InputMaybe<Scalars['String']['input']>;
+  tweet_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  twitter_account_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** Streaming cursor of the table "twitter_tweets" */
+export type Twitter_Tweets_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Twitter_Tweets_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Twitter_Tweets_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  remote_tweet_id?: InputMaybe<Scalars['String']['input']>;
+  tweet_embed_html?: InputMaybe<Scalars['String']['input']>;
+  tweet_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  twitter_account_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** update columns of table "twitter_tweets" */
+export enum Twitter_Tweets_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  RemoteTweetId = 'remote_tweet_id',
+  /** column name */
+  TweetEmbedHtml = 'tweet_embed_html',
+  /** column name */
+  TweetTime = 'tweet_time',
+  /** column name */
+  TwitterAccountId = 'twitter_account_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Twitter_Tweets_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Twitter_Tweets_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Twitter_Tweets_Bool_Exp;
 };
 
 /** Boolean expression to compare columns of type "uuid". All fields are combined with logical 'AND'. */
@@ -12837,6 +15872,13 @@ export type Youtube_Lives_Mutation_Response = {
   affected_rows: Scalars['Int']['output'];
   /** data from the rows affected by the mutation */
   returning: Array<Youtube_Lives>;
+};
+
+/** input type for inserting object relation for remote table "youtube_lives" */
+export type Youtube_Lives_Obj_Rel_Insert_Input = {
+  data: Youtube_Lives_Insert_Input;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Youtube_Lives_On_Conflict>;
 };
 
 /** on_conflict condition type for table "youtube_lives" */
