@@ -92,7 +92,7 @@ export default function MatchPage({ amongusMatchId }: { amongusMatchId: string }
     <>
       <Head>
         <title>
-          試合/{format(parseISO(amongusMatch.startTime), 'yyyy-MM-dd HH:mm:ss')} - 部屋/
+          試合/{format(parseISO(amongusMatch.startTime), 'yyyy-MM-dd HH:mm:ss')} - 日程/
           {amongusMatch.program.title} - Amaterus
         </title>
       </Head>
@@ -115,7 +115,7 @@ export default function MatchPage({ amongusMatchId }: { amongusMatchId: string }
               </MuiLink>
             </NextLink>
           )}
-          <Typography>部屋</Typography>
+          <Typography>日程</Typography>
           <NextLink href={`/program/${amongusMatch.program.id}/`} passHref legacyBehavior>
             <MuiLink underline='hover' color='inherit'>
               {amongusMatch.program.title}

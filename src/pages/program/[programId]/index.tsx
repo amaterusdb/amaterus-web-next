@@ -92,7 +92,7 @@ export default function ProgramPage({ programId }: { programId: string }) {
   return (
     <>
       <Head>
-        <title>部屋/{program.title} - Amaterus</title>
+        <title>日程/{program.title} - Amaterus</title>
       </Head>
       <Script src='https://platform.twitter.com/widgets.js' strategy='lazyOnload' />
       <DrawerAppBar />
@@ -114,7 +114,7 @@ export default function ProgramPage({ programId }: { programId: string }) {
               </MuiLink>
             </NextLink>
           )}
-          <Typography>部屋</Typography>
+          <Typography>日程</Typography>
           <Typography color='text.primary'>{program.title}</Typography>
         </Breadcrumbs>
         <Typography variant='h4' component='h2' sx={{ mt: 2 }}>
