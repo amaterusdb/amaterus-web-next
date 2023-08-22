@@ -17,26 +17,26 @@ import Script from 'next/script'
 import DrawerAppBar from '@/components/drawer_app_bar'
 import { Tweet } from '@/components/tweet'
 import {
-  useGetRoomPageQuery,
-  GetRoomPageStaticParamDocument,
-  GetRoomPageStaticParamQuery,
+  useGetProgramPageQuery,
+  GetProgramPageStaticParamDocument,
+  GetProgramPageStaticParamQuery,
 } from '@/generated/graphql'
 import { createApolloClient } from '@/lib/apollo'
 
 export async function getStaticPaths() {
   const apolloClient = createApolloClient()
 
-  const { data } = await apolloClient.query<GetRoomPageStaticParamQuery>({
-    query: GetRoomPageStaticParamDocument,
+  const { data } = await apolloClient.query<GetProgramPageStaticParamQuery>({
+    query: GetProgramPageStaticParamDocument,
   })
-  const rooms = data?.rooms
-  if (rooms == null) {
-    throw Error('Invalid response for GetRoomPageStaticParamQuery')
+  const programs = data?.programs
+  if (programs == null) {
+    throw Error('Invalid response for GetProgramPageStaticParamQuery')
   }
 
-  const paths = rooms.map((room) => ({
+  const paths = programs.map((program) => ({
     params: {
-      roomId: String(room.id),
+      programId: String(program.id),
     },
   }))
 
@@ -50,22 +50,22 @@ export async function getStaticProps({
   params,
 }: {
   params: {
-    roomId: string
+    programId: string
   }
 }) {
-  const roomId = params.roomId
+  const programId = params.programId
 
   return {
     props: {
-      roomId,
+      programId,
     },
   }
 }
 
-export default function RoomPage({ roomId }: { roomId: string }) {
-  const { data, loading } = useGetRoomPageQuery({
+export default function ProgramPage({ programId }: { programId: string }) {
+  const { data, loading } = useGetProgramPageQuery({
     variables: {
-      roomId,
+      programId,
     },
   })
 
@@ -77,22 +77,22 @@ export default function RoomPage({ roomId }: { roomId: string }) {
     )
   }
 
-  const room = data?.room
-  if (room == null) {
+  const program = data?.program
+  if (program == null) {
     return (
       <Box component='main' sx={{ p: 3 }}>
-        No such room found.
+        No such program found.
       </Box>
     )
   }
 
-  const roomCommunities = room.roomCommunities
-  const firstCommunity = roomCommunities.length > 0 ? roomCommunities[0].community : null
+  const programCommunities = program.programCommunities
+  const firstCommunity = programCommunities.length > 0 ? programCommunities[0].community : null
 
   return (
     <>
       <Head>
-        <title>部屋/{room.name} - Amaterus</title>
+        <title>部屋/{program.title} - Amaterus</title>
       </Head>
       <Script src='https://platform.twitter.com/widgets.js' strategy='lazyOnload' />
       <DrawerAppBar />
@@ -115,20 +115,20 @@ export default function RoomPage({ roomId }: { roomId: string }) {
             </NextLink>
           )}
           <Typography>部屋</Typography>
-          <Typography color='text.primary'>{room.name}</Typography>
+          <Typography color='text.primary'>{program.title}</Typography>
         </Breadcrumbs>
         <Typography variant='h4' component='h2' sx={{ mt: 2 }}>
-          {room.name}
+          {program.title}
         </Typography>
         <Typography variant='body1' sx={{ mt: 2 }}>
-          開催日時: {format(parseISO(room.startTime), 'yyyy-MM-dd HH:mm')}
+          開催日時: {format(parseISO(program.startTime), 'yyyy-MM-dd HH:mm')}
         </Typography>
         <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
           告知
         </Typography>
-        {room.roomTwitterAnnouncements.map((roomTwitterAnnouncement) => (
-          <Box key={roomTwitterAnnouncement.id} sx={{ mt: 2 }}>
-            <Tweet tweetId={roomTwitterAnnouncement.tweetId} />
+        {program.programTwitterAnnouncements.map((programTwitterAnnouncement) => (
+          <Box key={programTwitterAnnouncement.twitterTweet.id} sx={{ mt: 2 }}>
+            <Tweet tweetId={programTwitterAnnouncement.twitterTweet.remoteTweetId} />
           </Box>
         ))}
         <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
@@ -142,14 +142,14 @@ export default function RoomPage({ roomId }: { roomId: string }) {
               </TableRow>
             </TableHead>
             <TableBody>
-              {room.roomPersons.map((roomPerson) => (
+              {program.programPersons.map((programPerson) => (
                 <TableRow
-                  key={roomPerson.person.id}
+                  key={programPerson.person.id}
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 >
                   <TableCell component='th' scope='row'>
-                    <NextLink href={`/person/${roomPerson.person.id}/`} passHref legacyBehavior>
-                      <MuiLink>{roomPerson.person.name}</MuiLink>
+                    <NextLink href={`/person/${programPerson.person.id}/`} passHref legacyBehavior>
+                      <MuiLink>{programPerson.person.name}</MuiLink>
                     </NextLink>
                   </TableCell>
                 </TableRow>
@@ -169,7 +169,7 @@ export default function RoomPage({ roomId }: { roomId: string }) {
               </TableRow>
             </TableHead>
             <TableBody>
-              {room.amongusMatches.map((amongusMatch) => (
+              {program.amongusMatches.map((amongusMatch) => (
                 <TableRow
                   key={amongusMatch.id}
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -209,24 +209,28 @@ export default function RoomPage({ roomId }: { roomId: string }) {
               </TableRow>
             </TableHead>
             <TableBody>
-              {room.roomYouTubeLives.map((youtubeLive) => (
+              {program.programYouTubeLives.map((programYoutubeLive) => (
                 <TableRow
-                  key={youtubeLive.id}
+                  key={programYoutubeLive.id}
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 >
                   <TableCell component='th' scope='row'>
                     <NextLink
-                      href={`https://www.youtube.com/watch?v=${youtubeLive.youtubeVideoId}`}
+                      href={`https://www.youtube.com/watch?v=${programYoutubeLive.youtubeLive.remoteYoutubeVideoId}`}
                       passHref
                       legacyBehavior
                     >
-                      <MuiLink>{youtubeLive.title}</MuiLink>
+                      <MuiLink>{programYoutubeLive.youtubeLive.title}</MuiLink>
                     </NextLink>
                   </TableCell>
                   <TableCell>
-                    {youtubeLive.person != null ? (
-                      <NextLink href={`/person/${youtubeLive.person.id}/`} passHref legacyBehavior>
-                        <MuiLink>{youtubeLive.person.name}</MuiLink>
+                    {programYoutubeLive.person != null ? (
+                      <NextLink
+                        href={`/person/${programYoutubeLive.person.id}/`}
+                        passHref
+                        legacyBehavior
+                      >
+                        <MuiLink>{programYoutubeLive.person.name}</MuiLink>
                       </NextLink>
                     ) : (
                       ''

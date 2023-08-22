@@ -62,7 +62,7 @@ export async function getStaticProps({
   }
 }
 
-export default function RoomPage({ communityId }: { communityId: string }) {
+export default function CommunityPage({ communityId }: { communityId: string }) {
   const { data, loading } = useGetCommunityPageQuery({
     variables: {
       communityId,
@@ -118,18 +118,22 @@ export default function RoomPage({ communityId }: { communityId: string }) {
               </TableRow>
             </TableHead>
             <TableBody>
-              {community.roomCommunities?.map((roomCommunity) => (
+              {community.programCommunities?.map((programCommunity) => (
                 <TableRow
-                  key={roomCommunity.id}
+                  key={programCommunity.id}
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 >
                   <TableCell component='th' scope='row'>
-                    <NextLink href={`/room/${roomCommunity.room.id}/`} passHref legacyBehavior>
-                      <MuiLink>{roomCommunity.room.name}</MuiLink>
+                    <NextLink
+                      href={`/program/${programCommunity.program.id}/`}
+                      passHref
+                      legacyBehavior
+                    >
+                      <MuiLink>{programCommunity.program.title}</MuiLink>
                     </NextLink>
                   </TableCell>
                   <TableCell>
-                    {format(parseISO(roomCommunity.room.startTime), 'yyyy-MM-dd HH:mm')}
+                    {format(parseISO(programCommunity.program.startTime), 'yyyy-MM-dd HH:mm')}
                   </TableCell>
                 </TableRow>
               ))}

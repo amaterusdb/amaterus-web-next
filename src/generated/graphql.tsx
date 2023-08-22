@@ -1170,8 +1170,8 @@ export type Amongus_Matches = {
   is_aborted?: Maybe<Scalars['Boolean']['output']>;
   is_vanilla?: Maybe<Scalars['Boolean']['output']>;
   /** An object relationship */
-  room: Rooms;
-  room_id: Scalars['uuid']['output'];
+  program: Programs;
+  program_id: Scalars['uuid']['output'];
   start_time: Scalars['timestamptz']['output'];
   updated_at: Scalars['timestamptz']['output'];
 };
@@ -1303,8 +1303,8 @@ export type Amongus_Matches_Bool_Exp = {
   index?: InputMaybe<Int_Comparison_Exp>;
   is_aborted?: InputMaybe<Boolean_Comparison_Exp>;
   is_vanilla?: InputMaybe<Boolean_Comparison_Exp>;
-  room?: InputMaybe<Rooms_Bool_Exp>;
-  room_id?: InputMaybe<Uuid_Comparison_Exp>;
+  program?: InputMaybe<Programs_Bool_Exp>;
+  program_id?: InputMaybe<Uuid_Comparison_Exp>;
   start_time?: InputMaybe<Timestamptz_Comparison_Exp>;
   updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
 };
@@ -1313,7 +1313,7 @@ export type Amongus_Matches_Bool_Exp = {
 export enum Amongus_Matches_Constraint {
   /** unique or primary key constraint on columns "id" */
   RoomAmongusMatchesPkey = 'room_amongus_matches_pkey',
-  /** unique or primary key constraint on columns "index", "room_id" */
+  /** unique or primary key constraint on columns "index", "program_id" */
   RoomAmongusMatchesRoomIdIndexKey = 'room_amongus_matches_room_id_index_key'
 }
 
@@ -1335,8 +1335,8 @@ export type Amongus_Matches_Insert_Input = {
   index?: InputMaybe<Scalars['Int']['input']>;
   is_aborted?: InputMaybe<Scalars['Boolean']['input']>;
   is_vanilla?: InputMaybe<Scalars['Boolean']['input']>;
-  room?: InputMaybe<Rooms_Obj_Rel_Insert_Input>;
-  room_id?: InputMaybe<Scalars['uuid']['input']>;
+  program?: InputMaybe<Programs_Obj_Rel_Insert_Input>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
   start_time?: InputMaybe<Scalars['timestamptz']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
 };
@@ -1350,7 +1350,7 @@ export type Amongus_Matches_Max_Fields = {
   end_time?: Maybe<Scalars['timestamptz']['output']>;
   id?: Maybe<Scalars['uuid']['output']>;
   index?: Maybe<Scalars['Int']['output']>;
-  room_id?: Maybe<Scalars['uuid']['output']>;
+  program_id?: Maybe<Scalars['uuid']['output']>;
   start_time?: Maybe<Scalars['timestamptz']['output']>;
   updated_at?: Maybe<Scalars['timestamptz']['output']>;
 };
@@ -1363,7 +1363,7 @@ export type Amongus_Matches_Max_Order_By = {
   end_time?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
   index?: InputMaybe<Order_By>;
-  room_id?: InputMaybe<Order_By>;
+  program_id?: InputMaybe<Order_By>;
   start_time?: InputMaybe<Order_By>;
   updated_at?: InputMaybe<Order_By>;
 };
@@ -1377,7 +1377,7 @@ export type Amongus_Matches_Min_Fields = {
   end_time?: Maybe<Scalars['timestamptz']['output']>;
   id?: Maybe<Scalars['uuid']['output']>;
   index?: Maybe<Scalars['Int']['output']>;
-  room_id?: Maybe<Scalars['uuid']['output']>;
+  program_id?: Maybe<Scalars['uuid']['output']>;
   start_time?: Maybe<Scalars['timestamptz']['output']>;
   updated_at?: Maybe<Scalars['timestamptz']['output']>;
 };
@@ -1390,7 +1390,7 @@ export type Amongus_Matches_Min_Order_By = {
   end_time?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
   index?: InputMaybe<Order_By>;
-  room_id?: InputMaybe<Order_By>;
+  program_id?: InputMaybe<Order_By>;
   start_time?: InputMaybe<Order_By>;
   updated_at?: InputMaybe<Order_By>;
 };
@@ -1431,8 +1431,8 @@ export type Amongus_Matches_Order_By = {
   index?: InputMaybe<Order_By>;
   is_aborted?: InputMaybe<Order_By>;
   is_vanilla?: InputMaybe<Order_By>;
-  room?: InputMaybe<Rooms_Order_By>;
-  room_id?: InputMaybe<Order_By>;
+  program?: InputMaybe<Programs_Order_By>;
+  program_id?: InputMaybe<Order_By>;
   start_time?: InputMaybe<Order_By>;
   updated_at?: InputMaybe<Order_By>;
 };
@@ -1461,7 +1461,7 @@ export enum Amongus_Matches_Select_Column {
   /** column name */
   IsVanilla = 'is_vanilla',
   /** column name */
-  RoomId = 'room_id',
+  ProgramId = 'program_id',
   /** column name */
   StartTime = 'start_time',
   /** column name */
@@ -1494,7 +1494,7 @@ export type Amongus_Matches_Set_Input = {
   index?: InputMaybe<Scalars['Int']['input']>;
   is_aborted?: InputMaybe<Scalars['Boolean']['input']>;
   is_vanilla?: InputMaybe<Scalars['Boolean']['input']>;
-  room_id?: InputMaybe<Scalars['uuid']['input']>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
   start_time?: InputMaybe<Scalars['timestamptz']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
 };
@@ -1550,7 +1550,7 @@ export type Amongus_Matches_Stream_Cursor_Value_Input = {
   index?: InputMaybe<Scalars['Int']['input']>;
   is_aborted?: InputMaybe<Scalars['Boolean']['input']>;
   is_vanilla?: InputMaybe<Scalars['Boolean']['input']>;
-  room_id?: InputMaybe<Scalars['uuid']['input']>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
   start_time?: InputMaybe<Scalars['timestamptz']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
 };
@@ -1585,7 +1585,7 @@ export enum Amongus_Matches_Update_Column {
   /** column name */
   IsVanilla = 'is_vanilla',
   /** column name */
-  RoomId = 'room_id',
+  ProgramId = 'program_id',
   /** column name */
   StartTime = 'start_time',
   /** column name */
@@ -2831,11 +2831,35 @@ export type Communities = {
   id: Scalars['uuid']['output'];
   name: Scalars['String']['output'];
   /** An array relationship */
+  program_communities: Array<Program_Communities>;
+  /** An aggregate relationship */
+  program_communities_aggregate: Program_Communities_Aggregate;
+  /** An array relationship */
   room_communities: Array<Room_Communities>;
   /** An aggregate relationship */
   room_communities_aggregate: Room_Communities_Aggregate;
   start_time?: Maybe<Scalars['timestamptz']['output']>;
   updated_at: Scalars['timestamptz']['output'];
+};
+
+
+/** ふにんがす、なのそん、などの卓 */
+export type CommunitiesProgram_CommunitiesArgs = {
+  distinct_on?: InputMaybe<Array<Program_Communities_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Communities_Order_By>>;
+  where?: InputMaybe<Program_Communities_Bool_Exp>;
+};
+
+
+/** ふにんがす、なのそん、などの卓 */
+export type CommunitiesProgram_Communities_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Communities_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Communities_Order_By>>;
+  where?: InputMaybe<Program_Communities_Bool_Exp>;
 };
 
 
@@ -2888,6 +2912,8 @@ export type Communities_Bool_Exp = {
   created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
   name?: InputMaybe<String_Comparison_Exp>;
+  program_communities?: InputMaybe<Program_Communities_Bool_Exp>;
+  program_communities_aggregate?: InputMaybe<Program_Communities_Aggregate_Bool_Exp>;
   room_communities?: InputMaybe<Room_Communities_Bool_Exp>;
   room_communities_aggregate?: InputMaybe<Room_Communities_Aggregate_Bool_Exp>;
   start_time?: InputMaybe<Timestamptz_Comparison_Exp>;
@@ -2905,6 +2931,7 @@ export type Communities_Insert_Input = {
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
+  program_communities?: InputMaybe<Program_Communities_Arr_Rel_Insert_Input>;
   room_communities?: InputMaybe<Room_Communities_Arr_Rel_Insert_Input>;
   start_time?: InputMaybe<Scalars['timestamptz']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
@@ -2958,6 +2985,7 @@ export type Communities_Order_By = {
   created_at?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
   name?: InputMaybe<Order_By>;
+  program_communities_aggregate?: InputMaybe<Program_Communities_Aggregate_Order_By>;
   room_communities_aggregate?: InputMaybe<Room_Communities_Aggregate_Order_By>;
   start_time?: InputMaybe<Order_By>;
   updated_at?: InputMaybe<Order_By>;
@@ -9186,6 +9214,9 @@ export type Program_Youtube_Lives = {
   created_at: Scalars['timestamptz']['output'];
   id: Scalars['uuid']['output'];
   /** An object relationship */
+  person?: Maybe<Persons>;
+  person_id?: Maybe<Scalars['uuid']['output']>;
+  /** An object relationship */
   program: Programs;
   program_id: Scalars['uuid']['output'];
   updated_at: Scalars['timestamptz']['output'];
@@ -9248,6 +9279,8 @@ export type Program_Youtube_Lives_Bool_Exp = {
   _or?: InputMaybe<Array<Program_Youtube_Lives_Bool_Exp>>;
   created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
+  person?: InputMaybe<Persons_Bool_Exp>;
+  person_id?: InputMaybe<Uuid_Comparison_Exp>;
   program?: InputMaybe<Programs_Bool_Exp>;
   program_id?: InputMaybe<Uuid_Comparison_Exp>;
   updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
@@ -9267,6 +9300,8 @@ export enum Program_Youtube_Lives_Constraint {
 export type Program_Youtube_Lives_Insert_Input = {
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
+  person?: InputMaybe<Persons_Obj_Rel_Insert_Input>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
   program?: InputMaybe<Programs_Obj_Rel_Insert_Input>;
   program_id?: InputMaybe<Scalars['uuid']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
@@ -9279,6 +9314,7 @@ export type Program_Youtube_Lives_Max_Fields = {
   __typename?: 'program_youtube_lives_max_fields';
   created_at?: Maybe<Scalars['timestamptz']['output']>;
   id?: Maybe<Scalars['uuid']['output']>;
+  person_id?: Maybe<Scalars['uuid']['output']>;
   program_id?: Maybe<Scalars['uuid']['output']>;
   updated_at?: Maybe<Scalars['timestamptz']['output']>;
   youtube_live_id?: Maybe<Scalars['uuid']['output']>;
@@ -9288,6 +9324,7 @@ export type Program_Youtube_Lives_Max_Fields = {
 export type Program_Youtube_Lives_Max_Order_By = {
   created_at?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
+  person_id?: InputMaybe<Order_By>;
   program_id?: InputMaybe<Order_By>;
   updated_at?: InputMaybe<Order_By>;
   youtube_live_id?: InputMaybe<Order_By>;
@@ -9298,6 +9335,7 @@ export type Program_Youtube_Lives_Min_Fields = {
   __typename?: 'program_youtube_lives_min_fields';
   created_at?: Maybe<Scalars['timestamptz']['output']>;
   id?: Maybe<Scalars['uuid']['output']>;
+  person_id?: Maybe<Scalars['uuid']['output']>;
   program_id?: Maybe<Scalars['uuid']['output']>;
   updated_at?: Maybe<Scalars['timestamptz']['output']>;
   youtube_live_id?: Maybe<Scalars['uuid']['output']>;
@@ -9307,6 +9345,7 @@ export type Program_Youtube_Lives_Min_Fields = {
 export type Program_Youtube_Lives_Min_Order_By = {
   created_at?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
+  person_id?: InputMaybe<Order_By>;
   program_id?: InputMaybe<Order_By>;
   updated_at?: InputMaybe<Order_By>;
   youtube_live_id?: InputMaybe<Order_By>;
@@ -9332,6 +9371,8 @@ export type Program_Youtube_Lives_On_Conflict = {
 export type Program_Youtube_Lives_Order_By = {
   created_at?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
+  person?: InputMaybe<Persons_Order_By>;
+  person_id?: InputMaybe<Order_By>;
   program?: InputMaybe<Programs_Order_By>;
   program_id?: InputMaybe<Order_By>;
   updated_at?: InputMaybe<Order_By>;
@@ -9351,6 +9392,8 @@ export enum Program_Youtube_Lives_Select_Column {
   /** column name */
   Id = 'id',
   /** column name */
+  PersonId = 'person_id',
+  /** column name */
   ProgramId = 'program_id',
   /** column name */
   UpdatedAt = 'updated_at',
@@ -9362,6 +9405,7 @@ export enum Program_Youtube_Lives_Select_Column {
 export type Program_Youtube_Lives_Set_Input = {
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
   program_id?: InputMaybe<Scalars['uuid']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
   youtube_live_id?: InputMaybe<Scalars['uuid']['input']>;
@@ -9379,6 +9423,7 @@ export type Program_Youtube_Lives_Stream_Cursor_Input = {
 export type Program_Youtube_Lives_Stream_Cursor_Value_Input = {
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
   program_id?: InputMaybe<Scalars['uuid']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
   youtube_live_id?: InputMaybe<Scalars['uuid']['input']>;
@@ -9390,6 +9435,8 @@ export enum Program_Youtube_Lives_Update_Column {
   CreatedAt = 'created_at',
   /** column name */
   Id = 'id',
+  /** column name */
+  PersonId = 'person_id',
   /** column name */
   ProgramId = 'program_id',
   /** column name */
@@ -9408,6 +9455,10 @@ export type Program_Youtube_Lives_Updates = {
 /** columns and relationships of "programs" */
 export type Programs = {
   __typename?: 'programs';
+  /** An array relationship */
+  amongus_matches: Array<Amongus_Matches>;
+  /** An aggregate relationship */
+  amongus_matches_aggregate: Amongus_Matches_Aggregate;
   created_at: Scalars['timestamptz']['output'];
   end_time?: Maybe<Scalars['timestamptz']['output']>;
   /** An object relationship */
@@ -9445,6 +9496,26 @@ export type Programs = {
   start_time?: Maybe<Scalars['timestamptz']['output']>;
   title: Scalars['String']['output'];
   updated_at: Scalars['timestamptz']['output'];
+};
+
+
+/** columns and relationships of "programs" */
+export type ProgramsAmongus_MatchesArgs = {
+  distinct_on?: InputMaybe<Array<Amongus_Matches_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Amongus_Matches_Order_By>>;
+  where?: InputMaybe<Amongus_Matches_Bool_Exp>;
+};
+
+
+/** columns and relationships of "programs" */
+export type ProgramsAmongus_Matches_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Amongus_Matches_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Amongus_Matches_Order_By>>;
+  where?: InputMaybe<Amongus_Matches_Bool_Exp>;
 };
 
 
@@ -9614,6 +9685,8 @@ export type Programs_Bool_Exp = {
   _and?: InputMaybe<Array<Programs_Bool_Exp>>;
   _not?: InputMaybe<Programs_Bool_Exp>;
   _or?: InputMaybe<Array<Programs_Bool_Exp>>;
+  amongus_matches?: InputMaybe<Amongus_Matches_Bool_Exp>;
+  amongus_matches_aggregate?: InputMaybe<Amongus_Matches_Aggregate_Bool_Exp>;
   created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
   end_time?: InputMaybe<Timestamptz_Comparison_Exp>;
   game?: InputMaybe<Games_Bool_Exp>;
@@ -9646,6 +9719,7 @@ export enum Programs_Constraint {
 
 /** input type for inserting data into table "programs" */
 export type Programs_Insert_Input = {
+  amongus_matches?: InputMaybe<Amongus_Matches_Arr_Rel_Insert_Input>;
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   end_time?: InputMaybe<Scalars['timestamptz']['input']>;
   game?: InputMaybe<Games_Obj_Rel_Insert_Input>;
@@ -9712,6 +9786,7 @@ export type Programs_On_Conflict = {
 
 /** Ordering options when selecting data from "programs". */
 export type Programs_Order_By = {
+  amongus_matches_aggregate?: InputMaybe<Amongus_Matches_Aggregate_Order_By>;
   created_at?: InputMaybe<Order_By>;
   end_time?: InputMaybe<Order_By>;
   game?: InputMaybe<Games_Order_By>;
@@ -12847,10 +12922,6 @@ export type Room_Youtube_Lives_Updates = {
 /** 連続した試合をまとめる単位 */
 export type Rooms = {
   __typename?: 'rooms';
-  /** An array relationship */
-  amongus_matches: Array<Amongus_Matches>;
-  /** An aggregate relationship */
-  amongus_matches_aggregate: Amongus_Matches_Aggregate;
   created_at: Scalars['timestamptz']['output'];
   end_time?: Maybe<Scalars['timestamptz']['output']>;
   id: Scalars['uuid']['output'];
@@ -12885,26 +12956,6 @@ export type Rooms = {
   room_youtube_lives_aggregate: Room_Youtube_Lives_Aggregate;
   start_time?: Maybe<Scalars['timestamptz']['output']>;
   updated_at: Scalars['timestamptz']['output'];
-};
-
-
-/** 連続した試合をまとめる単位 */
-export type RoomsAmongus_MatchesArgs = {
-  distinct_on?: InputMaybe<Array<Amongus_Matches_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Amongus_Matches_Order_By>>;
-  where?: InputMaybe<Amongus_Matches_Bool_Exp>;
-};
-
-
-/** 連続した試合をまとめる単位 */
-export type RoomsAmongus_Matches_AggregateArgs = {
-  distinct_on?: InputMaybe<Array<Amongus_Matches_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Amongus_Matches_Order_By>>;
-  where?: InputMaybe<Amongus_Matches_Bool_Exp>;
 };
 
 
@@ -13074,8 +13125,6 @@ export type Rooms_Bool_Exp = {
   _and?: InputMaybe<Array<Rooms_Bool_Exp>>;
   _not?: InputMaybe<Rooms_Bool_Exp>;
   _or?: InputMaybe<Array<Rooms_Bool_Exp>>;
-  amongus_matches?: InputMaybe<Amongus_Matches_Bool_Exp>;
-  amongus_matches_aggregate?: InputMaybe<Amongus_Matches_Aggregate_Bool_Exp>;
   created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
   end_time?: InputMaybe<Timestamptz_Comparison_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
@@ -13106,7 +13155,6 @@ export enum Rooms_Constraint {
 
 /** input type for inserting data into table "rooms" */
 export type Rooms_Insert_Input = {
-  amongus_matches?: InputMaybe<Amongus_Matches_Arr_Rel_Insert_Input>;
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   end_time?: InputMaybe<Scalars['timestamptz']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
@@ -13169,7 +13217,6 @@ export type Rooms_On_Conflict = {
 
 /** Ordering options when selecting data from "rooms". */
 export type Rooms_Order_By = {
-  amongus_matches_aggregate?: InputMaybe<Amongus_Matches_Aggregate_Order_By>;
   created_at?: InputMaybe<Order_By>;
   end_time?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
@@ -15501,6 +15548,10 @@ export type Youtube_Channels = {
   created_at: Scalars['timestamptz']['output'];
   id: Scalars['uuid']['output'];
   name: Scalars['String']['output'];
+  /** An array relationship */
+  person_youtube_channels: Array<Person_Youtube_Channels>;
+  /** An aggregate relationship */
+  person_youtube_channels_aggregate: Person_Youtube_Channels_Aggregate;
   remote_youtube_channel_id: Scalars['String']['output'];
   updated_at: Scalars['timestamptz']['output'];
   youtube_channel_handle?: Maybe<Scalars['String']['output']>;
@@ -15508,6 +15559,26 @@ export type Youtube_Channels = {
   youtube_lives: Array<Youtube_Lives>;
   /** An aggregate relationship */
   youtube_lives_aggregate: Youtube_Lives_Aggregate;
+};
+
+
+/** columns and relationships of "youtube_channels" */
+export type Youtube_ChannelsPerson_Youtube_ChannelsArgs = {
+  distinct_on?: InputMaybe<Array<Person_Youtube_Channels_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Person_Youtube_Channels_Order_By>>;
+  where?: InputMaybe<Person_Youtube_Channels_Bool_Exp>;
+};
+
+
+/** columns and relationships of "youtube_channels" */
+export type Youtube_ChannelsPerson_Youtube_Channels_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Person_Youtube_Channels_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Person_Youtube_Channels_Order_By>>;
+  where?: InputMaybe<Person_Youtube_Channels_Bool_Exp>;
 };
 
 
@@ -15560,6 +15631,8 @@ export type Youtube_Channels_Bool_Exp = {
   created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
   name?: InputMaybe<String_Comparison_Exp>;
+  person_youtube_channels?: InputMaybe<Person_Youtube_Channels_Bool_Exp>;
+  person_youtube_channels_aggregate?: InputMaybe<Person_Youtube_Channels_Aggregate_Bool_Exp>;
   remote_youtube_channel_id?: InputMaybe<String_Comparison_Exp>;
   updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
   youtube_channel_handle?: InputMaybe<String_Comparison_Exp>;
@@ -15582,6 +15655,7 @@ export type Youtube_Channels_Insert_Input = {
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
+  person_youtube_channels?: InputMaybe<Person_Youtube_Channels_Arr_Rel_Insert_Input>;
   remote_youtube_channel_id?: InputMaybe<Scalars['String']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
   youtube_channel_handle?: InputMaybe<Scalars['String']['input']>;
@@ -15638,6 +15712,7 @@ export type Youtube_Channels_Order_By = {
   created_at?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
   name?: InputMaybe<Order_By>;
+  person_youtube_channels_aggregate?: InputMaybe<Person_Youtube_Channels_Aggregate_Order_By>;
   remote_youtube_channel_id?: InputMaybe<Order_By>;
   updated_at?: InputMaybe<Order_By>;
   youtube_channel_handle?: InputMaybe<Order_By>;
@@ -15722,6 +15797,10 @@ export type Youtube_Lives = {
   created_at: Scalars['timestamptz']['output'];
   end_time?: Maybe<Scalars['timestamptz']['output']>;
   id: Scalars['uuid']['output'];
+  /** An array relationship */
+  program_youtube_lives: Array<Program_Youtube_Lives>;
+  /** An aggregate relationship */
+  program_youtube_lives_aggregate: Program_Youtube_Lives_Aggregate;
   remote_youtube_video_id: Scalars['String']['output'];
   start_time?: Maybe<Scalars['timestamptz']['output']>;
   title: Scalars['String']['output'];
@@ -15729,6 +15808,26 @@ export type Youtube_Lives = {
   /** An object relationship */
   youtube_channel: Youtube_Channels;
   youtube_channel_id: Scalars['uuid']['output'];
+};
+
+
+/** columns and relationships of "youtube_lives" */
+export type Youtube_LivesProgram_Youtube_LivesArgs = {
+  distinct_on?: InputMaybe<Array<Program_Youtube_Lives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Youtube_Lives_Order_By>>;
+  where?: InputMaybe<Program_Youtube_Lives_Bool_Exp>;
+};
+
+
+/** columns and relationships of "youtube_lives" */
+export type Youtube_LivesProgram_Youtube_Lives_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Youtube_Lives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Youtube_Lives_Order_By>>;
+  where?: InputMaybe<Program_Youtube_Lives_Bool_Exp>;
 };
 
 /** aggregated selection of "youtube_lives" */
@@ -15786,6 +15885,8 @@ export type Youtube_Lives_Bool_Exp = {
   created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
   end_time?: InputMaybe<Timestamptz_Comparison_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
+  program_youtube_lives?: InputMaybe<Program_Youtube_Lives_Bool_Exp>;
+  program_youtube_lives_aggregate?: InputMaybe<Program_Youtube_Lives_Aggregate_Bool_Exp>;
   remote_youtube_video_id?: InputMaybe<String_Comparison_Exp>;
   start_time?: InputMaybe<Timestamptz_Comparison_Exp>;
   title?: InputMaybe<String_Comparison_Exp>;
@@ -15807,6 +15908,7 @@ export type Youtube_Lives_Insert_Input = {
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   end_time?: InputMaybe<Scalars['timestamptz']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
+  program_youtube_lives?: InputMaybe<Program_Youtube_Lives_Arr_Rel_Insert_Input>;
   remote_youtube_video_id?: InputMaybe<Scalars['String']['input']>;
   start_time?: InputMaybe<Scalars['timestamptz']['input']>;
   title?: InputMaybe<Scalars['String']['input']>;
@@ -15893,6 +15995,7 @@ export type Youtube_Lives_Order_By = {
   created_at?: InputMaybe<Order_By>;
   end_time?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
+  program_youtube_lives_aggregate?: InputMaybe<Program_Youtube_Lives_Aggregate_Order_By>;
   remote_youtube_video_id?: InputMaybe<Order_By>;
   start_time?: InputMaybe<Order_By>;
   title?: InputMaybe<Order_By>;
@@ -15990,7 +16093,7 @@ export type GetAmongusMatchPageQueryVariables = Exact<{
 }>;
 
 
-export type GetAmongusMatchPageQuery = { __typename?: 'query_root', amongusMatch?: { __typename?: 'amongus_matches', id: any, startTime: any, endTime?: any | null, amongusMatchPlayers: Array<{ __typename?: 'amongus_match_players', id: any, nickname: string, person?: { __typename?: 'persons', id: any } | null }>, room: { __typename?: 'rooms', id: any, name: string, startTime?: any | null, roomCommunities: Array<{ __typename?: 'room_communities', community: { __typename?: 'communities', id: any, name: string } }>, roomYoutubeLives: Array<{ __typename?: 'room_youtube_lives', id: any, title?: string | null, youtubeVideoId: string, startTime?: any | null, person?: { __typename?: 'persons', id: any, name: string } | null }> } } | null };
+export type GetAmongusMatchPageQuery = { __typename?: 'query_root', amongusMatch?: { __typename?: 'amongus_matches', id: any, startTime: any, endTime?: any | null, amongusMatchPlayers: Array<{ __typename?: 'amongus_match_players', id: any, nickname: string, person?: { __typename?: 'persons', id: any } | null }>, program: { __typename?: 'programs', id: any, title: string, startTime?: any | null, programCommunities: Array<{ __typename?: 'program_communities', community: { __typename?: 'communities', id: any, name: string } }>, programYoutubeLives: Array<{ __typename?: 'program_youtube_lives', id: any, person?: { __typename?: 'persons', id: any, name: string } | null, youtubeLive: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, startTime?: any | null, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } }> } } | null };
 
 export type GetAmongusMatchPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -16002,7 +16105,7 @@ export type GetCommunityPageQueryVariables = Exact<{
 }>;
 
 
-export type GetCommunityPageQuery = { __typename?: 'query_root', community?: { __typename?: 'communities', id: any, name: string, roomCommunities: Array<{ __typename?: 'room_communities', id: any, room: { __typename?: 'rooms', id: any, name: string, startTime?: any | null } }> } | null };
+export type GetCommunityPageQuery = { __typename?: 'query_root', community?: { __typename?: 'communities', id: any, name: string, programCommunities: Array<{ __typename?: 'program_communities', id: any, program: { __typename?: 'programs', id: any, title: string, startTime?: any | null } }> } | null };
 
 export type GetCommunityPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -16026,17 +16129,17 @@ export type GetPersonPageStaticParamQueryVariables = Exact<{ [key: string]: neve
 
 export type GetPersonPageStaticParamQuery = { __typename?: 'query_root', persons: Array<{ __typename?: 'persons', id: any }> };
 
-export type GetRoomPageQueryVariables = Exact<{
-  roomId: Scalars['uuid']['input'];
+export type GetProgramPageQueryVariables = Exact<{
+  programId: Scalars['uuid']['input'];
 }>;
 
 
-export type GetRoomPageQuery = { __typename?: 'query_root', room?: { __typename?: 'rooms', id: any, name: string, startTime?: any | null, endTime?: any | null, roomCommunities: Array<{ __typename?: 'room_communities', community: { __typename?: 'communities', id: any, name: string } }>, roomTwitterAnnouncements: Array<{ __typename?: 'room_twitter_announcements', id: any, tweetId: string }>, roomPersons: Array<{ __typename?: 'room_persons', person: { __typename?: 'persons', id: any, name: string } }>, roomYouTubeLives: Array<{ __typename?: 'room_youtube_lives', id: any, title?: string | null, youtubeVideoId: string, person?: { __typename?: 'persons', id: any, name: string } | null }>, amongusMatches: Array<{ __typename?: 'amongus_matches', id: any, startTime: any, endTime?: any | null }> } | null };
+export type GetProgramPageQuery = { __typename?: 'query_root', program?: { __typename?: 'programs', id: any, title: string, startTime?: any | null, endTime?: any | null, programCommunities: Array<{ __typename?: 'program_communities', community: { __typename?: 'communities', id: any, name: string } }>, programTwitterAnnouncements: Array<{ __typename?: 'program_twitter_announcements', twitterTweet: { __typename?: 'twitter_tweets', id: any, remoteTweetId: string } }>, programPersons: Array<{ __typename?: 'program_persons', person: { __typename?: 'persons', id: any, name: string } }>, programYouTubeLives: Array<{ __typename?: 'program_youtube_lives', id: any, person?: { __typename?: 'persons', id: any, name: string } | null, youtubeLive: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } }>, amongusMatches: Array<{ __typename?: 'amongus_matches', id: any, startTime: any, endTime?: any | null }> } | null };
 
-export type GetRoomPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetProgramPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetRoomPageStaticParamQuery = { __typename?: 'query_root', rooms: Array<{ __typename?: 'rooms', id: any }> };
+export type GetProgramPageStaticParamQuery = { __typename?: 'query_root', programs: Array<{ __typename?: 'programs', id: any }> };
 
 
 export const GetAmongusMatchPageDocument = gql`
@@ -16052,24 +16155,35 @@ export const GetAmongusMatchPageDocument = gql`
         id
       }
     }
-    room {
+    program {
       id
-      name
+      title
       startTime: start_time
-      roomCommunities: room_communities(order_by: {community: {start_time: asc}}) {
+      programCommunities: program_communities(
+        order_by: {community: {start_time: asc}}
+      ) {
         community {
           id
           name
         }
       }
-      roomYoutubeLives: room_youtube_lives {
+      programYoutubeLives: program_youtube_lives(
+        order_by: {person: {name: asc}, youtube_live: {youtube_channel: {name: asc}}}
+      ) {
         id
-        youtubeVideoId: youtube_video_id
-        startTime: start_time
-        title
         person {
           id
           name
+        }
+        youtubeLive: youtube_live {
+          remoteYoutubeVideoId: remote_youtube_video_id
+          title
+          startTime: start_time
+          youtubeChannel: youtube_channel {
+            id
+            remoteYoutubeChannelId: remote_youtube_channel_id
+            name
+          }
         }
       }
     }
@@ -16143,11 +16257,11 @@ export const GetCommunityPageDocument = gql`
   community: communities_by_pk(id: $communityId) {
     id
     name
-    roomCommunities: room_communities(order_by: {room: {start_time: desc}}) {
+    programCommunities: program_communities(order_by: {program: {start_time: desc}}) {
       id
-      room {
+      program {
         id
-        name
+        title
         startTime: start_time
       }
     }
@@ -16375,37 +16489,50 @@ export function useGetPersonPageStaticParamLazyQuery(baseOptions?: Apollo.LazyQu
 export type GetPersonPageStaticParamQueryHookResult = ReturnType<typeof useGetPersonPageStaticParamQuery>;
 export type GetPersonPageStaticParamLazyQueryHookResult = ReturnType<typeof useGetPersonPageStaticParamLazyQuery>;
 export type GetPersonPageStaticParamQueryResult = Apollo.QueryResult<GetPersonPageStaticParamQuery, GetPersonPageStaticParamQueryVariables>;
-export const GetRoomPageDocument = gql`
-    query GetRoomPage($roomId: uuid!) {
-  room: rooms_by_pk(id: $roomId) {
+export const GetProgramPageDocument = gql`
+    query GetProgramPage($programId: uuid!) {
+  program: programs_by_pk(id: $programId) {
     id
-    name
+    title
     startTime: start_time
     endTime: end_time
-    roomCommunities: room_communities(order_by: {community: {start_time: asc}}) {
+    programCommunities: program_communities(
+      order_by: {community: {start_time: asc}}
+    ) {
       community {
         id
         name
       }
     }
-    roomTwitterAnnouncements: room_twitter_announcements {
-      id
-      tweetId: tweet_id
+    programTwitterAnnouncements: program_twitter_announcements {
+      twitterTweet: twitter_tweet {
+        id
+        remoteTweetId: remote_tweet_id
+      }
     }
-    roomPersons: room_persons(order_by: {person: {name: asc}}) {
+    programPersons: program_persons(order_by: {person: {name: asc}}) {
       person {
         id
         name
       }
     }
-    roomYouTubeLives: room_youtube_lives(order_by: {person: {name: asc}}) {
+    programYouTubeLives: program_youtube_lives(
+      order_by: {person: {name: asc}, youtube_live: {youtube_channel: {name: asc}}}
+    ) {
       id
       person {
         id
         name
       }
-      youtubeVideoId: youtube_video_id
-      title
+      youtubeLive: youtube_live {
+        remoteYoutubeVideoId: remote_youtube_video_id
+        title
+        youtubeChannel: youtube_channel {
+          id
+          remoteYoutubeChannelId: remote_youtube_channel_id
+          name
+        }
+      }
     }
     amongusMatches: amongus_matches(order_by: {start_time: asc}) {
       id
@@ -16417,63 +16544,63 @@ export const GetRoomPageDocument = gql`
     `;
 
 /**
- * __useGetRoomPageQuery__
+ * __useGetProgramPageQuery__
  *
- * To run a query within a React component, call `useGetRoomPageQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetRoomPageQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * To run a query within a React component, call `useGetProgramPageQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetProgramPageQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
  *
  * @example
- * const { data, loading, error } = useGetRoomPageQuery({
+ * const { data, loading, error } = useGetProgramPageQuery({
  *   variables: {
- *      roomId: // value for 'roomId'
+ *      programId: // value for 'programId'
  *   },
  * });
  */
-export function useGetRoomPageQuery(baseOptions: Apollo.QueryHookOptions<GetRoomPageQuery, GetRoomPageQueryVariables>) {
+export function useGetProgramPageQuery(baseOptions: Apollo.QueryHookOptions<GetProgramPageQuery, GetProgramPageQueryVariables>) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetRoomPageQuery, GetRoomPageQueryVariables>(GetRoomPageDocument, options);
+        return Apollo.useQuery<GetProgramPageQuery, GetProgramPageQueryVariables>(GetProgramPageDocument, options);
       }
-export function useGetRoomPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetRoomPageQuery, GetRoomPageQueryVariables>) {
+export function useGetProgramPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetProgramPageQuery, GetProgramPageQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetRoomPageQuery, GetRoomPageQueryVariables>(GetRoomPageDocument, options);
+          return Apollo.useLazyQuery<GetProgramPageQuery, GetProgramPageQueryVariables>(GetProgramPageDocument, options);
         }
-export type GetRoomPageQueryHookResult = ReturnType<typeof useGetRoomPageQuery>;
-export type GetRoomPageLazyQueryHookResult = ReturnType<typeof useGetRoomPageLazyQuery>;
-export type GetRoomPageQueryResult = Apollo.QueryResult<GetRoomPageQuery, GetRoomPageQueryVariables>;
-export const GetRoomPageStaticParamDocument = gql`
-    query GetRoomPageStaticParam {
-  rooms {
+export type GetProgramPageQueryHookResult = ReturnType<typeof useGetProgramPageQuery>;
+export type GetProgramPageLazyQueryHookResult = ReturnType<typeof useGetProgramPageLazyQuery>;
+export type GetProgramPageQueryResult = Apollo.QueryResult<GetProgramPageQuery, GetProgramPageQueryVariables>;
+export const GetProgramPageStaticParamDocument = gql`
+    query GetProgramPageStaticParam {
+  programs {
     id
   }
 }
     `;
 
 /**
- * __useGetRoomPageStaticParamQuery__
+ * __useGetProgramPageStaticParamQuery__
  *
- * To run a query within a React component, call `useGetRoomPageStaticParamQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetRoomPageStaticParamQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * To run a query within a React component, call `useGetProgramPageStaticParamQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetProgramPageStaticParamQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
  *
  * @example
- * const { data, loading, error } = useGetRoomPageStaticParamQuery({
+ * const { data, loading, error } = useGetProgramPageStaticParamQuery({
  *   variables: {
  *   },
  * });
  */
-export function useGetRoomPageStaticParamQuery(baseOptions?: Apollo.QueryHookOptions<GetRoomPageStaticParamQuery, GetRoomPageStaticParamQueryVariables>) {
+export function useGetProgramPageStaticParamQuery(baseOptions?: Apollo.QueryHookOptions<GetProgramPageStaticParamQuery, GetProgramPageStaticParamQueryVariables>) {
         const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetRoomPageStaticParamQuery, GetRoomPageStaticParamQueryVariables>(GetRoomPageStaticParamDocument, options);
+        return Apollo.useQuery<GetProgramPageStaticParamQuery, GetProgramPageStaticParamQueryVariables>(GetProgramPageStaticParamDocument, options);
       }
-export function useGetRoomPageStaticParamLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetRoomPageStaticParamQuery, GetRoomPageStaticParamQueryVariables>) {
+export function useGetProgramPageStaticParamLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetProgramPageStaticParamQuery, GetProgramPageStaticParamQueryVariables>) {
           const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetRoomPageStaticParamQuery, GetRoomPageStaticParamQueryVariables>(GetRoomPageStaticParamDocument, options);
+          return Apollo.useLazyQuery<GetProgramPageStaticParamQuery, GetProgramPageStaticParamQueryVariables>(GetProgramPageStaticParamDocument, options);
         }
-export type GetRoomPageStaticParamQueryHookResult = ReturnType<typeof useGetRoomPageStaticParamQuery>;
-export type GetRoomPageStaticParamLazyQueryHookResult = ReturnType<typeof useGetRoomPageStaticParamLazyQuery>;
-export type GetRoomPageStaticParamQueryResult = Apollo.QueryResult<GetRoomPageStaticParamQuery, GetRoomPageStaticParamQueryVariables>;
+export type GetProgramPageStaticParamQueryHookResult = ReturnType<typeof useGetProgramPageStaticParamQuery>;
+export type GetProgramPageStaticParamLazyQueryHookResult = ReturnType<typeof useGetProgramPageStaticParamLazyQuery>;
+export type GetProgramPageStaticParamQueryResult = Apollo.QueryResult<GetProgramPageStaticParamQuery, GetProgramPageStaticParamQueryVariables>;

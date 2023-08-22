@@ -20,12 +20,12 @@ query GetAmongusMatchPage(
       }
     }
 
-    room {
+    program {
       id
-      name
+      title
       startTime: start_time
 
-      roomCommunities: room_communities(
+      programCommunities: program_communities(
         order_by: {
           community: {
             start_time: asc
@@ -38,14 +38,32 @@ query GetAmongusMatchPage(
         }
       }
 
-      roomYoutubeLives: room_youtube_lives {
+      programYoutubeLives: program_youtube_lives(
+        order_by: {
+          person: {
+            name: asc
+          }
+          youtube_live: {
+            youtube_channel: {
+              name: asc
+            }
+          }
+        }
+      ) {
         id
-        youtubeVideoId: youtube_video_id
-        startTime: start_time
-        title
         person {
           id
           name
+        }
+        youtubeLive: youtube_live {
+          remoteYoutubeVideoId: remote_youtube_video_id
+          title
+          startTime: start_time
+          youtubeChannel: youtube_channel {
+            id
+            remoteYoutubeChannelId: remote_youtube_channel_id
+            name
+          }
         }
       }
     }

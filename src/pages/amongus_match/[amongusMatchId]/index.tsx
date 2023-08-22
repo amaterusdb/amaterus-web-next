@@ -84,16 +84,16 @@ export default function MatchPage({ amongusMatchId }: { amongusMatchId: string }
     )
   }
 
-  const room = amongusMatch.room
-  const roomCommunities = room?.roomCommunities ?? []
-  const firstCommunity = roomCommunities.length > 0 ? roomCommunities[0].community : null
+  const program = amongusMatch.program
+  const programCommunities = program?.programCommunities ?? []
+  const firstCommunity = programCommunities.length > 0 ? programCommunities[0].community : null
 
   return (
     <>
       <Head>
         <title>
           試合/{format(parseISO(amongusMatch.startTime), 'yyyy-MM-dd HH:mm:ss')} - 部屋/
-          {amongusMatch.room.name} - Amaterus
+          {amongusMatch.program.title} - Amaterus
         </title>
       </Head>
       <DrawerAppBar />
@@ -116,9 +116,9 @@ export default function MatchPage({ amongusMatchId }: { amongusMatchId: string }
             </NextLink>
           )}
           <Typography>部屋</Typography>
-          <NextLink href={`/room/${amongusMatch.room.id}/`} passHref legacyBehavior>
+          <NextLink href={`/program/${amongusMatch.program.id}/`} passHref legacyBehavior>
             <MuiLink underline='hover' color='inherit'>
-              {amongusMatch.room.name}
+              {amongusMatch.program.title}
             </MuiLink>
           </NextLink>
           <Typography>試合</Typography>
@@ -179,13 +179,13 @@ export default function MatchPage({ amongusMatchId }: { amongusMatchId: string }
               </TableRow>
             </TableHead>
             <TableBody>
-              {amongusMatch.room.roomYoutubeLives.map((roomYoutubeLive) => {
+              {amongusMatch.program.programYoutubeLives.map((programYoutubeLive) => {
                 const localStartTime = intervalToDuration({
-                  start: parseISO(roomYoutubeLive.startTime),
+                  start: parseISO(programYoutubeLive.youtubeLive.startTime),
                   end: parseISO(amongusMatch.startTime),
                 })
                 const localEndTime = intervalToDuration({
-                  start: parseISO(roomYoutubeLive.startTime),
+                  start: parseISO(programYoutubeLive.youtubeLive.startTime),
                   end: parseISO(amongusMatch.endTime),
                 })
 
@@ -203,26 +203,26 @@ export default function MatchPage({ amongusMatchId }: { amongusMatchId: string }
 
                 return (
                   <TableRow
-                    key={roomYoutubeLive.id}
+                    key={programYoutubeLive.id}
                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                   >
                     <TableCell component='th' scope='row'>
                       <NextLink
-                        href={`https://www.youtube.com/watch?v=${roomYoutubeLive.youtubeVideoId}`}
+                        href={`https://www.youtube.com/watch?v=${programYoutubeLive.youtubeLive.remoteYoutubeVideoId}`}
                         passHref
                         legacyBehavior
                       >
-                        <MuiLink>{roomYoutubeLive.title}</MuiLink>
+                        <MuiLink>{programYoutubeLive.youtubeLive.title}</MuiLink>
                       </NextLink>
                     </TableCell>
                     <TableCell>
-                      {roomYoutubeLive.person != null ? (
+                      {programYoutubeLive.person != null ? (
                         <NextLink
-                          href={`/person/${roomYoutubeLive.person.id}/`}
+                          href={`/person/${programYoutubeLive.person.id}/`}
                           passHref
                           legacyBehavior
                         >
-                          <MuiLink>{roomYoutubeLive.person.name}</MuiLink>
+                          <MuiLink>{programYoutubeLive.person.name}</MuiLink>
                         </NextLink>
                       ) : (
                         ''
@@ -230,7 +230,7 @@ export default function MatchPage({ amongusMatchId }: { amongusMatchId: string }
                     </TableCell>
                     <TableCell component='th' scope='row'>
                       <NextLink
-                        href={`https://www.youtube.com/watch?v=${roomYoutubeLive.youtubeVideoId}&t=${localStartTimeTotalSeconds}s`}
+                        href={`https://www.youtube.com/watch?v=${programYoutubeLive.youtubeLive.remoteYoutubeVideoId}&t=${localStartTimeTotalSeconds}s`}
                         passHref
                         legacyBehavior
                       >
@@ -243,7 +243,7 @@ export default function MatchPage({ amongusMatchId }: { amongusMatchId: string }
                     </TableCell>
                     <TableCell component='th' scope='row'>
                       <NextLink
-                        href={`https://www.youtube.com/watch?v=${roomYoutubeLive.youtubeVideoId}&t=${localEndTimeTotalSeconds}s`}
+                        href={`https://www.youtube.com/watch?v=${programYoutubeLive.youtubeLive.remoteYoutubeVideoId}&t=${localEndTimeTotalSeconds}s`}
                         passHref
                         legacyBehavior
                       >

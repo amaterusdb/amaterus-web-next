@@ -7,17 +7,17 @@ query GetCommunityPage(
     id
     name
 
-    roomCommunities: room_communities(
+    programCommunities: program_communities(
       order_by: {
-        room: {
+        program: {
           start_time: desc
         }
       }
     ) {
       id
-      room {
+      program {
         id
-        name
+        title
         startTime: start_time
       }
     }

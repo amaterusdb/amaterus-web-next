@@ -1,0 +1,83 @@
+query GetProgramPage(
+  $programId: uuid!
+) {
+  program: programs_by_pk(
+    id: $programId
+  ) {
+    id
+    title
+    startTime: start_time
+    endTime: end_time
+
+    programCommunities: program_communities(
+      order_by: {
+        community: {
+          start_time: asc
+        }
+      }
+    ) {
+      community {
+        id
+        name
+      }
+    }
+
+    programTwitterAnnouncements: program_twitter_announcements {
+      twitterTweet: twitter_tweet {
+        id
+        remoteTweetId: remote_tweet_id
+      }
+    }
+
+    programPersons: program_persons(
+      order_by: {
+        person: {
+          name: asc
+        }
+      }
+    ) {
+      person {
+        id
+        name
+      }
+    }
+    
+    programYouTubeLives: program_youtube_lives(
+      order_by: {
+        person: {
+          name: asc
+        }
+        youtube_live: {
+          youtube_channel: {
+            name: asc
+          }
+        }
+      }
+    ) {
+      id
+      person {
+        id
+        name
+      }
+      youtubeLive: youtube_live {
+        remoteYoutubeVideoId: remote_youtube_video_id
+        title
+        youtubeChannel: youtube_channel {
+          id
+          remoteYoutubeChannelId: remote_youtube_channel_id
+          name
+        }
+      }
+    }
+
+    amongusMatches: amongus_matches(
+      order_by: {
+        start_time: asc
+      }
+    ) {
+      id
+      startTime: start_time
+      endTime: end_time
+    }
+  }
+}
