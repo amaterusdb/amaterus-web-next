@@ -9,14 +9,14 @@ query GetProgramPage(
     startTime: start_time
     endTime: end_time
 
-    programCommunities: program_communities(
+    programProjects: program_projects(
       order_by: {
-        community: {
+        project: {
           start_time: asc
         }
       }
     ) {
-      community {
+      project {
         id
         name
       }

@@ -1,13 +1,13 @@
-query GetCommunityPage(
-  $communityId: uuid!
+query GetProjectPage(
+  $projectId: uuid!
 ) {
-  community: communities_by_pk(
-    id: $communityId
+  project: projects_by_pk(
+    id: $projectId
   ) {
     id
     name
 
-    programCommunities: program_communities(
+    programProjects: program_projects(
       order_by: {
         program: {
           start_time: desc

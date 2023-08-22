@@ -1,5 +1,5 @@
 query GetIndexPage {
-  communities(
+  projects(
     order_by: {
       start_time: asc
     }

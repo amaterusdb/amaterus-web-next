@@ -17,26 +17,26 @@ import Script from 'next/script'
 import DrawerAppBar from '@/components/drawer_app_bar'
 import { Tweet } from '@/components/tweet'
 import {
-  useGetCommunityPageQuery,
-  GetCommunityPageStaticParamDocument,
-  GetCommunityPageStaticParamQuery,
+  useGetProjectPageQuery,
+  GetProjectPageStaticParamDocument,
+  GetProjectPageStaticParamQuery,
 } from '@/generated/graphql'
 import { createApolloClient } from '@/lib/apollo'
 
 export async function getStaticPaths() {
   const apolloClient = createApolloClient()
 
-  const { data } = await apolloClient.query<GetCommunityPageStaticParamQuery>({
-    query: GetCommunityPageStaticParamDocument,
+  const { data } = await apolloClient.query<GetProjectPageStaticParamQuery>({
+    query: GetProjectPageStaticParamDocument,
   })
-  const communities = data?.communities
-  if (communities == null) {
-    throw Error('Invalid response for GetCommunityPageStaticParamQuery')
+  const projects = data?.projects
+  if (projects == null) {
+    throw Error('Invalid response for GetProjectPageStaticParamQuery')
   }
 
-  const paths = communities.map((community) => ({
+  const paths = projects.map((project) => ({
     params: {
-      communityId: String(community.id),
+      projectId: String(project.id),
     },
   }))
 
@@ -50,22 +50,22 @@ export async function getStaticProps({
   params,
 }: {
   params: {
-    communityId: string
+    projectId: string
   }
 }) {
-  const communityId = params.communityId
+  const projectId = params.projectId
 
   return {
     props: {
-      communityId,
+      projectId,
     },
   }
 }
 
-export default function CommunityPage({ communityId }: { communityId: string }) {
-  const { data, loading } = useGetCommunityPageQuery({
+export default function ProjectPage({ projectId }: { projectId: string }) {
+  const { data, loading } = useGetProjectPageQuery({
     variables: {
-      communityId,
+      projectId,
     },
   })
 
@@ -77,11 +77,11 @@ export default function CommunityPage({ communityId }: { communityId: string }) 
     )
   }
 
-  const community = data?.community
-  if (community == null) {
+  const project = data?.project
+  if (project == null) {
     return (
       <Box component='main' sx={{ p: 3 }}>
-        No such community found.
+        No such project found.
       </Box>
     )
   }
@@ -89,7 +89,7 @@ export default function CommunityPage({ communityId }: { communityId: string }) 
   return (
     <>
       <Head>
-        <title>コミュニティ/{community.name} - Amaterus</title>
+        <title>企画/{project.name} - Amaterus</title>
       </Head>
       <DrawerAppBar />
       <Box component='main' sx={{ p: 3 }}>
@@ -100,11 +100,11 @@ export default function CommunityPage({ communityId }: { communityId: string }) 
               Amaterus
             </MuiLink>
           </NextLink>
-          <Typography>コミュニティ</Typography>
-          <Typography color='text.primary'>{community.name}</Typography>
+          <Typography>企画</Typography>
+          <Typography color='text.primary'>{project.name}</Typography>
         </Breadcrumbs>
         <Typography variant='h4' component='h2' sx={{ mt: 2 }}>
-          {community.name}
+          {project.name}
         </Typography>
         <Typography variant='h5' component='h3' sx={{ mt: 2 }}>
           日程
@@ -118,22 +118,22 @@ export default function CommunityPage({ communityId }: { communityId: string }) 
               </TableRow>
             </TableHead>
             <TableBody>
-              {community.programCommunities?.map((programCommunity) => (
+              {project.programProjects?.map((programProject) => (
                 <TableRow
-                  key={programCommunity.id}
+                  key={programProject.id}
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 >
                   <TableCell component='th' scope='row'>
                     <NextLink
-                      href={`/program/${programCommunity.program.id}/`}
+                      href={`/program/${programProject.program.id}/`}
                       passHref
                       legacyBehavior
                     >
-                      <MuiLink>{programCommunity.program.title}</MuiLink>
+                      <MuiLink>{programProject.program.title}</MuiLink>
                     </NextLink>
                   </TableCell>
                   <TableCell>
-                    {format(parseISO(programCommunity.program.startTime), 'yyyy-MM-dd HH:mm')}
+                    {format(parseISO(programProject.program.startTime), 'yyyy-MM-dd HH:mm')}
                   </TableCell>
                 </TableRow>
               ))}

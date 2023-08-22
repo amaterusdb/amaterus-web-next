@@ -16,7 +16,7 @@ import { useGetIndexPageQuery } from '@/generated/graphql'
 
 export default function IndexPage() {
   const { data } = useGetIndexPageQuery()
-  const communities = data?.communities
+  const projects = data?.projects
 
   return (
     <>
@@ -30,27 +30,27 @@ export default function IndexPage() {
           Amaterus
         </Typography>
         <Typography variant='h5' component='h3' sx={{ mt: 2 }}>
-          コミュニティリスト
+          企画
         </Typography>
         <Box sx={{ mt: 2 }}>
-          {communities === undefined ? (
+          {projects === undefined ? (
             <Typography component='p'>読み込み中</Typography>
           ) : (
             <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
               <TableHead>
                 <TableRow>
-                  <TableCell>コミュニティ名</TableCell>
+                  <TableCell>企画名</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
-                {communities?.map((community) => (
+                {projects?.map((project) => (
                   <TableRow
-                    key={community.id}
+                    key={project.id}
                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                   >
                     <TableCell component='th' scope='row'>
-                      <NextLink href={`/community/${community.id}/`} passHref legacyBehavior>
-                        <MuiLink>{community.name}</MuiLink>
+                      <NextLink href={`/project/${project.id}/`} passHref legacyBehavior>
+                        <MuiLink>{project.name}</MuiLink>
                       </NextLink>
                     </TableCell>
                   </TableRow>

@@ -85,8 +85,8 @@ export default function MatchPage({ amongusMatchId }: { amongusMatchId: string }
   }
 
   const program = amongusMatch.program
-  const programCommunities = program?.programCommunities ?? []
-  const firstCommunity = programCommunities.length > 0 ? programCommunities[0].community : null
+  const programProjects = program?.programProjects ?? []
+  const firstProject = programProjects.length > 0 ? programProjects[0].project : null
 
   return (
     <>
@@ -105,13 +105,13 @@ export default function MatchPage({ amongusMatchId }: { amongusMatchId: string }
               Amaterus
             </MuiLink>
           </NextLink>
-          <Typography>コミュニティ</Typography>
-          {firstCommunity == null ? (
+          <Typography>企画</Typography>
+          {firstProject == null ? (
             <Typography>未設定</Typography>
           ) : (
-            <NextLink href={`/community/${firstCommunity.id}/`} passHref legacyBehavior>
+            <NextLink href={`/project/${firstProject.id}/`} passHref legacyBehavior>
               <MuiLink underline='hover' color='inherit'>
-                {firstCommunity.name}
+                {firstProject.name}
               </MuiLink>
             </NextLink>
           )}

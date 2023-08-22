@@ -25,14 +25,14 @@ query GetAmongusMatchPage(
       title
       startTime: start_time
 
-      programCommunities: program_communities(
+      programProjects: program_projects(
         order_by: {
-          community: {
+          project: {
             start_time: asc
           }
         }
       ) {
-        community {
+        project {
           id
           name
         }

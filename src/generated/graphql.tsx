@@ -2712,211 +2712,6 @@ export type Amongus_Vanilla_Versions_Updates = {
   where: Amongus_Vanilla_Versions_Bool_Exp;
 };
 
-/** ふにんがす、なのそん、などの卓 */
-export type Communities = {
-  __typename?: 'communities';
-  created_at: Scalars['timestamptz']['output'];
-  id: Scalars['uuid']['output'];
-  name: Scalars['String']['output'];
-  /** An array relationship */
-  program_communities: Array<Program_Communities>;
-  /** An aggregate relationship */
-  program_communities_aggregate: Program_Communities_Aggregate;
-  start_time?: Maybe<Scalars['timestamptz']['output']>;
-  updated_at: Scalars['timestamptz']['output'];
-};
-
-
-/** ふにんがす、なのそん、などの卓 */
-export type CommunitiesProgram_CommunitiesArgs = {
-  distinct_on?: InputMaybe<Array<Program_Communities_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Program_Communities_Order_By>>;
-  where?: InputMaybe<Program_Communities_Bool_Exp>;
-};
-
-
-/** ふにんがす、なのそん、などの卓 */
-export type CommunitiesProgram_Communities_AggregateArgs = {
-  distinct_on?: InputMaybe<Array<Program_Communities_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Program_Communities_Order_By>>;
-  where?: InputMaybe<Program_Communities_Bool_Exp>;
-};
-
-/** aggregated selection of "communities" */
-export type Communities_Aggregate = {
-  __typename?: 'communities_aggregate';
-  aggregate?: Maybe<Communities_Aggregate_Fields>;
-  nodes: Array<Communities>;
-};
-
-/** aggregate fields of "communities" */
-export type Communities_Aggregate_Fields = {
-  __typename?: 'communities_aggregate_fields';
-  count: Scalars['Int']['output'];
-  max?: Maybe<Communities_Max_Fields>;
-  min?: Maybe<Communities_Min_Fields>;
-};
-
-
-/** aggregate fields of "communities" */
-export type Communities_Aggregate_FieldsCountArgs = {
-  columns?: InputMaybe<Array<Communities_Select_Column>>;
-  distinct?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-/** Boolean expression to filter rows from the table "communities". All fields are combined with a logical 'AND'. */
-export type Communities_Bool_Exp = {
-  _and?: InputMaybe<Array<Communities_Bool_Exp>>;
-  _not?: InputMaybe<Communities_Bool_Exp>;
-  _or?: InputMaybe<Array<Communities_Bool_Exp>>;
-  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
-  id?: InputMaybe<Uuid_Comparison_Exp>;
-  name?: InputMaybe<String_Comparison_Exp>;
-  program_communities?: InputMaybe<Program_Communities_Bool_Exp>;
-  program_communities_aggregate?: InputMaybe<Program_Communities_Aggregate_Bool_Exp>;
-  start_time?: InputMaybe<Timestamptz_Comparison_Exp>;
-  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
-};
-
-/** unique or primary key constraints on table "communities" */
-export enum Communities_Constraint {
-  /** unique or primary key constraint on columns "id" */
-  CommunitiesPkey = 'communities_pkey'
-}
-
-/** input type for inserting data into table "communities" */
-export type Communities_Insert_Input = {
-  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
-  id?: InputMaybe<Scalars['uuid']['input']>;
-  name?: InputMaybe<Scalars['String']['input']>;
-  program_communities?: InputMaybe<Program_Communities_Arr_Rel_Insert_Input>;
-  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
-  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
-};
-
-/** aggregate max on columns */
-export type Communities_Max_Fields = {
-  __typename?: 'communities_max_fields';
-  created_at?: Maybe<Scalars['timestamptz']['output']>;
-  id?: Maybe<Scalars['uuid']['output']>;
-  name?: Maybe<Scalars['String']['output']>;
-  start_time?: Maybe<Scalars['timestamptz']['output']>;
-  updated_at?: Maybe<Scalars['timestamptz']['output']>;
-};
-
-/** aggregate min on columns */
-export type Communities_Min_Fields = {
-  __typename?: 'communities_min_fields';
-  created_at?: Maybe<Scalars['timestamptz']['output']>;
-  id?: Maybe<Scalars['uuid']['output']>;
-  name?: Maybe<Scalars['String']['output']>;
-  start_time?: Maybe<Scalars['timestamptz']['output']>;
-  updated_at?: Maybe<Scalars['timestamptz']['output']>;
-};
-
-/** response of any mutation on the table "communities" */
-export type Communities_Mutation_Response = {
-  __typename?: 'communities_mutation_response';
-  /** number of rows affected by the mutation */
-  affected_rows: Scalars['Int']['output'];
-  /** data from the rows affected by the mutation */
-  returning: Array<Communities>;
-};
-
-/** input type for inserting object relation for remote table "communities" */
-export type Communities_Obj_Rel_Insert_Input = {
-  data: Communities_Insert_Input;
-  /** upsert condition */
-  on_conflict?: InputMaybe<Communities_On_Conflict>;
-};
-
-/** on_conflict condition type for table "communities" */
-export type Communities_On_Conflict = {
-  constraint: Communities_Constraint;
-  update_columns?: Array<Communities_Update_Column>;
-  where?: InputMaybe<Communities_Bool_Exp>;
-};
-
-/** Ordering options when selecting data from "communities". */
-export type Communities_Order_By = {
-  created_at?: InputMaybe<Order_By>;
-  id?: InputMaybe<Order_By>;
-  name?: InputMaybe<Order_By>;
-  program_communities_aggregate?: InputMaybe<Program_Communities_Aggregate_Order_By>;
-  start_time?: InputMaybe<Order_By>;
-  updated_at?: InputMaybe<Order_By>;
-};
-
-/** primary key columns input for table: communities */
-export type Communities_Pk_Columns_Input = {
-  id: Scalars['uuid']['input'];
-};
-
-/** select columns of table "communities" */
-export enum Communities_Select_Column {
-  /** column name */
-  CreatedAt = 'created_at',
-  /** column name */
-  Id = 'id',
-  /** column name */
-  Name = 'name',
-  /** column name */
-  StartTime = 'start_time',
-  /** column name */
-  UpdatedAt = 'updated_at'
-}
-
-/** input type for updating data in table "communities" */
-export type Communities_Set_Input = {
-  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
-  id?: InputMaybe<Scalars['uuid']['input']>;
-  name?: InputMaybe<Scalars['String']['input']>;
-  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
-  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
-};
-
-/** Streaming cursor of the table "communities" */
-export type Communities_Stream_Cursor_Input = {
-  /** Stream column input with initial value */
-  initial_value: Communities_Stream_Cursor_Value_Input;
-  /** cursor ordering */
-  ordering?: InputMaybe<Cursor_Ordering>;
-};
-
-/** Initial value of the column from where the streaming should start */
-export type Communities_Stream_Cursor_Value_Input = {
-  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
-  id?: InputMaybe<Scalars['uuid']['input']>;
-  name?: InputMaybe<Scalars['String']['input']>;
-  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
-  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
-};
-
-/** update columns of table "communities" */
-export enum Communities_Update_Column {
-  /** column name */
-  CreatedAt = 'created_at',
-  /** column name */
-  Id = 'id',
-  /** column name */
-  Name = 'name',
-  /** column name */
-  StartTime = 'start_time',
-  /** column name */
-  UpdatedAt = 'updated_at'
-}
-
-export type Communities_Updates = {
-  /** sets the columns of the filtered rows to the given values */
-  _set?: InputMaybe<Communities_Set_Input>;
-  /** filter the rows which have to be updated */
-  where: Communities_Bool_Exp;
-};
-
 /** ordering argument of a cursor */
 export enum Cursor_Ordering {
   /** ascending ordering of the cursor */
@@ -3380,10 +3175,6 @@ export type Mutation_Root = {
   delete_amongus_vanilla_versions?: Maybe<Amongus_Vanilla_Versions_Mutation_Response>;
   /** delete single row from the table: "amongus_vanilla_versions" */
   delete_amongus_vanilla_versions_by_pk?: Maybe<Amongus_Vanilla_Versions>;
-  /** delete data from the table: "communities" */
-  delete_communities?: Maybe<Communities_Mutation_Response>;
-  /** delete single row from the table: "communities" */
-  delete_communities_by_pk?: Maybe<Communities>;
   /** delete data from the table: "fediverse_accounts" */
   delete_fediverse_accounts?: Maybe<Fediverse_Accounts_Mutation_Response>;
   /** delete single row from the table: "fediverse_accounts" */
@@ -3436,14 +3227,14 @@ export type Mutation_Root = {
   delete_program_amongus_vanilla_versions?: Maybe<Program_Amongus_Vanilla_Versions_Mutation_Response>;
   /** delete single row from the table: "program_amongus_vanilla_versions" */
   delete_program_amongus_vanilla_versions_by_pk?: Maybe<Program_Amongus_Vanilla_Versions>;
-  /** delete data from the table: "program_communities" */
-  delete_program_communities?: Maybe<Program_Communities_Mutation_Response>;
-  /** delete single row from the table: "program_communities" */
-  delete_program_communities_by_pk?: Maybe<Program_Communities>;
   /** delete data from the table: "program_persons" */
   delete_program_persons?: Maybe<Program_Persons_Mutation_Response>;
   /** delete single row from the table: "program_persons" */
   delete_program_persons_by_pk?: Maybe<Program_Persons>;
+  /** delete data from the table: "program_projects" */
+  delete_program_projects?: Maybe<Program_Projects_Mutation_Response>;
+  /** delete single row from the table: "program_projects" */
+  delete_program_projects_by_pk?: Maybe<Program_Projects>;
   /** delete data from the table: "program_twitter_announcements" */
   delete_program_twitter_announcements?: Maybe<Program_Twitter_Announcements_Mutation_Response>;
   /** delete single row from the table: "program_twitter_announcements" */
@@ -3456,6 +3247,10 @@ export type Mutation_Root = {
   delete_programs?: Maybe<Programs_Mutation_Response>;
   /** delete single row from the table: "programs" */
   delete_programs_by_pk?: Maybe<Programs>;
+  /** delete data from the table: "projects" */
+  delete_projects?: Maybe<Projects_Mutation_Response>;
+  /** delete single row from the table: "projects" */
+  delete_projects_by_pk?: Maybe<Projects>;
   /** delete data from the table: "twitter_accounts" */
   delete_twitter_accounts?: Maybe<Twitter_Accounts_Mutation_Response>;
   /** delete single row from the table: "twitter_accounts" */
@@ -3512,10 +3307,6 @@ export type Mutation_Root = {
   insert_amongus_vanilla_versions?: Maybe<Amongus_Vanilla_Versions_Mutation_Response>;
   /** insert a single row into the table: "amongus_vanilla_versions" */
   insert_amongus_vanilla_versions_one?: Maybe<Amongus_Vanilla_Versions>;
-  /** insert data into the table: "communities" */
-  insert_communities?: Maybe<Communities_Mutation_Response>;
-  /** insert a single row into the table: "communities" */
-  insert_communities_one?: Maybe<Communities>;
   /** insert data into the table: "fediverse_accounts" */
   insert_fediverse_accounts?: Maybe<Fediverse_Accounts_Mutation_Response>;
   /** insert a single row into the table: "fediverse_accounts" */
@@ -3568,14 +3359,14 @@ export type Mutation_Root = {
   insert_program_amongus_vanilla_versions?: Maybe<Program_Amongus_Vanilla_Versions_Mutation_Response>;
   /** insert a single row into the table: "program_amongus_vanilla_versions" */
   insert_program_amongus_vanilla_versions_one?: Maybe<Program_Amongus_Vanilla_Versions>;
-  /** insert data into the table: "program_communities" */
-  insert_program_communities?: Maybe<Program_Communities_Mutation_Response>;
-  /** insert a single row into the table: "program_communities" */
-  insert_program_communities_one?: Maybe<Program_Communities>;
   /** insert data into the table: "program_persons" */
   insert_program_persons?: Maybe<Program_Persons_Mutation_Response>;
   /** insert a single row into the table: "program_persons" */
   insert_program_persons_one?: Maybe<Program_Persons>;
+  /** insert data into the table: "program_projects" */
+  insert_program_projects?: Maybe<Program_Projects_Mutation_Response>;
+  /** insert a single row into the table: "program_projects" */
+  insert_program_projects_one?: Maybe<Program_Projects>;
   /** insert data into the table: "program_twitter_announcements" */
   insert_program_twitter_announcements?: Maybe<Program_Twitter_Announcements_Mutation_Response>;
   /** insert a single row into the table: "program_twitter_announcements" */
@@ -3588,6 +3379,10 @@ export type Mutation_Root = {
   insert_programs?: Maybe<Programs_Mutation_Response>;
   /** insert a single row into the table: "programs" */
   insert_programs_one?: Maybe<Programs>;
+  /** insert data into the table: "projects" */
+  insert_projects?: Maybe<Projects_Mutation_Response>;
+  /** insert a single row into the table: "projects" */
+  insert_projects_one?: Maybe<Projects>;
   /** insert data into the table: "twitter_accounts" */
   insert_twitter_accounts?: Maybe<Twitter_Accounts_Mutation_Response>;
   /** insert a single row into the table: "twitter_accounts" */
@@ -3662,12 +3457,6 @@ export type Mutation_Root = {
   update_amongus_vanilla_versions_by_pk?: Maybe<Amongus_Vanilla_Versions>;
   /** update multiples rows of table: "amongus_vanilla_versions" */
   update_amongus_vanilla_versions_many?: Maybe<Array<Maybe<Amongus_Vanilla_Versions_Mutation_Response>>>;
-  /** update data of the table: "communities" */
-  update_communities?: Maybe<Communities_Mutation_Response>;
-  /** update single row of the table: "communities" */
-  update_communities_by_pk?: Maybe<Communities>;
-  /** update multiples rows of table: "communities" */
-  update_communities_many?: Maybe<Array<Maybe<Communities_Mutation_Response>>>;
   /** update data of the table: "fediverse_accounts" */
   update_fediverse_accounts?: Maybe<Fediverse_Accounts_Mutation_Response>;
   /** update single row of the table: "fediverse_accounts" */
@@ -3746,18 +3535,18 @@ export type Mutation_Root = {
   update_program_amongus_vanilla_versions_by_pk?: Maybe<Program_Amongus_Vanilla_Versions>;
   /** update multiples rows of table: "program_amongus_vanilla_versions" */
   update_program_amongus_vanilla_versions_many?: Maybe<Array<Maybe<Program_Amongus_Vanilla_Versions_Mutation_Response>>>;
-  /** update data of the table: "program_communities" */
-  update_program_communities?: Maybe<Program_Communities_Mutation_Response>;
-  /** update single row of the table: "program_communities" */
-  update_program_communities_by_pk?: Maybe<Program_Communities>;
-  /** update multiples rows of table: "program_communities" */
-  update_program_communities_many?: Maybe<Array<Maybe<Program_Communities_Mutation_Response>>>;
   /** update data of the table: "program_persons" */
   update_program_persons?: Maybe<Program_Persons_Mutation_Response>;
   /** update single row of the table: "program_persons" */
   update_program_persons_by_pk?: Maybe<Program_Persons>;
   /** update multiples rows of table: "program_persons" */
   update_program_persons_many?: Maybe<Array<Maybe<Program_Persons_Mutation_Response>>>;
+  /** update data of the table: "program_projects" */
+  update_program_projects?: Maybe<Program_Projects_Mutation_Response>;
+  /** update single row of the table: "program_projects" */
+  update_program_projects_by_pk?: Maybe<Program_Projects>;
+  /** update multiples rows of table: "program_projects" */
+  update_program_projects_many?: Maybe<Array<Maybe<Program_Projects_Mutation_Response>>>;
   /** update data of the table: "program_twitter_announcements" */
   update_program_twitter_announcements?: Maybe<Program_Twitter_Announcements_Mutation_Response>;
   /** update single row of the table: "program_twitter_announcements" */
@@ -3776,6 +3565,12 @@ export type Mutation_Root = {
   update_programs_by_pk?: Maybe<Programs>;
   /** update multiples rows of table: "programs" */
   update_programs_many?: Maybe<Array<Maybe<Programs_Mutation_Response>>>;
+  /** update data of the table: "projects" */
+  update_projects?: Maybe<Projects_Mutation_Response>;
+  /** update single row of the table: "projects" */
+  update_projects_by_pk?: Maybe<Projects>;
+  /** update multiples rows of table: "projects" */
+  update_projects_many?: Maybe<Array<Maybe<Projects_Mutation_Response>>>;
   /** update data of the table: "twitter_accounts" */
   update_twitter_accounts?: Maybe<Twitter_Accounts_Mutation_Response>;
   /** update single row of the table: "twitter_accounts" */
@@ -3913,18 +3708,6 @@ export type Mutation_RootDelete_Amongus_Vanilla_VersionsArgs = {
 
 /** mutation root */
 export type Mutation_RootDelete_Amongus_Vanilla_Versions_By_PkArgs = {
-  id: Scalars['uuid']['input'];
-};
-
-
-/** mutation root */
-export type Mutation_RootDelete_CommunitiesArgs = {
-  where: Communities_Bool_Exp;
-};
-
-
-/** mutation root */
-export type Mutation_RootDelete_Communities_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
@@ -4086,18 +3869,6 @@ export type Mutation_RootDelete_Program_Amongus_Vanilla_Versions_By_PkArgs = {
 
 
 /** mutation root */
-export type Mutation_RootDelete_Program_CommunitiesArgs = {
-  where: Program_Communities_Bool_Exp;
-};
-
-
-/** mutation root */
-export type Mutation_RootDelete_Program_Communities_By_PkArgs = {
-  id: Scalars['uuid']['input'];
-};
-
-
-/** mutation root */
 export type Mutation_RootDelete_Program_PersonsArgs = {
   where: Program_Persons_Bool_Exp;
 };
@@ -4105,6 +3876,18 @@ export type Mutation_RootDelete_Program_PersonsArgs = {
 
 /** mutation root */
 export type Mutation_RootDelete_Program_Persons_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Program_ProjectsArgs = {
+  where: Program_Projects_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Program_Projects_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
@@ -4141,6 +3924,18 @@ export type Mutation_RootDelete_ProgramsArgs = {
 
 /** mutation root */
 export type Mutation_RootDelete_Programs_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_ProjectsArgs = {
+  where: Projects_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Projects_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
@@ -4332,20 +4127,6 @@ export type Mutation_RootInsert_Amongus_Vanilla_Versions_OneArgs = {
 
 
 /** mutation root */
-export type Mutation_RootInsert_CommunitiesArgs = {
-  objects: Array<Communities_Insert_Input>;
-  on_conflict?: InputMaybe<Communities_On_Conflict>;
-};
-
-
-/** mutation root */
-export type Mutation_RootInsert_Communities_OneArgs = {
-  object: Communities_Insert_Input;
-  on_conflict?: InputMaybe<Communities_On_Conflict>;
-};
-
-
-/** mutation root */
 export type Mutation_RootInsert_Fediverse_AccountsArgs = {
   objects: Array<Fediverse_Accounts_Insert_Input>;
   on_conflict?: InputMaybe<Fediverse_Accounts_On_Conflict>;
@@ -4528,20 +4309,6 @@ export type Mutation_RootInsert_Program_Amongus_Vanilla_Versions_OneArgs = {
 
 
 /** mutation root */
-export type Mutation_RootInsert_Program_CommunitiesArgs = {
-  objects: Array<Program_Communities_Insert_Input>;
-  on_conflict?: InputMaybe<Program_Communities_On_Conflict>;
-};
-
-
-/** mutation root */
-export type Mutation_RootInsert_Program_Communities_OneArgs = {
-  object: Program_Communities_Insert_Input;
-  on_conflict?: InputMaybe<Program_Communities_On_Conflict>;
-};
-
-
-/** mutation root */
 export type Mutation_RootInsert_Program_PersonsArgs = {
   objects: Array<Program_Persons_Insert_Input>;
   on_conflict?: InputMaybe<Program_Persons_On_Conflict>;
@@ -4552,6 +4319,20 @@ export type Mutation_RootInsert_Program_PersonsArgs = {
 export type Mutation_RootInsert_Program_Persons_OneArgs = {
   object: Program_Persons_Insert_Input;
   on_conflict?: InputMaybe<Program_Persons_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Program_ProjectsArgs = {
+  objects: Array<Program_Projects_Insert_Input>;
+  on_conflict?: InputMaybe<Program_Projects_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Program_Projects_OneArgs = {
+  object: Program_Projects_Insert_Input;
+  on_conflict?: InputMaybe<Program_Projects_On_Conflict>;
 };
 
 
@@ -4594,6 +4375,20 @@ export type Mutation_RootInsert_ProgramsArgs = {
 export type Mutation_RootInsert_Programs_OneArgs = {
   object: Programs_Insert_Input;
   on_conflict?: InputMaybe<Programs_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_ProjectsArgs = {
+  objects: Array<Projects_Insert_Input>;
+  on_conflict?: InputMaybe<Projects_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Projects_OneArgs = {
+  object: Projects_Insert_Input;
+  on_conflict?: InputMaybe<Projects_On_Conflict>;
 };
 
 
@@ -4850,26 +4645,6 @@ export type Mutation_RootUpdate_Amongus_Vanilla_Versions_By_PkArgs = {
 /** mutation root */
 export type Mutation_RootUpdate_Amongus_Vanilla_Versions_ManyArgs = {
   updates: Array<Amongus_Vanilla_Versions_Updates>;
-};
-
-
-/** mutation root */
-export type Mutation_RootUpdate_CommunitiesArgs = {
-  _set?: InputMaybe<Communities_Set_Input>;
-  where: Communities_Bool_Exp;
-};
-
-
-/** mutation root */
-export type Mutation_RootUpdate_Communities_By_PkArgs = {
-  _set?: InputMaybe<Communities_Set_Input>;
-  pk_columns: Communities_Pk_Columns_Input;
-};
-
-
-/** mutation root */
-export type Mutation_RootUpdate_Communities_ManyArgs = {
-  updates: Array<Communities_Updates>;
 };
 
 
@@ -5134,26 +4909,6 @@ export type Mutation_RootUpdate_Program_Amongus_Vanilla_Versions_ManyArgs = {
 
 
 /** mutation root */
-export type Mutation_RootUpdate_Program_CommunitiesArgs = {
-  _set?: InputMaybe<Program_Communities_Set_Input>;
-  where: Program_Communities_Bool_Exp;
-};
-
-
-/** mutation root */
-export type Mutation_RootUpdate_Program_Communities_By_PkArgs = {
-  _set?: InputMaybe<Program_Communities_Set_Input>;
-  pk_columns: Program_Communities_Pk_Columns_Input;
-};
-
-
-/** mutation root */
-export type Mutation_RootUpdate_Program_Communities_ManyArgs = {
-  updates: Array<Program_Communities_Updates>;
-};
-
-
-/** mutation root */
 export type Mutation_RootUpdate_Program_PersonsArgs = {
   _set?: InputMaybe<Program_Persons_Set_Input>;
   where: Program_Persons_Bool_Exp;
@@ -5170,6 +4925,26 @@ export type Mutation_RootUpdate_Program_Persons_By_PkArgs = {
 /** mutation root */
 export type Mutation_RootUpdate_Program_Persons_ManyArgs = {
   updates: Array<Program_Persons_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Program_ProjectsArgs = {
+  _set?: InputMaybe<Program_Projects_Set_Input>;
+  where: Program_Projects_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Program_Projects_By_PkArgs = {
+  _set?: InputMaybe<Program_Projects_Set_Input>;
+  pk_columns: Program_Projects_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Program_Projects_ManyArgs = {
+  updates: Array<Program_Projects_Updates>;
 };
 
 
@@ -5230,6 +5005,26 @@ export type Mutation_RootUpdate_Programs_By_PkArgs = {
 /** mutation root */
 export type Mutation_RootUpdate_Programs_ManyArgs = {
   updates: Array<Programs_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_ProjectsArgs = {
+  _set?: InputMaybe<Projects_Set_Input>;
+  where: Projects_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Projects_By_PkArgs = {
+  _set?: InputMaybe<Projects_Set_Input>;
+  pk_columns: Projects_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Projects_ManyArgs = {
+  updates: Array<Projects_Updates>;
 };
 
 
@@ -7862,231 +7657,6 @@ export type Program_Amongus_Vanilla_Versions_Updates = {
   where: Program_Amongus_Vanilla_Versions_Bool_Exp;
 };
 
-/** columns and relationships of "program_communities" */
-export type Program_Communities = {
-  __typename?: 'program_communities';
-  /** An object relationship */
-  community: Communities;
-  community_id: Scalars['uuid']['output'];
-  created_at: Scalars['timestamptz']['output'];
-  id: Scalars['uuid']['output'];
-  /** An object relationship */
-  program: Programs;
-  program_id: Scalars['uuid']['output'];
-  updated_at: Scalars['timestamptz']['output'];
-};
-
-/** aggregated selection of "program_communities" */
-export type Program_Communities_Aggregate = {
-  __typename?: 'program_communities_aggregate';
-  aggregate?: Maybe<Program_Communities_Aggregate_Fields>;
-  nodes: Array<Program_Communities>;
-};
-
-export type Program_Communities_Aggregate_Bool_Exp = {
-  count?: InputMaybe<Program_Communities_Aggregate_Bool_Exp_Count>;
-};
-
-export type Program_Communities_Aggregate_Bool_Exp_Count = {
-  arguments?: InputMaybe<Array<Program_Communities_Select_Column>>;
-  distinct?: InputMaybe<Scalars['Boolean']['input']>;
-  filter?: InputMaybe<Program_Communities_Bool_Exp>;
-  predicate: Int_Comparison_Exp;
-};
-
-/** aggregate fields of "program_communities" */
-export type Program_Communities_Aggregate_Fields = {
-  __typename?: 'program_communities_aggregate_fields';
-  count: Scalars['Int']['output'];
-  max?: Maybe<Program_Communities_Max_Fields>;
-  min?: Maybe<Program_Communities_Min_Fields>;
-};
-
-
-/** aggregate fields of "program_communities" */
-export type Program_Communities_Aggregate_FieldsCountArgs = {
-  columns?: InputMaybe<Array<Program_Communities_Select_Column>>;
-  distinct?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-/** order by aggregate values of table "program_communities" */
-export type Program_Communities_Aggregate_Order_By = {
-  count?: InputMaybe<Order_By>;
-  max?: InputMaybe<Program_Communities_Max_Order_By>;
-  min?: InputMaybe<Program_Communities_Min_Order_By>;
-};
-
-/** input type for inserting array relation for remote table "program_communities" */
-export type Program_Communities_Arr_Rel_Insert_Input = {
-  data: Array<Program_Communities_Insert_Input>;
-  /** upsert condition */
-  on_conflict?: InputMaybe<Program_Communities_On_Conflict>;
-};
-
-/** Boolean expression to filter rows from the table "program_communities". All fields are combined with a logical 'AND'. */
-export type Program_Communities_Bool_Exp = {
-  _and?: InputMaybe<Array<Program_Communities_Bool_Exp>>;
-  _not?: InputMaybe<Program_Communities_Bool_Exp>;
-  _or?: InputMaybe<Array<Program_Communities_Bool_Exp>>;
-  community?: InputMaybe<Communities_Bool_Exp>;
-  community_id?: InputMaybe<Uuid_Comparison_Exp>;
-  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
-  id?: InputMaybe<Uuid_Comparison_Exp>;
-  program?: InputMaybe<Programs_Bool_Exp>;
-  program_id?: InputMaybe<Uuid_Comparison_Exp>;
-  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
-};
-
-/** unique or primary key constraints on table "program_communities" */
-export enum Program_Communities_Constraint {
-  /** unique or primary key constraint on columns "id" */
-  ProgramCommunitiesPkey = 'program_communities_pkey',
-  /** unique or primary key constraint on columns "community_id", "program_id" */
-  ProgramCommunitiesProgramIdCommunityIdKey = 'program_communities_program_id_community_id_key'
-}
-
-/** input type for inserting data into table "program_communities" */
-export type Program_Communities_Insert_Input = {
-  community?: InputMaybe<Communities_Obj_Rel_Insert_Input>;
-  community_id?: InputMaybe<Scalars['uuid']['input']>;
-  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
-  id?: InputMaybe<Scalars['uuid']['input']>;
-  program?: InputMaybe<Programs_Obj_Rel_Insert_Input>;
-  program_id?: InputMaybe<Scalars['uuid']['input']>;
-  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
-};
-
-/** aggregate max on columns */
-export type Program_Communities_Max_Fields = {
-  __typename?: 'program_communities_max_fields';
-  community_id?: Maybe<Scalars['uuid']['output']>;
-  created_at?: Maybe<Scalars['timestamptz']['output']>;
-  id?: Maybe<Scalars['uuid']['output']>;
-  program_id?: Maybe<Scalars['uuid']['output']>;
-  updated_at?: Maybe<Scalars['timestamptz']['output']>;
-};
-
-/** order by max() on columns of table "program_communities" */
-export type Program_Communities_Max_Order_By = {
-  community_id?: InputMaybe<Order_By>;
-  created_at?: InputMaybe<Order_By>;
-  id?: InputMaybe<Order_By>;
-  program_id?: InputMaybe<Order_By>;
-  updated_at?: InputMaybe<Order_By>;
-};
-
-/** aggregate min on columns */
-export type Program_Communities_Min_Fields = {
-  __typename?: 'program_communities_min_fields';
-  community_id?: Maybe<Scalars['uuid']['output']>;
-  created_at?: Maybe<Scalars['timestamptz']['output']>;
-  id?: Maybe<Scalars['uuid']['output']>;
-  program_id?: Maybe<Scalars['uuid']['output']>;
-  updated_at?: Maybe<Scalars['timestamptz']['output']>;
-};
-
-/** order by min() on columns of table "program_communities" */
-export type Program_Communities_Min_Order_By = {
-  community_id?: InputMaybe<Order_By>;
-  created_at?: InputMaybe<Order_By>;
-  id?: InputMaybe<Order_By>;
-  program_id?: InputMaybe<Order_By>;
-  updated_at?: InputMaybe<Order_By>;
-};
-
-/** response of any mutation on the table "program_communities" */
-export type Program_Communities_Mutation_Response = {
-  __typename?: 'program_communities_mutation_response';
-  /** number of rows affected by the mutation */
-  affected_rows: Scalars['Int']['output'];
-  /** data from the rows affected by the mutation */
-  returning: Array<Program_Communities>;
-};
-
-/** on_conflict condition type for table "program_communities" */
-export type Program_Communities_On_Conflict = {
-  constraint: Program_Communities_Constraint;
-  update_columns?: Array<Program_Communities_Update_Column>;
-  where?: InputMaybe<Program_Communities_Bool_Exp>;
-};
-
-/** Ordering options when selecting data from "program_communities". */
-export type Program_Communities_Order_By = {
-  community?: InputMaybe<Communities_Order_By>;
-  community_id?: InputMaybe<Order_By>;
-  created_at?: InputMaybe<Order_By>;
-  id?: InputMaybe<Order_By>;
-  program?: InputMaybe<Programs_Order_By>;
-  program_id?: InputMaybe<Order_By>;
-  updated_at?: InputMaybe<Order_By>;
-};
-
-/** primary key columns input for table: program_communities */
-export type Program_Communities_Pk_Columns_Input = {
-  id: Scalars['uuid']['input'];
-};
-
-/** select columns of table "program_communities" */
-export enum Program_Communities_Select_Column {
-  /** column name */
-  CommunityId = 'community_id',
-  /** column name */
-  CreatedAt = 'created_at',
-  /** column name */
-  Id = 'id',
-  /** column name */
-  ProgramId = 'program_id',
-  /** column name */
-  UpdatedAt = 'updated_at'
-}
-
-/** input type for updating data in table "program_communities" */
-export type Program_Communities_Set_Input = {
-  community_id?: InputMaybe<Scalars['uuid']['input']>;
-  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
-  id?: InputMaybe<Scalars['uuid']['input']>;
-  program_id?: InputMaybe<Scalars['uuid']['input']>;
-  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
-};
-
-/** Streaming cursor of the table "program_communities" */
-export type Program_Communities_Stream_Cursor_Input = {
-  /** Stream column input with initial value */
-  initial_value: Program_Communities_Stream_Cursor_Value_Input;
-  /** cursor ordering */
-  ordering?: InputMaybe<Cursor_Ordering>;
-};
-
-/** Initial value of the column from where the streaming should start */
-export type Program_Communities_Stream_Cursor_Value_Input = {
-  community_id?: InputMaybe<Scalars['uuid']['input']>;
-  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
-  id?: InputMaybe<Scalars['uuid']['input']>;
-  program_id?: InputMaybe<Scalars['uuid']['input']>;
-  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
-};
-
-/** update columns of table "program_communities" */
-export enum Program_Communities_Update_Column {
-  /** column name */
-  CommunityId = 'community_id',
-  /** column name */
-  CreatedAt = 'created_at',
-  /** column name */
-  Id = 'id',
-  /** column name */
-  ProgramId = 'program_id',
-  /** column name */
-  UpdatedAt = 'updated_at'
-}
-
-export type Program_Communities_Updates = {
-  /** sets the columns of the filtered rows to the given values */
-  _set?: InputMaybe<Program_Communities_Set_Input>;
-  /** filter the rows which have to be updated */
-  where: Program_Communities_Bool_Exp;
-};
-
 /** columns and relationships of "program_persons" */
 export type Program_Persons = {
   __typename?: 'program_persons';
@@ -8310,6 +7880,231 @@ export type Program_Persons_Updates = {
   _set?: InputMaybe<Program_Persons_Set_Input>;
   /** filter the rows which have to be updated */
   where: Program_Persons_Bool_Exp;
+};
+
+/** columns and relationships of "program_projects" */
+export type Program_Projects = {
+  __typename?: 'program_projects';
+  created_at: Scalars['timestamptz']['output'];
+  id: Scalars['uuid']['output'];
+  /** An object relationship */
+  program: Programs;
+  program_id: Scalars['uuid']['output'];
+  /** An object relationship */
+  project: Projects;
+  project_id: Scalars['uuid']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+/** aggregated selection of "program_projects" */
+export type Program_Projects_Aggregate = {
+  __typename?: 'program_projects_aggregate';
+  aggregate?: Maybe<Program_Projects_Aggregate_Fields>;
+  nodes: Array<Program_Projects>;
+};
+
+export type Program_Projects_Aggregate_Bool_Exp = {
+  count?: InputMaybe<Program_Projects_Aggregate_Bool_Exp_Count>;
+};
+
+export type Program_Projects_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Program_Projects_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Program_Projects_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
+/** aggregate fields of "program_projects" */
+export type Program_Projects_Aggregate_Fields = {
+  __typename?: 'program_projects_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Program_Projects_Max_Fields>;
+  min?: Maybe<Program_Projects_Min_Fields>;
+};
+
+
+/** aggregate fields of "program_projects" */
+export type Program_Projects_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Program_Projects_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** order by aggregate values of table "program_projects" */
+export type Program_Projects_Aggregate_Order_By = {
+  count?: InputMaybe<Order_By>;
+  max?: InputMaybe<Program_Projects_Max_Order_By>;
+  min?: InputMaybe<Program_Projects_Min_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "program_projects" */
+export type Program_Projects_Arr_Rel_Insert_Input = {
+  data: Array<Program_Projects_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Program_Projects_On_Conflict>;
+};
+
+/** Boolean expression to filter rows from the table "program_projects". All fields are combined with a logical 'AND'. */
+export type Program_Projects_Bool_Exp = {
+  _and?: InputMaybe<Array<Program_Projects_Bool_Exp>>;
+  _not?: InputMaybe<Program_Projects_Bool_Exp>;
+  _or?: InputMaybe<Array<Program_Projects_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  program?: InputMaybe<Programs_Bool_Exp>;
+  program_id?: InputMaybe<Uuid_Comparison_Exp>;
+  project?: InputMaybe<Projects_Bool_Exp>;
+  project_id?: InputMaybe<Uuid_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "program_projects" */
+export enum Program_Projects_Constraint {
+  /** unique or primary key constraint on columns "id" */
+  ProgramCommunitiesPkey = 'program_communities_pkey',
+  /** unique or primary key constraint on columns "project_id", "program_id" */
+  ProgramCommunitiesProgramIdCommunityIdKey = 'program_communities_program_id_community_id_key'
+}
+
+/** input type for inserting data into table "program_projects" */
+export type Program_Projects_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  program?: InputMaybe<Programs_Obj_Rel_Insert_Input>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  project?: InputMaybe<Projects_Obj_Rel_Insert_Input>;
+  project_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Program_Projects_Max_Fields = {
+  __typename?: 'program_projects_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  program_id?: Maybe<Scalars['uuid']['output']>;
+  project_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by max() on columns of table "program_projects" */
+export type Program_Projects_Max_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  project_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Program_Projects_Min_Fields = {
+  __typename?: 'program_projects_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  program_id?: Maybe<Scalars['uuid']['output']>;
+  project_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by min() on columns of table "program_projects" */
+export type Program_Projects_Min_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  project_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** response of any mutation on the table "program_projects" */
+export type Program_Projects_Mutation_Response = {
+  __typename?: 'program_projects_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Program_Projects>;
+};
+
+/** on_conflict condition type for table "program_projects" */
+export type Program_Projects_On_Conflict = {
+  constraint: Program_Projects_Constraint;
+  update_columns?: Array<Program_Projects_Update_Column>;
+  where?: InputMaybe<Program_Projects_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "program_projects". */
+export type Program_Projects_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  program?: InputMaybe<Programs_Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  project?: InputMaybe<Projects_Order_By>;
+  project_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: program_projects */
+export type Program_Projects_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "program_projects" */
+export enum Program_Projects_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  ProgramId = 'program_id',
+  /** column name */
+  ProjectId = 'project_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "program_projects" */
+export type Program_Projects_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  project_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** Streaming cursor of the table "program_projects" */
+export type Program_Projects_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Program_Projects_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Program_Projects_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  project_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** update columns of table "program_projects" */
+export enum Program_Projects_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  ProgramId = 'program_id',
+  /** column name */
+  ProjectId = 'project_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Program_Projects_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Program_Projects_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Program_Projects_Bool_Exp;
 };
 
 /** columns and relationships of "program_twitter_announcements" */
@@ -8828,13 +8623,13 @@ export type Programs = {
   /** An aggregate relationship */
   program_amongus_vanilla_versions_aggregate: Program_Amongus_Vanilla_Versions_Aggregate;
   /** An array relationship */
-  program_communities: Array<Program_Communities>;
-  /** An aggregate relationship */
-  program_communities_aggregate: Program_Communities_Aggregate;
-  /** An array relationship */
   program_persons: Array<Program_Persons>;
   /** An aggregate relationship */
   program_persons_aggregate: Program_Persons_Aggregate;
+  /** An array relationship */
+  program_projects: Array<Program_Projects>;
+  /** An aggregate relationship */
+  program_projects_aggregate: Program_Projects_Aggregate;
   /** An array relationship */
   program_twitter_announcements: Array<Program_Twitter_Announcements>;
   /** An aggregate relationship */
@@ -8930,26 +8725,6 @@ export type ProgramsProgram_Amongus_Vanilla_Versions_AggregateArgs = {
 
 
 /** columns and relationships of "programs" */
-export type ProgramsProgram_CommunitiesArgs = {
-  distinct_on?: InputMaybe<Array<Program_Communities_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Program_Communities_Order_By>>;
-  where?: InputMaybe<Program_Communities_Bool_Exp>;
-};
-
-
-/** columns and relationships of "programs" */
-export type ProgramsProgram_Communities_AggregateArgs = {
-  distinct_on?: InputMaybe<Array<Program_Communities_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Program_Communities_Order_By>>;
-  where?: InputMaybe<Program_Communities_Bool_Exp>;
-};
-
-
-/** columns and relationships of "programs" */
 export type ProgramsProgram_PersonsArgs = {
   distinct_on?: InputMaybe<Array<Program_Persons_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -8966,6 +8741,26 @@ export type ProgramsProgram_Persons_AggregateArgs = {
   offset?: InputMaybe<Scalars['Int']['input']>;
   order_by?: InputMaybe<Array<Program_Persons_Order_By>>;
   where?: InputMaybe<Program_Persons_Bool_Exp>;
+};
+
+
+/** columns and relationships of "programs" */
+export type ProgramsProgram_ProjectsArgs = {
+  distinct_on?: InputMaybe<Array<Program_Projects_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Projects_Order_By>>;
+  where?: InputMaybe<Program_Projects_Bool_Exp>;
+};
+
+
+/** columns and relationships of "programs" */
+export type ProgramsProgram_Projects_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Projects_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Projects_Order_By>>;
+  where?: InputMaybe<Program_Projects_Bool_Exp>;
 };
 
 
@@ -9048,10 +8843,10 @@ export type Programs_Bool_Exp = {
   program_amongus_mods_aggregate?: InputMaybe<Program_Amongus_Mods_Aggregate_Bool_Exp>;
   program_amongus_vanilla_versions?: InputMaybe<Program_Amongus_Vanilla_Versions_Bool_Exp>;
   program_amongus_vanilla_versions_aggregate?: InputMaybe<Program_Amongus_Vanilla_Versions_Aggregate_Bool_Exp>;
-  program_communities?: InputMaybe<Program_Communities_Bool_Exp>;
-  program_communities_aggregate?: InputMaybe<Program_Communities_Aggregate_Bool_Exp>;
   program_persons?: InputMaybe<Program_Persons_Bool_Exp>;
   program_persons_aggregate?: InputMaybe<Program_Persons_Aggregate_Bool_Exp>;
+  program_projects?: InputMaybe<Program_Projects_Bool_Exp>;
+  program_projects_aggregate?: InputMaybe<Program_Projects_Aggregate_Bool_Exp>;
   program_twitter_announcements?: InputMaybe<Program_Twitter_Announcements_Bool_Exp>;
   program_twitter_announcements_aggregate?: InputMaybe<Program_Twitter_Announcements_Aggregate_Bool_Exp>;
   program_youtube_lives?: InputMaybe<Program_Youtube_Lives_Bool_Exp>;
@@ -9078,8 +8873,8 @@ export type Programs_Insert_Input = {
   program_amongus_maps?: InputMaybe<Program_Amongus_Maps_Arr_Rel_Insert_Input>;
   program_amongus_mods?: InputMaybe<Program_Amongus_Mods_Arr_Rel_Insert_Input>;
   program_amongus_vanilla_versions?: InputMaybe<Program_Amongus_Vanilla_Versions_Arr_Rel_Insert_Input>;
-  program_communities?: InputMaybe<Program_Communities_Arr_Rel_Insert_Input>;
   program_persons?: InputMaybe<Program_Persons_Arr_Rel_Insert_Input>;
+  program_projects?: InputMaybe<Program_Projects_Arr_Rel_Insert_Input>;
   program_twitter_announcements?: InputMaybe<Program_Twitter_Announcements_Arr_Rel_Insert_Input>;
   program_youtube_lives?: InputMaybe<Program_Youtube_Lives_Arr_Rel_Insert_Input>;
   start_time?: InputMaybe<Scalars['timestamptz']['input']>;
@@ -9145,8 +8940,8 @@ export type Programs_Order_By = {
   program_amongus_maps_aggregate?: InputMaybe<Program_Amongus_Maps_Aggregate_Order_By>;
   program_amongus_mods_aggregate?: InputMaybe<Program_Amongus_Mods_Aggregate_Order_By>;
   program_amongus_vanilla_versions_aggregate?: InputMaybe<Program_Amongus_Vanilla_Versions_Aggregate_Order_By>;
-  program_communities_aggregate?: InputMaybe<Program_Communities_Aggregate_Order_By>;
   program_persons_aggregate?: InputMaybe<Program_Persons_Aggregate_Order_By>;
+  program_projects_aggregate?: InputMaybe<Program_Projects_Aggregate_Order_By>;
   program_twitter_announcements_aggregate?: InputMaybe<Program_Twitter_Announcements_Aggregate_Order_By>;
   program_youtube_lives_aggregate?: InputMaybe<Program_Youtube_Lives_Aggregate_Order_By>;
   start_time?: InputMaybe<Order_By>;
@@ -9232,6 +9027,211 @@ export type Programs_Updates = {
   where: Programs_Bool_Exp;
 };
 
+/** ふにんがす、なのそん、などの企画 */
+export type Projects = {
+  __typename?: 'projects';
+  created_at: Scalars['timestamptz']['output'];
+  id: Scalars['uuid']['output'];
+  name: Scalars['String']['output'];
+  /** An array relationship */
+  program_projects: Array<Program_Projects>;
+  /** An aggregate relationship */
+  program_projects_aggregate: Program_Projects_Aggregate;
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+
+/** ふにんがす、なのそん、などの企画 */
+export type ProjectsProgram_ProjectsArgs = {
+  distinct_on?: InputMaybe<Array<Program_Projects_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Projects_Order_By>>;
+  where?: InputMaybe<Program_Projects_Bool_Exp>;
+};
+
+
+/** ふにんがす、なのそん、などの企画 */
+export type ProjectsProgram_Projects_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Projects_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Projects_Order_By>>;
+  where?: InputMaybe<Program_Projects_Bool_Exp>;
+};
+
+/** aggregated selection of "projects" */
+export type Projects_Aggregate = {
+  __typename?: 'projects_aggregate';
+  aggregate?: Maybe<Projects_Aggregate_Fields>;
+  nodes: Array<Projects>;
+};
+
+/** aggregate fields of "projects" */
+export type Projects_Aggregate_Fields = {
+  __typename?: 'projects_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Projects_Max_Fields>;
+  min?: Maybe<Projects_Min_Fields>;
+};
+
+
+/** aggregate fields of "projects" */
+export type Projects_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Projects_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** Boolean expression to filter rows from the table "projects". All fields are combined with a logical 'AND'. */
+export type Projects_Bool_Exp = {
+  _and?: InputMaybe<Array<Projects_Bool_Exp>>;
+  _not?: InputMaybe<Projects_Bool_Exp>;
+  _or?: InputMaybe<Array<Projects_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  name?: InputMaybe<String_Comparison_Exp>;
+  program_projects?: InputMaybe<Program_Projects_Bool_Exp>;
+  program_projects_aggregate?: InputMaybe<Program_Projects_Aggregate_Bool_Exp>;
+  start_time?: InputMaybe<Timestamptz_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "projects" */
+export enum Projects_Constraint {
+  /** unique or primary key constraint on columns "id" */
+  CommunitiesPkey = 'communities_pkey'
+}
+
+/** input type for inserting data into table "projects" */
+export type Projects_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  program_projects?: InputMaybe<Program_Projects_Arr_Rel_Insert_Input>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Projects_Max_Fields = {
+  __typename?: 'projects_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** aggregate min on columns */
+export type Projects_Min_Fields = {
+  __typename?: 'projects_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** response of any mutation on the table "projects" */
+export type Projects_Mutation_Response = {
+  __typename?: 'projects_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Projects>;
+};
+
+/** input type for inserting object relation for remote table "projects" */
+export type Projects_Obj_Rel_Insert_Input = {
+  data: Projects_Insert_Input;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Projects_On_Conflict>;
+};
+
+/** on_conflict condition type for table "projects" */
+export type Projects_On_Conflict = {
+  constraint: Projects_Constraint;
+  update_columns?: Array<Projects_Update_Column>;
+  where?: InputMaybe<Projects_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "projects". */
+export type Projects_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  name?: InputMaybe<Order_By>;
+  program_projects_aggregate?: InputMaybe<Program_Projects_Aggregate_Order_By>;
+  start_time?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: projects */
+export type Projects_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "projects" */
+export enum Projects_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Name = 'name',
+  /** column name */
+  StartTime = 'start_time',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "projects" */
+export type Projects_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** Streaming cursor of the table "projects" */
+export type Projects_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Projects_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Projects_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** update columns of table "projects" */
+export enum Projects_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Name = 'name',
+  /** column name */
+  StartTime = 'start_time',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Projects_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Projects_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Projects_Bool_Exp;
+};
+
 export type Query_Root = {
   __typename?: 'query_root';
   /** fetch data from the table: "amongus_maps" */
@@ -9288,12 +9288,6 @@ export type Query_Root = {
   amongus_vanilla_versions_aggregate: Amongus_Vanilla_Versions_Aggregate;
   /** fetch data from the table: "amongus_vanilla_versions" using primary key columns */
   amongus_vanilla_versions_by_pk?: Maybe<Amongus_Vanilla_Versions>;
-  /** fetch data from the table: "communities" */
-  communities: Array<Communities>;
-  /** fetch aggregated fields from the table: "communities" */
-  communities_aggregate: Communities_Aggregate;
-  /** fetch data from the table: "communities" using primary key columns */
-  communities_by_pk?: Maybe<Communities>;
   /** fetch data from the table: "fediverse_accounts" */
   fediverse_accounts: Array<Fediverse_Accounts>;
   /** fetch aggregated fields from the table: "fediverse_accounts" */
@@ -9373,17 +9367,17 @@ export type Query_Root = {
   /** fetch data from the table: "program_amongus_vanilla_versions" using primary key columns */
   program_amongus_vanilla_versions_by_pk?: Maybe<Program_Amongus_Vanilla_Versions>;
   /** An array relationship */
-  program_communities: Array<Program_Communities>;
-  /** An aggregate relationship */
-  program_communities_aggregate: Program_Communities_Aggregate;
-  /** fetch data from the table: "program_communities" using primary key columns */
-  program_communities_by_pk?: Maybe<Program_Communities>;
-  /** An array relationship */
   program_persons: Array<Program_Persons>;
   /** An aggregate relationship */
   program_persons_aggregate: Program_Persons_Aggregate;
   /** fetch data from the table: "program_persons" using primary key columns */
   program_persons_by_pk?: Maybe<Program_Persons>;
+  /** An array relationship */
+  program_projects: Array<Program_Projects>;
+  /** An aggregate relationship */
+  program_projects_aggregate: Program_Projects_Aggregate;
+  /** fetch data from the table: "program_projects" using primary key columns */
+  program_projects_by_pk?: Maybe<Program_Projects>;
   /** An array relationship */
   program_twitter_announcements: Array<Program_Twitter_Announcements>;
   /** An aggregate relationship */
@@ -9402,6 +9396,12 @@ export type Query_Root = {
   programs_aggregate: Programs_Aggregate;
   /** fetch data from the table: "programs" using primary key columns */
   programs_by_pk?: Maybe<Programs>;
+  /** fetch data from the table: "projects" */
+  projects: Array<Projects>;
+  /** fetch aggregated fields from the table: "projects" */
+  projects_aggregate: Projects_Aggregate;
+  /** fetch data from the table: "projects" using primary key columns */
+  projects_by_pk?: Maybe<Projects>;
   /** fetch data from the table: "twitter_accounts" */
   twitter_accounts: Array<Twitter_Accounts>;
   /** fetch aggregated fields from the table: "twitter_accounts" */
@@ -9638,29 +9638,6 @@ export type Query_RootAmongus_Vanilla_Versions_AggregateArgs = {
 
 
 export type Query_RootAmongus_Vanilla_Versions_By_PkArgs = {
-  id: Scalars['uuid']['input'];
-};
-
-
-export type Query_RootCommunitiesArgs = {
-  distinct_on?: InputMaybe<Array<Communities_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Communities_Order_By>>;
-  where?: InputMaybe<Communities_Bool_Exp>;
-};
-
-
-export type Query_RootCommunities_AggregateArgs = {
-  distinct_on?: InputMaybe<Array<Communities_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Communities_Order_By>>;
-  where?: InputMaybe<Communities_Bool_Exp>;
-};
-
-
-export type Query_RootCommunities_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
@@ -9964,29 +9941,6 @@ export type Query_RootProgram_Amongus_Vanilla_Versions_By_PkArgs = {
 };
 
 
-export type Query_RootProgram_CommunitiesArgs = {
-  distinct_on?: InputMaybe<Array<Program_Communities_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Program_Communities_Order_By>>;
-  where?: InputMaybe<Program_Communities_Bool_Exp>;
-};
-
-
-export type Query_RootProgram_Communities_AggregateArgs = {
-  distinct_on?: InputMaybe<Array<Program_Communities_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Program_Communities_Order_By>>;
-  where?: InputMaybe<Program_Communities_Bool_Exp>;
-};
-
-
-export type Query_RootProgram_Communities_By_PkArgs = {
-  id: Scalars['uuid']['input'];
-};
-
-
 export type Query_RootProgram_PersonsArgs = {
   distinct_on?: InputMaybe<Array<Program_Persons_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -10006,6 +9960,29 @@ export type Query_RootProgram_Persons_AggregateArgs = {
 
 
 export type Query_RootProgram_Persons_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Query_RootProgram_ProjectsArgs = {
+  distinct_on?: InputMaybe<Array<Program_Projects_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Projects_Order_By>>;
+  where?: InputMaybe<Program_Projects_Bool_Exp>;
+};
+
+
+export type Query_RootProgram_Projects_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Projects_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Projects_Order_By>>;
+  where?: InputMaybe<Program_Projects_Bool_Exp>;
+};
+
+
+export type Query_RootProgram_Projects_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
@@ -10075,6 +10052,29 @@ export type Query_RootPrograms_AggregateArgs = {
 
 
 export type Query_RootPrograms_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Query_RootProjectsArgs = {
+  distinct_on?: InputMaybe<Array<Projects_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Projects_Order_By>>;
+  where?: InputMaybe<Projects_Bool_Exp>;
+};
+
+
+export type Query_RootProjects_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Projects_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Projects_Order_By>>;
+  where?: InputMaybe<Projects_Bool_Exp>;
+};
+
+
+export type Query_RootProjects_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
@@ -10267,14 +10267,6 @@ export type Subscription_Root = {
   amongus_vanilla_versions_by_pk?: Maybe<Amongus_Vanilla_Versions>;
   /** fetch data from the table in a streaming manner: "amongus_vanilla_versions" */
   amongus_vanilla_versions_stream: Array<Amongus_Vanilla_Versions>;
-  /** fetch data from the table: "communities" */
-  communities: Array<Communities>;
-  /** fetch aggregated fields from the table: "communities" */
-  communities_aggregate: Communities_Aggregate;
-  /** fetch data from the table: "communities" using primary key columns */
-  communities_by_pk?: Maybe<Communities>;
-  /** fetch data from the table in a streaming manner: "communities" */
-  communities_stream: Array<Communities>;
   /** fetch data from the table: "fediverse_accounts" */
   fediverse_accounts: Array<Fediverse_Accounts>;
   /** fetch aggregated fields from the table: "fediverse_accounts" */
@@ -10380,14 +10372,6 @@ export type Subscription_Root = {
   /** fetch data from the table in a streaming manner: "program_amongus_vanilla_versions" */
   program_amongus_vanilla_versions_stream: Array<Program_Amongus_Vanilla_Versions>;
   /** An array relationship */
-  program_communities: Array<Program_Communities>;
-  /** An aggregate relationship */
-  program_communities_aggregate: Program_Communities_Aggregate;
-  /** fetch data from the table: "program_communities" using primary key columns */
-  program_communities_by_pk?: Maybe<Program_Communities>;
-  /** fetch data from the table in a streaming manner: "program_communities" */
-  program_communities_stream: Array<Program_Communities>;
-  /** An array relationship */
   program_persons: Array<Program_Persons>;
   /** An aggregate relationship */
   program_persons_aggregate: Program_Persons_Aggregate;
@@ -10395,6 +10379,14 @@ export type Subscription_Root = {
   program_persons_by_pk?: Maybe<Program_Persons>;
   /** fetch data from the table in a streaming manner: "program_persons" */
   program_persons_stream: Array<Program_Persons>;
+  /** An array relationship */
+  program_projects: Array<Program_Projects>;
+  /** An aggregate relationship */
+  program_projects_aggregate: Program_Projects_Aggregate;
+  /** fetch data from the table: "program_projects" using primary key columns */
+  program_projects_by_pk?: Maybe<Program_Projects>;
+  /** fetch data from the table in a streaming manner: "program_projects" */
+  program_projects_stream: Array<Program_Projects>;
   /** An array relationship */
   program_twitter_announcements: Array<Program_Twitter_Announcements>;
   /** An aggregate relationship */
@@ -10419,6 +10411,14 @@ export type Subscription_Root = {
   programs_by_pk?: Maybe<Programs>;
   /** fetch data from the table in a streaming manner: "programs" */
   programs_stream: Array<Programs>;
+  /** fetch data from the table: "projects" */
+  projects: Array<Projects>;
+  /** fetch aggregated fields from the table: "projects" */
+  projects_aggregate: Projects_Aggregate;
+  /** fetch data from the table: "projects" using primary key columns */
+  projects_by_pk?: Maybe<Projects>;
+  /** fetch data from the table in a streaming manner: "projects" */
+  projects_stream: Array<Projects>;
   /** fetch data from the table: "twitter_accounts" */
   twitter_accounts: Array<Twitter_Accounts>;
   /** fetch aggregated fields from the table: "twitter_accounts" */
@@ -10729,36 +10729,6 @@ export type Subscription_RootAmongus_Vanilla_Versions_StreamArgs = {
   batch_size: Scalars['Int']['input'];
   cursor: Array<InputMaybe<Amongus_Vanilla_Versions_Stream_Cursor_Input>>;
   where?: InputMaybe<Amongus_Vanilla_Versions_Bool_Exp>;
-};
-
-
-export type Subscription_RootCommunitiesArgs = {
-  distinct_on?: InputMaybe<Array<Communities_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Communities_Order_By>>;
-  where?: InputMaybe<Communities_Bool_Exp>;
-};
-
-
-export type Subscription_RootCommunities_AggregateArgs = {
-  distinct_on?: InputMaybe<Array<Communities_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Communities_Order_By>>;
-  where?: InputMaybe<Communities_Bool_Exp>;
-};
-
-
-export type Subscription_RootCommunities_By_PkArgs = {
-  id: Scalars['uuid']['input'];
-};
-
-
-export type Subscription_RootCommunities_StreamArgs = {
-  batch_size: Scalars['Int']['input'];
-  cursor: Array<InputMaybe<Communities_Stream_Cursor_Input>>;
-  where?: InputMaybe<Communities_Bool_Exp>;
 };
 
 
@@ -11152,36 +11122,6 @@ export type Subscription_RootProgram_Amongus_Vanilla_Versions_StreamArgs = {
 };
 
 
-export type Subscription_RootProgram_CommunitiesArgs = {
-  distinct_on?: InputMaybe<Array<Program_Communities_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Program_Communities_Order_By>>;
-  where?: InputMaybe<Program_Communities_Bool_Exp>;
-};
-
-
-export type Subscription_RootProgram_Communities_AggregateArgs = {
-  distinct_on?: InputMaybe<Array<Program_Communities_Select_Column>>;
-  limit?: InputMaybe<Scalars['Int']['input']>;
-  offset?: InputMaybe<Scalars['Int']['input']>;
-  order_by?: InputMaybe<Array<Program_Communities_Order_By>>;
-  where?: InputMaybe<Program_Communities_Bool_Exp>;
-};
-
-
-export type Subscription_RootProgram_Communities_By_PkArgs = {
-  id: Scalars['uuid']['input'];
-};
-
-
-export type Subscription_RootProgram_Communities_StreamArgs = {
-  batch_size: Scalars['Int']['input'];
-  cursor: Array<InputMaybe<Program_Communities_Stream_Cursor_Input>>;
-  where?: InputMaybe<Program_Communities_Bool_Exp>;
-};
-
-
 export type Subscription_RootProgram_PersonsArgs = {
   distinct_on?: InputMaybe<Array<Program_Persons_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -11209,6 +11149,36 @@ export type Subscription_RootProgram_Persons_StreamArgs = {
   batch_size: Scalars['Int']['input'];
   cursor: Array<InputMaybe<Program_Persons_Stream_Cursor_Input>>;
   where?: InputMaybe<Program_Persons_Bool_Exp>;
+};
+
+
+export type Subscription_RootProgram_ProjectsArgs = {
+  distinct_on?: InputMaybe<Array<Program_Projects_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Projects_Order_By>>;
+  where?: InputMaybe<Program_Projects_Bool_Exp>;
+};
+
+
+export type Subscription_RootProgram_Projects_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Projects_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Projects_Order_By>>;
+  where?: InputMaybe<Program_Projects_Bool_Exp>;
+};
+
+
+export type Subscription_RootProgram_Projects_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootProgram_Projects_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Program_Projects_Stream_Cursor_Input>>;
+  where?: InputMaybe<Program_Projects_Bool_Exp>;
 };
 
 
@@ -11299,6 +11269,36 @@ export type Subscription_RootPrograms_StreamArgs = {
   batch_size: Scalars['Int']['input'];
   cursor: Array<InputMaybe<Programs_Stream_Cursor_Input>>;
   where?: InputMaybe<Programs_Bool_Exp>;
+};
+
+
+export type Subscription_RootProjectsArgs = {
+  distinct_on?: InputMaybe<Array<Projects_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Projects_Order_By>>;
+  where?: InputMaybe<Projects_Bool_Exp>;
+};
+
+
+export type Subscription_RootProjects_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Projects_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Projects_Order_By>>;
+  where?: InputMaybe<Projects_Bool_Exp>;
+};
+
+
+export type Subscription_RootProjects_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootProjects_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Projects_Stream_Cursor_Input>>;
+  where?: InputMaybe<Projects_Bool_Exp>;
 };
 
 
@@ -12678,29 +12678,17 @@ export type GetAmongusMatchPageQueryVariables = Exact<{
 }>;
 
 
-export type GetAmongusMatchPageQuery = { __typename?: 'query_root', amongusMatch?: { __typename?: 'amongus_matches', id: any, startTime: any, endTime?: any | null, amongusMatchPlayers: Array<{ __typename?: 'amongus_match_players', id: any, nickname: string, person?: { __typename?: 'persons', id: any } | null }>, program: { __typename?: 'programs', id: any, title: string, startTime?: any | null, programCommunities: Array<{ __typename?: 'program_communities', community: { __typename?: 'communities', id: any, name: string } }>, programYoutubeLives: Array<{ __typename?: 'program_youtube_lives', id: any, person?: { __typename?: 'persons', id: any, name: string } | null, youtubeLive: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, startTime?: any | null, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } }> } } | null };
+export type GetAmongusMatchPageQuery = { __typename?: 'query_root', amongusMatch?: { __typename?: 'amongus_matches', id: any, startTime: any, endTime?: any | null, amongusMatchPlayers: Array<{ __typename?: 'amongus_match_players', id: any, nickname: string, person?: { __typename?: 'persons', id: any } | null }>, program: { __typename?: 'programs', id: any, title: string, startTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, programYoutubeLives: Array<{ __typename?: 'program_youtube_lives', id: any, person?: { __typename?: 'persons', id: any, name: string } | null, youtubeLive: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, startTime?: any | null, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } }> } } | null };
 
 export type GetAmongusMatchPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetAmongusMatchPageStaticParamQuery = { __typename?: 'query_root', amongusMatches: Array<{ __typename?: 'amongus_matches', id: any }> };
 
-export type GetCommunityPageQueryVariables = Exact<{
-  communityId: Scalars['uuid']['input'];
-}>;
-
-
-export type GetCommunityPageQuery = { __typename?: 'query_root', community?: { __typename?: 'communities', id: any, name: string, programCommunities: Array<{ __typename?: 'program_communities', id: any, program: { __typename?: 'programs', id: any, title: string, startTime?: any | null } }> } | null };
-
-export type GetCommunityPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type GetCommunityPageStaticParamQuery = { __typename?: 'query_root', communities: Array<{ __typename?: 'communities', id: any }> };
-
 export type GetIndexPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetIndexPageQuery = { __typename?: 'query_root', communities: Array<{ __typename?: 'communities', id: any, name: string }> };
+export type GetIndexPageQuery = { __typename?: 'query_root', projects: Array<{ __typename?: 'projects', id: any, name: string }> };
 
 export type GetPersonPageQueryVariables = Exact<{
   personId: Scalars['uuid']['input'];
@@ -12719,12 +12707,24 @@ export type GetProgramPageQueryVariables = Exact<{
 }>;
 
 
-export type GetProgramPageQuery = { __typename?: 'query_root', program?: { __typename?: 'programs', id: any, title: string, startTime?: any | null, endTime?: any | null, programCommunities: Array<{ __typename?: 'program_communities', community: { __typename?: 'communities', id: any, name: string } }>, programTwitterAnnouncements: Array<{ __typename?: 'program_twitter_announcements', twitterTweet: { __typename?: 'twitter_tweets', id: any, remoteTweetId: string } }>, programPersons: Array<{ __typename?: 'program_persons', person: { __typename?: 'persons', id: any, name: string } }>, programYouTubeLives: Array<{ __typename?: 'program_youtube_lives', id: any, person?: { __typename?: 'persons', id: any, name: string } | null, youtubeLive: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } }>, amongusMatches: Array<{ __typename?: 'amongus_matches', id: any, startTime: any, endTime?: any | null }> } | null };
+export type GetProgramPageQuery = { __typename?: 'query_root', program?: { __typename?: 'programs', id: any, title: string, startTime?: any | null, endTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, programTwitterAnnouncements: Array<{ __typename?: 'program_twitter_announcements', twitterTweet: { __typename?: 'twitter_tweets', id: any, remoteTweetId: string } }>, programPersons: Array<{ __typename?: 'program_persons', person: { __typename?: 'persons', id: any, name: string } }>, programYouTubeLives: Array<{ __typename?: 'program_youtube_lives', id: any, person?: { __typename?: 'persons', id: any, name: string } | null, youtubeLive: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } }>, amongusMatches: Array<{ __typename?: 'amongus_matches', id: any, startTime: any, endTime?: any | null }> } | null };
 
 export type GetProgramPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetProgramPageStaticParamQuery = { __typename?: 'query_root', programs: Array<{ __typename?: 'programs', id: any }> };
+
+export type GetProjectPageQueryVariables = Exact<{
+  projectId: Scalars['uuid']['input'];
+}>;
+
+
+export type GetProjectPageQuery = { __typename?: 'query_root', project?: { __typename?: 'projects', id: any, name: string, programProjects: Array<{ __typename?: 'program_projects', id: any, program: { __typename?: 'programs', id: any, title: string, startTime?: any | null } }> } | null };
+
+export type GetProjectPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetProjectPageStaticParamQuery = { __typename?: 'query_root', projects: Array<{ __typename?: 'projects', id: any }> };
 
 
 export const GetAmongusMatchPageDocument = gql`
@@ -12744,10 +12744,8 @@ export const GetAmongusMatchPageDocument = gql`
       id
       title
       startTime: start_time
-      programCommunities: program_communities(
-        order_by: {community: {start_time: asc}}
-      ) {
-        community {
+      programProjects: program_projects(order_by: {project: {start_time: asc}}) {
+        project {
           id
           name
         }
@@ -12837,87 +12835,9 @@ export function useGetAmongusMatchPageStaticParamLazyQuery(baseOptions?: Apollo.
 export type GetAmongusMatchPageStaticParamQueryHookResult = ReturnType<typeof useGetAmongusMatchPageStaticParamQuery>;
 export type GetAmongusMatchPageStaticParamLazyQueryHookResult = ReturnType<typeof useGetAmongusMatchPageStaticParamLazyQuery>;
 export type GetAmongusMatchPageStaticParamQueryResult = Apollo.QueryResult<GetAmongusMatchPageStaticParamQuery, GetAmongusMatchPageStaticParamQueryVariables>;
-export const GetCommunityPageDocument = gql`
-    query GetCommunityPage($communityId: uuid!) {
-  community: communities_by_pk(id: $communityId) {
-    id
-    name
-    programCommunities: program_communities(order_by: {program: {start_time: desc}}) {
-      id
-      program {
-        id
-        title
-        startTime: start_time
-      }
-    }
-  }
-}
-    `;
-
-/**
- * __useGetCommunityPageQuery__
- *
- * To run a query within a React component, call `useGetCommunityPageQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetCommunityPageQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useGetCommunityPageQuery({
- *   variables: {
- *      communityId: // value for 'communityId'
- *   },
- * });
- */
-export function useGetCommunityPageQuery(baseOptions: Apollo.QueryHookOptions<GetCommunityPageQuery, GetCommunityPageQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetCommunityPageQuery, GetCommunityPageQueryVariables>(GetCommunityPageDocument, options);
-      }
-export function useGetCommunityPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetCommunityPageQuery, GetCommunityPageQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetCommunityPageQuery, GetCommunityPageQueryVariables>(GetCommunityPageDocument, options);
-        }
-export type GetCommunityPageQueryHookResult = ReturnType<typeof useGetCommunityPageQuery>;
-export type GetCommunityPageLazyQueryHookResult = ReturnType<typeof useGetCommunityPageLazyQuery>;
-export type GetCommunityPageQueryResult = Apollo.QueryResult<GetCommunityPageQuery, GetCommunityPageQueryVariables>;
-export const GetCommunityPageStaticParamDocument = gql`
-    query GetCommunityPageStaticParam {
-  communities {
-    id
-  }
-}
-    `;
-
-/**
- * __useGetCommunityPageStaticParamQuery__
- *
- * To run a query within a React component, call `useGetCommunityPageStaticParamQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetCommunityPageStaticParamQuery` returns an object from Apollo Client that contains loading, error, and data properties
- * you can use to render your UI.
- *
- * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
- *
- * @example
- * const { data, loading, error } = useGetCommunityPageStaticParamQuery({
- *   variables: {
- *   },
- * });
- */
-export function useGetCommunityPageStaticParamQuery(baseOptions?: Apollo.QueryHookOptions<GetCommunityPageStaticParamQuery, GetCommunityPageStaticParamQueryVariables>) {
-        const options = {...defaultOptions, ...baseOptions}
-        return Apollo.useQuery<GetCommunityPageStaticParamQuery, GetCommunityPageStaticParamQueryVariables>(GetCommunityPageStaticParamDocument, options);
-      }
-export function useGetCommunityPageStaticParamLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetCommunityPageStaticParamQuery, GetCommunityPageStaticParamQueryVariables>) {
-          const options = {...defaultOptions, ...baseOptions}
-          return Apollo.useLazyQuery<GetCommunityPageStaticParamQuery, GetCommunityPageStaticParamQueryVariables>(GetCommunityPageStaticParamDocument, options);
-        }
-export type GetCommunityPageStaticParamQueryHookResult = ReturnType<typeof useGetCommunityPageStaticParamQuery>;
-export type GetCommunityPageStaticParamLazyQueryHookResult = ReturnType<typeof useGetCommunityPageStaticParamLazyQuery>;
-export type GetCommunityPageStaticParamQueryResult = Apollo.QueryResult<GetCommunityPageStaticParamQuery, GetCommunityPageStaticParamQueryVariables>;
 export const GetIndexPageDocument = gql`
     query GetIndexPage {
-  communities(order_by: {start_time: asc}) {
+  projects(order_by: {start_time: asc}) {
     id
     name
   }
@@ -13081,10 +13001,8 @@ export const GetProgramPageDocument = gql`
     title
     startTime: start_time
     endTime: end_time
-    programCommunities: program_communities(
-      order_by: {community: {start_time: asc}}
-    ) {
-      community {
+    programProjects: program_projects(order_by: {project: {start_time: asc}}) {
+      project {
         id
         name
       }
@@ -13189,3 +13107,81 @@ export function useGetProgramPageStaticParamLazyQuery(baseOptions?: Apollo.LazyQ
 export type GetProgramPageStaticParamQueryHookResult = ReturnType<typeof useGetProgramPageStaticParamQuery>;
 export type GetProgramPageStaticParamLazyQueryHookResult = ReturnType<typeof useGetProgramPageStaticParamLazyQuery>;
 export type GetProgramPageStaticParamQueryResult = Apollo.QueryResult<GetProgramPageStaticParamQuery, GetProgramPageStaticParamQueryVariables>;
+export const GetProjectPageDocument = gql`
+    query GetProjectPage($projectId: uuid!) {
+  project: projects_by_pk(id: $projectId) {
+    id
+    name
+    programProjects: program_projects(order_by: {program: {start_time: desc}}) {
+      id
+      program {
+        id
+        title
+        startTime: start_time
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetProjectPageQuery__
+ *
+ * To run a query within a React component, call `useGetProjectPageQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetProjectPageQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetProjectPageQuery({
+ *   variables: {
+ *      projectId: // value for 'projectId'
+ *   },
+ * });
+ */
+export function useGetProjectPageQuery(baseOptions: Apollo.QueryHookOptions<GetProjectPageQuery, GetProjectPageQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetProjectPageQuery, GetProjectPageQueryVariables>(GetProjectPageDocument, options);
+      }
+export function useGetProjectPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetProjectPageQuery, GetProjectPageQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetProjectPageQuery, GetProjectPageQueryVariables>(GetProjectPageDocument, options);
+        }
+export type GetProjectPageQueryHookResult = ReturnType<typeof useGetProjectPageQuery>;
+export type GetProjectPageLazyQueryHookResult = ReturnType<typeof useGetProjectPageLazyQuery>;
+export type GetProjectPageQueryResult = Apollo.QueryResult<GetProjectPageQuery, GetProjectPageQueryVariables>;
+export const GetProjectPageStaticParamDocument = gql`
+    query GetProjectPageStaticParam {
+  projects {
+    id
+  }
+}
+    `;
+
+/**
+ * __useGetProjectPageStaticParamQuery__
+ *
+ * To run a query within a React component, call `useGetProjectPageStaticParamQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetProjectPageStaticParamQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetProjectPageStaticParamQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetProjectPageStaticParamQuery(baseOptions?: Apollo.QueryHookOptions<GetProjectPageStaticParamQuery, GetProjectPageStaticParamQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetProjectPageStaticParamQuery, GetProjectPageStaticParamQueryVariables>(GetProjectPageStaticParamDocument, options);
+      }
+export function useGetProjectPageStaticParamLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetProjectPageStaticParamQuery, GetProjectPageStaticParamQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetProjectPageStaticParamQuery, GetProjectPageStaticParamQueryVariables>(GetProjectPageStaticParamDocument, options);
+        }
+export type GetProjectPageStaticParamQueryHookResult = ReturnType<typeof useGetProjectPageStaticParamQuery>;
+export type GetProjectPageStaticParamLazyQueryHookResult = ReturnType<typeof useGetProjectPageStaticParamLazyQuery>;
+export type GetProjectPageStaticParamQueryResult = Apollo.QueryResult<GetProjectPageStaticParamQuery, GetProjectPageStaticParamQueryVariables>;
