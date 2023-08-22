@@ -116,16 +116,16 @@ export default function PersonPage({ personId }: { personId: string }) {
             <TableBody>
               {person.personTwitterAccounts.map((personTwitterAccount) => (
                 <TableRow
-                  key={personTwitterAccount.id}
+                  key={personTwitterAccount.twitterAccount.id}
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 >
                   <TableCell component='th' scope='row'>
                     <NextLink
-                      href={`https://twitter.com/intent/user?user_id=${personTwitterAccount.twitter_user_id}`}
+                      href={`https://twitter.com/intent/user?user_id=${personTwitterAccount.twitterAccount.remoteTwitterUserId}`}
                       passHref
                       legacyBehavior
                     >
-                      <MuiLink>@{personTwitterAccount.twitter_screen_name}</MuiLink>
+                      <MuiLink>@{personTwitterAccount.twitterAccount.twitterScreenName}</MuiLink>
                     </NextLink>
                   </TableCell>
                 </TableRow>
@@ -145,14 +145,14 @@ export default function PersonPage({ personId }: { personId: string }) {
             </TableHead>
             <TableBody>
               {person.personFediverseAccounts.map((personFediverseAccount) => {
-                const fediverseAcct = personFediverseAccount.fediverseAcct // @example@example.com
+                const fediverseAcct = personFediverseAccount.fediverseAccount.fediverseAcct // @example@example.com
                 const fediverseAcctSplit = fediverseAcct.split(/@/, 3)
                 const fediverseAcctUser = fediverseAcctSplit[1] ?? ''
                 const fediverseAcctDomain = fediverseAcctSplit[2] ?? ''
 
                 return (
                   <TableRow
-                    key={personFediverseAccount.id}
+                    key={personFediverseAccount.fediverseAccount.id}
                     sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                   >
                     <TableCell component='th' scope='row'>
@@ -183,16 +183,16 @@ export default function PersonPage({ personId }: { personId: string }) {
             <TableBody>
               {person.personNiconicoAccounts.map((personNiconicoAccount) => (
                 <TableRow
-                  key={personNiconicoAccount.id}
+                  key={personNiconicoAccount.niconicoAccount.id}
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 >
                   <TableCell component='th' scope='row'>
                     <NextLink
-                      href={`https://www.nicovideo.jp/user/${personNiconicoAccount.niconico_account_id}`}
+                      href={`https://www.nicovideo.jp/user/${personNiconicoAccount.niconicoAccount.remoteNiconicoAccountId}`}
                       passHref
                       legacyBehavior
                     >
-                      <MuiLink>{personNiconicoAccount.name}</MuiLink>
+                      <MuiLink>{personNiconicoAccount.niconicoAccount.name}</MuiLink>
                     </NextLink>
                   </TableCell>
                 </TableRow>
@@ -213,16 +213,16 @@ export default function PersonPage({ personId }: { personId: string }) {
             <TableBody>
               {person.personNiconicoCommunities.map((personNiconicoCommunity) => (
                 <TableRow
-                  key={personNiconicoCommunity.id}
+                  key={personNiconicoCommunity.niconicoCommunity.id}
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 >
                   <TableCell component='th' scope='row'>
                     <NextLink
-                      href={`https://com.nicovideo.jp/community/co${personNiconicoCommunity.niconico_community_id}`}
+                      href={`https://com.nicovideo.jp/community/co${personNiconicoCommunity.niconicoCommunity.remoteNiconicoCommunityId}`}
                       passHref
                       legacyBehavior
                     >
-                      <MuiLink>{personNiconicoCommunity.name}</MuiLink>
+                      <MuiLink>{personNiconicoCommunity.niconicoCommunity.name}</MuiLink>
                     </NextLink>
                   </TableCell>
                 </TableRow>
@@ -243,16 +243,16 @@ export default function PersonPage({ personId }: { personId: string }) {
             <TableBody>
               {person.personYoutubeChannels.map((personYoutubeChannel) => (
                 <TableRow
-                  key={personYoutubeChannel.id}
+                  key={personYoutubeChannel.youtubeChannel.id}
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 >
                   <TableCell component='th' scope='row'>
                     <NextLink
-                      href={`https://www.youtube.com/channel/${personYoutubeChannel.youtube_channel_id}`}
+                      href={`https://www.youtube.com/channel/${personYoutubeChannel.youtubeChannel.remoteYoutubeChannelId}`}
                       passHref
                       legacyBehavior
                     >
-                      <MuiLink>{personYoutubeChannel.name}</MuiLink>
+                      <MuiLink>{personYoutubeChannel.youtubeChannel.name}</MuiLink>
                     </NextLink>
                   </TableCell>
                 </TableRow>

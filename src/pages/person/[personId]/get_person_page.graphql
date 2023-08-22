@@ -9,54 +9,74 @@ query GetPersonPage(
 
     personTwitterAccounts: person_twitter_accounts(
       order_by: {
-        twitter_user_id: asc
+        twitter_account: {
+          remote_twitter_user_id: asc
+        }
       }
     ) {
-      id
-      twitter_screen_name
-      twitter_user_id
-      name
+      twitterAccount: twitter_account {
+        id
+        twitterScreenName: twitter_screen_name
+        remoteTwitterUserId: remote_twitter_user_id
+        name
+      }
     }
 
     personFediverseAccounts: person_fediverse_accounts(
       order_by: {
-        fediverse_acct: asc
+        fediverse_account: {
+          fediverse_acct: asc
+        }
       }
     ) {
-      id
-      fediverseAcct: fediverse_acct
-      name
+      fediverseAccount: fediverse_account {
+        id
+        fediverseAcct: fediverse_acct
+        name
+      }
     }
 
     personNiconicoAccounts: person_niconico_accounts(
       order_by: {
-        niconico_account_id: asc
+        niconico_account: {
+          remote_niconico_account_id: asc
+        }
       }
     ) {
-      id
-      niconico_account_id
-      name
+      niconicoAccount: niconico_account {
+        id
+        remoteNiconicoAccountId: remote_niconico_account_id
+        name
+      }
     }
 
     personNiconicoCommunities: person_niconico_communities(
       order_by: {
-        niconico_community_id: asc
+        niconico_community: {
+          remote_niconico_community_id: asc
+        }
       }
     ) {
-      id
-      niconico_community_id
-      name
+      niconicoCommunity: niconico_community {
+        id
+        remoteNiconicoCommunityId: remote_niconico_community_id
+        name
+      }
     }
 
     personYoutubeChannels: person_youtube_channels(
       order_by: {
-        youtube_channel_id: asc
+        youtube_channel: {
+          remote_youtube_channel_id: asc
+        }
       }
     ) {
-      id
-      youtube_channel_id
-      youtube_channel_handle
-      name
+      youtubeChannel: youtube_channel {
+        id
+        remoteYoutubeChannelId: remote_youtube_channel_id
+        youtubeChannelHandle: youtube_channel_handle
+        name
+      }
     }
 
     roomPersons: room_persons(
@@ -69,7 +89,7 @@ query GetPersonPage(
       room {
         id
         name
-        start_time
+        startTime: start_time
       }
     }
   }
