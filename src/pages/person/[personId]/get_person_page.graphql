@@ -79,16 +79,16 @@ query GetPersonPage(
       }
     }
 
-    roomPersons: room_persons(
+    programPersons: program_persons(
       order_by: {
-        room: {
+        program: {
           start_time: desc
         }
       }
     ) {
-      room {
+      program {
         id
-        name
+        title
         startTime: start_time
       }
     }
