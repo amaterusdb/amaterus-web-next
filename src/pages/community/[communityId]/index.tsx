@@ -107,13 +107,13 @@ export default function CommunityPage({ communityId }: { communityId: string }) 
           {community.name}
         </Typography>
         <Typography variant='h5' component='h3' sx={{ mt: 2 }}>
-          部屋リスト
+          スケジュール
         </Typography>
         <Box sx={{ mt: 2 }}>
           <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
             <TableHead>
               <TableRow>
-                <TableCell>部屋名</TableCell>
+                <TableCell>タイトル</TableCell>
                 <TableCell>開催日時</TableCell>
               </TableRow>
             </TableHead>
