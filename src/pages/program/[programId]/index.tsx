@@ -198,6 +198,9 @@ export default function ProgramPage({ programId }: { programId: string }) {
         {program.amongusMatches.length > 0 ? (
           <>
             <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+              Among Us
+            </Typography>
+            <Typography variant='h6' component='h4' sx={{ mt: 1 }}>
               試合
             </Typography>
             <Box sx={{ mt: 2 }}>
@@ -245,12 +248,20 @@ export default function ProgramPage({ programId }: { programId: string }) {
         ) : (
           ''
         )}
+        {program.mariokart8deluxeRaces.length > 0 ||
+        program.mariokart8deluxeBattleMatches.length > 0 ? (
+          <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+            マリオカート8 デラックス
+          </Typography>
+        ) : (
+          ''
+        )}
         {program.mariokart8deluxeRaces.length > 0 ? (
           <>
-            <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+            <Typography variant='h6' component='h4' sx={{ mt: 1 }}>
               レース
             </Typography>
-            <Box sx={{ mt: 2 }}>
+            <Box sx={{ mt: 2, mb: 2 }}>
               <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
                 <TableHead>
                   <TableRow>
@@ -312,10 +323,10 @@ export default function ProgramPage({ programId }: { programId: string }) {
         )}
         {program.mariokart8deluxeBattleMatches.length > 0 ? (
           <>
-            <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+            <Typography variant='h6' component='h4' sx={{ mt: 1 }}>
               バトル
             </Typography>
-            <Box sx={{ mt: 2 }}>
+            <Box sx={{ mt: 2, mb: 2 }}>
               <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
                 <TableHead>
                   <TableRow>
