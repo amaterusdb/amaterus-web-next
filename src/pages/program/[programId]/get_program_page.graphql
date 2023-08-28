@@ -79,5 +79,25 @@ query GetProgramPage(
       startTime: start_time
       endTime: end_time
     }
+
+    mariokart8deluxeRaces: mariokart8deluxe_races(
+      order_by: {
+        start_time: asc
+      }
+    ) {
+      id
+      startTime: start_time
+      endTime: end_time
+    }
+
+    mariokart8deluxeBattleMatches: mariokart8deluxe_battle_matches(
+      order_by: {
+        start_time: asc
+      }
+    ) {
+      id
+      startTime: start_time
+      endTime: end_time
+    }
   }
 }

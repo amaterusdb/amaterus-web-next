@@ -207,6 +207,119 @@ export default function ProgramPage({ programId }: { programId: string }) {
         ) : (
           ''
         )}
+        {program.mariokart8deluxeRaces.length > 0 ? (
+          <>
+            <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+              レース
+            </Typography>
+            <Box sx={{ mt: 2 }}>
+              <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>開始日時</TableCell>
+                    <TableCell>終了日時</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {program.mariokart8deluxeRaces.map((mariokart8deluxeRace) => (
+                    <TableRow
+                      key={mariokart8deluxeRace.id}
+                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                    >
+                      <TableCell>
+                        {mariokart8deluxeRace.startTime != null ? (
+                          <NextLink
+                            href={`/mariokart8deluxe_race/${mariokart8deluxeRace.id}/`}
+                            passHref
+                            legacyBehavior
+                          >
+                            <MuiLink>
+                              {format(
+                                parseISO(mariokart8deluxeRace.startTime),
+                                'yyyy-MM-dd HH:mm:ss',
+                              )}
+                            </MuiLink>
+                          </NextLink>
+                        ) : (
+                          ''
+                        )}
+                      </TableCell>
+                      <TableCell>
+                        {mariokart8deluxeRace.endTime != null ? (
+                          <>
+                            {format(parseISO(mariokart8deluxeRace.endTime), 'yyyy-MM-dd HH:mm:ss')}
+                          </>
+                        ) : (
+                          ''
+                        )}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </Box>
+          </>
+        ) : (
+          ''
+        )}
+        {program.mariokart8deluxeBattleMatches.length > 0 ? (
+          <>
+            <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+              バトル
+            </Typography>
+            <Box sx={{ mt: 2 }}>
+              <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>開始日時</TableCell>
+                    <TableCell>終了日時</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {program.mariokart8deluxeBattleMatches.map((mariokart8deluxeBattleMatch) => (
+                    <TableRow
+                      key={mariokart8deluxeBattleMatch.id}
+                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                    >
+                      <TableCell>
+                        {mariokart8deluxeBattleMatch.startTime != null ? (
+                          <NextLink
+                            href={`/mariokart8deluxe_battle_match/${mariokart8deluxeBattleMatch.id}/`}
+                            passHref
+                            legacyBehavior
+                          >
+                            <MuiLink>
+                              {format(
+                                parseISO(mariokart8deluxeBattleMatch.startTime),
+                                'yyyy-MM-dd HH:mm:ss',
+                              )}
+                            </MuiLink>
+                          </NextLink>
+                        ) : (
+                          ''
+                        )}
+                      </TableCell>
+                      <TableCell>
+                        {mariokart8deluxeBattleMatch.endTime != null ? (
+                          <>
+                            {format(
+                              parseISO(mariokart8deluxeBattleMatch.endTime),
+                              'yyyy-MM-dd HH:mm:ss',
+                            )}
+                          </>
+                        ) : (
+                          ''
+                        )}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </Box>
+          </>
+        ) : (
+          ''
+        )}
         <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
           放送アーカイブ
         </Typography>
