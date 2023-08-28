@@ -223,16 +223,18 @@ export default function ProgramPage({ programId }: { programId: string }) {
               <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
                 <TableHead>
                   <TableRow>
+                    <TableCell>番号</TableCell>
                     <TableCell>開始日時</TableCell>
                     <TableCell>終了日時</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {program.amongusMatches.map((amongusMatch) => (
+                  {program.amongusMatches.map((amongusMatch, index) => (
                     <TableRow
                       key={amongusMatch.id}
                       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                     >
+                      <TableCell>{index + 1}</TableCell>
                       <TableCell>
                         {amongusMatch.startTime != null ? (
                           <NextLink
