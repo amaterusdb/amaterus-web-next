@@ -133,7 +133,9 @@ export default function ProjectPage({ projectId }: { projectId: string }) {
                     </NextLink>
                   </TableCell>
                   <TableCell>
-                    {format(parseISO(programProject.program.startTime), 'yyyy-MM-dd HH:mm')}
+                    {programProject.program.startTime != null
+                      ? format(parseISO(programProject.program.startTime), 'yyyy-MM-dd HH:mm')
+                      : ''}
                   </TableCell>
                 </TableRow>
               ))}
