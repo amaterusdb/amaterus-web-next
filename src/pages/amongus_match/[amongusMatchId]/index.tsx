@@ -130,6 +130,39 @@ export default function MatchPage({ amongusMatchId }: { amongusMatchId: string }
           試合 {format(parseISO(amongusMatch.startTime), 'yyyy-MM-dd HH:mm:ss')}
         </Typography>
         <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+          基本情報
+        </Typography>
+        <Box sx={{ mt: 2 }}>
+          <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
+            <TableBody>
+              {amongusMatch.startTime != null ? (
+                <TableRow>
+                  <TableCell component='th' scope='row'>
+                    開始日時
+                  </TableCell>
+                  <TableCell>
+                    {format(parseISO(amongusMatch.startTime), 'yyyy-MM-dd HH:mm:ss')}
+                  </TableCell>
+                </TableRow>
+              ) : (
+                ''
+              )}
+              {amongusMatch.endTime != null ? (
+                <TableRow>
+                  <TableCell component='th' scope='row'>
+                    終了日時
+                  </TableCell>
+                  <TableCell>
+                    {format(parseISO(amongusMatch.endTime), 'yyyy-MM-dd HH:mm:ss')}
+                  </TableCell>
+                </TableRow>
+              ) : (
+                ''
+              )}
+            </TableBody>
+          </Table>
+        </Box>
+        <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
           プレイヤー
         </Typography>
         <Box sx={{ mt: 2 }}>
