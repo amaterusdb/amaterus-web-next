@@ -1,0 +1,5 @@
+query GetMariokart8deluxeBattleMatchPageStaticParam {
+  mariokart8deluxeBattleMatches: mariokart8deluxe_battle_matches {
+    id
+  }
+}

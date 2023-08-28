@@ -1,0 +1,69 @@
+query GetMariokart8deluxeBattleMatchPage(
+  $mariokart8deluxeBattleMatchId: uuid!
+) {
+  mariokart8deluxeBattleMatch: mariokart8deluxe_battle_matches_by_pk(
+    id: $mariokart8deluxeBattleMatchId
+  ) {
+    id
+    startTime: start_time
+    endTime: end_time
+
+    mariokart8deluxeBattleRule: mariokart8deluxe_battle_rule {
+      id
+      name
+    }
+
+    mariokart8deluxeBattleCourse: mariokart8deluxe_battle_course {
+      id
+      name
+    }
+
+    program {
+      id
+      title
+      startTime: start_time
+
+      programProjects: program_projects(
+        order_by: {
+          project: {
+            start_time: asc
+          }
+        }
+      ) {
+        project {
+          id
+          name
+        }
+      }
+
+      programYoutubeLives: program_youtube_lives(
+        order_by: {
+          person: {
+            name: asc
+          }
+          youtube_live: {
+            youtube_channel: {
+              name: asc
+            }
+          }
+        }
+      ) {
+        id
+        person {
+          id
+          name
+        }
+        youtubeLive: youtube_live {
+          remoteYoutubeVideoId: remote_youtube_video_id
+          title
+          startTime: start_time
+          youtubeChannel: youtube_channel {
+            id
+            remoteYoutubeChannelId: remote_youtube_channel_id
+            name
+          }
+        }
+      }
+    }
+  }
+}
