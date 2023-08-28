@@ -161,40 +161,56 @@ export default function ProgramPage({ programId }: { programId: string }) {
             </TableBody>
           </Table>
         </Box>
-        <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
-          告知
-        </Typography>
-        {program.programTwitterAnnouncements.map((programTwitterAnnouncement) => (
-          <Box key={programTwitterAnnouncement.twitterTweet.id} sx={{ mt: 2 }}>
-            <Tweet tweetId={programTwitterAnnouncement.twitterTweet.remoteTweetId} />
-          </Box>
-        ))}
-        <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
-          告知された参加者
-        </Typography>
-        <Box sx={{ mt: 2 }}>
-          <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
-            <TableHead>
-              <TableRow>
-                <TableCell>名前</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {program.programPersons.map((programPerson) => (
-                <TableRow
-                  key={programPerson.person.id}
-                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                >
-                  <TableCell component='th' scope='row'>
-                    <NextLink href={`/person/${programPerson.person.id}/`} passHref legacyBehavior>
-                      <MuiLink>{programPerson.person.name}</MuiLink>
-                    </NextLink>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </Box>
+        {program.programTwitterAnnouncements.length > 0 ? (
+          <>
+            <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+              告知
+            </Typography>
+            {program.programTwitterAnnouncements.map((programTwitterAnnouncement) => (
+              <Box key={programTwitterAnnouncement.twitterTweet.id} sx={{ mt: 2 }}>
+                <Tweet tweetId={programTwitterAnnouncement.twitterTweet.remoteTweetId} />
+              </Box>
+            ))}
+          </>
+        ) : (
+          ''
+        )}
+        {program.programPersons.length > 0 ? (
+          <>
+            <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+              告知された参加者
+            </Typography>
+            <Box sx={{ mt: 2 }}>
+              <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>名前</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {program.programPersons.map((programPerson) => (
+                    <TableRow
+                      key={programPerson.person.id}
+                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                    >
+                      <TableCell component='th' scope='row'>
+                        <NextLink
+                          href={`/person/${programPerson.person.id}/`}
+                          passHref
+                          legacyBehavior
+                        >
+                          <MuiLink>{programPerson.person.name}</MuiLink>
+                        </NextLink>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </Box>
+          </>
+        ) : (
+          ''
+        )}
         {program.amongusMatches.length > 0 ? (
           <>
             <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
