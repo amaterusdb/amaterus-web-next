@@ -88,6 +88,10 @@ query GetProgramPage(
       id
       startTime: start_time
       endTime: end_time
+      mariokart8deluxeCourse: mariokart8deluxe_course {
+        id
+        name
+      }
     }
 
     mariokart8deluxeBattleMatches: mariokart8deluxe_battle_matches(
@@ -98,6 +102,10 @@ query GetProgramPage(
       id
       startTime: start_time
       endTime: end_time
+      mariokart8deluxeBattleCourse: mariokart8deluxe_battle_course {
+        id
+        name
+      }
     }
   }
 }
