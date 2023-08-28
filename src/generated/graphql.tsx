@@ -15994,9 +15994,7 @@ export const GetAmongusMatchPageDocument = gql`
           name
         }
       }
-      programYoutubeLives: program_youtube_lives(
-        order_by: {person: {name: asc}, youtube_live: {youtube_channel: {name: asc}}}
-      ) {
+      programYoutubeLives: program_youtube_lives(order_by: {person: {name: asc}}) {
         id
         person {
           id
@@ -16140,9 +16138,7 @@ export const GetMariokart8deluxeBattleMatchPageDocument = gql`
           name
         }
       }
-      programYoutubeLives: program_youtube_lives(
-        order_by: {person: {name: asc}, youtube_live: {youtube_channel: {name: asc}}}
-      ) {
+      programYoutubeLives: program_youtube_lives(order_by: {person: {name: asc}}) {
         id
         person {
           id
@@ -16245,9 +16241,7 @@ export const GetMariokart8deluxeRacePageDocument = gql`
           name
         }
       }
-      programYoutubeLives: program_youtube_lives(
-        order_by: {person: {name: asc}, youtube_live: {youtube_channel: {name: asc}}}
-      ) {
+      programYoutubeLives: program_youtube_lives(order_by: {person: {name: asc}}) {
         id
         person {
           id
@@ -16479,9 +16473,7 @@ export const GetProgramPageDocument = gql`
         name
       }
     }
-    programYouTubeLives: program_youtube_lives(
-      order_by: {person: {name: asc}, youtube_live: {youtube_channel: {name: asc}}}
-    ) {
+    programYouTubeLives: program_youtube_lives(order_by: {person: {name: asc}}) {
       id
       person {
         id

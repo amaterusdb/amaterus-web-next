@@ -47,11 +47,6 @@ query GetProgramPage(
         person: {
           name: asc
         }
-        youtube_live: {
-          youtube_channel: {
-            name: asc
-          }
-        }
       }
     ) {
       id
