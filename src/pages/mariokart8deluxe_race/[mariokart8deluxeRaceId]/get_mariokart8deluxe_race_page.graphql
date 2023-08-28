@@ -1,0 +1,64 @@
+query GetMariokart8deluxeRacePage(
+  $mariokart8deluxeRaceId: uuid!
+) {
+  mariokart8deluxeRace: mariokart8deluxe_races_by_pk(
+    id: $mariokart8deluxeRaceId
+  ) {
+    id
+    startTime: start_time
+    endTime: end_time
+
+    mariokart8deluxeCourse: mariokart8deluxe_course {
+      id
+      name
+    }
+
+    program {
+      id
+      title
+      startTime: start_time
+
+      programProjects: program_projects(
+        order_by: {
+          project: {
+            start_time: asc
+          }
+        }
+      ) {
+        project {
+          id
+          name
+        }
+      }
+
+      programYoutubeLives: program_youtube_lives(
+        order_by: {
+          person: {
+            name: asc
+          }
+          youtube_live: {
+            youtube_channel: {
+              name: asc
+            }
+          }
+        }
+      ) {
+        id
+        person {
+          id
+          name
+        }
+        youtubeLive: youtube_live {
+          remoteYoutubeVideoId: remote_youtube_video_id
+          title
+          startTime: start_time
+          youtubeChannel: youtube_channel {
+            id
+            remoteYoutubeChannelId: remote_youtube_channel_id
+            name
+          }
+        }
+      }
+    }
+  }
+}

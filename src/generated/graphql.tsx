@@ -15910,6 +15910,18 @@ export type GetIndexPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetIndexPageQuery = { __typename?: 'query_root', projects: Array<{ __typename?: 'projects', id: any, name: string }> };
 
+export type GetMariokart8deluxeRacePageQueryVariables = Exact<{
+  mariokart8deluxeRaceId: Scalars['uuid']['input'];
+}>;
+
+
+export type GetMariokart8deluxeRacePageQuery = { __typename?: 'query_root', mariokart8deluxeRace?: { __typename?: 'mariokart8deluxe_races', id: any, startTime: any, endTime?: any | null, mariokart8deluxeCourse?: { __typename?: 'mariokart8deluxe_courses', id: any, name: string } | null, program: { __typename?: 'programs', id: any, title: string, startTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, programYoutubeLives: Array<{ __typename?: 'program_youtube_lives', id: any, person?: { __typename?: 'persons', id: any, name: string } | null, youtubeLive: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, startTime?: any | null, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } }> } } | null };
+
+export type GetMariokart8deluxeRacePageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetMariokart8deluxeRacePageStaticParamQuery = { __typename?: 'query_root', mariokart8deluxeRaces: Array<{ __typename?: 'mariokart8deluxe_races', id: any }> };
+
 export type GetPersonPageQueryVariables = Exact<{
   personId: Scalars['uuid']['input'];
 }>;
@@ -16090,6 +16102,111 @@ export function useGetIndexPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptio
 export type GetIndexPageQueryHookResult = ReturnType<typeof useGetIndexPageQuery>;
 export type GetIndexPageLazyQueryHookResult = ReturnType<typeof useGetIndexPageLazyQuery>;
 export type GetIndexPageQueryResult = Apollo.QueryResult<GetIndexPageQuery, GetIndexPageQueryVariables>;
+export const GetMariokart8deluxeRacePageDocument = gql`
+    query GetMariokart8deluxeRacePage($mariokart8deluxeRaceId: uuid!) {
+  mariokart8deluxeRace: mariokart8deluxe_races_by_pk(id: $mariokart8deluxeRaceId) {
+    id
+    startTime: start_time
+    endTime: end_time
+    mariokart8deluxeCourse: mariokart8deluxe_course {
+      id
+      name
+    }
+    program {
+      id
+      title
+      startTime: start_time
+      programProjects: program_projects(order_by: {project: {start_time: asc}}) {
+        project {
+          id
+          name
+        }
+      }
+      programYoutubeLives: program_youtube_lives(
+        order_by: {person: {name: asc}, youtube_live: {youtube_channel: {name: asc}}}
+      ) {
+        id
+        person {
+          id
+          name
+        }
+        youtubeLive: youtube_live {
+          remoteYoutubeVideoId: remote_youtube_video_id
+          title
+          startTime: start_time
+          youtubeChannel: youtube_channel {
+            id
+            remoteYoutubeChannelId: remote_youtube_channel_id
+            name
+          }
+        }
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetMariokart8deluxeRacePageQuery__
+ *
+ * To run a query within a React component, call `useGetMariokart8deluxeRacePageQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetMariokart8deluxeRacePageQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetMariokart8deluxeRacePageQuery({
+ *   variables: {
+ *      mariokart8deluxeRaceId: // value for 'mariokart8deluxeRaceId'
+ *   },
+ * });
+ */
+export function useGetMariokart8deluxeRacePageQuery(baseOptions: Apollo.QueryHookOptions<GetMariokart8deluxeRacePageQuery, GetMariokart8deluxeRacePageQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetMariokart8deluxeRacePageQuery, GetMariokart8deluxeRacePageQueryVariables>(GetMariokart8deluxeRacePageDocument, options);
+      }
+export function useGetMariokart8deluxeRacePageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetMariokart8deluxeRacePageQuery, GetMariokart8deluxeRacePageQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetMariokart8deluxeRacePageQuery, GetMariokart8deluxeRacePageQueryVariables>(GetMariokart8deluxeRacePageDocument, options);
+        }
+export type GetMariokart8deluxeRacePageQueryHookResult = ReturnType<typeof useGetMariokart8deluxeRacePageQuery>;
+export type GetMariokart8deluxeRacePageLazyQueryHookResult = ReturnType<typeof useGetMariokart8deluxeRacePageLazyQuery>;
+export type GetMariokart8deluxeRacePageQueryResult = Apollo.QueryResult<GetMariokart8deluxeRacePageQuery, GetMariokart8deluxeRacePageQueryVariables>;
+export const GetMariokart8deluxeRacePageStaticParamDocument = gql`
+    query GetMariokart8deluxeRacePageStaticParam {
+  mariokart8deluxeRaces: mariokart8deluxe_races {
+    id
+  }
+}
+    `;
+
+/**
+ * __useGetMariokart8deluxeRacePageStaticParamQuery__
+ *
+ * To run a query within a React component, call `useGetMariokart8deluxeRacePageStaticParamQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetMariokart8deluxeRacePageStaticParamQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetMariokart8deluxeRacePageStaticParamQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetMariokart8deluxeRacePageStaticParamQuery(baseOptions?: Apollo.QueryHookOptions<GetMariokart8deluxeRacePageStaticParamQuery, GetMariokart8deluxeRacePageStaticParamQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetMariokart8deluxeRacePageStaticParamQuery, GetMariokart8deluxeRacePageStaticParamQueryVariables>(GetMariokart8deluxeRacePageStaticParamDocument, options);
+      }
+export function useGetMariokart8deluxeRacePageStaticParamLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetMariokart8deluxeRacePageStaticParamQuery, GetMariokart8deluxeRacePageStaticParamQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetMariokart8deluxeRacePageStaticParamQuery, GetMariokart8deluxeRacePageStaticParamQueryVariables>(GetMariokart8deluxeRacePageStaticParamDocument, options);
+        }
+export type GetMariokart8deluxeRacePageStaticParamQueryHookResult = ReturnType<typeof useGetMariokart8deluxeRacePageStaticParamQuery>;
+export type GetMariokart8deluxeRacePageStaticParamLazyQueryHookResult = ReturnType<typeof useGetMariokart8deluxeRacePageStaticParamLazyQuery>;
+export type GetMariokart8deluxeRacePageStaticParamQueryResult = Apollo.QueryResult<GetMariokart8deluxeRacePageStaticParamQuery, GetMariokart8deluxeRacePageStaticParamQueryVariables>;
 export const GetPersonPageDocument = gql`
     query GetPersonPage($personId: uuid!) {
   person: persons_by_pk(id: $personId) {

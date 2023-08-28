@@ -1,0 +1,5 @@
+query GetMariokart8deluxeRacePageStaticParam {
+  mariokart8deluxeRaces: mariokart8deluxe_races {
+    id
+  }
+}
