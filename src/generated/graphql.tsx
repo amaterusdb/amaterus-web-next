@@ -3408,6 +3408,247 @@ export type Mariokart8deluxe_Battle_Courses_Variance_Fields = {
   index?: Maybe<Scalars['Float']['output']>;
 };
 
+/** columns and relationships of "mariokart8deluxe_battle_match_players" */
+export type Mariokart8deluxe_Battle_Match_Players = {
+  __typename?: 'mariokart8deluxe_battle_match_players';
+  created_at: Scalars['timestamptz']['output'];
+  id: Scalars['uuid']['output'];
+  /** An object relationship */
+  mariokart8deluxe_battle_match: Mariokart8deluxe_Battle_Matches;
+  mariokart8deluxe_battle_match_id: Scalars['uuid']['output'];
+  nickname: Scalars['String']['output'];
+  /** An object relationship */
+  person?: Maybe<Persons>;
+  person_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+/** aggregated selection of "mariokart8deluxe_battle_match_players" */
+export type Mariokart8deluxe_Battle_Match_Players_Aggregate = {
+  __typename?: 'mariokart8deluxe_battle_match_players_aggregate';
+  aggregate?: Maybe<Mariokart8deluxe_Battle_Match_Players_Aggregate_Fields>;
+  nodes: Array<Mariokart8deluxe_Battle_Match_Players>;
+};
+
+export type Mariokart8deluxe_Battle_Match_Players_Aggregate_Bool_Exp = {
+  count?: InputMaybe<Mariokart8deluxe_Battle_Match_Players_Aggregate_Bool_Exp_Count>;
+};
+
+export type Mariokart8deluxe_Battle_Match_Players_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Mariokart8deluxe_Battle_Match_Players_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Mariokart8deluxe_Battle_Match_Players_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
+/** aggregate fields of "mariokart8deluxe_battle_match_players" */
+export type Mariokart8deluxe_Battle_Match_Players_Aggregate_Fields = {
+  __typename?: 'mariokart8deluxe_battle_match_players_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Mariokart8deluxe_Battle_Match_Players_Max_Fields>;
+  min?: Maybe<Mariokart8deluxe_Battle_Match_Players_Min_Fields>;
+};
+
+
+/** aggregate fields of "mariokart8deluxe_battle_match_players" */
+export type Mariokart8deluxe_Battle_Match_Players_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Mariokart8deluxe_Battle_Match_Players_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** order by aggregate values of table "mariokart8deluxe_battle_match_players" */
+export type Mariokart8deluxe_Battle_Match_Players_Aggregate_Order_By = {
+  count?: InputMaybe<Order_By>;
+  max?: InputMaybe<Mariokart8deluxe_Battle_Match_Players_Max_Order_By>;
+  min?: InputMaybe<Mariokart8deluxe_Battle_Match_Players_Min_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "mariokart8deluxe_battle_match_players" */
+export type Mariokart8deluxe_Battle_Match_Players_Arr_Rel_Insert_Input = {
+  data: Array<Mariokart8deluxe_Battle_Match_Players_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Mariokart8deluxe_Battle_Match_Players_On_Conflict>;
+};
+
+/** Boolean expression to filter rows from the table "mariokart8deluxe_battle_match_players". All fields are combined with a logical 'AND'. */
+export type Mariokart8deluxe_Battle_Match_Players_Bool_Exp = {
+  _and?: InputMaybe<Array<Mariokart8deluxe_Battle_Match_Players_Bool_Exp>>;
+  _not?: InputMaybe<Mariokart8deluxe_Battle_Match_Players_Bool_Exp>;
+  _or?: InputMaybe<Array<Mariokart8deluxe_Battle_Match_Players_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  mariokart8deluxe_battle_match?: InputMaybe<Mariokart8deluxe_Battle_Matches_Bool_Exp>;
+  mariokart8deluxe_battle_match_id?: InputMaybe<Uuid_Comparison_Exp>;
+  nickname?: InputMaybe<String_Comparison_Exp>;
+  person?: InputMaybe<Persons_Bool_Exp>;
+  person_id?: InputMaybe<Uuid_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "mariokart8deluxe_battle_match_players" */
+export enum Mariokart8deluxe_Battle_Match_Players_Constraint {
+  /** unique or primary key constraint on columns "mariokart8deluxe_battle_match_id", "person_id" */
+  Mariokart8deluxeBattleMatchMariokart8deluxeBattleMatcKey1 = 'mariokart8deluxe_battle_match_mariokart8deluxe_battle_matc_key1',
+  /** unique or primary key constraint on columns "mariokart8deluxe_battle_match_id", "nickname" */
+  Mariokart8deluxeBattleMatchMariokart8deluxeBattleMatchKey = 'mariokart8deluxe_battle_match_mariokart8deluxe_battle_match_key',
+  /** unique or primary key constraint on columns "id" */
+  Mariokart8deluxeBattleMatchPlayersPkey = 'mariokart8deluxe_battle_match_players_pkey'
+}
+
+/** input type for inserting data into table "mariokart8deluxe_battle_match_players" */
+export type Mariokart8deluxe_Battle_Match_Players_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  mariokart8deluxe_battle_match?: InputMaybe<Mariokart8deluxe_Battle_Matches_Obj_Rel_Insert_Input>;
+  mariokart8deluxe_battle_match_id?: InputMaybe<Scalars['uuid']['input']>;
+  nickname?: InputMaybe<Scalars['String']['input']>;
+  person?: InputMaybe<Persons_Obj_Rel_Insert_Input>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Mariokart8deluxe_Battle_Match_Players_Max_Fields = {
+  __typename?: 'mariokart8deluxe_battle_match_players_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  mariokart8deluxe_battle_match_id?: Maybe<Scalars['uuid']['output']>;
+  nickname?: Maybe<Scalars['String']['output']>;
+  person_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by max() on columns of table "mariokart8deluxe_battle_match_players" */
+export type Mariokart8deluxe_Battle_Match_Players_Max_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  mariokart8deluxe_battle_match_id?: InputMaybe<Order_By>;
+  nickname?: InputMaybe<Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Mariokart8deluxe_Battle_Match_Players_Min_Fields = {
+  __typename?: 'mariokart8deluxe_battle_match_players_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  mariokart8deluxe_battle_match_id?: Maybe<Scalars['uuid']['output']>;
+  nickname?: Maybe<Scalars['String']['output']>;
+  person_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by min() on columns of table "mariokart8deluxe_battle_match_players" */
+export type Mariokart8deluxe_Battle_Match_Players_Min_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  mariokart8deluxe_battle_match_id?: InputMaybe<Order_By>;
+  nickname?: InputMaybe<Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** response of any mutation on the table "mariokart8deluxe_battle_match_players" */
+export type Mariokart8deluxe_Battle_Match_Players_Mutation_Response = {
+  __typename?: 'mariokart8deluxe_battle_match_players_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Mariokart8deluxe_Battle_Match_Players>;
+};
+
+/** on_conflict condition type for table "mariokart8deluxe_battle_match_players" */
+export type Mariokart8deluxe_Battle_Match_Players_On_Conflict = {
+  constraint: Mariokart8deluxe_Battle_Match_Players_Constraint;
+  update_columns?: Array<Mariokart8deluxe_Battle_Match_Players_Update_Column>;
+  where?: InputMaybe<Mariokart8deluxe_Battle_Match_Players_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "mariokart8deluxe_battle_match_players". */
+export type Mariokart8deluxe_Battle_Match_Players_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  mariokart8deluxe_battle_match?: InputMaybe<Mariokart8deluxe_Battle_Matches_Order_By>;
+  mariokart8deluxe_battle_match_id?: InputMaybe<Order_By>;
+  nickname?: InputMaybe<Order_By>;
+  person?: InputMaybe<Persons_Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: mariokart8deluxe_battle_match_players */
+export type Mariokart8deluxe_Battle_Match_Players_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "mariokart8deluxe_battle_match_players" */
+export enum Mariokart8deluxe_Battle_Match_Players_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Mariokart8deluxeBattleMatchId = 'mariokart8deluxe_battle_match_id',
+  /** column name */
+  Nickname = 'nickname',
+  /** column name */
+  PersonId = 'person_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "mariokart8deluxe_battle_match_players" */
+export type Mariokart8deluxe_Battle_Match_Players_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  mariokart8deluxe_battle_match_id?: InputMaybe<Scalars['uuid']['input']>;
+  nickname?: InputMaybe<Scalars['String']['input']>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** Streaming cursor of the table "mariokart8deluxe_battle_match_players" */
+export type Mariokart8deluxe_Battle_Match_Players_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Mariokart8deluxe_Battle_Match_Players_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Mariokart8deluxe_Battle_Match_Players_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  mariokart8deluxe_battle_match_id?: InputMaybe<Scalars['uuid']['input']>;
+  nickname?: InputMaybe<Scalars['String']['input']>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** update columns of table "mariokart8deluxe_battle_match_players" */
+export enum Mariokart8deluxe_Battle_Match_Players_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Mariokart8deluxeBattleMatchId = 'mariokart8deluxe_battle_match_id',
+  /** column name */
+  Nickname = 'nickname',
+  /** column name */
+  PersonId = 'person_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Mariokart8deluxe_Battle_Match_Players_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Mariokart8deluxe_Battle_Match_Players_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Mariokart8deluxe_Battle_Match_Players_Bool_Exp;
+};
+
 /** columns and relationships of "mariokart8deluxe_battle_matches" */
 export type Mariokart8deluxe_Battle_Matches = {
   __typename?: 'mariokart8deluxe_battle_matches';
@@ -3419,6 +3660,10 @@ export type Mariokart8deluxe_Battle_Matches = {
   /** An object relationship */
   mariokart8deluxe_battle_course?: Maybe<Mariokart8deluxe_Battle_Courses>;
   mariokart8deluxe_battle_course_id?: Maybe<Scalars['uuid']['output']>;
+  /** An array relationship */
+  mariokart8deluxe_battle_match_players: Array<Mariokart8deluxe_Battle_Match_Players>;
+  /** An aggregate relationship */
+  mariokart8deluxe_battle_match_players_aggregate: Mariokart8deluxe_Battle_Match_Players_Aggregate;
   /** An object relationship */
   mariokart8deluxe_battle_rule?: Maybe<Mariokart8deluxe_Battle_Rules>;
   mariokart8deluxe_battle_rule_id?: Maybe<Scalars['uuid']['output']>;
@@ -3427,6 +3672,26 @@ export type Mariokart8deluxe_Battle_Matches = {
   program_id: Scalars['uuid']['output'];
   start_time: Scalars['timestamptz']['output'];
   updated_at: Scalars['timestamptz']['output'];
+};
+
+
+/** columns and relationships of "mariokart8deluxe_battle_matches" */
+export type Mariokart8deluxe_Battle_MatchesMariokart8deluxe_Battle_Match_PlayersArgs = {
+  distinct_on?: InputMaybe<Array<Mariokart8deluxe_Battle_Match_Players_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Mariokart8deluxe_Battle_Match_Players_Order_By>>;
+  where?: InputMaybe<Mariokart8deluxe_Battle_Match_Players_Bool_Exp>;
+};
+
+
+/** columns and relationships of "mariokart8deluxe_battle_matches" */
+export type Mariokart8deluxe_Battle_MatchesMariokart8deluxe_Battle_Match_Players_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Mariokart8deluxe_Battle_Match_Players_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Mariokart8deluxe_Battle_Match_Players_Order_By>>;
+  where?: InputMaybe<Mariokart8deluxe_Battle_Match_Players_Bool_Exp>;
 };
 
 /** aggregated selection of "mariokart8deluxe_battle_matches" */
@@ -3531,6 +3796,8 @@ export type Mariokart8deluxe_Battle_Matches_Bool_Exp = {
   is_aborted?: InputMaybe<Boolean_Comparison_Exp>;
   mariokart8deluxe_battle_course?: InputMaybe<Mariokart8deluxe_Battle_Courses_Bool_Exp>;
   mariokart8deluxe_battle_course_id?: InputMaybe<Uuid_Comparison_Exp>;
+  mariokart8deluxe_battle_match_players?: InputMaybe<Mariokart8deluxe_Battle_Match_Players_Bool_Exp>;
+  mariokart8deluxe_battle_match_players_aggregate?: InputMaybe<Mariokart8deluxe_Battle_Match_Players_Aggregate_Bool_Exp>;
   mariokart8deluxe_battle_rule?: InputMaybe<Mariokart8deluxe_Battle_Rules_Bool_Exp>;
   mariokart8deluxe_battle_rule_id?: InputMaybe<Uuid_Comparison_Exp>;
   program?: InputMaybe<Programs_Bool_Exp>;
@@ -3561,6 +3828,7 @@ export type Mariokart8deluxe_Battle_Matches_Insert_Input = {
   is_aborted?: InputMaybe<Scalars['Boolean']['input']>;
   mariokart8deluxe_battle_course?: InputMaybe<Mariokart8deluxe_Battle_Courses_Obj_Rel_Insert_Input>;
   mariokart8deluxe_battle_course_id?: InputMaybe<Scalars['uuid']['input']>;
+  mariokart8deluxe_battle_match_players?: InputMaybe<Mariokart8deluxe_Battle_Match_Players_Arr_Rel_Insert_Input>;
   mariokart8deluxe_battle_rule?: InputMaybe<Mariokart8deluxe_Battle_Rules_Obj_Rel_Insert_Input>;
   mariokart8deluxe_battle_rule_id?: InputMaybe<Scalars['uuid']['input']>;
   program?: InputMaybe<Programs_Obj_Rel_Insert_Input>;
@@ -3632,6 +3900,13 @@ export type Mariokart8deluxe_Battle_Matches_Mutation_Response = {
   returning: Array<Mariokart8deluxe_Battle_Matches>;
 };
 
+/** input type for inserting object relation for remote table "mariokart8deluxe_battle_matches" */
+export type Mariokart8deluxe_Battle_Matches_Obj_Rel_Insert_Input = {
+  data: Mariokart8deluxe_Battle_Matches_Insert_Input;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Mariokart8deluxe_Battle_Matches_On_Conflict>;
+};
+
 /** on_conflict condition type for table "mariokart8deluxe_battle_matches" */
 export type Mariokart8deluxe_Battle_Matches_On_Conflict = {
   constraint: Mariokart8deluxe_Battle_Matches_Constraint;
@@ -3648,6 +3923,7 @@ export type Mariokart8deluxe_Battle_Matches_Order_By = {
   is_aborted?: InputMaybe<Order_By>;
   mariokart8deluxe_battle_course?: InputMaybe<Mariokart8deluxe_Battle_Courses_Order_By>;
   mariokart8deluxe_battle_course_id?: InputMaybe<Order_By>;
+  mariokart8deluxe_battle_match_players_aggregate?: InputMaybe<Mariokart8deluxe_Battle_Match_Players_Aggregate_Order_By>;
   mariokart8deluxe_battle_rule?: InputMaybe<Mariokart8deluxe_Battle_Rules_Order_By>;
   mariokart8deluxe_battle_rule_id?: InputMaybe<Order_By>;
   program?: InputMaybe<Programs_Order_By>;
@@ -4983,6 +5259,247 @@ export type Mariokart8deluxe_Cups_Variance_Fields = {
   index?: Maybe<Scalars['Float']['output']>;
 };
 
+/** columns and relationships of "mariokart8deluxe_race_players" */
+export type Mariokart8deluxe_Race_Players = {
+  __typename?: 'mariokart8deluxe_race_players';
+  created_at: Scalars['timestamptz']['output'];
+  id: Scalars['uuid']['output'];
+  /** An object relationship */
+  mariokart8deluxe_race: Mariokart8deluxe_Races;
+  mariokart8deluxe_race_id: Scalars['uuid']['output'];
+  nickname: Scalars['String']['output'];
+  /** An object relationship */
+  person?: Maybe<Persons>;
+  person_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+/** aggregated selection of "mariokart8deluxe_race_players" */
+export type Mariokart8deluxe_Race_Players_Aggregate = {
+  __typename?: 'mariokart8deluxe_race_players_aggregate';
+  aggregate?: Maybe<Mariokart8deluxe_Race_Players_Aggregate_Fields>;
+  nodes: Array<Mariokart8deluxe_Race_Players>;
+};
+
+export type Mariokart8deluxe_Race_Players_Aggregate_Bool_Exp = {
+  count?: InputMaybe<Mariokart8deluxe_Race_Players_Aggregate_Bool_Exp_Count>;
+};
+
+export type Mariokart8deluxe_Race_Players_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Mariokart8deluxe_Race_Players_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Mariokart8deluxe_Race_Players_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
+/** aggregate fields of "mariokart8deluxe_race_players" */
+export type Mariokart8deluxe_Race_Players_Aggregate_Fields = {
+  __typename?: 'mariokart8deluxe_race_players_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Mariokart8deluxe_Race_Players_Max_Fields>;
+  min?: Maybe<Mariokart8deluxe_Race_Players_Min_Fields>;
+};
+
+
+/** aggregate fields of "mariokart8deluxe_race_players" */
+export type Mariokart8deluxe_Race_Players_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Mariokart8deluxe_Race_Players_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** order by aggregate values of table "mariokart8deluxe_race_players" */
+export type Mariokart8deluxe_Race_Players_Aggregate_Order_By = {
+  count?: InputMaybe<Order_By>;
+  max?: InputMaybe<Mariokart8deluxe_Race_Players_Max_Order_By>;
+  min?: InputMaybe<Mariokart8deluxe_Race_Players_Min_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "mariokart8deluxe_race_players" */
+export type Mariokart8deluxe_Race_Players_Arr_Rel_Insert_Input = {
+  data: Array<Mariokart8deluxe_Race_Players_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Mariokart8deluxe_Race_Players_On_Conflict>;
+};
+
+/** Boolean expression to filter rows from the table "mariokart8deluxe_race_players". All fields are combined with a logical 'AND'. */
+export type Mariokart8deluxe_Race_Players_Bool_Exp = {
+  _and?: InputMaybe<Array<Mariokart8deluxe_Race_Players_Bool_Exp>>;
+  _not?: InputMaybe<Mariokart8deluxe_Race_Players_Bool_Exp>;
+  _or?: InputMaybe<Array<Mariokart8deluxe_Race_Players_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  mariokart8deluxe_race?: InputMaybe<Mariokart8deluxe_Races_Bool_Exp>;
+  mariokart8deluxe_race_id?: InputMaybe<Uuid_Comparison_Exp>;
+  nickname?: InputMaybe<String_Comparison_Exp>;
+  person?: InputMaybe<Persons_Bool_Exp>;
+  person_id?: InputMaybe<Uuid_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "mariokart8deluxe_race_players" */
+export enum Mariokart8deluxe_Race_Players_Constraint {
+  /** unique or primary key constraint on columns "mariokart8deluxe_race_id", "nickname" */
+  Mariokart8deluxeRacePlayersMariokart8deluxeRaceIdNickKey = 'mariokart8deluxe_race_players_mariokart8deluxe_race_id_nick_key',
+  /** unique or primary key constraint on columns "mariokart8deluxe_race_id", "person_id" */
+  Mariokart8deluxeRacePlayersMariokart8deluxeRaceIdPersKey = 'mariokart8deluxe_race_players_mariokart8deluxe_race_id_pers_key',
+  /** unique or primary key constraint on columns "id" */
+  Mariokart8deluxeRacePlayersPkey = 'mariokart8deluxe_race_players_pkey'
+}
+
+/** input type for inserting data into table "mariokart8deluxe_race_players" */
+export type Mariokart8deluxe_Race_Players_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  mariokart8deluxe_race?: InputMaybe<Mariokart8deluxe_Races_Obj_Rel_Insert_Input>;
+  mariokart8deluxe_race_id?: InputMaybe<Scalars['uuid']['input']>;
+  nickname?: InputMaybe<Scalars['String']['input']>;
+  person?: InputMaybe<Persons_Obj_Rel_Insert_Input>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Mariokart8deluxe_Race_Players_Max_Fields = {
+  __typename?: 'mariokart8deluxe_race_players_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  mariokart8deluxe_race_id?: Maybe<Scalars['uuid']['output']>;
+  nickname?: Maybe<Scalars['String']['output']>;
+  person_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by max() on columns of table "mariokart8deluxe_race_players" */
+export type Mariokart8deluxe_Race_Players_Max_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  mariokart8deluxe_race_id?: InputMaybe<Order_By>;
+  nickname?: InputMaybe<Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Mariokart8deluxe_Race_Players_Min_Fields = {
+  __typename?: 'mariokart8deluxe_race_players_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  mariokart8deluxe_race_id?: Maybe<Scalars['uuid']['output']>;
+  nickname?: Maybe<Scalars['String']['output']>;
+  person_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by min() on columns of table "mariokart8deluxe_race_players" */
+export type Mariokart8deluxe_Race_Players_Min_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  mariokart8deluxe_race_id?: InputMaybe<Order_By>;
+  nickname?: InputMaybe<Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** response of any mutation on the table "mariokart8deluxe_race_players" */
+export type Mariokart8deluxe_Race_Players_Mutation_Response = {
+  __typename?: 'mariokart8deluxe_race_players_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Mariokart8deluxe_Race_Players>;
+};
+
+/** on_conflict condition type for table "mariokart8deluxe_race_players" */
+export type Mariokart8deluxe_Race_Players_On_Conflict = {
+  constraint: Mariokart8deluxe_Race_Players_Constraint;
+  update_columns?: Array<Mariokart8deluxe_Race_Players_Update_Column>;
+  where?: InputMaybe<Mariokart8deluxe_Race_Players_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "mariokart8deluxe_race_players". */
+export type Mariokart8deluxe_Race_Players_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  mariokart8deluxe_race?: InputMaybe<Mariokart8deluxe_Races_Order_By>;
+  mariokart8deluxe_race_id?: InputMaybe<Order_By>;
+  nickname?: InputMaybe<Order_By>;
+  person?: InputMaybe<Persons_Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: mariokart8deluxe_race_players */
+export type Mariokart8deluxe_Race_Players_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "mariokart8deluxe_race_players" */
+export enum Mariokart8deluxe_Race_Players_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Mariokart8deluxeRaceId = 'mariokart8deluxe_race_id',
+  /** column name */
+  Nickname = 'nickname',
+  /** column name */
+  PersonId = 'person_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "mariokart8deluxe_race_players" */
+export type Mariokart8deluxe_Race_Players_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  mariokart8deluxe_race_id?: InputMaybe<Scalars['uuid']['input']>;
+  nickname?: InputMaybe<Scalars['String']['input']>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** Streaming cursor of the table "mariokart8deluxe_race_players" */
+export type Mariokart8deluxe_Race_Players_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Mariokart8deluxe_Race_Players_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Mariokart8deluxe_Race_Players_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  mariokart8deluxe_race_id?: InputMaybe<Scalars['uuid']['input']>;
+  nickname?: InputMaybe<Scalars['String']['input']>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** update columns of table "mariokart8deluxe_race_players" */
+export enum Mariokart8deluxe_Race_Players_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Mariokart8deluxeRaceId = 'mariokart8deluxe_race_id',
+  /** column name */
+  Nickname = 'nickname',
+  /** column name */
+  PersonId = 'person_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Mariokart8deluxe_Race_Players_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Mariokart8deluxe_Race_Players_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Mariokart8deluxe_Race_Players_Bool_Exp;
+};
+
 /** columns and relationships of "mariokart8deluxe_races" */
 export type Mariokart8deluxe_Races = {
   __typename?: 'mariokart8deluxe_races';
@@ -4994,11 +5511,35 @@ export type Mariokart8deluxe_Races = {
   /** An object relationship */
   mariokart8deluxe_course?: Maybe<Mariokart8deluxe_Courses>;
   mariokart8deluxe_course_id?: Maybe<Scalars['uuid']['output']>;
+  /** An array relationship */
+  mariokart8deluxe_race_players: Array<Mariokart8deluxe_Race_Players>;
+  /** An aggregate relationship */
+  mariokart8deluxe_race_players_aggregate: Mariokart8deluxe_Race_Players_Aggregate;
   /** An object relationship */
   program: Programs;
   program_id: Scalars['uuid']['output'];
   start_time: Scalars['timestamptz']['output'];
   updated_at: Scalars['timestamptz']['output'];
+};
+
+
+/** columns and relationships of "mariokart8deluxe_races" */
+export type Mariokart8deluxe_RacesMariokart8deluxe_Race_PlayersArgs = {
+  distinct_on?: InputMaybe<Array<Mariokart8deluxe_Race_Players_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Mariokart8deluxe_Race_Players_Order_By>>;
+  where?: InputMaybe<Mariokart8deluxe_Race_Players_Bool_Exp>;
+};
+
+
+/** columns and relationships of "mariokart8deluxe_races" */
+export type Mariokart8deluxe_RacesMariokart8deluxe_Race_Players_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Mariokart8deluxe_Race_Players_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Mariokart8deluxe_Race_Players_Order_By>>;
+  where?: InputMaybe<Mariokart8deluxe_Race_Players_Bool_Exp>;
 };
 
 /** aggregated selection of "mariokart8deluxe_races" */
@@ -5103,6 +5644,8 @@ export type Mariokart8deluxe_Races_Bool_Exp = {
   is_aborted?: InputMaybe<Boolean_Comparison_Exp>;
   mariokart8deluxe_course?: InputMaybe<Mariokart8deluxe_Courses_Bool_Exp>;
   mariokart8deluxe_course_id?: InputMaybe<Uuid_Comparison_Exp>;
+  mariokart8deluxe_race_players?: InputMaybe<Mariokart8deluxe_Race_Players_Bool_Exp>;
+  mariokart8deluxe_race_players_aggregate?: InputMaybe<Mariokart8deluxe_Race_Players_Aggregate_Bool_Exp>;
   program?: InputMaybe<Programs_Bool_Exp>;
   program_id?: InputMaybe<Uuid_Comparison_Exp>;
   start_time?: InputMaybe<Timestamptz_Comparison_Exp>;
@@ -5131,6 +5674,7 @@ export type Mariokart8deluxe_Races_Insert_Input = {
   is_aborted?: InputMaybe<Scalars['Boolean']['input']>;
   mariokart8deluxe_course?: InputMaybe<Mariokart8deluxe_Courses_Obj_Rel_Insert_Input>;
   mariokart8deluxe_course_id?: InputMaybe<Scalars['uuid']['input']>;
+  mariokart8deluxe_race_players?: InputMaybe<Mariokart8deluxe_Race_Players_Arr_Rel_Insert_Input>;
   program?: InputMaybe<Programs_Obj_Rel_Insert_Input>;
   program_id?: InputMaybe<Scalars['uuid']['input']>;
   start_time?: InputMaybe<Scalars['timestamptz']['input']>;
@@ -5196,6 +5740,13 @@ export type Mariokart8deluxe_Races_Mutation_Response = {
   returning: Array<Mariokart8deluxe_Races>;
 };
 
+/** input type for inserting object relation for remote table "mariokart8deluxe_races" */
+export type Mariokart8deluxe_Races_Obj_Rel_Insert_Input = {
+  data: Mariokart8deluxe_Races_Insert_Input;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Mariokart8deluxe_Races_On_Conflict>;
+};
+
 /** on_conflict condition type for table "mariokart8deluxe_races" */
 export type Mariokart8deluxe_Races_On_Conflict = {
   constraint: Mariokart8deluxe_Races_Constraint;
@@ -5212,6 +5763,7 @@ export type Mariokart8deluxe_Races_Order_By = {
   is_aborted?: InputMaybe<Order_By>;
   mariokart8deluxe_course?: InputMaybe<Mariokart8deluxe_Courses_Order_By>;
   mariokart8deluxe_course_id?: InputMaybe<Order_By>;
+  mariokart8deluxe_race_players_aggregate?: InputMaybe<Mariokart8deluxe_Race_Players_Aggregate_Order_By>;
   program?: InputMaybe<Programs_Order_By>;
   program_id?: InputMaybe<Order_By>;
   start_time?: InputMaybe<Order_By>;
@@ -5450,6 +6002,10 @@ export type Mutation_Root = {
   delete_mariokart8deluxe_battle_courses?: Maybe<Mariokart8deluxe_Battle_Courses_Mutation_Response>;
   /** delete single row from the table: "mariokart8deluxe_battle_courses" */
   delete_mariokart8deluxe_battle_courses_by_pk?: Maybe<Mariokart8deluxe_Battle_Courses>;
+  /** delete data from the table: "mariokart8deluxe_battle_match_players" */
+  delete_mariokart8deluxe_battle_match_players?: Maybe<Mariokart8deluxe_Battle_Match_Players_Mutation_Response>;
+  /** delete single row from the table: "mariokart8deluxe_battle_match_players" */
+  delete_mariokart8deluxe_battle_match_players_by_pk?: Maybe<Mariokart8deluxe_Battle_Match_Players>;
   /** delete data from the table: "mariokart8deluxe_battle_matches" */
   delete_mariokart8deluxe_battle_matches?: Maybe<Mariokart8deluxe_Battle_Matches_Mutation_Response>;
   /** delete single row from the table: "mariokart8deluxe_battle_matches" */
@@ -5470,6 +6026,10 @@ export type Mutation_Root = {
   delete_mariokart8deluxe_cups?: Maybe<Mariokart8deluxe_Cups_Mutation_Response>;
   /** delete single row from the table: "mariokart8deluxe_cups" */
   delete_mariokart8deluxe_cups_by_pk?: Maybe<Mariokart8deluxe_Cups>;
+  /** delete data from the table: "mariokart8deluxe_race_players" */
+  delete_mariokart8deluxe_race_players?: Maybe<Mariokart8deluxe_Race_Players_Mutation_Response>;
+  /** delete single row from the table: "mariokart8deluxe_race_players" */
+  delete_mariokart8deluxe_race_players_by_pk?: Maybe<Mariokart8deluxe_Race_Players>;
   /** delete data from the table: "mariokart8deluxe_races" */
   delete_mariokart8deluxe_races?: Maybe<Mariokart8deluxe_Races_Mutation_Response>;
   /** delete single row from the table: "mariokart8deluxe_races" */
@@ -5610,6 +6170,10 @@ export type Mutation_Root = {
   insert_mariokart8deluxe_battle_courses?: Maybe<Mariokart8deluxe_Battle_Courses_Mutation_Response>;
   /** insert a single row into the table: "mariokart8deluxe_battle_courses" */
   insert_mariokart8deluxe_battle_courses_one?: Maybe<Mariokart8deluxe_Battle_Courses>;
+  /** insert data into the table: "mariokart8deluxe_battle_match_players" */
+  insert_mariokart8deluxe_battle_match_players?: Maybe<Mariokart8deluxe_Battle_Match_Players_Mutation_Response>;
+  /** insert a single row into the table: "mariokart8deluxe_battle_match_players" */
+  insert_mariokart8deluxe_battle_match_players_one?: Maybe<Mariokart8deluxe_Battle_Match_Players>;
   /** insert data into the table: "mariokart8deluxe_battle_matches" */
   insert_mariokart8deluxe_battle_matches?: Maybe<Mariokart8deluxe_Battle_Matches_Mutation_Response>;
   /** insert a single row into the table: "mariokart8deluxe_battle_matches" */
@@ -5630,6 +6194,10 @@ export type Mutation_Root = {
   insert_mariokart8deluxe_cups?: Maybe<Mariokart8deluxe_Cups_Mutation_Response>;
   /** insert a single row into the table: "mariokart8deluxe_cups" */
   insert_mariokart8deluxe_cups_one?: Maybe<Mariokart8deluxe_Cups>;
+  /** insert data into the table: "mariokart8deluxe_race_players" */
+  insert_mariokart8deluxe_race_players?: Maybe<Mariokart8deluxe_Race_Players_Mutation_Response>;
+  /** insert a single row into the table: "mariokart8deluxe_race_players" */
+  insert_mariokart8deluxe_race_players_one?: Maybe<Mariokart8deluxe_Race_Players>;
   /** insert data into the table: "mariokart8deluxe_races" */
   insert_mariokart8deluxe_races?: Maybe<Mariokart8deluxe_Races_Mutation_Response>;
   /** insert a single row into the table: "mariokart8deluxe_races" */
@@ -5794,6 +6362,12 @@ export type Mutation_Root = {
   update_mariokart8deluxe_battle_courses_by_pk?: Maybe<Mariokart8deluxe_Battle_Courses>;
   /** update multiples rows of table: "mariokart8deluxe_battle_courses" */
   update_mariokart8deluxe_battle_courses_many?: Maybe<Array<Maybe<Mariokart8deluxe_Battle_Courses_Mutation_Response>>>;
+  /** update data of the table: "mariokart8deluxe_battle_match_players" */
+  update_mariokart8deluxe_battle_match_players?: Maybe<Mariokart8deluxe_Battle_Match_Players_Mutation_Response>;
+  /** update single row of the table: "mariokart8deluxe_battle_match_players" */
+  update_mariokart8deluxe_battle_match_players_by_pk?: Maybe<Mariokart8deluxe_Battle_Match_Players>;
+  /** update multiples rows of table: "mariokart8deluxe_battle_match_players" */
+  update_mariokart8deluxe_battle_match_players_many?: Maybe<Array<Maybe<Mariokart8deluxe_Battle_Match_Players_Mutation_Response>>>;
   /** update data of the table: "mariokart8deluxe_battle_matches" */
   update_mariokart8deluxe_battle_matches?: Maybe<Mariokart8deluxe_Battle_Matches_Mutation_Response>;
   /** update single row of the table: "mariokart8deluxe_battle_matches" */
@@ -5824,6 +6398,12 @@ export type Mutation_Root = {
   update_mariokart8deluxe_cups_by_pk?: Maybe<Mariokart8deluxe_Cups>;
   /** update multiples rows of table: "mariokart8deluxe_cups" */
   update_mariokart8deluxe_cups_many?: Maybe<Array<Maybe<Mariokart8deluxe_Cups_Mutation_Response>>>;
+  /** update data of the table: "mariokart8deluxe_race_players" */
+  update_mariokart8deluxe_race_players?: Maybe<Mariokart8deluxe_Race_Players_Mutation_Response>;
+  /** update single row of the table: "mariokart8deluxe_race_players" */
+  update_mariokart8deluxe_race_players_by_pk?: Maybe<Mariokart8deluxe_Race_Players>;
+  /** update multiples rows of table: "mariokart8deluxe_race_players" */
+  update_mariokart8deluxe_race_players_many?: Maybe<Array<Maybe<Mariokart8deluxe_Race_Players_Mutation_Response>>>;
   /** update data of the table: "mariokart8deluxe_races" */
   update_mariokart8deluxe_races?: Maybe<Mariokart8deluxe_Races_Mutation_Response>;
   /** update single row of the table: "mariokart8deluxe_races" */
@@ -6110,6 +6690,18 @@ export type Mutation_RootDelete_Mariokart8deluxe_Battle_Courses_By_PkArgs = {
 
 
 /** mutation root */
+export type Mutation_RootDelete_Mariokart8deluxe_Battle_Match_PlayersArgs = {
+  where: Mariokart8deluxe_Battle_Match_Players_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Mariokart8deluxe_Battle_Match_Players_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
 export type Mutation_RootDelete_Mariokart8deluxe_Battle_MatchesArgs = {
   where: Mariokart8deluxe_Battle_Matches_Bool_Exp;
 };
@@ -6165,6 +6757,18 @@ export type Mutation_RootDelete_Mariokart8deluxe_CupsArgs = {
 
 /** mutation root */
 export type Mutation_RootDelete_Mariokart8deluxe_Cups_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Mariokart8deluxe_Race_PlayersArgs = {
+  where: Mariokart8deluxe_Race_Players_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Mariokart8deluxe_Race_Players_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
@@ -6614,6 +7218,20 @@ export type Mutation_RootInsert_Mariokart8deluxe_Battle_Courses_OneArgs = {
 
 
 /** mutation root */
+export type Mutation_RootInsert_Mariokart8deluxe_Battle_Match_PlayersArgs = {
+  objects: Array<Mariokart8deluxe_Battle_Match_Players_Insert_Input>;
+  on_conflict?: InputMaybe<Mariokart8deluxe_Battle_Match_Players_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Mariokart8deluxe_Battle_Match_Players_OneArgs = {
+  object: Mariokart8deluxe_Battle_Match_Players_Insert_Input;
+  on_conflict?: InputMaybe<Mariokart8deluxe_Battle_Match_Players_On_Conflict>;
+};
+
+
+/** mutation root */
 export type Mutation_RootInsert_Mariokart8deluxe_Battle_MatchesArgs = {
   objects: Array<Mariokart8deluxe_Battle_Matches_Insert_Input>;
   on_conflict?: InputMaybe<Mariokart8deluxe_Battle_Matches_On_Conflict>;
@@ -6680,6 +7298,20 @@ export type Mutation_RootInsert_Mariokart8deluxe_CupsArgs = {
 export type Mutation_RootInsert_Mariokart8deluxe_Cups_OneArgs = {
   object: Mariokart8deluxe_Cups_Insert_Input;
   on_conflict?: InputMaybe<Mariokart8deluxe_Cups_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Mariokart8deluxe_Race_PlayersArgs = {
+  objects: Array<Mariokart8deluxe_Race_Players_Insert_Input>;
+  on_conflict?: InputMaybe<Mariokart8deluxe_Race_Players_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Mariokart8deluxe_Race_Players_OneArgs = {
+  object: Mariokart8deluxe_Race_Players_Insert_Input;
+  on_conflict?: InputMaybe<Mariokart8deluxe_Race_Players_On_Conflict>;
 };
 
 
@@ -7254,6 +7886,26 @@ export type Mutation_RootUpdate_Mariokart8deluxe_Battle_Courses_ManyArgs = {
 
 
 /** mutation root */
+export type Mutation_RootUpdate_Mariokart8deluxe_Battle_Match_PlayersArgs = {
+  _set?: InputMaybe<Mariokart8deluxe_Battle_Match_Players_Set_Input>;
+  where: Mariokart8deluxe_Battle_Match_Players_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Mariokart8deluxe_Battle_Match_Players_By_PkArgs = {
+  _set?: InputMaybe<Mariokart8deluxe_Battle_Match_Players_Set_Input>;
+  pk_columns: Mariokart8deluxe_Battle_Match_Players_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Mariokart8deluxe_Battle_Match_Players_ManyArgs = {
+  updates: Array<Mariokart8deluxe_Battle_Match_Players_Updates>;
+};
+
+
+/** mutation root */
 export type Mutation_RootUpdate_Mariokart8deluxe_Battle_MatchesArgs = {
   _inc?: InputMaybe<Mariokart8deluxe_Battle_Matches_Inc_Input>;
   _set?: InputMaybe<Mariokart8deluxe_Battle_Matches_Set_Input>;
@@ -7358,6 +8010,26 @@ export type Mutation_RootUpdate_Mariokart8deluxe_Cups_By_PkArgs = {
 /** mutation root */
 export type Mutation_RootUpdate_Mariokart8deluxe_Cups_ManyArgs = {
   updates: Array<Mariokart8deluxe_Cups_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Mariokart8deluxe_Race_PlayersArgs = {
+  _set?: InputMaybe<Mariokart8deluxe_Race_Players_Set_Input>;
+  where: Mariokart8deluxe_Race_Players_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Mariokart8deluxe_Race_Players_By_PkArgs = {
+  _set?: InputMaybe<Mariokart8deluxe_Race_Players_Set_Input>;
+  pk_columns: Mariokart8deluxe_Race_Players_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Mariokart8deluxe_Race_Players_ManyArgs = {
+  updates: Array<Mariokart8deluxe_Race_Players_Updates>;
 };
 
 
@@ -12058,6 +12730,12 @@ export type Query_Root = {
   /** fetch data from the table: "mariokart8deluxe_battle_courses" using primary key columns */
   mariokart8deluxe_battle_courses_by_pk?: Maybe<Mariokart8deluxe_Battle_Courses>;
   /** An array relationship */
+  mariokart8deluxe_battle_match_players: Array<Mariokart8deluxe_Battle_Match_Players>;
+  /** An aggregate relationship */
+  mariokart8deluxe_battle_match_players_aggregate: Mariokart8deluxe_Battle_Match_Players_Aggregate;
+  /** fetch data from the table: "mariokart8deluxe_battle_match_players" using primary key columns */
+  mariokart8deluxe_battle_match_players_by_pk?: Maybe<Mariokart8deluxe_Battle_Match_Players>;
+  /** An array relationship */
   mariokart8deluxe_battle_matches: Array<Mariokart8deluxe_Battle_Matches>;
   /** An aggregate relationship */
   mariokart8deluxe_battle_matches_aggregate: Mariokart8deluxe_Battle_Matches_Aggregate;
@@ -12087,6 +12765,12 @@ export type Query_Root = {
   mariokart8deluxe_cups_aggregate: Mariokart8deluxe_Cups_Aggregate;
   /** fetch data from the table: "mariokart8deluxe_cups" using primary key columns */
   mariokart8deluxe_cups_by_pk?: Maybe<Mariokart8deluxe_Cups>;
+  /** An array relationship */
+  mariokart8deluxe_race_players: Array<Mariokart8deluxe_Race_Players>;
+  /** An aggregate relationship */
+  mariokart8deluxe_race_players_aggregate: Mariokart8deluxe_Race_Players_Aggregate;
+  /** fetch data from the table: "mariokart8deluxe_race_players" using primary key columns */
+  mariokart8deluxe_race_players_by_pk?: Maybe<Mariokart8deluxe_Race_Players>;
   /** An array relationship */
   mariokart8deluxe_races: Array<Mariokart8deluxe_Races>;
   /** An aggregate relationship */
@@ -12504,6 +13188,29 @@ export type Query_RootMariokart8deluxe_Battle_Courses_By_PkArgs = {
 };
 
 
+export type Query_RootMariokart8deluxe_Battle_Match_PlayersArgs = {
+  distinct_on?: InputMaybe<Array<Mariokart8deluxe_Battle_Match_Players_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Mariokart8deluxe_Battle_Match_Players_Order_By>>;
+  where?: InputMaybe<Mariokart8deluxe_Battle_Match_Players_Bool_Exp>;
+};
+
+
+export type Query_RootMariokart8deluxe_Battle_Match_Players_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Mariokart8deluxe_Battle_Match_Players_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Mariokart8deluxe_Battle_Match_Players_Order_By>>;
+  where?: InputMaybe<Mariokart8deluxe_Battle_Match_Players_Bool_Exp>;
+};
+
+
+export type Query_RootMariokart8deluxe_Battle_Match_Players_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
 export type Query_RootMariokart8deluxe_Battle_MatchesArgs = {
   distinct_on?: InputMaybe<Array<Mariokart8deluxe_Battle_Matches_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -12615,6 +13322,29 @@ export type Query_RootMariokart8deluxe_Cups_AggregateArgs = {
 
 
 export type Query_RootMariokart8deluxe_Cups_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Query_RootMariokart8deluxe_Race_PlayersArgs = {
+  distinct_on?: InputMaybe<Array<Mariokart8deluxe_Race_Players_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Mariokart8deluxe_Race_Players_Order_By>>;
+  where?: InputMaybe<Mariokart8deluxe_Race_Players_Bool_Exp>;
+};
+
+
+export type Query_RootMariokart8deluxe_Race_Players_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Mariokart8deluxe_Race_Players_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Mariokart8deluxe_Race_Players_Order_By>>;
+  where?: InputMaybe<Mariokart8deluxe_Race_Players_Bool_Exp>;
+};
+
+
+export type Query_RootMariokart8deluxe_Race_Players_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
@@ -13246,6 +13976,14 @@ export type Subscription_Root = {
   /** fetch data from the table in a streaming manner: "mariokart8deluxe_battle_courses" */
   mariokart8deluxe_battle_courses_stream: Array<Mariokart8deluxe_Battle_Courses>;
   /** An array relationship */
+  mariokart8deluxe_battle_match_players: Array<Mariokart8deluxe_Battle_Match_Players>;
+  /** An aggregate relationship */
+  mariokart8deluxe_battle_match_players_aggregate: Mariokart8deluxe_Battle_Match_Players_Aggregate;
+  /** fetch data from the table: "mariokart8deluxe_battle_match_players" using primary key columns */
+  mariokart8deluxe_battle_match_players_by_pk?: Maybe<Mariokart8deluxe_Battle_Match_Players>;
+  /** fetch data from the table in a streaming manner: "mariokart8deluxe_battle_match_players" */
+  mariokart8deluxe_battle_match_players_stream: Array<Mariokart8deluxe_Battle_Match_Players>;
+  /** An array relationship */
   mariokart8deluxe_battle_matches: Array<Mariokart8deluxe_Battle_Matches>;
   /** An aggregate relationship */
   mariokart8deluxe_battle_matches_aggregate: Mariokart8deluxe_Battle_Matches_Aggregate;
@@ -13285,6 +14023,14 @@ export type Subscription_Root = {
   mariokart8deluxe_cups_by_pk?: Maybe<Mariokart8deluxe_Cups>;
   /** fetch data from the table in a streaming manner: "mariokart8deluxe_cups" */
   mariokart8deluxe_cups_stream: Array<Mariokart8deluxe_Cups>;
+  /** An array relationship */
+  mariokart8deluxe_race_players: Array<Mariokart8deluxe_Race_Players>;
+  /** An aggregate relationship */
+  mariokart8deluxe_race_players_aggregate: Mariokart8deluxe_Race_Players_Aggregate;
+  /** fetch data from the table: "mariokart8deluxe_race_players" using primary key columns */
+  mariokart8deluxe_race_players_by_pk?: Maybe<Mariokart8deluxe_Race_Players>;
+  /** fetch data from the table in a streaming manner: "mariokart8deluxe_race_players" */
+  mariokart8deluxe_race_players_stream: Array<Mariokart8deluxe_Race_Players>;
   /** An array relationship */
   mariokart8deluxe_races: Array<Mariokart8deluxe_Races>;
   /** An aggregate relationship */
@@ -13832,6 +14578,36 @@ export type Subscription_RootMariokart8deluxe_Battle_Courses_StreamArgs = {
 };
 
 
+export type Subscription_RootMariokart8deluxe_Battle_Match_PlayersArgs = {
+  distinct_on?: InputMaybe<Array<Mariokart8deluxe_Battle_Match_Players_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Mariokart8deluxe_Battle_Match_Players_Order_By>>;
+  where?: InputMaybe<Mariokart8deluxe_Battle_Match_Players_Bool_Exp>;
+};
+
+
+export type Subscription_RootMariokart8deluxe_Battle_Match_Players_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Mariokart8deluxe_Battle_Match_Players_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Mariokart8deluxe_Battle_Match_Players_Order_By>>;
+  where?: InputMaybe<Mariokart8deluxe_Battle_Match_Players_Bool_Exp>;
+};
+
+
+export type Subscription_RootMariokart8deluxe_Battle_Match_Players_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootMariokart8deluxe_Battle_Match_Players_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Mariokart8deluxe_Battle_Match_Players_Stream_Cursor_Input>>;
+  where?: InputMaybe<Mariokart8deluxe_Battle_Match_Players_Bool_Exp>;
+};
+
+
 export type Subscription_RootMariokart8deluxe_Battle_MatchesArgs = {
   distinct_on?: InputMaybe<Array<Mariokart8deluxe_Battle_Matches_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -13979,6 +14755,36 @@ export type Subscription_RootMariokart8deluxe_Cups_StreamArgs = {
   batch_size: Scalars['Int']['input'];
   cursor: Array<InputMaybe<Mariokart8deluxe_Cups_Stream_Cursor_Input>>;
   where?: InputMaybe<Mariokart8deluxe_Cups_Bool_Exp>;
+};
+
+
+export type Subscription_RootMariokart8deluxe_Race_PlayersArgs = {
+  distinct_on?: InputMaybe<Array<Mariokart8deluxe_Race_Players_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Mariokart8deluxe_Race_Players_Order_By>>;
+  where?: InputMaybe<Mariokart8deluxe_Race_Players_Bool_Exp>;
+};
+
+
+export type Subscription_RootMariokart8deluxe_Race_Players_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Mariokart8deluxe_Race_Players_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Mariokart8deluxe_Race_Players_Order_By>>;
+  where?: InputMaybe<Mariokart8deluxe_Race_Players_Bool_Exp>;
+};
+
+
+export type Subscription_RootMariokart8deluxe_Race_Players_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootMariokart8deluxe_Race_Players_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Mariokart8deluxe_Race_Players_Stream_Cursor_Input>>;
+  where?: InputMaybe<Mariokart8deluxe_Race_Players_Bool_Exp>;
 };
 
 
@@ -15915,7 +16721,7 @@ export type GetMariokart8deluxeBattleMatchPageQueryVariables = Exact<{
 }>;
 
 
-export type GetMariokart8deluxeBattleMatchPageQuery = { __typename?: 'query_root', mariokart8deluxeBattleMatch?: { __typename?: 'mariokart8deluxe_battle_matches', id: any, startTime: any, endTime?: any | null, mariokart8deluxeBattleRule?: { __typename?: 'mariokart8deluxe_battle_rules', id: any, name: string } | null, mariokart8deluxeBattleCourse?: { __typename?: 'mariokart8deluxe_battle_courses', id: any, name: string } | null, program: { __typename?: 'programs', id: any, title: string, startTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, programYoutubeLives: Array<{ __typename?: 'program_youtube_lives', id: any, person?: { __typename?: 'persons', id: any, name: string } | null, youtubeLive: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, startTime?: any | null, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } }> } } | null };
+export type GetMariokart8deluxeBattleMatchPageQuery = { __typename?: 'query_root', mariokart8deluxeBattleMatch?: { __typename?: 'mariokart8deluxe_battle_matches', id: any, startTime: any, endTime?: any | null, mariokart8deluxeBattleRule?: { __typename?: 'mariokart8deluxe_battle_rules', id: any, name: string } | null, mariokart8deluxeBattleCourse?: { __typename?: 'mariokart8deluxe_battle_courses', id: any, name: string } | null, mariokart8deluxeBattleMatchPlayers: Array<{ __typename?: 'mariokart8deluxe_battle_match_players', id: any, nickname: string, person?: { __typename?: 'persons', id: any } | null }>, program: { __typename?: 'programs', id: any, title: string, startTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, programYoutubeLives: Array<{ __typename?: 'program_youtube_lives', id: any, person?: { __typename?: 'persons', id: any, name: string } | null, youtubeLive: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, startTime?: any | null, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } }> } } | null };
 
 export type GetMariokart8deluxeBattleMatchPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -15927,7 +16733,7 @@ export type GetMariokart8deluxeRacePageQueryVariables = Exact<{
 }>;
 
 
-export type GetMariokart8deluxeRacePageQuery = { __typename?: 'query_root', mariokart8deluxeRace?: { __typename?: 'mariokart8deluxe_races', id: any, startTime: any, endTime?: any | null, mariokart8deluxeCourse?: { __typename?: 'mariokart8deluxe_courses', id: any, name: string } | null, program: { __typename?: 'programs', id: any, title: string, startTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, programYoutubeLives: Array<{ __typename?: 'program_youtube_lives', id: any, person?: { __typename?: 'persons', id: any, name: string } | null, youtubeLive: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, startTime?: any | null, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } }> } } | null };
+export type GetMariokart8deluxeRacePageQuery = { __typename?: 'query_root', mariokart8deluxeRace?: { __typename?: 'mariokart8deluxe_races', id: any, startTime: any, endTime?: any | null, mariokart8deluxeCourse?: { __typename?: 'mariokart8deluxe_courses', id: any, name: string } | null, mariokart8deluxeRacePlayers: Array<{ __typename?: 'mariokart8deluxe_race_players', id: any, nickname: string, person?: { __typename?: 'persons', id: any } | null }>, program: { __typename?: 'programs', id: any, title: string, startTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, programYoutubeLives: Array<{ __typename?: 'program_youtube_lives', id: any, person?: { __typename?: 'persons', id: any, name: string } | null, youtubeLive: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, startTime?: any | null, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } }> } } | null };
 
 export type GetMariokart8deluxeRacePageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -16128,6 +16934,15 @@ export const GetMariokart8deluxeBattleMatchPageDocument = gql`
       id
       name
     }
+    mariokart8deluxeBattleMatchPlayers: mariokart8deluxe_battle_match_players(
+      order_by: {nickname: asc}
+    ) {
+      id
+      nickname
+      person {
+        id
+      }
+    }
     program {
       id
       title
@@ -16230,6 +17045,15 @@ export const GetMariokart8deluxeRacePageDocument = gql`
     mariokart8deluxeCourse: mariokart8deluxe_course {
       id
       name
+    }
+    mariokart8deluxeRacePlayers: mariokart8deluxe_race_players(
+      order_by: {nickname: asc}
+    ) {
+      id
+      nickname
+      person {
+        id
+      }
     }
     program {
       id

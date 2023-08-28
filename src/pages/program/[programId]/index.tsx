@@ -153,9 +153,7 @@ export default function ProgramPage({ programId }: { programId: string }) {
                   <TableCell component='th' scope='row'>
                     終了日時
                   </TableCell>
-                  <TableCell>
-                    {format(parseISO(program.endTime), 'yyyy-MM-dd HH:mm:ss')}
-                  </TableCell>
+                  <TableCell>{format(parseISO(program.endTime), 'yyyy-MM-dd HH:mm:ss')}</TableCell>
                 </TableRow>
               ) : (
                 ''

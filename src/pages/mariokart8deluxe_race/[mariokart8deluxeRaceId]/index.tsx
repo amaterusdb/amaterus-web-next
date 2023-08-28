@@ -173,6 +173,44 @@ export default function MatchPage({ mariokart8deluxeRaceId }: { mariokart8deluxe
           </Table>
         </Box>
         <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+          プレイヤー
+        </Typography>
+        <Box sx={{ mt: 2 }}>
+          <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
+            <TableHead>
+              <TableRow>
+                <TableCell>名前</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {mariokart8deluxeRace.mariokart8deluxeRacePlayers.map(
+                (mariokart8deluxeRacePlayer) => {
+                  return (
+                    <TableRow
+                      key={mariokart8deluxeRacePlayer.id}
+                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                    >
+                      <TableCell component='th' scope='row'>
+                        {mariokart8deluxeRacePlayer.person?.id != null ? (
+                          <NextLink
+                            href={`/person/${mariokart8deluxeRacePlayer.person.id}/`}
+                            passHref
+                            legacyBehavior
+                          >
+                            <MuiLink>{mariokart8deluxeRacePlayer.nickname}</MuiLink>
+                          </NextLink>
+                        ) : (
+                          <>{mariokart8deluxeRacePlayer.nickname}</>
+                        )}
+                      </TableCell>
+                    </TableRow>
+                  )
+                },
+              )}
+            </TableBody>
+          </Table>
+        </Box>
+        <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
           放送アーカイブ
         </Typography>
         <Box sx={{ mt: 2 }}>

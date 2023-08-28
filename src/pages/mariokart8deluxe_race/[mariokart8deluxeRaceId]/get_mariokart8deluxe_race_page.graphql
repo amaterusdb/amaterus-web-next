@@ -13,6 +13,18 @@ query GetMariokart8deluxeRacePage(
       name
     }
 
+    mariokart8deluxeRacePlayers: mariokart8deluxe_race_players(
+      order_by: {
+        nickname: asc
+      }
+    ) {
+      id
+      nickname
+      person {
+        id
+      }
+    }
+
     program {
       id
       title

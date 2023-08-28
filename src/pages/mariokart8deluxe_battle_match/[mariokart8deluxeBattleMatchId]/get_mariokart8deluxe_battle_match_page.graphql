@@ -18,6 +18,18 @@ query GetMariokart8deluxeBattleMatchPage(
       name
     }
 
+    mariokart8deluxeBattleMatchPlayers: mariokart8deluxe_battle_match_players(
+      order_by: {
+        nickname: asc
+      }
+    ) {
+      id
+      nickname
+      person {
+        id
+      }
+    }
+
     program {
       id
       title
