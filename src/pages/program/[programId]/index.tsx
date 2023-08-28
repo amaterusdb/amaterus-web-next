@@ -157,46 +157,56 @@ export default function ProgramPage({ programId }: { programId: string }) {
             </TableBody>
           </Table>
         </Box>
-        <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
-          試合
-        </Typography>
-        <Box sx={{ mt: 2 }}>
-          <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
-            <TableHead>
-              <TableRow>
-                <TableCell>開始日時</TableCell>
-                <TableCell>終了日時</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {program.amongusMatches.map((amongusMatch) => (
-                <TableRow
-                  key={amongusMatch.id}
-                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                >
-                  <TableCell>
-                    {amongusMatch.startTime != null ? (
-                      <NextLink href={`/amongus_match/${amongusMatch.id}/`} passHref legacyBehavior>
-                        <MuiLink>
-                          {format(parseISO(amongusMatch.startTime), 'yyyy-MM-dd HH:mm:ss')}
-                        </MuiLink>
-                      </NextLink>
-                    ) : (
-                      ''
-                    )}
-                  </TableCell>
-                  <TableCell>
-                    {amongusMatch.endTime != null ? (
-                      <>{format(parseISO(amongusMatch.endTime), 'yyyy-MM-dd HH:mm:ss')}</>
-                    ) : (
-                      ''
-                    )}
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </Box>
+        {program.amongusMatches.length > 0 ? (
+          <>
+            <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+              試合
+            </Typography>
+            <Box sx={{ mt: 2 }}>
+              <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>開始日時</TableCell>
+                    <TableCell>終了日時</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {program.amongusMatches.map((amongusMatch) => (
+                    <TableRow
+                      key={amongusMatch.id}
+                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                    >
+                      <TableCell>
+                        {amongusMatch.startTime != null ? (
+                          <NextLink
+                            href={`/amongus_match/${amongusMatch.id}/`}
+                            passHref
+                            legacyBehavior
+                          >
+                            <MuiLink>
+                              {format(parseISO(amongusMatch.startTime), 'yyyy-MM-dd HH:mm:ss')}
+                            </MuiLink>
+                          </NextLink>
+                        ) : (
+                          ''
+                        )}
+                      </TableCell>
+                      <TableCell>
+                        {amongusMatch.endTime != null ? (
+                          <>{format(parseISO(amongusMatch.endTime), 'yyyy-MM-dd HH:mm:ss')}</>
+                        ) : (
+                          ''
+                        )}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </Box>
+          </>
+        ) : (
+          ''
+        )}
         <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
           放送アーカイブ
         </Typography>
