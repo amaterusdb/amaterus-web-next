@@ -22,6 +22,11 @@ query GetProgramPage(
       }
     }
 
+    game {
+      id
+      name
+    }
+
     programTwitterAnnouncements: program_twitter_announcements {
       twitterTweet: twitter_tweet {
         id

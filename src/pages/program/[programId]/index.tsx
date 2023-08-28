@@ -120,9 +120,49 @@ export default function ProgramPage({ programId }: { programId: string }) {
         <Typography variant='h4' component='h2' sx={{ mt: 2 }}>
           {program.title}
         </Typography>
-        <Typography variant='body1' sx={{ mt: 2 }}>
-          開催日時: {format(parseISO(program.startTime), 'yyyy-MM-dd HH:mm')}
+        <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+          基本情報
         </Typography>
+        <Box sx={{ mt: 2 }}>
+          <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
+            <TableBody>
+              {program.game != null ? (
+                <TableRow>
+                  <TableCell component='th' scope='row'>
+                    ゲーム
+                  </TableCell>
+                  <TableCell>{program.game.name}</TableCell>
+                </TableRow>
+              ) : (
+                ''
+              )}
+              {program.startTime != null ? (
+                <TableRow>
+                  <TableCell component='th' scope='row'>
+                    開始日時
+                  </TableCell>
+                  <TableCell>
+                    {format(parseISO(program.startTime), 'yyyy-MM-dd HH:mm:ss')}
+                  </TableCell>
+                </TableRow>
+              ) : (
+                ''
+              )}
+              {program.endTime != null ? (
+                <TableRow>
+                  <TableCell component='th' scope='row'>
+                    終了日時
+                  </TableCell>
+                  <TableCell>
+                    {format(parseISO(program.endTime), 'yyyy-MM-dd HH:mm:ss')}
+                  </TableCell>
+                </TableRow>
+              ) : (
+                ''
+              )}
+            </TableBody>
+          </Table>
+        </Box>
         <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
           告知
         </Typography>
