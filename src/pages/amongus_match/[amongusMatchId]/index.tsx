@@ -10,7 +10,7 @@ import {
   Link as MuiLink,
   Breadcrumbs,
 } from '@mui/material'
-import { parseISO, format, intervalToDuration } from 'date-fns'
+import { parseISO, format, intervalToDuration, isBefore } from 'date-fns'
 import Head from 'next/head'
 import NextLink from 'next/link'
 import DrawerAppBar from '@/components/drawer_app_bar'
@@ -179,84 +179,93 @@ export default function MatchPage({ amongusMatchId }: { amongusMatchId: string }
               </TableRow>
             </TableHead>
             <TableBody>
-              {amongusMatch.program.programYoutubeLives.map((programYoutubeLive) => {
-                const localStartTime = intervalToDuration({
-                  start: parseISO(programYoutubeLive.youtubeLive.startTime),
-                  end: parseISO(amongusMatch.startTime),
-                })
-                const localEndTime = intervalToDuration({
-                  start: parseISO(programYoutubeLive.youtubeLive.startTime),
-                  end: parseISO(amongusMatch.endTime),
-                })
+              {amongusMatch.program.programYoutubeLives
+                .filter(
+                  (programYoutubeLive) =>
+                    programYoutubeLive.youtubeLive.startTime != null &&
+                    !isBefore(
+                      parseISO(amongusMatch.startTime),
+                      parseISO(programYoutubeLive.youtubeLive.startTime),
+                    ),
+                )
+                .map((programYoutubeLive) => {
+                  const localStartTime = intervalToDuration({
+                    start: parseISO(programYoutubeLive.youtubeLive.startTime),
+                    end: parseISO(amongusMatch.startTime),
+                  })
+                  const localEndTime = intervalToDuration({
+                    start: parseISO(programYoutubeLive.youtubeLive.startTime),
+                    end: parseISO(amongusMatch.endTime),
+                  })
 
-                const localStartTimeHours = localStartTime.hours ?? 0
-                const localStartTimeMinutes = localStartTime.minutes ?? 0
-                const localStartTimeSeconds = localStartTime.seconds ?? 0
-                const localStartTimeTotalSeconds =
-                  localStartTimeHours * 3600 + localStartTimeMinutes * 60 + localStartTimeSeconds
+                  const localStartTimeHours = localStartTime.hours ?? 0
+                  const localStartTimeMinutes = localStartTime.minutes ?? 0
+                  const localStartTimeSeconds = localStartTime.seconds ?? 0
+                  const localStartTimeTotalSeconds =
+                    localStartTimeHours * 3600 + localStartTimeMinutes * 60 + localStartTimeSeconds
 
-                const localEndTimeHours = localEndTime.hours ?? 0
-                const localEndTimeMinutes = localEndTime.minutes ?? 0
-                const localEndTimeSeconds = localEndTime.seconds ?? 0
-                const localEndTimeTotalSeconds =
-                  localEndTimeHours * 3600 + localEndTimeMinutes * 60 + localEndTimeSeconds
+                  const localEndTimeHours = localEndTime.hours ?? 0
+                  const localEndTimeMinutes = localEndTime.minutes ?? 0
+                  const localEndTimeSeconds = localEndTime.seconds ?? 0
+                  const localEndTimeTotalSeconds =
+                    localEndTimeHours * 3600 + localEndTimeMinutes * 60 + localEndTimeSeconds
 
-                return (
-                  <TableRow
-                    key={programYoutubeLive.id}
-                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                  >
-                    <TableCell component='th' scope='row'>
-                      <NextLink
-                        href={`https://www.youtube.com/watch?v=${programYoutubeLive.youtubeLive.remoteYoutubeVideoId}`}
-                        passHref
-                        legacyBehavior
-                      >
-                        <MuiLink>{programYoutubeLive.youtubeLive.title}</MuiLink>
-                      </NextLink>
-                    </TableCell>
-                    <TableCell>
-                      {programYoutubeLive.person != null ? (
+                  return (
+                    <TableRow
+                      key={programYoutubeLive.id}
+                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                    >
+                      <TableCell component='th' scope='row'>
                         <NextLink
-                          href={`/person/${programYoutubeLive.person.id}/`}
+                          href={`https://www.youtube.com/watch?v=${programYoutubeLive.youtubeLive.remoteYoutubeVideoId}`}
                           passHref
                           legacyBehavior
                         >
-                          <MuiLink>{programYoutubeLive.person.name}</MuiLink>
+                          <MuiLink>{programYoutubeLive.youtubeLive.title}</MuiLink>
                         </NextLink>
-                      ) : (
-                        ''
-                      )}
-                    </TableCell>
-                    <TableCell component='th' scope='row'>
-                      <NextLink
-                        href={`https://www.youtube.com/watch?v=${programYoutubeLive.youtubeLive.remoteYoutubeVideoId}&t=${localStartTimeTotalSeconds}s`}
-                        passHref
-                        legacyBehavior
-                      >
-                        <MuiLink>
-                          {String(localStartTimeHours).padStart(2, '0')}:
-                          {String(localStartTimeMinutes).padStart(2, '0')}:
-                          {String(localStartTimeSeconds).padStart(2, '0')}
-                        </MuiLink>
-                      </NextLink>
-                    </TableCell>
-                    <TableCell component='th' scope='row'>
-                      <NextLink
-                        href={`https://www.youtube.com/watch?v=${programYoutubeLive.youtubeLive.remoteYoutubeVideoId}&t=${localEndTimeTotalSeconds}s`}
-                        passHref
-                        legacyBehavior
-                      >
-                        <MuiLink>
-                          {String(localEndTimeHours).padStart(2, '0')}:
-                          {String(localEndTimeMinutes).padStart(2, '0')}:
-                          {String(localEndTimeSeconds).padStart(2, '0')}
-                        </MuiLink>
-                      </NextLink>
-                    </TableCell>
-                  </TableRow>
-                )
-              })}
+                      </TableCell>
+                      <TableCell>
+                        {programYoutubeLive.person != null ? (
+                          <NextLink
+                            href={`/person/${programYoutubeLive.person.id}/`}
+                            passHref
+                            legacyBehavior
+                          >
+                            <MuiLink>{programYoutubeLive.person.name}</MuiLink>
+                          </NextLink>
+                        ) : (
+                          ''
+                        )}
+                      </TableCell>
+                      <TableCell component='th' scope='row'>
+                        <NextLink
+                          href={`https://www.youtube.com/watch?v=${programYoutubeLive.youtubeLive.remoteYoutubeVideoId}&t=${localStartTimeTotalSeconds}s`}
+                          passHref
+                          legacyBehavior
+                        >
+                          <MuiLink>
+                            {String(localStartTimeHours).padStart(2, '0')}:
+                            {String(localStartTimeMinutes).padStart(2, '0')}:
+                            {String(localStartTimeSeconds).padStart(2, '0')}
+                          </MuiLink>
+                        </NextLink>
+                      </TableCell>
+                      <TableCell component='th' scope='row'>
+                        <NextLink
+                          href={`https://www.youtube.com/watch?v=${programYoutubeLive.youtubeLive.remoteYoutubeVideoId}&t=${localEndTimeTotalSeconds}s`}
+                          passHref
+                          legacyBehavior
+                        >
+                          <MuiLink>
+                            {String(localEndTimeHours).padStart(2, '0')}:
+                            {String(localEndTimeMinutes).padStart(2, '0')}:
+                            {String(localEndTimeSeconds).padStart(2, '0')}
+                          </MuiLink>
+                        </NextLink>
+                      </TableCell>
+                    </TableRow>
+                  )
+                })}
             </TableBody>
           </Table>
         </Box>
