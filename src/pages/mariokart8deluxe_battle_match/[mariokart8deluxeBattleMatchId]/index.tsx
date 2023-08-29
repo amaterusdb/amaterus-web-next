@@ -247,22 +247,22 @@ export default function Mariokart8deluxeBattleMatchPage({
               </TableRow>
             </TableHead>
             <TableBody>
-              {mariokart8deluxeBattleMatch.program.programYoutubeLives
+              {mariokart8deluxeBattleMatch.program.programLiveArchives
                 .filter(
-                  (programYoutubeLive) =>
-                    programYoutubeLive.youtubeLive.startTime != null &&
+                  (programLiveArchive) =>
+                    programLiveArchive.startTime != null &&
                     !isBefore(
                       parseISO(mariokart8deluxeBattleMatch.startTime),
-                      parseISO(programYoutubeLive.youtubeLive.startTime),
+                      parseISO(programLiveArchive.startTime),
                     ),
                 )
-                .map((programYoutubeLive) => {
+                .map((programLiveArchive) => {
                   const localStartTime = intervalToDuration({
-                    start: parseISO(programYoutubeLive.youtubeLive.startTime),
+                    start: parseISO(programLiveArchive.startTime),
                     end: parseISO(mariokart8deluxeBattleMatch.startTime),
                   })
                   const localEndTime = intervalToDuration({
-                    start: parseISO(programYoutubeLive.youtubeLive.startTime),
+                    start: parseISO(programLiveArchive.startTime),
                     end: parseISO(mariokart8deluxeBattleMatch.endTime),
                   })
 
@@ -280,56 +280,109 @@ export default function Mariokart8deluxeBattleMatchPage({
 
                   return (
                     <TableRow
-                      key={programYoutubeLive.id}
+                      key={programLiveArchive.id}
                       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                     >
                       <TableCell component='th' scope='row'>
-                        <NextLink
-                          href={`https://www.youtube.com/watch?v=${programYoutubeLive.youtubeLive.remoteYoutubeVideoId}`}
-                          passHref
-                          legacyBehavior
-                        >
-                          <MuiLink>{programYoutubeLive.youtubeLive.title}</MuiLink>
-                        </NextLink>
-                      </TableCell>
-                      <TableCell>
-                        {programYoutubeLive.person != null ? (
+                        {programLiveArchive.youtubeLive != null ? (
                           <NextLink
-                            href={`/person/${programYoutubeLive.person.id}/`}
+                            href={`https://www.youtube.com/watch?v=${programLiveArchive.youtubeLive.remoteYoutubeVideoId}`}
                             passHref
                             legacyBehavior
                           >
-                            <MuiLink>{programYoutubeLive.person.name}</MuiLink>
+                            <MuiLink>{programLiveArchive.youtubeLive.title}</MuiLink>
+                          </NextLink>
+                        ) : (
+                          ''
+                        )}
+                        {programLiveArchive.youtubeVideo != null ? (
+                          <NextLink
+                            href={`https://www.youtube.com/watch?v=${programLiveArchive.youtubeVideo.remoteYoutubeVideoId}`}
+                            passHref
+                            legacyBehavior
+                          >
+                            <MuiLink>{programLiveArchive.youtubeVideo.title}</MuiLink>
                           </NextLink>
                         ) : (
                           ''
                         )}
                       </TableCell>
-                      <TableCell component='th' scope='row'>
-                        <NextLink
-                          href={`https://www.youtube.com/watch?v=${programYoutubeLive.youtubeLive.remoteYoutubeVideoId}&t=${localStartTimeTotalSeconds}s`}
-                          passHref
-                          legacyBehavior
-                        >
-                          <MuiLink>
-                            {String(localStartTimeHours).padStart(2, '0')}:
-                            {String(localStartTimeMinutes).padStart(2, '0')}:
-                            {String(localStartTimeSeconds).padStart(2, '0')}
-                          </MuiLink>
-                        </NextLink>
+                      <TableCell>
+                        {programLiveArchive.person != null ? (
+                          <NextLink
+                            href={`/person/${programLiveArchive.person.id}/`}
+                            passHref
+                            legacyBehavior
+                          >
+                            <MuiLink>{programLiveArchive.person.name}</MuiLink>
+                          </NextLink>
+                        ) : (
+                          ''
+                        )}
                       </TableCell>
-                      <TableCell component='th' scope='row'>
-                        <NextLink
-                          href={`https://www.youtube.com/watch?v=${programYoutubeLive.youtubeLive.remoteYoutubeVideoId}&t=${localEndTimeTotalSeconds}s`}
-                          passHref
-                          legacyBehavior
-                        >
-                          <MuiLink>
-                            {String(localEndTimeHours).padStart(2, '0')}:
-                            {String(localEndTimeMinutes).padStart(2, '0')}:
-                            {String(localEndTimeSeconds).padStart(2, '0')}
-                          </MuiLink>
-                        </NextLink>
+                      <TableCell>
+                        {programLiveArchive.youtubeLive != null ? (
+                          <NextLink
+                            href={`https://www.youtube.com/watch?v=${programLiveArchive.youtubeLive.remoteYoutubeVideoId}&t=${localStartTimeTotalSeconds}s`}
+                            passHref
+                            legacyBehavior
+                          >
+                            <MuiLink>
+                              {String(localStartTimeHours).padStart(2, '0')}:
+                              {String(localStartTimeMinutes).padStart(2, '0')}:
+                              {String(localStartTimeSeconds).padStart(2, '0')}
+                            </MuiLink>
+                          </NextLink>
+                        ) : (
+                          ''
+                        )}
+                        {programLiveArchive.youtubeVideo != null ? (
+                          <NextLink
+                            href={`https://www.youtube.com/watch?v=${programLiveArchive.youtubeVideo.remoteYoutubeVideoId}&t=${localStartTimeTotalSeconds}s`}
+                            passHref
+                            legacyBehavior
+                          >
+                            <MuiLink>
+                              {String(localStartTimeHours).padStart(2, '0')}:
+                              {String(localStartTimeMinutes).padStart(2, '0')}:
+                              {String(localStartTimeSeconds).padStart(2, '0')}
+                            </MuiLink>
+                          </NextLink>
+                        ) : (
+                          ''
+                        )}
+                      </TableCell>
+                      <TableCell>
+                        {programLiveArchive.youtubeLive != null ? (
+                          <NextLink
+                            href={`https://www.youtube.com/watch?v=${programLiveArchive.youtubeLive.remoteYoutubeVideoId}&t=${localEndTimeTotalSeconds}s`}
+                            passHref
+                            legacyBehavior
+                          >
+                            <MuiLink>
+                              {String(localEndTimeHours).padStart(2, '0')}:
+                              {String(localEndTimeMinutes).padStart(2, '0')}:
+                              {String(localEndTimeSeconds).padStart(2, '0')}
+                            </MuiLink>
+                          </NextLink>
+                        ) : (
+                          ''
+                        )}
+                        {programLiveArchive.youtubeVideo != null ? (
+                          <NextLink
+                            href={`https://www.youtube.com/watch?v=${programLiveArchive.youtubeVideo.remoteYoutubeVideoId}&t=${localEndTimeTotalSeconds}s`}
+                            passHref
+                            legacyBehavior
+                          >
+                            <MuiLink>
+                              {String(localEndTimeHours).padStart(2, '0')}:
+                              {String(localEndTimeMinutes).padStart(2, '0')}:
+                              {String(localEndTimeSeconds).padStart(2, '0')}
+                            </MuiLink>
+                          </NextLink>
+                        ) : (
+                          ''
+                        )}
                       </TableCell>
                     </TableRow>
                   )

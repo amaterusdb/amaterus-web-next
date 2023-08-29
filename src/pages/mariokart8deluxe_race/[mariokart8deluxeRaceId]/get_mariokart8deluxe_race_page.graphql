@@ -43,7 +43,7 @@ query GetMariokart8deluxeRacePage(
         }
       }
 
-      programYoutubeLives: program_youtube_lives(
+      programLiveArchives: program_live_archives(
         order_by: {
           person: {
             name: asc
@@ -51,6 +51,7 @@ query GetMariokart8deluxeRacePage(
         }
       ) {
         id
+        startTime: start_time
         person {
           id
           name
@@ -58,7 +59,15 @@ query GetMariokart8deluxeRacePage(
         youtubeLive: youtube_live {
           remoteYoutubeVideoId: remote_youtube_video_id
           title
-          startTime: start_time
+          youtubeChannel: youtube_channel {
+            id
+            remoteYoutubeChannelId: remote_youtube_channel_id
+            name
+          }
+        }
+        youtubeVideo: youtube_video {
+          remoteYoutubeVideoId: remote_youtube_video_id
+          title
           youtubeChannel: youtube_channel {
             id
             remoteYoutubeChannelId: remote_youtube_channel_id
