@@ -6078,6 +6078,10 @@ export type Mutation_Root = {
   delete_program_amongus_vanilla_versions?: Maybe<Program_Amongus_Vanilla_Versions_Mutation_Response>;
   /** delete single row from the table: "program_amongus_vanilla_versions" */
   delete_program_amongus_vanilla_versions_by_pk?: Maybe<Program_Amongus_Vanilla_Versions>;
+  /** delete data from the table: "program_live_archives" */
+  delete_program_live_archives?: Maybe<Program_Live_Archives_Mutation_Response>;
+  /** delete single row from the table: "program_live_archives" */
+  delete_program_live_archives_by_pk?: Maybe<Program_Live_Archives>;
   /** delete data from the table: "program_persons" */
   delete_program_persons?: Maybe<Program_Persons_Mutation_Response>;
   /** delete single row from the table: "program_persons" */
@@ -6122,6 +6126,10 @@ export type Mutation_Root = {
   delete_youtube_lives?: Maybe<Youtube_Lives_Mutation_Response>;
   /** delete single row from the table: "youtube_lives" */
   delete_youtube_lives_by_pk?: Maybe<Youtube_Lives>;
+  /** delete data from the table: "youtube_videos" */
+  delete_youtube_videos?: Maybe<Youtube_Videos_Mutation_Response>;
+  /** delete single row from the table: "youtube_videos" */
+  delete_youtube_videos_by_pk?: Maybe<Youtube_Videos>;
   /** insert data into the table: "amongus_maps" */
   insert_amongus_maps?: Maybe<Amongus_Maps_Mutation_Response>;
   /** insert a single row into the table: "amongus_maps" */
@@ -6246,6 +6254,10 @@ export type Mutation_Root = {
   insert_program_amongus_vanilla_versions?: Maybe<Program_Amongus_Vanilla_Versions_Mutation_Response>;
   /** insert a single row into the table: "program_amongus_vanilla_versions" */
   insert_program_amongus_vanilla_versions_one?: Maybe<Program_Amongus_Vanilla_Versions>;
+  /** insert data into the table: "program_live_archives" */
+  insert_program_live_archives?: Maybe<Program_Live_Archives_Mutation_Response>;
+  /** insert a single row into the table: "program_live_archives" */
+  insert_program_live_archives_one?: Maybe<Program_Live_Archives>;
   /** insert data into the table: "program_persons" */
   insert_program_persons?: Maybe<Program_Persons_Mutation_Response>;
   /** insert a single row into the table: "program_persons" */
@@ -6290,6 +6302,10 @@ export type Mutation_Root = {
   insert_youtube_lives?: Maybe<Youtube_Lives_Mutation_Response>;
   /** insert a single row into the table: "youtube_lives" */
   insert_youtube_lives_one?: Maybe<Youtube_Lives>;
+  /** insert data into the table: "youtube_videos" */
+  insert_youtube_videos?: Maybe<Youtube_Videos_Mutation_Response>;
+  /** insert a single row into the table: "youtube_videos" */
+  insert_youtube_videos_one?: Maybe<Youtube_Videos>;
   /** update data of the table: "amongus_maps" */
   update_amongus_maps?: Maybe<Amongus_Maps_Mutation_Response>;
   /** update single row of the table: "amongus_maps" */
@@ -6476,6 +6492,12 @@ export type Mutation_Root = {
   update_program_amongus_vanilla_versions_by_pk?: Maybe<Program_Amongus_Vanilla_Versions>;
   /** update multiples rows of table: "program_amongus_vanilla_versions" */
   update_program_amongus_vanilla_versions_many?: Maybe<Array<Maybe<Program_Amongus_Vanilla_Versions_Mutation_Response>>>;
+  /** update data of the table: "program_live_archives" */
+  update_program_live_archives?: Maybe<Program_Live_Archives_Mutation_Response>;
+  /** update single row of the table: "program_live_archives" */
+  update_program_live_archives_by_pk?: Maybe<Program_Live_Archives>;
+  /** update multiples rows of table: "program_live_archives" */
+  update_program_live_archives_many?: Maybe<Array<Maybe<Program_Live_Archives_Mutation_Response>>>;
   /** update data of the table: "program_persons" */
   update_program_persons?: Maybe<Program_Persons_Mutation_Response>;
   /** update single row of the table: "program_persons" */
@@ -6542,6 +6564,12 @@ export type Mutation_Root = {
   update_youtube_lives_by_pk?: Maybe<Youtube_Lives>;
   /** update multiples rows of table: "youtube_lives" */
   update_youtube_lives_many?: Maybe<Array<Maybe<Youtube_Lives_Mutation_Response>>>;
+  /** update data of the table: "youtube_videos" */
+  update_youtube_videos?: Maybe<Youtube_Videos_Mutation_Response>;
+  /** update single row of the table: "youtube_videos" */
+  update_youtube_videos_by_pk?: Maybe<Youtube_Videos>;
+  /** update multiples rows of table: "youtube_videos" */
+  update_youtube_videos_many?: Maybe<Array<Maybe<Youtube_Videos_Mutation_Response>>>;
 };
 
 
@@ -6918,6 +6946,18 @@ export type Mutation_RootDelete_Program_Amongus_Vanilla_Versions_By_PkArgs = {
 
 
 /** mutation root */
+export type Mutation_RootDelete_Program_Live_ArchivesArgs = {
+  where: Program_Live_Archives_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Program_Live_Archives_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
 export type Mutation_RootDelete_Program_PersonsArgs = {
   where: Program_Persons_Bool_Exp;
 };
@@ -7045,6 +7085,18 @@ export type Mutation_RootDelete_Youtube_LivesArgs = {
 
 /** mutation root */
 export type Mutation_RootDelete_Youtube_Lives_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Youtube_VideosArgs = {
+  where: Youtube_Videos_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Youtube_Videos_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
@@ -7484,6 +7536,20 @@ export type Mutation_RootInsert_Program_Amongus_Vanilla_Versions_OneArgs = {
 
 
 /** mutation root */
+export type Mutation_RootInsert_Program_Live_ArchivesArgs = {
+  objects: Array<Program_Live_Archives_Insert_Input>;
+  on_conflict?: InputMaybe<Program_Live_Archives_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Program_Live_Archives_OneArgs = {
+  object: Program_Live_Archives_Insert_Input;
+  on_conflict?: InputMaybe<Program_Live_Archives_On_Conflict>;
+};
+
+
+/** mutation root */
 export type Mutation_RootInsert_Program_PersonsArgs = {
   objects: Array<Program_Persons_Insert_Input>;
   on_conflict?: InputMaybe<Program_Persons_On_Conflict>;
@@ -7634,6 +7700,20 @@ export type Mutation_RootInsert_Youtube_LivesArgs = {
 export type Mutation_RootInsert_Youtube_Lives_OneArgs = {
   object: Youtube_Lives_Insert_Input;
   on_conflict?: InputMaybe<Youtube_Lives_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Youtube_VideosArgs = {
+  objects: Array<Youtube_Videos_Insert_Input>;
+  on_conflict?: InputMaybe<Youtube_Videos_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Youtube_Videos_OneArgs = {
+  object: Youtube_Videos_Insert_Input;
+  on_conflict?: InputMaybe<Youtube_Videos_On_Conflict>;
 };
 
 
@@ -8276,6 +8356,26 @@ export type Mutation_RootUpdate_Program_Amongus_Vanilla_Versions_ManyArgs = {
 
 
 /** mutation root */
+export type Mutation_RootUpdate_Program_Live_ArchivesArgs = {
+  _set?: InputMaybe<Program_Live_Archives_Set_Input>;
+  where: Program_Live_Archives_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Program_Live_Archives_By_PkArgs = {
+  _set?: InputMaybe<Program_Live_Archives_Set_Input>;
+  pk_columns: Program_Live_Archives_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Program_Live_Archives_ManyArgs = {
+  updates: Array<Program_Live_Archives_Updates>;
+};
+
+
+/** mutation root */
 export type Mutation_RootUpdate_Program_PersonsArgs = {
   _set?: InputMaybe<Program_Persons_Set_Input>;
   where: Program_Persons_Bool_Exp;
@@ -8494,6 +8594,26 @@ export type Mutation_RootUpdate_Youtube_Lives_By_PkArgs = {
 /** mutation root */
 export type Mutation_RootUpdate_Youtube_Lives_ManyArgs = {
   updates: Array<Youtube_Lives_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Youtube_VideosArgs = {
+  _set?: InputMaybe<Youtube_Videos_Set_Input>;
+  where: Youtube_Videos_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Youtube_Videos_By_PkArgs = {
+  _set?: InputMaybe<Youtube_Videos_Set_Input>;
+  pk_columns: Youtube_Videos_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Youtube_Videos_ManyArgs = {
+  updates: Array<Youtube_Videos_Updates>;
 };
 
 /** columns and relationships of "niconico_accounts" */
@@ -11024,6 +11144,299 @@ export type Program_Amongus_Vanilla_Versions_Updates = {
   where: Program_Amongus_Vanilla_Versions_Bool_Exp;
 };
 
+/** columns and relationships of "program_live_archives" */
+export type Program_Live_Archives = {
+  __typename?: 'program_live_archives';
+  created_at: Scalars['timestamptz']['output'];
+  end_time?: Maybe<Scalars['timestamptz']['output']>;
+  id: Scalars['uuid']['output'];
+  /** An object relationship */
+  person: Persons;
+  person_id: Scalars['uuid']['output'];
+  /** An object relationship */
+  program: Programs;
+  program_id: Scalars['uuid']['output'];
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  updated_at: Scalars['timestamptz']['output'];
+  /** An object relationship */
+  youtube_live?: Maybe<Youtube_Lives>;
+  youtube_live_id?: Maybe<Scalars['uuid']['output']>;
+  /** An object relationship */
+  youtube_video?: Maybe<Youtube_Videos>;
+  youtube_video_id?: Maybe<Scalars['uuid']['output']>;
+};
+
+/** aggregated selection of "program_live_archives" */
+export type Program_Live_Archives_Aggregate = {
+  __typename?: 'program_live_archives_aggregate';
+  aggregate?: Maybe<Program_Live_Archives_Aggregate_Fields>;
+  nodes: Array<Program_Live_Archives>;
+};
+
+export type Program_Live_Archives_Aggregate_Bool_Exp = {
+  count?: InputMaybe<Program_Live_Archives_Aggregate_Bool_Exp_Count>;
+};
+
+export type Program_Live_Archives_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Program_Live_Archives_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Program_Live_Archives_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
+/** aggregate fields of "program_live_archives" */
+export type Program_Live_Archives_Aggregate_Fields = {
+  __typename?: 'program_live_archives_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Program_Live_Archives_Max_Fields>;
+  min?: Maybe<Program_Live_Archives_Min_Fields>;
+};
+
+
+/** aggregate fields of "program_live_archives" */
+export type Program_Live_Archives_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Program_Live_Archives_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** order by aggregate values of table "program_live_archives" */
+export type Program_Live_Archives_Aggregate_Order_By = {
+  count?: InputMaybe<Order_By>;
+  max?: InputMaybe<Program_Live_Archives_Max_Order_By>;
+  min?: InputMaybe<Program_Live_Archives_Min_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "program_live_archives" */
+export type Program_Live_Archives_Arr_Rel_Insert_Input = {
+  data: Array<Program_Live_Archives_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Program_Live_Archives_On_Conflict>;
+};
+
+/** Boolean expression to filter rows from the table "program_live_archives". All fields are combined with a logical 'AND'. */
+export type Program_Live_Archives_Bool_Exp = {
+  _and?: InputMaybe<Array<Program_Live_Archives_Bool_Exp>>;
+  _not?: InputMaybe<Program_Live_Archives_Bool_Exp>;
+  _or?: InputMaybe<Array<Program_Live_Archives_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  end_time?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  person?: InputMaybe<Persons_Bool_Exp>;
+  person_id?: InputMaybe<Uuid_Comparison_Exp>;
+  program?: InputMaybe<Programs_Bool_Exp>;
+  program_id?: InputMaybe<Uuid_Comparison_Exp>;
+  start_time?: InputMaybe<Timestamptz_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  youtube_live?: InputMaybe<Youtube_Lives_Bool_Exp>;
+  youtube_live_id?: InputMaybe<Uuid_Comparison_Exp>;
+  youtube_video?: InputMaybe<Youtube_Videos_Bool_Exp>;
+  youtube_video_id?: InputMaybe<Uuid_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "program_live_archives" */
+export enum Program_Live_Archives_Constraint {
+  /** unique or primary key constraint on columns "id" */
+  ProgramLiveArchivesPkey = 'program_live_archives_pkey',
+  /** unique or primary key constraint on columns "program_id", "youtube_live_id" */
+  ProgramLiveArchivesProgramIdYoutubeLiveIdKey = 'program_live_archives_program_id_youtube_live_id_key',
+  /** unique or primary key constraint on columns "program_id", "youtube_video_id" */
+  ProgramLiveArchivesProgramIdYoutubeVideoIdKey = 'program_live_archives_program_id_youtube_video_id_key'
+}
+
+/** input type for inserting data into table "program_live_archives" */
+export type Program_Live_Archives_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  end_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  person?: InputMaybe<Persons_Obj_Rel_Insert_Input>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
+  program?: InputMaybe<Programs_Obj_Rel_Insert_Input>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  youtube_live?: InputMaybe<Youtube_Lives_Obj_Rel_Insert_Input>;
+  youtube_live_id?: InputMaybe<Scalars['uuid']['input']>;
+  youtube_video?: InputMaybe<Youtube_Videos_Obj_Rel_Insert_Input>;
+  youtube_video_id?: InputMaybe<Scalars['uuid']['input']>;
+};
+
+/** aggregate max on columns */
+export type Program_Live_Archives_Max_Fields = {
+  __typename?: 'program_live_archives_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  end_time?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  person_id?: Maybe<Scalars['uuid']['output']>;
+  program_id?: Maybe<Scalars['uuid']['output']>;
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+  youtube_live_id?: Maybe<Scalars['uuid']['output']>;
+  youtube_video_id?: Maybe<Scalars['uuid']['output']>;
+};
+
+/** order by max() on columns of table "program_live_archives" */
+export type Program_Live_Archives_Max_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  end_time?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  start_time?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+  youtube_live_id?: InputMaybe<Order_By>;
+  youtube_video_id?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Program_Live_Archives_Min_Fields = {
+  __typename?: 'program_live_archives_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  end_time?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  person_id?: Maybe<Scalars['uuid']['output']>;
+  program_id?: Maybe<Scalars['uuid']['output']>;
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+  youtube_live_id?: Maybe<Scalars['uuid']['output']>;
+  youtube_video_id?: Maybe<Scalars['uuid']['output']>;
+};
+
+/** order by min() on columns of table "program_live_archives" */
+export type Program_Live_Archives_Min_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  end_time?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  start_time?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+  youtube_live_id?: InputMaybe<Order_By>;
+  youtube_video_id?: InputMaybe<Order_By>;
+};
+
+/** response of any mutation on the table "program_live_archives" */
+export type Program_Live_Archives_Mutation_Response = {
+  __typename?: 'program_live_archives_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Program_Live_Archives>;
+};
+
+/** on_conflict condition type for table "program_live_archives" */
+export type Program_Live_Archives_On_Conflict = {
+  constraint: Program_Live_Archives_Constraint;
+  update_columns?: Array<Program_Live_Archives_Update_Column>;
+  where?: InputMaybe<Program_Live_Archives_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "program_live_archives". */
+export type Program_Live_Archives_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  end_time?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  person?: InputMaybe<Persons_Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  program?: InputMaybe<Programs_Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  start_time?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+  youtube_live?: InputMaybe<Youtube_Lives_Order_By>;
+  youtube_live_id?: InputMaybe<Order_By>;
+  youtube_video?: InputMaybe<Youtube_Videos_Order_By>;
+  youtube_video_id?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: program_live_archives */
+export type Program_Live_Archives_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "program_live_archives" */
+export enum Program_Live_Archives_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  EndTime = 'end_time',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  PersonId = 'person_id',
+  /** column name */
+  ProgramId = 'program_id',
+  /** column name */
+  StartTime = 'start_time',
+  /** column name */
+  UpdatedAt = 'updated_at',
+  /** column name */
+  YoutubeLiveId = 'youtube_live_id',
+  /** column name */
+  YoutubeVideoId = 'youtube_video_id'
+}
+
+/** input type for updating data in table "program_live_archives" */
+export type Program_Live_Archives_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  end_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  youtube_live_id?: InputMaybe<Scalars['uuid']['input']>;
+  youtube_video_id?: InputMaybe<Scalars['uuid']['input']>;
+};
+
+/** Streaming cursor of the table "program_live_archives" */
+export type Program_Live_Archives_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Program_Live_Archives_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Program_Live_Archives_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  end_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  youtube_live_id?: InputMaybe<Scalars['uuid']['input']>;
+  youtube_video_id?: InputMaybe<Scalars['uuid']['input']>;
+};
+
+/** update columns of table "program_live_archives" */
+export enum Program_Live_Archives_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  EndTime = 'end_time',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  PersonId = 'person_id',
+  /** column name */
+  ProgramId = 'program_id',
+  /** column name */
+  StartTime = 'start_time',
+  /** column name */
+  UpdatedAt = 'updated_at',
+  /** column name */
+  YoutubeLiveId = 'youtube_live_id',
+  /** column name */
+  YoutubeVideoId = 'youtube_video_id'
+}
+
+export type Program_Live_Archives_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Program_Live_Archives_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Program_Live_Archives_Bool_Exp;
+};
+
 /** columns and relationships of "program_persons" */
 export type Program_Persons = {
   __typename?: 'program_persons';
@@ -11998,6 +12411,10 @@ export type Programs = {
   /** An aggregate relationship */
   program_amongus_vanilla_versions_aggregate: Program_Amongus_Vanilla_Versions_Aggregate;
   /** An array relationship */
+  program_live_archives: Array<Program_Live_Archives>;
+  /** An aggregate relationship */
+  program_live_archives_aggregate: Program_Live_Archives_Aggregate;
+  /** An array relationship */
   program_persons: Array<Program_Persons>;
   /** An aggregate relationship */
   program_persons_aggregate: Program_Persons_Aggregate;
@@ -12140,6 +12557,26 @@ export type ProgramsProgram_Amongus_Vanilla_Versions_AggregateArgs = {
 
 
 /** columns and relationships of "programs" */
+export type ProgramsProgram_Live_ArchivesArgs = {
+  distinct_on?: InputMaybe<Array<Program_Live_Archives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Live_Archives_Order_By>>;
+  where?: InputMaybe<Program_Live_Archives_Bool_Exp>;
+};
+
+
+/** columns and relationships of "programs" */
+export type ProgramsProgram_Live_Archives_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Live_Archives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Live_Archives_Order_By>>;
+  where?: InputMaybe<Program_Live_Archives_Bool_Exp>;
+};
+
+
+/** columns and relationships of "programs" */
 export type ProgramsProgram_PersonsArgs = {
   distinct_on?: InputMaybe<Array<Program_Persons_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -12262,6 +12699,8 @@ export type Programs_Bool_Exp = {
   program_amongus_mods_aggregate?: InputMaybe<Program_Amongus_Mods_Aggregate_Bool_Exp>;
   program_amongus_vanilla_versions?: InputMaybe<Program_Amongus_Vanilla_Versions_Bool_Exp>;
   program_amongus_vanilla_versions_aggregate?: InputMaybe<Program_Amongus_Vanilla_Versions_Aggregate_Bool_Exp>;
+  program_live_archives?: InputMaybe<Program_Live_Archives_Bool_Exp>;
+  program_live_archives_aggregate?: InputMaybe<Program_Live_Archives_Aggregate_Bool_Exp>;
   program_persons?: InputMaybe<Program_Persons_Bool_Exp>;
   program_persons_aggregate?: InputMaybe<Program_Persons_Aggregate_Bool_Exp>;
   program_projects?: InputMaybe<Program_Projects_Bool_Exp>;
@@ -12294,6 +12733,7 @@ export type Programs_Insert_Input = {
   program_amongus_maps?: InputMaybe<Program_Amongus_Maps_Arr_Rel_Insert_Input>;
   program_amongus_mods?: InputMaybe<Program_Amongus_Mods_Arr_Rel_Insert_Input>;
   program_amongus_vanilla_versions?: InputMaybe<Program_Amongus_Vanilla_Versions_Arr_Rel_Insert_Input>;
+  program_live_archives?: InputMaybe<Program_Live_Archives_Arr_Rel_Insert_Input>;
   program_persons?: InputMaybe<Program_Persons_Arr_Rel_Insert_Input>;
   program_projects?: InputMaybe<Program_Projects_Arr_Rel_Insert_Input>;
   program_twitter_announcements?: InputMaybe<Program_Twitter_Announcements_Arr_Rel_Insert_Input>;
@@ -12363,6 +12803,7 @@ export type Programs_Order_By = {
   program_amongus_maps_aggregate?: InputMaybe<Program_Amongus_Maps_Aggregate_Order_By>;
   program_amongus_mods_aggregate?: InputMaybe<Program_Amongus_Mods_Aggregate_Order_By>;
   program_amongus_vanilla_versions_aggregate?: InputMaybe<Program_Amongus_Vanilla_Versions_Aggregate_Order_By>;
+  program_live_archives_aggregate?: InputMaybe<Program_Live_Archives_Aggregate_Order_By>;
   program_persons_aggregate?: InputMaybe<Program_Persons_Aggregate_Order_By>;
   program_projects_aggregate?: InputMaybe<Program_Projects_Aggregate_Order_By>;
   program_twitter_announcements_aggregate?: InputMaybe<Program_Twitter_Announcements_Aggregate_Order_By>;
@@ -12844,6 +13285,12 @@ export type Query_Root = {
   /** fetch data from the table: "program_amongus_vanilla_versions" using primary key columns */
   program_amongus_vanilla_versions_by_pk?: Maybe<Program_Amongus_Vanilla_Versions>;
   /** An array relationship */
+  program_live_archives: Array<Program_Live_Archives>;
+  /** An aggregate relationship */
+  program_live_archives_aggregate: Program_Live_Archives_Aggregate;
+  /** fetch data from the table: "program_live_archives" using primary key columns */
+  program_live_archives_by_pk?: Maybe<Program_Live_Archives>;
+  /** An array relationship */
   program_persons: Array<Program_Persons>;
   /** An aggregate relationship */
   program_persons_aggregate: Program_Persons_Aggregate;
@@ -12909,6 +13356,12 @@ export type Query_Root = {
   youtube_lives_aggregate: Youtube_Lives_Aggregate;
   /** fetch data from the table: "youtube_lives" using primary key columns */
   youtube_lives_by_pk?: Maybe<Youtube_Lives>;
+  /** fetch data from the table: "youtube_videos" */
+  youtube_videos: Array<Youtube_Videos>;
+  /** fetch aggregated fields from the table: "youtube_videos" */
+  youtube_videos_aggregate: Youtube_Videos_Aggregate;
+  /** fetch data from the table: "youtube_videos" using primary key columns */
+  youtube_videos_by_pk?: Maybe<Youtube_Videos>;
 };
 
 
@@ -13625,6 +14078,29 @@ export type Query_RootProgram_Amongus_Vanilla_Versions_By_PkArgs = {
 };
 
 
+export type Query_RootProgram_Live_ArchivesArgs = {
+  distinct_on?: InputMaybe<Array<Program_Live_Archives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Live_Archives_Order_By>>;
+  where?: InputMaybe<Program_Live_Archives_Bool_Exp>;
+};
+
+
+export type Query_RootProgram_Live_Archives_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Live_Archives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Live_Archives_Order_By>>;
+  where?: InputMaybe<Program_Live_Archives_Bool_Exp>;
+};
+
+
+export type Query_RootProgram_Live_Archives_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
 export type Query_RootProgram_PersonsArgs = {
   distinct_on?: InputMaybe<Array<Program_Persons_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -13874,6 +14350,29 @@ export type Query_RootYoutube_Lives_AggregateArgs = {
 
 
 export type Query_RootYoutube_Lives_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Query_RootYoutube_VideosArgs = {
+  distinct_on?: InputMaybe<Array<Youtube_Videos_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Youtube_Videos_Order_By>>;
+  where?: InputMaybe<Youtube_Videos_Bool_Exp>;
+};
+
+
+export type Query_RootYoutube_Videos_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Youtube_Videos_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Youtube_Videos_Order_By>>;
+  where?: InputMaybe<Youtube_Videos_Bool_Exp>;
+};
+
+
+export type Query_RootYoutube_Videos_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
@@ -14128,6 +14627,14 @@ export type Subscription_Root = {
   /** fetch data from the table in a streaming manner: "program_amongus_vanilla_versions" */
   program_amongus_vanilla_versions_stream: Array<Program_Amongus_Vanilla_Versions>;
   /** An array relationship */
+  program_live_archives: Array<Program_Live_Archives>;
+  /** An aggregate relationship */
+  program_live_archives_aggregate: Program_Live_Archives_Aggregate;
+  /** fetch data from the table: "program_live_archives" using primary key columns */
+  program_live_archives_by_pk?: Maybe<Program_Live_Archives>;
+  /** fetch data from the table in a streaming manner: "program_live_archives" */
+  program_live_archives_stream: Array<Program_Live_Archives>;
+  /** An array relationship */
   program_persons: Array<Program_Persons>;
   /** An aggregate relationship */
   program_persons_aggregate: Program_Persons_Aggregate;
@@ -14215,6 +14722,14 @@ export type Subscription_Root = {
   youtube_lives_by_pk?: Maybe<Youtube_Lives>;
   /** fetch data from the table in a streaming manner: "youtube_lives" */
   youtube_lives_stream: Array<Youtube_Lives>;
+  /** fetch data from the table: "youtube_videos" */
+  youtube_videos: Array<Youtube_Videos>;
+  /** fetch aggregated fields from the table: "youtube_videos" */
+  youtube_videos_aggregate: Youtube_Videos_Aggregate;
+  /** fetch data from the table: "youtube_videos" using primary key columns */
+  youtube_videos_by_pk?: Maybe<Youtube_Videos>;
+  /** fetch data from the table in a streaming manner: "youtube_videos" */
+  youtube_videos_stream: Array<Youtube_Videos>;
 };
 
 
@@ -15148,6 +15663,36 @@ export type Subscription_RootProgram_Amongus_Vanilla_Versions_StreamArgs = {
 };
 
 
+export type Subscription_RootProgram_Live_ArchivesArgs = {
+  distinct_on?: InputMaybe<Array<Program_Live_Archives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Live_Archives_Order_By>>;
+  where?: InputMaybe<Program_Live_Archives_Bool_Exp>;
+};
+
+
+export type Subscription_RootProgram_Live_Archives_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Live_Archives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Live_Archives_Order_By>>;
+  where?: InputMaybe<Program_Live_Archives_Bool_Exp>;
+};
+
+
+export type Subscription_RootProgram_Live_Archives_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootProgram_Live_Archives_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Program_Live_Archives_Stream_Cursor_Input>>;
+  where?: InputMaybe<Program_Live_Archives_Bool_Exp>;
+};
+
+
 export type Subscription_RootProgram_PersonsArgs = {
   distinct_on?: InputMaybe<Array<Program_Persons_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -15475,6 +16020,36 @@ export type Subscription_RootYoutube_Lives_StreamArgs = {
   batch_size: Scalars['Int']['input'];
   cursor: Array<InputMaybe<Youtube_Lives_Stream_Cursor_Input>>;
   where?: InputMaybe<Youtube_Lives_Bool_Exp>;
+};
+
+
+export type Subscription_RootYoutube_VideosArgs = {
+  distinct_on?: InputMaybe<Array<Youtube_Videos_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Youtube_Videos_Order_By>>;
+  where?: InputMaybe<Youtube_Videos_Bool_Exp>;
+};
+
+
+export type Subscription_RootYoutube_Videos_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Youtube_Videos_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Youtube_Videos_Order_By>>;
+  where?: InputMaybe<Youtube_Videos_Bool_Exp>;
+};
+
+
+export type Subscription_RootYoutube_Videos_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootYoutube_Videos_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Youtube_Videos_Stream_Cursor_Input>>;
+  where?: InputMaybe<Youtube_Videos_Bool_Exp>;
 };
 
 /** Boolean expression to compare columns of type "timestamptz". All fields are combined with logical 'AND'. */
@@ -16699,6 +17274,252 @@ export type Youtube_Lives_Updates = {
   where: Youtube_Lives_Bool_Exp;
 };
 
+/** columns and relationships of "youtube_videos" */
+export type Youtube_Videos = {
+  __typename?: 'youtube_videos';
+  created_at: Scalars['timestamptz']['output'];
+  id: Scalars['uuid']['output'];
+  is_premiere: Scalars['Boolean']['output'];
+  post_time: Scalars['timestamptz']['output'];
+  /** An array relationship */
+  program_live_archives: Array<Program_Live_Archives>;
+  /** An aggregate relationship */
+  program_live_archives_aggregate: Program_Live_Archives_Aggregate;
+  remote_youtube_video_id: Scalars['String']['output'];
+  title: Scalars['String']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+  /** An object relationship */
+  youtube_channel: Youtube_Channels;
+  youtube_channel_id: Scalars['uuid']['output'];
+};
+
+
+/** columns and relationships of "youtube_videos" */
+export type Youtube_VideosProgram_Live_ArchivesArgs = {
+  distinct_on?: InputMaybe<Array<Program_Live_Archives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Live_Archives_Order_By>>;
+  where?: InputMaybe<Program_Live_Archives_Bool_Exp>;
+};
+
+
+/** columns and relationships of "youtube_videos" */
+export type Youtube_VideosProgram_Live_Archives_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Live_Archives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Live_Archives_Order_By>>;
+  where?: InputMaybe<Program_Live_Archives_Bool_Exp>;
+};
+
+/** aggregated selection of "youtube_videos" */
+export type Youtube_Videos_Aggregate = {
+  __typename?: 'youtube_videos_aggregate';
+  aggregate?: Maybe<Youtube_Videos_Aggregate_Fields>;
+  nodes: Array<Youtube_Videos>;
+};
+
+/** aggregate fields of "youtube_videos" */
+export type Youtube_Videos_Aggregate_Fields = {
+  __typename?: 'youtube_videos_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Youtube_Videos_Max_Fields>;
+  min?: Maybe<Youtube_Videos_Min_Fields>;
+};
+
+
+/** aggregate fields of "youtube_videos" */
+export type Youtube_Videos_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Youtube_Videos_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** Boolean expression to filter rows from the table "youtube_videos". All fields are combined with a logical 'AND'. */
+export type Youtube_Videos_Bool_Exp = {
+  _and?: InputMaybe<Array<Youtube_Videos_Bool_Exp>>;
+  _not?: InputMaybe<Youtube_Videos_Bool_Exp>;
+  _or?: InputMaybe<Array<Youtube_Videos_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  is_premiere?: InputMaybe<Boolean_Comparison_Exp>;
+  post_time?: InputMaybe<Timestamptz_Comparison_Exp>;
+  program_live_archives?: InputMaybe<Program_Live_Archives_Bool_Exp>;
+  program_live_archives_aggregate?: InputMaybe<Program_Live_Archives_Aggregate_Bool_Exp>;
+  remote_youtube_video_id?: InputMaybe<String_Comparison_Exp>;
+  title?: InputMaybe<String_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  youtube_channel?: InputMaybe<Youtube_Channels_Bool_Exp>;
+  youtube_channel_id?: InputMaybe<Uuid_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "youtube_videos" */
+export enum Youtube_Videos_Constraint {
+  /** unique or primary key constraint on columns "id" */
+  YoutubeVideosPkey = 'youtube_videos_pkey',
+  /** unique or primary key constraint on columns "remote_youtube_video_id" */
+  YoutubeVideosRemoteYoutubeVideoIdKey = 'youtube_videos_remote_youtube_video_id_key'
+}
+
+/** input type for inserting data into table "youtube_videos" */
+export type Youtube_Videos_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  is_premiere?: InputMaybe<Scalars['Boolean']['input']>;
+  post_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  program_live_archives?: InputMaybe<Program_Live_Archives_Arr_Rel_Insert_Input>;
+  remote_youtube_video_id?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  youtube_channel?: InputMaybe<Youtube_Channels_Obj_Rel_Insert_Input>;
+  youtube_channel_id?: InputMaybe<Scalars['uuid']['input']>;
+};
+
+/** aggregate max on columns */
+export type Youtube_Videos_Max_Fields = {
+  __typename?: 'youtube_videos_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  post_time?: Maybe<Scalars['timestamptz']['output']>;
+  remote_youtube_video_id?: Maybe<Scalars['String']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+  youtube_channel_id?: Maybe<Scalars['uuid']['output']>;
+};
+
+/** aggregate min on columns */
+export type Youtube_Videos_Min_Fields = {
+  __typename?: 'youtube_videos_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  post_time?: Maybe<Scalars['timestamptz']['output']>;
+  remote_youtube_video_id?: Maybe<Scalars['String']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+  youtube_channel_id?: Maybe<Scalars['uuid']['output']>;
+};
+
+/** response of any mutation on the table "youtube_videos" */
+export type Youtube_Videos_Mutation_Response = {
+  __typename?: 'youtube_videos_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Youtube_Videos>;
+};
+
+/** input type for inserting object relation for remote table "youtube_videos" */
+export type Youtube_Videos_Obj_Rel_Insert_Input = {
+  data: Youtube_Videos_Insert_Input;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Youtube_Videos_On_Conflict>;
+};
+
+/** on_conflict condition type for table "youtube_videos" */
+export type Youtube_Videos_On_Conflict = {
+  constraint: Youtube_Videos_Constraint;
+  update_columns?: Array<Youtube_Videos_Update_Column>;
+  where?: InputMaybe<Youtube_Videos_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "youtube_videos". */
+export type Youtube_Videos_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  is_premiere?: InputMaybe<Order_By>;
+  post_time?: InputMaybe<Order_By>;
+  program_live_archives_aggregate?: InputMaybe<Program_Live_Archives_Aggregate_Order_By>;
+  remote_youtube_video_id?: InputMaybe<Order_By>;
+  title?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+  youtube_channel?: InputMaybe<Youtube_Channels_Order_By>;
+  youtube_channel_id?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: youtube_videos */
+export type Youtube_Videos_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "youtube_videos" */
+export enum Youtube_Videos_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  IsPremiere = 'is_premiere',
+  /** column name */
+  PostTime = 'post_time',
+  /** column name */
+  RemoteYoutubeVideoId = 'remote_youtube_video_id',
+  /** column name */
+  Title = 'title',
+  /** column name */
+  UpdatedAt = 'updated_at',
+  /** column name */
+  YoutubeChannelId = 'youtube_channel_id'
+}
+
+/** input type for updating data in table "youtube_videos" */
+export type Youtube_Videos_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  is_premiere?: InputMaybe<Scalars['Boolean']['input']>;
+  post_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  remote_youtube_video_id?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  youtube_channel_id?: InputMaybe<Scalars['uuid']['input']>;
+};
+
+/** Streaming cursor of the table "youtube_videos" */
+export type Youtube_Videos_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Youtube_Videos_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Youtube_Videos_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  is_premiere?: InputMaybe<Scalars['Boolean']['input']>;
+  post_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  remote_youtube_video_id?: InputMaybe<Scalars['String']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  youtube_channel_id?: InputMaybe<Scalars['uuid']['input']>;
+};
+
+/** update columns of table "youtube_videos" */
+export enum Youtube_Videos_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  IsPremiere = 'is_premiere',
+  /** column name */
+  PostTime = 'post_time',
+  /** column name */
+  RemoteYoutubeVideoId = 'remote_youtube_video_id',
+  /** column name */
+  Title = 'title',
+  /** column name */
+  UpdatedAt = 'updated_at',
+  /** column name */
+  YoutubeChannelId = 'youtube_channel_id'
+}
+
+export type Youtube_Videos_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Youtube_Videos_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Youtube_Videos_Bool_Exp;
+};
+
 export type GetAmongusMatchPageQueryVariables = Exact<{
   amongusMatchId: Scalars['uuid']['input'];
 }>;
@@ -16757,7 +17578,7 @@ export type GetProgramPageQueryVariables = Exact<{
 }>;
 
 
-export type GetProgramPageQuery = { __typename?: 'query_root', program?: { __typename?: 'programs', id: any, title: string, startTime?: any | null, endTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, game?: { __typename?: 'games', id: any, name: string } | null, programTwitterAnnouncements: Array<{ __typename?: 'program_twitter_announcements', twitterTweet: { __typename?: 'twitter_tweets', id: any, remoteTweetId: string } }>, programPersons: Array<{ __typename?: 'program_persons', person: { __typename?: 'persons', id: any, name: string } }>, programYouTubeLives: Array<{ __typename?: 'program_youtube_lives', id: any, person?: { __typename?: 'persons', id: any, name: string } | null, youtubeLive: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } }>, amongusMatches: Array<{ __typename?: 'amongus_matches', id: any, startTime: any, endTime?: any | null }>, mariokart8deluxeRaces: Array<{ __typename?: 'mariokart8deluxe_races', id: any, startTime: any, endTime?: any | null, mariokart8deluxeCourse?: { __typename?: 'mariokart8deluxe_courses', id: any, name: string } | null }>, mariokart8deluxeBattleMatches: Array<{ __typename?: 'mariokart8deluxe_battle_matches', id: any, startTime: any, endTime?: any | null, mariokart8deluxeBattleRule?: { __typename?: 'mariokart8deluxe_battle_rules', id: any, name: string } | null, mariokart8deluxeBattleCourse?: { __typename?: 'mariokart8deluxe_battle_courses', id: any, name: string } | null }> } | null };
+export type GetProgramPageQuery = { __typename?: 'query_root', program?: { __typename?: 'programs', id: any, title: string, startTime?: any | null, endTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, game?: { __typename?: 'games', id: any, name: string } | null, programTwitterAnnouncements: Array<{ __typename?: 'program_twitter_announcements', twitterTweet: { __typename?: 'twitter_tweets', id: any, remoteTweetId: string } }>, programPersons: Array<{ __typename?: 'program_persons', person: { __typename?: 'persons', id: any, name: string } }>, programLiveArchives: Array<{ __typename?: 'program_live_archives', id: any, person: { __typename?: 'persons', id: any, name: string }, youtubeLive?: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null, youtubeVideo?: { __typename?: 'youtube_videos', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null }>, amongusMatches: Array<{ __typename?: 'amongus_matches', id: any, startTime: any, endTime?: any | null }>, mariokart8deluxeRaces: Array<{ __typename?: 'mariokart8deluxe_races', id: any, startTime: any, endTime?: any | null, mariokart8deluxeCourse?: { __typename?: 'mariokart8deluxe_courses', id: any, name: string } | null }>, mariokart8deluxeBattleMatches: Array<{ __typename?: 'mariokart8deluxe_battle_matches', id: any, startTime: any, endTime?: any | null, mariokart8deluxeBattleRule?: { __typename?: 'mariokart8deluxe_battle_rules', id: any, name: string } | null, mariokart8deluxeBattleCourse?: { __typename?: 'mariokart8deluxe_battle_courses', id: any, name: string } | null }> } | null };
 
 export type GetProgramPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -17301,13 +18122,22 @@ export const GetProgramPageDocument = gql`
         name
       }
     }
-    programYouTubeLives: program_youtube_lives(order_by: {person: {name: asc}}) {
+    programLiveArchives: program_live_archives(order_by: {person: {name: asc}}) {
       id
       person {
         id
         name
       }
       youtubeLive: youtube_live {
+        remoteYoutubeVideoId: remote_youtube_video_id
+        title
+        youtubeChannel: youtube_channel {
+          id
+          remoteYoutubeChannelId: remote_youtube_channel_id
+          name
+        }
+      }
+      youtubeVideo: youtube_video {
         remoteYoutubeVideoId: remote_youtube_video_id
         title
         youtubeChannel: youtube_channel {

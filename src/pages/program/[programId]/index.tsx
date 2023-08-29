@@ -429,28 +429,43 @@ export default function ProgramPage({ programId }: { programId: string }) {
               </TableRow>
             </TableHead>
             <TableBody>
-              {program.programYouTubeLives.map((programYoutubeLive) => (
+              {program.programLiveArchives.map((programLiveArchive) => (
                 <TableRow
-                  key={programYoutubeLive.id}
+                  key={programLiveArchive.id}
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 >
                   <TableCell component='th' scope='row'>
-                    <NextLink
-                      href={`https://www.youtube.com/watch?v=${programYoutubeLive.youtubeLive.remoteYoutubeVideoId}`}
-                      passHref
-                      legacyBehavior
-                    >
-                      <MuiLink>{programYoutubeLive.youtubeLive.title}</MuiLink>
-                    </NextLink>
-                  </TableCell>
-                  <TableCell>
-                    {programYoutubeLive.person != null ? (
+                    {programLiveArchive.youtubeLive != null ? (
                       <NextLink
-                        href={`/person/${programYoutubeLive.person.id}/`}
+                        href={`https://www.youtube.com/watch?v=${programLiveArchive.youtubeLive.remoteYoutubeVideoId}`}
                         passHref
                         legacyBehavior
                       >
-                        <MuiLink>{programYoutubeLive.person.name}</MuiLink>
+                        <MuiLink>{programLiveArchive.youtubeLive.title}</MuiLink>
+                      </NextLink>
+                    ) : (
+                      ''
+                    )}
+                    {programLiveArchive.youtubeVideo != null ? (
+                      <NextLink
+                        href={`https://www.youtube.com/watch?v=${programLiveArchive.youtubeVideo.remoteYoutubeVideoId}`}
+                        passHref
+                        legacyBehavior
+                      >
+                        <MuiLink>{programLiveArchive.youtubeVideo.title}</MuiLink>
+                      </NextLink>
+                    ) : (
+                      ''
+                    )}
+                  </TableCell>
+                  <TableCell>
+                    {programLiveArchive.person != null ? (
+                      <NextLink
+                        href={`/person/${programLiveArchive.person.id}/`}
+                        passHref
+                        legacyBehavior
+                      >
+                        <MuiLink>{programLiveArchive.person.name}</MuiLink>
                       </NextLink>
                     ) : (
                       ''

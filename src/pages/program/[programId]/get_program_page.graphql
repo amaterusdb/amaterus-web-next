@@ -47,7 +47,7 @@ query GetProgramPage(
       }
     }
     
-    programYouTubeLives: program_youtube_lives(
+    programLiveArchives: program_live_archives(
       order_by: {
         person: {
           name: asc
@@ -60,6 +60,15 @@ query GetProgramPage(
         name
       }
       youtubeLive: youtube_live {
+        remoteYoutubeVideoId: remote_youtube_video_id
+        title
+        youtubeChannel: youtube_channel {
+          id
+          remoteYoutubeChannelId: remote_youtube_channel_id
+          name
+        }
+      }
+      youtubeVideo: youtube_video {
         remoteYoutubeVideoId: remote_youtube_video_id
         title
         youtubeChannel: youtube_channel {
