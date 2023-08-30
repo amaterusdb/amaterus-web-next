@@ -89,6 +89,16 @@ query GetProgramPage(
       endTime: end_time
     }
 
+    fallguysMatches: fallguys_matches(
+      order_by: {
+        start_time: asc
+      }
+    ) {
+      id
+      startTime: start_time
+      endTime: end_time
+    }
+
     mariokart8deluxeRaces: mariokart8deluxe_races(
       order_by: {
         start_time: asc
