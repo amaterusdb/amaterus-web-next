@@ -2720,6 +2720,1602 @@ export enum Cursor_Ordering {
   Desc = 'DESC'
 }
 
+/** columns and relationships of "fallguys_custom_round_twitter_announcements" */
+export type Fallguys_Custom_Round_Twitter_Announcements = {
+  __typename?: 'fallguys_custom_round_twitter_announcements';
+  created_at: Scalars['timestamptz']['output'];
+  /** An object relationship */
+  fallguys_custom_round: Fallguys_Custom_Rounds;
+  fallguys_custom_round_id: Scalars['uuid']['output'];
+  id: Scalars['uuid']['output'];
+  /** An object relationship */
+  twitter_tweet: Twitter_Tweets;
+  twitter_tweet_id: Scalars['uuid']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+/** aggregated selection of "fallguys_custom_round_twitter_announcements" */
+export type Fallguys_Custom_Round_Twitter_Announcements_Aggregate = {
+  __typename?: 'fallguys_custom_round_twitter_announcements_aggregate';
+  aggregate?: Maybe<Fallguys_Custom_Round_Twitter_Announcements_Aggregate_Fields>;
+  nodes: Array<Fallguys_Custom_Round_Twitter_Announcements>;
+};
+
+export type Fallguys_Custom_Round_Twitter_Announcements_Aggregate_Bool_Exp = {
+  count?: InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_Aggregate_Bool_Exp_Count>;
+};
+
+export type Fallguys_Custom_Round_Twitter_Announcements_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Fallguys_Custom_Round_Twitter_Announcements_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
+/** aggregate fields of "fallguys_custom_round_twitter_announcements" */
+export type Fallguys_Custom_Round_Twitter_Announcements_Aggregate_Fields = {
+  __typename?: 'fallguys_custom_round_twitter_announcements_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Fallguys_Custom_Round_Twitter_Announcements_Max_Fields>;
+  min?: Maybe<Fallguys_Custom_Round_Twitter_Announcements_Min_Fields>;
+};
+
+
+/** aggregate fields of "fallguys_custom_round_twitter_announcements" */
+export type Fallguys_Custom_Round_Twitter_Announcements_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Fallguys_Custom_Round_Twitter_Announcements_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** order by aggregate values of table "fallguys_custom_round_twitter_announcements" */
+export type Fallguys_Custom_Round_Twitter_Announcements_Aggregate_Order_By = {
+  count?: InputMaybe<Order_By>;
+  max?: InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_Max_Order_By>;
+  min?: InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_Min_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "fallguys_custom_round_twitter_announcements" */
+export type Fallguys_Custom_Round_Twitter_Announcements_Arr_Rel_Insert_Input = {
+  data: Array<Fallguys_Custom_Round_Twitter_Announcements_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_On_Conflict>;
+};
+
+/** Boolean expression to filter rows from the table "fallguys_custom_round_twitter_announcements". All fields are combined with a logical 'AND'. */
+export type Fallguys_Custom_Round_Twitter_Announcements_Bool_Exp = {
+  _and?: InputMaybe<Array<Fallguys_Custom_Round_Twitter_Announcements_Bool_Exp>>;
+  _not?: InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_Bool_Exp>;
+  _or?: InputMaybe<Array<Fallguys_Custom_Round_Twitter_Announcements_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  fallguys_custom_round?: InputMaybe<Fallguys_Custom_Rounds_Bool_Exp>;
+  fallguys_custom_round_id?: InputMaybe<Uuid_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  twitter_tweet?: InputMaybe<Twitter_Tweets_Bool_Exp>;
+  twitter_tweet_id?: InputMaybe<Uuid_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "fallguys_custom_round_twitter_announcements" */
+export enum Fallguys_Custom_Round_Twitter_Announcements_Constraint {
+  /** unique or primary key constraint on columns "id" */
+  FallguysCustomRoundTwitterAnnouncementsPkey = 'fallguys_custom_round_twitter_announcements_pkey',
+  /** unique or primary key constraint on columns "fallguys_custom_round_id", "twitter_tweet_id" */
+  FallguysCustomRoundTwitterFallguysCustomRoundIdTwitKey = 'fallguys_custom_round_twitter_fallguys_custom_round_id_twit_key'
+}
+
+/** input type for inserting data into table "fallguys_custom_round_twitter_announcements" */
+export type Fallguys_Custom_Round_Twitter_Announcements_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  fallguys_custom_round?: InputMaybe<Fallguys_Custom_Rounds_Obj_Rel_Insert_Input>;
+  fallguys_custom_round_id?: InputMaybe<Scalars['uuid']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  twitter_tweet?: InputMaybe<Twitter_Tweets_Obj_Rel_Insert_Input>;
+  twitter_tweet_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Fallguys_Custom_Round_Twitter_Announcements_Max_Fields = {
+  __typename?: 'fallguys_custom_round_twitter_announcements_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  fallguys_custom_round_id?: Maybe<Scalars['uuid']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  twitter_tweet_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by max() on columns of table "fallguys_custom_round_twitter_announcements" */
+export type Fallguys_Custom_Round_Twitter_Announcements_Max_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  fallguys_custom_round_id?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  twitter_tweet_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Fallguys_Custom_Round_Twitter_Announcements_Min_Fields = {
+  __typename?: 'fallguys_custom_round_twitter_announcements_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  fallguys_custom_round_id?: Maybe<Scalars['uuid']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  twitter_tweet_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by min() on columns of table "fallguys_custom_round_twitter_announcements" */
+export type Fallguys_Custom_Round_Twitter_Announcements_Min_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  fallguys_custom_round_id?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  twitter_tweet_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** response of any mutation on the table "fallguys_custom_round_twitter_announcements" */
+export type Fallguys_Custom_Round_Twitter_Announcements_Mutation_Response = {
+  __typename?: 'fallguys_custom_round_twitter_announcements_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Fallguys_Custom_Round_Twitter_Announcements>;
+};
+
+/** on_conflict condition type for table "fallguys_custom_round_twitter_announcements" */
+export type Fallguys_Custom_Round_Twitter_Announcements_On_Conflict = {
+  constraint: Fallguys_Custom_Round_Twitter_Announcements_Constraint;
+  update_columns?: Array<Fallguys_Custom_Round_Twitter_Announcements_Update_Column>;
+  where?: InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "fallguys_custom_round_twitter_announcements". */
+export type Fallguys_Custom_Round_Twitter_Announcements_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  fallguys_custom_round?: InputMaybe<Fallguys_Custom_Rounds_Order_By>;
+  fallguys_custom_round_id?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  twitter_tweet?: InputMaybe<Twitter_Tweets_Order_By>;
+  twitter_tweet_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: fallguys_custom_round_twitter_announcements */
+export type Fallguys_Custom_Round_Twitter_Announcements_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "fallguys_custom_round_twitter_announcements" */
+export enum Fallguys_Custom_Round_Twitter_Announcements_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  FallguysCustomRoundId = 'fallguys_custom_round_id',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  TwitterTweetId = 'twitter_tweet_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "fallguys_custom_round_twitter_announcements" */
+export type Fallguys_Custom_Round_Twitter_Announcements_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  fallguys_custom_round_id?: InputMaybe<Scalars['uuid']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  twitter_tweet_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** Streaming cursor of the table "fallguys_custom_round_twitter_announcements" */
+export type Fallguys_Custom_Round_Twitter_Announcements_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Fallguys_Custom_Round_Twitter_Announcements_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Fallguys_Custom_Round_Twitter_Announcements_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  fallguys_custom_round_id?: InputMaybe<Scalars['uuid']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  twitter_tweet_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** update columns of table "fallguys_custom_round_twitter_announcements" */
+export enum Fallguys_Custom_Round_Twitter_Announcements_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  FallguysCustomRoundId = 'fallguys_custom_round_id',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  TwitterTweetId = 'twitter_tweet_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Fallguys_Custom_Round_Twitter_Announcements_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Fallguys_Custom_Round_Twitter_Announcements_Bool_Exp;
+};
+
+/** columns and relationships of "fallguys_custom_rounds" */
+export type Fallguys_Custom_Rounds = {
+  __typename?: 'fallguys_custom_rounds';
+  created_at: Scalars['timestamptz']['output'];
+  /** An array relationship */
+  fallguys_custom_round_twitter_announcements: Array<Fallguys_Custom_Round_Twitter_Announcements>;
+  /** An aggregate relationship */
+  fallguys_custom_round_twitter_announcements_aggregate: Fallguys_Custom_Round_Twitter_Announcements_Aggregate;
+  /** An array relationship */
+  fallguys_match_rounds: Array<Fallguys_Match_Rounds>;
+  /** An aggregate relationship */
+  fallguys_match_rounds_aggregate: Fallguys_Match_Rounds_Aggregate;
+  id: Scalars['uuid']['output'];
+  in_game_creator_name?: Maybe<Scalars['String']['output']>;
+  name: Scalars['String']['output'];
+  /** An object relationship */
+  person?: Maybe<Persons>;
+  person_id?: Maybe<Scalars['uuid']['output']>;
+  share_code: Scalars['String']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+
+/** columns and relationships of "fallguys_custom_rounds" */
+export type Fallguys_Custom_RoundsFallguys_Custom_Round_Twitter_AnnouncementsArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Custom_Round_Twitter_Announcements_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Custom_Round_Twitter_Announcements_Order_By>>;
+  where?: InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_Bool_Exp>;
+};
+
+
+/** columns and relationships of "fallguys_custom_rounds" */
+export type Fallguys_Custom_RoundsFallguys_Custom_Round_Twitter_Announcements_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Custom_Round_Twitter_Announcements_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Custom_Round_Twitter_Announcements_Order_By>>;
+  where?: InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_Bool_Exp>;
+};
+
+
+/** columns and relationships of "fallguys_custom_rounds" */
+export type Fallguys_Custom_RoundsFallguys_Match_RoundsArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Match_Rounds_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Match_Rounds_Order_By>>;
+  where?: InputMaybe<Fallguys_Match_Rounds_Bool_Exp>;
+};
+
+
+/** columns and relationships of "fallguys_custom_rounds" */
+export type Fallguys_Custom_RoundsFallguys_Match_Rounds_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Match_Rounds_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Match_Rounds_Order_By>>;
+  where?: InputMaybe<Fallguys_Match_Rounds_Bool_Exp>;
+};
+
+/** aggregated selection of "fallguys_custom_rounds" */
+export type Fallguys_Custom_Rounds_Aggregate = {
+  __typename?: 'fallguys_custom_rounds_aggregate';
+  aggregate?: Maybe<Fallguys_Custom_Rounds_Aggregate_Fields>;
+  nodes: Array<Fallguys_Custom_Rounds>;
+};
+
+export type Fallguys_Custom_Rounds_Aggregate_Bool_Exp = {
+  count?: InputMaybe<Fallguys_Custom_Rounds_Aggregate_Bool_Exp_Count>;
+};
+
+export type Fallguys_Custom_Rounds_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Fallguys_Custom_Rounds_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Fallguys_Custom_Rounds_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
+/** aggregate fields of "fallguys_custom_rounds" */
+export type Fallguys_Custom_Rounds_Aggregate_Fields = {
+  __typename?: 'fallguys_custom_rounds_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Fallguys_Custom_Rounds_Max_Fields>;
+  min?: Maybe<Fallguys_Custom_Rounds_Min_Fields>;
+};
+
+
+/** aggregate fields of "fallguys_custom_rounds" */
+export type Fallguys_Custom_Rounds_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Fallguys_Custom_Rounds_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** order by aggregate values of table "fallguys_custom_rounds" */
+export type Fallguys_Custom_Rounds_Aggregate_Order_By = {
+  count?: InputMaybe<Order_By>;
+  max?: InputMaybe<Fallguys_Custom_Rounds_Max_Order_By>;
+  min?: InputMaybe<Fallguys_Custom_Rounds_Min_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "fallguys_custom_rounds" */
+export type Fallguys_Custom_Rounds_Arr_Rel_Insert_Input = {
+  data: Array<Fallguys_Custom_Rounds_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Fallguys_Custom_Rounds_On_Conflict>;
+};
+
+/** Boolean expression to filter rows from the table "fallguys_custom_rounds". All fields are combined with a logical 'AND'. */
+export type Fallguys_Custom_Rounds_Bool_Exp = {
+  _and?: InputMaybe<Array<Fallguys_Custom_Rounds_Bool_Exp>>;
+  _not?: InputMaybe<Fallguys_Custom_Rounds_Bool_Exp>;
+  _or?: InputMaybe<Array<Fallguys_Custom_Rounds_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  fallguys_custom_round_twitter_announcements?: InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_Bool_Exp>;
+  fallguys_custom_round_twitter_announcements_aggregate?: InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_Aggregate_Bool_Exp>;
+  fallguys_match_rounds?: InputMaybe<Fallguys_Match_Rounds_Bool_Exp>;
+  fallguys_match_rounds_aggregate?: InputMaybe<Fallguys_Match_Rounds_Aggregate_Bool_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  in_game_creator_name?: InputMaybe<String_Comparison_Exp>;
+  name?: InputMaybe<String_Comparison_Exp>;
+  person?: InputMaybe<Persons_Bool_Exp>;
+  person_id?: InputMaybe<Uuid_Comparison_Exp>;
+  share_code?: InputMaybe<String_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "fallguys_custom_rounds" */
+export enum Fallguys_Custom_Rounds_Constraint {
+  /** unique or primary key constraint on columns "id" */
+  FallguysCustomRoundsPkey = 'fallguys_custom_rounds_pkey',
+  /** unique or primary key constraint on columns "share_code" */
+  FallguysCustomRoundsShareCodeKey = 'fallguys_custom_rounds_share_code_key'
+}
+
+/** input type for inserting data into table "fallguys_custom_rounds" */
+export type Fallguys_Custom_Rounds_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  fallguys_custom_round_twitter_announcements?: InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_Arr_Rel_Insert_Input>;
+  fallguys_match_rounds?: InputMaybe<Fallguys_Match_Rounds_Arr_Rel_Insert_Input>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  in_game_creator_name?: InputMaybe<Scalars['String']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  person?: InputMaybe<Persons_Obj_Rel_Insert_Input>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
+  share_code?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Fallguys_Custom_Rounds_Max_Fields = {
+  __typename?: 'fallguys_custom_rounds_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  in_game_creator_name?: Maybe<Scalars['String']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  person_id?: Maybe<Scalars['uuid']['output']>;
+  share_code?: Maybe<Scalars['String']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by max() on columns of table "fallguys_custom_rounds" */
+export type Fallguys_Custom_Rounds_Max_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  in_game_creator_name?: InputMaybe<Order_By>;
+  name?: InputMaybe<Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  share_code?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Fallguys_Custom_Rounds_Min_Fields = {
+  __typename?: 'fallguys_custom_rounds_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  in_game_creator_name?: Maybe<Scalars['String']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  person_id?: Maybe<Scalars['uuid']['output']>;
+  share_code?: Maybe<Scalars['String']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by min() on columns of table "fallguys_custom_rounds" */
+export type Fallguys_Custom_Rounds_Min_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  in_game_creator_name?: InputMaybe<Order_By>;
+  name?: InputMaybe<Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  share_code?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** response of any mutation on the table "fallguys_custom_rounds" */
+export type Fallguys_Custom_Rounds_Mutation_Response = {
+  __typename?: 'fallguys_custom_rounds_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Fallguys_Custom_Rounds>;
+};
+
+/** input type for inserting object relation for remote table "fallguys_custom_rounds" */
+export type Fallguys_Custom_Rounds_Obj_Rel_Insert_Input = {
+  data: Fallguys_Custom_Rounds_Insert_Input;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Fallguys_Custom_Rounds_On_Conflict>;
+};
+
+/** on_conflict condition type for table "fallguys_custom_rounds" */
+export type Fallguys_Custom_Rounds_On_Conflict = {
+  constraint: Fallguys_Custom_Rounds_Constraint;
+  update_columns?: Array<Fallguys_Custom_Rounds_Update_Column>;
+  where?: InputMaybe<Fallguys_Custom_Rounds_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "fallguys_custom_rounds". */
+export type Fallguys_Custom_Rounds_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  fallguys_custom_round_twitter_announcements_aggregate?: InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_Aggregate_Order_By>;
+  fallguys_match_rounds_aggregate?: InputMaybe<Fallguys_Match_Rounds_Aggregate_Order_By>;
+  id?: InputMaybe<Order_By>;
+  in_game_creator_name?: InputMaybe<Order_By>;
+  name?: InputMaybe<Order_By>;
+  person?: InputMaybe<Persons_Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  share_code?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: fallguys_custom_rounds */
+export type Fallguys_Custom_Rounds_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "fallguys_custom_rounds" */
+export enum Fallguys_Custom_Rounds_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  InGameCreatorName = 'in_game_creator_name',
+  /** column name */
+  Name = 'name',
+  /** column name */
+  PersonId = 'person_id',
+  /** column name */
+  ShareCode = 'share_code',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "fallguys_custom_rounds" */
+export type Fallguys_Custom_Rounds_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  in_game_creator_name?: InputMaybe<Scalars['String']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
+  share_code?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** Streaming cursor of the table "fallguys_custom_rounds" */
+export type Fallguys_Custom_Rounds_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Fallguys_Custom_Rounds_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Fallguys_Custom_Rounds_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  in_game_creator_name?: InputMaybe<Scalars['String']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
+  share_code?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** update columns of table "fallguys_custom_rounds" */
+export enum Fallguys_Custom_Rounds_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  InGameCreatorName = 'in_game_creator_name',
+  /** column name */
+  Name = 'name',
+  /** column name */
+  PersonId = 'person_id',
+  /** column name */
+  ShareCode = 'share_code',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Fallguys_Custom_Rounds_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Fallguys_Custom_Rounds_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Fallguys_Custom_Rounds_Bool_Exp;
+};
+
+/** columns and relationships of "fallguys_match_rounds" */
+export type Fallguys_Match_Rounds = {
+  __typename?: 'fallguys_match_rounds';
+  created_at: Scalars['timestamptz']['output'];
+  end_time?: Maybe<Scalars['timestamptz']['output']>;
+  /** An object relationship */
+  fallguys_custom_round?: Maybe<Fallguys_Custom_Rounds>;
+  fallguys_custom_round_id?: Maybe<Scalars['uuid']['output']>;
+  /** An object relationship */
+  fallguys_match: Fallguys_Matches;
+  fallguys_match_id: Scalars['uuid']['output'];
+  /** An object relationship */
+  fallguys_round?: Maybe<Fallguys_Rounds>;
+  fallguys_round_id?: Maybe<Scalars['uuid']['output']>;
+  id: Scalars['uuid']['output'];
+  index?: Maybe<Scalars['Int']['output']>;
+  is_aborted?: Maybe<Scalars['Boolean']['output']>;
+  start_time: Scalars['timestamptz']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+/** aggregated selection of "fallguys_match_rounds" */
+export type Fallguys_Match_Rounds_Aggregate = {
+  __typename?: 'fallguys_match_rounds_aggregate';
+  aggregate?: Maybe<Fallguys_Match_Rounds_Aggregate_Fields>;
+  nodes: Array<Fallguys_Match_Rounds>;
+};
+
+export type Fallguys_Match_Rounds_Aggregate_Bool_Exp = {
+  bool_and?: InputMaybe<Fallguys_Match_Rounds_Aggregate_Bool_Exp_Bool_And>;
+  bool_or?: InputMaybe<Fallguys_Match_Rounds_Aggregate_Bool_Exp_Bool_Or>;
+  count?: InputMaybe<Fallguys_Match_Rounds_Aggregate_Bool_Exp_Count>;
+};
+
+export type Fallguys_Match_Rounds_Aggregate_Bool_Exp_Bool_And = {
+  arguments: Fallguys_Match_Rounds_Select_Column_Fallguys_Match_Rounds_Aggregate_Bool_Exp_Bool_And_Arguments_Columns;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Fallguys_Match_Rounds_Bool_Exp>;
+  predicate: Boolean_Comparison_Exp;
+};
+
+export type Fallguys_Match_Rounds_Aggregate_Bool_Exp_Bool_Or = {
+  arguments: Fallguys_Match_Rounds_Select_Column_Fallguys_Match_Rounds_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Fallguys_Match_Rounds_Bool_Exp>;
+  predicate: Boolean_Comparison_Exp;
+};
+
+export type Fallguys_Match_Rounds_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Fallguys_Match_Rounds_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Fallguys_Match_Rounds_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
+/** aggregate fields of "fallguys_match_rounds" */
+export type Fallguys_Match_Rounds_Aggregate_Fields = {
+  __typename?: 'fallguys_match_rounds_aggregate_fields';
+  avg?: Maybe<Fallguys_Match_Rounds_Avg_Fields>;
+  count: Scalars['Int']['output'];
+  max?: Maybe<Fallguys_Match_Rounds_Max_Fields>;
+  min?: Maybe<Fallguys_Match_Rounds_Min_Fields>;
+  stddev?: Maybe<Fallguys_Match_Rounds_Stddev_Fields>;
+  stddev_pop?: Maybe<Fallguys_Match_Rounds_Stddev_Pop_Fields>;
+  stddev_samp?: Maybe<Fallguys_Match_Rounds_Stddev_Samp_Fields>;
+  sum?: Maybe<Fallguys_Match_Rounds_Sum_Fields>;
+  var_pop?: Maybe<Fallguys_Match_Rounds_Var_Pop_Fields>;
+  var_samp?: Maybe<Fallguys_Match_Rounds_Var_Samp_Fields>;
+  variance?: Maybe<Fallguys_Match_Rounds_Variance_Fields>;
+};
+
+
+/** aggregate fields of "fallguys_match_rounds" */
+export type Fallguys_Match_Rounds_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Fallguys_Match_Rounds_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** order by aggregate values of table "fallguys_match_rounds" */
+export type Fallguys_Match_Rounds_Aggregate_Order_By = {
+  avg?: InputMaybe<Fallguys_Match_Rounds_Avg_Order_By>;
+  count?: InputMaybe<Order_By>;
+  max?: InputMaybe<Fallguys_Match_Rounds_Max_Order_By>;
+  min?: InputMaybe<Fallguys_Match_Rounds_Min_Order_By>;
+  stddev?: InputMaybe<Fallguys_Match_Rounds_Stddev_Order_By>;
+  stddev_pop?: InputMaybe<Fallguys_Match_Rounds_Stddev_Pop_Order_By>;
+  stddev_samp?: InputMaybe<Fallguys_Match_Rounds_Stddev_Samp_Order_By>;
+  sum?: InputMaybe<Fallguys_Match_Rounds_Sum_Order_By>;
+  var_pop?: InputMaybe<Fallguys_Match_Rounds_Var_Pop_Order_By>;
+  var_samp?: InputMaybe<Fallguys_Match_Rounds_Var_Samp_Order_By>;
+  variance?: InputMaybe<Fallguys_Match_Rounds_Variance_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "fallguys_match_rounds" */
+export type Fallguys_Match_Rounds_Arr_Rel_Insert_Input = {
+  data: Array<Fallguys_Match_Rounds_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Fallguys_Match_Rounds_On_Conflict>;
+};
+
+/** aggregate avg on columns */
+export type Fallguys_Match_Rounds_Avg_Fields = {
+  __typename?: 'fallguys_match_rounds_avg_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by avg() on columns of table "fallguys_match_rounds" */
+export type Fallguys_Match_Rounds_Avg_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** Boolean expression to filter rows from the table "fallguys_match_rounds". All fields are combined with a logical 'AND'. */
+export type Fallguys_Match_Rounds_Bool_Exp = {
+  _and?: InputMaybe<Array<Fallguys_Match_Rounds_Bool_Exp>>;
+  _not?: InputMaybe<Fallguys_Match_Rounds_Bool_Exp>;
+  _or?: InputMaybe<Array<Fallguys_Match_Rounds_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  end_time?: InputMaybe<Timestamptz_Comparison_Exp>;
+  fallguys_custom_round?: InputMaybe<Fallguys_Custom_Rounds_Bool_Exp>;
+  fallguys_custom_round_id?: InputMaybe<Uuid_Comparison_Exp>;
+  fallguys_match?: InputMaybe<Fallguys_Matches_Bool_Exp>;
+  fallguys_match_id?: InputMaybe<Uuid_Comparison_Exp>;
+  fallguys_round?: InputMaybe<Fallguys_Rounds_Bool_Exp>;
+  fallguys_round_id?: InputMaybe<Uuid_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  index?: InputMaybe<Int_Comparison_Exp>;
+  is_aborted?: InputMaybe<Boolean_Comparison_Exp>;
+  start_time?: InputMaybe<Timestamptz_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "fallguys_match_rounds" */
+export enum Fallguys_Match_Rounds_Constraint {
+  /** unique or primary key constraint on columns "fallguys_match_id", "index" */
+  FallguysMatchRoundsFallguysMatchIdIndexKey = 'fallguys_match_rounds_fallguys_match_id_index_key',
+  /** unique or primary key constraint on columns "id" */
+  FallguysMatchRoundsPkey = 'fallguys_match_rounds_pkey'
+}
+
+/** input type for incrementing numeric columns in table "fallguys_match_rounds" */
+export type Fallguys_Match_Rounds_Inc_Input = {
+  index?: InputMaybe<Scalars['Int']['input']>;
+};
+
+/** input type for inserting data into table "fallguys_match_rounds" */
+export type Fallguys_Match_Rounds_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  end_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  fallguys_custom_round?: InputMaybe<Fallguys_Custom_Rounds_Obj_Rel_Insert_Input>;
+  fallguys_custom_round_id?: InputMaybe<Scalars['uuid']['input']>;
+  fallguys_match?: InputMaybe<Fallguys_Matches_Obj_Rel_Insert_Input>;
+  fallguys_match_id?: InputMaybe<Scalars['uuid']['input']>;
+  fallguys_round?: InputMaybe<Fallguys_Rounds_Obj_Rel_Insert_Input>;
+  fallguys_round_id?: InputMaybe<Scalars['uuid']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  index?: InputMaybe<Scalars['Int']['input']>;
+  is_aborted?: InputMaybe<Scalars['Boolean']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Fallguys_Match_Rounds_Max_Fields = {
+  __typename?: 'fallguys_match_rounds_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  end_time?: Maybe<Scalars['timestamptz']['output']>;
+  fallguys_custom_round_id?: Maybe<Scalars['uuid']['output']>;
+  fallguys_match_id?: Maybe<Scalars['uuid']['output']>;
+  fallguys_round_id?: Maybe<Scalars['uuid']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  index?: Maybe<Scalars['Int']['output']>;
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by max() on columns of table "fallguys_match_rounds" */
+export type Fallguys_Match_Rounds_Max_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  end_time?: InputMaybe<Order_By>;
+  fallguys_custom_round_id?: InputMaybe<Order_By>;
+  fallguys_match_id?: InputMaybe<Order_By>;
+  fallguys_round_id?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  index?: InputMaybe<Order_By>;
+  start_time?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Fallguys_Match_Rounds_Min_Fields = {
+  __typename?: 'fallguys_match_rounds_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  end_time?: Maybe<Scalars['timestamptz']['output']>;
+  fallguys_custom_round_id?: Maybe<Scalars['uuid']['output']>;
+  fallguys_match_id?: Maybe<Scalars['uuid']['output']>;
+  fallguys_round_id?: Maybe<Scalars['uuid']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  index?: Maybe<Scalars['Int']['output']>;
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by min() on columns of table "fallguys_match_rounds" */
+export type Fallguys_Match_Rounds_Min_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  end_time?: InputMaybe<Order_By>;
+  fallguys_custom_round_id?: InputMaybe<Order_By>;
+  fallguys_match_id?: InputMaybe<Order_By>;
+  fallguys_round_id?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  index?: InputMaybe<Order_By>;
+  start_time?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** response of any mutation on the table "fallguys_match_rounds" */
+export type Fallguys_Match_Rounds_Mutation_Response = {
+  __typename?: 'fallguys_match_rounds_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Fallguys_Match_Rounds>;
+};
+
+/** on_conflict condition type for table "fallguys_match_rounds" */
+export type Fallguys_Match_Rounds_On_Conflict = {
+  constraint: Fallguys_Match_Rounds_Constraint;
+  update_columns?: Array<Fallguys_Match_Rounds_Update_Column>;
+  where?: InputMaybe<Fallguys_Match_Rounds_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "fallguys_match_rounds". */
+export type Fallguys_Match_Rounds_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  end_time?: InputMaybe<Order_By>;
+  fallguys_custom_round?: InputMaybe<Fallguys_Custom_Rounds_Order_By>;
+  fallguys_custom_round_id?: InputMaybe<Order_By>;
+  fallguys_match?: InputMaybe<Fallguys_Matches_Order_By>;
+  fallguys_match_id?: InputMaybe<Order_By>;
+  fallguys_round?: InputMaybe<Fallguys_Rounds_Order_By>;
+  fallguys_round_id?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  index?: InputMaybe<Order_By>;
+  is_aborted?: InputMaybe<Order_By>;
+  start_time?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: fallguys_match_rounds */
+export type Fallguys_Match_Rounds_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "fallguys_match_rounds" */
+export enum Fallguys_Match_Rounds_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  EndTime = 'end_time',
+  /** column name */
+  FallguysCustomRoundId = 'fallguys_custom_round_id',
+  /** column name */
+  FallguysMatchId = 'fallguys_match_id',
+  /** column name */
+  FallguysRoundId = 'fallguys_round_id',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Index = 'index',
+  /** column name */
+  IsAborted = 'is_aborted',
+  /** column name */
+  StartTime = 'start_time',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** select "fallguys_match_rounds_aggregate_bool_exp_bool_and_arguments_columns" columns of table "fallguys_match_rounds" */
+export enum Fallguys_Match_Rounds_Select_Column_Fallguys_Match_Rounds_Aggregate_Bool_Exp_Bool_And_Arguments_Columns {
+  /** column name */
+  IsAborted = 'is_aborted'
+}
+
+/** select "fallguys_match_rounds_aggregate_bool_exp_bool_or_arguments_columns" columns of table "fallguys_match_rounds" */
+export enum Fallguys_Match_Rounds_Select_Column_Fallguys_Match_Rounds_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns {
+  /** column name */
+  IsAborted = 'is_aborted'
+}
+
+/** input type for updating data in table "fallguys_match_rounds" */
+export type Fallguys_Match_Rounds_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  end_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  fallguys_custom_round_id?: InputMaybe<Scalars['uuid']['input']>;
+  fallguys_match_id?: InputMaybe<Scalars['uuid']['input']>;
+  fallguys_round_id?: InputMaybe<Scalars['uuid']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  index?: InputMaybe<Scalars['Int']['input']>;
+  is_aborted?: InputMaybe<Scalars['Boolean']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate stddev on columns */
+export type Fallguys_Match_Rounds_Stddev_Fields = {
+  __typename?: 'fallguys_match_rounds_stddev_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by stddev() on columns of table "fallguys_match_rounds" */
+export type Fallguys_Match_Rounds_Stddev_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** aggregate stddev_pop on columns */
+export type Fallguys_Match_Rounds_Stddev_Pop_Fields = {
+  __typename?: 'fallguys_match_rounds_stddev_pop_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by stddev_pop() on columns of table "fallguys_match_rounds" */
+export type Fallguys_Match_Rounds_Stddev_Pop_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** aggregate stddev_samp on columns */
+export type Fallguys_Match_Rounds_Stddev_Samp_Fields = {
+  __typename?: 'fallguys_match_rounds_stddev_samp_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by stddev_samp() on columns of table "fallguys_match_rounds" */
+export type Fallguys_Match_Rounds_Stddev_Samp_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** Streaming cursor of the table "fallguys_match_rounds" */
+export type Fallguys_Match_Rounds_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Fallguys_Match_Rounds_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Fallguys_Match_Rounds_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  end_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  fallguys_custom_round_id?: InputMaybe<Scalars['uuid']['input']>;
+  fallguys_match_id?: InputMaybe<Scalars['uuid']['input']>;
+  fallguys_round_id?: InputMaybe<Scalars['uuid']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  index?: InputMaybe<Scalars['Int']['input']>;
+  is_aborted?: InputMaybe<Scalars['Boolean']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate sum on columns */
+export type Fallguys_Match_Rounds_Sum_Fields = {
+  __typename?: 'fallguys_match_rounds_sum_fields';
+  index?: Maybe<Scalars['Int']['output']>;
+};
+
+/** order by sum() on columns of table "fallguys_match_rounds" */
+export type Fallguys_Match_Rounds_Sum_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** update columns of table "fallguys_match_rounds" */
+export enum Fallguys_Match_Rounds_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  EndTime = 'end_time',
+  /** column name */
+  FallguysCustomRoundId = 'fallguys_custom_round_id',
+  /** column name */
+  FallguysMatchId = 'fallguys_match_id',
+  /** column name */
+  FallguysRoundId = 'fallguys_round_id',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Index = 'index',
+  /** column name */
+  IsAborted = 'is_aborted',
+  /** column name */
+  StartTime = 'start_time',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Fallguys_Match_Rounds_Updates = {
+  /** increments the numeric columns with given value of the filtered values */
+  _inc?: InputMaybe<Fallguys_Match_Rounds_Inc_Input>;
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Fallguys_Match_Rounds_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Fallguys_Match_Rounds_Bool_Exp;
+};
+
+/** aggregate var_pop on columns */
+export type Fallguys_Match_Rounds_Var_Pop_Fields = {
+  __typename?: 'fallguys_match_rounds_var_pop_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by var_pop() on columns of table "fallguys_match_rounds" */
+export type Fallguys_Match_Rounds_Var_Pop_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** aggregate var_samp on columns */
+export type Fallguys_Match_Rounds_Var_Samp_Fields = {
+  __typename?: 'fallguys_match_rounds_var_samp_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by var_samp() on columns of table "fallguys_match_rounds" */
+export type Fallguys_Match_Rounds_Var_Samp_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** aggregate variance on columns */
+export type Fallguys_Match_Rounds_Variance_Fields = {
+  __typename?: 'fallguys_match_rounds_variance_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by variance() on columns of table "fallguys_match_rounds" */
+export type Fallguys_Match_Rounds_Variance_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** columns and relationships of "fallguys_matches" */
+export type Fallguys_Matches = {
+  __typename?: 'fallguys_matches';
+  created_at: Scalars['timestamptz']['output'];
+  end_time?: Maybe<Scalars['timestamptz']['output']>;
+  /** An array relationship */
+  fallguys_match_rounds: Array<Fallguys_Match_Rounds>;
+  /** An aggregate relationship */
+  fallguys_match_rounds_aggregate: Fallguys_Match_Rounds_Aggregate;
+  id: Scalars['uuid']['output'];
+  index?: Maybe<Scalars['Int']['output']>;
+  is_aborted?: Maybe<Scalars['Boolean']['output']>;
+  /** An object relationship */
+  program: Programs;
+  program_id: Scalars['uuid']['output'];
+  start_time: Scalars['timestamptz']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+
+/** columns and relationships of "fallguys_matches" */
+export type Fallguys_MatchesFallguys_Match_RoundsArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Match_Rounds_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Match_Rounds_Order_By>>;
+  where?: InputMaybe<Fallguys_Match_Rounds_Bool_Exp>;
+};
+
+
+/** columns and relationships of "fallguys_matches" */
+export type Fallguys_MatchesFallguys_Match_Rounds_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Match_Rounds_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Match_Rounds_Order_By>>;
+  where?: InputMaybe<Fallguys_Match_Rounds_Bool_Exp>;
+};
+
+/** aggregated selection of "fallguys_matches" */
+export type Fallguys_Matches_Aggregate = {
+  __typename?: 'fallguys_matches_aggregate';
+  aggregate?: Maybe<Fallguys_Matches_Aggregate_Fields>;
+  nodes: Array<Fallguys_Matches>;
+};
+
+export type Fallguys_Matches_Aggregate_Bool_Exp = {
+  bool_and?: InputMaybe<Fallguys_Matches_Aggregate_Bool_Exp_Bool_And>;
+  bool_or?: InputMaybe<Fallguys_Matches_Aggregate_Bool_Exp_Bool_Or>;
+  count?: InputMaybe<Fallguys_Matches_Aggregate_Bool_Exp_Count>;
+};
+
+export type Fallguys_Matches_Aggregate_Bool_Exp_Bool_And = {
+  arguments: Fallguys_Matches_Select_Column_Fallguys_Matches_Aggregate_Bool_Exp_Bool_And_Arguments_Columns;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Fallguys_Matches_Bool_Exp>;
+  predicate: Boolean_Comparison_Exp;
+};
+
+export type Fallguys_Matches_Aggregate_Bool_Exp_Bool_Or = {
+  arguments: Fallguys_Matches_Select_Column_Fallguys_Matches_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Fallguys_Matches_Bool_Exp>;
+  predicate: Boolean_Comparison_Exp;
+};
+
+export type Fallguys_Matches_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Fallguys_Matches_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Fallguys_Matches_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
+/** aggregate fields of "fallguys_matches" */
+export type Fallguys_Matches_Aggregate_Fields = {
+  __typename?: 'fallguys_matches_aggregate_fields';
+  avg?: Maybe<Fallguys_Matches_Avg_Fields>;
+  count: Scalars['Int']['output'];
+  max?: Maybe<Fallguys_Matches_Max_Fields>;
+  min?: Maybe<Fallguys_Matches_Min_Fields>;
+  stddev?: Maybe<Fallguys_Matches_Stddev_Fields>;
+  stddev_pop?: Maybe<Fallguys_Matches_Stddev_Pop_Fields>;
+  stddev_samp?: Maybe<Fallguys_Matches_Stddev_Samp_Fields>;
+  sum?: Maybe<Fallguys_Matches_Sum_Fields>;
+  var_pop?: Maybe<Fallguys_Matches_Var_Pop_Fields>;
+  var_samp?: Maybe<Fallguys_Matches_Var_Samp_Fields>;
+  variance?: Maybe<Fallguys_Matches_Variance_Fields>;
+};
+
+
+/** aggregate fields of "fallguys_matches" */
+export type Fallguys_Matches_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Fallguys_Matches_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** order by aggregate values of table "fallguys_matches" */
+export type Fallguys_Matches_Aggregate_Order_By = {
+  avg?: InputMaybe<Fallguys_Matches_Avg_Order_By>;
+  count?: InputMaybe<Order_By>;
+  max?: InputMaybe<Fallguys_Matches_Max_Order_By>;
+  min?: InputMaybe<Fallguys_Matches_Min_Order_By>;
+  stddev?: InputMaybe<Fallguys_Matches_Stddev_Order_By>;
+  stddev_pop?: InputMaybe<Fallguys_Matches_Stddev_Pop_Order_By>;
+  stddev_samp?: InputMaybe<Fallguys_Matches_Stddev_Samp_Order_By>;
+  sum?: InputMaybe<Fallguys_Matches_Sum_Order_By>;
+  var_pop?: InputMaybe<Fallguys_Matches_Var_Pop_Order_By>;
+  var_samp?: InputMaybe<Fallguys_Matches_Var_Samp_Order_By>;
+  variance?: InputMaybe<Fallguys_Matches_Variance_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "fallguys_matches" */
+export type Fallguys_Matches_Arr_Rel_Insert_Input = {
+  data: Array<Fallguys_Matches_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Fallguys_Matches_On_Conflict>;
+};
+
+/** aggregate avg on columns */
+export type Fallguys_Matches_Avg_Fields = {
+  __typename?: 'fallguys_matches_avg_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by avg() on columns of table "fallguys_matches" */
+export type Fallguys_Matches_Avg_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** Boolean expression to filter rows from the table "fallguys_matches". All fields are combined with a logical 'AND'. */
+export type Fallguys_Matches_Bool_Exp = {
+  _and?: InputMaybe<Array<Fallguys_Matches_Bool_Exp>>;
+  _not?: InputMaybe<Fallguys_Matches_Bool_Exp>;
+  _or?: InputMaybe<Array<Fallguys_Matches_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  end_time?: InputMaybe<Timestamptz_Comparison_Exp>;
+  fallguys_match_rounds?: InputMaybe<Fallguys_Match_Rounds_Bool_Exp>;
+  fallguys_match_rounds_aggregate?: InputMaybe<Fallguys_Match_Rounds_Aggregate_Bool_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  index?: InputMaybe<Int_Comparison_Exp>;
+  is_aborted?: InputMaybe<Boolean_Comparison_Exp>;
+  program?: InputMaybe<Programs_Bool_Exp>;
+  program_id?: InputMaybe<Uuid_Comparison_Exp>;
+  start_time?: InputMaybe<Timestamptz_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "fallguys_matches" */
+export enum Fallguys_Matches_Constraint {
+  /** unique or primary key constraint on columns "id" */
+  FallguysMatchesPkey = 'fallguys_matches_pkey',
+  /** unique or primary key constraint on columns "index", "program_id" */
+  FallguysMatchesProgramIdIndexKey = 'fallguys_matches_program_id_index_key'
+}
+
+/** input type for incrementing numeric columns in table "fallguys_matches" */
+export type Fallguys_Matches_Inc_Input = {
+  index?: InputMaybe<Scalars['Int']['input']>;
+};
+
+/** input type for inserting data into table "fallguys_matches" */
+export type Fallguys_Matches_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  end_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  fallguys_match_rounds?: InputMaybe<Fallguys_Match_Rounds_Arr_Rel_Insert_Input>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  index?: InputMaybe<Scalars['Int']['input']>;
+  is_aborted?: InputMaybe<Scalars['Boolean']['input']>;
+  program?: InputMaybe<Programs_Obj_Rel_Insert_Input>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Fallguys_Matches_Max_Fields = {
+  __typename?: 'fallguys_matches_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  end_time?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  index?: Maybe<Scalars['Int']['output']>;
+  program_id?: Maybe<Scalars['uuid']['output']>;
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by max() on columns of table "fallguys_matches" */
+export type Fallguys_Matches_Max_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  end_time?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  index?: InputMaybe<Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  start_time?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Fallguys_Matches_Min_Fields = {
+  __typename?: 'fallguys_matches_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  end_time?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  index?: Maybe<Scalars['Int']['output']>;
+  program_id?: Maybe<Scalars['uuid']['output']>;
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by min() on columns of table "fallguys_matches" */
+export type Fallguys_Matches_Min_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  end_time?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  index?: InputMaybe<Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  start_time?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** response of any mutation on the table "fallguys_matches" */
+export type Fallguys_Matches_Mutation_Response = {
+  __typename?: 'fallguys_matches_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Fallguys_Matches>;
+};
+
+/** input type for inserting object relation for remote table "fallguys_matches" */
+export type Fallguys_Matches_Obj_Rel_Insert_Input = {
+  data: Fallguys_Matches_Insert_Input;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Fallguys_Matches_On_Conflict>;
+};
+
+/** on_conflict condition type for table "fallguys_matches" */
+export type Fallguys_Matches_On_Conflict = {
+  constraint: Fallguys_Matches_Constraint;
+  update_columns?: Array<Fallguys_Matches_Update_Column>;
+  where?: InputMaybe<Fallguys_Matches_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "fallguys_matches". */
+export type Fallguys_Matches_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  end_time?: InputMaybe<Order_By>;
+  fallguys_match_rounds_aggregate?: InputMaybe<Fallguys_Match_Rounds_Aggregate_Order_By>;
+  id?: InputMaybe<Order_By>;
+  index?: InputMaybe<Order_By>;
+  is_aborted?: InputMaybe<Order_By>;
+  program?: InputMaybe<Programs_Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  start_time?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: fallguys_matches */
+export type Fallguys_Matches_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "fallguys_matches" */
+export enum Fallguys_Matches_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  EndTime = 'end_time',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Index = 'index',
+  /** column name */
+  IsAborted = 'is_aborted',
+  /** column name */
+  ProgramId = 'program_id',
+  /** column name */
+  StartTime = 'start_time',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** select "fallguys_matches_aggregate_bool_exp_bool_and_arguments_columns" columns of table "fallguys_matches" */
+export enum Fallguys_Matches_Select_Column_Fallguys_Matches_Aggregate_Bool_Exp_Bool_And_Arguments_Columns {
+  /** column name */
+  IsAborted = 'is_aborted'
+}
+
+/** select "fallguys_matches_aggregate_bool_exp_bool_or_arguments_columns" columns of table "fallguys_matches" */
+export enum Fallguys_Matches_Select_Column_Fallguys_Matches_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns {
+  /** column name */
+  IsAborted = 'is_aborted'
+}
+
+/** input type for updating data in table "fallguys_matches" */
+export type Fallguys_Matches_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  end_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  index?: InputMaybe<Scalars['Int']['input']>;
+  is_aborted?: InputMaybe<Scalars['Boolean']['input']>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate stddev on columns */
+export type Fallguys_Matches_Stddev_Fields = {
+  __typename?: 'fallguys_matches_stddev_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by stddev() on columns of table "fallguys_matches" */
+export type Fallguys_Matches_Stddev_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** aggregate stddev_pop on columns */
+export type Fallguys_Matches_Stddev_Pop_Fields = {
+  __typename?: 'fallguys_matches_stddev_pop_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by stddev_pop() on columns of table "fallguys_matches" */
+export type Fallguys_Matches_Stddev_Pop_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** aggregate stddev_samp on columns */
+export type Fallguys_Matches_Stddev_Samp_Fields = {
+  __typename?: 'fallguys_matches_stddev_samp_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by stddev_samp() on columns of table "fallguys_matches" */
+export type Fallguys_Matches_Stddev_Samp_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** Streaming cursor of the table "fallguys_matches" */
+export type Fallguys_Matches_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Fallguys_Matches_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Fallguys_Matches_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  end_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  index?: InputMaybe<Scalars['Int']['input']>;
+  is_aborted?: InputMaybe<Scalars['Boolean']['input']>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate sum on columns */
+export type Fallguys_Matches_Sum_Fields = {
+  __typename?: 'fallguys_matches_sum_fields';
+  index?: Maybe<Scalars['Int']['output']>;
+};
+
+/** order by sum() on columns of table "fallguys_matches" */
+export type Fallguys_Matches_Sum_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** update columns of table "fallguys_matches" */
+export enum Fallguys_Matches_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  EndTime = 'end_time',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Index = 'index',
+  /** column name */
+  IsAborted = 'is_aborted',
+  /** column name */
+  ProgramId = 'program_id',
+  /** column name */
+  StartTime = 'start_time',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Fallguys_Matches_Updates = {
+  /** increments the numeric columns with given value of the filtered values */
+  _inc?: InputMaybe<Fallguys_Matches_Inc_Input>;
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Fallguys_Matches_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Fallguys_Matches_Bool_Exp;
+};
+
+/** aggregate var_pop on columns */
+export type Fallguys_Matches_Var_Pop_Fields = {
+  __typename?: 'fallguys_matches_var_pop_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by var_pop() on columns of table "fallguys_matches" */
+export type Fallguys_Matches_Var_Pop_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** aggregate var_samp on columns */
+export type Fallguys_Matches_Var_Samp_Fields = {
+  __typename?: 'fallguys_matches_var_samp_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by var_samp() on columns of table "fallguys_matches" */
+export type Fallguys_Matches_Var_Samp_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** aggregate variance on columns */
+export type Fallguys_Matches_Variance_Fields = {
+  __typename?: 'fallguys_matches_variance_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by variance() on columns of table "fallguys_matches" */
+export type Fallguys_Matches_Variance_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** columns and relationships of "fallguys_rounds" */
+export type Fallguys_Rounds = {
+  __typename?: 'fallguys_rounds';
+  created_at: Scalars['timestamptz']['output'];
+  /** An array relationship */
+  fallguys_match_rounds: Array<Fallguys_Match_Rounds>;
+  /** An aggregate relationship */
+  fallguys_match_rounds_aggregate: Fallguys_Match_Rounds_Aggregate;
+  id: Scalars['uuid']['output'];
+  name: Scalars['String']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+
+/** columns and relationships of "fallguys_rounds" */
+export type Fallguys_RoundsFallguys_Match_RoundsArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Match_Rounds_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Match_Rounds_Order_By>>;
+  where?: InputMaybe<Fallguys_Match_Rounds_Bool_Exp>;
+};
+
+
+/** columns and relationships of "fallguys_rounds" */
+export type Fallguys_RoundsFallguys_Match_Rounds_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Match_Rounds_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Match_Rounds_Order_By>>;
+  where?: InputMaybe<Fallguys_Match_Rounds_Bool_Exp>;
+};
+
+/** aggregated selection of "fallguys_rounds" */
+export type Fallguys_Rounds_Aggregate = {
+  __typename?: 'fallguys_rounds_aggregate';
+  aggregate?: Maybe<Fallguys_Rounds_Aggregate_Fields>;
+  nodes: Array<Fallguys_Rounds>;
+};
+
+/** aggregate fields of "fallguys_rounds" */
+export type Fallguys_Rounds_Aggregate_Fields = {
+  __typename?: 'fallguys_rounds_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Fallguys_Rounds_Max_Fields>;
+  min?: Maybe<Fallguys_Rounds_Min_Fields>;
+};
+
+
+/** aggregate fields of "fallguys_rounds" */
+export type Fallguys_Rounds_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Fallguys_Rounds_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** Boolean expression to filter rows from the table "fallguys_rounds". All fields are combined with a logical 'AND'. */
+export type Fallguys_Rounds_Bool_Exp = {
+  _and?: InputMaybe<Array<Fallguys_Rounds_Bool_Exp>>;
+  _not?: InputMaybe<Fallguys_Rounds_Bool_Exp>;
+  _or?: InputMaybe<Array<Fallguys_Rounds_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  fallguys_match_rounds?: InputMaybe<Fallguys_Match_Rounds_Bool_Exp>;
+  fallguys_match_rounds_aggregate?: InputMaybe<Fallguys_Match_Rounds_Aggregate_Bool_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  name?: InputMaybe<String_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "fallguys_rounds" */
+export enum Fallguys_Rounds_Constraint {
+  /** unique or primary key constraint on columns "id" */
+  FallguysRoundsPkey = 'fallguys_rounds_pkey'
+}
+
+/** input type for inserting data into table "fallguys_rounds" */
+export type Fallguys_Rounds_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  fallguys_match_rounds?: InputMaybe<Fallguys_Match_Rounds_Arr_Rel_Insert_Input>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Fallguys_Rounds_Max_Fields = {
+  __typename?: 'fallguys_rounds_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** aggregate min on columns */
+export type Fallguys_Rounds_Min_Fields = {
+  __typename?: 'fallguys_rounds_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** response of any mutation on the table "fallguys_rounds" */
+export type Fallguys_Rounds_Mutation_Response = {
+  __typename?: 'fallguys_rounds_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Fallguys_Rounds>;
+};
+
+/** input type for inserting object relation for remote table "fallguys_rounds" */
+export type Fallguys_Rounds_Obj_Rel_Insert_Input = {
+  data: Fallguys_Rounds_Insert_Input;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Fallguys_Rounds_On_Conflict>;
+};
+
+/** on_conflict condition type for table "fallguys_rounds" */
+export type Fallguys_Rounds_On_Conflict = {
+  constraint: Fallguys_Rounds_Constraint;
+  update_columns?: Array<Fallguys_Rounds_Update_Column>;
+  where?: InputMaybe<Fallguys_Rounds_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "fallguys_rounds". */
+export type Fallguys_Rounds_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  fallguys_match_rounds_aggregate?: InputMaybe<Fallguys_Match_Rounds_Aggregate_Order_By>;
+  id?: InputMaybe<Order_By>;
+  name?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: fallguys_rounds */
+export type Fallguys_Rounds_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "fallguys_rounds" */
+export enum Fallguys_Rounds_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Name = 'name',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "fallguys_rounds" */
+export type Fallguys_Rounds_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** Streaming cursor of the table "fallguys_rounds" */
+export type Fallguys_Rounds_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Fallguys_Rounds_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Fallguys_Rounds_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** update columns of table "fallguys_rounds" */
+export enum Fallguys_Rounds_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Name = 'name',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Fallguys_Rounds_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Fallguys_Rounds_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Fallguys_Rounds_Bool_Exp;
+};
+
 /** columns and relationships of "fediverse_accounts" */
 export type Fediverse_Accounts = {
   __typename?: 'fediverse_accounts';
@@ -5990,6 +7586,26 @@ export type Mutation_Root = {
   delete_amongus_vanilla_versions?: Maybe<Amongus_Vanilla_Versions_Mutation_Response>;
   /** delete single row from the table: "amongus_vanilla_versions" */
   delete_amongus_vanilla_versions_by_pk?: Maybe<Amongus_Vanilla_Versions>;
+  /** delete data from the table: "fallguys_custom_round_twitter_announcements" */
+  delete_fallguys_custom_round_twitter_announcements?: Maybe<Fallguys_Custom_Round_Twitter_Announcements_Mutation_Response>;
+  /** delete single row from the table: "fallguys_custom_round_twitter_announcements" */
+  delete_fallguys_custom_round_twitter_announcements_by_pk?: Maybe<Fallguys_Custom_Round_Twitter_Announcements>;
+  /** delete data from the table: "fallguys_custom_rounds" */
+  delete_fallguys_custom_rounds?: Maybe<Fallguys_Custom_Rounds_Mutation_Response>;
+  /** delete single row from the table: "fallguys_custom_rounds" */
+  delete_fallguys_custom_rounds_by_pk?: Maybe<Fallguys_Custom_Rounds>;
+  /** delete data from the table: "fallguys_match_rounds" */
+  delete_fallguys_match_rounds?: Maybe<Fallguys_Match_Rounds_Mutation_Response>;
+  /** delete single row from the table: "fallguys_match_rounds" */
+  delete_fallguys_match_rounds_by_pk?: Maybe<Fallguys_Match_Rounds>;
+  /** delete data from the table: "fallguys_matches" */
+  delete_fallguys_matches?: Maybe<Fallguys_Matches_Mutation_Response>;
+  /** delete single row from the table: "fallguys_matches" */
+  delete_fallguys_matches_by_pk?: Maybe<Fallguys_Matches>;
+  /** delete data from the table: "fallguys_rounds" */
+  delete_fallguys_rounds?: Maybe<Fallguys_Rounds_Mutation_Response>;
+  /** delete single row from the table: "fallguys_rounds" */
+  delete_fallguys_rounds_by_pk?: Maybe<Fallguys_Rounds>;
   /** delete data from the table: "fediverse_accounts" */
   delete_fediverse_accounts?: Maybe<Fediverse_Accounts_Mutation_Response>;
   /** delete single row from the table: "fediverse_accounts" */
@@ -6162,6 +7778,26 @@ export type Mutation_Root = {
   insert_amongus_vanilla_versions?: Maybe<Amongus_Vanilla_Versions_Mutation_Response>;
   /** insert a single row into the table: "amongus_vanilla_versions" */
   insert_amongus_vanilla_versions_one?: Maybe<Amongus_Vanilla_Versions>;
+  /** insert data into the table: "fallguys_custom_round_twitter_announcements" */
+  insert_fallguys_custom_round_twitter_announcements?: Maybe<Fallguys_Custom_Round_Twitter_Announcements_Mutation_Response>;
+  /** insert a single row into the table: "fallguys_custom_round_twitter_announcements" */
+  insert_fallguys_custom_round_twitter_announcements_one?: Maybe<Fallguys_Custom_Round_Twitter_Announcements>;
+  /** insert data into the table: "fallguys_custom_rounds" */
+  insert_fallguys_custom_rounds?: Maybe<Fallguys_Custom_Rounds_Mutation_Response>;
+  /** insert a single row into the table: "fallguys_custom_rounds" */
+  insert_fallguys_custom_rounds_one?: Maybe<Fallguys_Custom_Rounds>;
+  /** insert data into the table: "fallguys_match_rounds" */
+  insert_fallguys_match_rounds?: Maybe<Fallguys_Match_Rounds_Mutation_Response>;
+  /** insert a single row into the table: "fallguys_match_rounds" */
+  insert_fallguys_match_rounds_one?: Maybe<Fallguys_Match_Rounds>;
+  /** insert data into the table: "fallguys_matches" */
+  insert_fallguys_matches?: Maybe<Fallguys_Matches_Mutation_Response>;
+  /** insert a single row into the table: "fallguys_matches" */
+  insert_fallguys_matches_one?: Maybe<Fallguys_Matches>;
+  /** insert data into the table: "fallguys_rounds" */
+  insert_fallguys_rounds?: Maybe<Fallguys_Rounds_Mutation_Response>;
+  /** insert a single row into the table: "fallguys_rounds" */
+  insert_fallguys_rounds_one?: Maybe<Fallguys_Rounds>;
   /** insert data into the table: "fediverse_accounts" */
   insert_fediverse_accounts?: Maybe<Fediverse_Accounts_Mutation_Response>;
   /** insert a single row into the table: "fediverse_accounts" */
@@ -6352,6 +7988,36 @@ export type Mutation_Root = {
   update_amongus_vanilla_versions_by_pk?: Maybe<Amongus_Vanilla_Versions>;
   /** update multiples rows of table: "amongus_vanilla_versions" */
   update_amongus_vanilla_versions_many?: Maybe<Array<Maybe<Amongus_Vanilla_Versions_Mutation_Response>>>;
+  /** update data of the table: "fallguys_custom_round_twitter_announcements" */
+  update_fallguys_custom_round_twitter_announcements?: Maybe<Fallguys_Custom_Round_Twitter_Announcements_Mutation_Response>;
+  /** update single row of the table: "fallguys_custom_round_twitter_announcements" */
+  update_fallguys_custom_round_twitter_announcements_by_pk?: Maybe<Fallguys_Custom_Round_Twitter_Announcements>;
+  /** update multiples rows of table: "fallguys_custom_round_twitter_announcements" */
+  update_fallguys_custom_round_twitter_announcements_many?: Maybe<Array<Maybe<Fallguys_Custom_Round_Twitter_Announcements_Mutation_Response>>>;
+  /** update data of the table: "fallguys_custom_rounds" */
+  update_fallguys_custom_rounds?: Maybe<Fallguys_Custom_Rounds_Mutation_Response>;
+  /** update single row of the table: "fallguys_custom_rounds" */
+  update_fallguys_custom_rounds_by_pk?: Maybe<Fallguys_Custom_Rounds>;
+  /** update multiples rows of table: "fallguys_custom_rounds" */
+  update_fallguys_custom_rounds_many?: Maybe<Array<Maybe<Fallguys_Custom_Rounds_Mutation_Response>>>;
+  /** update data of the table: "fallguys_match_rounds" */
+  update_fallguys_match_rounds?: Maybe<Fallguys_Match_Rounds_Mutation_Response>;
+  /** update single row of the table: "fallguys_match_rounds" */
+  update_fallguys_match_rounds_by_pk?: Maybe<Fallguys_Match_Rounds>;
+  /** update multiples rows of table: "fallguys_match_rounds" */
+  update_fallguys_match_rounds_many?: Maybe<Array<Maybe<Fallguys_Match_Rounds_Mutation_Response>>>;
+  /** update data of the table: "fallguys_matches" */
+  update_fallguys_matches?: Maybe<Fallguys_Matches_Mutation_Response>;
+  /** update single row of the table: "fallguys_matches" */
+  update_fallguys_matches_by_pk?: Maybe<Fallguys_Matches>;
+  /** update multiples rows of table: "fallguys_matches" */
+  update_fallguys_matches_many?: Maybe<Array<Maybe<Fallguys_Matches_Mutation_Response>>>;
+  /** update data of the table: "fallguys_rounds" */
+  update_fallguys_rounds?: Maybe<Fallguys_Rounds_Mutation_Response>;
+  /** update single row of the table: "fallguys_rounds" */
+  update_fallguys_rounds_by_pk?: Maybe<Fallguys_Rounds>;
+  /** update multiples rows of table: "fallguys_rounds" */
+  update_fallguys_rounds_many?: Maybe<Array<Maybe<Fallguys_Rounds_Mutation_Response>>>;
   /** update data of the table: "fediverse_accounts" */
   update_fediverse_accounts?: Maybe<Fediverse_Accounts_Mutation_Response>;
   /** update single row of the table: "fediverse_accounts" */
@@ -6663,6 +8329,66 @@ export type Mutation_RootDelete_Amongus_Vanilla_VersionsArgs = {
 
 /** mutation root */
 export type Mutation_RootDelete_Amongus_Vanilla_Versions_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Fallguys_Custom_Round_Twitter_AnnouncementsArgs = {
+  where: Fallguys_Custom_Round_Twitter_Announcements_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Fallguys_Custom_Round_Twitter_Announcements_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Fallguys_Custom_RoundsArgs = {
+  where: Fallguys_Custom_Rounds_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Fallguys_Custom_Rounds_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Fallguys_Match_RoundsArgs = {
+  where: Fallguys_Match_Rounds_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Fallguys_Match_Rounds_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Fallguys_MatchesArgs = {
+  where: Fallguys_Matches_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Fallguys_Matches_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Fallguys_RoundsArgs = {
+  where: Fallguys_Rounds_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Fallguys_Rounds_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
@@ -7198,6 +8924,76 @@ export type Mutation_RootInsert_Amongus_Vanilla_VersionsArgs = {
 export type Mutation_RootInsert_Amongus_Vanilla_Versions_OneArgs = {
   object: Amongus_Vanilla_Versions_Insert_Input;
   on_conflict?: InputMaybe<Amongus_Vanilla_Versions_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Fallguys_Custom_Round_Twitter_AnnouncementsArgs = {
+  objects: Array<Fallguys_Custom_Round_Twitter_Announcements_Insert_Input>;
+  on_conflict?: InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Fallguys_Custom_Round_Twitter_Announcements_OneArgs = {
+  object: Fallguys_Custom_Round_Twitter_Announcements_Insert_Input;
+  on_conflict?: InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Fallguys_Custom_RoundsArgs = {
+  objects: Array<Fallguys_Custom_Rounds_Insert_Input>;
+  on_conflict?: InputMaybe<Fallguys_Custom_Rounds_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Fallguys_Custom_Rounds_OneArgs = {
+  object: Fallguys_Custom_Rounds_Insert_Input;
+  on_conflict?: InputMaybe<Fallguys_Custom_Rounds_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Fallguys_Match_RoundsArgs = {
+  objects: Array<Fallguys_Match_Rounds_Insert_Input>;
+  on_conflict?: InputMaybe<Fallguys_Match_Rounds_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Fallguys_Match_Rounds_OneArgs = {
+  object: Fallguys_Match_Rounds_Insert_Input;
+  on_conflict?: InputMaybe<Fallguys_Match_Rounds_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Fallguys_MatchesArgs = {
+  objects: Array<Fallguys_Matches_Insert_Input>;
+  on_conflict?: InputMaybe<Fallguys_Matches_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Fallguys_Matches_OneArgs = {
+  object: Fallguys_Matches_Insert_Input;
+  on_conflict?: InputMaybe<Fallguys_Matches_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Fallguys_RoundsArgs = {
+  objects: Array<Fallguys_Rounds_Insert_Input>;
+  on_conflict?: InputMaybe<Fallguys_Rounds_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Fallguys_Rounds_OneArgs = {
+  object: Fallguys_Rounds_Insert_Input;
+  on_conflict?: InputMaybe<Fallguys_Rounds_On_Conflict>;
 };
 
 
@@ -7860,6 +9656,110 @@ export type Mutation_RootUpdate_Amongus_Vanilla_Versions_By_PkArgs = {
 /** mutation root */
 export type Mutation_RootUpdate_Amongus_Vanilla_Versions_ManyArgs = {
   updates: Array<Amongus_Vanilla_Versions_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Fallguys_Custom_Round_Twitter_AnnouncementsArgs = {
+  _set?: InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_Set_Input>;
+  where: Fallguys_Custom_Round_Twitter_Announcements_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Fallguys_Custom_Round_Twitter_Announcements_By_PkArgs = {
+  _set?: InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_Set_Input>;
+  pk_columns: Fallguys_Custom_Round_Twitter_Announcements_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Fallguys_Custom_Round_Twitter_Announcements_ManyArgs = {
+  updates: Array<Fallguys_Custom_Round_Twitter_Announcements_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Fallguys_Custom_RoundsArgs = {
+  _set?: InputMaybe<Fallguys_Custom_Rounds_Set_Input>;
+  where: Fallguys_Custom_Rounds_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Fallguys_Custom_Rounds_By_PkArgs = {
+  _set?: InputMaybe<Fallguys_Custom_Rounds_Set_Input>;
+  pk_columns: Fallguys_Custom_Rounds_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Fallguys_Custom_Rounds_ManyArgs = {
+  updates: Array<Fallguys_Custom_Rounds_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Fallguys_Match_RoundsArgs = {
+  _inc?: InputMaybe<Fallguys_Match_Rounds_Inc_Input>;
+  _set?: InputMaybe<Fallguys_Match_Rounds_Set_Input>;
+  where: Fallguys_Match_Rounds_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Fallguys_Match_Rounds_By_PkArgs = {
+  _inc?: InputMaybe<Fallguys_Match_Rounds_Inc_Input>;
+  _set?: InputMaybe<Fallguys_Match_Rounds_Set_Input>;
+  pk_columns: Fallguys_Match_Rounds_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Fallguys_Match_Rounds_ManyArgs = {
+  updates: Array<Fallguys_Match_Rounds_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Fallguys_MatchesArgs = {
+  _inc?: InputMaybe<Fallguys_Matches_Inc_Input>;
+  _set?: InputMaybe<Fallguys_Matches_Set_Input>;
+  where: Fallguys_Matches_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Fallguys_Matches_By_PkArgs = {
+  _inc?: InputMaybe<Fallguys_Matches_Inc_Input>;
+  _set?: InputMaybe<Fallguys_Matches_Set_Input>;
+  pk_columns: Fallguys_Matches_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Fallguys_Matches_ManyArgs = {
+  updates: Array<Fallguys_Matches_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Fallguys_RoundsArgs = {
+  _set?: InputMaybe<Fallguys_Rounds_Set_Input>;
+  where: Fallguys_Rounds_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Fallguys_Rounds_By_PkArgs = {
+  _set?: InputMaybe<Fallguys_Rounds_Set_Input>;
+  pk_columns: Fallguys_Rounds_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Fallguys_Rounds_ManyArgs = {
+  updates: Array<Fallguys_Rounds_Updates>;
 };
 
 
@@ -10059,6 +11959,10 @@ export type Person_Youtube_Channels_Updates = {
 export type Persons = {
   __typename?: 'persons';
   created_at: Scalars['timestamptz']['output'];
+  /** An array relationship */
+  fallguys_custom_rounds: Array<Fallguys_Custom_Rounds>;
+  /** An aggregate relationship */
+  fallguys_custom_rounds_aggregate: Fallguys_Custom_Rounds_Aggregate;
   id: Scalars['uuid']['output'];
   name: Scalars['String']['output'];
   /** An array relationship */
@@ -10086,6 +11990,26 @@ export type Persons = {
   /** An aggregate relationship */
   program_persons_aggregate: Program_Persons_Aggregate;
   updated_at: Scalars['timestamptz']['output'];
+};
+
+
+/** columns and relationships of "persons" */
+export type PersonsFallguys_Custom_RoundsArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Custom_Rounds_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Custom_Rounds_Order_By>>;
+  where?: InputMaybe<Fallguys_Custom_Rounds_Bool_Exp>;
+};
+
+
+/** columns and relationships of "persons" */
+export type PersonsFallguys_Custom_Rounds_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Custom_Rounds_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Custom_Rounds_Order_By>>;
+  where?: InputMaybe<Fallguys_Custom_Rounds_Bool_Exp>;
 };
 
 
@@ -10236,6 +12160,8 @@ export type Persons_Bool_Exp = {
   _not?: InputMaybe<Persons_Bool_Exp>;
   _or?: InputMaybe<Array<Persons_Bool_Exp>>;
   created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  fallguys_custom_rounds?: InputMaybe<Fallguys_Custom_Rounds_Bool_Exp>;
+  fallguys_custom_rounds_aggregate?: InputMaybe<Fallguys_Custom_Rounds_Aggregate_Bool_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
   name?: InputMaybe<String_Comparison_Exp>;
   person_fediverse_accounts?: InputMaybe<Person_Fediverse_Accounts_Bool_Exp>;
@@ -10262,6 +12188,7 @@ export enum Persons_Constraint {
 /** input type for inserting data into table "persons" */
 export type Persons_Insert_Input = {
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  fallguys_custom_rounds?: InputMaybe<Fallguys_Custom_Rounds_Arr_Rel_Insert_Input>;
   id?: InputMaybe<Scalars['uuid']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
   person_fediverse_accounts?: InputMaybe<Person_Fediverse_Accounts_Arr_Rel_Insert_Input>;
@@ -10317,6 +12244,7 @@ export type Persons_On_Conflict = {
 /** Ordering options when selecting data from "persons". */
 export type Persons_Order_By = {
   created_at?: InputMaybe<Order_By>;
+  fallguys_custom_rounds_aggregate?: InputMaybe<Fallguys_Custom_Rounds_Aggregate_Order_By>;
   id?: InputMaybe<Order_By>;
   name?: InputMaybe<Order_By>;
   person_fediverse_accounts_aggregate?: InputMaybe<Person_Fediverse_Accounts_Aggregate_Order_By>;
@@ -12082,6 +14010,10 @@ export type Programs = {
   amongus_matches_aggregate: Amongus_Matches_Aggregate;
   created_at: Scalars['timestamptz']['output'];
   end_time?: Maybe<Scalars['timestamptz']['output']>;
+  /** An array relationship */
+  fallguys_matches: Array<Fallguys_Matches>;
+  /** An aggregate relationship */
+  fallguys_matches_aggregate: Fallguys_Matches_Aggregate;
   /** An object relationship */
   game?: Maybe<Games>;
   game_id?: Maybe<Scalars['uuid']['output']>;
@@ -12145,6 +14077,26 @@ export type ProgramsAmongus_Matches_AggregateArgs = {
   offset?: InputMaybe<Scalars['Int']['input']>;
   order_by?: InputMaybe<Array<Amongus_Matches_Order_By>>;
   where?: InputMaybe<Amongus_Matches_Bool_Exp>;
+};
+
+
+/** columns and relationships of "programs" */
+export type ProgramsFallguys_MatchesArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Matches_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Matches_Order_By>>;
+  where?: InputMaybe<Fallguys_Matches_Bool_Exp>;
+};
+
+
+/** columns and relationships of "programs" */
+export type ProgramsFallguys_Matches_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Matches_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Matches_Order_By>>;
+  where?: InputMaybe<Fallguys_Matches_Bool_Exp>;
 };
 
 
@@ -12358,6 +14310,8 @@ export type Programs_Bool_Exp = {
   amongus_matches_aggregate?: InputMaybe<Amongus_Matches_Aggregate_Bool_Exp>;
   created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
   end_time?: InputMaybe<Timestamptz_Comparison_Exp>;
+  fallguys_matches?: InputMaybe<Fallguys_Matches_Bool_Exp>;
+  fallguys_matches_aggregate?: InputMaybe<Fallguys_Matches_Aggregate_Bool_Exp>;
   game?: InputMaybe<Games_Bool_Exp>;
   game_id?: InputMaybe<Uuid_Comparison_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
@@ -12395,6 +14349,7 @@ export type Programs_Insert_Input = {
   amongus_matches?: InputMaybe<Amongus_Matches_Arr_Rel_Insert_Input>;
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   end_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  fallguys_matches?: InputMaybe<Fallguys_Matches_Arr_Rel_Insert_Input>;
   game?: InputMaybe<Games_Obj_Rel_Insert_Input>;
   game_id?: InputMaybe<Scalars['uuid']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
@@ -12464,6 +14419,7 @@ export type Programs_Order_By = {
   amongus_matches_aggregate?: InputMaybe<Amongus_Matches_Aggregate_Order_By>;
   created_at?: InputMaybe<Order_By>;
   end_time?: InputMaybe<Order_By>;
+  fallguys_matches_aggregate?: InputMaybe<Fallguys_Matches_Aggregate_Order_By>;
   game?: InputMaybe<Games_Order_By>;
   game_id?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
@@ -12820,6 +14776,36 @@ export type Query_Root = {
   amongus_vanilla_versions_aggregate: Amongus_Vanilla_Versions_Aggregate;
   /** fetch data from the table: "amongus_vanilla_versions" using primary key columns */
   amongus_vanilla_versions_by_pk?: Maybe<Amongus_Vanilla_Versions>;
+  /** An array relationship */
+  fallguys_custom_round_twitter_announcements: Array<Fallguys_Custom_Round_Twitter_Announcements>;
+  /** An aggregate relationship */
+  fallguys_custom_round_twitter_announcements_aggregate: Fallguys_Custom_Round_Twitter_Announcements_Aggregate;
+  /** fetch data from the table: "fallguys_custom_round_twitter_announcements" using primary key columns */
+  fallguys_custom_round_twitter_announcements_by_pk?: Maybe<Fallguys_Custom_Round_Twitter_Announcements>;
+  /** An array relationship */
+  fallguys_custom_rounds: Array<Fallguys_Custom_Rounds>;
+  /** An aggregate relationship */
+  fallguys_custom_rounds_aggregate: Fallguys_Custom_Rounds_Aggregate;
+  /** fetch data from the table: "fallguys_custom_rounds" using primary key columns */
+  fallguys_custom_rounds_by_pk?: Maybe<Fallguys_Custom_Rounds>;
+  /** An array relationship */
+  fallguys_match_rounds: Array<Fallguys_Match_Rounds>;
+  /** An aggregate relationship */
+  fallguys_match_rounds_aggregate: Fallguys_Match_Rounds_Aggregate;
+  /** fetch data from the table: "fallguys_match_rounds" using primary key columns */
+  fallguys_match_rounds_by_pk?: Maybe<Fallguys_Match_Rounds>;
+  /** An array relationship */
+  fallguys_matches: Array<Fallguys_Matches>;
+  /** An aggregate relationship */
+  fallguys_matches_aggregate: Fallguys_Matches_Aggregate;
+  /** fetch data from the table: "fallguys_matches" using primary key columns */
+  fallguys_matches_by_pk?: Maybe<Fallguys_Matches>;
+  /** fetch data from the table: "fallguys_rounds" */
+  fallguys_rounds: Array<Fallguys_Rounds>;
+  /** fetch aggregated fields from the table: "fallguys_rounds" */
+  fallguys_rounds_aggregate: Fallguys_Rounds_Aggregate;
+  /** fetch data from the table: "fallguys_rounds" using primary key columns */
+  fallguys_rounds_by_pk?: Maybe<Fallguys_Rounds>;
   /** fetch data from the table: "fediverse_accounts" */
   fediverse_accounts: Array<Fediverse_Accounts>;
   /** fetch aggregated fields from the table: "fediverse_accounts" */
@@ -13230,6 +15216,121 @@ export type Query_RootAmongus_Vanilla_Versions_AggregateArgs = {
 
 
 export type Query_RootAmongus_Vanilla_Versions_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Query_RootFallguys_Custom_Round_Twitter_AnnouncementsArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Custom_Round_Twitter_Announcements_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Custom_Round_Twitter_Announcements_Order_By>>;
+  where?: InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_Bool_Exp>;
+};
+
+
+export type Query_RootFallguys_Custom_Round_Twitter_Announcements_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Custom_Round_Twitter_Announcements_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Custom_Round_Twitter_Announcements_Order_By>>;
+  where?: InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_Bool_Exp>;
+};
+
+
+export type Query_RootFallguys_Custom_Round_Twitter_Announcements_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Query_RootFallguys_Custom_RoundsArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Custom_Rounds_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Custom_Rounds_Order_By>>;
+  where?: InputMaybe<Fallguys_Custom_Rounds_Bool_Exp>;
+};
+
+
+export type Query_RootFallguys_Custom_Rounds_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Custom_Rounds_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Custom_Rounds_Order_By>>;
+  where?: InputMaybe<Fallguys_Custom_Rounds_Bool_Exp>;
+};
+
+
+export type Query_RootFallguys_Custom_Rounds_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Query_RootFallguys_Match_RoundsArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Match_Rounds_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Match_Rounds_Order_By>>;
+  where?: InputMaybe<Fallguys_Match_Rounds_Bool_Exp>;
+};
+
+
+export type Query_RootFallguys_Match_Rounds_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Match_Rounds_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Match_Rounds_Order_By>>;
+  where?: InputMaybe<Fallguys_Match_Rounds_Bool_Exp>;
+};
+
+
+export type Query_RootFallguys_Match_Rounds_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Query_RootFallguys_MatchesArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Matches_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Matches_Order_By>>;
+  where?: InputMaybe<Fallguys_Matches_Bool_Exp>;
+};
+
+
+export type Query_RootFallguys_Matches_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Matches_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Matches_Order_By>>;
+  where?: InputMaybe<Fallguys_Matches_Bool_Exp>;
+};
+
+
+export type Query_RootFallguys_Matches_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Query_RootFallguys_RoundsArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Rounds_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Rounds_Order_By>>;
+  where?: InputMaybe<Fallguys_Rounds_Bool_Exp>;
+};
+
+
+export type Query_RootFallguys_Rounds_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Rounds_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Rounds_Order_By>>;
+  where?: InputMaybe<Fallguys_Rounds_Bool_Exp>;
+};
+
+
+export type Query_RootFallguys_Rounds_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
@@ -14089,6 +16190,46 @@ export type Subscription_Root = {
   amongus_vanilla_versions_by_pk?: Maybe<Amongus_Vanilla_Versions>;
   /** fetch data from the table in a streaming manner: "amongus_vanilla_versions" */
   amongus_vanilla_versions_stream: Array<Amongus_Vanilla_Versions>;
+  /** An array relationship */
+  fallguys_custom_round_twitter_announcements: Array<Fallguys_Custom_Round_Twitter_Announcements>;
+  /** An aggregate relationship */
+  fallguys_custom_round_twitter_announcements_aggregate: Fallguys_Custom_Round_Twitter_Announcements_Aggregate;
+  /** fetch data from the table: "fallguys_custom_round_twitter_announcements" using primary key columns */
+  fallguys_custom_round_twitter_announcements_by_pk?: Maybe<Fallguys_Custom_Round_Twitter_Announcements>;
+  /** fetch data from the table in a streaming manner: "fallguys_custom_round_twitter_announcements" */
+  fallguys_custom_round_twitter_announcements_stream: Array<Fallguys_Custom_Round_Twitter_Announcements>;
+  /** An array relationship */
+  fallguys_custom_rounds: Array<Fallguys_Custom_Rounds>;
+  /** An aggregate relationship */
+  fallguys_custom_rounds_aggregate: Fallguys_Custom_Rounds_Aggregate;
+  /** fetch data from the table: "fallguys_custom_rounds" using primary key columns */
+  fallguys_custom_rounds_by_pk?: Maybe<Fallguys_Custom_Rounds>;
+  /** fetch data from the table in a streaming manner: "fallguys_custom_rounds" */
+  fallguys_custom_rounds_stream: Array<Fallguys_Custom_Rounds>;
+  /** An array relationship */
+  fallguys_match_rounds: Array<Fallguys_Match_Rounds>;
+  /** An aggregate relationship */
+  fallguys_match_rounds_aggregate: Fallguys_Match_Rounds_Aggregate;
+  /** fetch data from the table: "fallguys_match_rounds" using primary key columns */
+  fallguys_match_rounds_by_pk?: Maybe<Fallguys_Match_Rounds>;
+  /** fetch data from the table in a streaming manner: "fallguys_match_rounds" */
+  fallguys_match_rounds_stream: Array<Fallguys_Match_Rounds>;
+  /** An array relationship */
+  fallguys_matches: Array<Fallguys_Matches>;
+  /** An aggregate relationship */
+  fallguys_matches_aggregate: Fallguys_Matches_Aggregate;
+  /** fetch data from the table: "fallguys_matches" using primary key columns */
+  fallguys_matches_by_pk?: Maybe<Fallguys_Matches>;
+  /** fetch data from the table in a streaming manner: "fallguys_matches" */
+  fallguys_matches_stream: Array<Fallguys_Matches>;
+  /** fetch data from the table: "fallguys_rounds" */
+  fallguys_rounds: Array<Fallguys_Rounds>;
+  /** fetch aggregated fields from the table: "fallguys_rounds" */
+  fallguys_rounds_aggregate: Fallguys_Rounds_Aggregate;
+  /** fetch data from the table: "fallguys_rounds" using primary key columns */
+  fallguys_rounds_by_pk?: Maybe<Fallguys_Rounds>;
+  /** fetch data from the table in a streaming manner: "fallguys_rounds" */
+  fallguys_rounds_stream: Array<Fallguys_Rounds>;
   /** fetch data from the table: "fediverse_accounts" */
   fediverse_accounts: Array<Fediverse_Accounts>;
   /** fetch aggregated fields from the table: "fediverse_accounts" */
@@ -14631,6 +16772,156 @@ export type Subscription_RootAmongus_Vanilla_Versions_StreamArgs = {
   batch_size: Scalars['Int']['input'];
   cursor: Array<InputMaybe<Amongus_Vanilla_Versions_Stream_Cursor_Input>>;
   where?: InputMaybe<Amongus_Vanilla_Versions_Bool_Exp>;
+};
+
+
+export type Subscription_RootFallguys_Custom_Round_Twitter_AnnouncementsArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Custom_Round_Twitter_Announcements_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Custom_Round_Twitter_Announcements_Order_By>>;
+  where?: InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_Bool_Exp>;
+};
+
+
+export type Subscription_RootFallguys_Custom_Round_Twitter_Announcements_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Custom_Round_Twitter_Announcements_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Custom_Round_Twitter_Announcements_Order_By>>;
+  where?: InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_Bool_Exp>;
+};
+
+
+export type Subscription_RootFallguys_Custom_Round_Twitter_Announcements_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootFallguys_Custom_Round_Twitter_Announcements_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_Stream_Cursor_Input>>;
+  where?: InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_Bool_Exp>;
+};
+
+
+export type Subscription_RootFallguys_Custom_RoundsArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Custom_Rounds_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Custom_Rounds_Order_By>>;
+  where?: InputMaybe<Fallguys_Custom_Rounds_Bool_Exp>;
+};
+
+
+export type Subscription_RootFallguys_Custom_Rounds_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Custom_Rounds_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Custom_Rounds_Order_By>>;
+  where?: InputMaybe<Fallguys_Custom_Rounds_Bool_Exp>;
+};
+
+
+export type Subscription_RootFallguys_Custom_Rounds_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootFallguys_Custom_Rounds_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Fallguys_Custom_Rounds_Stream_Cursor_Input>>;
+  where?: InputMaybe<Fallguys_Custom_Rounds_Bool_Exp>;
+};
+
+
+export type Subscription_RootFallguys_Match_RoundsArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Match_Rounds_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Match_Rounds_Order_By>>;
+  where?: InputMaybe<Fallguys_Match_Rounds_Bool_Exp>;
+};
+
+
+export type Subscription_RootFallguys_Match_Rounds_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Match_Rounds_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Match_Rounds_Order_By>>;
+  where?: InputMaybe<Fallguys_Match_Rounds_Bool_Exp>;
+};
+
+
+export type Subscription_RootFallguys_Match_Rounds_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootFallguys_Match_Rounds_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Fallguys_Match_Rounds_Stream_Cursor_Input>>;
+  where?: InputMaybe<Fallguys_Match_Rounds_Bool_Exp>;
+};
+
+
+export type Subscription_RootFallguys_MatchesArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Matches_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Matches_Order_By>>;
+  where?: InputMaybe<Fallguys_Matches_Bool_Exp>;
+};
+
+
+export type Subscription_RootFallguys_Matches_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Matches_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Matches_Order_By>>;
+  where?: InputMaybe<Fallguys_Matches_Bool_Exp>;
+};
+
+
+export type Subscription_RootFallguys_Matches_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootFallguys_Matches_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Fallguys_Matches_Stream_Cursor_Input>>;
+  where?: InputMaybe<Fallguys_Matches_Bool_Exp>;
+};
+
+
+export type Subscription_RootFallguys_RoundsArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Rounds_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Rounds_Order_By>>;
+  where?: InputMaybe<Fallguys_Rounds_Bool_Exp>;
+};
+
+
+export type Subscription_RootFallguys_Rounds_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Fallguys_Rounds_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Fallguys_Rounds_Order_By>>;
+  where?: InputMaybe<Fallguys_Rounds_Bool_Exp>;
+};
+
+
+export type Subscription_RootFallguys_Rounds_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootFallguys_Rounds_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Fallguys_Rounds_Stream_Cursor_Input>>;
+  where?: InputMaybe<Fallguys_Rounds_Bool_Exp>;
 };
 
 
@@ -17105,6 +19396,18 @@ export type GetAmongusMatchPageStaticParamQueryVariables = Exact<{ [key: string]
 
 export type GetAmongusMatchPageStaticParamQuery = { __typename?: 'query_root', amongusMatches: Array<{ __typename?: 'amongus_matches', id: any }> };
 
+export type GetFallguysMatchPageQueryVariables = Exact<{
+  fallguysMatchId: Scalars['uuid']['input'];
+}>;
+
+
+export type GetFallguysMatchPageQuery = { __typename?: 'query_root', fallguysMatch?: { __typename?: 'fallguys_matches', id: any, startTime: any, endTime?: any | null, program: { __typename?: 'programs', id: any, title: string, startTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, programLiveArchives: Array<{ __typename?: 'program_live_archives', id: any, startTime?: any | null, person: { __typename?: 'persons', id: any, name: string }, youtubeLive?: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null, youtubeVideo?: { __typename?: 'youtube_videos', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null }> } } | null };
+
+export type GetFallguysMatchPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetFallguysMatchPageStaticParamQuery = { __typename?: 'query_root', fallguysMatches: Array<{ __typename?: 'fallguys_matches', id: any }> };
+
 export type GetIndexPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -17286,6 +19589,114 @@ export function useGetAmongusMatchPageStaticParamLazyQuery(baseOptions?: Apollo.
 export type GetAmongusMatchPageStaticParamQueryHookResult = ReturnType<typeof useGetAmongusMatchPageStaticParamQuery>;
 export type GetAmongusMatchPageStaticParamLazyQueryHookResult = ReturnType<typeof useGetAmongusMatchPageStaticParamLazyQuery>;
 export type GetAmongusMatchPageStaticParamQueryResult = Apollo.QueryResult<GetAmongusMatchPageStaticParamQuery, GetAmongusMatchPageStaticParamQueryVariables>;
+export const GetFallguysMatchPageDocument = gql`
+    query GetFallguysMatchPage($fallguysMatchId: uuid!) {
+  fallguysMatch: fallguys_matches_by_pk(id: $fallguysMatchId) {
+    id
+    startTime: start_time
+    endTime: end_time
+    program {
+      id
+      title
+      startTime: start_time
+      programProjects: program_projects(order_by: {project: {start_time: asc}}) {
+        project {
+          id
+          name
+        }
+      }
+      programLiveArchives: program_live_archives(order_by: {person: {name: asc}}) {
+        id
+        startTime: start_time
+        person {
+          id
+          name
+        }
+        youtubeLive: youtube_live {
+          remoteYoutubeVideoId: remote_youtube_video_id
+          title
+          youtubeChannel: youtube_channel {
+            id
+            remoteYoutubeChannelId: remote_youtube_channel_id
+            name
+          }
+        }
+        youtubeVideo: youtube_video {
+          remoteYoutubeVideoId: remote_youtube_video_id
+          title
+          youtubeChannel: youtube_channel {
+            id
+            remoteYoutubeChannelId: remote_youtube_channel_id
+            name
+          }
+        }
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetFallguysMatchPageQuery__
+ *
+ * To run a query within a React component, call `useGetFallguysMatchPageQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetFallguysMatchPageQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetFallguysMatchPageQuery({
+ *   variables: {
+ *      fallguysMatchId: // value for 'fallguysMatchId'
+ *   },
+ * });
+ */
+export function useGetFallguysMatchPageQuery(baseOptions: Apollo.QueryHookOptions<GetFallguysMatchPageQuery, GetFallguysMatchPageQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetFallguysMatchPageQuery, GetFallguysMatchPageQueryVariables>(GetFallguysMatchPageDocument, options);
+      }
+export function useGetFallguysMatchPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetFallguysMatchPageQuery, GetFallguysMatchPageQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetFallguysMatchPageQuery, GetFallguysMatchPageQueryVariables>(GetFallguysMatchPageDocument, options);
+        }
+export type GetFallguysMatchPageQueryHookResult = ReturnType<typeof useGetFallguysMatchPageQuery>;
+export type GetFallguysMatchPageLazyQueryHookResult = ReturnType<typeof useGetFallguysMatchPageLazyQuery>;
+export type GetFallguysMatchPageQueryResult = Apollo.QueryResult<GetFallguysMatchPageQuery, GetFallguysMatchPageQueryVariables>;
+export const GetFallguysMatchPageStaticParamDocument = gql`
+    query GetFallguysMatchPageStaticParam {
+  fallguysMatches: fallguys_matches {
+    id
+  }
+}
+    `;
+
+/**
+ * __useGetFallguysMatchPageStaticParamQuery__
+ *
+ * To run a query within a React component, call `useGetFallguysMatchPageStaticParamQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetFallguysMatchPageStaticParamQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetFallguysMatchPageStaticParamQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetFallguysMatchPageStaticParamQuery(baseOptions?: Apollo.QueryHookOptions<GetFallguysMatchPageStaticParamQuery, GetFallguysMatchPageStaticParamQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetFallguysMatchPageStaticParamQuery, GetFallguysMatchPageStaticParamQueryVariables>(GetFallguysMatchPageStaticParamDocument, options);
+      }
+export function useGetFallguysMatchPageStaticParamLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetFallguysMatchPageStaticParamQuery, GetFallguysMatchPageStaticParamQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetFallguysMatchPageStaticParamQuery, GetFallguysMatchPageStaticParamQueryVariables>(GetFallguysMatchPageStaticParamDocument, options);
+        }
+export type GetFallguysMatchPageStaticParamQueryHookResult = ReturnType<typeof useGetFallguysMatchPageStaticParamQuery>;
+export type GetFallguysMatchPageStaticParamLazyQueryHookResult = ReturnType<typeof useGetFallguysMatchPageStaticParamLazyQuery>;
+export type GetFallguysMatchPageStaticParamQueryResult = Apollo.QueryResult<GetFallguysMatchPageStaticParamQuery, GetFallguysMatchPageStaticParamQueryVariables>;
 export const GetIndexPageDocument = gql`
     query GetIndexPage {
   projects(order_by: {start_time: asc}) {

@@ -1,0 +1,63 @@
+query GetFallguysMatchPage(
+  $fallguysMatchId: uuid!
+) {
+  fallguysMatch: fallguys_matches_by_pk(
+    id: $fallguysMatchId
+  ) {
+    id
+    startTime: start_time
+    endTime: end_time
+
+    program {
+      id
+      title
+      startTime: start_time
+
+      programProjects: program_projects(
+        order_by: {
+          project: {
+            start_time: asc
+          }
+        }
+      ) {
+        project {
+          id
+          name
+        }
+      }
+
+      programLiveArchives: program_live_archives(
+        order_by: {
+          person: {
+            name: asc
+          }
+        }
+      ) {
+        id
+        startTime: start_time
+        person {
+          id
+          name
+        }
+        youtubeLive: youtube_live {
+          remoteYoutubeVideoId: remote_youtube_video_id
+          title
+          youtubeChannel: youtube_channel {
+            id
+            remoteYoutubeChannelId: remote_youtube_channel_id
+            name
+          }
+        }
+        youtubeVideo: youtube_video {
+          remoteYoutubeVideoId: remote_youtube_video_id
+          title
+          youtubeChannel: youtube_channel {
+            id
+            remoteYoutubeChannelId: remote_youtube_channel_id
+            name
+          }
+        }
+      }
+    }
+  }
+}
