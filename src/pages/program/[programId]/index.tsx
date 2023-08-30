@@ -269,7 +269,7 @@ export default function ProgramPage({ programId }: { programId: string }) {
         {program.fallguysMatches.length > 0 ? (
           <>
             <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
-              Fall guys
+              Fall Guys
             </Typography>
             <Typography variant='h6' component='h4' sx={{ mt: 1 }}>
               マッチ
