@@ -97,6 +97,25 @@ query GetProgramPage(
       id
       startTime: start_time
       endTime: end_time
+
+      fallguysMatchRounds: fallguys_match_rounds(
+        order_by: {
+          start_time: asc
+        }
+        limit: 1
+      ) {
+        id
+
+        fallguysRound: fallguys_round {
+          id
+          name
+        }
+
+        fallguysCustomRound: fallguys_custom_round {
+          id
+          name
+        }
+      }
     }
 
     mariokart8deluxeRaces: mariokart8deluxe_races(
