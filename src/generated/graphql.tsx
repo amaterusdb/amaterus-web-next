@@ -19401,7 +19401,7 @@ export type GetFallguysMatchPageQueryVariables = Exact<{
 }>;
 
 
-export type GetFallguysMatchPageQuery = { __typename?: 'query_root', fallguysMatch?: { __typename?: 'fallguys_matches', id: any, startTime: any, endTime?: any | null, program: { __typename?: 'programs', id: any, title: string, startTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, programLiveArchives: Array<{ __typename?: 'program_live_archives', id: any, startTime?: any | null, person: { __typename?: 'persons', id: any, name: string }, youtubeLive?: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null, youtubeVideo?: { __typename?: 'youtube_videos', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null }> } } | null };
+export type GetFallguysMatchPageQuery = { __typename?: 'query_root', fallguysMatch?: { __typename?: 'fallguys_matches', id: any, startTime: any, endTime?: any | null, fallguysMatchRounds: Array<{ __typename?: 'fallguys_match_rounds', id: any, startTime: any, endTime?: any | null, fallguysRound?: { __typename?: 'fallguys_rounds', id: any, name: string } | null, fallguysCustomRound?: { __typename?: 'fallguys_custom_rounds', id: any, name: string } | null }>, program: { __typename?: 'programs', id: any, title: string, startTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, programLiveArchives: Array<{ __typename?: 'program_live_archives', id: any, startTime?: any | null, person: { __typename?: 'persons', id: any, name: string }, youtubeLive?: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null, youtubeVideo?: { __typename?: 'youtube_videos', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null }> } } | null };
 
 export type GetFallguysMatchPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -19595,6 +19595,19 @@ export const GetFallguysMatchPageDocument = gql`
     id
     startTime: start_time
     endTime: end_time
+    fallguysMatchRounds: fallguys_match_rounds(order_by: {start_time: asc}) {
+      id
+      startTime: start_time
+      endTime: end_time
+      fallguysRound: fallguys_round {
+        id
+        name
+      }
+      fallguysCustomRound: fallguys_custom_round {
+        id
+        name
+      }
+    }
     program {
       id
       title

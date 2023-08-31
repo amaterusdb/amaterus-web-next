@@ -162,6 +162,74 @@ export default function FallguysMatchPage({ fallguysMatchId }: { fallguysMatchId
             </TableBody>
           </Table>
         </Box>
+        {fallguysMatch.fallguysMatchRounds.length > 0 ? (
+          <>
+            <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+              ラウンド
+            </Typography>
+            <Box sx={{ mt: 2 }}>
+              <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>番号</TableCell>
+                    <TableCell>ラウンド</TableCell>
+                    <TableCell>開始日時</TableCell>
+                    <TableCell>終了日時</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {fallguysMatch.fallguysMatchRounds.map((fallguysMatchRound, index) => (
+                    <TableRow
+                      key={fallguysMatchRound.id}
+                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                    >
+                      <TableCell>{index + 1}</TableCell>
+                      <TableCell>
+                        {fallguysMatchRound.fallguysRound != null ? (
+                          <>{fallguysMatchRound.fallguysRound.name}</>
+                        ) : (
+                          ''
+                        )}
+                        {fallguysMatchRound.fallguysCustomRound != null ? (
+                          <>{fallguysMatchRound.fallguysCustomRound.name}</>
+                        ) : (
+                          ''
+                        )}
+                      </TableCell>
+                      <TableCell>
+                        {fallguysMatchRound.startTime != null ? (
+                          <NextLink
+                            href={`/fallguys_match_round/${fallguysMatchRound.id}/`}
+                            passHref
+                            legacyBehavior
+                          >
+                            <MuiLink>
+                              {format(
+                                parseISO(fallguysMatchRound.startTime),
+                                'yyyy-MM-dd HH:mm:ss',
+                              )}
+                            </MuiLink>
+                          </NextLink>
+                        ) : (
+                          ''
+                        )}
+                      </TableCell>
+                      <TableCell>
+                        {fallguysMatchRound.endTime != null ? (
+                          <>{format(parseISO(fallguysMatchRound.endTime), 'yyyy-MM-dd HH:mm:ss')}</>
+                        ) : (
+                          ''
+                        )}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </Box>
+          </>
+        ) : (
+          ''
+        )}
         <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
           放送アーカイブ
         </Typography>

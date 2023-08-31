@@ -8,6 +8,26 @@ query GetFallguysMatchPage(
     startTime: start_time
     endTime: end_time
 
+    fallguysMatchRounds: fallguys_match_rounds(
+      order_by: {
+        start_time: asc
+      }
+    ) {
+      id
+      startTime: start_time
+      endTime: end_time
+
+      fallguysRound: fallguys_round {
+        id
+        name
+      }
+
+      fallguysCustomRound: fallguys_custom_round {
+        id
+        name
+      }
+    }
+
     program {
       id
       title
