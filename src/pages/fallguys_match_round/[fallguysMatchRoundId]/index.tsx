@@ -13,7 +13,9 @@ import {
 import { parseISO, format, intervalToDuration, isBefore } from 'date-fns'
 import Head from 'next/head'
 import NextLink from 'next/link'
+import Script from 'next/script'
 import DrawerAppBar from '@/components/drawer_app_bar'
+import { Tweet } from '@/components/tweet'
 import {
   GetFallguysMatchRoundPageStaticParamDocument,
   GetFallguysMatchRoundPageStaticParamQuery,
@@ -102,6 +104,7 @@ export default function FallguysMatchRoundPage({
           {program.title} - Amaterus
         </title>
       </Head>
+      <Script src='https://platform.twitter.com/widgets.js' strategy='lazyOnload' />
       <DrawerAppBar />
       <Box component='main' sx={{ p: 3 }}>
         <Toolbar />
@@ -238,6 +241,24 @@ export default function FallguysMatchRoundPage({
                   </TableRow>
                 </TableBody>
               </Table>
+              {fallguysMatchRound.fallguysCustomRound.fallguysCustomRoundTwitterAnnouncements
+                .length > 0 ? (
+                <>
+                  <Typography variant='h6' component='h4' sx={{ mt: 3 }}>
+                    告知
+                  </Typography>
+                </>
+              ) : (
+                ''
+              )}
+              {fallguysMatchRound.fallguysCustomRound.fallguysCustomRoundTwitterAnnouncements.map(
+                (fallguysCustomRoundTwitterAnnouncement) => (
+                  <Tweet
+                    key={fallguysCustomRoundTwitterAnnouncement.twitterTweet.id}
+                    tweetId={fallguysCustomRoundTwitterAnnouncement.twitterTweet.remoteTweetId}
+                  />
+                ),
+              )}
             </Box>
           </>
         ) : (

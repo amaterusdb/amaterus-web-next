@@ -18,6 +18,19 @@ query GetFallguysMatchRoundPage(
       name
       inGameCreatorName: in_game_creator_name
       shareCode: share_code
+
+      fallguysCustomRoundTwitterAnnouncements: fallguys_custom_round_twitter_announcements(
+        order_by: {
+          twitter_tweet: {
+            tweet_time: asc
+          }
+        }
+      ) {
+        twitterTweet: twitter_tweet {
+          id
+          remoteTweetId: remote_tweet_id
+        }
+      }
     }
 
     fallguysMatch: fallguys_match {

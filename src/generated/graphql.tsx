@@ -19413,7 +19413,7 @@ export type GetFallguysMatchRoundPageQueryVariables = Exact<{
 }>;
 
 
-export type GetFallguysMatchRoundPageQuery = { __typename?: 'query_root', fallguysMatchRound?: { __typename?: 'fallguys_match_rounds', id: any, startTime: any, endTime?: any | null, fallguysRound?: { __typename?: 'fallguys_rounds', id: any, name: string } | null, fallguysCustomRound?: { __typename?: 'fallguys_custom_rounds', id: any, name: string, inGameCreatorName?: string | null, shareCode: string } | null, fallguysMatch: { __typename?: 'fallguys_matches', id: any, startTime: any, endTime?: any | null, program: { __typename?: 'programs', id: any, title: string, startTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, programLiveArchives: Array<{ __typename?: 'program_live_archives', id: any, startTime?: any | null, person: { __typename?: 'persons', id: any, name: string }, youtubeLive?: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null, youtubeVideo?: { __typename?: 'youtube_videos', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null }> } } } | null };
+export type GetFallguysMatchRoundPageQuery = { __typename?: 'query_root', fallguysMatchRound?: { __typename?: 'fallguys_match_rounds', id: any, startTime: any, endTime?: any | null, fallguysRound?: { __typename?: 'fallguys_rounds', id: any, name: string } | null, fallguysCustomRound?: { __typename?: 'fallguys_custom_rounds', id: any, name: string, inGameCreatorName?: string | null, shareCode: string, fallguysCustomRoundTwitterAnnouncements: Array<{ __typename?: 'fallguys_custom_round_twitter_announcements', twitterTweet: { __typename?: 'twitter_tweets', id: any, remoteTweetId: string } }> } | null, fallguysMatch: { __typename?: 'fallguys_matches', id: any, startTime: any, endTime?: any | null, program: { __typename?: 'programs', id: any, title: string, startTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, programLiveArchives: Array<{ __typename?: 'program_live_archives', id: any, startTime?: any | null, person: { __typename?: 'persons', id: any, name: string }, youtubeLive?: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null, youtubeVideo?: { __typename?: 'youtube_videos', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null }> } } } | null };
 
 export type GetFallguysMatchRoundPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -19737,6 +19737,14 @@ export const GetFallguysMatchRoundPageDocument = gql`
       name
       inGameCreatorName: in_game_creator_name
       shareCode: share_code
+      fallguysCustomRoundTwitterAnnouncements: fallguys_custom_round_twitter_announcements(
+        order_by: {twitter_tweet: {tweet_time: asc}}
+      ) {
+        twitterTweet: twitter_tweet {
+          id
+          remoteTweetId: remote_tweet_id
+        }
+      }
     }
     fallguysMatch: fallguys_match {
       id
