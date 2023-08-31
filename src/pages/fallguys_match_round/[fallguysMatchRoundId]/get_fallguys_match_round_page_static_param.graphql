@@ -1,0 +1,5 @@
+query GetFallguysMatchRoundPageStaticParam {
+  fallguysMatchRounds: fallguys_match_rounds {
+    id
+  }
+}

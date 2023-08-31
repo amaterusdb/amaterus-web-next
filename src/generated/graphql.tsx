@@ -19408,6 +19408,18 @@ export type GetFallguysMatchPageStaticParamQueryVariables = Exact<{ [key: string
 
 export type GetFallguysMatchPageStaticParamQuery = { __typename?: 'query_root', fallguysMatches: Array<{ __typename?: 'fallguys_matches', id: any }> };
 
+export type GetFallguysMatchRoundPageQueryVariables = Exact<{
+  fallguysMatchRoundId: Scalars['uuid']['input'];
+}>;
+
+
+export type GetFallguysMatchRoundPageQuery = { __typename?: 'query_root', fallguysMatchRound?: { __typename?: 'fallguys_match_rounds', id: any, startTime: any, endTime?: any | null, fallguysRound?: { __typename?: 'fallguys_rounds', id: any, name: string } | null, fallguysCustomRound?: { __typename?: 'fallguys_custom_rounds', id: any, name: string, inGameCreatorName?: string | null, shareCode: string } | null, fallguysMatch: { __typename?: 'fallguys_matches', id: any, startTime: any, endTime?: any | null, program: { __typename?: 'programs', id: any, title: string, startTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, programLiveArchives: Array<{ __typename?: 'program_live_archives', id: any, startTime?: any | null, person: { __typename?: 'persons', id: any, name: string }, youtubeLive?: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null, youtubeVideo?: { __typename?: 'youtube_videos', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null }> } } } | null };
+
+export type GetFallguysMatchRoundPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetFallguysMatchRoundPageStaticParamQuery = { __typename?: 'query_root', fallguysMatchRounds: Array<{ __typename?: 'fallguys_match_rounds', id: any }> };
+
 export type GetIndexPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -19710,6 +19722,129 @@ export function useGetFallguysMatchPageStaticParamLazyQuery(baseOptions?: Apollo
 export type GetFallguysMatchPageStaticParamQueryHookResult = ReturnType<typeof useGetFallguysMatchPageStaticParamQuery>;
 export type GetFallguysMatchPageStaticParamLazyQueryHookResult = ReturnType<typeof useGetFallguysMatchPageStaticParamLazyQuery>;
 export type GetFallguysMatchPageStaticParamQueryResult = Apollo.QueryResult<GetFallguysMatchPageStaticParamQuery, GetFallguysMatchPageStaticParamQueryVariables>;
+export const GetFallguysMatchRoundPageDocument = gql`
+    query GetFallguysMatchRoundPage($fallguysMatchRoundId: uuid!) {
+  fallguysMatchRound: fallguys_match_rounds_by_pk(id: $fallguysMatchRoundId) {
+    id
+    startTime: start_time
+    endTime: end_time
+    fallguysRound: fallguys_round {
+      id
+      name
+    }
+    fallguysCustomRound: fallguys_custom_round {
+      id
+      name
+      inGameCreatorName: in_game_creator_name
+      shareCode: share_code
+    }
+    fallguysMatch: fallguys_match {
+      id
+      startTime: start_time
+      endTime: end_time
+      program {
+        id
+        title
+        startTime: start_time
+        programProjects: program_projects(order_by: {project: {start_time: asc}}) {
+          project {
+            id
+            name
+          }
+        }
+        programLiveArchives: program_live_archives(order_by: {person: {name: asc}}) {
+          id
+          startTime: start_time
+          person {
+            id
+            name
+          }
+          youtubeLive: youtube_live {
+            remoteYoutubeVideoId: remote_youtube_video_id
+            title
+            youtubeChannel: youtube_channel {
+              id
+              remoteYoutubeChannelId: remote_youtube_channel_id
+              name
+            }
+          }
+          youtubeVideo: youtube_video {
+            remoteYoutubeVideoId: remote_youtube_video_id
+            title
+            youtubeChannel: youtube_channel {
+              id
+              remoteYoutubeChannelId: remote_youtube_channel_id
+              name
+            }
+          }
+        }
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetFallguysMatchRoundPageQuery__
+ *
+ * To run a query within a React component, call `useGetFallguysMatchRoundPageQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetFallguysMatchRoundPageQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetFallguysMatchRoundPageQuery({
+ *   variables: {
+ *      fallguysMatchRoundId: // value for 'fallguysMatchRoundId'
+ *   },
+ * });
+ */
+export function useGetFallguysMatchRoundPageQuery(baseOptions: Apollo.QueryHookOptions<GetFallguysMatchRoundPageQuery, GetFallguysMatchRoundPageQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetFallguysMatchRoundPageQuery, GetFallguysMatchRoundPageQueryVariables>(GetFallguysMatchRoundPageDocument, options);
+      }
+export function useGetFallguysMatchRoundPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetFallguysMatchRoundPageQuery, GetFallguysMatchRoundPageQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetFallguysMatchRoundPageQuery, GetFallguysMatchRoundPageQueryVariables>(GetFallguysMatchRoundPageDocument, options);
+        }
+export type GetFallguysMatchRoundPageQueryHookResult = ReturnType<typeof useGetFallguysMatchRoundPageQuery>;
+export type GetFallguysMatchRoundPageLazyQueryHookResult = ReturnType<typeof useGetFallguysMatchRoundPageLazyQuery>;
+export type GetFallguysMatchRoundPageQueryResult = Apollo.QueryResult<GetFallguysMatchRoundPageQuery, GetFallguysMatchRoundPageQueryVariables>;
+export const GetFallguysMatchRoundPageStaticParamDocument = gql`
+    query GetFallguysMatchRoundPageStaticParam {
+  fallguysMatchRounds: fallguys_match_rounds {
+    id
+  }
+}
+    `;
+
+/**
+ * __useGetFallguysMatchRoundPageStaticParamQuery__
+ *
+ * To run a query within a React component, call `useGetFallguysMatchRoundPageStaticParamQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetFallguysMatchRoundPageStaticParamQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetFallguysMatchRoundPageStaticParamQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetFallguysMatchRoundPageStaticParamQuery(baseOptions?: Apollo.QueryHookOptions<GetFallguysMatchRoundPageStaticParamQuery, GetFallguysMatchRoundPageStaticParamQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetFallguysMatchRoundPageStaticParamQuery, GetFallguysMatchRoundPageStaticParamQueryVariables>(GetFallguysMatchRoundPageStaticParamDocument, options);
+      }
+export function useGetFallguysMatchRoundPageStaticParamLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetFallguysMatchRoundPageStaticParamQuery, GetFallguysMatchRoundPageStaticParamQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetFallguysMatchRoundPageStaticParamQuery, GetFallguysMatchRoundPageStaticParamQueryVariables>(GetFallguysMatchRoundPageStaticParamDocument, options);
+        }
+export type GetFallguysMatchRoundPageStaticParamQueryHookResult = ReturnType<typeof useGetFallguysMatchRoundPageStaticParamQuery>;
+export type GetFallguysMatchRoundPageStaticParamLazyQueryHookResult = ReturnType<typeof useGetFallguysMatchRoundPageStaticParamLazyQuery>;
+export type GetFallguysMatchRoundPageStaticParamQueryResult = Apollo.QueryResult<GetFallguysMatchRoundPageStaticParamQuery, GetFallguysMatchRoundPageStaticParamQueryVariables>;
 export const GetIndexPageDocument = gql`
     query GetIndexPage {
   projects(order_by: {start_time: asc}) {
