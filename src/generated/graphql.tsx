@@ -2728,6 +2728,7 @@ export type Fallguys_Custom_Round_Twitter_Announcements = {
   fallguys_custom_round: Fallguys_Custom_Rounds;
   fallguys_custom_round_id: Scalars['uuid']['output'];
   id: Scalars['uuid']['output'];
+  is_agent_tweet?: Maybe<Scalars['Boolean']['output']>;
   /** An object relationship */
   twitter_tweet: Twitter_Tweets;
   twitter_tweet_id: Scalars['uuid']['output'];
@@ -2742,7 +2743,23 @@ export type Fallguys_Custom_Round_Twitter_Announcements_Aggregate = {
 };
 
 export type Fallguys_Custom_Round_Twitter_Announcements_Aggregate_Bool_Exp = {
+  bool_and?: InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_Aggregate_Bool_Exp_Bool_And>;
+  bool_or?: InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_Aggregate_Bool_Exp_Bool_Or>;
   count?: InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_Aggregate_Bool_Exp_Count>;
+};
+
+export type Fallguys_Custom_Round_Twitter_Announcements_Aggregate_Bool_Exp_Bool_And = {
+  arguments: Fallguys_Custom_Round_Twitter_Announcements_Select_Column_Fallguys_Custom_Round_Twitter_Announcements_Aggregate_Bool_Exp_Bool_And_Arguments_Columns;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_Bool_Exp>;
+  predicate: Boolean_Comparison_Exp;
+};
+
+export type Fallguys_Custom_Round_Twitter_Announcements_Aggregate_Bool_Exp_Bool_Or = {
+  arguments: Fallguys_Custom_Round_Twitter_Announcements_Select_Column_Fallguys_Custom_Round_Twitter_Announcements_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Fallguys_Custom_Round_Twitter_Announcements_Bool_Exp>;
+  predicate: Boolean_Comparison_Exp;
 };
 
 export type Fallguys_Custom_Round_Twitter_Announcements_Aggregate_Bool_Exp_Count = {
@@ -2790,6 +2807,7 @@ export type Fallguys_Custom_Round_Twitter_Announcements_Bool_Exp = {
   fallguys_custom_round?: InputMaybe<Fallguys_Custom_Rounds_Bool_Exp>;
   fallguys_custom_round_id?: InputMaybe<Uuid_Comparison_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
+  is_agent_tweet?: InputMaybe<Boolean_Comparison_Exp>;
   twitter_tweet?: InputMaybe<Twitter_Tweets_Bool_Exp>;
   twitter_tweet_id?: InputMaybe<Uuid_Comparison_Exp>;
   updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
@@ -2809,6 +2827,7 @@ export type Fallguys_Custom_Round_Twitter_Announcements_Insert_Input = {
   fallguys_custom_round?: InputMaybe<Fallguys_Custom_Rounds_Obj_Rel_Insert_Input>;
   fallguys_custom_round_id?: InputMaybe<Scalars['uuid']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
+  is_agent_tweet?: InputMaybe<Scalars['Boolean']['input']>;
   twitter_tweet?: InputMaybe<Twitter_Tweets_Obj_Rel_Insert_Input>;
   twitter_tweet_id?: InputMaybe<Scalars['uuid']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
@@ -2874,6 +2893,7 @@ export type Fallguys_Custom_Round_Twitter_Announcements_Order_By = {
   fallguys_custom_round?: InputMaybe<Fallguys_Custom_Rounds_Order_By>;
   fallguys_custom_round_id?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
+  is_agent_tweet?: InputMaybe<Order_By>;
   twitter_tweet?: InputMaybe<Twitter_Tweets_Order_By>;
   twitter_tweet_id?: InputMaybe<Order_By>;
   updated_at?: InputMaybe<Order_By>;
@@ -2893,9 +2913,23 @@ export enum Fallguys_Custom_Round_Twitter_Announcements_Select_Column {
   /** column name */
   Id = 'id',
   /** column name */
+  IsAgentTweet = 'is_agent_tweet',
+  /** column name */
   TwitterTweetId = 'twitter_tweet_id',
   /** column name */
   UpdatedAt = 'updated_at'
+}
+
+/** select "fallguys_custom_round_twitter_announcements_aggregate_bool_exp_bool_and_arguments_columns" columns of table "fallguys_custom_round_twitter_announcements" */
+export enum Fallguys_Custom_Round_Twitter_Announcements_Select_Column_Fallguys_Custom_Round_Twitter_Announcements_Aggregate_Bool_Exp_Bool_And_Arguments_Columns {
+  /** column name */
+  IsAgentTweet = 'is_agent_tweet'
+}
+
+/** select "fallguys_custom_round_twitter_announcements_aggregate_bool_exp_bool_or_arguments_columns" columns of table "fallguys_custom_round_twitter_announcements" */
+export enum Fallguys_Custom_Round_Twitter_Announcements_Select_Column_Fallguys_Custom_Round_Twitter_Announcements_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns {
+  /** column name */
+  IsAgentTweet = 'is_agent_tweet'
 }
 
 /** input type for updating data in table "fallguys_custom_round_twitter_announcements" */
@@ -2903,6 +2937,7 @@ export type Fallguys_Custom_Round_Twitter_Announcements_Set_Input = {
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   fallguys_custom_round_id?: InputMaybe<Scalars['uuid']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
+  is_agent_tweet?: InputMaybe<Scalars['Boolean']['input']>;
   twitter_tweet_id?: InputMaybe<Scalars['uuid']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
 };
@@ -2920,6 +2955,7 @@ export type Fallguys_Custom_Round_Twitter_Announcements_Stream_Cursor_Value_Inpu
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   fallguys_custom_round_id?: InputMaybe<Scalars['uuid']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
+  is_agent_tweet?: InputMaybe<Scalars['Boolean']['input']>;
   twitter_tweet_id?: InputMaybe<Scalars['uuid']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
 };
@@ -2932,6 +2968,8 @@ export enum Fallguys_Custom_Round_Twitter_Announcements_Update_Column {
   FallguysCustomRoundId = 'fallguys_custom_round_id',
   /** column name */
   Id = 'id',
+  /** column name */
+  IsAgentTweet = 'is_agent_tweet',
   /** column name */
   TwitterTweetId = 'twitter_tweet_id',
   /** column name */
@@ -13310,6 +13348,7 @@ export type Program_Persons = {
   __typename?: 'program_persons';
   created_at: Scalars['timestamptz']['output'];
   id: Scalars['uuid']['output'];
+  is_absent?: Maybe<Scalars['Boolean']['output']>;
   /** An object relationship */
   person: Persons;
   person_id: Scalars['uuid']['output'];
@@ -13327,7 +13366,23 @@ export type Program_Persons_Aggregate = {
 };
 
 export type Program_Persons_Aggregate_Bool_Exp = {
+  bool_and?: InputMaybe<Program_Persons_Aggregate_Bool_Exp_Bool_And>;
+  bool_or?: InputMaybe<Program_Persons_Aggregate_Bool_Exp_Bool_Or>;
   count?: InputMaybe<Program_Persons_Aggregate_Bool_Exp_Count>;
+};
+
+export type Program_Persons_Aggregate_Bool_Exp_Bool_And = {
+  arguments: Program_Persons_Select_Column_Program_Persons_Aggregate_Bool_Exp_Bool_And_Arguments_Columns;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Program_Persons_Bool_Exp>;
+  predicate: Boolean_Comparison_Exp;
+};
+
+export type Program_Persons_Aggregate_Bool_Exp_Bool_Or = {
+  arguments: Program_Persons_Select_Column_Program_Persons_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Program_Persons_Bool_Exp>;
+  predicate: Boolean_Comparison_Exp;
 };
 
 export type Program_Persons_Aggregate_Bool_Exp_Count = {
@@ -13373,6 +13428,7 @@ export type Program_Persons_Bool_Exp = {
   _or?: InputMaybe<Array<Program_Persons_Bool_Exp>>;
   created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
+  is_absent?: InputMaybe<Boolean_Comparison_Exp>;
   person?: InputMaybe<Persons_Bool_Exp>;
   person_id?: InputMaybe<Uuid_Comparison_Exp>;
   program?: InputMaybe<Programs_Bool_Exp>;
@@ -13392,6 +13448,7 @@ export enum Program_Persons_Constraint {
 export type Program_Persons_Insert_Input = {
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
+  is_absent?: InputMaybe<Scalars['Boolean']['input']>;
   person?: InputMaybe<Persons_Obj_Rel_Insert_Input>;
   person_id?: InputMaybe<Scalars['uuid']['input']>;
   program?: InputMaybe<Programs_Obj_Rel_Insert_Input>;
@@ -13457,6 +13514,7 @@ export type Program_Persons_On_Conflict = {
 export type Program_Persons_Order_By = {
   created_at?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
+  is_absent?: InputMaybe<Order_By>;
   person?: InputMaybe<Persons_Order_By>;
   person_id?: InputMaybe<Order_By>;
   program?: InputMaybe<Programs_Order_By>;
@@ -13476,6 +13534,8 @@ export enum Program_Persons_Select_Column {
   /** column name */
   Id = 'id',
   /** column name */
+  IsAbsent = 'is_absent',
+  /** column name */
   PersonId = 'person_id',
   /** column name */
   ProgramId = 'program_id',
@@ -13483,10 +13543,23 @@ export enum Program_Persons_Select_Column {
   UpdatedAt = 'updated_at'
 }
 
+/** select "program_persons_aggregate_bool_exp_bool_and_arguments_columns" columns of table "program_persons" */
+export enum Program_Persons_Select_Column_Program_Persons_Aggregate_Bool_Exp_Bool_And_Arguments_Columns {
+  /** column name */
+  IsAbsent = 'is_absent'
+}
+
+/** select "program_persons_aggregate_bool_exp_bool_or_arguments_columns" columns of table "program_persons" */
+export enum Program_Persons_Select_Column_Program_Persons_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns {
+  /** column name */
+  IsAbsent = 'is_absent'
+}
+
 /** input type for updating data in table "program_persons" */
 export type Program_Persons_Set_Input = {
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
+  is_absent?: InputMaybe<Scalars['Boolean']['input']>;
   person_id?: InputMaybe<Scalars['uuid']['input']>;
   program_id?: InputMaybe<Scalars['uuid']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
@@ -13504,6 +13577,7 @@ export type Program_Persons_Stream_Cursor_Input = {
 export type Program_Persons_Stream_Cursor_Value_Input = {
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
+  is_absent?: InputMaybe<Scalars['Boolean']['input']>;
   person_id?: InputMaybe<Scalars['uuid']['input']>;
   program_id?: InputMaybe<Scalars['uuid']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
@@ -13515,6 +13589,8 @@ export enum Program_Persons_Update_Column {
   CreatedAt = 'created_at',
   /** column name */
   Id = 'id',
+  /** column name */
+  IsAbsent = 'is_absent',
   /** column name */
   PersonId = 'person_id',
   /** column name */
@@ -19466,7 +19542,7 @@ export type GetProgramPageQueryVariables = Exact<{
 }>;
 
 
-export type GetProgramPageQuery = { __typename?: 'query_root', program?: { __typename?: 'programs', id: any, title: string, startTime?: any | null, endTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, game?: { __typename?: 'games', id: any, name: string } | null, programTwitterAnnouncements: Array<{ __typename?: 'program_twitter_announcements', twitterTweet: { __typename?: 'twitter_tweets', id: any, remoteTweetId: string } }>, programPersons: Array<{ __typename?: 'program_persons', person: { __typename?: 'persons', id: any, name: string } }>, programLiveArchives: Array<{ __typename?: 'program_live_archives', id: any, person: { __typename?: 'persons', id: any, name: string }, youtubeLive?: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null, youtubeVideo?: { __typename?: 'youtube_videos', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null }>, amongusMatches: Array<{ __typename?: 'amongus_matches', id: any, startTime: any, endTime?: any | null }>, fallguysMatches: Array<{ __typename?: 'fallguys_matches', id: any, startTime: any, endTime?: any | null, fallguysMatchRounds: Array<{ __typename?: 'fallguys_match_rounds', id: any, fallguysRound?: { __typename?: 'fallguys_rounds', id: any, name: string } | null, fallguysCustomRound?: { __typename?: 'fallguys_custom_rounds', id: any, name: string } | null }> }>, mariokart8deluxeRaces: Array<{ __typename?: 'mariokart8deluxe_races', id: any, startTime: any, endTime?: any | null, mariokart8deluxeCourse?: { __typename?: 'mariokart8deluxe_courses', id: any, name: string } | null }>, mariokart8deluxeBattleMatches: Array<{ __typename?: 'mariokart8deluxe_battle_matches', id: any, startTime: any, endTime?: any | null, mariokart8deluxeBattleRule?: { __typename?: 'mariokart8deluxe_battle_rules', id: any, name: string } | null, mariokart8deluxeBattleCourse?: { __typename?: 'mariokart8deluxe_battle_courses', id: any, name: string } | null }> } | null };
+export type GetProgramPageQuery = { __typename?: 'query_root', program?: { __typename?: 'programs', id: any, title: string, startTime?: any | null, endTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, game?: { __typename?: 'games', id: any, name: string } | null, programTwitterAnnouncements: Array<{ __typename?: 'program_twitter_announcements', twitterTweet: { __typename?: 'twitter_tweets', id: any, remoteTweetId: string } }>, programPersons: Array<{ __typename?: 'program_persons', id: any, person: { __typename?: 'persons', id: any, name: string } }>, programLiveArchives: Array<{ __typename?: 'program_live_archives', id: any, person: { __typename?: 'persons', id: any, name: string }, youtubeLive?: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null, youtubeVideo?: { __typename?: 'youtube_videos', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null }>, amongusMatches: Array<{ __typename?: 'amongus_matches', id: any, startTime: any, endTime?: any | null }>, fallguysMatches: Array<{ __typename?: 'fallguys_matches', id: any, startTime: any, endTime?: any | null, fallguysMatchRounds: Array<{ __typename?: 'fallguys_match_rounds', id: any, fallguysRound?: { __typename?: 'fallguys_rounds', id: any, name: string } | null, fallguysCustomRound?: { __typename?: 'fallguys_custom_rounds', id: any, name: string } | null }> }>, mariokart8deluxeRaces: Array<{ __typename?: 'mariokart8deluxe_races', id: any, startTime: any, endTime?: any | null, mariokart8deluxeCourse?: { __typename?: 'mariokart8deluxe_courses', id: any, name: string } | null }>, mariokart8deluxeBattleMatches: Array<{ __typename?: 'mariokart8deluxe_battle_matches', id: any, startTime: any, endTime?: any | null, mariokart8deluxeBattleRule?: { __typename?: 'mariokart8deluxe_battle_rules', id: any, name: string } | null, mariokart8deluxeBattleCourse?: { __typename?: 'mariokart8deluxe_battle_courses', id: any, name: string } | null }> } | null };
 
 export type GetProgramPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -20283,7 +20359,11 @@ export const GetProgramPageDocument = gql`
         remoteTweetId: remote_tweet_id
       }
     }
-    programPersons: program_persons(order_by: {person: {name: asc}}) {
+    programPersons: program_persons(
+      where: {_or: [{is_absent: {_is_null: true}}, {is_absent: {_eq: false}}]}
+      order_by: {person: {name: asc}}
+    ) {
+      id
       person {
         id
         name
