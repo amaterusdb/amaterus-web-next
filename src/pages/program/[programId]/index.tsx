@@ -548,65 +548,71 @@ export default function ProgramPage({ programId }: { programId: string }) {
         ) : (
           ''
         )}
-        <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
-          放送アーカイブ
-        </Typography>
-        <Box sx={{ mt: 2 }}>
-          <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
-            <TableHead>
-              <TableRow>
-                <TableCell>放送タイトル</TableCell>
-                <TableCell>放送者</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {program.programLiveArchives.map((programLiveArchive) => (
-                <TableRow
-                  key={programLiveArchive.id}
-                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                >
-                  <TableCell component='th' scope='row'>
-                    {programLiveArchive.youtubeLive != null ? (
-                      <NextLink
-                        href={`https://www.youtube.com/watch?v=${programLiveArchive.youtubeLive.remoteYoutubeVideoId}`}
-                        passHref
-                        legacyBehavior
-                      >
-                        <MuiLink>{programLiveArchive.youtubeLive.title}</MuiLink>
-                      </NextLink>
-                    ) : (
-                      ''
-                    )}
-                    {programLiveArchive.youtubeVideo != null ? (
-                      <NextLink
-                        href={`https://www.youtube.com/watch?v=${programLiveArchive.youtubeVideo.remoteYoutubeVideoId}`}
-                        passHref
-                        legacyBehavior
-                      >
-                        <MuiLink>{programLiveArchive.youtubeVideo.title}</MuiLink>
-                      </NextLink>
-                    ) : (
-                      ''
-                    )}
-                  </TableCell>
-                  <TableCell>
-                    {programLiveArchive.person != null ? (
-                      <NextLink
-                        href={`/person/${programLiveArchive.person.id}/`}
-                        passHref
-                        legacyBehavior
-                      >
-                        <MuiLink>{programLiveArchive.person.name}</MuiLink>
-                      </NextLink>
-                    ) : (
-                      ''
-                    )}
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </Box>
+        {program.programLiveArchives.length > 0 ? (
+          <>
+            <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+              放送アーカイブ
+            </Typography>
+            <Box sx={{ mt: 2 }}>
+              <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>放送タイトル</TableCell>
+                    <TableCell>放送者</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {program.programLiveArchives.map((programLiveArchive) => (
+                    <TableRow
+                      key={programLiveArchive.id}
+                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                    >
+                      <TableCell component='th' scope='row'>
+                        {programLiveArchive.youtubeLive != null ? (
+                          <NextLink
+                            href={`https://www.youtube.com/watch?v=${programLiveArchive.youtubeLive.remoteYoutubeVideoId}`}
+                            passHref
+                            legacyBehavior
+                          >
+                            <MuiLink>{programLiveArchive.youtubeLive.title}</MuiLink>
+                          </NextLink>
+                        ) : (
+                          ''
+                        )}
+                        {programLiveArchive.youtubeVideo != null ? (
+                          <NextLink
+                            href={`https://www.youtube.com/watch?v=${programLiveArchive.youtubeVideo.remoteYoutubeVideoId}`}
+                            passHref
+                            legacyBehavior
+                          >
+                            <MuiLink>{programLiveArchive.youtubeVideo.title}</MuiLink>
+                          </NextLink>
+                        ) : (
+                          ''
+                        )}
+                      </TableCell>
+                      <TableCell>
+                        {programLiveArchive.person != null ? (
+                          <NextLink
+                            href={`/person/${programLiveArchive.person.id}/`}
+                            passHref
+                            legacyBehavior
+                          >
+                            <MuiLink>{programLiveArchive.person.name}</MuiLink>
+                          </NextLink>
+                        ) : (
+                          ''
+                        )}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </Box>
+          </>
+        ) : (
+          ''
+        )}
       </Box>
     </>
   )
