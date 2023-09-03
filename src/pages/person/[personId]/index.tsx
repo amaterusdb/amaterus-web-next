@@ -103,163 +103,195 @@ export default function PersonPage({ personId }: { personId: string }) {
         <Typography variant='h4' component='h2' sx={{ mt: 2 }}>
           {person.name}
         </Typography>
-        <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
-          Twitter (X)
-        </Typography>
-        <Box sx={{ mt: 2 }}>
-          <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
-            <TableHead>
-              <TableRow>
-                <TableCell>アカウント</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {person.personTwitterAccounts.map((personTwitterAccount) => (
-                <TableRow
-                  key={personTwitterAccount.twitterAccount.id}
-                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                >
-                  <TableCell component='th' scope='row'>
-                    <NextLink
-                      href={`https://twitter.com/intent/user?user_id=${personTwitterAccount.twitterAccount.remoteTwitterUserId}`}
-                      passHref
-                      legacyBehavior
-                    >
-                      <MuiLink>@{personTwitterAccount.twitterAccount.twitterScreenName}</MuiLink>
-                    </NextLink>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </Box>
-        <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
-          Fediverse
-        </Typography>
-        <Box sx={{ mt: 2 }}>
-          <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
-            <TableHead>
-              <TableRow>
-                <TableCell>アカウント</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {person.personFediverseAccounts.map((personFediverseAccount) => {
-                const fediverseAcct = personFediverseAccount.fediverseAccount.fediverseAcct // @example@example.com
-                const fediverseAcctSplit = fediverseAcct.split(/@/, 3)
-                const fediverseAcctUser = fediverseAcctSplit[1] ?? ''
-                const fediverseAcctDomain = fediverseAcctSplit[2] ?? ''
-
-                return (
-                  <TableRow
-                    key={personFediverseAccount.fediverseAccount.id}
-                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                  >
-                    <TableCell component='th' scope='row'>
-                      <NextLink
-                        href={`https://${fediverseAcctDomain}/@${fediverseAcctUser}`}
-                        passHref
-                        legacyBehavior
-                      >
-                        <MuiLink>{fediverseAcct}</MuiLink>
-                      </NextLink>
-                    </TableCell>
+        {person.personTwitterAccounts.length > 0 ? (
+          <>
+            <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+              Twitter (X)
+            </Typography>
+            <Box sx={{ mt: 2 }}>
+              <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>アカウント</TableCell>
                   </TableRow>
-                )
-              })}
-            </TableBody>
-          </Table>
-        </Box>
-        <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
-          ニコニコ動画
-        </Typography>
-        <Box sx={{ mt: 2 }}>
-          <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
-            <TableHead>
-              <TableRow>
-                <TableCell>アカウント</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {person.personNiconicoAccounts.map((personNiconicoAccount) => (
-                <TableRow
-                  key={personNiconicoAccount.niconicoAccount.id}
-                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                >
-                  <TableCell component='th' scope='row'>
-                    <NextLink
-                      href={`https://www.nicovideo.jp/user/${personNiconicoAccount.niconicoAccount.remoteNiconicoAccountId}`}
-                      passHref
-                      legacyBehavior
+                </TableHead>
+                <TableBody>
+                  {person.personTwitterAccounts.map((personTwitterAccount) => (
+                    <TableRow
+                      key={personTwitterAccount.twitterAccount.id}
+                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                     >
-                      <MuiLink>{personNiconicoAccount.niconicoAccount.name}</MuiLink>
-                    </NextLink>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </Box>
-        <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
-          ニコニコミュニティ
-        </Typography>
-        <Box sx={{ mt: 2 }}>
-          <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
-            <TableHead>
-              <TableRow>
-                <TableCell>アカウント</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {person.personNiconicoCommunities.map((personNiconicoCommunity) => (
-                <TableRow
-                  key={personNiconicoCommunity.niconicoCommunity.id}
-                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                >
-                  <TableCell component='th' scope='row'>
-                    <NextLink
-                      href={`https://com.nicovideo.jp/community/co${personNiconicoCommunity.niconicoCommunity.remoteNiconicoCommunityId}`}
-                      passHref
-                      legacyBehavior
+                      <TableCell component='th' scope='row'>
+                        <NextLink
+                          href={`https://twitter.com/intent/user?user_id=${personTwitterAccount.twitterAccount.remoteTwitterUserId}`}
+                          passHref
+                          legacyBehavior
+                        >
+                          <MuiLink>
+                            @{personTwitterAccount.twitterAccount.twitterScreenName}
+                          </MuiLink>
+                        </NextLink>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </Box>
+          </>
+        ) : (
+          ''
+        )}
+        {person.personFediverseAccounts.length > 0 ? (
+          <>
+            <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+              Fediverse
+            </Typography>
+            <Box sx={{ mt: 2 }}>
+              <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>アカウント</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {person.personFediverseAccounts.map((personFediverseAccount) => {
+                    const fediverseAcct = personFediverseAccount.fediverseAccount.fediverseAcct // @example@example.com
+                    const fediverseAcctSplit = fediverseAcct.split(/@/, 3)
+                    const fediverseAcctUser = fediverseAcctSplit[1] ?? ''
+                    const fediverseAcctDomain = fediverseAcctSplit[2] ?? ''
+
+                    return (
+                      <TableRow
+                        key={personFediverseAccount.fediverseAccount.id}
+                        sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                      >
+                        <TableCell component='th' scope='row'>
+                          <NextLink
+                            href={`https://${fediverseAcctDomain}/@${fediverseAcctUser}`}
+                            passHref
+                            legacyBehavior
+                          >
+                            <MuiLink>{fediverseAcct}</MuiLink>
+                          </NextLink>
+                        </TableCell>
+                      </TableRow>
+                    )
+                  })}
+                </TableBody>
+              </Table>
+            </Box>
+          </>
+        ) : (
+          ''
+        )}
+        {person.personNiconicoAccounts.length > 0 ? (
+          <>
+            <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+              ニコニコ動画
+            </Typography>
+            <Box sx={{ mt: 2 }}>
+              <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>アカウント</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {person.personNiconicoAccounts.map((personNiconicoAccount) => (
+                    <TableRow
+                      key={personNiconicoAccount.niconicoAccount.id}
+                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                     >
-                      <MuiLink>{personNiconicoCommunity.niconicoCommunity.name}</MuiLink>
-                    </NextLink>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </Box>
-        <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
-          YouTube
-        </Typography>
-        <Box sx={{ mt: 2 }}>
-          <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
-            <TableHead>
-              <TableRow>
-                <TableCell>チャンネル</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {person.personYoutubeChannels.map((personYoutubeChannel) => (
-                <TableRow
-                  key={personYoutubeChannel.youtubeChannel.id}
-                  sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-                >
-                  <TableCell component='th' scope='row'>
-                    <NextLink
-                      href={`https://www.youtube.com/channel/${personYoutubeChannel.youtubeChannel.remoteYoutubeChannelId}`}
-                      passHref
-                      legacyBehavior
+                      <TableCell component='th' scope='row'>
+                        <NextLink
+                          href={`https://www.nicovideo.jp/user/${personNiconicoAccount.niconicoAccount.remoteNiconicoAccountId}`}
+                          passHref
+                          legacyBehavior
+                        >
+                          <MuiLink>{personNiconicoAccount.niconicoAccount.name}</MuiLink>
+                        </NextLink>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </Box>
+          </>
+        ) : (
+          ''
+        )}
+        {person.personNiconicoCommunities.length > 0 ? (
+          <>
+            <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+              ニコニコミュニティ
+            </Typography>
+            <Box sx={{ mt: 2 }}>
+              <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>アカウント</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {person.personNiconicoCommunities.map((personNiconicoCommunity) => (
+                    <TableRow
+                      key={personNiconicoCommunity.niconicoCommunity.id}
+                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                     >
-                      <MuiLink>{personYoutubeChannel.youtubeChannel.name}</MuiLink>
-                    </NextLink>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </Box>
+                      <TableCell component='th' scope='row'>
+                        <NextLink
+                          href={`https://com.nicovideo.jp/community/co${personNiconicoCommunity.niconicoCommunity.remoteNiconicoCommunityId}`}
+                          passHref
+                          legacyBehavior
+                        >
+                          <MuiLink>{personNiconicoCommunity.niconicoCommunity.name}</MuiLink>
+                        </NextLink>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </Box>
+          </>
+        ) : (
+          ''
+        )}
+        {person.personYoutubeChannels.length > 0 ? (
+          <>
+            <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+              YouTube
+            </Typography>
+            <Box sx={{ mt: 2 }}>
+              <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>チャンネル</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {person.personYoutubeChannels.map((personYoutubeChannel) => (
+                    <TableRow
+                      key={personYoutubeChannel.youtubeChannel.id}
+                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                    >
+                      <TableCell component='th' scope='row'>
+                        <NextLink
+                          href={`https://www.youtube.com/channel/${personYoutubeChannel.youtubeChannel.remoteYoutubeChannelId}`}
+                          passHref
+                          legacyBehavior
+                        >
+                          <MuiLink>{personYoutubeChannel.youtubeChannel.name}</MuiLink>
+                        </NextLink>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </Box>
+          </>
+        ) : (
+          ''
+        )}
       </Box>
     </>
   )
