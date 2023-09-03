@@ -491,6 +491,63 @@ export default function ProgramPage({ programId }: { programId: string }) {
         ) : (
           ''
         )}
+        {program.programNiconicoVideos.length > 0 ? (
+          <>
+            <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+              動画
+            </Typography>
+            <Box sx={{ mt: 2, mb: 2 }}>
+              <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>タイトル</TableCell>
+                    <TableCell>投稿者</TableCell>
+                    <TableCell>投稿日時</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {program.programNiconicoVideos.map((programNiconicoVideo) => (
+                    <TableRow
+                      key={programNiconicoVideo.niconicoVideo.id}
+                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                    >
+                      <TableCell>
+                        <NextLink
+                          href={`https://www.nicovideo.jp/watch/${programNiconicoVideo.niconicoVideo.remoteNiconicoContentId}`}
+                          passHref
+                          legacyBehavior
+                        >
+                          <MuiLink>{programNiconicoVideo.niconicoVideo.title}</MuiLink>
+                        </NextLink>
+                      </TableCell>
+                      <TableCell>
+                        {programNiconicoVideo.person != null ? (
+                          <NextLink
+                            href={`/person/${programNiconicoVideo.person.id}/`}
+                            passHref
+                            legacyBehavior
+                          >
+                            <MuiLink>{programNiconicoVideo.person.name}</MuiLink>
+                          </NextLink>
+                        ) : (
+                          ''
+                        )}
+                      </TableCell>
+                      <TableCell>
+                        {format(
+                          parseISO(programNiconicoVideo.niconicoVideo.startTime),
+                          'yyyy-MM-dd HH:mm:ss',
+                        )}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </Box>
+          </>
+        ) : (
+          ''
+        )}
         <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
           放送アーカイブ
         </Typography>

@@ -62,7 +62,26 @@ query GetProgramPage(
         name
       }
     }
-    
+
+    programNiconicoVideos: program_niconico_videos(
+      order_by: {
+        niconico_video: {
+          start_time: asc
+        }
+      }
+    ) {
+      niconicoVideo: niconico_video {
+        id
+        remoteNiconicoContentId: remote_niconico_content_id
+        title
+        startTime: start_time
+      }
+      person {
+        id
+        name
+      }
+    }
+
     programLiveArchives: program_live_archives(
       order_by: {
         person: {
