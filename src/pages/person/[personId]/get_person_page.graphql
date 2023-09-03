@@ -64,6 +64,36 @@ query GetPersonPage(
       }
     }
 
+    personNiconicoChannels: person_niconico_channels(
+      order_by: {
+        niconico_channel: {
+          remote_niconico_channel_id: asc
+        }
+      }
+    ) {
+      niconicoChannel: niconico_channel {
+        id
+        remoteNiconicoChannelId: remote_niconico_channel_id
+        screenName: screen_name
+        name
+      }
+    }
+
+    personNiconicoPlusChannels: person_niconico_plus_channels(
+      order_by: {
+        niconico_plus_channel: {
+          remote_niconico_plus_channel_id: asc
+        }
+      }
+    ) {
+      niconicoPlusChannel: niconico_plus_channel {
+        id
+        remoteNiconicoPlusChannelId: remote_niconico_plus_channel_id
+        screenName: screen_name
+        name
+      }
+    }
+
     personYoutubeChannels: person_youtube_channels(
       order_by: {
         youtube_channel: {

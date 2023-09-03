@@ -256,6 +256,42 @@ export default function PersonPage({ personId }: { personId: string }) {
         ) : (
           ''
         )}
+        {person.personNiconicoChannels.length > 0 ? (
+          <>
+            <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+              ニコニコチャンネル
+            </Typography>
+            <Box sx={{ mt: 2 }}>
+              <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>チャンネル</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {person.personNiconicoChannels.map((personNiconicoChannel) => (
+                    <TableRow
+                      key={personNiconicoChannel.niconicoChannel.id}
+                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                    >
+                      <TableCell component='th' scope='row'>
+                        <NextLink
+                          href={`https://ch.nicovideo.jp/${personNiconicoChannel.niconicoChannel.screenName}`}
+                          passHref
+                          legacyBehavior
+                        >
+                          <MuiLink>{personNiconicoChannel.niconicoChannel.name}</MuiLink>
+                        </NextLink>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </Box>
+          </>
+        ) : (
+          ''
+        )}
         {person.personYoutubeChannels.length > 0 ? (
           <>
             <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
