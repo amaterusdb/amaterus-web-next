@@ -178,7 +178,7 @@ export default function ProgramPage({ programId }: { programId: string }) {
         {program.programPersons.length > 0 ? (
           <>
             <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
-              告知された参加者
+              参加者
             </Typography>
             <Box sx={{ mt: 2 }}>
               <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
