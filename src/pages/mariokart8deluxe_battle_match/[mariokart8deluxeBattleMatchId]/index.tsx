@@ -261,10 +261,13 @@ export default function Mariokart8deluxeBattleMatchPage({
                     start: parseISO(programLiveArchive.startTime),
                     end: parseISO(mariokart8deluxeBattleMatch.startTime),
                   })
-                  const localEndTime = intervalToDuration({
-                    start: parseISO(programLiveArchive.startTime),
-                    end: parseISO(mariokart8deluxeBattleMatch.endTime),
-                  })
+                  const localEndTime =
+                    mariokart8deluxeBattleMatch.endTime != null
+                      ? intervalToDuration({
+                          start: parseISO(programLiveArchive.startTime),
+                          end: parseISO(mariokart8deluxeBattleMatch.endTime),
+                        })
+                      : null
 
                   const localStartTimeHours = localStartTime.hours ?? 0
                   const localStartTimeMinutes = localStartTime.minutes ?? 0
@@ -272,9 +275,9 @@ export default function Mariokart8deluxeBattleMatchPage({
                   const localStartTimeTotalSeconds =
                     localStartTimeHours * 3600 + localStartTimeMinutes * 60 + localStartTimeSeconds
 
-                  const localEndTimeHours = localEndTime.hours ?? 0
-                  const localEndTimeMinutes = localEndTime.minutes ?? 0
-                  const localEndTimeSeconds = localEndTime.seconds ?? 0
+                  const localEndTimeHours = localEndTime?.hours ?? 0
+                  const localEndTimeMinutes = localEndTime?.minutes ?? 0
+                  const localEndTimeSeconds = localEndTime?.seconds ?? 0
                   const localEndTimeTotalSeconds =
                     localEndTimeHours * 3600 + localEndTimeMinutes * 60 + localEndTimeSeconds
 
@@ -353,7 +356,7 @@ export default function Mariokart8deluxeBattleMatchPage({
                         )}
                       </TableCell>
                       <TableCell>
-                        {programLiveArchive.youtubeLive != null ? (
+                        {programLiveArchive.youtubeLive != null && localEndTime != null ? (
                           <NextLink
                             href={`https://www.youtube.com/watch?v=${programLiveArchive.youtubeLive.remoteYoutubeVideoId}&t=${localEndTimeTotalSeconds}s`}
                             passHref
@@ -368,7 +371,7 @@ export default function Mariokart8deluxeBattleMatchPage({
                         ) : (
                           ''
                         )}
-                        {programLiveArchive.youtubeVideo != null ? (
+                        {programLiveArchive.youtubeVideo != null && localEndTime != null ? (
                           <NextLink
                             href={`https://www.youtube.com/watch?v=${programLiveArchive.youtubeVideo.remoteYoutubeVideoId}&t=${localEndTimeTotalSeconds}s`}
                             passHref
