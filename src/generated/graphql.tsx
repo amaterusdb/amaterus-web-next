@@ -4792,6 +4792,9 @@ export type Mariokart8deluxe_Battle_Courses = {
   mariokart8deluxe_battle_matches: Array<Mariokart8deluxe_Battle_Matches>;
   /** An aggregate relationship */
   mariokart8deluxe_battle_matches_aggregate: Mariokart8deluxe_Battle_Matches_Aggregate;
+  /** An object relationship */
+  mariokart8deluxe_console?: Maybe<Mariokart8deluxe_Consoles>;
+  mariokart8deluxe_console_id?: Maybe<Scalars['uuid']['output']>;
   name: Scalars['String']['output'];
   updated_at: Scalars['timestamptz']['output'];
 };
@@ -4862,6 +4865,8 @@ export type Mariokart8deluxe_Battle_Courses_Bool_Exp = {
   index?: InputMaybe<Int_Comparison_Exp>;
   mariokart8deluxe_battle_matches?: InputMaybe<Mariokart8deluxe_Battle_Matches_Bool_Exp>;
   mariokart8deluxe_battle_matches_aggregate?: InputMaybe<Mariokart8deluxe_Battle_Matches_Aggregate_Bool_Exp>;
+  mariokart8deluxe_console?: InputMaybe<Mariokart8deluxe_Consoles_Bool_Exp>;
+  mariokart8deluxe_console_id?: InputMaybe<Uuid_Comparison_Exp>;
   name?: InputMaybe<String_Comparison_Exp>;
   updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
 };
@@ -4887,6 +4892,8 @@ export type Mariokart8deluxe_Battle_Courses_Insert_Input = {
   id?: InputMaybe<Scalars['uuid']['input']>;
   index?: InputMaybe<Scalars['Int']['input']>;
   mariokart8deluxe_battle_matches?: InputMaybe<Mariokart8deluxe_Battle_Matches_Arr_Rel_Insert_Input>;
+  mariokart8deluxe_console?: InputMaybe<Mariokart8deluxe_Consoles_Obj_Rel_Insert_Input>;
+  mariokart8deluxe_console_id?: InputMaybe<Scalars['uuid']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
 };
@@ -4897,6 +4904,7 @@ export type Mariokart8deluxe_Battle_Courses_Max_Fields = {
   created_at?: Maybe<Scalars['timestamptz']['output']>;
   id?: Maybe<Scalars['uuid']['output']>;
   index?: Maybe<Scalars['Int']['output']>;
+  mariokart8deluxe_console_id?: Maybe<Scalars['uuid']['output']>;
   name?: Maybe<Scalars['String']['output']>;
   updated_at?: Maybe<Scalars['timestamptz']['output']>;
 };
@@ -4907,6 +4915,7 @@ export type Mariokart8deluxe_Battle_Courses_Min_Fields = {
   created_at?: Maybe<Scalars['timestamptz']['output']>;
   id?: Maybe<Scalars['uuid']['output']>;
   index?: Maybe<Scalars['Int']['output']>;
+  mariokart8deluxe_console_id?: Maybe<Scalars['uuid']['output']>;
   name?: Maybe<Scalars['String']['output']>;
   updated_at?: Maybe<Scalars['timestamptz']['output']>;
 };
@@ -4940,6 +4949,8 @@ export type Mariokart8deluxe_Battle_Courses_Order_By = {
   id?: InputMaybe<Order_By>;
   index?: InputMaybe<Order_By>;
   mariokart8deluxe_battle_matches_aggregate?: InputMaybe<Mariokart8deluxe_Battle_Matches_Aggregate_Order_By>;
+  mariokart8deluxe_console?: InputMaybe<Mariokart8deluxe_Consoles_Order_By>;
+  mariokart8deluxe_console_id?: InputMaybe<Order_By>;
   name?: InputMaybe<Order_By>;
   updated_at?: InputMaybe<Order_By>;
 };
@@ -4958,6 +4969,8 @@ export enum Mariokart8deluxe_Battle_Courses_Select_Column {
   /** column name */
   Index = 'index',
   /** column name */
+  Mariokart8deluxeConsoleId = 'mariokart8deluxe_console_id',
+  /** column name */
   Name = 'name',
   /** column name */
   UpdatedAt = 'updated_at'
@@ -4968,6 +4981,7 @@ export type Mariokart8deluxe_Battle_Courses_Set_Input = {
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
   index?: InputMaybe<Scalars['Int']['input']>;
+  mariokart8deluxe_console_id?: InputMaybe<Scalars['uuid']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
 };
@@ -5003,6 +5017,7 @@ export type Mariokart8deluxe_Battle_Courses_Stream_Cursor_Value_Input = {
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
   index?: InputMaybe<Scalars['Int']['input']>;
+  mariokart8deluxe_console_id?: InputMaybe<Scalars['uuid']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
   updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
 };
@@ -5021,6 +5036,8 @@ export enum Mariokart8deluxe_Battle_Courses_Update_Column {
   Id = 'id',
   /** column name */
   Index = 'index',
+  /** column name */
+  Mariokart8deluxeConsoleId = 'mariokart8deluxe_console_id',
   /** column name */
   Name = 'name',
   /** column name */
