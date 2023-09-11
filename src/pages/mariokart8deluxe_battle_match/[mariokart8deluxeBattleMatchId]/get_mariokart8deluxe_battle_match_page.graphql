@@ -16,6 +16,11 @@ query GetMariokart8deluxeBattleMatchPage(
     mariokart8deluxeBattleCourse: mariokart8deluxe_battle_course {
       id
       name
+
+      mariokart8deluxeConsole: mariokart8deluxe_console {
+        id
+        name
+      }
     }
 
     mariokart8deluxeBattleMatchPlayers: mariokart8deluxe_battle_match_players(

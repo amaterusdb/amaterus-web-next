@@ -22428,7 +22428,7 @@ export type GetMariokart8deluxeBattleMatchPageQueryVariables = Exact<{
 }>;
 
 
-export type GetMariokart8deluxeBattleMatchPageQuery = { __typename?: 'query_root', mariokart8deluxeBattleMatch?: { __typename?: 'mariokart8deluxe_battle_matches', id: any, startTime: any, endTime?: any | null, mariokart8deluxeBattleRule?: { __typename?: 'mariokart8deluxe_battle_rules', id: any, name: string } | null, mariokart8deluxeBattleCourse?: { __typename?: 'mariokart8deluxe_battle_courses', id: any, name: string } | null, mariokart8deluxeBattleMatchPlayers: Array<{ __typename?: 'mariokart8deluxe_battle_match_players', id: any, nickname: string, person?: { __typename?: 'persons', id: any } | null }>, program: { __typename?: 'programs', id: any, title: string, startTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, programLiveArchives: Array<{ __typename?: 'program_live_archives', id: any, startTime?: any | null, person: { __typename?: 'persons', id: any, name: string }, youtubeLive?: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null, youtubeVideo?: { __typename?: 'youtube_videos', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null }> } } | null };
+export type GetMariokart8deluxeBattleMatchPageQuery = { __typename?: 'query_root', mariokart8deluxeBattleMatch?: { __typename?: 'mariokart8deluxe_battle_matches', id: any, startTime: any, endTime?: any | null, mariokart8deluxeBattleRule?: { __typename?: 'mariokart8deluxe_battle_rules', id: any, name: string } | null, mariokart8deluxeBattleCourse?: { __typename?: 'mariokart8deluxe_battle_courses', id: any, name: string, mariokart8deluxeConsole?: { __typename?: 'mariokart8deluxe_consoles', id: any, name: string } | null } | null, mariokart8deluxeBattleMatchPlayers: Array<{ __typename?: 'mariokart8deluxe_battle_match_players', id: any, nickname: string, person?: { __typename?: 'persons', id: any } | null }>, program: { __typename?: 'programs', id: any, title: string, startTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, programLiveArchives: Array<{ __typename?: 'program_live_archives', id: any, startTime?: any | null, person: { __typename?: 'persons', id: any, name: string }, youtubeLive?: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null, youtubeVideo?: { __typename?: 'youtube_videos', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null }> } } | null };
 
 export type GetMariokart8deluxeBattleMatchPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -22901,6 +22901,10 @@ export const GetMariokart8deluxeBattleMatchPageDocument = gql`
     mariokart8deluxeBattleCourse: mariokart8deluxe_battle_course {
       id
       name
+      mariokart8deluxeConsole: mariokart8deluxe_console {
+        id
+        name
+      }
     }
     mariokart8deluxeBattleMatchPlayers: mariokart8deluxe_battle_match_players(
       order_by: {nickname: asc}

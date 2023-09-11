@@ -162,7 +162,24 @@ export default function Mariokart8deluxeBattleMatchPage({
                     コース
                   </TableCell>
                   <TableCell>
-                    {mariokart8deluxeBattleMatch.mariokart8deluxeBattleCourse.name}
+                    {mariokart8deluxeBattleMatch.mariokart8deluxeBattleCourse != null ? (
+                      <>
+                        {mariokart8deluxeBattleMatch.mariokart8deluxeBattleCourse
+                          .mariokart8deluxeConsole != null ? (
+                          <>
+                            {
+                              mariokart8deluxeBattleMatch.mariokart8deluxeBattleCourse
+                                .mariokart8deluxeConsole.name
+                            }{' '}
+                          </>
+                        ) : (
+                          ''
+                        )}
+                        {mariokart8deluxeBattleMatch.mariokart8deluxeBattleCourse.name}
+                      </>
+                    ) : (
+                      ''
+                    )}
                   </TableCell>
                 </TableRow>
               ) : (
