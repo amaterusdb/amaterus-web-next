@@ -162,6 +162,11 @@ query GetProgramPage(
       startTime: start_time
       endTime: end_time
 
+      mariokart8deluxeRaceRule: mariokart8deluxe_race_rule {
+        id
+        name
+      }
+
       mariokart8deluxeCourse: mariokart8deluxe_course {
         id
         name

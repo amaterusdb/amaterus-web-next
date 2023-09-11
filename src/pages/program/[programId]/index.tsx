@@ -366,6 +366,7 @@ export default function ProgramPage({ programId }: { programId: string }) {
                 <TableHead>
                   <TableRow>
                     <TableCell>番号</TableCell>
+                    <TableCell>ルール</TableCell>
                     <TableCell>コース</TableCell>
                     <TableCell>開始日時</TableCell>
                     {mariokart8deluxeRaceEndTimeVisible ? <TableCell>終了日時</TableCell> : ''}
@@ -378,6 +379,13 @@ export default function ProgramPage({ programId }: { programId: string }) {
                       sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                     >
                       <TableCell>{index + 1}</TableCell>
+                      <TableCell>
+                        {mariokart8deluxeRace.mariokart8deluxeRaceRule != null ? (
+                          <>{mariokart8deluxeRace.mariokart8deluxeRaceRule.name}</>
+                        ) : (
+                          ''
+                        )}
+                      </TableCell>
                       <TableCell>
                         {mariokart8deluxeRace.mariokart8deluxeCourse != null ? (
                           <>{mariokart8deluxeRace.mariokart8deluxeCourse.name}</>
