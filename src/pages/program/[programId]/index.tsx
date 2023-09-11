@@ -388,7 +388,20 @@ export default function ProgramPage({ programId }: { programId: string }) {
                       </TableCell>
                       <TableCell>
                         {mariokart8deluxeRace.mariokart8deluxeCourse != null ? (
-                          <>{mariokart8deluxeRace.mariokart8deluxeCourse.name}</>
+                          <>
+                            {mariokart8deluxeRace.mariokart8deluxeCourse.mariokart8deluxeConsole !=
+                            null ? (
+                              <>
+                                {
+                                  mariokart8deluxeRace.mariokart8deluxeCourse
+                                    .mariokart8deluxeConsole.name
+                                }{' '}
+                              </>
+                            ) : (
+                              ''
+                            )}
+                            {mariokart8deluxeRace.mariokart8deluxeCourse.name}
+                          </>
                         ) : (
                           ''
                         )}
