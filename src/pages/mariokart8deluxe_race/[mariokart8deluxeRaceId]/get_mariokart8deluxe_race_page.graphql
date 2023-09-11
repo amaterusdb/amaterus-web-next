@@ -16,6 +16,11 @@ query GetMariokart8deluxeRacePage(
     mariokart8deluxeCourse: mariokart8deluxe_course {
       id
       name
+
+      mariokart8deluxeConsole: mariokart8deluxe_console {
+        id
+        name
+      }
     }
 
     mariokart8deluxeRacePlayers: mariokart8deluxe_race_players(

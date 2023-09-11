@@ -150,7 +150,26 @@ export default function MatchPage({ mariokart8deluxeRaceId }: { mariokart8deluxe
                   <TableCell component='th' scope='row'>
                     コース
                   </TableCell>
-                  <TableCell>{mariokart8deluxeRace.mariokart8deluxeCourse.name}</TableCell>
+                  <TableCell>
+                    {mariokart8deluxeRace.mariokart8deluxeCourse != null ? (
+                      <>
+                        {mariokart8deluxeRace.mariokart8deluxeCourse.mariokart8deluxeConsole !=
+                        null ? (
+                          <>
+                            {
+                              mariokart8deluxeRace.mariokart8deluxeCourse.mariokart8deluxeConsole
+                                .name
+                            }{' '}
+                          </>
+                        ) : (
+                          ''
+                        )}
+                        {mariokart8deluxeRace.mariokart8deluxeCourse.name}
+                      </>
+                    ) : (
+                      ''
+                    )}
+                  </TableCell>
                 </TableRow>
               ) : (
                 ''
