@@ -220,7 +220,7 @@ export default function MatchPage({ mariokart8deluxeRaceId }: { mariokart8deluxe
                 <TableCell>放送タイトル</TableCell>
                 <TableCell>放送者</TableCell>
                 <TableCell>開始時間</TableCell>
-                <TableCell>終了時間</TableCell>
+                {mariokart8deluxeRace.endTime != null ? <TableCell>終了時間</TableCell> : ''}
               </TableRow>
             </TableHead>
             <TableBody>
@@ -332,38 +332,42 @@ export default function MatchPage({ mariokart8deluxeRaceId }: { mariokart8deluxe
                           ''
                         )}
                       </TableCell>
-                      <TableCell>
-                        {programLiveArchive.youtubeLive != null && localEndTime != null ? (
-                          <NextLink
-                            href={`https://www.youtube.com/watch?v=${programLiveArchive.youtubeLive.remoteYoutubeVideoId}&t=${localEndTimeTotalSeconds}s`}
-                            passHref
-                            legacyBehavior
-                          >
-                            <MuiLink>
-                              {String(localEndTimeHours).padStart(2, '0')}:
-                              {String(localEndTimeMinutes).padStart(2, '0')}:
-                              {String(localEndTimeSeconds).padStart(2, '0')}
-                            </MuiLink>
-                          </NextLink>
-                        ) : (
-                          ''
-                        )}
-                        {programLiveArchive.youtubeVideo != null && localEndTime != null ? (
-                          <NextLink
-                            href={`https://www.youtube.com/watch?v=${programLiveArchive.youtubeVideo.remoteYoutubeVideoId}&t=${localEndTimeTotalSeconds}s`}
-                            passHref
-                            legacyBehavior
-                          >
-                            <MuiLink>
-                              {String(localEndTimeHours).padStart(2, '0')}:
-                              {String(localEndTimeMinutes).padStart(2, '0')}:
-                              {String(localEndTimeSeconds).padStart(2, '0')}
-                            </MuiLink>
-                          </NextLink>
-                        ) : (
-                          ''
-                        )}
-                      </TableCell>
+                      {mariokart8deluxeRace.endTime != null ? (
+                        <TableCell>
+                          {programLiveArchive.youtubeLive != null && localEndTime != null ? (
+                            <NextLink
+                              href={`https://www.youtube.com/watch?v=${programLiveArchive.youtubeLive.remoteYoutubeVideoId}&t=${localEndTimeTotalSeconds}s`}
+                              passHref
+                              legacyBehavior
+                            >
+                              <MuiLink>
+                                {String(localEndTimeHours).padStart(2, '0')}:
+                                {String(localEndTimeMinutes).padStart(2, '0')}:
+                                {String(localEndTimeSeconds).padStart(2, '0')}
+                              </MuiLink>
+                            </NextLink>
+                          ) : (
+                            ''
+                          )}
+                          {programLiveArchive.youtubeVideo != null && localEndTime != null ? (
+                            <NextLink
+                              href={`https://www.youtube.com/watch?v=${programLiveArchive.youtubeVideo.remoteYoutubeVideoId}&t=${localEndTimeTotalSeconds}s`}
+                              passHref
+                              legacyBehavior
+                            >
+                              <MuiLink>
+                                {String(localEndTimeHours).padStart(2, '0')}:
+                                {String(localEndTimeMinutes).padStart(2, '0')}:
+                                {String(localEndTimeSeconds).padStart(2, '0')}
+                              </MuiLink>
+                            </NextLink>
+                          ) : (
+                            ''
+                          )}
+                        </TableCell>
+                      ) : (
+                        ''
+                      )}
                     </TableRow>
                   )
                 })}
