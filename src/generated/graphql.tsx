@@ -22423,7 +22423,7 @@ export type GetMariokart8deluxeRacePageQueryVariables = Exact<{
 }>;
 
 
-export type GetMariokart8deluxeRacePageQuery = { __typename?: 'query_root', mariokart8deluxeRace?: { __typename?: 'mariokart8deluxe_races', id: any, startTime: any, endTime?: any | null, mariokart8deluxeCourse?: { __typename?: 'mariokart8deluxe_courses', id: any, name: string } | null, mariokart8deluxeRacePlayers: Array<{ __typename?: 'mariokart8deluxe_race_players', id: any, nickname: string, person?: { __typename?: 'persons', id: any } | null }>, program: { __typename?: 'programs', id: any, title: string, startTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, programLiveArchives: Array<{ __typename?: 'program_live_archives', id: any, startTime?: any | null, person: { __typename?: 'persons', id: any, name: string }, youtubeLive?: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null, youtubeVideo?: { __typename?: 'youtube_videos', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null }> } } | null };
+export type GetMariokart8deluxeRacePageQuery = { __typename?: 'query_root', mariokart8deluxeRace?: { __typename?: 'mariokart8deluxe_races', id: any, startTime: any, endTime?: any | null, mariokart8deluxeRaceRule?: { __typename?: 'mariokart8deluxe_race_rules', id: any, name: string } | null, mariokart8deluxeCourse?: { __typename?: 'mariokart8deluxe_courses', id: any, name: string } | null, mariokart8deluxeRacePlayers: Array<{ __typename?: 'mariokart8deluxe_race_players', id: any, nickname: string, person?: { __typename?: 'persons', id: any } | null }>, program: { __typename?: 'programs', id: any, title: string, startTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, programLiveArchives: Array<{ __typename?: 'program_live_archives', id: any, startTime?: any | null, person: { __typename?: 'persons', id: any, name: string }, youtubeLive?: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null, youtubeVideo?: { __typename?: 'youtube_videos', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null }> } } | null };
 
 export type GetMariokart8deluxeRacePageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -23002,6 +23002,10 @@ export const GetMariokart8deluxeRacePageDocument = gql`
     id
     startTime: start_time
     endTime: end_time
+    mariokart8deluxeRaceRule: mariokart8deluxe_race_rule {
+      id
+      name
+    }
     mariokart8deluxeCourse: mariokart8deluxe_course {
       id
       name

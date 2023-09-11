@@ -135,6 +135,16 @@ export default function MatchPage({ mariokart8deluxeRaceId }: { mariokart8deluxe
         <Box sx={{ mt: 2 }}>
           <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
             <TableBody>
+              {mariokart8deluxeRace.mariokart8deluxeRaceRule != null ? (
+                <TableRow>
+                  <TableCell component='th' scope='row'>
+                    ルール
+                  </TableCell>
+                  <TableCell>{mariokart8deluxeRace.mariokart8deluxeRaceRule.name}</TableCell>
+                </TableRow>
+              ) : (
+                ''
+              )}
               {mariokart8deluxeRace.mariokart8deluxeCourse != null ? (
                 <TableRow>
                   <TableCell component='th' scope='row'>
