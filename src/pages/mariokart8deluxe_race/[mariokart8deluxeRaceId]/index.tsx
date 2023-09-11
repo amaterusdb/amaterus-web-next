@@ -238,10 +238,13 @@ export default function MatchPage({ mariokart8deluxeRaceId }: { mariokart8deluxe
                     start: parseISO(programLiveArchive.startTime),
                     end: parseISO(mariokart8deluxeRace.startTime),
                   })
-                  const localEndTime = intervalToDuration({
-                    start: parseISO(programLiveArchive.startTime),
-                    end: parseISO(mariokart8deluxeRace.endTime),
-                  })
+                  const localEndTime =
+                    mariokart8deluxeRace.endTime != null
+                      ? intervalToDuration({
+                          start: parseISO(programLiveArchive.startTime),
+                          end: parseISO(mariokart8deluxeRace.endTime),
+                        })
+                      : null
 
                   const localStartTimeHours = localStartTime.hours ?? 0
                   const localStartTimeMinutes = localStartTime.minutes ?? 0
@@ -249,9 +252,9 @@ export default function MatchPage({ mariokart8deluxeRaceId }: { mariokart8deluxe
                   const localStartTimeTotalSeconds =
                     localStartTimeHours * 3600 + localStartTimeMinutes * 60 + localStartTimeSeconds
 
-                  const localEndTimeHours = localEndTime.hours ?? 0
-                  const localEndTimeMinutes = localEndTime.minutes ?? 0
-                  const localEndTimeSeconds = localEndTime.seconds ?? 0
+                  const localEndTimeHours = localEndTime?.hours ?? 0
+                  const localEndTimeMinutes = localEndTime?.minutes ?? 0
+                  const localEndTimeSeconds = localEndTime?.seconds ?? 0
                   const localEndTimeTotalSeconds =
                     localEndTimeHours * 3600 + localEndTimeMinutes * 60 + localEndTimeSeconds
 
@@ -330,7 +333,7 @@ export default function MatchPage({ mariokart8deluxeRaceId }: { mariokart8deluxe
                         )}
                       </TableCell>
                       <TableCell>
-                        {programLiveArchive.youtubeLive != null ? (
+                        {programLiveArchive.youtubeLive != null && localEndTime != null ? (
                           <NextLink
                             href={`https://www.youtube.com/watch?v=${programLiveArchive.youtubeLive.remoteYoutubeVideoId}&t=${localEndTimeTotalSeconds}s`}
                             passHref
@@ -345,7 +348,7 @@ export default function MatchPage({ mariokart8deluxeRaceId }: { mariokart8deluxe
                         ) : (
                           ''
                         )}
-                        {programLiveArchive.youtubeVideo != null ? (
+                        {programLiveArchive.youtubeVideo != null && localEndTime != null ? (
                           <NextLink
                             href={`https://www.youtube.com/watch?v=${programLiveArchive.youtubeVideo.remoteYoutubeVideoId}&t=${localEndTimeTotalSeconds}s`}
                             passHref
