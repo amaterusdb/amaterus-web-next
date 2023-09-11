@@ -195,6 +195,11 @@ query GetProgramPage(
       mariokart8deluxeBattleCourse: mariokart8deluxe_battle_course {
         id
         name
+
+        mariokart8deluxeConsole: mariokart8deluxe_console {
+          id
+          name
+        }
       }
     }
   }
