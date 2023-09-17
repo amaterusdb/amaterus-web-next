@@ -143,33 +143,33 @@ export default function PrivacyPolicyPage() {
           」をご参照ください。
         </Typography>
         <Typography variant='h5' component='h3' sx={{ mt: 6 }}>
-          Twitter（X）の投稿を埋め込む機能について
+          X（Twitter）の投稿を埋め込む機能について
         </Typography>
         <Typography sx={{ mt: 2 }}>
-          このウェブサイト/アプリでは、Twitter（X）の投稿を埋め込む機能を使用して、関連する情報やコンテンツを提供しています。
+          このウェブサイト/アプリでは、X（Twitter）の投稿を埋め込む機能を使用して、関連する情報やコンテンツを提供しています。
           以下では、この機能に関する情報をお知らせします。
         </Typography>
         <Typography variant='h6' component='h4' sx={{ mt: 4 }}>
           埋め込み機能の目的
         </Typography>
         <Typography sx={{ mt: 2 }}>
-          このウェブサイト/アプリでは、Twitter（X）上で公開されたコンテンツをシームレスに閲覧できるようにし、ユーザーの利便性を向上させるために、
-          Twitter（X）が提供する埋め込み機能を使用しています。
+          このウェブサイト/アプリでは、X（Twitter）上で公開されたコンテンツをシームレスに閲覧できるようにし、ユーザーの利便性を向上させるために、
+          X（Twitter）が提供する埋め込み機能を使用しています。
         </Typography>
         <Typography variant='h6' component='h4' sx={{ mt: 3 }}>
           プラットフォーム間のデータ共有
         </Typography>
         <Typography sx={{ mt: 2 }}>
-          埋め込まれたTwitter（X）投稿に関するデータは、このウェブサイト/アプリのサーバーではなく、Twitter（X）のサーバーから直接取得されます。
-          この際、ユーザーのウェブブラウジングに関する情報（たとえば、IPアドレスや閲覧履歴）が、Twitter（X）と共有される可能性があります。
+          埋め込まれたX（Twitter）投稿に関するデータは、このウェブサイト/アプリのサーバーではなく、X（Twitter）のサーバーから直接取得されます。
+          この際、ユーザーのウェブブラウジングに関する情報（たとえば、IPアドレスや閲覧履歴）が、X（Twitter）と共有される可能性があります。
         </Typography>
         <Typography variant='h6' component='h4' sx={{ mt: 4 }}>
-          Twitter（X）のプライバシーポリシー
+          X（Twitter）のプライバシーポリシー
         </Typography>
         <Typography sx={{ mt: 2 }}>
-          Twitter（X）によるデータ収集や処理についての詳細は、「
+          X（Twitter）によるデータ収集や処理についての詳細は、「
           <NextLink href='https://twitter.com/privacy' passHref legacyBehavior>
-            <MuiLink>Twitter（X）のプライバシーポリシー</MuiLink>
+            <MuiLink>X（Twitter）のプライバシーポリシー</MuiLink>
           </NextLink>
           」をご参照ください。
         </Typography>

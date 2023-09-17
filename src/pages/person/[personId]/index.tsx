@@ -106,7 +106,7 @@ export default function PersonPage({ personId }: { personId: string }) {
         {person.personTwitterAccounts.length > 0 ? (
           <>
             <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
-              Twitter (X)
+              X (Twitter)
             </Typography>
             <Box sx={{ mt: 2 }}>
               <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>

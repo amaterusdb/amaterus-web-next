@@ -64,7 +64,7 @@ export default function AboutPage() {
         <Table sx={{ minWidth: 650, mt: 2 }} size='small' aria-label='simple table'>
           <TableBody>
             <TableRow>
-              <TableCell>Twitter (X)</TableCell>
+              <TableCell>X (Twitter)</TableCell>
               <TableCell>
                 <NextLink href='https://twitter.com/aoirint' passHref legacyBehavior>
                   <MuiLink>@aoirint</MuiLink>
