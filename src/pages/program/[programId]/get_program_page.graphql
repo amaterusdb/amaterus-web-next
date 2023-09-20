@@ -124,6 +124,16 @@ query GetProgramPage(
       endTime: end_time
     }
 
+    amongusvrMatches: amongusvr_matches(
+      order_by: {
+        start_time: asc
+      }
+    ) {
+      id
+      startTime: start_time
+      endTime: end_time
+    }
+
     fallguysMatches: fallguys_matches(
       order_by: {
         start_time: asc
