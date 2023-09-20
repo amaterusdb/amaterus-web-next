@@ -1,0 +1,5 @@
+query GetAmongusvrMatchPageStaticParam {
+  amongusvrMatches: amongusvr_matches {
+    id
+  }
+}

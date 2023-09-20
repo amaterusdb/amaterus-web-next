@@ -23906,6 +23906,18 @@ export type GetAmongusMatchPageStaticParamQueryVariables = Exact<{ [key: string]
 
 export type GetAmongusMatchPageStaticParamQuery = { __typename?: 'query_root', amongusMatches: Array<{ __typename?: 'amongus_matches', id: any }> };
 
+export type GetAmongusvrMatchPageQueryVariables = Exact<{
+  amongusvrMatchId: Scalars['uuid']['input'];
+}>;
+
+
+export type GetAmongusvrMatchPageQuery = { __typename?: 'query_root', amongusvrMatch?: { __typename?: 'amongusvr_matches', id: any, startTime: any, endTime?: any | null, amongusvrMatchPlayers: Array<{ __typename?: 'amongusvr_match_players', id: any, nickname: string, person?: { __typename?: 'persons', id: any } | null }>, program: { __typename?: 'programs', id: any, title: string, startTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, programLiveArchives: Array<{ __typename?: 'program_live_archives', id: any, startTime?: any | null, person: { __typename?: 'persons', id: any, name: string }, youtubeLive?: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null, youtubeVideo?: { __typename?: 'youtube_videos', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null }> } } | null };
+
+export type GetAmongusvrMatchPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetAmongusvrMatchPageStaticParamQuery = { __typename?: 'query_root', amongusvrMatches: Array<{ __typename?: 'amongusvr_matches', id: any }> };
+
 export type GetFallguysMatchPageQueryVariables = Exact<{
   fallguysMatchId: Scalars['uuid']['input'];
 }>;
@@ -24111,6 +24123,121 @@ export function useGetAmongusMatchPageStaticParamLazyQuery(baseOptions?: Apollo.
 export type GetAmongusMatchPageStaticParamQueryHookResult = ReturnType<typeof useGetAmongusMatchPageStaticParamQuery>;
 export type GetAmongusMatchPageStaticParamLazyQueryHookResult = ReturnType<typeof useGetAmongusMatchPageStaticParamLazyQuery>;
 export type GetAmongusMatchPageStaticParamQueryResult = Apollo.QueryResult<GetAmongusMatchPageStaticParamQuery, GetAmongusMatchPageStaticParamQueryVariables>;
+export const GetAmongusvrMatchPageDocument = gql`
+    query GetAmongusvrMatchPage($amongusvrMatchId: uuid!) {
+  amongusvrMatch: amongusvr_matches_by_pk(id: $amongusvrMatchId) {
+    id
+    startTime: start_time
+    endTime: end_time
+    amongusvrMatchPlayers: amongusvr_match_players(order_by: {nickname: asc}) {
+      id
+      nickname
+      person {
+        id
+      }
+    }
+    program {
+      id
+      title
+      startTime: start_time
+      programProjects: program_projects(order_by: {project: {start_time: asc}}) {
+        project {
+          id
+          name
+        }
+      }
+      programLiveArchives: program_live_archives(order_by: {person: {name: asc}}) {
+        id
+        startTime: start_time
+        person {
+          id
+          name
+        }
+        youtubeLive: youtube_live {
+          remoteYoutubeVideoId: remote_youtube_video_id
+          title
+          youtubeChannel: youtube_channel {
+            id
+            remoteYoutubeChannelId: remote_youtube_channel_id
+            name
+          }
+        }
+        youtubeVideo: youtube_video {
+          remoteYoutubeVideoId: remote_youtube_video_id
+          title
+          youtubeChannel: youtube_channel {
+            id
+            remoteYoutubeChannelId: remote_youtube_channel_id
+            name
+          }
+        }
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetAmongusvrMatchPageQuery__
+ *
+ * To run a query within a React component, call `useGetAmongusvrMatchPageQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetAmongusvrMatchPageQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetAmongusvrMatchPageQuery({
+ *   variables: {
+ *      amongusvrMatchId: // value for 'amongusvrMatchId'
+ *   },
+ * });
+ */
+export function useGetAmongusvrMatchPageQuery(baseOptions: Apollo.QueryHookOptions<GetAmongusvrMatchPageQuery, GetAmongusvrMatchPageQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetAmongusvrMatchPageQuery, GetAmongusvrMatchPageQueryVariables>(GetAmongusvrMatchPageDocument, options);
+      }
+export function useGetAmongusvrMatchPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetAmongusvrMatchPageQuery, GetAmongusvrMatchPageQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetAmongusvrMatchPageQuery, GetAmongusvrMatchPageQueryVariables>(GetAmongusvrMatchPageDocument, options);
+        }
+export type GetAmongusvrMatchPageQueryHookResult = ReturnType<typeof useGetAmongusvrMatchPageQuery>;
+export type GetAmongusvrMatchPageLazyQueryHookResult = ReturnType<typeof useGetAmongusvrMatchPageLazyQuery>;
+export type GetAmongusvrMatchPageQueryResult = Apollo.QueryResult<GetAmongusvrMatchPageQuery, GetAmongusvrMatchPageQueryVariables>;
+export const GetAmongusvrMatchPageStaticParamDocument = gql`
+    query GetAmongusvrMatchPageStaticParam {
+  amongusvrMatches: amongusvr_matches {
+    id
+  }
+}
+    `;
+
+/**
+ * __useGetAmongusvrMatchPageStaticParamQuery__
+ *
+ * To run a query within a React component, call `useGetAmongusvrMatchPageStaticParamQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetAmongusvrMatchPageStaticParamQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetAmongusvrMatchPageStaticParamQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetAmongusvrMatchPageStaticParamQuery(baseOptions?: Apollo.QueryHookOptions<GetAmongusvrMatchPageStaticParamQuery, GetAmongusvrMatchPageStaticParamQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetAmongusvrMatchPageStaticParamQuery, GetAmongusvrMatchPageStaticParamQueryVariables>(GetAmongusvrMatchPageStaticParamDocument, options);
+      }
+export function useGetAmongusvrMatchPageStaticParamLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetAmongusvrMatchPageStaticParamQuery, GetAmongusvrMatchPageStaticParamQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetAmongusvrMatchPageStaticParamQuery, GetAmongusvrMatchPageStaticParamQueryVariables>(GetAmongusvrMatchPageStaticParamDocument, options);
+        }
+export type GetAmongusvrMatchPageStaticParamQueryHookResult = ReturnType<typeof useGetAmongusvrMatchPageStaticParamQuery>;
+export type GetAmongusvrMatchPageStaticParamLazyQueryHookResult = ReturnType<typeof useGetAmongusvrMatchPageStaticParamLazyQuery>;
+export type GetAmongusvrMatchPageStaticParamQueryResult = Apollo.QueryResult<GetAmongusvrMatchPageStaticParamQuery, GetAmongusvrMatchPageStaticParamQueryVariables>;
 export const GetFallguysMatchPageDocument = gql`
     query GetFallguysMatchPage($fallguysMatchId: uuid!) {
   fallguysMatch: fallguys_matches_by_pk(id: $fallguysMatchId) {
