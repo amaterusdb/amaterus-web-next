@@ -112,6 +112,10 @@ query GetProgramPage(
           name
         }
       }
+      niconicoLive: niconico_live {
+        remoteNiconicoContentId: remote_niconico_content_id
+        title
+      }
     }
 
     amongusMatches: amongus_matches(

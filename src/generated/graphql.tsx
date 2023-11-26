@@ -8865,6 +8865,10 @@ export type Mutation_Root = {
   delete_niconico_communities?: Maybe<Niconico_Communities_Mutation_Response>;
   /** delete single row from the table: "niconico_communities" */
   delete_niconico_communities_by_pk?: Maybe<Niconico_Communities>;
+  /** delete data from the table: "niconico_lives" */
+  delete_niconico_lives?: Maybe<Niconico_Lives_Mutation_Response>;
+  /** delete single row from the table: "niconico_lives" */
+  delete_niconico_lives_by_pk?: Maybe<Niconico_Lives>;
   /** delete data from the table: "niconico_plus_channels" */
   delete_niconico_plus_channels?: Maybe<Niconico_Plus_Channels_Mutation_Response>;
   /** delete single row from the table: "niconico_plus_channels" */
@@ -9101,6 +9105,10 @@ export type Mutation_Root = {
   insert_niconico_communities?: Maybe<Niconico_Communities_Mutation_Response>;
   /** insert a single row into the table: "niconico_communities" */
   insert_niconico_communities_one?: Maybe<Niconico_Communities>;
+  /** insert data into the table: "niconico_lives" */
+  insert_niconico_lives?: Maybe<Niconico_Lives_Mutation_Response>;
+  /** insert a single row into the table: "niconico_lives" */
+  insert_niconico_lives_one?: Maybe<Niconico_Lives>;
   /** insert data into the table: "niconico_plus_channels" */
   insert_niconico_plus_channels?: Maybe<Niconico_Plus_Channels_Mutation_Response>;
   /** insert a single row into the table: "niconico_plus_channels" */
@@ -9401,6 +9409,12 @@ export type Mutation_Root = {
   update_niconico_communities_by_pk?: Maybe<Niconico_Communities>;
   /** update multiples rows of table: "niconico_communities" */
   update_niconico_communities_many?: Maybe<Array<Maybe<Niconico_Communities_Mutation_Response>>>;
+  /** update data of the table: "niconico_lives" */
+  update_niconico_lives?: Maybe<Niconico_Lives_Mutation_Response>;
+  /** update single row of the table: "niconico_lives" */
+  update_niconico_lives_by_pk?: Maybe<Niconico_Lives>;
+  /** update multiples rows of table: "niconico_lives" */
+  update_niconico_lives_many?: Maybe<Array<Maybe<Niconico_Lives_Mutation_Response>>>;
   /** update data of the table: "niconico_plus_channels" */
   update_niconico_plus_channels?: Maybe<Niconico_Plus_Channels_Mutation_Response>;
   /** update single row of the table: "niconico_plus_channels" */
@@ -9946,6 +9960,18 @@ export type Mutation_RootDelete_Niconico_CommunitiesArgs = {
 
 /** mutation root */
 export type Mutation_RootDelete_Niconico_Communities_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Niconico_LivesArgs = {
+  where: Niconico_Lives_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Niconico_Lives_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
@@ -10719,6 +10745,20 @@ export type Mutation_RootInsert_Niconico_CommunitiesArgs = {
 export type Mutation_RootInsert_Niconico_Communities_OneArgs = {
   object: Niconico_Communities_Insert_Input;
   on_conflict?: InputMaybe<Niconico_Communities_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Niconico_LivesArgs = {
+  objects: Array<Niconico_Lives_Insert_Input>;
+  on_conflict?: InputMaybe<Niconico_Lives_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Niconico_Lives_OneArgs = {
+  object: Niconico_Lives_Insert_Input;
+  on_conflict?: InputMaybe<Niconico_Lives_On_Conflict>;
 };
 
 
@@ -11767,6 +11807,26 @@ export type Mutation_RootUpdate_Niconico_Communities_ManyArgs = {
 
 
 /** mutation root */
+export type Mutation_RootUpdate_Niconico_LivesArgs = {
+  _set?: InputMaybe<Niconico_Lives_Set_Input>;
+  where: Niconico_Lives_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Niconico_Lives_By_PkArgs = {
+  _set?: InputMaybe<Niconico_Lives_Set_Input>;
+  pk_columns: Niconico_Lives_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Niconico_Lives_ManyArgs = {
+  updates: Array<Niconico_Lives_Updates>;
+};
+
+
+/** mutation root */
 export type Mutation_RootUpdate_Niconico_Plus_ChannelsArgs = {
   _set?: InputMaybe<Niconico_Plus_Channels_Set_Input>;
   where: Niconico_Plus_Channels_Bool_Exp;
@@ -12493,12 +12553,36 @@ export type Niconico_Channels = {
   id: Scalars['uuid']['output'];
   name: Scalars['String']['output'];
   /** An array relationship */
+  niconico_lives: Array<Niconico_Lives>;
+  /** An aggregate relationship */
+  niconico_lives_aggregate: Niconico_Lives_Aggregate;
+  /** An array relationship */
   person_niconico_channels: Array<Person_Niconico_Channels>;
   /** An aggregate relationship */
   person_niconico_channels_aggregate: Person_Niconico_Channels_Aggregate;
   remote_niconico_channel_id: Scalars['String']['output'];
-  screen_name: Scalars['String']['output'];
+  screen_name?: Maybe<Scalars['String']['output']>;
   updated_at: Scalars['timestamptz']['output'];
+};
+
+
+/** columns and relationships of "niconico_channels" */
+export type Niconico_ChannelsNiconico_LivesArgs = {
+  distinct_on?: InputMaybe<Array<Niconico_Lives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Niconico_Lives_Order_By>>;
+  where?: InputMaybe<Niconico_Lives_Bool_Exp>;
+};
+
+
+/** columns and relationships of "niconico_channels" */
+export type Niconico_ChannelsNiconico_Lives_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Niconico_Lives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Niconico_Lives_Order_By>>;
+  where?: InputMaybe<Niconico_Lives_Bool_Exp>;
 };
 
 
@@ -12551,6 +12635,8 @@ export type Niconico_Channels_Bool_Exp = {
   created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
   name?: InputMaybe<String_Comparison_Exp>;
+  niconico_lives?: InputMaybe<Niconico_Lives_Bool_Exp>;
+  niconico_lives_aggregate?: InputMaybe<Niconico_Lives_Aggregate_Bool_Exp>;
   person_niconico_channels?: InputMaybe<Person_Niconico_Channels_Bool_Exp>;
   person_niconico_channels_aggregate?: InputMaybe<Person_Niconico_Channels_Aggregate_Bool_Exp>;
   remote_niconico_channel_id?: InputMaybe<String_Comparison_Exp>;
@@ -12573,6 +12659,7 @@ export type Niconico_Channels_Insert_Input = {
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
   name?: InputMaybe<Scalars['String']['input']>;
+  niconico_lives?: InputMaybe<Niconico_Lives_Arr_Rel_Insert_Input>;
   person_niconico_channels?: InputMaybe<Person_Niconico_Channels_Arr_Rel_Insert_Input>;
   remote_niconico_channel_id?: InputMaybe<Scalars['String']['input']>;
   screen_name?: InputMaybe<Scalars['String']['input']>;
@@ -12629,6 +12716,7 @@ export type Niconico_Channels_Order_By = {
   created_at?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
   name?: InputMaybe<Order_By>;
+  niconico_lives_aggregate?: InputMaybe<Niconico_Lives_Aggregate_Order_By>;
   person_niconico_channels_aggregate?: InputMaybe<Person_Niconico_Channels_Aggregate_Order_By>;
   remote_niconico_channel_id?: InputMaybe<Order_By>;
   screen_name?: InputMaybe<Order_By>;
@@ -12884,6 +12972,379 @@ export type Niconico_Communities_Updates = {
   _set?: InputMaybe<Niconico_Communities_Set_Input>;
   /** filter the rows which have to be updated */
   where: Niconico_Communities_Bool_Exp;
+};
+
+/** columns and relationships of "niconico_lives" */
+export type Niconico_Lives = {
+  __typename?: 'niconico_lives';
+  created_at: Scalars['timestamptz']['output'];
+  end_time?: Maybe<Scalars['timestamptz']['output']>;
+  id: Scalars['uuid']['output'];
+  is_official: Scalars['Boolean']['output'];
+  /** An object relationship */
+  niconico_account?: Maybe<Niconico_Accounts>;
+  niconico_account_id?: Maybe<Scalars['uuid']['output']>;
+  /** An object relationship */
+  niconico_channel?: Maybe<Niconico_Channels>;
+  niconico_channel_id?: Maybe<Scalars['uuid']['output']>;
+  /** An object relationship */
+  niconico_community?: Maybe<Niconico_Communities>;
+  niconico_community_id?: Maybe<Scalars['uuid']['output']>;
+  /** An array relationship */
+  program_live_archives: Array<Program_Live_Archives>;
+  /** An aggregate relationship */
+  program_live_archives_aggregate: Program_Live_Archives_Aggregate;
+  remote_niconico_content_id: Scalars['String']['output'];
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  title: Scalars['String']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+
+/** columns and relationships of "niconico_lives" */
+export type Niconico_LivesProgram_Live_ArchivesArgs = {
+  distinct_on?: InputMaybe<Array<Program_Live_Archives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Live_Archives_Order_By>>;
+  where?: InputMaybe<Program_Live_Archives_Bool_Exp>;
+};
+
+
+/** columns and relationships of "niconico_lives" */
+export type Niconico_LivesProgram_Live_Archives_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Live_Archives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Live_Archives_Order_By>>;
+  where?: InputMaybe<Program_Live_Archives_Bool_Exp>;
+};
+
+/** aggregated selection of "niconico_lives" */
+export type Niconico_Lives_Aggregate = {
+  __typename?: 'niconico_lives_aggregate';
+  aggregate?: Maybe<Niconico_Lives_Aggregate_Fields>;
+  nodes: Array<Niconico_Lives>;
+};
+
+export type Niconico_Lives_Aggregate_Bool_Exp = {
+  bool_and?: InputMaybe<Niconico_Lives_Aggregate_Bool_Exp_Bool_And>;
+  bool_or?: InputMaybe<Niconico_Lives_Aggregate_Bool_Exp_Bool_Or>;
+  count?: InputMaybe<Niconico_Lives_Aggregate_Bool_Exp_Count>;
+};
+
+export type Niconico_Lives_Aggregate_Bool_Exp_Bool_And = {
+  arguments: Niconico_Lives_Select_Column_Niconico_Lives_Aggregate_Bool_Exp_Bool_And_Arguments_Columns;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Niconico_Lives_Bool_Exp>;
+  predicate: Boolean_Comparison_Exp;
+};
+
+export type Niconico_Lives_Aggregate_Bool_Exp_Bool_Or = {
+  arguments: Niconico_Lives_Select_Column_Niconico_Lives_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Niconico_Lives_Bool_Exp>;
+  predicate: Boolean_Comparison_Exp;
+};
+
+export type Niconico_Lives_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Niconico_Lives_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Niconico_Lives_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
+/** aggregate fields of "niconico_lives" */
+export type Niconico_Lives_Aggregate_Fields = {
+  __typename?: 'niconico_lives_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Niconico_Lives_Max_Fields>;
+  min?: Maybe<Niconico_Lives_Min_Fields>;
+};
+
+
+/** aggregate fields of "niconico_lives" */
+export type Niconico_Lives_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Niconico_Lives_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** order by aggregate values of table "niconico_lives" */
+export type Niconico_Lives_Aggregate_Order_By = {
+  count?: InputMaybe<Order_By>;
+  max?: InputMaybe<Niconico_Lives_Max_Order_By>;
+  min?: InputMaybe<Niconico_Lives_Min_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "niconico_lives" */
+export type Niconico_Lives_Arr_Rel_Insert_Input = {
+  data: Array<Niconico_Lives_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Niconico_Lives_On_Conflict>;
+};
+
+/** Boolean expression to filter rows from the table "niconico_lives". All fields are combined with a logical 'AND'. */
+export type Niconico_Lives_Bool_Exp = {
+  _and?: InputMaybe<Array<Niconico_Lives_Bool_Exp>>;
+  _not?: InputMaybe<Niconico_Lives_Bool_Exp>;
+  _or?: InputMaybe<Array<Niconico_Lives_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  end_time?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  is_official?: InputMaybe<Boolean_Comparison_Exp>;
+  niconico_account?: InputMaybe<Niconico_Accounts_Bool_Exp>;
+  niconico_account_id?: InputMaybe<Uuid_Comparison_Exp>;
+  niconico_channel?: InputMaybe<Niconico_Channels_Bool_Exp>;
+  niconico_channel_id?: InputMaybe<Uuid_Comparison_Exp>;
+  niconico_community?: InputMaybe<Niconico_Communities_Bool_Exp>;
+  niconico_community_id?: InputMaybe<Uuid_Comparison_Exp>;
+  program_live_archives?: InputMaybe<Program_Live_Archives_Bool_Exp>;
+  program_live_archives_aggregate?: InputMaybe<Program_Live_Archives_Aggregate_Bool_Exp>;
+  remote_niconico_content_id?: InputMaybe<String_Comparison_Exp>;
+  start_time?: InputMaybe<Timestamptz_Comparison_Exp>;
+  title?: InputMaybe<String_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "niconico_lives" */
+export enum Niconico_Lives_Constraint {
+  /** unique or primary key constraint on columns "id" */
+  NiconicoLivesPkey = 'niconico_lives_pkey',
+  /** unique or primary key constraint on columns "remote_niconico_content_id" */
+  NiconicoLivesRemoteNiconicoContentIdKey = 'niconico_lives_remote_niconico_content_id_key'
+}
+
+/** input type for inserting data into table "niconico_lives" */
+export type Niconico_Lives_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  end_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  is_official?: InputMaybe<Scalars['Boolean']['input']>;
+  niconico_account?: InputMaybe<Niconico_Accounts_Obj_Rel_Insert_Input>;
+  niconico_account_id?: InputMaybe<Scalars['uuid']['input']>;
+  niconico_channel?: InputMaybe<Niconico_Channels_Obj_Rel_Insert_Input>;
+  niconico_channel_id?: InputMaybe<Scalars['uuid']['input']>;
+  niconico_community?: InputMaybe<Niconico_Communities_Obj_Rel_Insert_Input>;
+  niconico_community_id?: InputMaybe<Scalars['uuid']['input']>;
+  program_live_archives?: InputMaybe<Program_Live_Archives_Arr_Rel_Insert_Input>;
+  remote_niconico_content_id?: InputMaybe<Scalars['String']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Niconico_Lives_Max_Fields = {
+  __typename?: 'niconico_lives_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  end_time?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  niconico_account_id?: Maybe<Scalars['uuid']['output']>;
+  niconico_channel_id?: Maybe<Scalars['uuid']['output']>;
+  niconico_community_id?: Maybe<Scalars['uuid']['output']>;
+  remote_niconico_content_id?: Maybe<Scalars['String']['output']>;
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by max() on columns of table "niconico_lives" */
+export type Niconico_Lives_Max_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  end_time?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  niconico_account_id?: InputMaybe<Order_By>;
+  niconico_channel_id?: InputMaybe<Order_By>;
+  niconico_community_id?: InputMaybe<Order_By>;
+  remote_niconico_content_id?: InputMaybe<Order_By>;
+  start_time?: InputMaybe<Order_By>;
+  title?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Niconico_Lives_Min_Fields = {
+  __typename?: 'niconico_lives_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  end_time?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  niconico_account_id?: Maybe<Scalars['uuid']['output']>;
+  niconico_channel_id?: Maybe<Scalars['uuid']['output']>;
+  niconico_community_id?: Maybe<Scalars['uuid']['output']>;
+  remote_niconico_content_id?: Maybe<Scalars['String']['output']>;
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by min() on columns of table "niconico_lives" */
+export type Niconico_Lives_Min_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  end_time?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  niconico_account_id?: InputMaybe<Order_By>;
+  niconico_channel_id?: InputMaybe<Order_By>;
+  niconico_community_id?: InputMaybe<Order_By>;
+  remote_niconico_content_id?: InputMaybe<Order_By>;
+  start_time?: InputMaybe<Order_By>;
+  title?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** response of any mutation on the table "niconico_lives" */
+export type Niconico_Lives_Mutation_Response = {
+  __typename?: 'niconico_lives_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Niconico_Lives>;
+};
+
+/** input type for inserting object relation for remote table "niconico_lives" */
+export type Niconico_Lives_Obj_Rel_Insert_Input = {
+  data: Niconico_Lives_Insert_Input;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Niconico_Lives_On_Conflict>;
+};
+
+/** on_conflict condition type for table "niconico_lives" */
+export type Niconico_Lives_On_Conflict = {
+  constraint: Niconico_Lives_Constraint;
+  update_columns?: Array<Niconico_Lives_Update_Column>;
+  where?: InputMaybe<Niconico_Lives_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "niconico_lives". */
+export type Niconico_Lives_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  end_time?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  is_official?: InputMaybe<Order_By>;
+  niconico_account?: InputMaybe<Niconico_Accounts_Order_By>;
+  niconico_account_id?: InputMaybe<Order_By>;
+  niconico_channel?: InputMaybe<Niconico_Channels_Order_By>;
+  niconico_channel_id?: InputMaybe<Order_By>;
+  niconico_community?: InputMaybe<Niconico_Communities_Order_By>;
+  niconico_community_id?: InputMaybe<Order_By>;
+  program_live_archives_aggregate?: InputMaybe<Program_Live_Archives_Aggregate_Order_By>;
+  remote_niconico_content_id?: InputMaybe<Order_By>;
+  start_time?: InputMaybe<Order_By>;
+  title?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: niconico_lives */
+export type Niconico_Lives_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "niconico_lives" */
+export enum Niconico_Lives_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  EndTime = 'end_time',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  IsOfficial = 'is_official',
+  /** column name */
+  NiconicoAccountId = 'niconico_account_id',
+  /** column name */
+  NiconicoChannelId = 'niconico_channel_id',
+  /** column name */
+  NiconicoCommunityId = 'niconico_community_id',
+  /** column name */
+  RemoteNiconicoContentId = 'remote_niconico_content_id',
+  /** column name */
+  StartTime = 'start_time',
+  /** column name */
+  Title = 'title',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** select "niconico_lives_aggregate_bool_exp_bool_and_arguments_columns" columns of table "niconico_lives" */
+export enum Niconico_Lives_Select_Column_Niconico_Lives_Aggregate_Bool_Exp_Bool_And_Arguments_Columns {
+  /** column name */
+  IsOfficial = 'is_official'
+}
+
+/** select "niconico_lives_aggregate_bool_exp_bool_or_arguments_columns" columns of table "niconico_lives" */
+export enum Niconico_Lives_Select_Column_Niconico_Lives_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns {
+  /** column name */
+  IsOfficial = 'is_official'
+}
+
+/** input type for updating data in table "niconico_lives" */
+export type Niconico_Lives_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  end_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  is_official?: InputMaybe<Scalars['Boolean']['input']>;
+  niconico_account_id?: InputMaybe<Scalars['uuid']['input']>;
+  niconico_channel_id?: InputMaybe<Scalars['uuid']['input']>;
+  niconico_community_id?: InputMaybe<Scalars['uuid']['input']>;
+  remote_niconico_content_id?: InputMaybe<Scalars['String']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** Streaming cursor of the table "niconico_lives" */
+export type Niconico_Lives_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Niconico_Lives_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Niconico_Lives_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  end_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  is_official?: InputMaybe<Scalars['Boolean']['input']>;
+  niconico_account_id?: InputMaybe<Scalars['uuid']['input']>;
+  niconico_channel_id?: InputMaybe<Scalars['uuid']['input']>;
+  niconico_community_id?: InputMaybe<Scalars['uuid']['input']>;
+  remote_niconico_content_id?: InputMaybe<Scalars['String']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** update columns of table "niconico_lives" */
+export enum Niconico_Lives_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  EndTime = 'end_time',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  IsOfficial = 'is_official',
+  /** column name */
+  NiconicoAccountId = 'niconico_account_id',
+  /** column name */
+  NiconicoChannelId = 'niconico_channel_id',
+  /** column name */
+  NiconicoCommunityId = 'niconico_community_id',
+  /** column name */
+  RemoteNiconicoContentId = 'remote_niconico_content_id',
+  /** column name */
+  StartTime = 'start_time',
+  /** column name */
+  Title = 'title',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Niconico_Lives_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Niconico_Lives_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Niconico_Lives_Bool_Exp;
 };
 
 /** columns and relationships of "niconico_plus_channels" */
@@ -16094,6 +16555,9 @@ export type Program_Live_Archives = {
   end_time?: Maybe<Scalars['timestamptz']['output']>;
   id: Scalars['uuid']['output'];
   /** An object relationship */
+  niconico_live?: Maybe<Niconico_Lives>;
+  niconico_live_id?: Maybe<Scalars['uuid']['output']>;
+  /** An object relationship */
   person: Persons;
   person_id: Scalars['uuid']['output'];
   /** An object relationship */
@@ -16164,6 +16628,8 @@ export type Program_Live_Archives_Bool_Exp = {
   created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
   end_time?: InputMaybe<Timestamptz_Comparison_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
+  niconico_live?: InputMaybe<Niconico_Lives_Bool_Exp>;
+  niconico_live_id?: InputMaybe<Uuid_Comparison_Exp>;
   person?: InputMaybe<Persons_Bool_Exp>;
   person_id?: InputMaybe<Uuid_Comparison_Exp>;
   program?: InputMaybe<Programs_Bool_Exp>;
@@ -16180,6 +16646,8 @@ export type Program_Live_Archives_Bool_Exp = {
 export enum Program_Live_Archives_Constraint {
   /** unique or primary key constraint on columns "id" */
   ProgramLiveArchivesPkey = 'program_live_archives_pkey',
+  /** unique or primary key constraint on columns "program_id", "niconico_live_id" */
+  ProgramLiveArchivesProgramIdNiconicoLiveIdKey = 'program_live_archives_program_id_niconico_live_id_key',
   /** unique or primary key constraint on columns "program_id", "youtube_live_id" */
   ProgramLiveArchivesProgramIdYoutubeLiveIdKey = 'program_live_archives_program_id_youtube_live_id_key',
   /** unique or primary key constraint on columns "program_id", "youtube_video_id" */
@@ -16191,6 +16659,8 @@ export type Program_Live_Archives_Insert_Input = {
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   end_time?: InputMaybe<Scalars['timestamptz']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
+  niconico_live?: InputMaybe<Niconico_Lives_Obj_Rel_Insert_Input>;
+  niconico_live_id?: InputMaybe<Scalars['uuid']['input']>;
   person?: InputMaybe<Persons_Obj_Rel_Insert_Input>;
   person_id?: InputMaybe<Scalars['uuid']['input']>;
   program?: InputMaybe<Programs_Obj_Rel_Insert_Input>;
@@ -16209,6 +16679,7 @@ export type Program_Live_Archives_Max_Fields = {
   created_at?: Maybe<Scalars['timestamptz']['output']>;
   end_time?: Maybe<Scalars['timestamptz']['output']>;
   id?: Maybe<Scalars['uuid']['output']>;
+  niconico_live_id?: Maybe<Scalars['uuid']['output']>;
   person_id?: Maybe<Scalars['uuid']['output']>;
   program_id?: Maybe<Scalars['uuid']['output']>;
   start_time?: Maybe<Scalars['timestamptz']['output']>;
@@ -16222,6 +16693,7 @@ export type Program_Live_Archives_Max_Order_By = {
   created_at?: InputMaybe<Order_By>;
   end_time?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
+  niconico_live_id?: InputMaybe<Order_By>;
   person_id?: InputMaybe<Order_By>;
   program_id?: InputMaybe<Order_By>;
   start_time?: InputMaybe<Order_By>;
@@ -16236,6 +16708,7 @@ export type Program_Live_Archives_Min_Fields = {
   created_at?: Maybe<Scalars['timestamptz']['output']>;
   end_time?: Maybe<Scalars['timestamptz']['output']>;
   id?: Maybe<Scalars['uuid']['output']>;
+  niconico_live_id?: Maybe<Scalars['uuid']['output']>;
   person_id?: Maybe<Scalars['uuid']['output']>;
   program_id?: Maybe<Scalars['uuid']['output']>;
   start_time?: Maybe<Scalars['timestamptz']['output']>;
@@ -16249,6 +16722,7 @@ export type Program_Live_Archives_Min_Order_By = {
   created_at?: InputMaybe<Order_By>;
   end_time?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
+  niconico_live_id?: InputMaybe<Order_By>;
   person_id?: InputMaybe<Order_By>;
   program_id?: InputMaybe<Order_By>;
   start_time?: InputMaybe<Order_By>;
@@ -16278,6 +16752,8 @@ export type Program_Live_Archives_Order_By = {
   created_at?: InputMaybe<Order_By>;
   end_time?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
+  niconico_live?: InputMaybe<Niconico_Lives_Order_By>;
+  niconico_live_id?: InputMaybe<Order_By>;
   person?: InputMaybe<Persons_Order_By>;
   person_id?: InputMaybe<Order_By>;
   program?: InputMaybe<Programs_Order_By>;
@@ -16304,6 +16780,8 @@ export enum Program_Live_Archives_Select_Column {
   /** column name */
   Id = 'id',
   /** column name */
+  NiconicoLiveId = 'niconico_live_id',
+  /** column name */
   PersonId = 'person_id',
   /** column name */
   ProgramId = 'program_id',
@@ -16322,6 +16800,7 @@ export type Program_Live_Archives_Set_Input = {
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   end_time?: InputMaybe<Scalars['timestamptz']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
+  niconico_live_id?: InputMaybe<Scalars['uuid']['input']>;
   person_id?: InputMaybe<Scalars['uuid']['input']>;
   program_id?: InputMaybe<Scalars['uuid']['input']>;
   start_time?: InputMaybe<Scalars['timestamptz']['input']>;
@@ -16343,6 +16822,7 @@ export type Program_Live_Archives_Stream_Cursor_Value_Input = {
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   end_time?: InputMaybe<Scalars['timestamptz']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
+  niconico_live_id?: InputMaybe<Scalars['uuid']['input']>;
   person_id?: InputMaybe<Scalars['uuid']['input']>;
   program_id?: InputMaybe<Scalars['uuid']['input']>;
   start_time?: InputMaybe<Scalars['timestamptz']['input']>;
@@ -16359,6 +16839,8 @@ export enum Program_Live_Archives_Update_Column {
   EndTime = 'end_time',
   /** column name */
   Id = 'id',
+  /** column name */
+  NiconicoLiveId = 'niconico_live_id',
   /** column name */
   PersonId = 'person_id',
   /** column name */
@@ -18561,6 +19043,12 @@ export type Query_Root = {
   niconico_communities_aggregate: Niconico_Communities_Aggregate;
   /** fetch data from the table: "niconico_communities" using primary key columns */
   niconico_communities_by_pk?: Maybe<Niconico_Communities>;
+  /** An array relationship */
+  niconico_lives: Array<Niconico_Lives>;
+  /** An aggregate relationship */
+  niconico_lives_aggregate: Niconico_Lives_Aggregate;
+  /** fetch data from the table: "niconico_lives" using primary key columns */
+  niconico_lives_by_pk?: Maybe<Niconico_Lives>;
   /** fetch data from the table: "niconico_plus_channels" */
   niconico_plus_channels: Array<Niconico_Plus_Channels>;
   /** fetch aggregated fields from the table: "niconico_plus_channels" */
@@ -19462,6 +19950,29 @@ export type Query_RootNiconico_Communities_By_PkArgs = {
 };
 
 
+export type Query_RootNiconico_LivesArgs = {
+  distinct_on?: InputMaybe<Array<Niconico_Lives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Niconico_Lives_Order_By>>;
+  where?: InputMaybe<Niconico_Lives_Bool_Exp>;
+};
+
+
+export type Query_RootNiconico_Lives_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Niconico_Lives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Niconico_Lives_Order_By>>;
+  where?: InputMaybe<Niconico_Lives_Bool_Exp>;
+};
+
+
+export type Query_RootNiconico_Lives_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
 export type Query_RootNiconico_Plus_ChannelsArgs = {
   distinct_on?: InputMaybe<Array<Niconico_Plus_Channels_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -20340,6 +20851,14 @@ export type Subscription_Root = {
   niconico_communities_by_pk?: Maybe<Niconico_Communities>;
   /** fetch data from the table in a streaming manner: "niconico_communities" */
   niconico_communities_stream: Array<Niconico_Communities>;
+  /** An array relationship */
+  niconico_lives: Array<Niconico_Lives>;
+  /** An aggregate relationship */
+  niconico_lives_aggregate: Niconico_Lives_Aggregate;
+  /** fetch data from the table: "niconico_lives" using primary key columns */
+  niconico_lives_by_pk?: Maybe<Niconico_Lives>;
+  /** fetch data from the table in a streaming manner: "niconico_lives" */
+  niconico_lives_stream: Array<Niconico_Lives>;
   /** fetch data from the table: "niconico_plus_channels" */
   niconico_plus_channels: Array<Niconico_Plus_Channels>;
   /** fetch aggregated fields from the table: "niconico_plus_channels" */
@@ -21516,6 +22035,36 @@ export type Subscription_RootNiconico_Communities_StreamArgs = {
   batch_size: Scalars['Int']['input'];
   cursor: Array<InputMaybe<Niconico_Communities_Stream_Cursor_Input>>;
   where?: InputMaybe<Niconico_Communities_Bool_Exp>;
+};
+
+
+export type Subscription_RootNiconico_LivesArgs = {
+  distinct_on?: InputMaybe<Array<Niconico_Lives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Niconico_Lives_Order_By>>;
+  where?: InputMaybe<Niconico_Lives_Bool_Exp>;
+};
+
+
+export type Subscription_RootNiconico_Lives_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Niconico_Lives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Niconico_Lives_Order_By>>;
+  where?: InputMaybe<Niconico_Lives_Bool_Exp>;
+};
+
+
+export type Subscription_RootNiconico_Lives_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootNiconico_Lives_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Niconico_Lives_Stream_Cursor_Input>>;
+  where?: InputMaybe<Niconico_Lives_Bool_Exp>;
 };
 
 
@@ -23976,7 +24525,7 @@ export type GetPersonPageQueryVariables = Exact<{
 }>;
 
 
-export type GetPersonPageQuery = { __typename?: 'query_root', person?: { __typename?: 'persons', id: any, name: string, personTwitterAccounts: Array<{ __typename?: 'person_twitter_accounts', twitterAccount: { __typename?: 'twitter_accounts', id: any, name: string, twitterScreenName: string, remoteTwitterUserId: string } }>, personFediverseAccounts: Array<{ __typename?: 'person_fediverse_accounts', fediverseAccount: { __typename?: 'fediverse_accounts', id: any, name: string, fediverseAcct: string } }>, personNiconicoAccounts: Array<{ __typename?: 'person_niconico_accounts', niconicoAccount: { __typename?: 'niconico_accounts', id: any, name: string, remoteNiconicoAccountId: string } }>, personNiconicoCommunities: Array<{ __typename?: 'person_niconico_communities', niconicoCommunity: { __typename?: 'niconico_communities', id: any, name: string, remoteNiconicoCommunityId: string } }>, personNiconicoChannels: Array<{ __typename?: 'person_niconico_channels', niconicoChannel: { __typename?: 'niconico_channels', id: any, name: string, remoteNiconicoChannelId: string, screenName: string } }>, personNiconicoPlusChannels: Array<{ __typename?: 'person_niconico_plus_channels', niconicoPlusChannel: { __typename?: 'niconico_plus_channels', id: any, name: string, remoteNiconicoPlusChannelId: string, screenName: string } }>, personYoutubeChannels: Array<{ __typename?: 'person_youtube_channels', youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string, youtubeChannelHandle?: string | null } }>, programPersons: Array<{ __typename?: 'program_persons', program: { __typename?: 'programs', id: any, title: string, startTime?: any | null } }> } | null };
+export type GetPersonPageQuery = { __typename?: 'query_root', person?: { __typename?: 'persons', id: any, name: string, personTwitterAccounts: Array<{ __typename?: 'person_twitter_accounts', twitterAccount: { __typename?: 'twitter_accounts', id: any, name: string, twitterScreenName: string, remoteTwitterUserId: string } }>, personFediverseAccounts: Array<{ __typename?: 'person_fediverse_accounts', fediverseAccount: { __typename?: 'fediverse_accounts', id: any, name: string, fediverseAcct: string } }>, personNiconicoAccounts: Array<{ __typename?: 'person_niconico_accounts', niconicoAccount: { __typename?: 'niconico_accounts', id: any, name: string, remoteNiconicoAccountId: string } }>, personNiconicoCommunities: Array<{ __typename?: 'person_niconico_communities', niconicoCommunity: { __typename?: 'niconico_communities', id: any, name: string, remoteNiconicoCommunityId: string } }>, personNiconicoChannels: Array<{ __typename?: 'person_niconico_channels', niconicoChannel: { __typename?: 'niconico_channels', id: any, name: string, remoteNiconicoChannelId: string, screenName?: string | null } }>, personNiconicoPlusChannels: Array<{ __typename?: 'person_niconico_plus_channels', niconicoPlusChannel: { __typename?: 'niconico_plus_channels', id: any, name: string, remoteNiconicoPlusChannelId: string, screenName: string } }>, personYoutubeChannels: Array<{ __typename?: 'person_youtube_channels', youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string, youtubeChannelHandle?: string | null } }>, programPersons: Array<{ __typename?: 'program_persons', program: { __typename?: 'programs', id: any, title: string, startTime?: any | null } }> } | null };
 
 export type GetPersonPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -23988,7 +24537,7 @@ export type GetProgramPageQueryVariables = Exact<{
 }>;
 
 
-export type GetProgramPageQuery = { __typename?: 'query_root', program?: { __typename?: 'programs', id: any, title: string, startTime?: any | null, endTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, game?: { __typename?: 'games', id: any, name: string } | null, programTwitterAnnouncements: Array<{ __typename?: 'program_twitter_announcements', twitterTweet: { __typename?: 'twitter_tweets', id: any, remoteTweetId: string } }>, programPersons: Array<{ __typename?: 'program_persons', id: any, person: { __typename?: 'persons', id: any, name: string } }>, programNiconicoVideos: Array<{ __typename?: 'program_niconico_videos', niconicoVideo: { __typename?: 'niconico_videos', id: any, title: string, remoteNiconicoContentId: string, startTime: any }, person?: { __typename?: 'persons', id: any, name: string } | null }>, programLiveArchives: Array<{ __typename?: 'program_live_archives', id: any, person: { __typename?: 'persons', id: any, name: string }, youtubeLive?: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null, youtubeVideo?: { __typename?: 'youtube_videos', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null }>, amongusMatches: Array<{ __typename?: 'amongus_matches', id: any, startTime: any, endTime?: any | null }>, amongusvrMatches: Array<{ __typename?: 'amongusvr_matches', id: any, startTime: any, endTime?: any | null }>, fallguysMatches: Array<{ __typename?: 'fallguys_matches', id: any, startTime: any, endTime?: any | null, fallguysMatchRounds: Array<{ __typename?: 'fallguys_match_rounds', id: any, fallguysRound?: { __typename?: 'fallguys_rounds', id: any, name: string } | null, fallguysCustomRound?: { __typename?: 'fallguys_custom_rounds', id: any, name: string } | null }> }>, mariokart8deluxeRaces: Array<{ __typename?: 'mariokart8deluxe_races', id: any, startTime: any, endTime?: any | null, mariokart8deluxeRaceRule?: { __typename?: 'mariokart8deluxe_race_rules', id: any, name: string } | null, mariokart8deluxeCourse?: { __typename?: 'mariokart8deluxe_courses', id: any, name: string, mariokart8deluxeConsole?: { __typename?: 'mariokart8deluxe_consoles', id: any, name: string } | null } | null }>, mariokart8deluxeBattleMatches: Array<{ __typename?: 'mariokart8deluxe_battle_matches', id: any, startTime: any, endTime?: any | null, mariokart8deluxeBattleRule?: { __typename?: 'mariokart8deluxe_battle_rules', id: any, name: string } | null, mariokart8deluxeBattleCourse?: { __typename?: 'mariokart8deluxe_battle_courses', id: any, name: string, mariokart8deluxeConsole?: { __typename?: 'mariokart8deluxe_consoles', id: any, name: string } | null } | null }> } | null };
+export type GetProgramPageQuery = { __typename?: 'query_root', program?: { __typename?: 'programs', id: any, title: string, startTime?: any | null, endTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, game?: { __typename?: 'games', id: any, name: string } | null, programTwitterAnnouncements: Array<{ __typename?: 'program_twitter_announcements', twitterTweet: { __typename?: 'twitter_tweets', id: any, remoteTweetId: string } }>, programPersons: Array<{ __typename?: 'program_persons', id: any, person: { __typename?: 'persons', id: any, name: string } }>, programNiconicoVideos: Array<{ __typename?: 'program_niconico_videos', niconicoVideo: { __typename?: 'niconico_videos', id: any, title: string, remoteNiconicoContentId: string, startTime: any }, person?: { __typename?: 'persons', id: any, name: string } | null }>, programLiveArchives: Array<{ __typename?: 'program_live_archives', id: any, person: { __typename?: 'persons', id: any, name: string }, youtubeLive?: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null, youtubeVideo?: { __typename?: 'youtube_videos', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null, niconicoLive?: { __typename?: 'niconico_lives', title: string, remoteNiconicoContentId: string } | null }>, amongusMatches: Array<{ __typename?: 'amongus_matches', id: any, startTime: any, endTime?: any | null }>, amongusvrMatches: Array<{ __typename?: 'amongusvr_matches', id: any, startTime: any, endTime?: any | null }>, fallguysMatches: Array<{ __typename?: 'fallguys_matches', id: any, startTime: any, endTime?: any | null, fallguysMatchRounds: Array<{ __typename?: 'fallguys_match_rounds', id: any, fallguysRound?: { __typename?: 'fallguys_rounds', id: any, name: string } | null, fallguysCustomRound?: { __typename?: 'fallguys_custom_rounds', id: any, name: string } | null }> }>, mariokart8deluxeRaces: Array<{ __typename?: 'mariokart8deluxe_races', id: any, startTime: any, endTime?: any | null, mariokart8deluxeRaceRule?: { __typename?: 'mariokart8deluxe_race_rules', id: any, name: string } | null, mariokart8deluxeCourse?: { __typename?: 'mariokart8deluxe_courses', id: any, name: string, mariokart8deluxeConsole?: { __typename?: 'mariokart8deluxe_consoles', id: any, name: string } | null } | null }>, mariokart8deluxeBattleMatches: Array<{ __typename?: 'mariokart8deluxe_battle_matches', id: any, startTime: any, endTime?: any | null, mariokart8deluxeBattleRule?: { __typename?: 'mariokart8deluxe_battle_rules', id: any, name: string } | null, mariokart8deluxeBattleCourse?: { __typename?: 'mariokart8deluxe_battle_courses', id: any, name: string, mariokart8deluxeConsole?: { __typename?: 'mariokart8deluxe_consoles', id: any, name: string } | null } | null }> } | null };
 
 export type GetProgramPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -24999,6 +25548,10 @@ export const GetProgramPageDocument = gql`
           remoteYoutubeChannelId: remote_youtube_channel_id
           name
         }
+      }
+      niconicoLive: niconico_live {
+        remoteNiconicoContentId: remote_niconico_content_id
+        title
       }
     }
     amongusMatches: amongus_matches(order_by: {start_time: asc}) {
