@@ -274,6 +274,66 @@ export default function ProgramPage({ programId }: { programId: string }) {
         ) : (
           ''
         )}
+        {program.amongusHidenseekMatches.length > 0 ? (
+          <>
+            <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+              Among Us（かくれんぼモード）
+            </Typography>
+            <Typography variant='h6' component='h4' sx={{ mt: 1 }}>
+              試合
+            </Typography>
+            <Box sx={{ mt: 2 }}>
+              <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>番号</TableCell>
+                    <TableCell>開始日時</TableCell>
+                    <TableCell>終了日時</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {program.amongusHidenseekMatches.map((amongusHidenseekMatch, index) => (
+                    <TableRow
+                      key={amongusHidenseekMatch.id}
+                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                    >
+                      <TableCell>{index + 1}</TableCell>
+                      <TableCell>
+                        {amongusHidenseekMatch.startTime != null ? (
+                          <NextLink
+                            href={`/amongus_hidenseek_match/${amongusHidenseekMatch.id}/`}
+                            passHref
+                            legacyBehavior
+                          >
+                            <MuiLink>
+                              {format(
+                                parseISO(amongusHidenseekMatch.startTime),
+                                'yyyy-MM-dd HH:mm:ss',
+                              )}
+                            </MuiLink>
+                          </NextLink>
+                        ) : (
+                          ''
+                        )}
+                      </TableCell>
+                      <TableCell>
+                        {amongusHidenseekMatch.endTime != null ? (
+                          <>
+                            {format(parseISO(amongusHidenseekMatch.endTime), 'yyyy-MM-dd HH:mm:ss')}
+                          </>
+                        ) : (
+                          ''
+                        )}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </Box>
+          </>
+        ) : (
+          ''
+        )}
         {program.amongusvrMatches.length > 0 ? (
           <>
             <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
