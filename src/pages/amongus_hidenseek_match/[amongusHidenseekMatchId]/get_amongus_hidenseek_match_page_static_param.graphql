@@ -1,0 +1,5 @@
+query GetAmongusHidenseekMatchPageStaticParam {
+  amongusHidenseekMatches: amongus_hidenseek_matches {
+    id
+  }
+}

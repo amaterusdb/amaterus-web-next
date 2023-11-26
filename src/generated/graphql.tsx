@@ -78,6 +78,1003 @@ export type String_Comparison_Exp = {
   _similar?: InputMaybe<Scalars['String']['input']>;
 };
 
+/** columns and relationships of "amongus_hidenseek_match_mods" */
+export type Amongus_Hidenseek_Match_Mods = {
+  __typename?: 'amongus_hidenseek_match_mods';
+  /** An object relationship */
+  amongus_hidenseek_match: Amongus_Hidenseek_Matches;
+  amongus_hidenseek_match_id: Scalars['uuid']['output'];
+  /** An object relationship */
+  amongus_mod: Amongus_Mods;
+  amongus_mod_id: Scalars['uuid']['output'];
+  /** An object relationship */
+  amongus_mod_version?: Maybe<Amongus_Mod_Versions>;
+  amongus_mod_version_id?: Maybe<Scalars['uuid']['output']>;
+  created_at: Scalars['timestamptz']['output'];
+  id: Scalars['uuid']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+/** aggregated selection of "amongus_hidenseek_match_mods" */
+export type Amongus_Hidenseek_Match_Mods_Aggregate = {
+  __typename?: 'amongus_hidenseek_match_mods_aggregate';
+  aggregate?: Maybe<Amongus_Hidenseek_Match_Mods_Aggregate_Fields>;
+  nodes: Array<Amongus_Hidenseek_Match_Mods>;
+};
+
+export type Amongus_Hidenseek_Match_Mods_Aggregate_Bool_Exp = {
+  count?: InputMaybe<Amongus_Hidenseek_Match_Mods_Aggregate_Bool_Exp_Count>;
+};
+
+export type Amongus_Hidenseek_Match_Mods_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Amongus_Hidenseek_Match_Mods_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Amongus_Hidenseek_Match_Mods_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
+/** aggregate fields of "amongus_hidenseek_match_mods" */
+export type Amongus_Hidenseek_Match_Mods_Aggregate_Fields = {
+  __typename?: 'amongus_hidenseek_match_mods_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Amongus_Hidenseek_Match_Mods_Max_Fields>;
+  min?: Maybe<Amongus_Hidenseek_Match_Mods_Min_Fields>;
+};
+
+
+/** aggregate fields of "amongus_hidenseek_match_mods" */
+export type Amongus_Hidenseek_Match_Mods_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Amongus_Hidenseek_Match_Mods_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** order by aggregate values of table "amongus_hidenseek_match_mods" */
+export type Amongus_Hidenseek_Match_Mods_Aggregate_Order_By = {
+  count?: InputMaybe<Order_By>;
+  max?: InputMaybe<Amongus_Hidenseek_Match_Mods_Max_Order_By>;
+  min?: InputMaybe<Amongus_Hidenseek_Match_Mods_Min_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "amongus_hidenseek_match_mods" */
+export type Amongus_Hidenseek_Match_Mods_Arr_Rel_Insert_Input = {
+  data: Array<Amongus_Hidenseek_Match_Mods_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Amongus_Hidenseek_Match_Mods_On_Conflict>;
+};
+
+/** Boolean expression to filter rows from the table "amongus_hidenseek_match_mods". All fields are combined with a logical 'AND'. */
+export type Amongus_Hidenseek_Match_Mods_Bool_Exp = {
+  _and?: InputMaybe<Array<Amongus_Hidenseek_Match_Mods_Bool_Exp>>;
+  _not?: InputMaybe<Amongus_Hidenseek_Match_Mods_Bool_Exp>;
+  _or?: InputMaybe<Array<Amongus_Hidenseek_Match_Mods_Bool_Exp>>;
+  amongus_hidenseek_match?: InputMaybe<Amongus_Hidenseek_Matches_Bool_Exp>;
+  amongus_hidenseek_match_id?: InputMaybe<Uuid_Comparison_Exp>;
+  amongus_mod?: InputMaybe<Amongus_Mods_Bool_Exp>;
+  amongus_mod_id?: InputMaybe<Uuid_Comparison_Exp>;
+  amongus_mod_version?: InputMaybe<Amongus_Mod_Versions_Bool_Exp>;
+  amongus_mod_version_id?: InputMaybe<Uuid_Comparison_Exp>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "amongus_hidenseek_match_mods" */
+export enum Amongus_Hidenseek_Match_Mods_Constraint {
+  /** unique or primary key constraint on columns "amongus_mod_id", "amongus_hidenseek_match_id" */
+  AmongusHidenseekMatchModsAmongusHidenseekMatchIdAmoKey = 'amongus_hidenseek_match_mods_amongus_hidenseek_match_id_amo_key',
+  /** unique or primary key constraint on columns "id" */
+  AmongusHidenseekMatchModsPkey = 'amongus_hidenseek_match_mods_pkey'
+}
+
+/** input type for inserting data into table "amongus_hidenseek_match_mods" */
+export type Amongus_Hidenseek_Match_Mods_Insert_Input = {
+  amongus_hidenseek_match?: InputMaybe<Amongus_Hidenseek_Matches_Obj_Rel_Insert_Input>;
+  amongus_hidenseek_match_id?: InputMaybe<Scalars['uuid']['input']>;
+  amongus_mod?: InputMaybe<Amongus_Mods_Obj_Rel_Insert_Input>;
+  amongus_mod_id?: InputMaybe<Scalars['uuid']['input']>;
+  amongus_mod_version?: InputMaybe<Amongus_Mod_Versions_Obj_Rel_Insert_Input>;
+  amongus_mod_version_id?: InputMaybe<Scalars['uuid']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Amongus_Hidenseek_Match_Mods_Max_Fields = {
+  __typename?: 'amongus_hidenseek_match_mods_max_fields';
+  amongus_hidenseek_match_id?: Maybe<Scalars['uuid']['output']>;
+  amongus_mod_id?: Maybe<Scalars['uuid']['output']>;
+  amongus_mod_version_id?: Maybe<Scalars['uuid']['output']>;
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by max() on columns of table "amongus_hidenseek_match_mods" */
+export type Amongus_Hidenseek_Match_Mods_Max_Order_By = {
+  amongus_hidenseek_match_id?: InputMaybe<Order_By>;
+  amongus_mod_id?: InputMaybe<Order_By>;
+  amongus_mod_version_id?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Amongus_Hidenseek_Match_Mods_Min_Fields = {
+  __typename?: 'amongus_hidenseek_match_mods_min_fields';
+  amongus_hidenseek_match_id?: Maybe<Scalars['uuid']['output']>;
+  amongus_mod_id?: Maybe<Scalars['uuid']['output']>;
+  amongus_mod_version_id?: Maybe<Scalars['uuid']['output']>;
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by min() on columns of table "amongus_hidenseek_match_mods" */
+export type Amongus_Hidenseek_Match_Mods_Min_Order_By = {
+  amongus_hidenseek_match_id?: InputMaybe<Order_By>;
+  amongus_mod_id?: InputMaybe<Order_By>;
+  amongus_mod_version_id?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** response of any mutation on the table "amongus_hidenseek_match_mods" */
+export type Amongus_Hidenseek_Match_Mods_Mutation_Response = {
+  __typename?: 'amongus_hidenseek_match_mods_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Amongus_Hidenseek_Match_Mods>;
+};
+
+/** on_conflict condition type for table "amongus_hidenseek_match_mods" */
+export type Amongus_Hidenseek_Match_Mods_On_Conflict = {
+  constraint: Amongus_Hidenseek_Match_Mods_Constraint;
+  update_columns?: Array<Amongus_Hidenseek_Match_Mods_Update_Column>;
+  where?: InputMaybe<Amongus_Hidenseek_Match_Mods_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "amongus_hidenseek_match_mods". */
+export type Amongus_Hidenseek_Match_Mods_Order_By = {
+  amongus_hidenseek_match?: InputMaybe<Amongus_Hidenseek_Matches_Order_By>;
+  amongus_hidenseek_match_id?: InputMaybe<Order_By>;
+  amongus_mod?: InputMaybe<Amongus_Mods_Order_By>;
+  amongus_mod_id?: InputMaybe<Order_By>;
+  amongus_mod_version?: InputMaybe<Amongus_Mod_Versions_Order_By>;
+  amongus_mod_version_id?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: amongus_hidenseek_match_mods */
+export type Amongus_Hidenseek_Match_Mods_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "amongus_hidenseek_match_mods" */
+export enum Amongus_Hidenseek_Match_Mods_Select_Column {
+  /** column name */
+  AmongusHidenseekMatchId = 'amongus_hidenseek_match_id',
+  /** column name */
+  AmongusModId = 'amongus_mod_id',
+  /** column name */
+  AmongusModVersionId = 'amongus_mod_version_id',
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "amongus_hidenseek_match_mods" */
+export type Amongus_Hidenseek_Match_Mods_Set_Input = {
+  amongus_hidenseek_match_id?: InputMaybe<Scalars['uuid']['input']>;
+  amongus_mod_id?: InputMaybe<Scalars['uuid']['input']>;
+  amongus_mod_version_id?: InputMaybe<Scalars['uuid']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** Streaming cursor of the table "amongus_hidenseek_match_mods" */
+export type Amongus_Hidenseek_Match_Mods_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Amongus_Hidenseek_Match_Mods_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Amongus_Hidenseek_Match_Mods_Stream_Cursor_Value_Input = {
+  amongus_hidenseek_match_id?: InputMaybe<Scalars['uuid']['input']>;
+  amongus_mod_id?: InputMaybe<Scalars['uuid']['input']>;
+  amongus_mod_version_id?: InputMaybe<Scalars['uuid']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** update columns of table "amongus_hidenseek_match_mods" */
+export enum Amongus_Hidenseek_Match_Mods_Update_Column {
+  /** column name */
+  AmongusHidenseekMatchId = 'amongus_hidenseek_match_id',
+  /** column name */
+  AmongusModId = 'amongus_mod_id',
+  /** column name */
+  AmongusModVersionId = 'amongus_mod_version_id',
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Amongus_Hidenseek_Match_Mods_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Amongus_Hidenseek_Match_Mods_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Amongus_Hidenseek_Match_Mods_Bool_Exp;
+};
+
+/** columns and relationships of "amongus_hidenseek_match_players" */
+export type Amongus_Hidenseek_Match_Players = {
+  __typename?: 'amongus_hidenseek_match_players';
+  /** An object relationship */
+  amongus_hidenseek_match: Amongus_Hidenseek_Matches;
+  amongus_hidenseek_match_id: Scalars['uuid']['output'];
+  created_at: Scalars['timestamptz']['output'];
+  id: Scalars['uuid']['output'];
+  nickname: Scalars['String']['output'];
+  /** An object relationship */
+  person?: Maybe<Persons>;
+  person_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+/** aggregated selection of "amongus_hidenseek_match_players" */
+export type Amongus_Hidenseek_Match_Players_Aggregate = {
+  __typename?: 'amongus_hidenseek_match_players_aggregate';
+  aggregate?: Maybe<Amongus_Hidenseek_Match_Players_Aggregate_Fields>;
+  nodes: Array<Amongus_Hidenseek_Match_Players>;
+};
+
+export type Amongus_Hidenseek_Match_Players_Aggregate_Bool_Exp = {
+  count?: InputMaybe<Amongus_Hidenseek_Match_Players_Aggregate_Bool_Exp_Count>;
+};
+
+export type Amongus_Hidenseek_Match_Players_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Amongus_Hidenseek_Match_Players_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Amongus_Hidenseek_Match_Players_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
+/** aggregate fields of "amongus_hidenseek_match_players" */
+export type Amongus_Hidenseek_Match_Players_Aggregate_Fields = {
+  __typename?: 'amongus_hidenseek_match_players_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Amongus_Hidenseek_Match_Players_Max_Fields>;
+  min?: Maybe<Amongus_Hidenseek_Match_Players_Min_Fields>;
+};
+
+
+/** aggregate fields of "amongus_hidenseek_match_players" */
+export type Amongus_Hidenseek_Match_Players_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Amongus_Hidenseek_Match_Players_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** order by aggregate values of table "amongus_hidenseek_match_players" */
+export type Amongus_Hidenseek_Match_Players_Aggregate_Order_By = {
+  count?: InputMaybe<Order_By>;
+  max?: InputMaybe<Amongus_Hidenseek_Match_Players_Max_Order_By>;
+  min?: InputMaybe<Amongus_Hidenseek_Match_Players_Min_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "amongus_hidenseek_match_players" */
+export type Amongus_Hidenseek_Match_Players_Arr_Rel_Insert_Input = {
+  data: Array<Amongus_Hidenseek_Match_Players_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Amongus_Hidenseek_Match_Players_On_Conflict>;
+};
+
+/** Boolean expression to filter rows from the table "amongus_hidenseek_match_players". All fields are combined with a logical 'AND'. */
+export type Amongus_Hidenseek_Match_Players_Bool_Exp = {
+  _and?: InputMaybe<Array<Amongus_Hidenseek_Match_Players_Bool_Exp>>;
+  _not?: InputMaybe<Amongus_Hidenseek_Match_Players_Bool_Exp>;
+  _or?: InputMaybe<Array<Amongus_Hidenseek_Match_Players_Bool_Exp>>;
+  amongus_hidenseek_match?: InputMaybe<Amongus_Hidenseek_Matches_Bool_Exp>;
+  amongus_hidenseek_match_id?: InputMaybe<Uuid_Comparison_Exp>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  nickname?: InputMaybe<String_Comparison_Exp>;
+  person?: InputMaybe<Persons_Bool_Exp>;
+  person_id?: InputMaybe<Uuid_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "amongus_hidenseek_match_players" */
+export enum Amongus_Hidenseek_Match_Players_Constraint {
+  /** unique or primary key constraint on columns "nickname", "amongus_hidenseek_match_id" */
+  AmongusHidenseekMatchPlayeAmongusHidenseekMatchIdNiKey = 'amongus_hidenseek_match_playe_amongus_hidenseek_match_id_ni_key',
+  /** unique or primary key constraint on columns "amongus_hidenseek_match_id", "person_id" */
+  AmongusHidenseekMatchPlayeAmongusHidenseekMatchIdPeKey = 'amongus_hidenseek_match_playe_amongus_hidenseek_match_id_pe_key',
+  /** unique or primary key constraint on columns "id" */
+  AmongusHidenseekMatchPlayersPkey = 'amongus_hidenseek_match_players_pkey'
+}
+
+/** input type for inserting data into table "amongus_hidenseek_match_players" */
+export type Amongus_Hidenseek_Match_Players_Insert_Input = {
+  amongus_hidenseek_match?: InputMaybe<Amongus_Hidenseek_Matches_Obj_Rel_Insert_Input>;
+  amongus_hidenseek_match_id?: InputMaybe<Scalars['uuid']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  nickname?: InputMaybe<Scalars['String']['input']>;
+  person?: InputMaybe<Persons_Obj_Rel_Insert_Input>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Amongus_Hidenseek_Match_Players_Max_Fields = {
+  __typename?: 'amongus_hidenseek_match_players_max_fields';
+  amongus_hidenseek_match_id?: Maybe<Scalars['uuid']['output']>;
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  nickname?: Maybe<Scalars['String']['output']>;
+  person_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by max() on columns of table "amongus_hidenseek_match_players" */
+export type Amongus_Hidenseek_Match_Players_Max_Order_By = {
+  amongus_hidenseek_match_id?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  nickname?: InputMaybe<Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Amongus_Hidenseek_Match_Players_Min_Fields = {
+  __typename?: 'amongus_hidenseek_match_players_min_fields';
+  amongus_hidenseek_match_id?: Maybe<Scalars['uuid']['output']>;
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  nickname?: Maybe<Scalars['String']['output']>;
+  person_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by min() on columns of table "amongus_hidenseek_match_players" */
+export type Amongus_Hidenseek_Match_Players_Min_Order_By = {
+  amongus_hidenseek_match_id?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  nickname?: InputMaybe<Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** response of any mutation on the table "amongus_hidenseek_match_players" */
+export type Amongus_Hidenseek_Match_Players_Mutation_Response = {
+  __typename?: 'amongus_hidenseek_match_players_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Amongus_Hidenseek_Match_Players>;
+};
+
+/** on_conflict condition type for table "amongus_hidenseek_match_players" */
+export type Amongus_Hidenseek_Match_Players_On_Conflict = {
+  constraint: Amongus_Hidenseek_Match_Players_Constraint;
+  update_columns?: Array<Amongus_Hidenseek_Match_Players_Update_Column>;
+  where?: InputMaybe<Amongus_Hidenseek_Match_Players_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "amongus_hidenseek_match_players". */
+export type Amongus_Hidenseek_Match_Players_Order_By = {
+  amongus_hidenseek_match?: InputMaybe<Amongus_Hidenseek_Matches_Order_By>;
+  amongus_hidenseek_match_id?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  nickname?: InputMaybe<Order_By>;
+  person?: InputMaybe<Persons_Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: amongus_hidenseek_match_players */
+export type Amongus_Hidenseek_Match_Players_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "amongus_hidenseek_match_players" */
+export enum Amongus_Hidenseek_Match_Players_Select_Column {
+  /** column name */
+  AmongusHidenseekMatchId = 'amongus_hidenseek_match_id',
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Nickname = 'nickname',
+  /** column name */
+  PersonId = 'person_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "amongus_hidenseek_match_players" */
+export type Amongus_Hidenseek_Match_Players_Set_Input = {
+  amongus_hidenseek_match_id?: InputMaybe<Scalars['uuid']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  nickname?: InputMaybe<Scalars['String']['input']>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** Streaming cursor of the table "amongus_hidenseek_match_players" */
+export type Amongus_Hidenseek_Match_Players_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Amongus_Hidenseek_Match_Players_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Amongus_Hidenseek_Match_Players_Stream_Cursor_Value_Input = {
+  amongus_hidenseek_match_id?: InputMaybe<Scalars['uuid']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  nickname?: InputMaybe<Scalars['String']['input']>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** update columns of table "amongus_hidenseek_match_players" */
+export enum Amongus_Hidenseek_Match_Players_Update_Column {
+  /** column name */
+  AmongusHidenseekMatchId = 'amongus_hidenseek_match_id',
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Nickname = 'nickname',
+  /** column name */
+  PersonId = 'person_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Amongus_Hidenseek_Match_Players_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Amongus_Hidenseek_Match_Players_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Amongus_Hidenseek_Match_Players_Bool_Exp;
+};
+
+/** columns and relationships of "amongus_hidenseek_matches" */
+export type Amongus_Hidenseek_Matches = {
+  __typename?: 'amongus_hidenseek_matches';
+  /** An array relationship */
+  amongus_hidenseek_match_mods: Array<Amongus_Hidenseek_Match_Mods>;
+  /** An aggregate relationship */
+  amongus_hidenseek_match_mods_aggregate: Amongus_Hidenseek_Match_Mods_Aggregate;
+  /** An array relationship */
+  amongus_hidenseek_match_players: Array<Amongus_Hidenseek_Match_Players>;
+  /** An aggregate relationship */
+  amongus_hidenseek_match_players_aggregate: Amongus_Hidenseek_Match_Players_Aggregate;
+  /** An object relationship */
+  amongus_map?: Maybe<Amongus_Maps>;
+  amongus_map_id?: Maybe<Scalars['uuid']['output']>;
+  /** An object relationship */
+  amongus_vanilla_version?: Maybe<Amongus_Vanilla_Versions>;
+  amongus_vanilla_version_id?: Maybe<Scalars['uuid']['output']>;
+  created_at: Scalars['timestamptz']['output'];
+  end_time?: Maybe<Scalars['timestamptz']['output']>;
+  id: Scalars['uuid']['output'];
+  index?: Maybe<Scalars['Int']['output']>;
+  is_aborted?: Maybe<Scalars['Boolean']['output']>;
+  is_vanilla?: Maybe<Scalars['Boolean']['output']>;
+  /** An object relationship */
+  program: Programs;
+  program_id: Scalars['uuid']['output'];
+  start_time: Scalars['timestamptz']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+
+/** columns and relationships of "amongus_hidenseek_matches" */
+export type Amongus_Hidenseek_MatchesAmongus_Hidenseek_Match_ModsArgs = {
+  distinct_on?: InputMaybe<Array<Amongus_Hidenseek_Match_Mods_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Amongus_Hidenseek_Match_Mods_Order_By>>;
+  where?: InputMaybe<Amongus_Hidenseek_Match_Mods_Bool_Exp>;
+};
+
+
+/** columns and relationships of "amongus_hidenseek_matches" */
+export type Amongus_Hidenseek_MatchesAmongus_Hidenseek_Match_Mods_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Amongus_Hidenseek_Match_Mods_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Amongus_Hidenseek_Match_Mods_Order_By>>;
+  where?: InputMaybe<Amongus_Hidenseek_Match_Mods_Bool_Exp>;
+};
+
+
+/** columns and relationships of "amongus_hidenseek_matches" */
+export type Amongus_Hidenseek_MatchesAmongus_Hidenseek_Match_PlayersArgs = {
+  distinct_on?: InputMaybe<Array<Amongus_Hidenseek_Match_Players_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Amongus_Hidenseek_Match_Players_Order_By>>;
+  where?: InputMaybe<Amongus_Hidenseek_Match_Players_Bool_Exp>;
+};
+
+
+/** columns and relationships of "amongus_hidenseek_matches" */
+export type Amongus_Hidenseek_MatchesAmongus_Hidenseek_Match_Players_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Amongus_Hidenseek_Match_Players_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Amongus_Hidenseek_Match_Players_Order_By>>;
+  where?: InputMaybe<Amongus_Hidenseek_Match_Players_Bool_Exp>;
+};
+
+/** aggregated selection of "amongus_hidenseek_matches" */
+export type Amongus_Hidenseek_Matches_Aggregate = {
+  __typename?: 'amongus_hidenseek_matches_aggregate';
+  aggregate?: Maybe<Amongus_Hidenseek_Matches_Aggregate_Fields>;
+  nodes: Array<Amongus_Hidenseek_Matches>;
+};
+
+export type Amongus_Hidenseek_Matches_Aggregate_Bool_Exp = {
+  bool_and?: InputMaybe<Amongus_Hidenseek_Matches_Aggregate_Bool_Exp_Bool_And>;
+  bool_or?: InputMaybe<Amongus_Hidenseek_Matches_Aggregate_Bool_Exp_Bool_Or>;
+  count?: InputMaybe<Amongus_Hidenseek_Matches_Aggregate_Bool_Exp_Count>;
+};
+
+export type Amongus_Hidenseek_Matches_Aggregate_Bool_Exp_Bool_And = {
+  arguments: Amongus_Hidenseek_Matches_Select_Column_Amongus_Hidenseek_Matches_Aggregate_Bool_Exp_Bool_And_Arguments_Columns;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Amongus_Hidenseek_Matches_Bool_Exp>;
+  predicate: Boolean_Comparison_Exp;
+};
+
+export type Amongus_Hidenseek_Matches_Aggregate_Bool_Exp_Bool_Or = {
+  arguments: Amongus_Hidenseek_Matches_Select_Column_Amongus_Hidenseek_Matches_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Amongus_Hidenseek_Matches_Bool_Exp>;
+  predicate: Boolean_Comparison_Exp;
+};
+
+export type Amongus_Hidenseek_Matches_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Amongus_Hidenseek_Matches_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Amongus_Hidenseek_Matches_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
+/** aggregate fields of "amongus_hidenseek_matches" */
+export type Amongus_Hidenseek_Matches_Aggregate_Fields = {
+  __typename?: 'amongus_hidenseek_matches_aggregate_fields';
+  avg?: Maybe<Amongus_Hidenseek_Matches_Avg_Fields>;
+  count: Scalars['Int']['output'];
+  max?: Maybe<Amongus_Hidenseek_Matches_Max_Fields>;
+  min?: Maybe<Amongus_Hidenseek_Matches_Min_Fields>;
+  stddev?: Maybe<Amongus_Hidenseek_Matches_Stddev_Fields>;
+  stddev_pop?: Maybe<Amongus_Hidenseek_Matches_Stddev_Pop_Fields>;
+  stddev_samp?: Maybe<Amongus_Hidenseek_Matches_Stddev_Samp_Fields>;
+  sum?: Maybe<Amongus_Hidenseek_Matches_Sum_Fields>;
+  var_pop?: Maybe<Amongus_Hidenseek_Matches_Var_Pop_Fields>;
+  var_samp?: Maybe<Amongus_Hidenseek_Matches_Var_Samp_Fields>;
+  variance?: Maybe<Amongus_Hidenseek_Matches_Variance_Fields>;
+};
+
+
+/** aggregate fields of "amongus_hidenseek_matches" */
+export type Amongus_Hidenseek_Matches_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Amongus_Hidenseek_Matches_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** order by aggregate values of table "amongus_hidenseek_matches" */
+export type Amongus_Hidenseek_Matches_Aggregate_Order_By = {
+  avg?: InputMaybe<Amongus_Hidenseek_Matches_Avg_Order_By>;
+  count?: InputMaybe<Order_By>;
+  max?: InputMaybe<Amongus_Hidenseek_Matches_Max_Order_By>;
+  min?: InputMaybe<Amongus_Hidenseek_Matches_Min_Order_By>;
+  stddev?: InputMaybe<Amongus_Hidenseek_Matches_Stddev_Order_By>;
+  stddev_pop?: InputMaybe<Amongus_Hidenseek_Matches_Stddev_Pop_Order_By>;
+  stddev_samp?: InputMaybe<Amongus_Hidenseek_Matches_Stddev_Samp_Order_By>;
+  sum?: InputMaybe<Amongus_Hidenseek_Matches_Sum_Order_By>;
+  var_pop?: InputMaybe<Amongus_Hidenseek_Matches_Var_Pop_Order_By>;
+  var_samp?: InputMaybe<Amongus_Hidenseek_Matches_Var_Samp_Order_By>;
+  variance?: InputMaybe<Amongus_Hidenseek_Matches_Variance_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "amongus_hidenseek_matches" */
+export type Amongus_Hidenseek_Matches_Arr_Rel_Insert_Input = {
+  data: Array<Amongus_Hidenseek_Matches_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Amongus_Hidenseek_Matches_On_Conflict>;
+};
+
+/** aggregate avg on columns */
+export type Amongus_Hidenseek_Matches_Avg_Fields = {
+  __typename?: 'amongus_hidenseek_matches_avg_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by avg() on columns of table "amongus_hidenseek_matches" */
+export type Amongus_Hidenseek_Matches_Avg_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** Boolean expression to filter rows from the table "amongus_hidenseek_matches". All fields are combined with a logical 'AND'. */
+export type Amongus_Hidenseek_Matches_Bool_Exp = {
+  _and?: InputMaybe<Array<Amongus_Hidenseek_Matches_Bool_Exp>>;
+  _not?: InputMaybe<Amongus_Hidenseek_Matches_Bool_Exp>;
+  _or?: InputMaybe<Array<Amongus_Hidenseek_Matches_Bool_Exp>>;
+  amongus_hidenseek_match_mods?: InputMaybe<Amongus_Hidenseek_Match_Mods_Bool_Exp>;
+  amongus_hidenseek_match_mods_aggregate?: InputMaybe<Amongus_Hidenseek_Match_Mods_Aggregate_Bool_Exp>;
+  amongus_hidenseek_match_players?: InputMaybe<Amongus_Hidenseek_Match_Players_Bool_Exp>;
+  amongus_hidenseek_match_players_aggregate?: InputMaybe<Amongus_Hidenseek_Match_Players_Aggregate_Bool_Exp>;
+  amongus_map?: InputMaybe<Amongus_Maps_Bool_Exp>;
+  amongus_map_id?: InputMaybe<Uuid_Comparison_Exp>;
+  amongus_vanilla_version?: InputMaybe<Amongus_Vanilla_Versions_Bool_Exp>;
+  amongus_vanilla_version_id?: InputMaybe<Uuid_Comparison_Exp>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  end_time?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  index?: InputMaybe<Int_Comparison_Exp>;
+  is_aborted?: InputMaybe<Boolean_Comparison_Exp>;
+  is_vanilla?: InputMaybe<Boolean_Comparison_Exp>;
+  program?: InputMaybe<Programs_Bool_Exp>;
+  program_id?: InputMaybe<Uuid_Comparison_Exp>;
+  start_time?: InputMaybe<Timestamptz_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "amongus_hidenseek_matches" */
+export enum Amongus_Hidenseek_Matches_Constraint {
+  /** unique or primary key constraint on columns "id" */
+  AmongusHidenseekMatchesPkey = 'amongus_hidenseek_matches_pkey',
+  /** unique or primary key constraint on columns "index", "program_id" */
+  AmongusHidenseekMatchesProgramIdIndexKey = 'amongus_hidenseek_matches_program_id_index_key'
+}
+
+/** input type for incrementing numeric columns in table "amongus_hidenseek_matches" */
+export type Amongus_Hidenseek_Matches_Inc_Input = {
+  index?: InputMaybe<Scalars['Int']['input']>;
+};
+
+/** input type for inserting data into table "amongus_hidenseek_matches" */
+export type Amongus_Hidenseek_Matches_Insert_Input = {
+  amongus_hidenseek_match_mods?: InputMaybe<Amongus_Hidenseek_Match_Mods_Arr_Rel_Insert_Input>;
+  amongus_hidenseek_match_players?: InputMaybe<Amongus_Hidenseek_Match_Players_Arr_Rel_Insert_Input>;
+  amongus_map?: InputMaybe<Amongus_Maps_Obj_Rel_Insert_Input>;
+  amongus_map_id?: InputMaybe<Scalars['uuid']['input']>;
+  amongus_vanilla_version?: InputMaybe<Amongus_Vanilla_Versions_Obj_Rel_Insert_Input>;
+  amongus_vanilla_version_id?: InputMaybe<Scalars['uuid']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  end_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  index?: InputMaybe<Scalars['Int']['input']>;
+  is_aborted?: InputMaybe<Scalars['Boolean']['input']>;
+  is_vanilla?: InputMaybe<Scalars['Boolean']['input']>;
+  program?: InputMaybe<Programs_Obj_Rel_Insert_Input>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Amongus_Hidenseek_Matches_Max_Fields = {
+  __typename?: 'amongus_hidenseek_matches_max_fields';
+  amongus_map_id?: Maybe<Scalars['uuid']['output']>;
+  amongus_vanilla_version_id?: Maybe<Scalars['uuid']['output']>;
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  end_time?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  index?: Maybe<Scalars['Int']['output']>;
+  program_id?: Maybe<Scalars['uuid']['output']>;
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by max() on columns of table "amongus_hidenseek_matches" */
+export type Amongus_Hidenseek_Matches_Max_Order_By = {
+  amongus_map_id?: InputMaybe<Order_By>;
+  amongus_vanilla_version_id?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  end_time?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  index?: InputMaybe<Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  start_time?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Amongus_Hidenseek_Matches_Min_Fields = {
+  __typename?: 'amongus_hidenseek_matches_min_fields';
+  amongus_map_id?: Maybe<Scalars['uuid']['output']>;
+  amongus_vanilla_version_id?: Maybe<Scalars['uuid']['output']>;
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  end_time?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  index?: Maybe<Scalars['Int']['output']>;
+  program_id?: Maybe<Scalars['uuid']['output']>;
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by min() on columns of table "amongus_hidenseek_matches" */
+export type Amongus_Hidenseek_Matches_Min_Order_By = {
+  amongus_map_id?: InputMaybe<Order_By>;
+  amongus_vanilla_version_id?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  end_time?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  index?: InputMaybe<Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  start_time?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** response of any mutation on the table "amongus_hidenseek_matches" */
+export type Amongus_Hidenseek_Matches_Mutation_Response = {
+  __typename?: 'amongus_hidenseek_matches_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Amongus_Hidenseek_Matches>;
+};
+
+/** input type for inserting object relation for remote table "amongus_hidenseek_matches" */
+export type Amongus_Hidenseek_Matches_Obj_Rel_Insert_Input = {
+  data: Amongus_Hidenseek_Matches_Insert_Input;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Amongus_Hidenseek_Matches_On_Conflict>;
+};
+
+/** on_conflict condition type for table "amongus_hidenseek_matches" */
+export type Amongus_Hidenseek_Matches_On_Conflict = {
+  constraint: Amongus_Hidenseek_Matches_Constraint;
+  update_columns?: Array<Amongus_Hidenseek_Matches_Update_Column>;
+  where?: InputMaybe<Amongus_Hidenseek_Matches_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "amongus_hidenseek_matches". */
+export type Amongus_Hidenseek_Matches_Order_By = {
+  amongus_hidenseek_match_mods_aggregate?: InputMaybe<Amongus_Hidenseek_Match_Mods_Aggregate_Order_By>;
+  amongus_hidenseek_match_players_aggregate?: InputMaybe<Amongus_Hidenseek_Match_Players_Aggregate_Order_By>;
+  amongus_map?: InputMaybe<Amongus_Maps_Order_By>;
+  amongus_map_id?: InputMaybe<Order_By>;
+  amongus_vanilla_version?: InputMaybe<Amongus_Vanilla_Versions_Order_By>;
+  amongus_vanilla_version_id?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  end_time?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  index?: InputMaybe<Order_By>;
+  is_aborted?: InputMaybe<Order_By>;
+  is_vanilla?: InputMaybe<Order_By>;
+  program?: InputMaybe<Programs_Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  start_time?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: amongus_hidenseek_matches */
+export type Amongus_Hidenseek_Matches_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "amongus_hidenseek_matches" */
+export enum Amongus_Hidenseek_Matches_Select_Column {
+  /** column name */
+  AmongusMapId = 'amongus_map_id',
+  /** column name */
+  AmongusVanillaVersionId = 'amongus_vanilla_version_id',
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  EndTime = 'end_time',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Index = 'index',
+  /** column name */
+  IsAborted = 'is_aborted',
+  /** column name */
+  IsVanilla = 'is_vanilla',
+  /** column name */
+  ProgramId = 'program_id',
+  /** column name */
+  StartTime = 'start_time',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** select "amongus_hidenseek_matches_aggregate_bool_exp_bool_and_arguments_columns" columns of table "amongus_hidenseek_matches" */
+export enum Amongus_Hidenseek_Matches_Select_Column_Amongus_Hidenseek_Matches_Aggregate_Bool_Exp_Bool_And_Arguments_Columns {
+  /** column name */
+  IsAborted = 'is_aborted',
+  /** column name */
+  IsVanilla = 'is_vanilla'
+}
+
+/** select "amongus_hidenseek_matches_aggregate_bool_exp_bool_or_arguments_columns" columns of table "amongus_hidenseek_matches" */
+export enum Amongus_Hidenseek_Matches_Select_Column_Amongus_Hidenseek_Matches_Aggregate_Bool_Exp_Bool_Or_Arguments_Columns {
+  /** column name */
+  IsAborted = 'is_aborted',
+  /** column name */
+  IsVanilla = 'is_vanilla'
+}
+
+/** input type for updating data in table "amongus_hidenseek_matches" */
+export type Amongus_Hidenseek_Matches_Set_Input = {
+  amongus_map_id?: InputMaybe<Scalars['uuid']['input']>;
+  amongus_vanilla_version_id?: InputMaybe<Scalars['uuid']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  end_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  index?: InputMaybe<Scalars['Int']['input']>;
+  is_aborted?: InputMaybe<Scalars['Boolean']['input']>;
+  is_vanilla?: InputMaybe<Scalars['Boolean']['input']>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate stddev on columns */
+export type Amongus_Hidenseek_Matches_Stddev_Fields = {
+  __typename?: 'amongus_hidenseek_matches_stddev_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by stddev() on columns of table "amongus_hidenseek_matches" */
+export type Amongus_Hidenseek_Matches_Stddev_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** aggregate stddev_pop on columns */
+export type Amongus_Hidenseek_Matches_Stddev_Pop_Fields = {
+  __typename?: 'amongus_hidenseek_matches_stddev_pop_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by stddev_pop() on columns of table "amongus_hidenseek_matches" */
+export type Amongus_Hidenseek_Matches_Stddev_Pop_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** aggregate stddev_samp on columns */
+export type Amongus_Hidenseek_Matches_Stddev_Samp_Fields = {
+  __typename?: 'amongus_hidenseek_matches_stddev_samp_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by stddev_samp() on columns of table "amongus_hidenseek_matches" */
+export type Amongus_Hidenseek_Matches_Stddev_Samp_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** Streaming cursor of the table "amongus_hidenseek_matches" */
+export type Amongus_Hidenseek_Matches_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Amongus_Hidenseek_Matches_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Amongus_Hidenseek_Matches_Stream_Cursor_Value_Input = {
+  amongus_map_id?: InputMaybe<Scalars['uuid']['input']>;
+  amongus_vanilla_version_id?: InputMaybe<Scalars['uuid']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  end_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  index?: InputMaybe<Scalars['Int']['input']>;
+  is_aborted?: InputMaybe<Scalars['Boolean']['input']>;
+  is_vanilla?: InputMaybe<Scalars['Boolean']['input']>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate sum on columns */
+export type Amongus_Hidenseek_Matches_Sum_Fields = {
+  __typename?: 'amongus_hidenseek_matches_sum_fields';
+  index?: Maybe<Scalars['Int']['output']>;
+};
+
+/** order by sum() on columns of table "amongus_hidenseek_matches" */
+export type Amongus_Hidenseek_Matches_Sum_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** update columns of table "amongus_hidenseek_matches" */
+export enum Amongus_Hidenseek_Matches_Update_Column {
+  /** column name */
+  AmongusMapId = 'amongus_map_id',
+  /** column name */
+  AmongusVanillaVersionId = 'amongus_vanilla_version_id',
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  EndTime = 'end_time',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Index = 'index',
+  /** column name */
+  IsAborted = 'is_aborted',
+  /** column name */
+  IsVanilla = 'is_vanilla',
+  /** column name */
+  ProgramId = 'program_id',
+  /** column name */
+  StartTime = 'start_time',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Amongus_Hidenseek_Matches_Updates = {
+  /** increments the numeric columns with given value of the filtered values */
+  _inc?: InputMaybe<Amongus_Hidenseek_Matches_Inc_Input>;
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Amongus_Hidenseek_Matches_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Amongus_Hidenseek_Matches_Bool_Exp;
+};
+
+/** aggregate var_pop on columns */
+export type Amongus_Hidenseek_Matches_Var_Pop_Fields = {
+  __typename?: 'amongus_hidenseek_matches_var_pop_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by var_pop() on columns of table "amongus_hidenseek_matches" */
+export type Amongus_Hidenseek_Matches_Var_Pop_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** aggregate var_samp on columns */
+export type Amongus_Hidenseek_Matches_Var_Samp_Fields = {
+  __typename?: 'amongus_hidenseek_matches_var_samp_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by var_samp() on columns of table "amongus_hidenseek_matches" */
+export type Amongus_Hidenseek_Matches_Var_Samp_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** aggregate variance on columns */
+export type Amongus_Hidenseek_Matches_Variance_Fields = {
+  __typename?: 'amongus_hidenseek_matches_variance_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by variance() on columns of table "amongus_hidenseek_matches" */
+export type Amongus_Hidenseek_Matches_Variance_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
 /** columns and relationships of "amongus_maps" */
 export type Amongus_Maps = {
   __typename?: 'amongus_maps';
@@ -344,8 +1341,14 @@ export type Amongus_Maps_Updates = {
 /** columns and relationships of "amongus_match_mods" */
 export type Amongus_Match_Mods = {
   __typename?: 'amongus_match_mods';
+  /** An object relationship */
+  amongus_match: Amongus_Matches;
   amongus_match_id: Scalars['uuid']['output'];
+  /** An object relationship */
+  amongus_mod: Amongus_Mods;
   amongus_mod_id: Scalars['uuid']['output'];
+  /** An object relationship */
+  amongus_mod_version?: Maybe<Amongus_Mod_Versions>;
   amongus_mod_version_id?: Maybe<Scalars['uuid']['output']>;
   created_at: Scalars['timestamptz']['output'];
   id: Scalars['uuid']['output'];
@@ -357,6 +1360,17 @@ export type Amongus_Match_Mods_Aggregate = {
   __typename?: 'amongus_match_mods_aggregate';
   aggregate?: Maybe<Amongus_Match_Mods_Aggregate_Fields>;
   nodes: Array<Amongus_Match_Mods>;
+};
+
+export type Amongus_Match_Mods_Aggregate_Bool_Exp = {
+  count?: InputMaybe<Amongus_Match_Mods_Aggregate_Bool_Exp_Count>;
+};
+
+export type Amongus_Match_Mods_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Amongus_Match_Mods_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Amongus_Match_Mods_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
 };
 
 /** aggregate fields of "amongus_match_mods" */
@@ -374,13 +1388,30 @@ export type Amongus_Match_Mods_Aggregate_FieldsCountArgs = {
   distinct?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
+/** order by aggregate values of table "amongus_match_mods" */
+export type Amongus_Match_Mods_Aggregate_Order_By = {
+  count?: InputMaybe<Order_By>;
+  max?: InputMaybe<Amongus_Match_Mods_Max_Order_By>;
+  min?: InputMaybe<Amongus_Match_Mods_Min_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "amongus_match_mods" */
+export type Amongus_Match_Mods_Arr_Rel_Insert_Input = {
+  data: Array<Amongus_Match_Mods_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Amongus_Match_Mods_On_Conflict>;
+};
+
 /** Boolean expression to filter rows from the table "amongus_match_mods". All fields are combined with a logical 'AND'. */
 export type Amongus_Match_Mods_Bool_Exp = {
   _and?: InputMaybe<Array<Amongus_Match_Mods_Bool_Exp>>;
   _not?: InputMaybe<Amongus_Match_Mods_Bool_Exp>;
   _or?: InputMaybe<Array<Amongus_Match_Mods_Bool_Exp>>;
+  amongus_match?: InputMaybe<Amongus_Matches_Bool_Exp>;
   amongus_match_id?: InputMaybe<Uuid_Comparison_Exp>;
+  amongus_mod?: InputMaybe<Amongus_Mods_Bool_Exp>;
   amongus_mod_id?: InputMaybe<Uuid_Comparison_Exp>;
+  amongus_mod_version?: InputMaybe<Amongus_Mod_Versions_Bool_Exp>;
   amongus_mod_version_id?: InputMaybe<Uuid_Comparison_Exp>;
   created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
@@ -397,8 +1428,11 @@ export enum Amongus_Match_Mods_Constraint {
 
 /** input type for inserting data into table "amongus_match_mods" */
 export type Amongus_Match_Mods_Insert_Input = {
+  amongus_match?: InputMaybe<Amongus_Matches_Obj_Rel_Insert_Input>;
   amongus_match_id?: InputMaybe<Scalars['uuid']['input']>;
+  amongus_mod?: InputMaybe<Amongus_Mods_Obj_Rel_Insert_Input>;
   amongus_mod_id?: InputMaybe<Scalars['uuid']['input']>;
+  amongus_mod_version?: InputMaybe<Amongus_Mod_Versions_Obj_Rel_Insert_Input>;
   amongus_mod_version_id?: InputMaybe<Scalars['uuid']['input']>;
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
@@ -416,6 +1450,16 @@ export type Amongus_Match_Mods_Max_Fields = {
   updated_at?: Maybe<Scalars['timestamptz']['output']>;
 };
 
+/** order by max() on columns of table "amongus_match_mods" */
+export type Amongus_Match_Mods_Max_Order_By = {
+  amongus_match_id?: InputMaybe<Order_By>;
+  amongus_mod_id?: InputMaybe<Order_By>;
+  amongus_mod_version_id?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
 /** aggregate min on columns */
 export type Amongus_Match_Mods_Min_Fields = {
   __typename?: 'amongus_match_mods_min_fields';
@@ -425,6 +1469,16 @@ export type Amongus_Match_Mods_Min_Fields = {
   created_at?: Maybe<Scalars['timestamptz']['output']>;
   id?: Maybe<Scalars['uuid']['output']>;
   updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by min() on columns of table "amongus_match_mods" */
+export type Amongus_Match_Mods_Min_Order_By = {
+  amongus_match_id?: InputMaybe<Order_By>;
+  amongus_mod_id?: InputMaybe<Order_By>;
+  amongus_mod_version_id?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
 };
 
 /** response of any mutation on the table "amongus_match_mods" */
@@ -445,8 +1499,11 @@ export type Amongus_Match_Mods_On_Conflict = {
 
 /** Ordering options when selecting data from "amongus_match_mods". */
 export type Amongus_Match_Mods_Order_By = {
+  amongus_match?: InputMaybe<Amongus_Matches_Order_By>;
   amongus_match_id?: InputMaybe<Order_By>;
+  amongus_mod?: InputMaybe<Amongus_Mods_Order_By>;
   amongus_mod_id?: InputMaybe<Order_By>;
+  amongus_mod_version?: InputMaybe<Amongus_Mod_Versions_Order_By>;
   amongus_mod_version_id?: InputMaybe<Order_By>;
   created_at?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
@@ -1129,6 +2186,10 @@ export type Amongus_Matches = {
   amongus_map?: Maybe<Amongus_Maps>;
   amongus_map_id?: Maybe<Scalars['uuid']['output']>;
   /** An array relationship */
+  amongus_match_mods: Array<Amongus_Match_Mods>;
+  /** An aggregate relationship */
+  amongus_match_mods_aggregate: Amongus_Match_Mods_Aggregate;
+  /** An array relationship */
   amongus_match_players: Array<Amongus_Match_Players>;
   /** An aggregate relationship */
   amongus_match_players_aggregate: Amongus_Match_Players_Aggregate;
@@ -1146,6 +2207,26 @@ export type Amongus_Matches = {
   program_id: Scalars['uuid']['output'];
   start_time: Scalars['timestamptz']['output'];
   updated_at: Scalars['timestamptz']['output'];
+};
+
+
+/** columns and relationships of "amongus_matches" */
+export type Amongus_MatchesAmongus_Match_ModsArgs = {
+  distinct_on?: InputMaybe<Array<Amongus_Match_Mods_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Amongus_Match_Mods_Order_By>>;
+  where?: InputMaybe<Amongus_Match_Mods_Bool_Exp>;
+};
+
+
+/** columns and relationships of "amongus_matches" */
+export type Amongus_MatchesAmongus_Match_Mods_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Amongus_Match_Mods_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Amongus_Match_Mods_Order_By>>;
+  where?: InputMaybe<Amongus_Match_Mods_Bool_Exp>;
 };
 
 
@@ -1265,6 +2346,8 @@ export type Amongus_Matches_Bool_Exp = {
   _or?: InputMaybe<Array<Amongus_Matches_Bool_Exp>>;
   amongus_map?: InputMaybe<Amongus_Maps_Bool_Exp>;
   amongus_map_id?: InputMaybe<Uuid_Comparison_Exp>;
+  amongus_match_mods?: InputMaybe<Amongus_Match_Mods_Bool_Exp>;
+  amongus_match_mods_aggregate?: InputMaybe<Amongus_Match_Mods_Aggregate_Bool_Exp>;
   amongus_match_players?: InputMaybe<Amongus_Match_Players_Bool_Exp>;
   amongus_match_players_aggregate?: InputMaybe<Amongus_Match_Players_Aggregate_Bool_Exp>;
   amongus_vanilla_version?: InputMaybe<Amongus_Vanilla_Versions_Bool_Exp>;
@@ -1298,6 +2381,7 @@ export type Amongus_Matches_Inc_Input = {
 export type Amongus_Matches_Insert_Input = {
   amongus_map?: InputMaybe<Amongus_Maps_Obj_Rel_Insert_Input>;
   amongus_map_id?: InputMaybe<Scalars['uuid']['input']>;
+  amongus_match_mods?: InputMaybe<Amongus_Match_Mods_Arr_Rel_Insert_Input>;
   amongus_match_players?: InputMaybe<Amongus_Match_Players_Arr_Rel_Insert_Input>;
   amongus_vanilla_version?: InputMaybe<Amongus_Vanilla_Versions_Obj_Rel_Insert_Input>;
   amongus_vanilla_version_id?: InputMaybe<Scalars['uuid']['input']>;
@@ -1394,6 +2478,7 @@ export type Amongus_Matches_On_Conflict = {
 export type Amongus_Matches_Order_By = {
   amongus_map?: InputMaybe<Amongus_Maps_Order_By>;
   amongus_map_id?: InputMaybe<Order_By>;
+  amongus_match_mods_aggregate?: InputMaybe<Amongus_Match_Mods_Aggregate_Order_By>;
   amongus_match_players_aggregate?: InputMaybe<Amongus_Match_Players_Aggregate_Order_By>;
   amongus_vanilla_version?: InputMaybe<Amongus_Vanilla_Versions_Order_By>;
   amongus_vanilla_version_id?: InputMaybe<Order_By>;
@@ -8737,6 +9822,18 @@ export type Mariokart8deluxe_Races_Variance_Order_By = {
 /** mutation root */
 export type Mutation_Root = {
   __typename?: 'mutation_root';
+  /** delete data from the table: "amongus_hidenseek_match_mods" */
+  delete_amongus_hidenseek_match_mods?: Maybe<Amongus_Hidenseek_Match_Mods_Mutation_Response>;
+  /** delete single row from the table: "amongus_hidenseek_match_mods" */
+  delete_amongus_hidenseek_match_mods_by_pk?: Maybe<Amongus_Hidenseek_Match_Mods>;
+  /** delete data from the table: "amongus_hidenseek_match_players" */
+  delete_amongus_hidenseek_match_players?: Maybe<Amongus_Hidenseek_Match_Players_Mutation_Response>;
+  /** delete single row from the table: "amongus_hidenseek_match_players" */
+  delete_amongus_hidenseek_match_players_by_pk?: Maybe<Amongus_Hidenseek_Match_Players>;
+  /** delete data from the table: "amongus_hidenseek_matches" */
+  delete_amongus_hidenseek_matches?: Maybe<Amongus_Hidenseek_Matches_Mutation_Response>;
+  /** delete single row from the table: "amongus_hidenseek_matches" */
+  delete_amongus_hidenseek_matches_by_pk?: Maybe<Amongus_Hidenseek_Matches>;
   /** delete data from the table: "amongus_maps" */
   delete_amongus_maps?: Maybe<Amongus_Maps_Mutation_Response>;
   /** delete single row from the table: "amongus_maps" */
@@ -8977,6 +10074,18 @@ export type Mutation_Root = {
   delete_youtube_videos?: Maybe<Youtube_Videos_Mutation_Response>;
   /** delete single row from the table: "youtube_videos" */
   delete_youtube_videos_by_pk?: Maybe<Youtube_Videos>;
+  /** insert data into the table: "amongus_hidenseek_match_mods" */
+  insert_amongus_hidenseek_match_mods?: Maybe<Amongus_Hidenseek_Match_Mods_Mutation_Response>;
+  /** insert a single row into the table: "amongus_hidenseek_match_mods" */
+  insert_amongus_hidenseek_match_mods_one?: Maybe<Amongus_Hidenseek_Match_Mods>;
+  /** insert data into the table: "amongus_hidenseek_match_players" */
+  insert_amongus_hidenseek_match_players?: Maybe<Amongus_Hidenseek_Match_Players_Mutation_Response>;
+  /** insert a single row into the table: "amongus_hidenseek_match_players" */
+  insert_amongus_hidenseek_match_players_one?: Maybe<Amongus_Hidenseek_Match_Players>;
+  /** insert data into the table: "amongus_hidenseek_matches" */
+  insert_amongus_hidenseek_matches?: Maybe<Amongus_Hidenseek_Matches_Mutation_Response>;
+  /** insert a single row into the table: "amongus_hidenseek_matches" */
+  insert_amongus_hidenseek_matches_one?: Maybe<Amongus_Hidenseek_Matches>;
   /** insert data into the table: "amongus_maps" */
   insert_amongus_maps?: Maybe<Amongus_Maps_Mutation_Response>;
   /** insert a single row into the table: "amongus_maps" */
@@ -9217,6 +10326,24 @@ export type Mutation_Root = {
   insert_youtube_videos?: Maybe<Youtube_Videos_Mutation_Response>;
   /** insert a single row into the table: "youtube_videos" */
   insert_youtube_videos_one?: Maybe<Youtube_Videos>;
+  /** update data of the table: "amongus_hidenseek_match_mods" */
+  update_amongus_hidenseek_match_mods?: Maybe<Amongus_Hidenseek_Match_Mods_Mutation_Response>;
+  /** update single row of the table: "amongus_hidenseek_match_mods" */
+  update_amongus_hidenseek_match_mods_by_pk?: Maybe<Amongus_Hidenseek_Match_Mods>;
+  /** update multiples rows of table: "amongus_hidenseek_match_mods" */
+  update_amongus_hidenseek_match_mods_many?: Maybe<Array<Maybe<Amongus_Hidenseek_Match_Mods_Mutation_Response>>>;
+  /** update data of the table: "amongus_hidenseek_match_players" */
+  update_amongus_hidenseek_match_players?: Maybe<Amongus_Hidenseek_Match_Players_Mutation_Response>;
+  /** update single row of the table: "amongus_hidenseek_match_players" */
+  update_amongus_hidenseek_match_players_by_pk?: Maybe<Amongus_Hidenseek_Match_Players>;
+  /** update multiples rows of table: "amongus_hidenseek_match_players" */
+  update_amongus_hidenseek_match_players_many?: Maybe<Array<Maybe<Amongus_Hidenseek_Match_Players_Mutation_Response>>>;
+  /** update data of the table: "amongus_hidenseek_matches" */
+  update_amongus_hidenseek_matches?: Maybe<Amongus_Hidenseek_Matches_Mutation_Response>;
+  /** update single row of the table: "amongus_hidenseek_matches" */
+  update_amongus_hidenseek_matches_by_pk?: Maybe<Amongus_Hidenseek_Matches>;
+  /** update multiples rows of table: "amongus_hidenseek_matches" */
+  update_amongus_hidenseek_matches_many?: Maybe<Array<Maybe<Amongus_Hidenseek_Matches_Mutation_Response>>>;
   /** update data of the table: "amongus_maps" */
   update_amongus_maps?: Maybe<Amongus_Maps_Mutation_Response>;
   /** update single row of the table: "amongus_maps" */
@@ -9577,6 +10704,42 @@ export type Mutation_Root = {
   update_youtube_videos_by_pk?: Maybe<Youtube_Videos>;
   /** update multiples rows of table: "youtube_videos" */
   update_youtube_videos_many?: Maybe<Array<Maybe<Youtube_Videos_Mutation_Response>>>;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Amongus_Hidenseek_Match_ModsArgs = {
+  where: Amongus_Hidenseek_Match_Mods_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Amongus_Hidenseek_Match_Mods_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Amongus_Hidenseek_Match_PlayersArgs = {
+  where: Amongus_Hidenseek_Match_Players_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Amongus_Hidenseek_Match_Players_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Amongus_Hidenseek_MatchesArgs = {
+  where: Amongus_Hidenseek_Matches_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Amongus_Hidenseek_Matches_By_PkArgs = {
+  id: Scalars['uuid']['input'];
 };
 
 
@@ -10297,6 +11460,48 @@ export type Mutation_RootDelete_Youtube_VideosArgs = {
 /** mutation root */
 export type Mutation_RootDelete_Youtube_Videos_By_PkArgs = {
   id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Amongus_Hidenseek_Match_ModsArgs = {
+  objects: Array<Amongus_Hidenseek_Match_Mods_Insert_Input>;
+  on_conflict?: InputMaybe<Amongus_Hidenseek_Match_Mods_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Amongus_Hidenseek_Match_Mods_OneArgs = {
+  object: Amongus_Hidenseek_Match_Mods_Insert_Input;
+  on_conflict?: InputMaybe<Amongus_Hidenseek_Match_Mods_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Amongus_Hidenseek_Match_PlayersArgs = {
+  objects: Array<Amongus_Hidenseek_Match_Players_Insert_Input>;
+  on_conflict?: InputMaybe<Amongus_Hidenseek_Match_Players_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Amongus_Hidenseek_Match_Players_OneArgs = {
+  object: Amongus_Hidenseek_Match_Players_Insert_Input;
+  on_conflict?: InputMaybe<Amongus_Hidenseek_Match_Players_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Amongus_Hidenseek_MatchesArgs = {
+  objects: Array<Amongus_Hidenseek_Matches_Insert_Input>;
+  on_conflict?: InputMaybe<Amongus_Hidenseek_Matches_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Amongus_Hidenseek_Matches_OneArgs = {
+  object: Amongus_Hidenseek_Matches_Insert_Input;
+  on_conflict?: InputMaybe<Amongus_Hidenseek_Matches_On_Conflict>;
 };
 
 
@@ -11137,6 +12342,68 @@ export type Mutation_RootInsert_Youtube_VideosArgs = {
 export type Mutation_RootInsert_Youtube_Videos_OneArgs = {
   object: Youtube_Videos_Insert_Input;
   on_conflict?: InputMaybe<Youtube_Videos_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Amongus_Hidenseek_Match_ModsArgs = {
+  _set?: InputMaybe<Amongus_Hidenseek_Match_Mods_Set_Input>;
+  where: Amongus_Hidenseek_Match_Mods_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Amongus_Hidenseek_Match_Mods_By_PkArgs = {
+  _set?: InputMaybe<Amongus_Hidenseek_Match_Mods_Set_Input>;
+  pk_columns: Amongus_Hidenseek_Match_Mods_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Amongus_Hidenseek_Match_Mods_ManyArgs = {
+  updates: Array<Amongus_Hidenseek_Match_Mods_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Amongus_Hidenseek_Match_PlayersArgs = {
+  _set?: InputMaybe<Amongus_Hidenseek_Match_Players_Set_Input>;
+  where: Amongus_Hidenseek_Match_Players_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Amongus_Hidenseek_Match_Players_By_PkArgs = {
+  _set?: InputMaybe<Amongus_Hidenseek_Match_Players_Set_Input>;
+  pk_columns: Amongus_Hidenseek_Match_Players_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Amongus_Hidenseek_Match_Players_ManyArgs = {
+  updates: Array<Amongus_Hidenseek_Match_Players_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Amongus_Hidenseek_MatchesArgs = {
+  _inc?: InputMaybe<Amongus_Hidenseek_Matches_Inc_Input>;
+  _set?: InputMaybe<Amongus_Hidenseek_Matches_Set_Input>;
+  where: Amongus_Hidenseek_Matches_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Amongus_Hidenseek_Matches_By_PkArgs = {
+  _inc?: InputMaybe<Amongus_Hidenseek_Matches_Inc_Input>;
+  _set?: InputMaybe<Amongus_Hidenseek_Matches_Set_Input>;
+  pk_columns: Amongus_Hidenseek_Matches_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Amongus_Hidenseek_Matches_ManyArgs = {
+  updates: Array<Amongus_Hidenseek_Matches_Updates>;
 };
 
 
@@ -17863,6 +19130,10 @@ export type Program_Twitter_Announcements_Updates = {
 export type Programs = {
   __typename?: 'programs';
   /** An array relationship */
+  amongus_hidenseek_matches: Array<Amongus_Hidenseek_Matches>;
+  /** An aggregate relationship */
+  amongus_hidenseek_matches_aggregate: Amongus_Hidenseek_Matches_Aggregate;
+  /** An array relationship */
   amongus_matches: Array<Amongus_Matches>;
   /** An aggregate relationship */
   amongus_matches_aggregate: Amongus_Matches_Aggregate;
@@ -17923,6 +19194,26 @@ export type Programs = {
   start_time?: Maybe<Scalars['timestamptz']['output']>;
   title: Scalars['String']['output'];
   updated_at: Scalars['timestamptz']['output'];
+};
+
+
+/** columns and relationships of "programs" */
+export type ProgramsAmongus_Hidenseek_MatchesArgs = {
+  distinct_on?: InputMaybe<Array<Amongus_Hidenseek_Matches_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Amongus_Hidenseek_Matches_Order_By>>;
+  where?: InputMaybe<Amongus_Hidenseek_Matches_Bool_Exp>;
+};
+
+
+/** columns and relationships of "programs" */
+export type ProgramsAmongus_Hidenseek_Matches_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Amongus_Hidenseek_Matches_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Amongus_Hidenseek_Matches_Order_By>>;
+  where?: InputMaybe<Amongus_Hidenseek_Matches_Bool_Exp>;
 };
 
 
@@ -18212,6 +19503,8 @@ export type Programs_Bool_Exp = {
   _and?: InputMaybe<Array<Programs_Bool_Exp>>;
   _not?: InputMaybe<Programs_Bool_Exp>;
   _or?: InputMaybe<Array<Programs_Bool_Exp>>;
+  amongus_hidenseek_matches?: InputMaybe<Amongus_Hidenseek_Matches_Bool_Exp>;
+  amongus_hidenseek_matches_aggregate?: InputMaybe<Amongus_Hidenseek_Matches_Aggregate_Bool_Exp>;
   amongus_matches?: InputMaybe<Amongus_Matches_Bool_Exp>;
   amongus_matches_aggregate?: InputMaybe<Amongus_Matches_Aggregate_Bool_Exp>;
   amongusvr_matches?: InputMaybe<Amongusvr_Matches_Bool_Exp>;
@@ -18256,6 +19549,7 @@ export enum Programs_Constraint {
 
 /** input type for inserting data into table "programs" */
 export type Programs_Insert_Input = {
+  amongus_hidenseek_matches?: InputMaybe<Amongus_Hidenseek_Matches_Arr_Rel_Insert_Input>;
   amongus_matches?: InputMaybe<Amongus_Matches_Arr_Rel_Insert_Input>;
   amongusvr_matches?: InputMaybe<Amongusvr_Matches_Arr_Rel_Insert_Input>;
   created_at?: InputMaybe<Scalars['timestamptz']['input']>;
@@ -18328,6 +19622,7 @@ export type Programs_On_Conflict = {
 
 /** Ordering options when selecting data from "programs". */
 export type Programs_Order_By = {
+  amongus_hidenseek_matches_aggregate?: InputMaybe<Amongus_Hidenseek_Matches_Aggregate_Order_By>;
   amongus_matches_aggregate?: InputMaybe<Amongus_Matches_Aggregate_Order_By>;
   amongusvr_matches_aggregate?: InputMaybe<Amongusvr_Matches_Aggregate_Order_By>;
   created_at?: InputMaybe<Order_By>;
@@ -18851,15 +20146,33 @@ export type Projects_Updates = {
 
 export type Query_Root = {
   __typename?: 'query_root';
+  /** An array relationship */
+  amongus_hidenseek_match_mods: Array<Amongus_Hidenseek_Match_Mods>;
+  /** An aggregate relationship */
+  amongus_hidenseek_match_mods_aggregate: Amongus_Hidenseek_Match_Mods_Aggregate;
+  /** fetch data from the table: "amongus_hidenseek_match_mods" using primary key columns */
+  amongus_hidenseek_match_mods_by_pk?: Maybe<Amongus_Hidenseek_Match_Mods>;
+  /** An array relationship */
+  amongus_hidenseek_match_players: Array<Amongus_Hidenseek_Match_Players>;
+  /** An aggregate relationship */
+  amongus_hidenseek_match_players_aggregate: Amongus_Hidenseek_Match_Players_Aggregate;
+  /** fetch data from the table: "amongus_hidenseek_match_players" using primary key columns */
+  amongus_hidenseek_match_players_by_pk?: Maybe<Amongus_Hidenseek_Match_Players>;
+  /** An array relationship */
+  amongus_hidenseek_matches: Array<Amongus_Hidenseek_Matches>;
+  /** An aggregate relationship */
+  amongus_hidenseek_matches_aggregate: Amongus_Hidenseek_Matches_Aggregate;
+  /** fetch data from the table: "amongus_hidenseek_matches" using primary key columns */
+  amongus_hidenseek_matches_by_pk?: Maybe<Amongus_Hidenseek_Matches>;
   /** fetch data from the table: "amongus_maps" */
   amongus_maps: Array<Amongus_Maps>;
   /** fetch aggregated fields from the table: "amongus_maps" */
   amongus_maps_aggregate: Amongus_Maps_Aggregate;
   /** fetch data from the table: "amongus_maps" using primary key columns */
   amongus_maps_by_pk?: Maybe<Amongus_Maps>;
-  /** fetch data from the table: "amongus_match_mods" */
+  /** An array relationship */
   amongus_match_mods: Array<Amongus_Match_Mods>;
-  /** fetch aggregated fields from the table: "amongus_match_mods" */
+  /** An aggregate relationship */
   amongus_match_mods_aggregate: Amongus_Match_Mods_Aggregate;
   /** fetch data from the table: "amongus_match_mods" using primary key columns */
   amongus_match_mods_by_pk?: Maybe<Amongus_Match_Mods>;
@@ -19211,6 +20524,75 @@ export type Query_Root = {
   youtube_videos_aggregate: Youtube_Videos_Aggregate;
   /** fetch data from the table: "youtube_videos" using primary key columns */
   youtube_videos_by_pk?: Maybe<Youtube_Videos>;
+};
+
+
+export type Query_RootAmongus_Hidenseek_Match_ModsArgs = {
+  distinct_on?: InputMaybe<Array<Amongus_Hidenseek_Match_Mods_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Amongus_Hidenseek_Match_Mods_Order_By>>;
+  where?: InputMaybe<Amongus_Hidenseek_Match_Mods_Bool_Exp>;
+};
+
+
+export type Query_RootAmongus_Hidenseek_Match_Mods_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Amongus_Hidenseek_Match_Mods_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Amongus_Hidenseek_Match_Mods_Order_By>>;
+  where?: InputMaybe<Amongus_Hidenseek_Match_Mods_Bool_Exp>;
+};
+
+
+export type Query_RootAmongus_Hidenseek_Match_Mods_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Query_RootAmongus_Hidenseek_Match_PlayersArgs = {
+  distinct_on?: InputMaybe<Array<Amongus_Hidenseek_Match_Players_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Amongus_Hidenseek_Match_Players_Order_By>>;
+  where?: InputMaybe<Amongus_Hidenseek_Match_Players_Bool_Exp>;
+};
+
+
+export type Query_RootAmongus_Hidenseek_Match_Players_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Amongus_Hidenseek_Match_Players_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Amongus_Hidenseek_Match_Players_Order_By>>;
+  where?: InputMaybe<Amongus_Hidenseek_Match_Players_Bool_Exp>;
+};
+
+
+export type Query_RootAmongus_Hidenseek_Match_Players_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Query_RootAmongus_Hidenseek_MatchesArgs = {
+  distinct_on?: InputMaybe<Array<Amongus_Hidenseek_Matches_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Amongus_Hidenseek_Matches_Order_By>>;
+  where?: InputMaybe<Amongus_Hidenseek_Matches_Bool_Exp>;
+};
+
+
+export type Query_RootAmongus_Hidenseek_Matches_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Amongus_Hidenseek_Matches_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Amongus_Hidenseek_Matches_Order_By>>;
+  where?: InputMaybe<Amongus_Hidenseek_Matches_Bool_Exp>;
+};
+
+
+export type Query_RootAmongus_Hidenseek_Matches_By_PkArgs = {
+  id: Scalars['uuid']['input'];
 };
 
 
@@ -20595,6 +21977,30 @@ export type Query_RootYoutube_Videos_By_PkArgs = {
 
 export type Subscription_Root = {
   __typename?: 'subscription_root';
+  /** An array relationship */
+  amongus_hidenseek_match_mods: Array<Amongus_Hidenseek_Match_Mods>;
+  /** An aggregate relationship */
+  amongus_hidenseek_match_mods_aggregate: Amongus_Hidenseek_Match_Mods_Aggregate;
+  /** fetch data from the table: "amongus_hidenseek_match_mods" using primary key columns */
+  amongus_hidenseek_match_mods_by_pk?: Maybe<Amongus_Hidenseek_Match_Mods>;
+  /** fetch data from the table in a streaming manner: "amongus_hidenseek_match_mods" */
+  amongus_hidenseek_match_mods_stream: Array<Amongus_Hidenseek_Match_Mods>;
+  /** An array relationship */
+  amongus_hidenseek_match_players: Array<Amongus_Hidenseek_Match_Players>;
+  /** An aggregate relationship */
+  amongus_hidenseek_match_players_aggregate: Amongus_Hidenseek_Match_Players_Aggregate;
+  /** fetch data from the table: "amongus_hidenseek_match_players" using primary key columns */
+  amongus_hidenseek_match_players_by_pk?: Maybe<Amongus_Hidenseek_Match_Players>;
+  /** fetch data from the table in a streaming manner: "amongus_hidenseek_match_players" */
+  amongus_hidenseek_match_players_stream: Array<Amongus_Hidenseek_Match_Players>;
+  /** An array relationship */
+  amongus_hidenseek_matches: Array<Amongus_Hidenseek_Matches>;
+  /** An aggregate relationship */
+  amongus_hidenseek_matches_aggregate: Amongus_Hidenseek_Matches_Aggregate;
+  /** fetch data from the table: "amongus_hidenseek_matches" using primary key columns */
+  amongus_hidenseek_matches_by_pk?: Maybe<Amongus_Hidenseek_Matches>;
+  /** fetch data from the table in a streaming manner: "amongus_hidenseek_matches" */
+  amongus_hidenseek_matches_stream: Array<Amongus_Hidenseek_Matches>;
   /** fetch data from the table: "amongus_maps" */
   amongus_maps: Array<Amongus_Maps>;
   /** fetch aggregated fields from the table: "amongus_maps" */
@@ -20603,9 +22009,9 @@ export type Subscription_Root = {
   amongus_maps_by_pk?: Maybe<Amongus_Maps>;
   /** fetch data from the table in a streaming manner: "amongus_maps" */
   amongus_maps_stream: Array<Amongus_Maps>;
-  /** fetch data from the table: "amongus_match_mods" */
+  /** An array relationship */
   amongus_match_mods: Array<Amongus_Match_Mods>;
-  /** fetch aggregated fields from the table: "amongus_match_mods" */
+  /** An aggregate relationship */
   amongus_match_mods_aggregate: Amongus_Match_Mods_Aggregate;
   /** fetch data from the table: "amongus_match_mods" using primary key columns */
   amongus_match_mods_by_pk?: Maybe<Amongus_Match_Mods>;
@@ -21075,6 +22481,96 @@ export type Subscription_Root = {
   youtube_videos_by_pk?: Maybe<Youtube_Videos>;
   /** fetch data from the table in a streaming manner: "youtube_videos" */
   youtube_videos_stream: Array<Youtube_Videos>;
+};
+
+
+export type Subscription_RootAmongus_Hidenseek_Match_ModsArgs = {
+  distinct_on?: InputMaybe<Array<Amongus_Hidenseek_Match_Mods_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Amongus_Hidenseek_Match_Mods_Order_By>>;
+  where?: InputMaybe<Amongus_Hidenseek_Match_Mods_Bool_Exp>;
+};
+
+
+export type Subscription_RootAmongus_Hidenseek_Match_Mods_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Amongus_Hidenseek_Match_Mods_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Amongus_Hidenseek_Match_Mods_Order_By>>;
+  where?: InputMaybe<Amongus_Hidenseek_Match_Mods_Bool_Exp>;
+};
+
+
+export type Subscription_RootAmongus_Hidenseek_Match_Mods_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootAmongus_Hidenseek_Match_Mods_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Amongus_Hidenseek_Match_Mods_Stream_Cursor_Input>>;
+  where?: InputMaybe<Amongus_Hidenseek_Match_Mods_Bool_Exp>;
+};
+
+
+export type Subscription_RootAmongus_Hidenseek_Match_PlayersArgs = {
+  distinct_on?: InputMaybe<Array<Amongus_Hidenseek_Match_Players_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Amongus_Hidenseek_Match_Players_Order_By>>;
+  where?: InputMaybe<Amongus_Hidenseek_Match_Players_Bool_Exp>;
+};
+
+
+export type Subscription_RootAmongus_Hidenseek_Match_Players_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Amongus_Hidenseek_Match_Players_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Amongus_Hidenseek_Match_Players_Order_By>>;
+  where?: InputMaybe<Amongus_Hidenseek_Match_Players_Bool_Exp>;
+};
+
+
+export type Subscription_RootAmongus_Hidenseek_Match_Players_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootAmongus_Hidenseek_Match_Players_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Amongus_Hidenseek_Match_Players_Stream_Cursor_Input>>;
+  where?: InputMaybe<Amongus_Hidenseek_Match_Players_Bool_Exp>;
+};
+
+
+export type Subscription_RootAmongus_Hidenseek_MatchesArgs = {
+  distinct_on?: InputMaybe<Array<Amongus_Hidenseek_Matches_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Amongus_Hidenseek_Matches_Order_By>>;
+  where?: InputMaybe<Amongus_Hidenseek_Matches_Bool_Exp>;
+};
+
+
+export type Subscription_RootAmongus_Hidenseek_Matches_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Amongus_Hidenseek_Matches_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Amongus_Hidenseek_Matches_Order_By>>;
+  where?: InputMaybe<Amongus_Hidenseek_Matches_Bool_Exp>;
+};
+
+
+export type Subscription_RootAmongus_Hidenseek_Matches_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootAmongus_Hidenseek_Matches_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Amongus_Hidenseek_Matches_Stream_Cursor_Input>>;
+  where?: InputMaybe<Amongus_Hidenseek_Matches_Bool_Exp>;
 };
 
 
@@ -24443,6 +25939,18 @@ export type Youtube_Videos_Updates = {
   where: Youtube_Videos_Bool_Exp;
 };
 
+export type GetAmongusHidenseekMatchPageQueryVariables = Exact<{
+  amongusHidenseekMatchId: Scalars['uuid']['input'];
+}>;
+
+
+export type GetAmongusHidenseekMatchPageQuery = { __typename?: 'query_root', amongusHidenseekMatch?: { __typename?: 'amongus_hidenseek_matches', id: any, startTime: any, endTime?: any | null, amongusHidenseekMatchPlayers: Array<{ __typename?: 'amongus_hidenseek_match_players', id: any, nickname: string, person?: { __typename?: 'persons', id: any } | null }>, program: { __typename?: 'programs', id: any, title: string, startTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, programLiveArchives: Array<{ __typename?: 'program_live_archives', id: any, startTime?: any | null, person: { __typename?: 'persons', id: any, name: string }, youtubeLive?: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null, youtubeVideo?: { __typename?: 'youtube_videos', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null }> } } | null };
+
+export type GetAmongusHidenseekMatchPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetAmongusHidenseekMatchPageStaticParamQuery = { __typename?: 'query_root', amongusHidenseekMatches: Array<{ __typename?: 'amongus_hidenseek_matches', id: any }> };
+
 export type GetAmongusMatchPageQueryVariables = Exact<{
   amongusMatchId: Scalars['uuid']['input'];
 }>;
@@ -24557,6 +26065,125 @@ export type GetProjectPageStaticParamQueryVariables = Exact<{ [key: string]: nev
 export type GetProjectPageStaticParamQuery = { __typename?: 'query_root', projects: Array<{ __typename?: 'projects', id: any }> };
 
 
+export const GetAmongusHidenseekMatchPageDocument = gql`
+    query GetAmongusHidenseekMatchPage($amongusHidenseekMatchId: uuid!) {
+  amongusHidenseekMatch: amongus_hidenseek_matches_by_pk(
+    id: $amongusHidenseekMatchId
+  ) {
+    id
+    startTime: start_time
+    endTime: end_time
+    amongusHidenseekMatchPlayers: amongus_hidenseek_match_players(
+      order_by: {nickname: asc}
+    ) {
+      id
+      nickname
+      person {
+        id
+      }
+    }
+    program {
+      id
+      title
+      startTime: start_time
+      programProjects: program_projects(order_by: {project: {start_time: asc}}) {
+        project {
+          id
+          name
+        }
+      }
+      programLiveArchives: program_live_archives(order_by: {person: {name: asc}}) {
+        id
+        startTime: start_time
+        person {
+          id
+          name
+        }
+        youtubeLive: youtube_live {
+          remoteYoutubeVideoId: remote_youtube_video_id
+          title
+          youtubeChannel: youtube_channel {
+            id
+            remoteYoutubeChannelId: remote_youtube_channel_id
+            name
+          }
+        }
+        youtubeVideo: youtube_video {
+          remoteYoutubeVideoId: remote_youtube_video_id
+          title
+          youtubeChannel: youtube_channel {
+            id
+            remoteYoutubeChannelId: remote_youtube_channel_id
+            name
+          }
+        }
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetAmongusHidenseekMatchPageQuery__
+ *
+ * To run a query within a React component, call `useGetAmongusHidenseekMatchPageQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetAmongusHidenseekMatchPageQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetAmongusHidenseekMatchPageQuery({
+ *   variables: {
+ *      amongusHidenseekMatchId: // value for 'amongusHidenseekMatchId'
+ *   },
+ * });
+ */
+export function useGetAmongusHidenseekMatchPageQuery(baseOptions: Apollo.QueryHookOptions<GetAmongusHidenseekMatchPageQuery, GetAmongusHidenseekMatchPageQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetAmongusHidenseekMatchPageQuery, GetAmongusHidenseekMatchPageQueryVariables>(GetAmongusHidenseekMatchPageDocument, options);
+      }
+export function useGetAmongusHidenseekMatchPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetAmongusHidenseekMatchPageQuery, GetAmongusHidenseekMatchPageQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetAmongusHidenseekMatchPageQuery, GetAmongusHidenseekMatchPageQueryVariables>(GetAmongusHidenseekMatchPageDocument, options);
+        }
+export type GetAmongusHidenseekMatchPageQueryHookResult = ReturnType<typeof useGetAmongusHidenseekMatchPageQuery>;
+export type GetAmongusHidenseekMatchPageLazyQueryHookResult = ReturnType<typeof useGetAmongusHidenseekMatchPageLazyQuery>;
+export type GetAmongusHidenseekMatchPageQueryResult = Apollo.QueryResult<GetAmongusHidenseekMatchPageQuery, GetAmongusHidenseekMatchPageQueryVariables>;
+export const GetAmongusHidenseekMatchPageStaticParamDocument = gql`
+    query GetAmongusHidenseekMatchPageStaticParam {
+  amongusHidenseekMatches: amongus_hidenseek_matches {
+    id
+  }
+}
+    `;
+
+/**
+ * __useGetAmongusHidenseekMatchPageStaticParamQuery__
+ *
+ * To run a query within a React component, call `useGetAmongusHidenseekMatchPageStaticParamQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetAmongusHidenseekMatchPageStaticParamQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetAmongusHidenseekMatchPageStaticParamQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetAmongusHidenseekMatchPageStaticParamQuery(baseOptions?: Apollo.QueryHookOptions<GetAmongusHidenseekMatchPageStaticParamQuery, GetAmongusHidenseekMatchPageStaticParamQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetAmongusHidenseekMatchPageStaticParamQuery, GetAmongusHidenseekMatchPageStaticParamQueryVariables>(GetAmongusHidenseekMatchPageStaticParamDocument, options);
+      }
+export function useGetAmongusHidenseekMatchPageStaticParamLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetAmongusHidenseekMatchPageStaticParamQuery, GetAmongusHidenseekMatchPageStaticParamQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetAmongusHidenseekMatchPageStaticParamQuery, GetAmongusHidenseekMatchPageStaticParamQueryVariables>(GetAmongusHidenseekMatchPageStaticParamDocument, options);
+        }
+export type GetAmongusHidenseekMatchPageStaticParamQueryHookResult = ReturnType<typeof useGetAmongusHidenseekMatchPageStaticParamQuery>;
+export type GetAmongusHidenseekMatchPageStaticParamLazyQueryHookResult = ReturnType<typeof useGetAmongusHidenseekMatchPageStaticParamLazyQuery>;
+export type GetAmongusHidenseekMatchPageStaticParamQueryResult = Apollo.QueryResult<GetAmongusHidenseekMatchPageStaticParamQuery, GetAmongusHidenseekMatchPageStaticParamQueryVariables>;
 export const GetAmongusMatchPageDocument = gql`
     query GetAmongusMatchPage($amongusMatchId: uuid!) {
   amongusMatch: amongus_matches_by_pk(id: $amongusMatchId) {
