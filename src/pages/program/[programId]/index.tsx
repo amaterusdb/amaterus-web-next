@@ -702,6 +702,17 @@ export default function ProgramPage({ programId }: { programId: string }) {
                         ) : (
                           ''
                         )}
+                        {programLiveArchive.niconicoLive != null ? (
+                          <NextLink
+                            href={`https://live.nicovideo.jp//watch/${programLiveArchive.niconicoLive.remoteNiconicoContentId}`}
+                            passHref
+                            legacyBehavior
+                          >
+                            <MuiLink>{programLiveArchive.niconicoLive.title}</MuiLink>
+                          </NextLink>
+                        ) : (
+                          ''
+                        )}
                       </TableCell>
                       <TableCell>
                         {programLiveArchive.person != null ? (
