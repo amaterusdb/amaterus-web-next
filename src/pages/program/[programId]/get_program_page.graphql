@@ -128,6 +128,16 @@ query GetProgramPage(
       endTime: end_time
     }
 
+    amongusHidenseekMatches: amongus_hidenseek_matches(
+      order_by: {
+        start_time: asc
+      }
+    ) {
+      id
+      startTime: start_time
+      endTime: end_time
+    }
+
     amongusvrMatches: amongusvr_matches(
       order_by: {
         start_time: asc
