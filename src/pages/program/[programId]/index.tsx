@@ -240,6 +240,7 @@ export default function ProgramPage({ programId }: { programId: string }) {
                     <TableCell>番号</TableCell>
                     <TableCell>開始日時</TableCell>
                     <TableCell>終了日時</TableCell>
+                    <TableCell>正常終了</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -271,6 +272,11 @@ export default function ProgramPage({ programId }: { programId: string }) {
                           ''
                         )}
                       </TableCell>
+                      <TableCell>
+                        {amongusMatch.isAborted === null ? '' : (
+                          amongusMatch.isAborted ? '×' : '〇'
+                        )}
+                      </TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
@@ -295,6 +301,7 @@ export default function ProgramPage({ programId }: { programId: string }) {
                     <TableCell>番号</TableCell>
                     <TableCell>開始日時</TableCell>
                     <TableCell>終了日時</TableCell>
+                    <TableCell>正常終了</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -329,6 +336,11 @@ export default function ProgramPage({ programId }: { programId: string }) {
                           </>
                         ) : (
                           ''
+                        )}
+                      </TableCell>
+                      <TableCell>
+                        {amongusHidenseekMatch.isAborted === null ? '' : (
+                          amongusHidenseekMatch.isAborted ? '×' : '〇'
                         )}
                       </TableCell>
                     </TableRow>
