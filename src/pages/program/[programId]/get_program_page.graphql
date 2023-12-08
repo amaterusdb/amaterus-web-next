@@ -114,6 +114,7 @@ query GetProgramPage(
       id
       startTime: start_time
       endTime: end_time
+      isAborted: is_aborted
     }
 
     amongusHidenseekMatches: amongus_hidenseek_matches(
@@ -124,6 +125,7 @@ query GetProgramPage(
       id
       startTime: start_time
       endTime: end_time
+      isAborted: is_aborted
     }
 
     amongusvrMatches: amongusvr_matches(
