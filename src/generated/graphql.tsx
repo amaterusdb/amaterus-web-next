@@ -27128,7 +27128,7 @@ export const GetProgramPageDocument = gql`
         remoteTweetId: remote_tweet_id
       }
     }
-    programPersons: program_persons(order_by: {person: {name: asc}}) {
+    programPersons: program_persons(order_by: {person: {name: asc}, is_absent: asc}) {
       id
       isAbsent: is_absent
       person {
