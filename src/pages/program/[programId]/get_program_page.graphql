@@ -35,20 +35,6 @@ query GetProgramPage(
     }
 
     programPersons: program_persons(
-      where: {
-        _or: [
-          {
-            is_absent: {
-              _is_null: true
-            }
-          }
-          {
-            is_absent: {
-              _eq: false
-            }
-          }
-        ]
-      }
       order_by: {
         person: {
           name: asc
@@ -56,6 +42,7 @@ query GetProgramPage(
       }
     ) {
       id
+      isAbsent: is_absent
 
       person {
         id
