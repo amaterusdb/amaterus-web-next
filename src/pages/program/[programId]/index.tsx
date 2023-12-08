@@ -193,6 +193,7 @@ export default function ProgramPage({ programId }: { programId: string }) {
                 <TableHead>
                   <TableRow>
                     <TableCell>名前</TableCell>
+                    <TableCell>出欠</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
@@ -209,6 +210,11 @@ export default function ProgramPage({ programId }: { programId: string }) {
                         >
                           <MuiLink>{programPerson.person.name}</MuiLink>
                         </NextLink>
+                      </TableCell>
+                      <TableCell>
+                        {programPerson.isAbsent === null ? '' : (
+                          programPerson.isAbsent ? '×' : '〇'
+                        )}
                       </TableCell>
                     </TableRow>
                   ))}
