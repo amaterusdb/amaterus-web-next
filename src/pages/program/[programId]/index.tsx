@@ -193,7 +193,7 @@ export default function ProgramPage({ programId }: { programId: string }) {
                 <TableHead>
                   <TableRow>
                     <TableCell>名前</TableCell>
-                    <TableCell>出欠</TableCell>
+                    <TableCell>出席</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
