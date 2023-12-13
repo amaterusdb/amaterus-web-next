@@ -229,7 +229,7 @@ export default function PersonPage({ personId }: { personId: string }) {
               <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
                 <TableHead>
                   <TableRow>
-                    <TableCell>アカウント</TableCell>
+                    <TableCell>コミュニティ</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
