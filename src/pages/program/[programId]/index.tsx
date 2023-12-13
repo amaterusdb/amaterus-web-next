@@ -212,9 +212,7 @@ export default function ProgramPage({ programId }: { programId: string }) {
                         </NextLink>
                       </TableCell>
                       <TableCell>
-                        {programPerson.isAbsent === null ? '' : (
-                          programPerson.isAbsent ? '×' : '〇'
-                        )}
+                        {programPerson.isAbsent === null ? '' : programPerson.isAbsent ? '×' : '〇'}
                       </TableCell>
                     </TableRow>
                   ))}
@@ -273,9 +271,7 @@ export default function ProgramPage({ programId }: { programId: string }) {
                         )}
                       </TableCell>
                       <TableCell>
-                        {amongusMatch.isAborted === null ? '' : (
-                          amongusMatch.isAborted ? '×' : '〇'
-                        )}
+                        {amongusMatch.isAborted === null ? '' : amongusMatch.isAborted ? '×' : '〇'}
                       </TableCell>
                     </TableRow>
                   ))}
@@ -339,9 +335,11 @@ export default function ProgramPage({ programId }: { programId: string }) {
                         )}
                       </TableCell>
                       <TableCell>
-                        {amongusHidenseekMatch.isAborted === null ? '' : (
-                          amongusHidenseekMatch.isAborted ? '×' : '〇'
-                        )}
+                        {amongusHidenseekMatch.isAborted === null
+                          ? ''
+                          : amongusHidenseekMatch.isAborted
+                          ? '×'
+                          : '〇'}
                       </TableCell>
                     </TableRow>
                   ))}
