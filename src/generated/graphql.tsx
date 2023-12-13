@@ -9994,6 +9994,10 @@ export type Mutation_Root = {
   delete_person_niconico_plus_channels?: Maybe<Person_Niconico_Plus_Channels_Mutation_Response>;
   /** delete single row from the table: "person_niconico_plus_channels" */
   delete_person_niconico_plus_channels_by_pk?: Maybe<Person_Niconico_Plus_Channels>;
+  /** delete data from the table: "person_pixiv_accounts" */
+  delete_person_pixiv_accounts?: Maybe<Person_Pixiv_Accounts_Mutation_Response>;
+  /** delete single row from the table: "person_pixiv_accounts" */
+  delete_person_pixiv_accounts_by_pk?: Maybe<Person_Pixiv_Accounts>;
   /** delete data from the table: "person_twitter_accounts" */
   delete_person_twitter_accounts?: Maybe<Person_Twitter_Accounts_Mutation_Response>;
   /** delete single row from the table: "person_twitter_accounts" */
@@ -10006,6 +10010,10 @@ export type Mutation_Root = {
   delete_persons?: Maybe<Persons_Mutation_Response>;
   /** delete single row from the table: "persons" */
   delete_persons_by_pk?: Maybe<Persons>;
+  /** delete data from the table: "pixiv_accounts" */
+  delete_pixiv_accounts?: Maybe<Pixiv_Accounts_Mutation_Response>;
+  /** delete single row from the table: "pixiv_accounts" */
+  delete_pixiv_accounts_by_pk?: Maybe<Pixiv_Accounts>;
   /** delete data from the table: "program_amongus_maps" */
   delete_program_amongus_maps?: Maybe<Program_Amongus_Maps_Mutation_Response>;
   /** delete single row from the table: "program_amongus_maps" */
@@ -10246,6 +10254,10 @@ export type Mutation_Root = {
   insert_person_niconico_plus_channels?: Maybe<Person_Niconico_Plus_Channels_Mutation_Response>;
   /** insert a single row into the table: "person_niconico_plus_channels" */
   insert_person_niconico_plus_channels_one?: Maybe<Person_Niconico_Plus_Channels>;
+  /** insert data into the table: "person_pixiv_accounts" */
+  insert_person_pixiv_accounts?: Maybe<Person_Pixiv_Accounts_Mutation_Response>;
+  /** insert a single row into the table: "person_pixiv_accounts" */
+  insert_person_pixiv_accounts_one?: Maybe<Person_Pixiv_Accounts>;
   /** insert data into the table: "person_twitter_accounts" */
   insert_person_twitter_accounts?: Maybe<Person_Twitter_Accounts_Mutation_Response>;
   /** insert a single row into the table: "person_twitter_accounts" */
@@ -10258,6 +10270,10 @@ export type Mutation_Root = {
   insert_persons?: Maybe<Persons_Mutation_Response>;
   /** insert a single row into the table: "persons" */
   insert_persons_one?: Maybe<Persons>;
+  /** insert data into the table: "pixiv_accounts" */
+  insert_pixiv_accounts?: Maybe<Pixiv_Accounts_Mutation_Response>;
+  /** insert a single row into the table: "pixiv_accounts" */
+  insert_pixiv_accounts_one?: Maybe<Pixiv_Accounts>;
   /** insert data into the table: "program_amongus_maps" */
   insert_program_amongus_maps?: Maybe<Program_Amongus_Maps_Mutation_Response>;
   /** insert a single row into the table: "program_amongus_maps" */
@@ -10584,6 +10600,12 @@ export type Mutation_Root = {
   update_person_niconico_plus_channels_by_pk?: Maybe<Person_Niconico_Plus_Channels>;
   /** update multiples rows of table: "person_niconico_plus_channels" */
   update_person_niconico_plus_channels_many?: Maybe<Array<Maybe<Person_Niconico_Plus_Channels_Mutation_Response>>>;
+  /** update data of the table: "person_pixiv_accounts" */
+  update_person_pixiv_accounts?: Maybe<Person_Pixiv_Accounts_Mutation_Response>;
+  /** update single row of the table: "person_pixiv_accounts" */
+  update_person_pixiv_accounts_by_pk?: Maybe<Person_Pixiv_Accounts>;
+  /** update multiples rows of table: "person_pixiv_accounts" */
+  update_person_pixiv_accounts_many?: Maybe<Array<Maybe<Person_Pixiv_Accounts_Mutation_Response>>>;
   /** update data of the table: "person_twitter_accounts" */
   update_person_twitter_accounts?: Maybe<Person_Twitter_Accounts_Mutation_Response>;
   /** update single row of the table: "person_twitter_accounts" */
@@ -10602,6 +10624,12 @@ export type Mutation_Root = {
   update_persons_by_pk?: Maybe<Persons>;
   /** update multiples rows of table: "persons" */
   update_persons_many?: Maybe<Array<Maybe<Persons_Mutation_Response>>>;
+  /** update data of the table: "pixiv_accounts" */
+  update_pixiv_accounts?: Maybe<Pixiv_Accounts_Mutation_Response>;
+  /** update single row of the table: "pixiv_accounts" */
+  update_pixiv_accounts_by_pk?: Maybe<Pixiv_Accounts>;
+  /** update multiples rows of table: "pixiv_accounts" */
+  update_pixiv_accounts_many?: Maybe<Array<Maybe<Pixiv_Accounts_Mutation_Response>>>;
   /** update data of the table: "program_amongus_maps" */
   update_program_amongus_maps?: Maybe<Program_Amongus_Maps_Mutation_Response>;
   /** update single row of the table: "program_amongus_maps" */
@@ -11224,6 +11252,18 @@ export type Mutation_RootDelete_Person_Niconico_Plus_Channels_By_PkArgs = {
 
 
 /** mutation root */
+export type Mutation_RootDelete_Person_Pixiv_AccountsArgs = {
+  where: Person_Pixiv_Accounts_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Person_Pixiv_Accounts_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
 export type Mutation_RootDelete_Person_Twitter_AccountsArgs = {
   where: Person_Twitter_Accounts_Bool_Exp;
 };
@@ -11255,6 +11295,18 @@ export type Mutation_RootDelete_PersonsArgs = {
 
 /** mutation root */
 export type Mutation_RootDelete_Persons_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Pixiv_AccountsArgs = {
+  where: Pixiv_Accounts_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Pixiv_Accounts_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
@@ -12066,6 +12118,20 @@ export type Mutation_RootInsert_Person_Niconico_Plus_Channels_OneArgs = {
 
 
 /** mutation root */
+export type Mutation_RootInsert_Person_Pixiv_AccountsArgs = {
+  objects: Array<Person_Pixiv_Accounts_Insert_Input>;
+  on_conflict?: InputMaybe<Person_Pixiv_Accounts_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Person_Pixiv_Accounts_OneArgs = {
+  object: Person_Pixiv_Accounts_Insert_Input;
+  on_conflict?: InputMaybe<Person_Pixiv_Accounts_On_Conflict>;
+};
+
+
+/** mutation root */
 export type Mutation_RootInsert_Person_Twitter_AccountsArgs = {
   objects: Array<Person_Twitter_Accounts_Insert_Input>;
   on_conflict?: InputMaybe<Person_Twitter_Accounts_On_Conflict>;
@@ -12104,6 +12170,20 @@ export type Mutation_RootInsert_PersonsArgs = {
 export type Mutation_RootInsert_Persons_OneArgs = {
   object: Persons_Insert_Input;
   on_conflict?: InputMaybe<Persons_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Pixiv_AccountsArgs = {
+  objects: Array<Pixiv_Accounts_Insert_Input>;
+  on_conflict?: InputMaybe<Pixiv_Accounts_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Pixiv_Accounts_OneArgs = {
+  object: Pixiv_Accounts_Insert_Input;
+  on_conflict?: InputMaybe<Pixiv_Accounts_On_Conflict>;
 };
 
 
@@ -13234,6 +13314,26 @@ export type Mutation_RootUpdate_Person_Niconico_Plus_Channels_ManyArgs = {
 
 
 /** mutation root */
+export type Mutation_RootUpdate_Person_Pixiv_AccountsArgs = {
+  _set?: InputMaybe<Person_Pixiv_Accounts_Set_Input>;
+  where: Person_Pixiv_Accounts_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Person_Pixiv_Accounts_By_PkArgs = {
+  _set?: InputMaybe<Person_Pixiv_Accounts_Set_Input>;
+  pk_columns: Person_Pixiv_Accounts_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Person_Pixiv_Accounts_ManyArgs = {
+  updates: Array<Person_Pixiv_Accounts_Updates>;
+};
+
+
+/** mutation root */
 export type Mutation_RootUpdate_Person_Twitter_AccountsArgs = {
   _set?: InputMaybe<Person_Twitter_Accounts_Set_Input>;
   where: Person_Twitter_Accounts_Bool_Exp;
@@ -13290,6 +13390,26 @@ export type Mutation_RootUpdate_Persons_By_PkArgs = {
 /** mutation root */
 export type Mutation_RootUpdate_Persons_ManyArgs = {
   updates: Array<Persons_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Pixiv_AccountsArgs = {
+  _set?: InputMaybe<Pixiv_Accounts_Set_Input>;
+  where: Pixiv_Accounts_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Pixiv_Accounts_By_PkArgs = {
+  _set?: InputMaybe<Pixiv_Accounts_Set_Input>;
+  pk_columns: Pixiv_Accounts_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Pixiv_Accounts_ManyArgs = {
+  updates: Array<Pixiv_Accounts_Updates>;
 };
 
 
@@ -16252,6 +16372,231 @@ export type Person_Niconico_Plus_Channels_Updates = {
   where: Person_Niconico_Plus_Channels_Bool_Exp;
 };
 
+/** columns and relationships of "person_pixiv_accounts" */
+export type Person_Pixiv_Accounts = {
+  __typename?: 'person_pixiv_accounts';
+  created_at: Scalars['timestamptz']['output'];
+  id: Scalars['uuid']['output'];
+  /** An object relationship */
+  person: Persons;
+  person_id: Scalars['uuid']['output'];
+  /** An object relationship */
+  pixiv_account: Pixiv_Accounts;
+  pixiv_account_id: Scalars['uuid']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+/** aggregated selection of "person_pixiv_accounts" */
+export type Person_Pixiv_Accounts_Aggregate = {
+  __typename?: 'person_pixiv_accounts_aggregate';
+  aggregate?: Maybe<Person_Pixiv_Accounts_Aggregate_Fields>;
+  nodes: Array<Person_Pixiv_Accounts>;
+};
+
+export type Person_Pixiv_Accounts_Aggregate_Bool_Exp = {
+  count?: InputMaybe<Person_Pixiv_Accounts_Aggregate_Bool_Exp_Count>;
+};
+
+export type Person_Pixiv_Accounts_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Person_Pixiv_Accounts_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Person_Pixiv_Accounts_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
+/** aggregate fields of "person_pixiv_accounts" */
+export type Person_Pixiv_Accounts_Aggregate_Fields = {
+  __typename?: 'person_pixiv_accounts_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Person_Pixiv_Accounts_Max_Fields>;
+  min?: Maybe<Person_Pixiv_Accounts_Min_Fields>;
+};
+
+
+/** aggregate fields of "person_pixiv_accounts" */
+export type Person_Pixiv_Accounts_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Person_Pixiv_Accounts_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** order by aggregate values of table "person_pixiv_accounts" */
+export type Person_Pixiv_Accounts_Aggregate_Order_By = {
+  count?: InputMaybe<Order_By>;
+  max?: InputMaybe<Person_Pixiv_Accounts_Max_Order_By>;
+  min?: InputMaybe<Person_Pixiv_Accounts_Min_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "person_pixiv_accounts" */
+export type Person_Pixiv_Accounts_Arr_Rel_Insert_Input = {
+  data: Array<Person_Pixiv_Accounts_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Person_Pixiv_Accounts_On_Conflict>;
+};
+
+/** Boolean expression to filter rows from the table "person_pixiv_accounts". All fields are combined with a logical 'AND'. */
+export type Person_Pixiv_Accounts_Bool_Exp = {
+  _and?: InputMaybe<Array<Person_Pixiv_Accounts_Bool_Exp>>;
+  _not?: InputMaybe<Person_Pixiv_Accounts_Bool_Exp>;
+  _or?: InputMaybe<Array<Person_Pixiv_Accounts_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  person?: InputMaybe<Persons_Bool_Exp>;
+  person_id?: InputMaybe<Uuid_Comparison_Exp>;
+  pixiv_account?: InputMaybe<Pixiv_Accounts_Bool_Exp>;
+  pixiv_account_id?: InputMaybe<Uuid_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "person_pixiv_accounts" */
+export enum Person_Pixiv_Accounts_Constraint {
+  /** unique or primary key constraint on columns "pixiv_account_id", "person_id" */
+  PersonPixivAccountsPersonIdPixivAccountIdKey = 'person_pixiv_accounts_person_id_pixiv_account_id_key',
+  /** unique or primary key constraint on columns "id" */
+  PersonPixivAccountsPkey = 'person_pixiv_accounts_pkey'
+}
+
+/** input type for inserting data into table "person_pixiv_accounts" */
+export type Person_Pixiv_Accounts_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  person?: InputMaybe<Persons_Obj_Rel_Insert_Input>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
+  pixiv_account?: InputMaybe<Pixiv_Accounts_Obj_Rel_Insert_Input>;
+  pixiv_account_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Person_Pixiv_Accounts_Max_Fields = {
+  __typename?: 'person_pixiv_accounts_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  person_id?: Maybe<Scalars['uuid']['output']>;
+  pixiv_account_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by max() on columns of table "person_pixiv_accounts" */
+export type Person_Pixiv_Accounts_Max_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  pixiv_account_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Person_Pixiv_Accounts_Min_Fields = {
+  __typename?: 'person_pixiv_accounts_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  person_id?: Maybe<Scalars['uuid']['output']>;
+  pixiv_account_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by min() on columns of table "person_pixiv_accounts" */
+export type Person_Pixiv_Accounts_Min_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  pixiv_account_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** response of any mutation on the table "person_pixiv_accounts" */
+export type Person_Pixiv_Accounts_Mutation_Response = {
+  __typename?: 'person_pixiv_accounts_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Person_Pixiv_Accounts>;
+};
+
+/** on_conflict condition type for table "person_pixiv_accounts" */
+export type Person_Pixiv_Accounts_On_Conflict = {
+  constraint: Person_Pixiv_Accounts_Constraint;
+  update_columns?: Array<Person_Pixiv_Accounts_Update_Column>;
+  where?: InputMaybe<Person_Pixiv_Accounts_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "person_pixiv_accounts". */
+export type Person_Pixiv_Accounts_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  person?: InputMaybe<Persons_Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  pixiv_account?: InputMaybe<Pixiv_Accounts_Order_By>;
+  pixiv_account_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: person_pixiv_accounts */
+export type Person_Pixiv_Accounts_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "person_pixiv_accounts" */
+export enum Person_Pixiv_Accounts_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  PersonId = 'person_id',
+  /** column name */
+  PixivAccountId = 'pixiv_account_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "person_pixiv_accounts" */
+export type Person_Pixiv_Accounts_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
+  pixiv_account_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** Streaming cursor of the table "person_pixiv_accounts" */
+export type Person_Pixiv_Accounts_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Person_Pixiv_Accounts_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Person_Pixiv_Accounts_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
+  pixiv_account_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** update columns of table "person_pixiv_accounts" */
+export enum Person_Pixiv_Accounts_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  PersonId = 'person_id',
+  /** column name */
+  PixivAccountId = 'pixiv_account_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Person_Pixiv_Accounts_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Person_Pixiv_Accounts_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Person_Pixiv_Accounts_Bool_Exp;
+};
+
 /** columns and relationships of "person_twitter_accounts" */
 export type Person_Twitter_Accounts = {
   __typename?: 'person_twitter_accounts';
@@ -16733,6 +17078,10 @@ export type Persons = {
   /** An aggregate relationship */
   person_niconico_plus_channels_aggregate: Person_Niconico_Plus_Channels_Aggregate;
   /** An array relationship */
+  person_pixiv_accounts: Array<Person_Pixiv_Accounts>;
+  /** An aggregate relationship */
+  person_pixiv_accounts_aggregate: Person_Pixiv_Accounts_Aggregate;
+  /** An array relationship */
   person_twitter_accounts: Array<Person_Twitter_Accounts>;
   /** An aggregate relationship */
   person_twitter_accounts_aggregate: Person_Twitter_Accounts_Aggregate;
@@ -16869,6 +17218,26 @@ export type PersonsPerson_Niconico_Plus_Channels_AggregateArgs = {
 
 
 /** columns and relationships of "persons" */
+export type PersonsPerson_Pixiv_AccountsArgs = {
+  distinct_on?: InputMaybe<Array<Person_Pixiv_Accounts_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Person_Pixiv_Accounts_Order_By>>;
+  where?: InputMaybe<Person_Pixiv_Accounts_Bool_Exp>;
+};
+
+
+/** columns and relationships of "persons" */
+export type PersonsPerson_Pixiv_Accounts_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Person_Pixiv_Accounts_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Person_Pixiv_Accounts_Order_By>>;
+  where?: InputMaybe<Person_Pixiv_Accounts_Bool_Exp>;
+};
+
+
+/** columns and relationships of "persons" */
 export type PersonsPerson_Twitter_AccountsArgs = {
   distinct_on?: InputMaybe<Array<Person_Twitter_Accounts_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -16969,6 +17338,8 @@ export type Persons_Bool_Exp = {
   person_niconico_communities_aggregate?: InputMaybe<Person_Niconico_Communities_Aggregate_Bool_Exp>;
   person_niconico_plus_channels?: InputMaybe<Person_Niconico_Plus_Channels_Bool_Exp>;
   person_niconico_plus_channels_aggregate?: InputMaybe<Person_Niconico_Plus_Channels_Aggregate_Bool_Exp>;
+  person_pixiv_accounts?: InputMaybe<Person_Pixiv_Accounts_Bool_Exp>;
+  person_pixiv_accounts_aggregate?: InputMaybe<Person_Pixiv_Accounts_Aggregate_Bool_Exp>;
   person_twitter_accounts?: InputMaybe<Person_Twitter_Accounts_Bool_Exp>;
   person_twitter_accounts_aggregate?: InputMaybe<Person_Twitter_Accounts_Aggregate_Bool_Exp>;
   person_youtube_channels?: InputMaybe<Person_Youtube_Channels_Bool_Exp>;
@@ -16995,6 +17366,7 @@ export type Persons_Insert_Input = {
   person_niconico_channels?: InputMaybe<Person_Niconico_Channels_Arr_Rel_Insert_Input>;
   person_niconico_communities?: InputMaybe<Person_Niconico_Communities_Arr_Rel_Insert_Input>;
   person_niconico_plus_channels?: InputMaybe<Person_Niconico_Plus_Channels_Arr_Rel_Insert_Input>;
+  person_pixiv_accounts?: InputMaybe<Person_Pixiv_Accounts_Arr_Rel_Insert_Input>;
   person_twitter_accounts?: InputMaybe<Person_Twitter_Accounts_Arr_Rel_Insert_Input>;
   person_youtube_channels?: InputMaybe<Person_Youtube_Channels_Arr_Rel_Insert_Input>;
   program_persons?: InputMaybe<Program_Persons_Arr_Rel_Insert_Input>;
@@ -17053,6 +17425,7 @@ export type Persons_Order_By = {
   person_niconico_channels_aggregate?: InputMaybe<Person_Niconico_Channels_Aggregate_Order_By>;
   person_niconico_communities_aggregate?: InputMaybe<Person_Niconico_Communities_Aggregate_Order_By>;
   person_niconico_plus_channels_aggregate?: InputMaybe<Person_Niconico_Plus_Channels_Aggregate_Order_By>;
+  person_pixiv_accounts_aggregate?: InputMaybe<Person_Pixiv_Accounts_Aggregate_Order_By>;
   person_twitter_accounts_aggregate?: InputMaybe<Person_Twitter_Accounts_Aggregate_Order_By>;
   person_youtube_channels_aggregate?: InputMaybe<Person_Youtube_Channels_Aggregate_Order_By>;
   program_persons_aggregate?: InputMaybe<Program_Persons_Aggregate_Order_By>;
@@ -17117,6 +17490,185 @@ export type Persons_Updates = {
   _set?: InputMaybe<Persons_Set_Input>;
   /** filter the rows which have to be updated */
   where: Persons_Bool_Exp;
+};
+
+/** columns and relationships of "pixiv_accounts" */
+export type Pixiv_Accounts = {
+  __typename?: 'pixiv_accounts';
+  created_at: Scalars['timestamptz']['output'];
+  id: Scalars['uuid']['output'];
+  name: Scalars['String']['output'];
+  remote_pixiv_account_id: Scalars['String']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+/** aggregated selection of "pixiv_accounts" */
+export type Pixiv_Accounts_Aggregate = {
+  __typename?: 'pixiv_accounts_aggregate';
+  aggregate?: Maybe<Pixiv_Accounts_Aggregate_Fields>;
+  nodes: Array<Pixiv_Accounts>;
+};
+
+/** aggregate fields of "pixiv_accounts" */
+export type Pixiv_Accounts_Aggregate_Fields = {
+  __typename?: 'pixiv_accounts_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Pixiv_Accounts_Max_Fields>;
+  min?: Maybe<Pixiv_Accounts_Min_Fields>;
+};
+
+
+/** aggregate fields of "pixiv_accounts" */
+export type Pixiv_Accounts_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Pixiv_Accounts_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** Boolean expression to filter rows from the table "pixiv_accounts". All fields are combined with a logical 'AND'. */
+export type Pixiv_Accounts_Bool_Exp = {
+  _and?: InputMaybe<Array<Pixiv_Accounts_Bool_Exp>>;
+  _not?: InputMaybe<Pixiv_Accounts_Bool_Exp>;
+  _or?: InputMaybe<Array<Pixiv_Accounts_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  name?: InputMaybe<String_Comparison_Exp>;
+  remote_pixiv_account_id?: InputMaybe<String_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "pixiv_accounts" */
+export enum Pixiv_Accounts_Constraint {
+  /** unique or primary key constraint on columns "id" */
+  PixivAccountsPkey = 'pixiv_accounts_pkey',
+  /** unique or primary key constraint on columns "remote_pixiv_account_id" */
+  PixivAccountsRemotePixivAccountIdKey = 'pixiv_accounts_remote_pixiv_account_id_key'
+}
+
+/** input type for inserting data into table "pixiv_accounts" */
+export type Pixiv_Accounts_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  remote_pixiv_account_id?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Pixiv_Accounts_Max_Fields = {
+  __typename?: 'pixiv_accounts_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  remote_pixiv_account_id?: Maybe<Scalars['String']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** aggregate min on columns */
+export type Pixiv_Accounts_Min_Fields = {
+  __typename?: 'pixiv_accounts_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  remote_pixiv_account_id?: Maybe<Scalars['String']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** response of any mutation on the table "pixiv_accounts" */
+export type Pixiv_Accounts_Mutation_Response = {
+  __typename?: 'pixiv_accounts_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Pixiv_Accounts>;
+};
+
+/** input type for inserting object relation for remote table "pixiv_accounts" */
+export type Pixiv_Accounts_Obj_Rel_Insert_Input = {
+  data: Pixiv_Accounts_Insert_Input;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Pixiv_Accounts_On_Conflict>;
+};
+
+/** on_conflict condition type for table "pixiv_accounts" */
+export type Pixiv_Accounts_On_Conflict = {
+  constraint: Pixiv_Accounts_Constraint;
+  update_columns?: Array<Pixiv_Accounts_Update_Column>;
+  where?: InputMaybe<Pixiv_Accounts_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "pixiv_accounts". */
+export type Pixiv_Accounts_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  name?: InputMaybe<Order_By>;
+  remote_pixiv_account_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: pixiv_accounts */
+export type Pixiv_Accounts_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "pixiv_accounts" */
+export enum Pixiv_Accounts_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Name = 'name',
+  /** column name */
+  RemotePixivAccountId = 'remote_pixiv_account_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "pixiv_accounts" */
+export type Pixiv_Accounts_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  remote_pixiv_account_id?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** Streaming cursor of the table "pixiv_accounts" */
+export type Pixiv_Accounts_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Pixiv_Accounts_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Pixiv_Accounts_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  remote_pixiv_account_id?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** update columns of table "pixiv_accounts" */
+export enum Pixiv_Accounts_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Name = 'name',
+  /** column name */
+  RemotePixivAccountId = 'remote_pixiv_account_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Pixiv_Accounts_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Pixiv_Accounts_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Pixiv_Accounts_Bool_Exp;
 };
 
 /** columns and relationships of "program_amongus_maps" */
@@ -20405,6 +20957,12 @@ export type Query_Root = {
   /** fetch data from the table: "person_niconico_plus_channels" using primary key columns */
   person_niconico_plus_channels_by_pk?: Maybe<Person_Niconico_Plus_Channels>;
   /** An array relationship */
+  person_pixiv_accounts: Array<Person_Pixiv_Accounts>;
+  /** An aggregate relationship */
+  person_pixiv_accounts_aggregate: Person_Pixiv_Accounts_Aggregate;
+  /** fetch data from the table: "person_pixiv_accounts" using primary key columns */
+  person_pixiv_accounts_by_pk?: Maybe<Person_Pixiv_Accounts>;
+  /** An array relationship */
   person_twitter_accounts: Array<Person_Twitter_Accounts>;
   /** An aggregate relationship */
   person_twitter_accounts_aggregate: Person_Twitter_Accounts_Aggregate;
@@ -20422,6 +20980,12 @@ export type Query_Root = {
   persons_aggregate: Persons_Aggregate;
   /** fetch data from the table: "persons" using primary key columns */
   persons_by_pk?: Maybe<Persons>;
+  /** fetch data from the table: "pixiv_accounts" */
+  pixiv_accounts: Array<Pixiv_Accounts>;
+  /** fetch aggregated fields from the table: "pixiv_accounts" */
+  pixiv_accounts_aggregate: Pixiv_Accounts_Aggregate;
+  /** fetch data from the table: "pixiv_accounts" using primary key columns */
+  pixiv_accounts_by_pk?: Maybe<Pixiv_Accounts>;
   /** An array relationship */
   program_amongus_maps: Array<Program_Amongus_Maps>;
   /** An aggregate relationship */
@@ -21516,6 +22080,29 @@ export type Query_RootPerson_Niconico_Plus_Channels_By_PkArgs = {
 };
 
 
+export type Query_RootPerson_Pixiv_AccountsArgs = {
+  distinct_on?: InputMaybe<Array<Person_Pixiv_Accounts_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Person_Pixiv_Accounts_Order_By>>;
+  where?: InputMaybe<Person_Pixiv_Accounts_Bool_Exp>;
+};
+
+
+export type Query_RootPerson_Pixiv_Accounts_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Person_Pixiv_Accounts_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Person_Pixiv_Accounts_Order_By>>;
+  where?: InputMaybe<Person_Pixiv_Accounts_Bool_Exp>;
+};
+
+
+export type Query_RootPerson_Pixiv_Accounts_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
 export type Query_RootPerson_Twitter_AccountsArgs = {
   distinct_on?: InputMaybe<Array<Person_Twitter_Accounts_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -21581,6 +22168,29 @@ export type Query_RootPersons_AggregateArgs = {
 
 
 export type Query_RootPersons_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Query_RootPixiv_AccountsArgs = {
+  distinct_on?: InputMaybe<Array<Pixiv_Accounts_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Pixiv_Accounts_Order_By>>;
+  where?: InputMaybe<Pixiv_Accounts_Bool_Exp>;
+};
+
+
+export type Query_RootPixiv_Accounts_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Pixiv_Accounts_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Pixiv_Accounts_Order_By>>;
+  where?: InputMaybe<Pixiv_Accounts_Bool_Exp>;
+};
+
+
+export type Query_RootPixiv_Accounts_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
@@ -22322,6 +22932,14 @@ export type Subscription_Root = {
   /** fetch data from the table in a streaming manner: "person_niconico_plus_channels" */
   person_niconico_plus_channels_stream: Array<Person_Niconico_Plus_Channels>;
   /** An array relationship */
+  person_pixiv_accounts: Array<Person_Pixiv_Accounts>;
+  /** An aggregate relationship */
+  person_pixiv_accounts_aggregate: Person_Pixiv_Accounts_Aggregate;
+  /** fetch data from the table: "person_pixiv_accounts" using primary key columns */
+  person_pixiv_accounts_by_pk?: Maybe<Person_Pixiv_Accounts>;
+  /** fetch data from the table in a streaming manner: "person_pixiv_accounts" */
+  person_pixiv_accounts_stream: Array<Person_Pixiv_Accounts>;
+  /** An array relationship */
   person_twitter_accounts: Array<Person_Twitter_Accounts>;
   /** An aggregate relationship */
   person_twitter_accounts_aggregate: Person_Twitter_Accounts_Aggregate;
@@ -22345,6 +22963,14 @@ export type Subscription_Root = {
   persons_by_pk?: Maybe<Persons>;
   /** fetch data from the table in a streaming manner: "persons" */
   persons_stream: Array<Persons>;
+  /** fetch data from the table: "pixiv_accounts" */
+  pixiv_accounts: Array<Pixiv_Accounts>;
+  /** fetch aggregated fields from the table: "pixiv_accounts" */
+  pixiv_accounts_aggregate: Pixiv_Accounts_Aggregate;
+  /** fetch data from the table: "pixiv_accounts" using primary key columns */
+  pixiv_accounts_by_pk?: Maybe<Pixiv_Accounts>;
+  /** fetch data from the table in a streaming manner: "pixiv_accounts" */
+  pixiv_accounts_stream: Array<Pixiv_Accounts>;
   /** An array relationship */
   program_amongus_maps: Array<Program_Amongus_Maps>;
   /** An aggregate relationship */
@@ -23774,6 +24400,36 @@ export type Subscription_RootPerson_Niconico_Plus_Channels_StreamArgs = {
 };
 
 
+export type Subscription_RootPerson_Pixiv_AccountsArgs = {
+  distinct_on?: InputMaybe<Array<Person_Pixiv_Accounts_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Person_Pixiv_Accounts_Order_By>>;
+  where?: InputMaybe<Person_Pixiv_Accounts_Bool_Exp>;
+};
+
+
+export type Subscription_RootPerson_Pixiv_Accounts_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Person_Pixiv_Accounts_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Person_Pixiv_Accounts_Order_By>>;
+  where?: InputMaybe<Person_Pixiv_Accounts_Bool_Exp>;
+};
+
+
+export type Subscription_RootPerson_Pixiv_Accounts_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootPerson_Pixiv_Accounts_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Person_Pixiv_Accounts_Stream_Cursor_Input>>;
+  where?: InputMaybe<Person_Pixiv_Accounts_Bool_Exp>;
+};
+
+
 export type Subscription_RootPerson_Twitter_AccountsArgs = {
   distinct_on?: InputMaybe<Array<Person_Twitter_Accounts_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -23861,6 +24517,36 @@ export type Subscription_RootPersons_StreamArgs = {
   batch_size: Scalars['Int']['input'];
   cursor: Array<InputMaybe<Persons_Stream_Cursor_Input>>;
   where?: InputMaybe<Persons_Bool_Exp>;
+};
+
+
+export type Subscription_RootPixiv_AccountsArgs = {
+  distinct_on?: InputMaybe<Array<Pixiv_Accounts_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Pixiv_Accounts_Order_By>>;
+  where?: InputMaybe<Pixiv_Accounts_Bool_Exp>;
+};
+
+
+export type Subscription_RootPixiv_Accounts_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Pixiv_Accounts_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Pixiv_Accounts_Order_By>>;
+  where?: InputMaybe<Pixiv_Accounts_Bool_Exp>;
+};
+
+
+export type Subscription_RootPixiv_Accounts_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootPixiv_Accounts_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Pixiv_Accounts_Stream_Cursor_Input>>;
+  where?: InputMaybe<Pixiv_Accounts_Bool_Exp>;
 };
 
 
@@ -26033,7 +26719,7 @@ export type GetPersonPageQueryVariables = Exact<{
 }>;
 
 
-export type GetPersonPageQuery = { __typename?: 'query_root', person?: { __typename?: 'persons', id: any, name: string, personTwitterAccounts: Array<{ __typename?: 'person_twitter_accounts', twitterAccount: { __typename?: 'twitter_accounts', id: any, name: string, twitterScreenName: string, remoteTwitterUserId: string } }>, personFediverseAccounts: Array<{ __typename?: 'person_fediverse_accounts', fediverseAccount: { __typename?: 'fediverse_accounts', id: any, name: string, fediverseAcct: string } }>, personNiconicoAccounts: Array<{ __typename?: 'person_niconico_accounts', niconicoAccount: { __typename?: 'niconico_accounts', id: any, name: string, remoteNiconicoAccountId: string } }>, personNiconicoCommunities: Array<{ __typename?: 'person_niconico_communities', niconicoCommunity: { __typename?: 'niconico_communities', id: any, name: string, remoteNiconicoCommunityId: string } }>, personNiconicoChannels: Array<{ __typename?: 'person_niconico_channels', niconicoChannel: { __typename?: 'niconico_channels', id: any, name: string, remoteNiconicoChannelId: string, screenName?: string | null } }>, personNiconicoPlusChannels: Array<{ __typename?: 'person_niconico_plus_channels', niconicoPlusChannel: { __typename?: 'niconico_plus_channels', id: any, name: string, remoteNiconicoPlusChannelId: string, screenName: string } }>, personYoutubeChannels: Array<{ __typename?: 'person_youtube_channels', youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string, youtubeChannelHandle?: string | null } }>, programPersons: Array<{ __typename?: 'program_persons', program: { __typename?: 'programs', id: any, title: string, startTime?: any | null } }> } | null };
+export type GetPersonPageQuery = { __typename?: 'query_root', person?: { __typename?: 'persons', id: any, name: string, personTwitterAccounts: Array<{ __typename?: 'person_twitter_accounts', twitterAccount: { __typename?: 'twitter_accounts', id: any, name: string, twitterScreenName: string, remoteTwitterUserId: string } }>, personFediverseAccounts: Array<{ __typename?: 'person_fediverse_accounts', fediverseAccount: { __typename?: 'fediverse_accounts', id: any, name: string, fediverseAcct: string } }>, personNiconicoAccounts: Array<{ __typename?: 'person_niconico_accounts', niconicoAccount: { __typename?: 'niconico_accounts', id: any, name: string, remoteNiconicoAccountId: string } }>, personNiconicoCommunities: Array<{ __typename?: 'person_niconico_communities', niconicoCommunity: { __typename?: 'niconico_communities', id: any, name: string, remoteNiconicoCommunityId: string } }>, personNiconicoChannels: Array<{ __typename?: 'person_niconico_channels', niconicoChannel: { __typename?: 'niconico_channels', id: any, name: string, remoteNiconicoChannelId: string, screenName?: string | null } }>, personNiconicoPlusChannels: Array<{ __typename?: 'person_niconico_plus_channels', niconicoPlusChannel: { __typename?: 'niconico_plus_channels', id: any, name: string, remoteNiconicoPlusChannelId: string, screenName: string } }>, personYoutubeChannels: Array<{ __typename?: 'person_youtube_channels', youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string, youtubeChannelHandle?: string | null } }>, personPixivAccounts: Array<{ __typename?: 'person_pixiv_accounts', pixivAccount: { __typename?: 'pixiv_accounts', id: any, name: string, remotePixivAccountId: string } }>, programPersons: Array<{ __typename?: 'program_persons', program: { __typename?: 'programs', id: any, title: string, startTime?: any | null } }> } | null };
 
 export type GetPersonPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -27030,6 +27716,15 @@ export const GetPersonPageDocument = gql`
         id
         remoteYoutubeChannelId: remote_youtube_channel_id
         youtubeChannelHandle: youtube_channel_handle
+        name
+      }
+    }
+    personPixivAccounts: person_pixiv_accounts(
+      order_by: {pixiv_account: {remote_pixiv_account_id: asc}}
+    ) {
+      pixivAccount: pixiv_account {
+        id
+        remotePixivAccountId: remote_pixiv_account_id
         name
       }
     }

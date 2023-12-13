@@ -109,6 +109,20 @@ query GetPersonPage(
       }
     }
 
+    personPixivAccounts: person_pixiv_accounts(
+      order_by: {
+        pixiv_account: {
+          remote_pixiv_account_id: asc
+        }
+      }
+    ) {
+      pixivAccount: pixiv_account {
+        id
+        remotePixivAccountId: remote_pixiv_account_id
+        name
+      }
+    }
+
     programPersons: program_persons(
       order_by: {
         program: {
