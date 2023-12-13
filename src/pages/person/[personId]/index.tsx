@@ -364,6 +364,42 @@ export default function PersonPage({ personId }: { personId: string }) {
         ) : (
           ''
         )}
+        {person.personPixivAccounts.length > 0 ? (
+          <>
+            <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+              Pixiv
+            </Typography>
+            <Box sx={{ mt: 2 }}>
+              <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>アカウント</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {person.personPixivAccounts.map((personPixivAccount) => (
+                    <TableRow
+                      key={personPixivAccount.pixivAccount.id}
+                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                    >
+                      <TableCell component='th' scope='row'>
+                        <NextLink
+                          href={`https://www.pixiv.net/users/${personPixivAccount.pixivAccount.remotePixivAccountId}`}
+                          passHref
+                          legacyBehavior
+                        >
+                          <MuiLink>{personPixivAccount.pixivAccount.name}</MuiLink>
+                        </NextLink>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </Box>
+          </>
+        ) : (
+          ''
+        )}
       </Box>
     </>
   )
