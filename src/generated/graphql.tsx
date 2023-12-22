@@ -9998,6 +9998,10 @@ export type Mutation_Root = {
   delete_person_pixiv_accounts?: Maybe<Person_Pixiv_Accounts_Mutation_Response>;
   /** delete single row from the table: "person_pixiv_accounts" */
   delete_person_pixiv_accounts_by_pk?: Maybe<Person_Pixiv_Accounts>;
+  /** delete data from the table: "person_twitch_accounts" */
+  delete_person_twitch_accounts?: Maybe<Person_Twitch_Accounts_Mutation_Response>;
+  /** delete single row from the table: "person_twitch_accounts" */
+  delete_person_twitch_accounts_by_pk?: Maybe<Person_Twitch_Accounts>;
   /** delete data from the table: "person_twitter_accounts" */
   delete_person_twitter_accounts?: Maybe<Person_Twitter_Accounts_Mutation_Response>;
   /** delete single row from the table: "person_twitter_accounts" */
@@ -10058,6 +10062,10 @@ export type Mutation_Root = {
   delete_projects?: Maybe<Projects_Mutation_Response>;
   /** delete single row from the table: "projects" */
   delete_projects_by_pk?: Maybe<Projects>;
+  /** delete data from the table: "twitch_accounts" */
+  delete_twitch_accounts?: Maybe<Twitch_Accounts_Mutation_Response>;
+  /** delete single row from the table: "twitch_accounts" */
+  delete_twitch_accounts_by_pk?: Maybe<Twitch_Accounts>;
   /** delete data from the table: "twitter_accounts" */
   delete_twitter_accounts?: Maybe<Twitter_Accounts_Mutation_Response>;
   /** delete single row from the table: "twitter_accounts" */
@@ -10258,6 +10266,10 @@ export type Mutation_Root = {
   insert_person_pixiv_accounts?: Maybe<Person_Pixiv_Accounts_Mutation_Response>;
   /** insert a single row into the table: "person_pixiv_accounts" */
   insert_person_pixiv_accounts_one?: Maybe<Person_Pixiv_Accounts>;
+  /** insert data into the table: "person_twitch_accounts" */
+  insert_person_twitch_accounts?: Maybe<Person_Twitch_Accounts_Mutation_Response>;
+  /** insert a single row into the table: "person_twitch_accounts" */
+  insert_person_twitch_accounts_one?: Maybe<Person_Twitch_Accounts>;
   /** insert data into the table: "person_twitter_accounts" */
   insert_person_twitter_accounts?: Maybe<Person_Twitter_Accounts_Mutation_Response>;
   /** insert a single row into the table: "person_twitter_accounts" */
@@ -10318,6 +10330,10 @@ export type Mutation_Root = {
   insert_projects?: Maybe<Projects_Mutation_Response>;
   /** insert a single row into the table: "projects" */
   insert_projects_one?: Maybe<Projects>;
+  /** insert data into the table: "twitch_accounts" */
+  insert_twitch_accounts?: Maybe<Twitch_Accounts_Mutation_Response>;
+  /** insert a single row into the table: "twitch_accounts" */
+  insert_twitch_accounts_one?: Maybe<Twitch_Accounts>;
   /** insert data into the table: "twitter_accounts" */
   insert_twitter_accounts?: Maybe<Twitter_Accounts_Mutation_Response>;
   /** insert a single row into the table: "twitter_accounts" */
@@ -10606,6 +10622,12 @@ export type Mutation_Root = {
   update_person_pixiv_accounts_by_pk?: Maybe<Person_Pixiv_Accounts>;
   /** update multiples rows of table: "person_pixiv_accounts" */
   update_person_pixiv_accounts_many?: Maybe<Array<Maybe<Person_Pixiv_Accounts_Mutation_Response>>>;
+  /** update data of the table: "person_twitch_accounts" */
+  update_person_twitch_accounts?: Maybe<Person_Twitch_Accounts_Mutation_Response>;
+  /** update single row of the table: "person_twitch_accounts" */
+  update_person_twitch_accounts_by_pk?: Maybe<Person_Twitch_Accounts>;
+  /** update multiples rows of table: "person_twitch_accounts" */
+  update_person_twitch_accounts_many?: Maybe<Array<Maybe<Person_Twitch_Accounts_Mutation_Response>>>;
   /** update data of the table: "person_twitter_accounts" */
   update_person_twitter_accounts?: Maybe<Person_Twitter_Accounts_Mutation_Response>;
   /** update single row of the table: "person_twitter_accounts" */
@@ -10696,6 +10718,12 @@ export type Mutation_Root = {
   update_projects_by_pk?: Maybe<Projects>;
   /** update multiples rows of table: "projects" */
   update_projects_many?: Maybe<Array<Maybe<Projects_Mutation_Response>>>;
+  /** update data of the table: "twitch_accounts" */
+  update_twitch_accounts?: Maybe<Twitch_Accounts_Mutation_Response>;
+  /** update single row of the table: "twitch_accounts" */
+  update_twitch_accounts_by_pk?: Maybe<Twitch_Accounts>;
+  /** update multiples rows of table: "twitch_accounts" */
+  update_twitch_accounts_many?: Maybe<Array<Maybe<Twitch_Accounts_Mutation_Response>>>;
   /** update data of the table: "twitter_accounts" */
   update_twitter_accounts?: Maybe<Twitter_Accounts_Mutation_Response>;
   /** update single row of the table: "twitter_accounts" */
@@ -11264,6 +11292,18 @@ export type Mutation_RootDelete_Person_Pixiv_Accounts_By_PkArgs = {
 
 
 /** mutation root */
+export type Mutation_RootDelete_Person_Twitch_AccountsArgs = {
+  where: Person_Twitch_Accounts_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Person_Twitch_Accounts_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
 export type Mutation_RootDelete_Person_Twitter_AccountsArgs = {
   where: Person_Twitter_Accounts_Bool_Exp;
 };
@@ -11439,6 +11479,18 @@ export type Mutation_RootDelete_ProjectsArgs = {
 
 /** mutation root */
 export type Mutation_RootDelete_Projects_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Twitch_AccountsArgs = {
+  where: Twitch_Accounts_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Twitch_Accounts_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
@@ -12132,6 +12184,20 @@ export type Mutation_RootInsert_Person_Pixiv_Accounts_OneArgs = {
 
 
 /** mutation root */
+export type Mutation_RootInsert_Person_Twitch_AccountsArgs = {
+  objects: Array<Person_Twitch_Accounts_Insert_Input>;
+  on_conflict?: InputMaybe<Person_Twitch_Accounts_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Person_Twitch_Accounts_OneArgs = {
+  object: Person_Twitch_Accounts_Insert_Input;
+  on_conflict?: InputMaybe<Person_Twitch_Accounts_On_Conflict>;
+};
+
+
+/** mutation root */
 export type Mutation_RootInsert_Person_Twitter_AccountsArgs = {
   objects: Array<Person_Twitter_Accounts_Insert_Input>;
   on_conflict?: InputMaybe<Person_Twitter_Accounts_On_Conflict>;
@@ -12338,6 +12404,20 @@ export type Mutation_RootInsert_ProjectsArgs = {
 export type Mutation_RootInsert_Projects_OneArgs = {
   object: Projects_Insert_Input;
   on_conflict?: InputMaybe<Projects_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Twitch_AccountsArgs = {
+  objects: Array<Twitch_Accounts_Insert_Input>;
+  on_conflict?: InputMaybe<Twitch_Accounts_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Twitch_Accounts_OneArgs = {
+  object: Twitch_Accounts_Insert_Input;
+  on_conflict?: InputMaybe<Twitch_Accounts_On_Conflict>;
 };
 
 
@@ -13334,6 +13414,26 @@ export type Mutation_RootUpdate_Person_Pixiv_Accounts_ManyArgs = {
 
 
 /** mutation root */
+export type Mutation_RootUpdate_Person_Twitch_AccountsArgs = {
+  _set?: InputMaybe<Person_Twitch_Accounts_Set_Input>;
+  where: Person_Twitch_Accounts_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Person_Twitch_Accounts_By_PkArgs = {
+  _set?: InputMaybe<Person_Twitch_Accounts_Set_Input>;
+  pk_columns: Person_Twitch_Accounts_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Person_Twitch_Accounts_ManyArgs = {
+  updates: Array<Person_Twitch_Accounts_Updates>;
+};
+
+
+/** mutation root */
 export type Mutation_RootUpdate_Person_Twitter_AccountsArgs = {
   _set?: InputMaybe<Person_Twitter_Accounts_Set_Input>;
   where: Person_Twitter_Accounts_Bool_Exp;
@@ -13630,6 +13730,26 @@ export type Mutation_RootUpdate_Projects_By_PkArgs = {
 /** mutation root */
 export type Mutation_RootUpdate_Projects_ManyArgs = {
   updates: Array<Projects_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Twitch_AccountsArgs = {
+  _set?: InputMaybe<Twitch_Accounts_Set_Input>;
+  where: Twitch_Accounts_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Twitch_Accounts_By_PkArgs = {
+  _set?: InputMaybe<Twitch_Accounts_Set_Input>;
+  pk_columns: Twitch_Accounts_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Twitch_Accounts_ManyArgs = {
+  updates: Array<Twitch_Accounts_Updates>;
 };
 
 
@@ -16597,6 +16717,231 @@ export type Person_Pixiv_Accounts_Updates = {
   where: Person_Pixiv_Accounts_Bool_Exp;
 };
 
+/** columns and relationships of "person_twitch_accounts" */
+export type Person_Twitch_Accounts = {
+  __typename?: 'person_twitch_accounts';
+  created_at: Scalars['timestamptz']['output'];
+  id: Scalars['uuid']['output'];
+  /** An object relationship */
+  person: Persons;
+  person_id: Scalars['uuid']['output'];
+  /** An object relationship */
+  twitch_account: Twitch_Accounts;
+  twitch_account_id: Scalars['uuid']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+/** aggregated selection of "person_twitch_accounts" */
+export type Person_Twitch_Accounts_Aggregate = {
+  __typename?: 'person_twitch_accounts_aggregate';
+  aggregate?: Maybe<Person_Twitch_Accounts_Aggregate_Fields>;
+  nodes: Array<Person_Twitch_Accounts>;
+};
+
+export type Person_Twitch_Accounts_Aggregate_Bool_Exp = {
+  count?: InputMaybe<Person_Twitch_Accounts_Aggregate_Bool_Exp_Count>;
+};
+
+export type Person_Twitch_Accounts_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Person_Twitch_Accounts_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Person_Twitch_Accounts_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
+/** aggregate fields of "person_twitch_accounts" */
+export type Person_Twitch_Accounts_Aggregate_Fields = {
+  __typename?: 'person_twitch_accounts_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Person_Twitch_Accounts_Max_Fields>;
+  min?: Maybe<Person_Twitch_Accounts_Min_Fields>;
+};
+
+
+/** aggregate fields of "person_twitch_accounts" */
+export type Person_Twitch_Accounts_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Person_Twitch_Accounts_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** order by aggregate values of table "person_twitch_accounts" */
+export type Person_Twitch_Accounts_Aggregate_Order_By = {
+  count?: InputMaybe<Order_By>;
+  max?: InputMaybe<Person_Twitch_Accounts_Max_Order_By>;
+  min?: InputMaybe<Person_Twitch_Accounts_Min_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "person_twitch_accounts" */
+export type Person_Twitch_Accounts_Arr_Rel_Insert_Input = {
+  data: Array<Person_Twitch_Accounts_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Person_Twitch_Accounts_On_Conflict>;
+};
+
+/** Boolean expression to filter rows from the table "person_twitch_accounts". All fields are combined with a logical 'AND'. */
+export type Person_Twitch_Accounts_Bool_Exp = {
+  _and?: InputMaybe<Array<Person_Twitch_Accounts_Bool_Exp>>;
+  _not?: InputMaybe<Person_Twitch_Accounts_Bool_Exp>;
+  _or?: InputMaybe<Array<Person_Twitch_Accounts_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  person?: InputMaybe<Persons_Bool_Exp>;
+  person_id?: InputMaybe<Uuid_Comparison_Exp>;
+  twitch_account?: InputMaybe<Twitch_Accounts_Bool_Exp>;
+  twitch_account_id?: InputMaybe<Uuid_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "person_twitch_accounts" */
+export enum Person_Twitch_Accounts_Constraint {
+  /** unique or primary key constraint on columns "twitch_account_id", "person_id" */
+  PersonTwitchAccountsPersonIdTwitchAccountIdKey = 'person_twitch_accounts_person_id_twitch_account_id_key',
+  /** unique or primary key constraint on columns "id" */
+  PersonTwitchAccountsPkey = 'person_twitch_accounts_pkey'
+}
+
+/** input type for inserting data into table "person_twitch_accounts" */
+export type Person_Twitch_Accounts_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  person?: InputMaybe<Persons_Obj_Rel_Insert_Input>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
+  twitch_account?: InputMaybe<Twitch_Accounts_Obj_Rel_Insert_Input>;
+  twitch_account_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Person_Twitch_Accounts_Max_Fields = {
+  __typename?: 'person_twitch_accounts_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  person_id?: Maybe<Scalars['uuid']['output']>;
+  twitch_account_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by max() on columns of table "person_twitch_accounts" */
+export type Person_Twitch_Accounts_Max_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  twitch_account_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Person_Twitch_Accounts_Min_Fields = {
+  __typename?: 'person_twitch_accounts_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  person_id?: Maybe<Scalars['uuid']['output']>;
+  twitch_account_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by min() on columns of table "person_twitch_accounts" */
+export type Person_Twitch_Accounts_Min_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  twitch_account_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** response of any mutation on the table "person_twitch_accounts" */
+export type Person_Twitch_Accounts_Mutation_Response = {
+  __typename?: 'person_twitch_accounts_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Person_Twitch_Accounts>;
+};
+
+/** on_conflict condition type for table "person_twitch_accounts" */
+export type Person_Twitch_Accounts_On_Conflict = {
+  constraint: Person_Twitch_Accounts_Constraint;
+  update_columns?: Array<Person_Twitch_Accounts_Update_Column>;
+  where?: InputMaybe<Person_Twitch_Accounts_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "person_twitch_accounts". */
+export type Person_Twitch_Accounts_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  person?: InputMaybe<Persons_Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  twitch_account?: InputMaybe<Twitch_Accounts_Order_By>;
+  twitch_account_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: person_twitch_accounts */
+export type Person_Twitch_Accounts_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "person_twitch_accounts" */
+export enum Person_Twitch_Accounts_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  PersonId = 'person_id',
+  /** column name */
+  TwitchAccountId = 'twitch_account_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "person_twitch_accounts" */
+export type Person_Twitch_Accounts_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
+  twitch_account_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** Streaming cursor of the table "person_twitch_accounts" */
+export type Person_Twitch_Accounts_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Person_Twitch_Accounts_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Person_Twitch_Accounts_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
+  twitch_account_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** update columns of table "person_twitch_accounts" */
+export enum Person_Twitch_Accounts_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  PersonId = 'person_id',
+  /** column name */
+  TwitchAccountId = 'twitch_account_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Person_Twitch_Accounts_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Person_Twitch_Accounts_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Person_Twitch_Accounts_Bool_Exp;
+};
+
 /** columns and relationships of "person_twitter_accounts" */
 export type Person_Twitter_Accounts = {
   __typename?: 'person_twitter_accounts';
@@ -17082,6 +17427,10 @@ export type Persons = {
   /** An aggregate relationship */
   person_pixiv_accounts_aggregate: Person_Pixiv_Accounts_Aggregate;
   /** An array relationship */
+  person_twitch_accounts: Array<Person_Twitch_Accounts>;
+  /** An aggregate relationship */
+  person_twitch_accounts_aggregate: Person_Twitch_Accounts_Aggregate;
+  /** An array relationship */
   person_twitter_accounts: Array<Person_Twitter_Accounts>;
   /** An aggregate relationship */
   person_twitter_accounts_aggregate: Person_Twitter_Accounts_Aggregate;
@@ -17238,6 +17587,26 @@ export type PersonsPerson_Pixiv_Accounts_AggregateArgs = {
 
 
 /** columns and relationships of "persons" */
+export type PersonsPerson_Twitch_AccountsArgs = {
+  distinct_on?: InputMaybe<Array<Person_Twitch_Accounts_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Person_Twitch_Accounts_Order_By>>;
+  where?: InputMaybe<Person_Twitch_Accounts_Bool_Exp>;
+};
+
+
+/** columns and relationships of "persons" */
+export type PersonsPerson_Twitch_Accounts_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Person_Twitch_Accounts_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Person_Twitch_Accounts_Order_By>>;
+  where?: InputMaybe<Person_Twitch_Accounts_Bool_Exp>;
+};
+
+
+/** columns and relationships of "persons" */
 export type PersonsPerson_Twitter_AccountsArgs = {
   distinct_on?: InputMaybe<Array<Person_Twitter_Accounts_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -17340,6 +17709,8 @@ export type Persons_Bool_Exp = {
   person_niconico_plus_channels_aggregate?: InputMaybe<Person_Niconico_Plus_Channels_Aggregate_Bool_Exp>;
   person_pixiv_accounts?: InputMaybe<Person_Pixiv_Accounts_Bool_Exp>;
   person_pixiv_accounts_aggregate?: InputMaybe<Person_Pixiv_Accounts_Aggregate_Bool_Exp>;
+  person_twitch_accounts?: InputMaybe<Person_Twitch_Accounts_Bool_Exp>;
+  person_twitch_accounts_aggregate?: InputMaybe<Person_Twitch_Accounts_Aggregate_Bool_Exp>;
   person_twitter_accounts?: InputMaybe<Person_Twitter_Accounts_Bool_Exp>;
   person_twitter_accounts_aggregate?: InputMaybe<Person_Twitter_Accounts_Aggregate_Bool_Exp>;
   person_youtube_channels?: InputMaybe<Person_Youtube_Channels_Bool_Exp>;
@@ -17367,6 +17738,7 @@ export type Persons_Insert_Input = {
   person_niconico_communities?: InputMaybe<Person_Niconico_Communities_Arr_Rel_Insert_Input>;
   person_niconico_plus_channels?: InputMaybe<Person_Niconico_Plus_Channels_Arr_Rel_Insert_Input>;
   person_pixiv_accounts?: InputMaybe<Person_Pixiv_Accounts_Arr_Rel_Insert_Input>;
+  person_twitch_accounts?: InputMaybe<Person_Twitch_Accounts_Arr_Rel_Insert_Input>;
   person_twitter_accounts?: InputMaybe<Person_Twitter_Accounts_Arr_Rel_Insert_Input>;
   person_youtube_channels?: InputMaybe<Person_Youtube_Channels_Arr_Rel_Insert_Input>;
   program_persons?: InputMaybe<Program_Persons_Arr_Rel_Insert_Input>;
@@ -17426,6 +17798,7 @@ export type Persons_Order_By = {
   person_niconico_communities_aggregate?: InputMaybe<Person_Niconico_Communities_Aggregate_Order_By>;
   person_niconico_plus_channels_aggregate?: InputMaybe<Person_Niconico_Plus_Channels_Aggregate_Order_By>;
   person_pixiv_accounts_aggregate?: InputMaybe<Person_Pixiv_Accounts_Aggregate_Order_By>;
+  person_twitch_accounts_aggregate?: InputMaybe<Person_Twitch_Accounts_Aggregate_Order_By>;
   person_twitter_accounts_aggregate?: InputMaybe<Person_Twitter_Accounts_Aggregate_Order_By>;
   person_youtube_channels_aggregate?: InputMaybe<Person_Youtube_Channels_Aggregate_Order_By>;
   program_persons_aggregate?: InputMaybe<Program_Persons_Aggregate_Order_By>;
@@ -20963,6 +21336,12 @@ export type Query_Root = {
   /** fetch data from the table: "person_pixiv_accounts" using primary key columns */
   person_pixiv_accounts_by_pk?: Maybe<Person_Pixiv_Accounts>;
   /** An array relationship */
+  person_twitch_accounts: Array<Person_Twitch_Accounts>;
+  /** An aggregate relationship */
+  person_twitch_accounts_aggregate: Person_Twitch_Accounts_Aggregate;
+  /** fetch data from the table: "person_twitch_accounts" using primary key columns */
+  person_twitch_accounts_by_pk?: Maybe<Person_Twitch_Accounts>;
+  /** An array relationship */
   person_twitter_accounts: Array<Person_Twitter_Accounts>;
   /** An aggregate relationship */
   person_twitter_accounts_aggregate: Person_Twitter_Accounts_Aggregate;
@@ -21052,6 +21431,12 @@ export type Query_Root = {
   projects_aggregate: Projects_Aggregate;
   /** fetch data from the table: "projects" using primary key columns */
   projects_by_pk?: Maybe<Projects>;
+  /** fetch data from the table: "twitch_accounts" */
+  twitch_accounts: Array<Twitch_Accounts>;
+  /** fetch aggregated fields from the table: "twitch_accounts" */
+  twitch_accounts_aggregate: Twitch_Accounts_Aggregate;
+  /** fetch data from the table: "twitch_accounts" using primary key columns */
+  twitch_accounts_by_pk?: Maybe<Twitch_Accounts>;
   /** fetch data from the table: "twitter_accounts" */
   twitter_accounts: Array<Twitter_Accounts>;
   /** fetch aggregated fields from the table: "twitter_accounts" */
@@ -22103,6 +22488,29 @@ export type Query_RootPerson_Pixiv_Accounts_By_PkArgs = {
 };
 
 
+export type Query_RootPerson_Twitch_AccountsArgs = {
+  distinct_on?: InputMaybe<Array<Person_Twitch_Accounts_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Person_Twitch_Accounts_Order_By>>;
+  where?: InputMaybe<Person_Twitch_Accounts_Bool_Exp>;
+};
+
+
+export type Query_RootPerson_Twitch_Accounts_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Person_Twitch_Accounts_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Person_Twitch_Accounts_Order_By>>;
+  where?: InputMaybe<Person_Twitch_Accounts_Bool_Exp>;
+};
+
+
+export type Query_RootPerson_Twitch_Accounts_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
 export type Query_RootPerson_Twitter_AccountsArgs = {
   distinct_on?: InputMaybe<Array<Person_Twitter_Accounts_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -22444,6 +22852,29 @@ export type Query_RootProjects_AggregateArgs = {
 
 
 export type Query_RootProjects_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Query_RootTwitch_AccountsArgs = {
+  distinct_on?: InputMaybe<Array<Twitch_Accounts_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Twitch_Accounts_Order_By>>;
+  where?: InputMaybe<Twitch_Accounts_Bool_Exp>;
+};
+
+
+export type Query_RootTwitch_Accounts_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Twitch_Accounts_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Twitch_Accounts_Order_By>>;
+  where?: InputMaybe<Twitch_Accounts_Bool_Exp>;
+};
+
+
+export type Query_RootTwitch_Accounts_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
@@ -22940,6 +23371,14 @@ export type Subscription_Root = {
   /** fetch data from the table in a streaming manner: "person_pixiv_accounts" */
   person_pixiv_accounts_stream: Array<Person_Pixiv_Accounts>;
   /** An array relationship */
+  person_twitch_accounts: Array<Person_Twitch_Accounts>;
+  /** An aggregate relationship */
+  person_twitch_accounts_aggregate: Person_Twitch_Accounts_Aggregate;
+  /** fetch data from the table: "person_twitch_accounts" using primary key columns */
+  person_twitch_accounts_by_pk?: Maybe<Person_Twitch_Accounts>;
+  /** fetch data from the table in a streaming manner: "person_twitch_accounts" */
+  person_twitch_accounts_stream: Array<Person_Twitch_Accounts>;
+  /** An array relationship */
   person_twitter_accounts: Array<Person_Twitter_Accounts>;
   /** An aggregate relationship */
   person_twitter_accounts_aggregate: Person_Twitter_Accounts_Aggregate;
@@ -23059,6 +23498,14 @@ export type Subscription_Root = {
   projects_by_pk?: Maybe<Projects>;
   /** fetch data from the table in a streaming manner: "projects" */
   projects_stream: Array<Projects>;
+  /** fetch data from the table: "twitch_accounts" */
+  twitch_accounts: Array<Twitch_Accounts>;
+  /** fetch aggregated fields from the table: "twitch_accounts" */
+  twitch_accounts_aggregate: Twitch_Accounts_Aggregate;
+  /** fetch data from the table: "twitch_accounts" using primary key columns */
+  twitch_accounts_by_pk?: Maybe<Twitch_Accounts>;
+  /** fetch data from the table in a streaming manner: "twitch_accounts" */
+  twitch_accounts_stream: Array<Twitch_Accounts>;
   /** fetch data from the table: "twitter_accounts" */
   twitter_accounts: Array<Twitter_Accounts>;
   /** fetch aggregated fields from the table: "twitter_accounts" */
@@ -24430,6 +24877,36 @@ export type Subscription_RootPerson_Pixiv_Accounts_StreamArgs = {
 };
 
 
+export type Subscription_RootPerson_Twitch_AccountsArgs = {
+  distinct_on?: InputMaybe<Array<Person_Twitch_Accounts_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Person_Twitch_Accounts_Order_By>>;
+  where?: InputMaybe<Person_Twitch_Accounts_Bool_Exp>;
+};
+
+
+export type Subscription_RootPerson_Twitch_Accounts_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Person_Twitch_Accounts_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Person_Twitch_Accounts_Order_By>>;
+  where?: InputMaybe<Person_Twitch_Accounts_Bool_Exp>;
+};
+
+
+export type Subscription_RootPerson_Twitch_Accounts_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootPerson_Twitch_Accounts_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Person_Twitch_Accounts_Stream_Cursor_Input>>;
+  where?: InputMaybe<Person_Twitch_Accounts_Bool_Exp>;
+};
+
+
 export type Subscription_RootPerson_Twitter_AccountsArgs = {
   distinct_on?: InputMaybe<Array<Person_Twitter_Accounts_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -24880,6 +25357,36 @@ export type Subscription_RootProjects_StreamArgs = {
 };
 
 
+export type Subscription_RootTwitch_AccountsArgs = {
+  distinct_on?: InputMaybe<Array<Twitch_Accounts_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Twitch_Accounts_Order_By>>;
+  where?: InputMaybe<Twitch_Accounts_Bool_Exp>;
+};
+
+
+export type Subscription_RootTwitch_Accounts_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Twitch_Accounts_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Twitch_Accounts_Order_By>>;
+  where?: InputMaybe<Twitch_Accounts_Bool_Exp>;
+};
+
+
+export type Subscription_RootTwitch_Accounts_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootTwitch_Accounts_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Twitch_Accounts_Stream_Cursor_Input>>;
+  where?: InputMaybe<Twitch_Accounts_Bool_Exp>;
+};
+
+
 export type Subscription_RootTwitter_AccountsArgs = {
   distinct_on?: InputMaybe<Array<Twitter_Accounts_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -25070,6 +25577,213 @@ export type Timestamptz_Comparison_Exp = {
   _lte?: InputMaybe<Scalars['timestamptz']['input']>;
   _neq?: InputMaybe<Scalars['timestamptz']['input']>;
   _nin?: InputMaybe<Array<Scalars['timestamptz']['input']>>;
+};
+
+/** columns and relationships of "twitch_accounts" */
+export type Twitch_Accounts = {
+  __typename?: 'twitch_accounts';
+  created_at: Scalars['timestamptz']['output'];
+  id: Scalars['uuid']['output'];
+  name: Scalars['String']['output'];
+  /** An array relationship */
+  person_twitch_accounts: Array<Person_Twitch_Accounts>;
+  /** An aggregate relationship */
+  person_twitch_accounts_aggregate: Person_Twitch_Accounts_Aggregate;
+  screen_name: Scalars['String']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+
+/** columns and relationships of "twitch_accounts" */
+export type Twitch_AccountsPerson_Twitch_AccountsArgs = {
+  distinct_on?: InputMaybe<Array<Person_Twitch_Accounts_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Person_Twitch_Accounts_Order_By>>;
+  where?: InputMaybe<Person_Twitch_Accounts_Bool_Exp>;
+};
+
+
+/** columns and relationships of "twitch_accounts" */
+export type Twitch_AccountsPerson_Twitch_Accounts_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Person_Twitch_Accounts_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Person_Twitch_Accounts_Order_By>>;
+  where?: InputMaybe<Person_Twitch_Accounts_Bool_Exp>;
+};
+
+/** aggregated selection of "twitch_accounts" */
+export type Twitch_Accounts_Aggregate = {
+  __typename?: 'twitch_accounts_aggregate';
+  aggregate?: Maybe<Twitch_Accounts_Aggregate_Fields>;
+  nodes: Array<Twitch_Accounts>;
+};
+
+/** aggregate fields of "twitch_accounts" */
+export type Twitch_Accounts_Aggregate_Fields = {
+  __typename?: 'twitch_accounts_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Twitch_Accounts_Max_Fields>;
+  min?: Maybe<Twitch_Accounts_Min_Fields>;
+};
+
+
+/** aggregate fields of "twitch_accounts" */
+export type Twitch_Accounts_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Twitch_Accounts_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** Boolean expression to filter rows from the table "twitch_accounts". All fields are combined with a logical 'AND'. */
+export type Twitch_Accounts_Bool_Exp = {
+  _and?: InputMaybe<Array<Twitch_Accounts_Bool_Exp>>;
+  _not?: InputMaybe<Twitch_Accounts_Bool_Exp>;
+  _or?: InputMaybe<Array<Twitch_Accounts_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  name?: InputMaybe<String_Comparison_Exp>;
+  person_twitch_accounts?: InputMaybe<Person_Twitch_Accounts_Bool_Exp>;
+  person_twitch_accounts_aggregate?: InputMaybe<Person_Twitch_Accounts_Aggregate_Bool_Exp>;
+  screen_name?: InputMaybe<String_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "twitch_accounts" */
+export enum Twitch_Accounts_Constraint {
+  /** unique or primary key constraint on columns "id" */
+  TwitchAccountsPkey = 'twitch_accounts_pkey',
+  /** unique or primary key constraint on columns "screen_name" */
+  TwitchAccountsScreenNameKey = 'twitch_accounts_screen_name_key'
+}
+
+/** input type for inserting data into table "twitch_accounts" */
+export type Twitch_Accounts_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  person_twitch_accounts?: InputMaybe<Person_Twitch_Accounts_Arr_Rel_Insert_Input>;
+  screen_name?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Twitch_Accounts_Max_Fields = {
+  __typename?: 'twitch_accounts_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  screen_name?: Maybe<Scalars['String']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** aggregate min on columns */
+export type Twitch_Accounts_Min_Fields = {
+  __typename?: 'twitch_accounts_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  screen_name?: Maybe<Scalars['String']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** response of any mutation on the table "twitch_accounts" */
+export type Twitch_Accounts_Mutation_Response = {
+  __typename?: 'twitch_accounts_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Twitch_Accounts>;
+};
+
+/** input type for inserting object relation for remote table "twitch_accounts" */
+export type Twitch_Accounts_Obj_Rel_Insert_Input = {
+  data: Twitch_Accounts_Insert_Input;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Twitch_Accounts_On_Conflict>;
+};
+
+/** on_conflict condition type for table "twitch_accounts" */
+export type Twitch_Accounts_On_Conflict = {
+  constraint: Twitch_Accounts_Constraint;
+  update_columns?: Array<Twitch_Accounts_Update_Column>;
+  where?: InputMaybe<Twitch_Accounts_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "twitch_accounts". */
+export type Twitch_Accounts_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  name?: InputMaybe<Order_By>;
+  person_twitch_accounts_aggregate?: InputMaybe<Person_Twitch_Accounts_Aggregate_Order_By>;
+  screen_name?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: twitch_accounts */
+export type Twitch_Accounts_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "twitch_accounts" */
+export enum Twitch_Accounts_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Name = 'name',
+  /** column name */
+  ScreenName = 'screen_name',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "twitch_accounts" */
+export type Twitch_Accounts_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  screen_name?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** Streaming cursor of the table "twitch_accounts" */
+export type Twitch_Accounts_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Twitch_Accounts_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Twitch_Accounts_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  screen_name?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** update columns of table "twitch_accounts" */
+export enum Twitch_Accounts_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Name = 'name',
+  /** column name */
+  ScreenName = 'screen_name',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Twitch_Accounts_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Twitch_Accounts_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Twitch_Accounts_Bool_Exp;
 };
 
 /** columns and relationships of "twitter_accounts" */
@@ -26719,7 +27433,7 @@ export type GetPersonPageQueryVariables = Exact<{
 }>;
 
 
-export type GetPersonPageQuery = { __typename?: 'query_root', person?: { __typename?: 'persons', id: any, name: string, personTwitterAccounts: Array<{ __typename?: 'person_twitter_accounts', twitterAccount: { __typename?: 'twitter_accounts', id: any, name: string, twitterScreenName: string, remoteTwitterUserId: string } }>, personFediverseAccounts: Array<{ __typename?: 'person_fediverse_accounts', fediverseAccount: { __typename?: 'fediverse_accounts', id: any, name: string, fediverseAcct: string } }>, personNiconicoAccounts: Array<{ __typename?: 'person_niconico_accounts', niconicoAccount: { __typename?: 'niconico_accounts', id: any, name: string, remoteNiconicoAccountId: string } }>, personNiconicoCommunities: Array<{ __typename?: 'person_niconico_communities', niconicoCommunity: { __typename?: 'niconico_communities', id: any, name: string, remoteNiconicoCommunityId: string } }>, personNiconicoChannels: Array<{ __typename?: 'person_niconico_channels', niconicoChannel: { __typename?: 'niconico_channels', id: any, name: string, remoteNiconicoChannelId: string, screenName?: string | null } }>, personNiconicoPlusChannels: Array<{ __typename?: 'person_niconico_plus_channels', niconicoPlusChannel: { __typename?: 'niconico_plus_channels', id: any, name: string, remoteNiconicoPlusChannelId: string, screenName: string } }>, personYoutubeChannels: Array<{ __typename?: 'person_youtube_channels', youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string, youtubeChannelHandle?: string | null } }>, personPixivAccounts: Array<{ __typename?: 'person_pixiv_accounts', pixivAccount: { __typename?: 'pixiv_accounts', id: any, name: string, remotePixivAccountId: string } }>, programPersons: Array<{ __typename?: 'program_persons', program: { __typename?: 'programs', id: any, title: string, startTime?: any | null } }> } | null };
+export type GetPersonPageQuery = { __typename?: 'query_root', person?: { __typename?: 'persons', id: any, name: string, personTwitterAccounts: Array<{ __typename?: 'person_twitter_accounts', twitterAccount: { __typename?: 'twitter_accounts', id: any, name: string, twitterScreenName: string, remoteTwitterUserId: string } }>, personFediverseAccounts: Array<{ __typename?: 'person_fediverse_accounts', fediverseAccount: { __typename?: 'fediverse_accounts', id: any, name: string, fediverseAcct: string } }>, personNiconicoAccounts: Array<{ __typename?: 'person_niconico_accounts', niconicoAccount: { __typename?: 'niconico_accounts', id: any, name: string, remoteNiconicoAccountId: string } }>, personNiconicoCommunities: Array<{ __typename?: 'person_niconico_communities', niconicoCommunity: { __typename?: 'niconico_communities', id: any, name: string, remoteNiconicoCommunityId: string } }>, personNiconicoChannels: Array<{ __typename?: 'person_niconico_channels', niconicoChannel: { __typename?: 'niconico_channels', id: any, name: string, remoteNiconicoChannelId: string, screenName?: string | null } }>, personNiconicoPlusChannels: Array<{ __typename?: 'person_niconico_plus_channels', niconicoPlusChannel: { __typename?: 'niconico_plus_channels', id: any, name: string, remoteNiconicoPlusChannelId: string, screenName: string } }>, personYoutubeChannels: Array<{ __typename?: 'person_youtube_channels', youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string, youtubeChannelHandle?: string | null } }>, personTwitchAccounts: Array<{ __typename?: 'person_twitch_accounts', twitchAccount: { __typename?: 'twitch_accounts', id: any, name: string, screenName: string } }>, personPixivAccounts: Array<{ __typename?: 'person_pixiv_accounts', pixivAccount: { __typename?: 'pixiv_accounts', id: any, name: string, remotePixivAccountId: string } }>, programPersons: Array<{ __typename?: 'program_persons', program: { __typename?: 'programs', id: any, title: string, startTime?: any | null } }> } | null };
 
 export type GetPersonPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -27716,6 +28430,15 @@ export const GetPersonPageDocument = gql`
         id
         remoteYoutubeChannelId: remote_youtube_channel_id
         youtubeChannelHandle: youtube_channel_handle
+        name
+      }
+    }
+    personTwitchAccounts: person_twitch_accounts(
+      order_by: {twitch_account: {screen_name: asc}}
+    ) {
+      twitchAccount: twitch_account {
+        id
+        screenName: screen_name
         name
       }
     }

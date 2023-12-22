@@ -109,6 +109,20 @@ query GetPersonPage(
       }
     }
 
+    personTwitchAccounts: person_twitch_accounts(
+      order_by: {
+        twitch_account: {
+          screen_name: asc
+        }
+      }
+    ) {
+      twitchAccount: twitch_account {
+        id
+        screenName: screen_name
+        name
+      }
+    }
+
     personPixivAccounts: person_pixiv_accounts(
       order_by: {
         pixiv_account: {
