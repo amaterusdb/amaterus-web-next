@@ -364,6 +364,42 @@ export default function PersonPage({ personId }: { personId: string }) {
         ) : (
           ''
         )}
+        {person.personTwitchAccounts.length > 0 ? (
+          <>
+            <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+              Twitch
+            </Typography>
+            <Box sx={{ mt: 2 }}>
+              <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>チャンネル</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {person.personTwitchAccounts.map((personTwitchAccounts) => (
+                    <TableRow
+                      key={personTwitchAccounts.twitchAccount.id}
+                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                    >
+                      <TableCell component='th' scope='row'>
+                        <NextLink
+                          href={`https://www.twitch.tv/${personTwitchAccounts.twitchAccount.screenName}`}
+                          passHref
+                          legacyBehavior
+                        >
+                          <MuiLink>{personTwitchAccounts.twitchAccount.name}</MuiLink>
+                        </NextLink>
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </Box>
+          </>
+        ) : (
+          ''
+        )}
         {person.personPixivAccounts.length > 0 ? (
           <>
             <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
