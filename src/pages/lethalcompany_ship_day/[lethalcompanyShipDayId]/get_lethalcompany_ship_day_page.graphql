@@ -49,6 +49,7 @@ query GetLethalcompanyShipDayPage(
         ) {
           id
           startTime: start_time
+          endTime: end_time
           person {
             id
             name

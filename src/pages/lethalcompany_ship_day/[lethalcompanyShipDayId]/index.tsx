@@ -225,6 +225,14 @@ export default function LethalcompanyShipDayPage({
                       parseISO(programLiveArchive.startTime),
                     ),
                 )
+                .filter(
+                  (programLiveArchive) =>
+                    programLiveArchive.endTime != null &&
+                    !isBefore(
+                      parseISO(programLiveArchive.endTime),
+                      parseISO(lethalcompanyShipDay.startTime),
+                    ),
+                )
                 .map((programLiveArchive) => {
                   const localStartTime = intervalToDuration({
                     start: parseISO(programLiveArchive.startTime),
