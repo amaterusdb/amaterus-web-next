@@ -181,7 +181,6 @@ query GetProgramPage(
       lethalCompanyShipDays: lethalcompany_ship_days(
         order_by: {
           day_number: asc
-          sub_day_number: asc
         }
       ) {
         id

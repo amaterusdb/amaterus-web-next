@@ -32262,9 +32262,7 @@ export const GetProgramPageDocument = gql`
       index
       startTime: start_time
       endTime: end_time
-      lethalCompanyShipDays: lethalcompany_ship_days(
-        order_by: {day_number: asc, sub_day_number: asc}
-      ) {
+      lethalCompanyShipDays: lethalcompany_ship_days(order_by: {day_number: asc}) {
         id
         dayNumber: day_number
         subDayNumber: sub_day_number
