@@ -212,7 +212,7 @@ export default function LethalcompanyShipDayPage({
                 <TableCell>放送タイトル</TableCell>
                 <TableCell>放送者</TableCell>
                 <TableCell>開始時間</TableCell>
-                <TableCell>終了時間</TableCell>
+                {lethalcompanyShipDay.endTime != null ? <TableCell>終了時間</TableCell> : ''}
               </TableRow>
             </TableHead>
             <TableBody>
@@ -230,10 +230,13 @@ export default function LethalcompanyShipDayPage({
                     start: parseISO(programLiveArchive.startTime),
                     end: parseISO(lethalcompanyShipDay.startTime),
                   })
-                  const localEndTime = intervalToDuration({
-                    start: parseISO(programLiveArchive.startTime),
-                    end: parseISO(lethalcompanyShipDay.endTime),
-                  })
+                  const localEndTime =
+                    lethalcompanyShipDay.endTime != null
+                      ? intervalToDuration({
+                          start: parseISO(programLiveArchive.startTime),
+                          end: parseISO(lethalcompanyShipDay.endTime),
+                        })
+                      : null
 
                   const localStartTimeHours = localStartTime.hours ?? 0
                   const localStartTimeMinutes = localStartTime.minutes ?? 0
@@ -241,9 +244,9 @@ export default function LethalcompanyShipDayPage({
                   const localStartTimeTotalSeconds =
                     localStartTimeHours * 3600 + localStartTimeMinutes * 60 + localStartTimeSeconds
 
-                  const localEndTimeHours = localEndTime.hours ?? 0
-                  const localEndTimeMinutes = localEndTime.minutes ?? 0
-                  const localEndTimeSeconds = localEndTime.seconds ?? 0
+                  const localEndTimeHours = localEndTime?.hours ?? 0
+                  const localEndTimeMinutes = localEndTime?.minutes ?? 0
+                  const localEndTimeSeconds = localEndTime?.seconds ?? 0
                   const localEndTimeTotalSeconds =
                     localEndTimeHours * 3600 + localEndTimeMinutes * 60 + localEndTimeSeconds
 
@@ -321,38 +324,42 @@ export default function LethalcompanyShipDayPage({
                           ''
                         )}
                       </TableCell>
-                      <TableCell>
-                        {programLiveArchive.youtubeLive != null ? (
-                          <NextLink
-                            href={`https://www.youtube.com/watch?v=${programLiveArchive.youtubeLive.remoteYoutubeVideoId}&t=${localEndTimeTotalSeconds}s`}
-                            passHref
-                            legacyBehavior
-                          >
-                            <MuiLink>
-                              {String(localEndTimeHours).padStart(2, '0')}:
-                              {String(localEndTimeMinutes).padStart(2, '0')}:
-                              {String(localEndTimeSeconds).padStart(2, '0')}
-                            </MuiLink>
-                          </NextLink>
-                        ) : (
-                          ''
-                        )}
-                        {programLiveArchive.youtubeVideo != null ? (
-                          <NextLink
-                            href={`https://www.youtube.com/watch?v=${programLiveArchive.youtubeVideo.remoteYoutubeVideoId}&t=${localEndTimeTotalSeconds}s`}
-                            passHref
-                            legacyBehavior
-                          >
-                            <MuiLink>
-                              {String(localEndTimeHours).padStart(2, '0')}:
-                              {String(localEndTimeMinutes).padStart(2, '0')}:
-                              {String(localEndTimeSeconds).padStart(2, '0')}
-                            </MuiLink>
-                          </NextLink>
-                        ) : (
-                          ''
-                        )}
-                      </TableCell>
+                      {lethalcompanyShipDay.endTime != null ? (
+                        <TableCell>
+                          {programLiveArchive.youtubeLive != null ? (
+                            <NextLink
+                              href={`https://www.youtube.com/watch?v=${programLiveArchive.youtubeLive.remoteYoutubeVideoId}&t=${localEndTimeTotalSeconds}s`}
+                              passHref
+                              legacyBehavior
+                            >
+                              <MuiLink>
+                                {String(localEndTimeHours).padStart(2, '0')}:
+                                {String(localEndTimeMinutes).padStart(2, '0')}:
+                                {String(localEndTimeSeconds).padStart(2, '0')}
+                              </MuiLink>
+                            </NextLink>
+                          ) : (
+                            ''
+                          )}
+                          {programLiveArchive.youtubeVideo != null ? (
+                            <NextLink
+                              href={`https://www.youtube.com/watch?v=${programLiveArchive.youtubeVideo.remoteYoutubeVideoId}&t=${localEndTimeTotalSeconds}s`}
+                              passHref
+                              legacyBehavior
+                            >
+                              <MuiLink>
+                                {String(localEndTimeHours).padStart(2, '0')}:
+                                {String(localEndTimeMinutes).padStart(2, '0')}:
+                                {String(localEndTimeSeconds).padStart(2, '0')}
+                              </MuiLink>
+                            </NextLink>
+                          ) : (
+                            ''
+                          )}
+                        </TableCell>
+                      ) : (
+                        ''
+                      )}
                     </TableRow>
                   )
                 })}
