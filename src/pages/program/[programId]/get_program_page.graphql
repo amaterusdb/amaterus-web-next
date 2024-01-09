@@ -185,6 +185,9 @@ query GetProgramPage(
         }
       ) {
         id
+        dayNumber: day_number
+        subDayNumber: sub_day_number
+        absoluteDayNumber: absolute_day_number
 
         lethalcompanyMap: lethalcompany_map {
           id
