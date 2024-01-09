@@ -163,6 +163,26 @@ export default function LethalcompanyShipDayPage({
               ) : (
                 ''
               )}
+              {lethalcompanyShipDay.lethalcompanyMap != null ? (
+                <TableRow>
+                  <TableCell component='th' scope='row'>
+                    マップ
+                  </TableCell>
+                  <TableCell>{lethalcompanyShipDay.lethalcompanyMap.name}</TableCell>
+                </TableRow>
+              ) : (
+                ''
+              )}
+              {lethalcompanyShipDay.lethalcompanyWeather != null ? (
+                <TableRow>
+                  <TableCell component='th' scope='row'>
+                    天候
+                  </TableCell>
+                  <TableCell>{lethalcompanyShipDay.lethalcompanyWeather.name}</TableCell>
+                </TableRow>
+              ) : (
+                ''
+              )}
             </TableBody>
           </Table>
         </Box>

@@ -435,8 +435,13 @@ export default function ProgramPage({ programId }: { programId: string }) {
                           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         >
                           <TableCell>{lethalCompanyShip.index + 1}</TableCell>
-                          <TableCell>{lethalCompanyShipDay.dayNumber}-{lethalCompanyShipDay.subDayNumber}</TableCell>
-                          <TableCell>{lethalCompanyShipDay.absoluteDayNumber}-{lethalCompanyShipDay.subDayNumber}</TableCell>
+                          <TableCell>
+                            {lethalCompanyShipDay.dayNumber}-{lethalCompanyShipDay.subDayNumber}
+                          </TableCell>
+                          <TableCell>
+                            {lethalCompanyShipDay.absoluteDayNumber}-
+                            {lethalCompanyShipDay.subDayNumber}
+                          </TableCell>
                           <TableCell>{lethalCompanyShipDay.lethalcompanyMap?.name}</TableCell>
                           <TableCell>{lethalCompanyShipDay.lethalcompanyWeather?.name}</TableCell>
                           <TableCell>
