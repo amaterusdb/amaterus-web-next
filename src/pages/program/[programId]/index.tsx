@@ -405,6 +405,83 @@ export default function ProgramPage({ programId }: { programId: string }) {
         ) : (
           ''
         )}
+        {program.lethalCompanyShips.length > 0 ? (
+          <>
+            <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
+              Lethal Company
+            </Typography>
+            <Typography variant='h6' component='h4' sx={{ mt: 1 }}>
+              船と日数
+            </Typography>
+            <Box sx={{ mt: 2 }}>
+              <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
+                <TableHead>
+                  <TableRow>
+                    <TableCell>船</TableCell>
+                    <TableCell>相対日数</TableCell>
+                    <TableCell>枝番日数</TableCell>
+                    <TableCell>ゲーム内日数</TableCell>
+                    <TableCell>月</TableCell>
+                    <TableCell>天候</TableCell>
+                    <TableCell>開始日時</TableCell>
+                    <TableCell>終了日時</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {program.lethalCompanyShips.map((lethalCompanyShip) => (
+                    <>
+                      {lethalCompanyShip.lethalCompanyShipDays.map((lethalCompanyShipDay) => (
+                        <TableRow
+                          key={lethalCompanyShipDay.id}
+                          sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                        >
+                          <TableCell>{lethalCompanyShip.index + 1}</TableCell>
+                          <TableCell>{lethalCompanyShipDay.dayNumber}</TableCell>
+                          <TableCell>{lethalCompanyShipDay.subDayNumber}</TableCell>
+                          <TableCell>{lethalCompanyShipDay.absoluteDayNumber}</TableCell>
+                          <TableCell>{lethalCompanyShipDay.lethalcompanyMap?.name}</TableCell>
+                          <TableCell>{lethalCompanyShipDay.lethalcompanyWeather?.name}</TableCell>
+                          <TableCell>
+                            {lethalCompanyShipDay.startTime != null ? (
+                              <NextLink
+                                href={`/lethalcompany_ship_day/${lethalCompanyShipDay.id}/`}
+                                passHref
+                                legacyBehavior
+                              >
+                                <MuiLink>
+                                  {format(
+                                    parseISO(lethalCompanyShipDay.startTime),
+                                    'yyyy-MM-dd HH:mm:ss',
+                                  )}
+                                </MuiLink>
+                              </NextLink>
+                            ) : (
+                              ''
+                            )}
+                          </TableCell>
+                          <TableCell>
+                            {lethalCompanyShipDay.endTime != null ? (
+                              <>
+                                {format(
+                                  parseISO(lethalCompanyShipDay.endTime),
+                                  'yyyy-MM-dd HH:mm:ss',
+                                )}
+                              </>
+                            ) : (
+                              ''
+                            )}
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </>
+                  ))}
+                </TableBody>
+              </Table>
+            </Box>
+          </>
+        ) : (
+          ''
+        )}
         {program.fallguysMatches.length > 0 ? (
           <>
             <Typography variant='h5' component='h3' sx={{ mt: 3 }}>
