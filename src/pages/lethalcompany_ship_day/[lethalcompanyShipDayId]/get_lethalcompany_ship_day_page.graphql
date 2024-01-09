@@ -8,6 +8,16 @@ query GetLethalcompanyShipDayPage(
     startTime: start_time
     endTime: end_time
 
+    lethalcompanyMap: lethalcompany_map {
+      id
+      name
+    }
+
+    lethalcompanyWeather: lethalcompany_weather {
+      id
+      name
+    }
+
     lethalcompanyShip: lethalcompany_ship {
       program {
         id
