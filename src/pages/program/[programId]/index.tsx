@@ -419,7 +419,6 @@ export default function ProgramPage({ programId }: { programId: string }) {
                   <TableRow>
                     <TableCell>船</TableCell>
                     <TableCell>相対日数</TableCell>
-                    <TableCell>枝番日数</TableCell>
                     <TableCell>ゲーム内日数</TableCell>
                     <TableCell>月</TableCell>
                     <TableCell>天候</TableCell>
@@ -436,9 +435,8 @@ export default function ProgramPage({ programId }: { programId: string }) {
                           sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                         >
                           <TableCell>{lethalCompanyShip.index + 1}</TableCell>
-                          <TableCell>{lethalCompanyShipDay.dayNumber}</TableCell>
-                          <TableCell>{lethalCompanyShipDay.subDayNumber}</TableCell>
-                          <TableCell>{lethalCompanyShipDay.absoluteDayNumber}</TableCell>
+                          <TableCell>{lethalCompanyShipDay.dayNumber}-{lethalCompanyShipDay.subDayNumber}</TableCell>
+                          <TableCell>{lethalCompanyShipDay.absoluteDayNumber}-{lethalCompanyShipDay.subDayNumber}</TableCell>
                           <TableCell>{lethalCompanyShipDay.lethalcompanyMap?.name}</TableCell>
                           <TableCell>{lethalCompanyShipDay.lethalcompanyWeather?.name}</TableCell>
                           <TableCell>
