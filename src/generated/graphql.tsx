@@ -6475,6 +6475,912 @@ export type Fediverse_Accounts_Updates = {
   where: Fediverse_Accounts_Bool_Exp;
 };
 
+/** columns and relationships of "game_exchange_parties" */
+export type Game_Exchange_Parties = {
+  __typename?: 'game_exchange_parties';
+  created_at: Scalars['timestamptz']['output'];
+  /** An array relationship */
+  game_exchange_party_exchanges: Array<Game_Exchange_Party_Exchange>;
+  /** An aggregate relationship */
+  game_exchange_party_exchanges_aggregate: Game_Exchange_Party_Exchange_Aggregate;
+  /** An array relationship */
+  game_exchange_party_live_archives: Array<Game_Exchange_Party_Live_Archives>;
+  /** An aggregate relationship */
+  game_exchange_party_live_archives_aggregate: Game_Exchange_Party_Live_Archives_Aggregate;
+  id: Scalars['uuid']['output'];
+  /** An array relationship */
+  program_game_exchange_parties: Array<Program_Game_Exchange_Parties>;
+  /** An aggregate relationship */
+  program_game_exchange_parties_aggregate: Program_Game_Exchange_Parties_Aggregate;
+  start_time: Scalars['timestamptz']['output'];
+  title: Scalars['String']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+
+/** columns and relationships of "game_exchange_parties" */
+export type Game_Exchange_PartiesGame_Exchange_Party_ExchangesArgs = {
+  distinct_on?: InputMaybe<Array<Game_Exchange_Party_Exchange_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Game_Exchange_Party_Exchange_Order_By>>;
+  where?: InputMaybe<Game_Exchange_Party_Exchange_Bool_Exp>;
+};
+
+
+/** columns and relationships of "game_exchange_parties" */
+export type Game_Exchange_PartiesGame_Exchange_Party_Exchanges_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Game_Exchange_Party_Exchange_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Game_Exchange_Party_Exchange_Order_By>>;
+  where?: InputMaybe<Game_Exchange_Party_Exchange_Bool_Exp>;
+};
+
+
+/** columns and relationships of "game_exchange_parties" */
+export type Game_Exchange_PartiesGame_Exchange_Party_Live_ArchivesArgs = {
+  distinct_on?: InputMaybe<Array<Game_Exchange_Party_Live_Archives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Game_Exchange_Party_Live_Archives_Order_By>>;
+  where?: InputMaybe<Game_Exchange_Party_Live_Archives_Bool_Exp>;
+};
+
+
+/** columns and relationships of "game_exchange_parties" */
+export type Game_Exchange_PartiesGame_Exchange_Party_Live_Archives_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Game_Exchange_Party_Live_Archives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Game_Exchange_Party_Live_Archives_Order_By>>;
+  where?: InputMaybe<Game_Exchange_Party_Live_Archives_Bool_Exp>;
+};
+
+
+/** columns and relationships of "game_exchange_parties" */
+export type Game_Exchange_PartiesProgram_Game_Exchange_PartiesArgs = {
+  distinct_on?: InputMaybe<Array<Program_Game_Exchange_Parties_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Game_Exchange_Parties_Order_By>>;
+  where?: InputMaybe<Program_Game_Exchange_Parties_Bool_Exp>;
+};
+
+
+/** columns and relationships of "game_exchange_parties" */
+export type Game_Exchange_PartiesProgram_Game_Exchange_Parties_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Game_Exchange_Parties_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Game_Exchange_Parties_Order_By>>;
+  where?: InputMaybe<Program_Game_Exchange_Parties_Bool_Exp>;
+};
+
+/** aggregated selection of "game_exchange_parties" */
+export type Game_Exchange_Parties_Aggregate = {
+  __typename?: 'game_exchange_parties_aggregate';
+  aggregate?: Maybe<Game_Exchange_Parties_Aggregate_Fields>;
+  nodes: Array<Game_Exchange_Parties>;
+};
+
+/** aggregate fields of "game_exchange_parties" */
+export type Game_Exchange_Parties_Aggregate_Fields = {
+  __typename?: 'game_exchange_parties_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Game_Exchange_Parties_Max_Fields>;
+  min?: Maybe<Game_Exchange_Parties_Min_Fields>;
+};
+
+
+/** aggregate fields of "game_exchange_parties" */
+export type Game_Exchange_Parties_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Game_Exchange_Parties_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** Boolean expression to filter rows from the table "game_exchange_parties". All fields are combined with a logical 'AND'. */
+export type Game_Exchange_Parties_Bool_Exp = {
+  _and?: InputMaybe<Array<Game_Exchange_Parties_Bool_Exp>>;
+  _not?: InputMaybe<Game_Exchange_Parties_Bool_Exp>;
+  _or?: InputMaybe<Array<Game_Exchange_Parties_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  game_exchange_party_exchanges?: InputMaybe<Game_Exchange_Party_Exchange_Bool_Exp>;
+  game_exchange_party_exchanges_aggregate?: InputMaybe<Game_Exchange_Party_Exchange_Aggregate_Bool_Exp>;
+  game_exchange_party_live_archives?: InputMaybe<Game_Exchange_Party_Live_Archives_Bool_Exp>;
+  game_exchange_party_live_archives_aggregate?: InputMaybe<Game_Exchange_Party_Live_Archives_Aggregate_Bool_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  program_game_exchange_parties?: InputMaybe<Program_Game_Exchange_Parties_Bool_Exp>;
+  program_game_exchange_parties_aggregate?: InputMaybe<Program_Game_Exchange_Parties_Aggregate_Bool_Exp>;
+  start_time?: InputMaybe<Timestamptz_Comparison_Exp>;
+  title?: InputMaybe<String_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "game_exchange_parties" */
+export enum Game_Exchange_Parties_Constraint {
+  /** unique or primary key constraint on columns "id" */
+  GameExchangePartiesPkey = 'game_exchange_parties_pkey'
+}
+
+/** input type for inserting data into table "game_exchange_parties" */
+export type Game_Exchange_Parties_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  game_exchange_party_exchanges?: InputMaybe<Game_Exchange_Party_Exchange_Arr_Rel_Insert_Input>;
+  game_exchange_party_live_archives?: InputMaybe<Game_Exchange_Party_Live_Archives_Arr_Rel_Insert_Input>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  program_game_exchange_parties?: InputMaybe<Program_Game_Exchange_Parties_Arr_Rel_Insert_Input>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Game_Exchange_Parties_Max_Fields = {
+  __typename?: 'game_exchange_parties_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** aggregate min on columns */
+export type Game_Exchange_Parties_Min_Fields = {
+  __typename?: 'game_exchange_parties_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  title?: Maybe<Scalars['String']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** response of any mutation on the table "game_exchange_parties" */
+export type Game_Exchange_Parties_Mutation_Response = {
+  __typename?: 'game_exchange_parties_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Game_Exchange_Parties>;
+};
+
+/** input type for inserting object relation for remote table "game_exchange_parties" */
+export type Game_Exchange_Parties_Obj_Rel_Insert_Input = {
+  data: Game_Exchange_Parties_Insert_Input;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Game_Exchange_Parties_On_Conflict>;
+};
+
+/** on_conflict condition type for table "game_exchange_parties" */
+export type Game_Exchange_Parties_On_Conflict = {
+  constraint: Game_Exchange_Parties_Constraint;
+  update_columns?: Array<Game_Exchange_Parties_Update_Column>;
+  where?: InputMaybe<Game_Exchange_Parties_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "game_exchange_parties". */
+export type Game_Exchange_Parties_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  game_exchange_party_exchanges_aggregate?: InputMaybe<Game_Exchange_Party_Exchange_Aggregate_Order_By>;
+  game_exchange_party_live_archives_aggregate?: InputMaybe<Game_Exchange_Party_Live_Archives_Aggregate_Order_By>;
+  id?: InputMaybe<Order_By>;
+  program_game_exchange_parties_aggregate?: InputMaybe<Program_Game_Exchange_Parties_Aggregate_Order_By>;
+  start_time?: InputMaybe<Order_By>;
+  title?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: game_exchange_parties */
+export type Game_Exchange_Parties_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "game_exchange_parties" */
+export enum Game_Exchange_Parties_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  StartTime = 'start_time',
+  /** column name */
+  Title = 'title',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "game_exchange_parties" */
+export type Game_Exchange_Parties_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** Streaming cursor of the table "game_exchange_parties" */
+export type Game_Exchange_Parties_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Game_Exchange_Parties_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Game_Exchange_Parties_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  title?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** update columns of table "game_exchange_parties" */
+export enum Game_Exchange_Parties_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  StartTime = 'start_time',
+  /** column name */
+  Title = 'title',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Game_Exchange_Parties_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Game_Exchange_Parties_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Game_Exchange_Parties_Bool_Exp;
+};
+
+/** columns and relationships of "game_exchange_party_exchange" */
+export type Game_Exchange_Party_Exchange = {
+  __typename?: 'game_exchange_party_exchange';
+  created_at: Scalars['timestamptz']['output'];
+  exchange_time?: Maybe<Scalars['timestamptz']['output']>;
+  /** An object relationship */
+  from_person: Persons;
+  from_person_id: Scalars['uuid']['output'];
+  /** An object relationship */
+  game: Games;
+  /** An object relationship */
+  game_exchange_party: Game_Exchange_Parties;
+  game_exchange_party_id: Scalars['uuid']['output'];
+  /** An array relationship */
+  game_exchange_party_live_archives: Array<Game_Exchange_Party_Live_Archives>;
+  /** An aggregate relationship */
+  game_exchange_party_live_archives_aggregate: Game_Exchange_Party_Live_Archives_Aggregate;
+  game_id: Scalars['uuid']['output'];
+  id: Scalars['uuid']['output'];
+  /** An object relationship */
+  to_person: Persons;
+  to_person_id: Scalars['uuid']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+
+/** columns and relationships of "game_exchange_party_exchange" */
+export type Game_Exchange_Party_ExchangeGame_Exchange_Party_Live_ArchivesArgs = {
+  distinct_on?: InputMaybe<Array<Game_Exchange_Party_Live_Archives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Game_Exchange_Party_Live_Archives_Order_By>>;
+  where?: InputMaybe<Game_Exchange_Party_Live_Archives_Bool_Exp>;
+};
+
+
+/** columns and relationships of "game_exchange_party_exchange" */
+export type Game_Exchange_Party_ExchangeGame_Exchange_Party_Live_Archives_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Game_Exchange_Party_Live_Archives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Game_Exchange_Party_Live_Archives_Order_By>>;
+  where?: InputMaybe<Game_Exchange_Party_Live_Archives_Bool_Exp>;
+};
+
+/** aggregated selection of "game_exchange_party_exchange" */
+export type Game_Exchange_Party_Exchange_Aggregate = {
+  __typename?: 'game_exchange_party_exchange_aggregate';
+  aggregate?: Maybe<Game_Exchange_Party_Exchange_Aggregate_Fields>;
+  nodes: Array<Game_Exchange_Party_Exchange>;
+};
+
+export type Game_Exchange_Party_Exchange_Aggregate_Bool_Exp = {
+  count?: InputMaybe<Game_Exchange_Party_Exchange_Aggregate_Bool_Exp_Count>;
+};
+
+export type Game_Exchange_Party_Exchange_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Game_Exchange_Party_Exchange_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Game_Exchange_Party_Exchange_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
+/** aggregate fields of "game_exchange_party_exchange" */
+export type Game_Exchange_Party_Exchange_Aggregate_Fields = {
+  __typename?: 'game_exchange_party_exchange_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Game_Exchange_Party_Exchange_Max_Fields>;
+  min?: Maybe<Game_Exchange_Party_Exchange_Min_Fields>;
+};
+
+
+/** aggregate fields of "game_exchange_party_exchange" */
+export type Game_Exchange_Party_Exchange_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Game_Exchange_Party_Exchange_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** order by aggregate values of table "game_exchange_party_exchange" */
+export type Game_Exchange_Party_Exchange_Aggregate_Order_By = {
+  count?: InputMaybe<Order_By>;
+  max?: InputMaybe<Game_Exchange_Party_Exchange_Max_Order_By>;
+  min?: InputMaybe<Game_Exchange_Party_Exchange_Min_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "game_exchange_party_exchange" */
+export type Game_Exchange_Party_Exchange_Arr_Rel_Insert_Input = {
+  data: Array<Game_Exchange_Party_Exchange_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Game_Exchange_Party_Exchange_On_Conflict>;
+};
+
+/** Boolean expression to filter rows from the table "game_exchange_party_exchange". All fields are combined with a logical 'AND'. */
+export type Game_Exchange_Party_Exchange_Bool_Exp = {
+  _and?: InputMaybe<Array<Game_Exchange_Party_Exchange_Bool_Exp>>;
+  _not?: InputMaybe<Game_Exchange_Party_Exchange_Bool_Exp>;
+  _or?: InputMaybe<Array<Game_Exchange_Party_Exchange_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  exchange_time?: InputMaybe<Timestamptz_Comparison_Exp>;
+  from_person?: InputMaybe<Persons_Bool_Exp>;
+  from_person_id?: InputMaybe<Uuid_Comparison_Exp>;
+  game?: InputMaybe<Games_Bool_Exp>;
+  game_exchange_party?: InputMaybe<Game_Exchange_Parties_Bool_Exp>;
+  game_exchange_party_id?: InputMaybe<Uuid_Comparison_Exp>;
+  game_exchange_party_live_archives?: InputMaybe<Game_Exchange_Party_Live_Archives_Bool_Exp>;
+  game_exchange_party_live_archives_aggregate?: InputMaybe<Game_Exchange_Party_Live_Archives_Aggregate_Bool_Exp>;
+  game_id?: InputMaybe<Uuid_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  to_person?: InputMaybe<Persons_Bool_Exp>;
+  to_person_id?: InputMaybe<Uuid_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "game_exchange_party_exchange" */
+export enum Game_Exchange_Party_Exchange_Constraint {
+  /** unique or primary key constraint on columns "game_exchange_party_id", "from_person_id", "game_id", "to_person_id" */
+  GameExchangePartyExchangeGameExchangePartyIdFromPeKey = 'game_exchange_party_exchange_game_exchange_party_id_from_pe_key',
+  /** unique or primary key constraint on columns "id" */
+  GameExchangePartyExchangePkey = 'game_exchange_party_exchange_pkey'
+}
+
+/** input type for inserting data into table "game_exchange_party_exchange" */
+export type Game_Exchange_Party_Exchange_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  exchange_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  from_person?: InputMaybe<Persons_Obj_Rel_Insert_Input>;
+  from_person_id?: InputMaybe<Scalars['uuid']['input']>;
+  game?: InputMaybe<Games_Obj_Rel_Insert_Input>;
+  game_exchange_party?: InputMaybe<Game_Exchange_Parties_Obj_Rel_Insert_Input>;
+  game_exchange_party_id?: InputMaybe<Scalars['uuid']['input']>;
+  game_exchange_party_live_archives?: InputMaybe<Game_Exchange_Party_Live_Archives_Arr_Rel_Insert_Input>;
+  game_id?: InputMaybe<Scalars['uuid']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  to_person?: InputMaybe<Persons_Obj_Rel_Insert_Input>;
+  to_person_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Game_Exchange_Party_Exchange_Max_Fields = {
+  __typename?: 'game_exchange_party_exchange_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  exchange_time?: Maybe<Scalars['timestamptz']['output']>;
+  from_person_id?: Maybe<Scalars['uuid']['output']>;
+  game_exchange_party_id?: Maybe<Scalars['uuid']['output']>;
+  game_id?: Maybe<Scalars['uuid']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  to_person_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by max() on columns of table "game_exchange_party_exchange" */
+export type Game_Exchange_Party_Exchange_Max_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  exchange_time?: InputMaybe<Order_By>;
+  from_person_id?: InputMaybe<Order_By>;
+  game_exchange_party_id?: InputMaybe<Order_By>;
+  game_id?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  to_person_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Game_Exchange_Party_Exchange_Min_Fields = {
+  __typename?: 'game_exchange_party_exchange_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  exchange_time?: Maybe<Scalars['timestamptz']['output']>;
+  from_person_id?: Maybe<Scalars['uuid']['output']>;
+  game_exchange_party_id?: Maybe<Scalars['uuid']['output']>;
+  game_id?: Maybe<Scalars['uuid']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  to_person_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by min() on columns of table "game_exchange_party_exchange" */
+export type Game_Exchange_Party_Exchange_Min_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  exchange_time?: InputMaybe<Order_By>;
+  from_person_id?: InputMaybe<Order_By>;
+  game_exchange_party_id?: InputMaybe<Order_By>;
+  game_id?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  to_person_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** response of any mutation on the table "game_exchange_party_exchange" */
+export type Game_Exchange_Party_Exchange_Mutation_Response = {
+  __typename?: 'game_exchange_party_exchange_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Game_Exchange_Party_Exchange>;
+};
+
+/** input type for inserting object relation for remote table "game_exchange_party_exchange" */
+export type Game_Exchange_Party_Exchange_Obj_Rel_Insert_Input = {
+  data: Game_Exchange_Party_Exchange_Insert_Input;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Game_Exchange_Party_Exchange_On_Conflict>;
+};
+
+/** on_conflict condition type for table "game_exchange_party_exchange" */
+export type Game_Exchange_Party_Exchange_On_Conflict = {
+  constraint: Game_Exchange_Party_Exchange_Constraint;
+  update_columns?: Array<Game_Exchange_Party_Exchange_Update_Column>;
+  where?: InputMaybe<Game_Exchange_Party_Exchange_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "game_exchange_party_exchange". */
+export type Game_Exchange_Party_Exchange_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  exchange_time?: InputMaybe<Order_By>;
+  from_person?: InputMaybe<Persons_Order_By>;
+  from_person_id?: InputMaybe<Order_By>;
+  game?: InputMaybe<Games_Order_By>;
+  game_exchange_party?: InputMaybe<Game_Exchange_Parties_Order_By>;
+  game_exchange_party_id?: InputMaybe<Order_By>;
+  game_exchange_party_live_archives_aggregate?: InputMaybe<Game_Exchange_Party_Live_Archives_Aggregate_Order_By>;
+  game_id?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  to_person?: InputMaybe<Persons_Order_By>;
+  to_person_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: game_exchange_party_exchange */
+export type Game_Exchange_Party_Exchange_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "game_exchange_party_exchange" */
+export enum Game_Exchange_Party_Exchange_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  ExchangeTime = 'exchange_time',
+  /** column name */
+  FromPersonId = 'from_person_id',
+  /** column name */
+  GameExchangePartyId = 'game_exchange_party_id',
+  /** column name */
+  GameId = 'game_id',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  ToPersonId = 'to_person_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "game_exchange_party_exchange" */
+export type Game_Exchange_Party_Exchange_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  exchange_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  from_person_id?: InputMaybe<Scalars['uuid']['input']>;
+  game_exchange_party_id?: InputMaybe<Scalars['uuid']['input']>;
+  game_id?: InputMaybe<Scalars['uuid']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  to_person_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** Streaming cursor of the table "game_exchange_party_exchange" */
+export type Game_Exchange_Party_Exchange_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Game_Exchange_Party_Exchange_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Game_Exchange_Party_Exchange_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  exchange_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  from_person_id?: InputMaybe<Scalars['uuid']['input']>;
+  game_exchange_party_id?: InputMaybe<Scalars['uuid']['input']>;
+  game_id?: InputMaybe<Scalars['uuid']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  to_person_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** update columns of table "game_exchange_party_exchange" */
+export enum Game_Exchange_Party_Exchange_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  ExchangeTime = 'exchange_time',
+  /** column name */
+  FromPersonId = 'from_person_id',
+  /** column name */
+  GameExchangePartyId = 'game_exchange_party_id',
+  /** column name */
+  GameId = 'game_id',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  ToPersonId = 'to_person_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Game_Exchange_Party_Exchange_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Game_Exchange_Party_Exchange_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Game_Exchange_Party_Exchange_Bool_Exp;
+};
+
+/** columns and relationships of "game_exchange_party_live_archives" */
+export type Game_Exchange_Party_Live_Archives = {
+  __typename?: 'game_exchange_party_live_archives';
+  created_at: Scalars['timestamptz']['output'];
+  end_time?: Maybe<Scalars['timestamptz']['output']>;
+  /** An object relationship */
+  game_exchange_party: Game_Exchange_Parties;
+  /** An object relationship */
+  game_exchange_party_exchange?: Maybe<Game_Exchange_Party_Exchange>;
+  game_exchange_party_exchange_id?: Maybe<Scalars['uuid']['output']>;
+  game_exchange_party_id: Scalars['uuid']['output'];
+  id: Scalars['uuid']['output'];
+  /** An object relationship */
+  niconico_live?: Maybe<Niconico_Lives>;
+  niconico_live_id?: Maybe<Scalars['uuid']['output']>;
+  /** An object relationship */
+  person: Persons;
+  person_id: Scalars['uuid']['output'];
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  updated_at: Scalars['timestamptz']['output'];
+  /** An object relationship */
+  youtube_live?: Maybe<Youtube_Lives>;
+  youtube_live_id?: Maybe<Scalars['uuid']['output']>;
+  /** An object relationship */
+  youtube_video?: Maybe<Youtube_Videos>;
+  youtube_video_id?: Maybe<Scalars['uuid']['output']>;
+};
+
+/** aggregated selection of "game_exchange_party_live_archives" */
+export type Game_Exchange_Party_Live_Archives_Aggregate = {
+  __typename?: 'game_exchange_party_live_archives_aggregate';
+  aggregate?: Maybe<Game_Exchange_Party_Live_Archives_Aggregate_Fields>;
+  nodes: Array<Game_Exchange_Party_Live_Archives>;
+};
+
+export type Game_Exchange_Party_Live_Archives_Aggregate_Bool_Exp = {
+  count?: InputMaybe<Game_Exchange_Party_Live_Archives_Aggregate_Bool_Exp_Count>;
+};
+
+export type Game_Exchange_Party_Live_Archives_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Game_Exchange_Party_Live_Archives_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Game_Exchange_Party_Live_Archives_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
+/** aggregate fields of "game_exchange_party_live_archives" */
+export type Game_Exchange_Party_Live_Archives_Aggregate_Fields = {
+  __typename?: 'game_exchange_party_live_archives_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Game_Exchange_Party_Live_Archives_Max_Fields>;
+  min?: Maybe<Game_Exchange_Party_Live_Archives_Min_Fields>;
+};
+
+
+/** aggregate fields of "game_exchange_party_live_archives" */
+export type Game_Exchange_Party_Live_Archives_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Game_Exchange_Party_Live_Archives_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** order by aggregate values of table "game_exchange_party_live_archives" */
+export type Game_Exchange_Party_Live_Archives_Aggregate_Order_By = {
+  count?: InputMaybe<Order_By>;
+  max?: InputMaybe<Game_Exchange_Party_Live_Archives_Max_Order_By>;
+  min?: InputMaybe<Game_Exchange_Party_Live_Archives_Min_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "game_exchange_party_live_archives" */
+export type Game_Exchange_Party_Live_Archives_Arr_Rel_Insert_Input = {
+  data: Array<Game_Exchange_Party_Live_Archives_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Game_Exchange_Party_Live_Archives_On_Conflict>;
+};
+
+/** Boolean expression to filter rows from the table "game_exchange_party_live_archives". All fields are combined with a logical 'AND'. */
+export type Game_Exchange_Party_Live_Archives_Bool_Exp = {
+  _and?: InputMaybe<Array<Game_Exchange_Party_Live_Archives_Bool_Exp>>;
+  _not?: InputMaybe<Game_Exchange_Party_Live_Archives_Bool_Exp>;
+  _or?: InputMaybe<Array<Game_Exchange_Party_Live_Archives_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  end_time?: InputMaybe<Timestamptz_Comparison_Exp>;
+  game_exchange_party?: InputMaybe<Game_Exchange_Parties_Bool_Exp>;
+  game_exchange_party_exchange?: InputMaybe<Game_Exchange_Party_Exchange_Bool_Exp>;
+  game_exchange_party_exchange_id?: InputMaybe<Uuid_Comparison_Exp>;
+  game_exchange_party_id?: InputMaybe<Uuid_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  niconico_live?: InputMaybe<Niconico_Lives_Bool_Exp>;
+  niconico_live_id?: InputMaybe<Uuid_Comparison_Exp>;
+  person?: InputMaybe<Persons_Bool_Exp>;
+  person_id?: InputMaybe<Uuid_Comparison_Exp>;
+  start_time?: InputMaybe<Timestamptz_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  youtube_live?: InputMaybe<Youtube_Lives_Bool_Exp>;
+  youtube_live_id?: InputMaybe<Uuid_Comparison_Exp>;
+  youtube_video?: InputMaybe<Youtube_Videos_Bool_Exp>;
+  youtube_video_id?: InputMaybe<Uuid_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "game_exchange_party_live_archives" */
+export enum Game_Exchange_Party_Live_Archives_Constraint {
+  /** unique or primary key constraint on columns "game_exchange_party_id", "niconico_live_id" */
+  GameExchangePartyLiveArchGameExchangePartyIdNiconiKey = 'game_exchange_party_live_arch_game_exchange_party_id_niconi_key',
+  /** unique or primary key constraint on columns "game_exchange_party_id", "youtube_video_id" */
+  GameExchangePartyLiveArchGameExchangePartyIdYoutuKey1 = 'game_exchange_party_live_arch_game_exchange_party_id_youtu_key1',
+  /** unique or primary key constraint on columns "game_exchange_party_id", "youtube_live_id" */
+  GameExchangePartyLiveArchGameExchangePartyIdYoutubKey = 'game_exchange_party_live_arch_game_exchange_party_id_youtub_key',
+  /** unique or primary key constraint on columns "id" */
+  GameExchangePartyLiveArchivesPkey = 'game_exchange_party_live_archives_pkey'
+}
+
+/** input type for inserting data into table "game_exchange_party_live_archives" */
+export type Game_Exchange_Party_Live_Archives_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  end_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  game_exchange_party?: InputMaybe<Game_Exchange_Parties_Obj_Rel_Insert_Input>;
+  game_exchange_party_exchange?: InputMaybe<Game_Exchange_Party_Exchange_Obj_Rel_Insert_Input>;
+  game_exchange_party_exchange_id?: InputMaybe<Scalars['uuid']['input']>;
+  game_exchange_party_id?: InputMaybe<Scalars['uuid']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  niconico_live?: InputMaybe<Niconico_Lives_Obj_Rel_Insert_Input>;
+  niconico_live_id?: InputMaybe<Scalars['uuid']['input']>;
+  person?: InputMaybe<Persons_Obj_Rel_Insert_Input>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  youtube_live?: InputMaybe<Youtube_Lives_Obj_Rel_Insert_Input>;
+  youtube_live_id?: InputMaybe<Scalars['uuid']['input']>;
+  youtube_video?: InputMaybe<Youtube_Videos_Obj_Rel_Insert_Input>;
+  youtube_video_id?: InputMaybe<Scalars['uuid']['input']>;
+};
+
+/** aggregate max on columns */
+export type Game_Exchange_Party_Live_Archives_Max_Fields = {
+  __typename?: 'game_exchange_party_live_archives_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  end_time?: Maybe<Scalars['timestamptz']['output']>;
+  game_exchange_party_exchange_id?: Maybe<Scalars['uuid']['output']>;
+  game_exchange_party_id?: Maybe<Scalars['uuid']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  niconico_live_id?: Maybe<Scalars['uuid']['output']>;
+  person_id?: Maybe<Scalars['uuid']['output']>;
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+  youtube_live_id?: Maybe<Scalars['uuid']['output']>;
+  youtube_video_id?: Maybe<Scalars['uuid']['output']>;
+};
+
+/** order by max() on columns of table "game_exchange_party_live_archives" */
+export type Game_Exchange_Party_Live_Archives_Max_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  end_time?: InputMaybe<Order_By>;
+  game_exchange_party_exchange_id?: InputMaybe<Order_By>;
+  game_exchange_party_id?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  niconico_live_id?: InputMaybe<Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  start_time?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+  youtube_live_id?: InputMaybe<Order_By>;
+  youtube_video_id?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Game_Exchange_Party_Live_Archives_Min_Fields = {
+  __typename?: 'game_exchange_party_live_archives_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  end_time?: Maybe<Scalars['timestamptz']['output']>;
+  game_exchange_party_exchange_id?: Maybe<Scalars['uuid']['output']>;
+  game_exchange_party_id?: Maybe<Scalars['uuid']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  niconico_live_id?: Maybe<Scalars['uuid']['output']>;
+  person_id?: Maybe<Scalars['uuid']['output']>;
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+  youtube_live_id?: Maybe<Scalars['uuid']['output']>;
+  youtube_video_id?: Maybe<Scalars['uuid']['output']>;
+};
+
+/** order by min() on columns of table "game_exchange_party_live_archives" */
+export type Game_Exchange_Party_Live_Archives_Min_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  end_time?: InputMaybe<Order_By>;
+  game_exchange_party_exchange_id?: InputMaybe<Order_By>;
+  game_exchange_party_id?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  niconico_live_id?: InputMaybe<Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  start_time?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+  youtube_live_id?: InputMaybe<Order_By>;
+  youtube_video_id?: InputMaybe<Order_By>;
+};
+
+/** response of any mutation on the table "game_exchange_party_live_archives" */
+export type Game_Exchange_Party_Live_Archives_Mutation_Response = {
+  __typename?: 'game_exchange_party_live_archives_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Game_Exchange_Party_Live_Archives>;
+};
+
+/** on_conflict condition type for table "game_exchange_party_live_archives" */
+export type Game_Exchange_Party_Live_Archives_On_Conflict = {
+  constraint: Game_Exchange_Party_Live_Archives_Constraint;
+  update_columns?: Array<Game_Exchange_Party_Live_Archives_Update_Column>;
+  where?: InputMaybe<Game_Exchange_Party_Live_Archives_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "game_exchange_party_live_archives". */
+export type Game_Exchange_Party_Live_Archives_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  end_time?: InputMaybe<Order_By>;
+  game_exchange_party?: InputMaybe<Game_Exchange_Parties_Order_By>;
+  game_exchange_party_exchange?: InputMaybe<Game_Exchange_Party_Exchange_Order_By>;
+  game_exchange_party_exchange_id?: InputMaybe<Order_By>;
+  game_exchange_party_id?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  niconico_live?: InputMaybe<Niconico_Lives_Order_By>;
+  niconico_live_id?: InputMaybe<Order_By>;
+  person?: InputMaybe<Persons_Order_By>;
+  person_id?: InputMaybe<Order_By>;
+  start_time?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+  youtube_live?: InputMaybe<Youtube_Lives_Order_By>;
+  youtube_live_id?: InputMaybe<Order_By>;
+  youtube_video?: InputMaybe<Youtube_Videos_Order_By>;
+  youtube_video_id?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: game_exchange_party_live_archives */
+export type Game_Exchange_Party_Live_Archives_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "game_exchange_party_live_archives" */
+export enum Game_Exchange_Party_Live_Archives_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  EndTime = 'end_time',
+  /** column name */
+  GameExchangePartyExchangeId = 'game_exchange_party_exchange_id',
+  /** column name */
+  GameExchangePartyId = 'game_exchange_party_id',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  NiconicoLiveId = 'niconico_live_id',
+  /** column name */
+  PersonId = 'person_id',
+  /** column name */
+  StartTime = 'start_time',
+  /** column name */
+  UpdatedAt = 'updated_at',
+  /** column name */
+  YoutubeLiveId = 'youtube_live_id',
+  /** column name */
+  YoutubeVideoId = 'youtube_video_id'
+}
+
+/** input type for updating data in table "game_exchange_party_live_archives" */
+export type Game_Exchange_Party_Live_Archives_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  end_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  game_exchange_party_exchange_id?: InputMaybe<Scalars['uuid']['input']>;
+  game_exchange_party_id?: InputMaybe<Scalars['uuid']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  niconico_live_id?: InputMaybe<Scalars['uuid']['input']>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  youtube_live_id?: InputMaybe<Scalars['uuid']['input']>;
+  youtube_video_id?: InputMaybe<Scalars['uuid']['input']>;
+};
+
+/** Streaming cursor of the table "game_exchange_party_live_archives" */
+export type Game_Exchange_Party_Live_Archives_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Game_Exchange_Party_Live_Archives_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Game_Exchange_Party_Live_Archives_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  end_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  game_exchange_party_exchange_id?: InputMaybe<Scalars['uuid']['input']>;
+  game_exchange_party_id?: InputMaybe<Scalars['uuid']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  niconico_live_id?: InputMaybe<Scalars['uuid']['input']>;
+  person_id?: InputMaybe<Scalars['uuid']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  youtube_live_id?: InputMaybe<Scalars['uuid']['input']>;
+  youtube_video_id?: InputMaybe<Scalars['uuid']['input']>;
+};
+
+/** update columns of table "game_exchange_party_live_archives" */
+export enum Game_Exchange_Party_Live_Archives_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  EndTime = 'end_time',
+  /** column name */
+  GameExchangePartyExchangeId = 'game_exchange_party_exchange_id',
+  /** column name */
+  GameExchangePartyId = 'game_exchange_party_id',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  NiconicoLiveId = 'niconico_live_id',
+  /** column name */
+  PersonId = 'person_id',
+  /** column name */
+  StartTime = 'start_time',
+  /** column name */
+  UpdatedAt = 'updated_at',
+  /** column name */
+  YoutubeLiveId = 'youtube_live_id',
+  /** column name */
+  YoutubeVideoId = 'youtube_video_id'
+}
+
+export type Game_Exchange_Party_Live_Archives_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Game_Exchange_Party_Live_Archives_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Game_Exchange_Party_Live_Archives_Bool_Exp;
+};
+
 /** columns and relationships of "games" */
 export type Games = {
   __typename?: 'games';
@@ -6722,6 +7628,1419 @@ export type Games_Updates = {
   _set?: InputMaybe<Games_Set_Input>;
   /** filter the rows which have to be updated */
   where: Games_Bool_Exp;
+};
+
+/** columns and relationships of "lethalcompany_maps" */
+export type Lethalcompany_Maps = {
+  __typename?: 'lethalcompany_maps';
+  created_at: Scalars['timestamptz']['output'];
+  id: Scalars['uuid']['output'];
+  index?: Maybe<Scalars['Int']['output']>;
+  is_safe: Scalars['Boolean']['output'];
+  /** An array relationship */
+  lethalcompany_ship_days: Array<Lethalcompany_Ship_Days>;
+  /** An aggregate relationship */
+  lethalcompany_ship_days_aggregate: Lethalcompany_Ship_Days_Aggregate;
+  name: Scalars['String']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+
+/** columns and relationships of "lethalcompany_maps" */
+export type Lethalcompany_MapsLethalcompany_Ship_DaysArgs = {
+  distinct_on?: InputMaybe<Array<Lethalcompany_Ship_Days_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Lethalcompany_Ship_Days_Order_By>>;
+  where?: InputMaybe<Lethalcompany_Ship_Days_Bool_Exp>;
+};
+
+
+/** columns and relationships of "lethalcompany_maps" */
+export type Lethalcompany_MapsLethalcompany_Ship_Days_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Lethalcompany_Ship_Days_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Lethalcompany_Ship_Days_Order_By>>;
+  where?: InputMaybe<Lethalcompany_Ship_Days_Bool_Exp>;
+};
+
+/** aggregated selection of "lethalcompany_maps" */
+export type Lethalcompany_Maps_Aggregate = {
+  __typename?: 'lethalcompany_maps_aggregate';
+  aggregate?: Maybe<Lethalcompany_Maps_Aggregate_Fields>;
+  nodes: Array<Lethalcompany_Maps>;
+};
+
+/** aggregate fields of "lethalcompany_maps" */
+export type Lethalcompany_Maps_Aggregate_Fields = {
+  __typename?: 'lethalcompany_maps_aggregate_fields';
+  avg?: Maybe<Lethalcompany_Maps_Avg_Fields>;
+  count: Scalars['Int']['output'];
+  max?: Maybe<Lethalcompany_Maps_Max_Fields>;
+  min?: Maybe<Lethalcompany_Maps_Min_Fields>;
+  stddev?: Maybe<Lethalcompany_Maps_Stddev_Fields>;
+  stddev_pop?: Maybe<Lethalcompany_Maps_Stddev_Pop_Fields>;
+  stddev_samp?: Maybe<Lethalcompany_Maps_Stddev_Samp_Fields>;
+  sum?: Maybe<Lethalcompany_Maps_Sum_Fields>;
+  var_pop?: Maybe<Lethalcompany_Maps_Var_Pop_Fields>;
+  var_samp?: Maybe<Lethalcompany_Maps_Var_Samp_Fields>;
+  variance?: Maybe<Lethalcompany_Maps_Variance_Fields>;
+};
+
+
+/** aggregate fields of "lethalcompany_maps" */
+export type Lethalcompany_Maps_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Lethalcompany_Maps_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** aggregate avg on columns */
+export type Lethalcompany_Maps_Avg_Fields = {
+  __typename?: 'lethalcompany_maps_avg_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** Boolean expression to filter rows from the table "lethalcompany_maps". All fields are combined with a logical 'AND'. */
+export type Lethalcompany_Maps_Bool_Exp = {
+  _and?: InputMaybe<Array<Lethalcompany_Maps_Bool_Exp>>;
+  _not?: InputMaybe<Lethalcompany_Maps_Bool_Exp>;
+  _or?: InputMaybe<Array<Lethalcompany_Maps_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  index?: InputMaybe<Int_Comparison_Exp>;
+  is_safe?: InputMaybe<Boolean_Comparison_Exp>;
+  lethalcompany_ship_days?: InputMaybe<Lethalcompany_Ship_Days_Bool_Exp>;
+  lethalcompany_ship_days_aggregate?: InputMaybe<Lethalcompany_Ship_Days_Aggregate_Bool_Exp>;
+  name?: InputMaybe<String_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "lethalcompany_maps" */
+export enum Lethalcompany_Maps_Constraint {
+  /** unique or primary key constraint on columns "index" */
+  LethalcompanyMapsIndexKey = 'lethalcompany_maps_index_key',
+  /** unique or primary key constraint on columns "id" */
+  LethalcompanyMapsPkey = 'lethalcompany_maps_pkey'
+}
+
+/** input type for incrementing numeric columns in table "lethalcompany_maps" */
+export type Lethalcompany_Maps_Inc_Input = {
+  index?: InputMaybe<Scalars['Int']['input']>;
+};
+
+/** input type for inserting data into table "lethalcompany_maps" */
+export type Lethalcompany_Maps_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  index?: InputMaybe<Scalars['Int']['input']>;
+  is_safe?: InputMaybe<Scalars['Boolean']['input']>;
+  lethalcompany_ship_days?: InputMaybe<Lethalcompany_Ship_Days_Arr_Rel_Insert_Input>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Lethalcompany_Maps_Max_Fields = {
+  __typename?: 'lethalcompany_maps_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  index?: Maybe<Scalars['Int']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** aggregate min on columns */
+export type Lethalcompany_Maps_Min_Fields = {
+  __typename?: 'lethalcompany_maps_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  index?: Maybe<Scalars['Int']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** response of any mutation on the table "lethalcompany_maps" */
+export type Lethalcompany_Maps_Mutation_Response = {
+  __typename?: 'lethalcompany_maps_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Lethalcompany_Maps>;
+};
+
+/** input type for inserting object relation for remote table "lethalcompany_maps" */
+export type Lethalcompany_Maps_Obj_Rel_Insert_Input = {
+  data: Lethalcompany_Maps_Insert_Input;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Lethalcompany_Maps_On_Conflict>;
+};
+
+/** on_conflict condition type for table "lethalcompany_maps" */
+export type Lethalcompany_Maps_On_Conflict = {
+  constraint: Lethalcompany_Maps_Constraint;
+  update_columns?: Array<Lethalcompany_Maps_Update_Column>;
+  where?: InputMaybe<Lethalcompany_Maps_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "lethalcompany_maps". */
+export type Lethalcompany_Maps_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  index?: InputMaybe<Order_By>;
+  is_safe?: InputMaybe<Order_By>;
+  lethalcompany_ship_days_aggregate?: InputMaybe<Lethalcompany_Ship_Days_Aggregate_Order_By>;
+  name?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: lethalcompany_maps */
+export type Lethalcompany_Maps_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "lethalcompany_maps" */
+export enum Lethalcompany_Maps_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Index = 'index',
+  /** column name */
+  IsSafe = 'is_safe',
+  /** column name */
+  Name = 'name',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "lethalcompany_maps" */
+export type Lethalcompany_Maps_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  index?: InputMaybe<Scalars['Int']['input']>;
+  is_safe?: InputMaybe<Scalars['Boolean']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate stddev on columns */
+export type Lethalcompany_Maps_Stddev_Fields = {
+  __typename?: 'lethalcompany_maps_stddev_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** aggregate stddev_pop on columns */
+export type Lethalcompany_Maps_Stddev_Pop_Fields = {
+  __typename?: 'lethalcompany_maps_stddev_pop_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** aggregate stddev_samp on columns */
+export type Lethalcompany_Maps_Stddev_Samp_Fields = {
+  __typename?: 'lethalcompany_maps_stddev_samp_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** Streaming cursor of the table "lethalcompany_maps" */
+export type Lethalcompany_Maps_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Lethalcompany_Maps_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Lethalcompany_Maps_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  index?: InputMaybe<Scalars['Int']['input']>;
+  is_safe?: InputMaybe<Scalars['Boolean']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate sum on columns */
+export type Lethalcompany_Maps_Sum_Fields = {
+  __typename?: 'lethalcompany_maps_sum_fields';
+  index?: Maybe<Scalars['Int']['output']>;
+};
+
+/** update columns of table "lethalcompany_maps" */
+export enum Lethalcompany_Maps_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Index = 'index',
+  /** column name */
+  IsSafe = 'is_safe',
+  /** column name */
+  Name = 'name',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Lethalcompany_Maps_Updates = {
+  /** increments the numeric columns with given value of the filtered values */
+  _inc?: InputMaybe<Lethalcompany_Maps_Inc_Input>;
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Lethalcompany_Maps_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Lethalcompany_Maps_Bool_Exp;
+};
+
+/** aggregate var_pop on columns */
+export type Lethalcompany_Maps_Var_Pop_Fields = {
+  __typename?: 'lethalcompany_maps_var_pop_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** aggregate var_samp on columns */
+export type Lethalcompany_Maps_Var_Samp_Fields = {
+  __typename?: 'lethalcompany_maps_var_samp_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** aggregate variance on columns */
+export type Lethalcompany_Maps_Variance_Fields = {
+  __typename?: 'lethalcompany_maps_variance_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** columns and relationships of "lethalcompany_ship_days" */
+export type Lethalcompany_Ship_Days = {
+  __typename?: 'lethalcompany_ship_days';
+  absolute_day_number?: Maybe<Scalars['Int']['output']>;
+  created_at: Scalars['timestamptz']['output'];
+  day_number: Scalars['Int']['output'];
+  end_time?: Maybe<Scalars['timestamptz']['output']>;
+  id: Scalars['uuid']['output'];
+  /** An object relationship */
+  lethalcompany_map?: Maybe<Lethalcompany_Maps>;
+  lethalcompany_map_id?: Maybe<Scalars['uuid']['output']>;
+  /** An object relationship */
+  lethalcompany_ship: Lethalcompany_Ships;
+  lethalcompany_ship_id: Scalars['uuid']['output'];
+  /** An object relationship */
+  lethalcompany_weather?: Maybe<Lethalcompany_Weathers>;
+  lethalcompany_weather_id?: Maybe<Scalars['uuid']['output']>;
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  sub_day_number: Scalars['Int']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+/** aggregated selection of "lethalcompany_ship_days" */
+export type Lethalcompany_Ship_Days_Aggregate = {
+  __typename?: 'lethalcompany_ship_days_aggregate';
+  aggregate?: Maybe<Lethalcompany_Ship_Days_Aggregate_Fields>;
+  nodes: Array<Lethalcompany_Ship_Days>;
+};
+
+export type Lethalcompany_Ship_Days_Aggregate_Bool_Exp = {
+  count?: InputMaybe<Lethalcompany_Ship_Days_Aggregate_Bool_Exp_Count>;
+};
+
+export type Lethalcompany_Ship_Days_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Lethalcompany_Ship_Days_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Lethalcompany_Ship_Days_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
+/** aggregate fields of "lethalcompany_ship_days" */
+export type Lethalcompany_Ship_Days_Aggregate_Fields = {
+  __typename?: 'lethalcompany_ship_days_aggregate_fields';
+  avg?: Maybe<Lethalcompany_Ship_Days_Avg_Fields>;
+  count: Scalars['Int']['output'];
+  max?: Maybe<Lethalcompany_Ship_Days_Max_Fields>;
+  min?: Maybe<Lethalcompany_Ship_Days_Min_Fields>;
+  stddev?: Maybe<Lethalcompany_Ship_Days_Stddev_Fields>;
+  stddev_pop?: Maybe<Lethalcompany_Ship_Days_Stddev_Pop_Fields>;
+  stddev_samp?: Maybe<Lethalcompany_Ship_Days_Stddev_Samp_Fields>;
+  sum?: Maybe<Lethalcompany_Ship_Days_Sum_Fields>;
+  var_pop?: Maybe<Lethalcompany_Ship_Days_Var_Pop_Fields>;
+  var_samp?: Maybe<Lethalcompany_Ship_Days_Var_Samp_Fields>;
+  variance?: Maybe<Lethalcompany_Ship_Days_Variance_Fields>;
+};
+
+
+/** aggregate fields of "lethalcompany_ship_days" */
+export type Lethalcompany_Ship_Days_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Lethalcompany_Ship_Days_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** order by aggregate values of table "lethalcompany_ship_days" */
+export type Lethalcompany_Ship_Days_Aggregate_Order_By = {
+  avg?: InputMaybe<Lethalcompany_Ship_Days_Avg_Order_By>;
+  count?: InputMaybe<Order_By>;
+  max?: InputMaybe<Lethalcompany_Ship_Days_Max_Order_By>;
+  min?: InputMaybe<Lethalcompany_Ship_Days_Min_Order_By>;
+  stddev?: InputMaybe<Lethalcompany_Ship_Days_Stddev_Order_By>;
+  stddev_pop?: InputMaybe<Lethalcompany_Ship_Days_Stddev_Pop_Order_By>;
+  stddev_samp?: InputMaybe<Lethalcompany_Ship_Days_Stddev_Samp_Order_By>;
+  sum?: InputMaybe<Lethalcompany_Ship_Days_Sum_Order_By>;
+  var_pop?: InputMaybe<Lethalcompany_Ship_Days_Var_Pop_Order_By>;
+  var_samp?: InputMaybe<Lethalcompany_Ship_Days_Var_Samp_Order_By>;
+  variance?: InputMaybe<Lethalcompany_Ship_Days_Variance_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "lethalcompany_ship_days" */
+export type Lethalcompany_Ship_Days_Arr_Rel_Insert_Input = {
+  data: Array<Lethalcompany_Ship_Days_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Lethalcompany_Ship_Days_On_Conflict>;
+};
+
+/** aggregate avg on columns */
+export type Lethalcompany_Ship_Days_Avg_Fields = {
+  __typename?: 'lethalcompany_ship_days_avg_fields';
+  absolute_day_number?: Maybe<Scalars['Float']['output']>;
+  day_number?: Maybe<Scalars['Float']['output']>;
+  sub_day_number?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by avg() on columns of table "lethalcompany_ship_days" */
+export type Lethalcompany_Ship_Days_Avg_Order_By = {
+  absolute_day_number?: InputMaybe<Order_By>;
+  day_number?: InputMaybe<Order_By>;
+  sub_day_number?: InputMaybe<Order_By>;
+};
+
+/** Boolean expression to filter rows from the table "lethalcompany_ship_days". All fields are combined with a logical 'AND'. */
+export type Lethalcompany_Ship_Days_Bool_Exp = {
+  _and?: InputMaybe<Array<Lethalcompany_Ship_Days_Bool_Exp>>;
+  _not?: InputMaybe<Lethalcompany_Ship_Days_Bool_Exp>;
+  _or?: InputMaybe<Array<Lethalcompany_Ship_Days_Bool_Exp>>;
+  absolute_day_number?: InputMaybe<Int_Comparison_Exp>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  day_number?: InputMaybe<Int_Comparison_Exp>;
+  end_time?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  lethalcompany_map?: InputMaybe<Lethalcompany_Maps_Bool_Exp>;
+  lethalcompany_map_id?: InputMaybe<Uuid_Comparison_Exp>;
+  lethalcompany_ship?: InputMaybe<Lethalcompany_Ships_Bool_Exp>;
+  lethalcompany_ship_id?: InputMaybe<Uuid_Comparison_Exp>;
+  lethalcompany_weather?: InputMaybe<Lethalcompany_Weathers_Bool_Exp>;
+  lethalcompany_weather_id?: InputMaybe<Uuid_Comparison_Exp>;
+  start_time?: InputMaybe<Timestamptz_Comparison_Exp>;
+  sub_day_number?: InputMaybe<Int_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "lethalcompany_ship_days" */
+export enum Lethalcompany_Ship_Days_Constraint {
+  /** unique or primary key constraint on columns "lethalcompany_ship_id", "sub_day_number", "day_number" */
+  LethalcompanyShipDaysLethalcompanyShipIdDayNumberSuKey = 'lethalcompany_ship_days_lethalcompany_ship_id_day_number_su_key',
+  /** unique or primary key constraint on columns "id" */
+  LethalcompanyShipDaysPkey = 'lethalcompany_ship_days_pkey'
+}
+
+/** input type for incrementing numeric columns in table "lethalcompany_ship_days" */
+export type Lethalcompany_Ship_Days_Inc_Input = {
+  absolute_day_number?: InputMaybe<Scalars['Int']['input']>;
+  day_number?: InputMaybe<Scalars['Int']['input']>;
+  sub_day_number?: InputMaybe<Scalars['Int']['input']>;
+};
+
+/** input type for inserting data into table "lethalcompany_ship_days" */
+export type Lethalcompany_Ship_Days_Insert_Input = {
+  absolute_day_number?: InputMaybe<Scalars['Int']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  day_number?: InputMaybe<Scalars['Int']['input']>;
+  end_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  lethalcompany_map?: InputMaybe<Lethalcompany_Maps_Obj_Rel_Insert_Input>;
+  lethalcompany_map_id?: InputMaybe<Scalars['uuid']['input']>;
+  lethalcompany_ship?: InputMaybe<Lethalcompany_Ships_Obj_Rel_Insert_Input>;
+  lethalcompany_ship_id?: InputMaybe<Scalars['uuid']['input']>;
+  lethalcompany_weather?: InputMaybe<Lethalcompany_Weathers_Obj_Rel_Insert_Input>;
+  lethalcompany_weather_id?: InputMaybe<Scalars['uuid']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  sub_day_number?: InputMaybe<Scalars['Int']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Lethalcompany_Ship_Days_Max_Fields = {
+  __typename?: 'lethalcompany_ship_days_max_fields';
+  absolute_day_number?: Maybe<Scalars['Int']['output']>;
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  day_number?: Maybe<Scalars['Int']['output']>;
+  end_time?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  lethalcompany_map_id?: Maybe<Scalars['uuid']['output']>;
+  lethalcompany_ship_id?: Maybe<Scalars['uuid']['output']>;
+  lethalcompany_weather_id?: Maybe<Scalars['uuid']['output']>;
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  sub_day_number?: Maybe<Scalars['Int']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by max() on columns of table "lethalcompany_ship_days" */
+export type Lethalcompany_Ship_Days_Max_Order_By = {
+  absolute_day_number?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  day_number?: InputMaybe<Order_By>;
+  end_time?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  lethalcompany_map_id?: InputMaybe<Order_By>;
+  lethalcompany_ship_id?: InputMaybe<Order_By>;
+  lethalcompany_weather_id?: InputMaybe<Order_By>;
+  start_time?: InputMaybe<Order_By>;
+  sub_day_number?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Lethalcompany_Ship_Days_Min_Fields = {
+  __typename?: 'lethalcompany_ship_days_min_fields';
+  absolute_day_number?: Maybe<Scalars['Int']['output']>;
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  day_number?: Maybe<Scalars['Int']['output']>;
+  end_time?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  lethalcompany_map_id?: Maybe<Scalars['uuid']['output']>;
+  lethalcompany_ship_id?: Maybe<Scalars['uuid']['output']>;
+  lethalcompany_weather_id?: Maybe<Scalars['uuid']['output']>;
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  sub_day_number?: Maybe<Scalars['Int']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by min() on columns of table "lethalcompany_ship_days" */
+export type Lethalcompany_Ship_Days_Min_Order_By = {
+  absolute_day_number?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  day_number?: InputMaybe<Order_By>;
+  end_time?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  lethalcompany_map_id?: InputMaybe<Order_By>;
+  lethalcompany_ship_id?: InputMaybe<Order_By>;
+  lethalcompany_weather_id?: InputMaybe<Order_By>;
+  start_time?: InputMaybe<Order_By>;
+  sub_day_number?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** response of any mutation on the table "lethalcompany_ship_days" */
+export type Lethalcompany_Ship_Days_Mutation_Response = {
+  __typename?: 'lethalcompany_ship_days_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Lethalcompany_Ship_Days>;
+};
+
+/** on_conflict condition type for table "lethalcompany_ship_days" */
+export type Lethalcompany_Ship_Days_On_Conflict = {
+  constraint: Lethalcompany_Ship_Days_Constraint;
+  update_columns?: Array<Lethalcompany_Ship_Days_Update_Column>;
+  where?: InputMaybe<Lethalcompany_Ship_Days_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "lethalcompany_ship_days". */
+export type Lethalcompany_Ship_Days_Order_By = {
+  absolute_day_number?: InputMaybe<Order_By>;
+  created_at?: InputMaybe<Order_By>;
+  day_number?: InputMaybe<Order_By>;
+  end_time?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  lethalcompany_map?: InputMaybe<Lethalcompany_Maps_Order_By>;
+  lethalcompany_map_id?: InputMaybe<Order_By>;
+  lethalcompany_ship?: InputMaybe<Lethalcompany_Ships_Order_By>;
+  lethalcompany_ship_id?: InputMaybe<Order_By>;
+  lethalcompany_weather?: InputMaybe<Lethalcompany_Weathers_Order_By>;
+  lethalcompany_weather_id?: InputMaybe<Order_By>;
+  start_time?: InputMaybe<Order_By>;
+  sub_day_number?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: lethalcompany_ship_days */
+export type Lethalcompany_Ship_Days_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "lethalcompany_ship_days" */
+export enum Lethalcompany_Ship_Days_Select_Column {
+  /** column name */
+  AbsoluteDayNumber = 'absolute_day_number',
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  DayNumber = 'day_number',
+  /** column name */
+  EndTime = 'end_time',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  LethalcompanyMapId = 'lethalcompany_map_id',
+  /** column name */
+  LethalcompanyShipId = 'lethalcompany_ship_id',
+  /** column name */
+  LethalcompanyWeatherId = 'lethalcompany_weather_id',
+  /** column name */
+  StartTime = 'start_time',
+  /** column name */
+  SubDayNumber = 'sub_day_number',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "lethalcompany_ship_days" */
+export type Lethalcompany_Ship_Days_Set_Input = {
+  absolute_day_number?: InputMaybe<Scalars['Int']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  day_number?: InputMaybe<Scalars['Int']['input']>;
+  end_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  lethalcompany_map_id?: InputMaybe<Scalars['uuid']['input']>;
+  lethalcompany_ship_id?: InputMaybe<Scalars['uuid']['input']>;
+  lethalcompany_weather_id?: InputMaybe<Scalars['uuid']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  sub_day_number?: InputMaybe<Scalars['Int']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate stddev on columns */
+export type Lethalcompany_Ship_Days_Stddev_Fields = {
+  __typename?: 'lethalcompany_ship_days_stddev_fields';
+  absolute_day_number?: Maybe<Scalars['Float']['output']>;
+  day_number?: Maybe<Scalars['Float']['output']>;
+  sub_day_number?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by stddev() on columns of table "lethalcompany_ship_days" */
+export type Lethalcompany_Ship_Days_Stddev_Order_By = {
+  absolute_day_number?: InputMaybe<Order_By>;
+  day_number?: InputMaybe<Order_By>;
+  sub_day_number?: InputMaybe<Order_By>;
+};
+
+/** aggregate stddev_pop on columns */
+export type Lethalcompany_Ship_Days_Stddev_Pop_Fields = {
+  __typename?: 'lethalcompany_ship_days_stddev_pop_fields';
+  absolute_day_number?: Maybe<Scalars['Float']['output']>;
+  day_number?: Maybe<Scalars['Float']['output']>;
+  sub_day_number?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by stddev_pop() on columns of table "lethalcompany_ship_days" */
+export type Lethalcompany_Ship_Days_Stddev_Pop_Order_By = {
+  absolute_day_number?: InputMaybe<Order_By>;
+  day_number?: InputMaybe<Order_By>;
+  sub_day_number?: InputMaybe<Order_By>;
+};
+
+/** aggregate stddev_samp on columns */
+export type Lethalcompany_Ship_Days_Stddev_Samp_Fields = {
+  __typename?: 'lethalcompany_ship_days_stddev_samp_fields';
+  absolute_day_number?: Maybe<Scalars['Float']['output']>;
+  day_number?: Maybe<Scalars['Float']['output']>;
+  sub_day_number?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by stddev_samp() on columns of table "lethalcompany_ship_days" */
+export type Lethalcompany_Ship_Days_Stddev_Samp_Order_By = {
+  absolute_day_number?: InputMaybe<Order_By>;
+  day_number?: InputMaybe<Order_By>;
+  sub_day_number?: InputMaybe<Order_By>;
+};
+
+/** Streaming cursor of the table "lethalcompany_ship_days" */
+export type Lethalcompany_Ship_Days_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Lethalcompany_Ship_Days_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Lethalcompany_Ship_Days_Stream_Cursor_Value_Input = {
+  absolute_day_number?: InputMaybe<Scalars['Int']['input']>;
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  day_number?: InputMaybe<Scalars['Int']['input']>;
+  end_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  lethalcompany_map_id?: InputMaybe<Scalars['uuid']['input']>;
+  lethalcompany_ship_id?: InputMaybe<Scalars['uuid']['input']>;
+  lethalcompany_weather_id?: InputMaybe<Scalars['uuid']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  sub_day_number?: InputMaybe<Scalars['Int']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate sum on columns */
+export type Lethalcompany_Ship_Days_Sum_Fields = {
+  __typename?: 'lethalcompany_ship_days_sum_fields';
+  absolute_day_number?: Maybe<Scalars['Int']['output']>;
+  day_number?: Maybe<Scalars['Int']['output']>;
+  sub_day_number?: Maybe<Scalars['Int']['output']>;
+};
+
+/** order by sum() on columns of table "lethalcompany_ship_days" */
+export type Lethalcompany_Ship_Days_Sum_Order_By = {
+  absolute_day_number?: InputMaybe<Order_By>;
+  day_number?: InputMaybe<Order_By>;
+  sub_day_number?: InputMaybe<Order_By>;
+};
+
+/** update columns of table "lethalcompany_ship_days" */
+export enum Lethalcompany_Ship_Days_Update_Column {
+  /** column name */
+  AbsoluteDayNumber = 'absolute_day_number',
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  DayNumber = 'day_number',
+  /** column name */
+  EndTime = 'end_time',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  LethalcompanyMapId = 'lethalcompany_map_id',
+  /** column name */
+  LethalcompanyShipId = 'lethalcompany_ship_id',
+  /** column name */
+  LethalcompanyWeatherId = 'lethalcompany_weather_id',
+  /** column name */
+  StartTime = 'start_time',
+  /** column name */
+  SubDayNumber = 'sub_day_number',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Lethalcompany_Ship_Days_Updates = {
+  /** increments the numeric columns with given value of the filtered values */
+  _inc?: InputMaybe<Lethalcompany_Ship_Days_Inc_Input>;
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Lethalcompany_Ship_Days_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Lethalcompany_Ship_Days_Bool_Exp;
+};
+
+/** aggregate var_pop on columns */
+export type Lethalcompany_Ship_Days_Var_Pop_Fields = {
+  __typename?: 'lethalcompany_ship_days_var_pop_fields';
+  absolute_day_number?: Maybe<Scalars['Float']['output']>;
+  day_number?: Maybe<Scalars['Float']['output']>;
+  sub_day_number?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by var_pop() on columns of table "lethalcompany_ship_days" */
+export type Lethalcompany_Ship_Days_Var_Pop_Order_By = {
+  absolute_day_number?: InputMaybe<Order_By>;
+  day_number?: InputMaybe<Order_By>;
+  sub_day_number?: InputMaybe<Order_By>;
+};
+
+/** aggregate var_samp on columns */
+export type Lethalcompany_Ship_Days_Var_Samp_Fields = {
+  __typename?: 'lethalcompany_ship_days_var_samp_fields';
+  absolute_day_number?: Maybe<Scalars['Float']['output']>;
+  day_number?: Maybe<Scalars['Float']['output']>;
+  sub_day_number?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by var_samp() on columns of table "lethalcompany_ship_days" */
+export type Lethalcompany_Ship_Days_Var_Samp_Order_By = {
+  absolute_day_number?: InputMaybe<Order_By>;
+  day_number?: InputMaybe<Order_By>;
+  sub_day_number?: InputMaybe<Order_By>;
+};
+
+/** aggregate variance on columns */
+export type Lethalcompany_Ship_Days_Variance_Fields = {
+  __typename?: 'lethalcompany_ship_days_variance_fields';
+  absolute_day_number?: Maybe<Scalars['Float']['output']>;
+  day_number?: Maybe<Scalars['Float']['output']>;
+  sub_day_number?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by variance() on columns of table "lethalcompany_ship_days" */
+export type Lethalcompany_Ship_Days_Variance_Order_By = {
+  absolute_day_number?: InputMaybe<Order_By>;
+  day_number?: InputMaybe<Order_By>;
+  sub_day_number?: InputMaybe<Order_By>;
+};
+
+/** columns and relationships of "lethalcompany_ships" */
+export type Lethalcompany_Ships = {
+  __typename?: 'lethalcompany_ships';
+  created_at: Scalars['timestamptz']['output'];
+  end_time?: Maybe<Scalars['timestamptz']['output']>;
+  id: Scalars['uuid']['output'];
+  index?: Maybe<Scalars['Int']['output']>;
+  /** An array relationship */
+  lethalcompany_ship_days: Array<Lethalcompany_Ship_Days>;
+  /** An aggregate relationship */
+  lethalcompany_ship_days_aggregate: Lethalcompany_Ship_Days_Aggregate;
+  /** An object relationship */
+  program: Programs;
+  program_id: Scalars['uuid']['output'];
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+
+/** columns and relationships of "lethalcompany_ships" */
+export type Lethalcompany_ShipsLethalcompany_Ship_DaysArgs = {
+  distinct_on?: InputMaybe<Array<Lethalcompany_Ship_Days_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Lethalcompany_Ship_Days_Order_By>>;
+  where?: InputMaybe<Lethalcompany_Ship_Days_Bool_Exp>;
+};
+
+
+/** columns and relationships of "lethalcompany_ships" */
+export type Lethalcompany_ShipsLethalcompany_Ship_Days_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Lethalcompany_Ship_Days_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Lethalcompany_Ship_Days_Order_By>>;
+  where?: InputMaybe<Lethalcompany_Ship_Days_Bool_Exp>;
+};
+
+/** aggregated selection of "lethalcompany_ships" */
+export type Lethalcompany_Ships_Aggregate = {
+  __typename?: 'lethalcompany_ships_aggregate';
+  aggregate?: Maybe<Lethalcompany_Ships_Aggregate_Fields>;
+  nodes: Array<Lethalcompany_Ships>;
+};
+
+export type Lethalcompany_Ships_Aggregate_Bool_Exp = {
+  count?: InputMaybe<Lethalcompany_Ships_Aggregate_Bool_Exp_Count>;
+};
+
+export type Lethalcompany_Ships_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Lethalcompany_Ships_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Lethalcompany_Ships_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
+/** aggregate fields of "lethalcompany_ships" */
+export type Lethalcompany_Ships_Aggregate_Fields = {
+  __typename?: 'lethalcompany_ships_aggregate_fields';
+  avg?: Maybe<Lethalcompany_Ships_Avg_Fields>;
+  count: Scalars['Int']['output'];
+  max?: Maybe<Lethalcompany_Ships_Max_Fields>;
+  min?: Maybe<Lethalcompany_Ships_Min_Fields>;
+  stddev?: Maybe<Lethalcompany_Ships_Stddev_Fields>;
+  stddev_pop?: Maybe<Lethalcompany_Ships_Stddev_Pop_Fields>;
+  stddev_samp?: Maybe<Lethalcompany_Ships_Stddev_Samp_Fields>;
+  sum?: Maybe<Lethalcompany_Ships_Sum_Fields>;
+  var_pop?: Maybe<Lethalcompany_Ships_Var_Pop_Fields>;
+  var_samp?: Maybe<Lethalcompany_Ships_Var_Samp_Fields>;
+  variance?: Maybe<Lethalcompany_Ships_Variance_Fields>;
+};
+
+
+/** aggregate fields of "lethalcompany_ships" */
+export type Lethalcompany_Ships_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Lethalcompany_Ships_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** order by aggregate values of table "lethalcompany_ships" */
+export type Lethalcompany_Ships_Aggregate_Order_By = {
+  avg?: InputMaybe<Lethalcompany_Ships_Avg_Order_By>;
+  count?: InputMaybe<Order_By>;
+  max?: InputMaybe<Lethalcompany_Ships_Max_Order_By>;
+  min?: InputMaybe<Lethalcompany_Ships_Min_Order_By>;
+  stddev?: InputMaybe<Lethalcompany_Ships_Stddev_Order_By>;
+  stddev_pop?: InputMaybe<Lethalcompany_Ships_Stddev_Pop_Order_By>;
+  stddev_samp?: InputMaybe<Lethalcompany_Ships_Stddev_Samp_Order_By>;
+  sum?: InputMaybe<Lethalcompany_Ships_Sum_Order_By>;
+  var_pop?: InputMaybe<Lethalcompany_Ships_Var_Pop_Order_By>;
+  var_samp?: InputMaybe<Lethalcompany_Ships_Var_Samp_Order_By>;
+  variance?: InputMaybe<Lethalcompany_Ships_Variance_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "lethalcompany_ships" */
+export type Lethalcompany_Ships_Arr_Rel_Insert_Input = {
+  data: Array<Lethalcompany_Ships_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Lethalcompany_Ships_On_Conflict>;
+};
+
+/** aggregate avg on columns */
+export type Lethalcompany_Ships_Avg_Fields = {
+  __typename?: 'lethalcompany_ships_avg_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by avg() on columns of table "lethalcompany_ships" */
+export type Lethalcompany_Ships_Avg_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** Boolean expression to filter rows from the table "lethalcompany_ships". All fields are combined with a logical 'AND'. */
+export type Lethalcompany_Ships_Bool_Exp = {
+  _and?: InputMaybe<Array<Lethalcompany_Ships_Bool_Exp>>;
+  _not?: InputMaybe<Lethalcompany_Ships_Bool_Exp>;
+  _or?: InputMaybe<Array<Lethalcompany_Ships_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  end_time?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  index?: InputMaybe<Int_Comparison_Exp>;
+  lethalcompany_ship_days?: InputMaybe<Lethalcompany_Ship_Days_Bool_Exp>;
+  lethalcompany_ship_days_aggregate?: InputMaybe<Lethalcompany_Ship_Days_Aggregate_Bool_Exp>;
+  program?: InputMaybe<Programs_Bool_Exp>;
+  program_id?: InputMaybe<Uuid_Comparison_Exp>;
+  start_time?: InputMaybe<Timestamptz_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "lethalcompany_ships" */
+export enum Lethalcompany_Ships_Constraint {
+  /** unique or primary key constraint on columns "id" */
+  LethalcompanyShipsPkey = 'lethalcompany_ships_pkey',
+  /** unique or primary key constraint on columns "index", "program_id" */
+  LethalcompanyShipsProgramIdIndexKey = 'lethalcompany_ships_program_id_index_key'
+}
+
+/** input type for incrementing numeric columns in table "lethalcompany_ships" */
+export type Lethalcompany_Ships_Inc_Input = {
+  index?: InputMaybe<Scalars['Int']['input']>;
+};
+
+/** input type for inserting data into table "lethalcompany_ships" */
+export type Lethalcompany_Ships_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  end_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  index?: InputMaybe<Scalars['Int']['input']>;
+  lethalcompany_ship_days?: InputMaybe<Lethalcompany_Ship_Days_Arr_Rel_Insert_Input>;
+  program?: InputMaybe<Programs_Obj_Rel_Insert_Input>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Lethalcompany_Ships_Max_Fields = {
+  __typename?: 'lethalcompany_ships_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  end_time?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  index?: Maybe<Scalars['Int']['output']>;
+  program_id?: Maybe<Scalars['uuid']['output']>;
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by max() on columns of table "lethalcompany_ships" */
+export type Lethalcompany_Ships_Max_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  end_time?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  index?: InputMaybe<Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  start_time?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Lethalcompany_Ships_Min_Fields = {
+  __typename?: 'lethalcompany_ships_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  end_time?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  index?: Maybe<Scalars['Int']['output']>;
+  program_id?: Maybe<Scalars['uuid']['output']>;
+  start_time?: Maybe<Scalars['timestamptz']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by min() on columns of table "lethalcompany_ships" */
+export type Lethalcompany_Ships_Min_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  end_time?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  index?: InputMaybe<Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  start_time?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** response of any mutation on the table "lethalcompany_ships" */
+export type Lethalcompany_Ships_Mutation_Response = {
+  __typename?: 'lethalcompany_ships_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Lethalcompany_Ships>;
+};
+
+/** input type for inserting object relation for remote table "lethalcompany_ships" */
+export type Lethalcompany_Ships_Obj_Rel_Insert_Input = {
+  data: Lethalcompany_Ships_Insert_Input;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Lethalcompany_Ships_On_Conflict>;
+};
+
+/** on_conflict condition type for table "lethalcompany_ships" */
+export type Lethalcompany_Ships_On_Conflict = {
+  constraint: Lethalcompany_Ships_Constraint;
+  update_columns?: Array<Lethalcompany_Ships_Update_Column>;
+  where?: InputMaybe<Lethalcompany_Ships_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "lethalcompany_ships". */
+export type Lethalcompany_Ships_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  end_time?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  index?: InputMaybe<Order_By>;
+  lethalcompany_ship_days_aggregate?: InputMaybe<Lethalcompany_Ship_Days_Aggregate_Order_By>;
+  program?: InputMaybe<Programs_Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  start_time?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: lethalcompany_ships */
+export type Lethalcompany_Ships_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "lethalcompany_ships" */
+export enum Lethalcompany_Ships_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  EndTime = 'end_time',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Index = 'index',
+  /** column name */
+  ProgramId = 'program_id',
+  /** column name */
+  StartTime = 'start_time',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "lethalcompany_ships" */
+export type Lethalcompany_Ships_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  end_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  index?: InputMaybe<Scalars['Int']['input']>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate stddev on columns */
+export type Lethalcompany_Ships_Stddev_Fields = {
+  __typename?: 'lethalcompany_ships_stddev_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by stddev() on columns of table "lethalcompany_ships" */
+export type Lethalcompany_Ships_Stddev_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** aggregate stddev_pop on columns */
+export type Lethalcompany_Ships_Stddev_Pop_Fields = {
+  __typename?: 'lethalcompany_ships_stddev_pop_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by stddev_pop() on columns of table "lethalcompany_ships" */
+export type Lethalcompany_Ships_Stddev_Pop_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** aggregate stddev_samp on columns */
+export type Lethalcompany_Ships_Stddev_Samp_Fields = {
+  __typename?: 'lethalcompany_ships_stddev_samp_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by stddev_samp() on columns of table "lethalcompany_ships" */
+export type Lethalcompany_Ships_Stddev_Samp_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** Streaming cursor of the table "lethalcompany_ships" */
+export type Lethalcompany_Ships_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Lethalcompany_Ships_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Lethalcompany_Ships_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  end_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  index?: InputMaybe<Scalars['Int']['input']>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  start_time?: InputMaybe<Scalars['timestamptz']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate sum on columns */
+export type Lethalcompany_Ships_Sum_Fields = {
+  __typename?: 'lethalcompany_ships_sum_fields';
+  index?: Maybe<Scalars['Int']['output']>;
+};
+
+/** order by sum() on columns of table "lethalcompany_ships" */
+export type Lethalcompany_Ships_Sum_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** update columns of table "lethalcompany_ships" */
+export enum Lethalcompany_Ships_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  EndTime = 'end_time',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Index = 'index',
+  /** column name */
+  ProgramId = 'program_id',
+  /** column name */
+  StartTime = 'start_time',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Lethalcompany_Ships_Updates = {
+  /** increments the numeric columns with given value of the filtered values */
+  _inc?: InputMaybe<Lethalcompany_Ships_Inc_Input>;
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Lethalcompany_Ships_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Lethalcompany_Ships_Bool_Exp;
+};
+
+/** aggregate var_pop on columns */
+export type Lethalcompany_Ships_Var_Pop_Fields = {
+  __typename?: 'lethalcompany_ships_var_pop_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by var_pop() on columns of table "lethalcompany_ships" */
+export type Lethalcompany_Ships_Var_Pop_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** aggregate var_samp on columns */
+export type Lethalcompany_Ships_Var_Samp_Fields = {
+  __typename?: 'lethalcompany_ships_var_samp_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by var_samp() on columns of table "lethalcompany_ships" */
+export type Lethalcompany_Ships_Var_Samp_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** aggregate variance on columns */
+export type Lethalcompany_Ships_Variance_Fields = {
+  __typename?: 'lethalcompany_ships_variance_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** order by variance() on columns of table "lethalcompany_ships" */
+export type Lethalcompany_Ships_Variance_Order_By = {
+  index?: InputMaybe<Order_By>;
+};
+
+/** columns and relationships of "lethalcompany_weathers" */
+export type Lethalcompany_Weathers = {
+  __typename?: 'lethalcompany_weathers';
+  created_at: Scalars['timestamptz']['output'];
+  id: Scalars['uuid']['output'];
+  index: Scalars['Int']['output'];
+  is_labeled: Scalars['Boolean']['output'];
+  /** An array relationship */
+  lethalcompany_ship_days: Array<Lethalcompany_Ship_Days>;
+  /** An aggregate relationship */
+  lethalcompany_ship_days_aggregate: Lethalcompany_Ship_Days_Aggregate;
+  name: Scalars['String']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+
+/** columns and relationships of "lethalcompany_weathers" */
+export type Lethalcompany_WeathersLethalcompany_Ship_DaysArgs = {
+  distinct_on?: InputMaybe<Array<Lethalcompany_Ship_Days_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Lethalcompany_Ship_Days_Order_By>>;
+  where?: InputMaybe<Lethalcompany_Ship_Days_Bool_Exp>;
+};
+
+
+/** columns and relationships of "lethalcompany_weathers" */
+export type Lethalcompany_WeathersLethalcompany_Ship_Days_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Lethalcompany_Ship_Days_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Lethalcompany_Ship_Days_Order_By>>;
+  where?: InputMaybe<Lethalcompany_Ship_Days_Bool_Exp>;
+};
+
+/** aggregated selection of "lethalcompany_weathers" */
+export type Lethalcompany_Weathers_Aggregate = {
+  __typename?: 'lethalcompany_weathers_aggregate';
+  aggregate?: Maybe<Lethalcompany_Weathers_Aggregate_Fields>;
+  nodes: Array<Lethalcompany_Weathers>;
+};
+
+/** aggregate fields of "lethalcompany_weathers" */
+export type Lethalcompany_Weathers_Aggregate_Fields = {
+  __typename?: 'lethalcompany_weathers_aggregate_fields';
+  avg?: Maybe<Lethalcompany_Weathers_Avg_Fields>;
+  count: Scalars['Int']['output'];
+  max?: Maybe<Lethalcompany_Weathers_Max_Fields>;
+  min?: Maybe<Lethalcompany_Weathers_Min_Fields>;
+  stddev?: Maybe<Lethalcompany_Weathers_Stddev_Fields>;
+  stddev_pop?: Maybe<Lethalcompany_Weathers_Stddev_Pop_Fields>;
+  stddev_samp?: Maybe<Lethalcompany_Weathers_Stddev_Samp_Fields>;
+  sum?: Maybe<Lethalcompany_Weathers_Sum_Fields>;
+  var_pop?: Maybe<Lethalcompany_Weathers_Var_Pop_Fields>;
+  var_samp?: Maybe<Lethalcompany_Weathers_Var_Samp_Fields>;
+  variance?: Maybe<Lethalcompany_Weathers_Variance_Fields>;
+};
+
+
+/** aggregate fields of "lethalcompany_weathers" */
+export type Lethalcompany_Weathers_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Lethalcompany_Weathers_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** aggregate avg on columns */
+export type Lethalcompany_Weathers_Avg_Fields = {
+  __typename?: 'lethalcompany_weathers_avg_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** Boolean expression to filter rows from the table "lethalcompany_weathers". All fields are combined with a logical 'AND'. */
+export type Lethalcompany_Weathers_Bool_Exp = {
+  _and?: InputMaybe<Array<Lethalcompany_Weathers_Bool_Exp>>;
+  _not?: InputMaybe<Lethalcompany_Weathers_Bool_Exp>;
+  _or?: InputMaybe<Array<Lethalcompany_Weathers_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  index?: InputMaybe<Int_Comparison_Exp>;
+  is_labeled?: InputMaybe<Boolean_Comparison_Exp>;
+  lethalcompany_ship_days?: InputMaybe<Lethalcompany_Ship_Days_Bool_Exp>;
+  lethalcompany_ship_days_aggregate?: InputMaybe<Lethalcompany_Ship_Days_Aggregate_Bool_Exp>;
+  name?: InputMaybe<String_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "lethalcompany_weathers" */
+export enum Lethalcompany_Weathers_Constraint {
+  /** unique or primary key constraint on columns "index" */
+  LethalcompanyWeathersIndexKey = 'lethalcompany_weathers_index_key',
+  /** unique or primary key constraint on columns "id" */
+  LethalcompanyWeathersPkey = 'lethalcompany_weathers_pkey'
+}
+
+/** input type for incrementing numeric columns in table "lethalcompany_weathers" */
+export type Lethalcompany_Weathers_Inc_Input = {
+  index?: InputMaybe<Scalars['Int']['input']>;
+};
+
+/** input type for inserting data into table "lethalcompany_weathers" */
+export type Lethalcompany_Weathers_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  index?: InputMaybe<Scalars['Int']['input']>;
+  is_labeled?: InputMaybe<Scalars['Boolean']['input']>;
+  lethalcompany_ship_days?: InputMaybe<Lethalcompany_Ship_Days_Arr_Rel_Insert_Input>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Lethalcompany_Weathers_Max_Fields = {
+  __typename?: 'lethalcompany_weathers_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  index?: Maybe<Scalars['Int']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** aggregate min on columns */
+export type Lethalcompany_Weathers_Min_Fields = {
+  __typename?: 'lethalcompany_weathers_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  index?: Maybe<Scalars['Int']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** response of any mutation on the table "lethalcompany_weathers" */
+export type Lethalcompany_Weathers_Mutation_Response = {
+  __typename?: 'lethalcompany_weathers_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Lethalcompany_Weathers>;
+};
+
+/** input type for inserting object relation for remote table "lethalcompany_weathers" */
+export type Lethalcompany_Weathers_Obj_Rel_Insert_Input = {
+  data: Lethalcompany_Weathers_Insert_Input;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Lethalcompany_Weathers_On_Conflict>;
+};
+
+/** on_conflict condition type for table "lethalcompany_weathers" */
+export type Lethalcompany_Weathers_On_Conflict = {
+  constraint: Lethalcompany_Weathers_Constraint;
+  update_columns?: Array<Lethalcompany_Weathers_Update_Column>;
+  where?: InputMaybe<Lethalcompany_Weathers_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "lethalcompany_weathers". */
+export type Lethalcompany_Weathers_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  index?: InputMaybe<Order_By>;
+  is_labeled?: InputMaybe<Order_By>;
+  lethalcompany_ship_days_aggregate?: InputMaybe<Lethalcompany_Ship_Days_Aggregate_Order_By>;
+  name?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: lethalcompany_weathers */
+export type Lethalcompany_Weathers_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "lethalcompany_weathers" */
+export enum Lethalcompany_Weathers_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Index = 'index',
+  /** column name */
+  IsLabeled = 'is_labeled',
+  /** column name */
+  Name = 'name',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "lethalcompany_weathers" */
+export type Lethalcompany_Weathers_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  index?: InputMaybe<Scalars['Int']['input']>;
+  is_labeled?: InputMaybe<Scalars['Boolean']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate stddev on columns */
+export type Lethalcompany_Weathers_Stddev_Fields = {
+  __typename?: 'lethalcompany_weathers_stddev_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** aggregate stddev_pop on columns */
+export type Lethalcompany_Weathers_Stddev_Pop_Fields = {
+  __typename?: 'lethalcompany_weathers_stddev_pop_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** aggregate stddev_samp on columns */
+export type Lethalcompany_Weathers_Stddev_Samp_Fields = {
+  __typename?: 'lethalcompany_weathers_stddev_samp_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** Streaming cursor of the table "lethalcompany_weathers" */
+export type Lethalcompany_Weathers_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Lethalcompany_Weathers_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Lethalcompany_Weathers_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  index?: InputMaybe<Scalars['Int']['input']>;
+  is_labeled?: InputMaybe<Scalars['Boolean']['input']>;
+  name?: InputMaybe<Scalars['String']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate sum on columns */
+export type Lethalcompany_Weathers_Sum_Fields = {
+  __typename?: 'lethalcompany_weathers_sum_fields';
+  index?: Maybe<Scalars['Int']['output']>;
+};
+
+/** update columns of table "lethalcompany_weathers" */
+export enum Lethalcompany_Weathers_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  Index = 'index',
+  /** column name */
+  IsLabeled = 'is_labeled',
+  /** column name */
+  Name = 'name',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Lethalcompany_Weathers_Updates = {
+  /** increments the numeric columns with given value of the filtered values */
+  _inc?: InputMaybe<Lethalcompany_Weathers_Inc_Input>;
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Lethalcompany_Weathers_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Lethalcompany_Weathers_Bool_Exp;
+};
+
+/** aggregate var_pop on columns */
+export type Lethalcompany_Weathers_Var_Pop_Fields = {
+  __typename?: 'lethalcompany_weathers_var_pop_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** aggregate var_samp on columns */
+export type Lethalcompany_Weathers_Var_Samp_Fields = {
+  __typename?: 'lethalcompany_weathers_var_samp_fields';
+  index?: Maybe<Scalars['Float']['output']>;
+};
+
+/** aggregate variance on columns */
+export type Lethalcompany_Weathers_Variance_Fields = {
+  __typename?: 'lethalcompany_weathers_variance_fields';
+  index?: Maybe<Scalars['Float']['output']>;
 };
 
 /** columns and relationships of "mariokart8deluxe_battle_courses" */
@@ -9906,10 +12225,38 @@ export type Mutation_Root = {
   delete_fediverse_accounts?: Maybe<Fediverse_Accounts_Mutation_Response>;
   /** delete single row from the table: "fediverse_accounts" */
   delete_fediverse_accounts_by_pk?: Maybe<Fediverse_Accounts>;
+  /** delete data from the table: "game_exchange_parties" */
+  delete_game_exchange_parties?: Maybe<Game_Exchange_Parties_Mutation_Response>;
+  /** delete single row from the table: "game_exchange_parties" */
+  delete_game_exchange_parties_by_pk?: Maybe<Game_Exchange_Parties>;
+  /** delete data from the table: "game_exchange_party_exchange" */
+  delete_game_exchange_party_exchange?: Maybe<Game_Exchange_Party_Exchange_Mutation_Response>;
+  /** delete single row from the table: "game_exchange_party_exchange" */
+  delete_game_exchange_party_exchange_by_pk?: Maybe<Game_Exchange_Party_Exchange>;
+  /** delete data from the table: "game_exchange_party_live_archives" */
+  delete_game_exchange_party_live_archives?: Maybe<Game_Exchange_Party_Live_Archives_Mutation_Response>;
+  /** delete single row from the table: "game_exchange_party_live_archives" */
+  delete_game_exchange_party_live_archives_by_pk?: Maybe<Game_Exchange_Party_Live_Archives>;
   /** delete data from the table: "games" */
   delete_games?: Maybe<Games_Mutation_Response>;
   /** delete single row from the table: "games" */
   delete_games_by_pk?: Maybe<Games>;
+  /** delete data from the table: "lethalcompany_maps" */
+  delete_lethalcompany_maps?: Maybe<Lethalcompany_Maps_Mutation_Response>;
+  /** delete single row from the table: "lethalcompany_maps" */
+  delete_lethalcompany_maps_by_pk?: Maybe<Lethalcompany_Maps>;
+  /** delete data from the table: "lethalcompany_ship_days" */
+  delete_lethalcompany_ship_days?: Maybe<Lethalcompany_Ship_Days_Mutation_Response>;
+  /** delete single row from the table: "lethalcompany_ship_days" */
+  delete_lethalcompany_ship_days_by_pk?: Maybe<Lethalcompany_Ship_Days>;
+  /** delete data from the table: "lethalcompany_ships" */
+  delete_lethalcompany_ships?: Maybe<Lethalcompany_Ships_Mutation_Response>;
+  /** delete single row from the table: "lethalcompany_ships" */
+  delete_lethalcompany_ships_by_pk?: Maybe<Lethalcompany_Ships>;
+  /** delete data from the table: "lethalcompany_weathers" */
+  delete_lethalcompany_weathers?: Maybe<Lethalcompany_Weathers_Mutation_Response>;
+  /** delete single row from the table: "lethalcompany_weathers" */
+  delete_lethalcompany_weathers_by_pk?: Maybe<Lethalcompany_Weathers>;
   /** delete data from the table: "mariokart8deluxe_battle_courses" */
   delete_mariokart8deluxe_battle_courses?: Maybe<Mariokart8deluxe_Battle_Courses_Mutation_Response>;
   /** delete single row from the table: "mariokart8deluxe_battle_courses" */
@@ -10030,6 +12377,10 @@ export type Mutation_Root = {
   delete_program_amongus_vanilla_versions?: Maybe<Program_Amongus_Vanilla_Versions_Mutation_Response>;
   /** delete single row from the table: "program_amongus_vanilla_versions" */
   delete_program_amongus_vanilla_versions_by_pk?: Maybe<Program_Amongus_Vanilla_Versions>;
+  /** delete data from the table: "program_game_exchange_parties" */
+  delete_program_game_exchange_parties?: Maybe<Program_Game_Exchange_Parties_Mutation_Response>;
+  /** delete single row from the table: "program_game_exchange_parties" */
+  delete_program_game_exchange_parties_by_pk?: Maybe<Program_Game_Exchange_Parties>;
   /** delete data from the table: "program_live_archives" */
   delete_program_live_archives?: Maybe<Program_Live_Archives_Mutation_Response>;
   /** delete single row from the table: "program_live_archives" */
@@ -10174,10 +12525,38 @@ export type Mutation_Root = {
   insert_fediverse_accounts?: Maybe<Fediverse_Accounts_Mutation_Response>;
   /** insert a single row into the table: "fediverse_accounts" */
   insert_fediverse_accounts_one?: Maybe<Fediverse_Accounts>;
+  /** insert data into the table: "game_exchange_parties" */
+  insert_game_exchange_parties?: Maybe<Game_Exchange_Parties_Mutation_Response>;
+  /** insert a single row into the table: "game_exchange_parties" */
+  insert_game_exchange_parties_one?: Maybe<Game_Exchange_Parties>;
+  /** insert data into the table: "game_exchange_party_exchange" */
+  insert_game_exchange_party_exchange?: Maybe<Game_Exchange_Party_Exchange_Mutation_Response>;
+  /** insert a single row into the table: "game_exchange_party_exchange" */
+  insert_game_exchange_party_exchange_one?: Maybe<Game_Exchange_Party_Exchange>;
+  /** insert data into the table: "game_exchange_party_live_archives" */
+  insert_game_exchange_party_live_archives?: Maybe<Game_Exchange_Party_Live_Archives_Mutation_Response>;
+  /** insert a single row into the table: "game_exchange_party_live_archives" */
+  insert_game_exchange_party_live_archives_one?: Maybe<Game_Exchange_Party_Live_Archives>;
   /** insert data into the table: "games" */
   insert_games?: Maybe<Games_Mutation_Response>;
   /** insert a single row into the table: "games" */
   insert_games_one?: Maybe<Games>;
+  /** insert data into the table: "lethalcompany_maps" */
+  insert_lethalcompany_maps?: Maybe<Lethalcompany_Maps_Mutation_Response>;
+  /** insert a single row into the table: "lethalcompany_maps" */
+  insert_lethalcompany_maps_one?: Maybe<Lethalcompany_Maps>;
+  /** insert data into the table: "lethalcompany_ship_days" */
+  insert_lethalcompany_ship_days?: Maybe<Lethalcompany_Ship_Days_Mutation_Response>;
+  /** insert a single row into the table: "lethalcompany_ship_days" */
+  insert_lethalcompany_ship_days_one?: Maybe<Lethalcompany_Ship_Days>;
+  /** insert data into the table: "lethalcompany_ships" */
+  insert_lethalcompany_ships?: Maybe<Lethalcompany_Ships_Mutation_Response>;
+  /** insert a single row into the table: "lethalcompany_ships" */
+  insert_lethalcompany_ships_one?: Maybe<Lethalcompany_Ships>;
+  /** insert data into the table: "lethalcompany_weathers" */
+  insert_lethalcompany_weathers?: Maybe<Lethalcompany_Weathers_Mutation_Response>;
+  /** insert a single row into the table: "lethalcompany_weathers" */
+  insert_lethalcompany_weathers_one?: Maybe<Lethalcompany_Weathers>;
   /** insert data into the table: "mariokart8deluxe_battle_courses" */
   insert_mariokart8deluxe_battle_courses?: Maybe<Mariokart8deluxe_Battle_Courses_Mutation_Response>;
   /** insert a single row into the table: "mariokart8deluxe_battle_courses" */
@@ -10298,6 +12677,10 @@ export type Mutation_Root = {
   insert_program_amongus_vanilla_versions?: Maybe<Program_Amongus_Vanilla_Versions_Mutation_Response>;
   /** insert a single row into the table: "program_amongus_vanilla_versions" */
   insert_program_amongus_vanilla_versions_one?: Maybe<Program_Amongus_Vanilla_Versions>;
+  /** insert data into the table: "program_game_exchange_parties" */
+  insert_program_game_exchange_parties?: Maybe<Program_Game_Exchange_Parties_Mutation_Response>;
+  /** insert a single row into the table: "program_game_exchange_parties" */
+  insert_program_game_exchange_parties_one?: Maybe<Program_Game_Exchange_Parties>;
   /** insert data into the table: "program_live_archives" */
   insert_program_live_archives?: Maybe<Program_Live_Archives_Mutation_Response>;
   /** insert a single row into the table: "program_live_archives" */
@@ -10484,12 +12867,54 @@ export type Mutation_Root = {
   update_fediverse_accounts_by_pk?: Maybe<Fediverse_Accounts>;
   /** update multiples rows of table: "fediverse_accounts" */
   update_fediverse_accounts_many?: Maybe<Array<Maybe<Fediverse_Accounts_Mutation_Response>>>;
+  /** update data of the table: "game_exchange_parties" */
+  update_game_exchange_parties?: Maybe<Game_Exchange_Parties_Mutation_Response>;
+  /** update single row of the table: "game_exchange_parties" */
+  update_game_exchange_parties_by_pk?: Maybe<Game_Exchange_Parties>;
+  /** update multiples rows of table: "game_exchange_parties" */
+  update_game_exchange_parties_many?: Maybe<Array<Maybe<Game_Exchange_Parties_Mutation_Response>>>;
+  /** update data of the table: "game_exchange_party_exchange" */
+  update_game_exchange_party_exchange?: Maybe<Game_Exchange_Party_Exchange_Mutation_Response>;
+  /** update single row of the table: "game_exchange_party_exchange" */
+  update_game_exchange_party_exchange_by_pk?: Maybe<Game_Exchange_Party_Exchange>;
+  /** update multiples rows of table: "game_exchange_party_exchange" */
+  update_game_exchange_party_exchange_many?: Maybe<Array<Maybe<Game_Exchange_Party_Exchange_Mutation_Response>>>;
+  /** update data of the table: "game_exchange_party_live_archives" */
+  update_game_exchange_party_live_archives?: Maybe<Game_Exchange_Party_Live_Archives_Mutation_Response>;
+  /** update single row of the table: "game_exchange_party_live_archives" */
+  update_game_exchange_party_live_archives_by_pk?: Maybe<Game_Exchange_Party_Live_Archives>;
+  /** update multiples rows of table: "game_exchange_party_live_archives" */
+  update_game_exchange_party_live_archives_many?: Maybe<Array<Maybe<Game_Exchange_Party_Live_Archives_Mutation_Response>>>;
   /** update data of the table: "games" */
   update_games?: Maybe<Games_Mutation_Response>;
   /** update single row of the table: "games" */
   update_games_by_pk?: Maybe<Games>;
   /** update multiples rows of table: "games" */
   update_games_many?: Maybe<Array<Maybe<Games_Mutation_Response>>>;
+  /** update data of the table: "lethalcompany_maps" */
+  update_lethalcompany_maps?: Maybe<Lethalcompany_Maps_Mutation_Response>;
+  /** update single row of the table: "lethalcompany_maps" */
+  update_lethalcompany_maps_by_pk?: Maybe<Lethalcompany_Maps>;
+  /** update multiples rows of table: "lethalcompany_maps" */
+  update_lethalcompany_maps_many?: Maybe<Array<Maybe<Lethalcompany_Maps_Mutation_Response>>>;
+  /** update data of the table: "lethalcompany_ship_days" */
+  update_lethalcompany_ship_days?: Maybe<Lethalcompany_Ship_Days_Mutation_Response>;
+  /** update single row of the table: "lethalcompany_ship_days" */
+  update_lethalcompany_ship_days_by_pk?: Maybe<Lethalcompany_Ship_Days>;
+  /** update multiples rows of table: "lethalcompany_ship_days" */
+  update_lethalcompany_ship_days_many?: Maybe<Array<Maybe<Lethalcompany_Ship_Days_Mutation_Response>>>;
+  /** update data of the table: "lethalcompany_ships" */
+  update_lethalcompany_ships?: Maybe<Lethalcompany_Ships_Mutation_Response>;
+  /** update single row of the table: "lethalcompany_ships" */
+  update_lethalcompany_ships_by_pk?: Maybe<Lethalcompany_Ships>;
+  /** update multiples rows of table: "lethalcompany_ships" */
+  update_lethalcompany_ships_many?: Maybe<Array<Maybe<Lethalcompany_Ships_Mutation_Response>>>;
+  /** update data of the table: "lethalcompany_weathers" */
+  update_lethalcompany_weathers?: Maybe<Lethalcompany_Weathers_Mutation_Response>;
+  /** update single row of the table: "lethalcompany_weathers" */
+  update_lethalcompany_weathers_by_pk?: Maybe<Lethalcompany_Weathers>;
+  /** update multiples rows of table: "lethalcompany_weathers" */
+  update_lethalcompany_weathers_many?: Maybe<Array<Maybe<Lethalcompany_Weathers_Mutation_Response>>>;
   /** update data of the table: "mariokart8deluxe_battle_courses" */
   update_mariokart8deluxe_battle_courses?: Maybe<Mariokart8deluxe_Battle_Courses_Mutation_Response>;
   /** update single row of the table: "mariokart8deluxe_battle_courses" */
@@ -10670,6 +13095,12 @@ export type Mutation_Root = {
   update_program_amongus_vanilla_versions_by_pk?: Maybe<Program_Amongus_Vanilla_Versions>;
   /** update multiples rows of table: "program_amongus_vanilla_versions" */
   update_program_amongus_vanilla_versions_many?: Maybe<Array<Maybe<Program_Amongus_Vanilla_Versions_Mutation_Response>>>;
+  /** update data of the table: "program_game_exchange_parties" */
+  update_program_game_exchange_parties?: Maybe<Program_Game_Exchange_Parties_Mutation_Response>;
+  /** update single row of the table: "program_game_exchange_parties" */
+  update_program_game_exchange_parties_by_pk?: Maybe<Program_Game_Exchange_Parties>;
+  /** update multiples rows of table: "program_game_exchange_parties" */
+  update_program_game_exchange_parties_many?: Maybe<Array<Maybe<Program_Game_Exchange_Parties_Mutation_Response>>>;
   /** update data of the table: "program_live_archives" */
   update_program_live_archives?: Maybe<Program_Live_Archives_Mutation_Response>;
   /** update single row of the table: "program_live_archives" */
@@ -11016,6 +13447,42 @@ export type Mutation_RootDelete_Fediverse_Accounts_By_PkArgs = {
 
 
 /** mutation root */
+export type Mutation_RootDelete_Game_Exchange_PartiesArgs = {
+  where: Game_Exchange_Parties_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Game_Exchange_Parties_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Game_Exchange_Party_ExchangeArgs = {
+  where: Game_Exchange_Party_Exchange_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Game_Exchange_Party_Exchange_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Game_Exchange_Party_Live_ArchivesArgs = {
+  where: Game_Exchange_Party_Live_Archives_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Game_Exchange_Party_Live_Archives_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
 export type Mutation_RootDelete_GamesArgs = {
   where: Games_Bool_Exp;
 };
@@ -11023,6 +13490,54 @@ export type Mutation_RootDelete_GamesArgs = {
 
 /** mutation root */
 export type Mutation_RootDelete_Games_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Lethalcompany_MapsArgs = {
+  where: Lethalcompany_Maps_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Lethalcompany_Maps_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Lethalcompany_Ship_DaysArgs = {
+  where: Lethalcompany_Ship_Days_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Lethalcompany_Ship_Days_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Lethalcompany_ShipsArgs = {
+  where: Lethalcompany_Ships_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Lethalcompany_Ships_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Lethalcompany_WeathersArgs = {
+  where: Lethalcompany_Weathers_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Lethalcompany_Weathers_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
@@ -11383,6 +13898,18 @@ export type Mutation_RootDelete_Program_Amongus_Vanilla_VersionsArgs = {
 
 /** mutation root */
 export type Mutation_RootDelete_Program_Amongus_Vanilla_Versions_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Program_Game_Exchange_PartiesArgs = {
+  where: Program_Game_Exchange_Parties_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootDelete_Program_Game_Exchange_Parties_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
@@ -11862,6 +14389,48 @@ export type Mutation_RootInsert_Fediverse_Accounts_OneArgs = {
 
 
 /** mutation root */
+export type Mutation_RootInsert_Game_Exchange_PartiesArgs = {
+  objects: Array<Game_Exchange_Parties_Insert_Input>;
+  on_conflict?: InputMaybe<Game_Exchange_Parties_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Game_Exchange_Parties_OneArgs = {
+  object: Game_Exchange_Parties_Insert_Input;
+  on_conflict?: InputMaybe<Game_Exchange_Parties_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Game_Exchange_Party_ExchangeArgs = {
+  objects: Array<Game_Exchange_Party_Exchange_Insert_Input>;
+  on_conflict?: InputMaybe<Game_Exchange_Party_Exchange_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Game_Exchange_Party_Exchange_OneArgs = {
+  object: Game_Exchange_Party_Exchange_Insert_Input;
+  on_conflict?: InputMaybe<Game_Exchange_Party_Exchange_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Game_Exchange_Party_Live_ArchivesArgs = {
+  objects: Array<Game_Exchange_Party_Live_Archives_Insert_Input>;
+  on_conflict?: InputMaybe<Game_Exchange_Party_Live_Archives_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Game_Exchange_Party_Live_Archives_OneArgs = {
+  object: Game_Exchange_Party_Live_Archives_Insert_Input;
+  on_conflict?: InputMaybe<Game_Exchange_Party_Live_Archives_On_Conflict>;
+};
+
+
+/** mutation root */
 export type Mutation_RootInsert_GamesArgs = {
   objects: Array<Games_Insert_Input>;
   on_conflict?: InputMaybe<Games_On_Conflict>;
@@ -11872,6 +14441,62 @@ export type Mutation_RootInsert_GamesArgs = {
 export type Mutation_RootInsert_Games_OneArgs = {
   object: Games_Insert_Input;
   on_conflict?: InputMaybe<Games_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Lethalcompany_MapsArgs = {
+  objects: Array<Lethalcompany_Maps_Insert_Input>;
+  on_conflict?: InputMaybe<Lethalcompany_Maps_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Lethalcompany_Maps_OneArgs = {
+  object: Lethalcompany_Maps_Insert_Input;
+  on_conflict?: InputMaybe<Lethalcompany_Maps_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Lethalcompany_Ship_DaysArgs = {
+  objects: Array<Lethalcompany_Ship_Days_Insert_Input>;
+  on_conflict?: InputMaybe<Lethalcompany_Ship_Days_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Lethalcompany_Ship_Days_OneArgs = {
+  object: Lethalcompany_Ship_Days_Insert_Input;
+  on_conflict?: InputMaybe<Lethalcompany_Ship_Days_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Lethalcompany_ShipsArgs = {
+  objects: Array<Lethalcompany_Ships_Insert_Input>;
+  on_conflict?: InputMaybe<Lethalcompany_Ships_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Lethalcompany_Ships_OneArgs = {
+  object: Lethalcompany_Ships_Insert_Input;
+  on_conflict?: InputMaybe<Lethalcompany_Ships_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Lethalcompany_WeathersArgs = {
+  objects: Array<Lethalcompany_Weathers_Insert_Input>;
+  on_conflict?: InputMaybe<Lethalcompany_Weathers_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Lethalcompany_Weathers_OneArgs = {
+  object: Lethalcompany_Weathers_Insert_Input;
+  on_conflict?: InputMaybe<Lethalcompany_Weathers_On_Conflict>;
 };
 
 
@@ -12292,6 +14917,20 @@ export type Mutation_RootInsert_Program_Amongus_Vanilla_VersionsArgs = {
 export type Mutation_RootInsert_Program_Amongus_Vanilla_Versions_OneArgs = {
   object: Program_Amongus_Vanilla_Versions_Insert_Input;
   on_conflict?: InputMaybe<Program_Amongus_Vanilla_Versions_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Program_Game_Exchange_PartiesArgs = {
+  objects: Array<Program_Game_Exchange_Parties_Insert_Input>;
+  on_conflict?: InputMaybe<Program_Game_Exchange_Parties_On_Conflict>;
+};
+
+
+/** mutation root */
+export type Mutation_RootInsert_Program_Game_Exchange_Parties_OneArgs = {
+  object: Program_Game_Exchange_Parties_Insert_Input;
+  on_conflict?: InputMaybe<Program_Game_Exchange_Parties_On_Conflict>;
 };
 
 
@@ -12940,6 +15579,66 @@ export type Mutation_RootUpdate_Fediverse_Accounts_ManyArgs = {
 
 
 /** mutation root */
+export type Mutation_RootUpdate_Game_Exchange_PartiesArgs = {
+  _set?: InputMaybe<Game_Exchange_Parties_Set_Input>;
+  where: Game_Exchange_Parties_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Game_Exchange_Parties_By_PkArgs = {
+  _set?: InputMaybe<Game_Exchange_Parties_Set_Input>;
+  pk_columns: Game_Exchange_Parties_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Game_Exchange_Parties_ManyArgs = {
+  updates: Array<Game_Exchange_Parties_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Game_Exchange_Party_ExchangeArgs = {
+  _set?: InputMaybe<Game_Exchange_Party_Exchange_Set_Input>;
+  where: Game_Exchange_Party_Exchange_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Game_Exchange_Party_Exchange_By_PkArgs = {
+  _set?: InputMaybe<Game_Exchange_Party_Exchange_Set_Input>;
+  pk_columns: Game_Exchange_Party_Exchange_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Game_Exchange_Party_Exchange_ManyArgs = {
+  updates: Array<Game_Exchange_Party_Exchange_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Game_Exchange_Party_Live_ArchivesArgs = {
+  _set?: InputMaybe<Game_Exchange_Party_Live_Archives_Set_Input>;
+  where: Game_Exchange_Party_Live_Archives_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Game_Exchange_Party_Live_Archives_By_PkArgs = {
+  _set?: InputMaybe<Game_Exchange_Party_Live_Archives_Set_Input>;
+  pk_columns: Game_Exchange_Party_Live_Archives_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Game_Exchange_Party_Live_Archives_ManyArgs = {
+  updates: Array<Game_Exchange_Party_Live_Archives_Updates>;
+};
+
+
+/** mutation root */
 export type Mutation_RootUpdate_GamesArgs = {
   _set?: InputMaybe<Games_Set_Input>;
   where: Games_Bool_Exp;
@@ -12956,6 +15655,94 @@ export type Mutation_RootUpdate_Games_By_PkArgs = {
 /** mutation root */
 export type Mutation_RootUpdate_Games_ManyArgs = {
   updates: Array<Games_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Lethalcompany_MapsArgs = {
+  _inc?: InputMaybe<Lethalcompany_Maps_Inc_Input>;
+  _set?: InputMaybe<Lethalcompany_Maps_Set_Input>;
+  where: Lethalcompany_Maps_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Lethalcompany_Maps_By_PkArgs = {
+  _inc?: InputMaybe<Lethalcompany_Maps_Inc_Input>;
+  _set?: InputMaybe<Lethalcompany_Maps_Set_Input>;
+  pk_columns: Lethalcompany_Maps_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Lethalcompany_Maps_ManyArgs = {
+  updates: Array<Lethalcompany_Maps_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Lethalcompany_Ship_DaysArgs = {
+  _inc?: InputMaybe<Lethalcompany_Ship_Days_Inc_Input>;
+  _set?: InputMaybe<Lethalcompany_Ship_Days_Set_Input>;
+  where: Lethalcompany_Ship_Days_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Lethalcompany_Ship_Days_By_PkArgs = {
+  _inc?: InputMaybe<Lethalcompany_Ship_Days_Inc_Input>;
+  _set?: InputMaybe<Lethalcompany_Ship_Days_Set_Input>;
+  pk_columns: Lethalcompany_Ship_Days_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Lethalcompany_Ship_Days_ManyArgs = {
+  updates: Array<Lethalcompany_Ship_Days_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Lethalcompany_ShipsArgs = {
+  _inc?: InputMaybe<Lethalcompany_Ships_Inc_Input>;
+  _set?: InputMaybe<Lethalcompany_Ships_Set_Input>;
+  where: Lethalcompany_Ships_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Lethalcompany_Ships_By_PkArgs = {
+  _inc?: InputMaybe<Lethalcompany_Ships_Inc_Input>;
+  _set?: InputMaybe<Lethalcompany_Ships_Set_Input>;
+  pk_columns: Lethalcompany_Ships_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Lethalcompany_Ships_ManyArgs = {
+  updates: Array<Lethalcompany_Ships_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Lethalcompany_WeathersArgs = {
+  _inc?: InputMaybe<Lethalcompany_Weathers_Inc_Input>;
+  _set?: InputMaybe<Lethalcompany_Weathers_Set_Input>;
+  where: Lethalcompany_Weathers_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Lethalcompany_Weathers_By_PkArgs = {
+  _inc?: InputMaybe<Lethalcompany_Weathers_Inc_Input>;
+  _set?: InputMaybe<Lethalcompany_Weathers_Set_Input>;
+  pk_columns: Lethalcompany_Weathers_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Lethalcompany_Weathers_ManyArgs = {
+  updates: Array<Lethalcompany_Weathers_Updates>;
 };
 
 
@@ -13570,6 +16357,26 @@ export type Mutation_RootUpdate_Program_Amongus_Vanilla_Versions_By_PkArgs = {
 /** mutation root */
 export type Mutation_RootUpdate_Program_Amongus_Vanilla_Versions_ManyArgs = {
   updates: Array<Program_Amongus_Vanilla_Versions_Updates>;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Program_Game_Exchange_PartiesArgs = {
+  _set?: InputMaybe<Program_Game_Exchange_Parties_Set_Input>;
+  where: Program_Game_Exchange_Parties_Bool_Exp;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Program_Game_Exchange_Parties_By_PkArgs = {
+  _set?: InputMaybe<Program_Game_Exchange_Parties_Set_Input>;
+  pk_columns: Program_Game_Exchange_Parties_Pk_Columns_Input;
+};
+
+
+/** mutation root */
+export type Mutation_RootUpdate_Program_Game_Exchange_Parties_ManyArgs = {
+  updates: Array<Program_Game_Exchange_Parties_Updates>;
 };
 
 
@@ -18740,6 +21547,231 @@ export type Program_Amongus_Vanilla_Versions_Updates = {
   where: Program_Amongus_Vanilla_Versions_Bool_Exp;
 };
 
+/** columns and relationships of "program_game_exchange_parties" */
+export type Program_Game_Exchange_Parties = {
+  __typename?: 'program_game_exchange_parties';
+  created_at: Scalars['timestamptz']['output'];
+  /** An object relationship */
+  game_exchange_party: Game_Exchange_Parties;
+  game_exchange_party_id: Scalars['uuid']['output'];
+  id: Scalars['uuid']['output'];
+  /** An object relationship */
+  program: Programs;
+  program_id: Scalars['uuid']['output'];
+  updated_at: Scalars['timestamptz']['output'];
+};
+
+/** aggregated selection of "program_game_exchange_parties" */
+export type Program_Game_Exchange_Parties_Aggregate = {
+  __typename?: 'program_game_exchange_parties_aggregate';
+  aggregate?: Maybe<Program_Game_Exchange_Parties_Aggregate_Fields>;
+  nodes: Array<Program_Game_Exchange_Parties>;
+};
+
+export type Program_Game_Exchange_Parties_Aggregate_Bool_Exp = {
+  count?: InputMaybe<Program_Game_Exchange_Parties_Aggregate_Bool_Exp_Count>;
+};
+
+export type Program_Game_Exchange_Parties_Aggregate_Bool_Exp_Count = {
+  arguments?: InputMaybe<Array<Program_Game_Exchange_Parties_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+  filter?: InputMaybe<Program_Game_Exchange_Parties_Bool_Exp>;
+  predicate: Int_Comparison_Exp;
+};
+
+/** aggregate fields of "program_game_exchange_parties" */
+export type Program_Game_Exchange_Parties_Aggregate_Fields = {
+  __typename?: 'program_game_exchange_parties_aggregate_fields';
+  count: Scalars['Int']['output'];
+  max?: Maybe<Program_Game_Exchange_Parties_Max_Fields>;
+  min?: Maybe<Program_Game_Exchange_Parties_Min_Fields>;
+};
+
+
+/** aggregate fields of "program_game_exchange_parties" */
+export type Program_Game_Exchange_Parties_Aggregate_FieldsCountArgs = {
+  columns?: InputMaybe<Array<Program_Game_Exchange_Parties_Select_Column>>;
+  distinct?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** order by aggregate values of table "program_game_exchange_parties" */
+export type Program_Game_Exchange_Parties_Aggregate_Order_By = {
+  count?: InputMaybe<Order_By>;
+  max?: InputMaybe<Program_Game_Exchange_Parties_Max_Order_By>;
+  min?: InputMaybe<Program_Game_Exchange_Parties_Min_Order_By>;
+};
+
+/** input type for inserting array relation for remote table "program_game_exchange_parties" */
+export type Program_Game_Exchange_Parties_Arr_Rel_Insert_Input = {
+  data: Array<Program_Game_Exchange_Parties_Insert_Input>;
+  /** upsert condition */
+  on_conflict?: InputMaybe<Program_Game_Exchange_Parties_On_Conflict>;
+};
+
+/** Boolean expression to filter rows from the table "program_game_exchange_parties". All fields are combined with a logical 'AND'. */
+export type Program_Game_Exchange_Parties_Bool_Exp = {
+  _and?: InputMaybe<Array<Program_Game_Exchange_Parties_Bool_Exp>>;
+  _not?: InputMaybe<Program_Game_Exchange_Parties_Bool_Exp>;
+  _or?: InputMaybe<Array<Program_Game_Exchange_Parties_Bool_Exp>>;
+  created_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+  game_exchange_party?: InputMaybe<Game_Exchange_Parties_Bool_Exp>;
+  game_exchange_party_id?: InputMaybe<Uuid_Comparison_Exp>;
+  id?: InputMaybe<Uuid_Comparison_Exp>;
+  program?: InputMaybe<Programs_Bool_Exp>;
+  program_id?: InputMaybe<Uuid_Comparison_Exp>;
+  updated_at?: InputMaybe<Timestamptz_Comparison_Exp>;
+};
+
+/** unique or primary key constraints on table "program_game_exchange_parties" */
+export enum Program_Game_Exchange_Parties_Constraint {
+  /** unique or primary key constraint on columns "id" */
+  ProgramGameExchangePartiesPkey = 'program_game_exchange_parties_pkey',
+  /** unique or primary key constraint on columns "game_exchange_party_id", "program_id" */
+  ProgramGameExchangePartiesProgramIdGameExchangePartKey = 'program_game_exchange_parties_program_id_game_exchange_part_key'
+}
+
+/** input type for inserting data into table "program_game_exchange_parties" */
+export type Program_Game_Exchange_Parties_Insert_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  game_exchange_party?: InputMaybe<Game_Exchange_Parties_Obj_Rel_Insert_Input>;
+  game_exchange_party_id?: InputMaybe<Scalars['uuid']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  program?: InputMaybe<Programs_Obj_Rel_Insert_Input>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** aggregate max on columns */
+export type Program_Game_Exchange_Parties_Max_Fields = {
+  __typename?: 'program_game_exchange_parties_max_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  game_exchange_party_id?: Maybe<Scalars['uuid']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  program_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by max() on columns of table "program_game_exchange_parties" */
+export type Program_Game_Exchange_Parties_Max_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  game_exchange_party_id?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** aggregate min on columns */
+export type Program_Game_Exchange_Parties_Min_Fields = {
+  __typename?: 'program_game_exchange_parties_min_fields';
+  created_at?: Maybe<Scalars['timestamptz']['output']>;
+  game_exchange_party_id?: Maybe<Scalars['uuid']['output']>;
+  id?: Maybe<Scalars['uuid']['output']>;
+  program_id?: Maybe<Scalars['uuid']['output']>;
+  updated_at?: Maybe<Scalars['timestamptz']['output']>;
+};
+
+/** order by min() on columns of table "program_game_exchange_parties" */
+export type Program_Game_Exchange_Parties_Min_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  game_exchange_party_id?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** response of any mutation on the table "program_game_exchange_parties" */
+export type Program_Game_Exchange_Parties_Mutation_Response = {
+  __typename?: 'program_game_exchange_parties_mutation_response';
+  /** number of rows affected by the mutation */
+  affected_rows: Scalars['Int']['output'];
+  /** data from the rows affected by the mutation */
+  returning: Array<Program_Game_Exchange_Parties>;
+};
+
+/** on_conflict condition type for table "program_game_exchange_parties" */
+export type Program_Game_Exchange_Parties_On_Conflict = {
+  constraint: Program_Game_Exchange_Parties_Constraint;
+  update_columns?: Array<Program_Game_Exchange_Parties_Update_Column>;
+  where?: InputMaybe<Program_Game_Exchange_Parties_Bool_Exp>;
+};
+
+/** Ordering options when selecting data from "program_game_exchange_parties". */
+export type Program_Game_Exchange_Parties_Order_By = {
+  created_at?: InputMaybe<Order_By>;
+  game_exchange_party?: InputMaybe<Game_Exchange_Parties_Order_By>;
+  game_exchange_party_id?: InputMaybe<Order_By>;
+  id?: InputMaybe<Order_By>;
+  program?: InputMaybe<Programs_Order_By>;
+  program_id?: InputMaybe<Order_By>;
+  updated_at?: InputMaybe<Order_By>;
+};
+
+/** primary key columns input for table: program_game_exchange_parties */
+export type Program_Game_Exchange_Parties_Pk_Columns_Input = {
+  id: Scalars['uuid']['input'];
+};
+
+/** select columns of table "program_game_exchange_parties" */
+export enum Program_Game_Exchange_Parties_Select_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  GameExchangePartyId = 'game_exchange_party_id',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  ProgramId = 'program_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+/** input type for updating data in table "program_game_exchange_parties" */
+export type Program_Game_Exchange_Parties_Set_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  game_exchange_party_id?: InputMaybe<Scalars['uuid']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** Streaming cursor of the table "program_game_exchange_parties" */
+export type Program_Game_Exchange_Parties_Stream_Cursor_Input = {
+  /** Stream column input with initial value */
+  initial_value: Program_Game_Exchange_Parties_Stream_Cursor_Value_Input;
+  /** cursor ordering */
+  ordering?: InputMaybe<Cursor_Ordering>;
+};
+
+/** Initial value of the column from where the streaming should start */
+export type Program_Game_Exchange_Parties_Stream_Cursor_Value_Input = {
+  created_at?: InputMaybe<Scalars['timestamptz']['input']>;
+  game_exchange_party_id?: InputMaybe<Scalars['uuid']['input']>;
+  id?: InputMaybe<Scalars['uuid']['input']>;
+  program_id?: InputMaybe<Scalars['uuid']['input']>;
+  updated_at?: InputMaybe<Scalars['timestamptz']['input']>;
+};
+
+/** update columns of table "program_game_exchange_parties" */
+export enum Program_Game_Exchange_Parties_Update_Column {
+  /** column name */
+  CreatedAt = 'created_at',
+  /** column name */
+  GameExchangePartyId = 'game_exchange_party_id',
+  /** column name */
+  Id = 'id',
+  /** column name */
+  ProgramId = 'program_id',
+  /** column name */
+  UpdatedAt = 'updated_at'
+}
+
+export type Program_Game_Exchange_Parties_Updates = {
+  /** sets the columns of the filtered rows to the given values */
+  _set?: InputMaybe<Program_Game_Exchange_Parties_Set_Input>;
+  /** filter the rows which have to be updated */
+  where: Program_Game_Exchange_Parties_Bool_Exp;
+};
+
 /** columns and relationships of "program_live_archives" */
 export type Program_Live_Archives = {
   __typename?: 'program_live_archives';
@@ -20077,6 +23109,10 @@ export type Programs = {
   game_id?: Maybe<Scalars['uuid']['output']>;
   id: Scalars['uuid']['output'];
   /** An array relationship */
+  lethalcompany_ships: Array<Lethalcompany_Ships>;
+  /** An aggregate relationship */
+  lethalcompany_ships_aggregate: Lethalcompany_Ships_Aggregate;
+  /** An array relationship */
   mariokart8deluxe_battle_matches: Array<Mariokart8deluxe_Battle_Matches>;
   /** An aggregate relationship */
   mariokart8deluxe_battle_matches_aggregate: Mariokart8deluxe_Battle_Matches_Aggregate;
@@ -20096,6 +23132,10 @@ export type Programs = {
   program_amongus_vanilla_versions: Array<Program_Amongus_Vanilla_Versions>;
   /** An aggregate relationship */
   program_amongus_vanilla_versions_aggregate: Program_Amongus_Vanilla_Versions_Aggregate;
+  /** An array relationship */
+  program_game_exchange_parties: Array<Program_Game_Exchange_Parties>;
+  /** An aggregate relationship */
+  program_game_exchange_parties_aggregate: Program_Game_Exchange_Parties_Aggregate;
   /** An array relationship */
   program_live_archives: Array<Program_Live_Archives>;
   /** An aggregate relationship */
@@ -20203,6 +23243,26 @@ export type ProgramsFallguys_Matches_AggregateArgs = {
 
 
 /** columns and relationships of "programs" */
+export type ProgramsLethalcompany_ShipsArgs = {
+  distinct_on?: InputMaybe<Array<Lethalcompany_Ships_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Lethalcompany_Ships_Order_By>>;
+  where?: InputMaybe<Lethalcompany_Ships_Bool_Exp>;
+};
+
+
+/** columns and relationships of "programs" */
+export type ProgramsLethalcompany_Ships_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Lethalcompany_Ships_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Lethalcompany_Ships_Order_By>>;
+  where?: InputMaybe<Lethalcompany_Ships_Bool_Exp>;
+};
+
+
+/** columns and relationships of "programs" */
 export type ProgramsMariokart8deluxe_Battle_MatchesArgs = {
   distinct_on?: InputMaybe<Array<Mariokart8deluxe_Battle_Matches_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -20299,6 +23359,26 @@ export type ProgramsProgram_Amongus_Vanilla_Versions_AggregateArgs = {
   offset?: InputMaybe<Scalars['Int']['input']>;
   order_by?: InputMaybe<Array<Program_Amongus_Vanilla_Versions_Order_By>>;
   where?: InputMaybe<Program_Amongus_Vanilla_Versions_Bool_Exp>;
+};
+
+
+/** columns and relationships of "programs" */
+export type ProgramsProgram_Game_Exchange_PartiesArgs = {
+  distinct_on?: InputMaybe<Array<Program_Game_Exchange_Parties_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Game_Exchange_Parties_Order_By>>;
+  where?: InputMaybe<Program_Game_Exchange_Parties_Bool_Exp>;
+};
+
+
+/** columns and relationships of "programs" */
+export type ProgramsProgram_Game_Exchange_Parties_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Game_Exchange_Parties_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Game_Exchange_Parties_Order_By>>;
+  where?: InputMaybe<Program_Game_Exchange_Parties_Bool_Exp>;
 };
 
 
@@ -20441,6 +23521,8 @@ export type Programs_Bool_Exp = {
   game?: InputMaybe<Games_Bool_Exp>;
   game_id?: InputMaybe<Uuid_Comparison_Exp>;
   id?: InputMaybe<Uuid_Comparison_Exp>;
+  lethalcompany_ships?: InputMaybe<Lethalcompany_Ships_Bool_Exp>;
+  lethalcompany_ships_aggregate?: InputMaybe<Lethalcompany_Ships_Aggregate_Bool_Exp>;
   mariokart8deluxe_battle_matches?: InputMaybe<Mariokart8deluxe_Battle_Matches_Bool_Exp>;
   mariokart8deluxe_battle_matches_aggregate?: InputMaybe<Mariokart8deluxe_Battle_Matches_Aggregate_Bool_Exp>;
   mariokart8deluxe_races?: InputMaybe<Mariokart8deluxe_Races_Bool_Exp>;
@@ -20451,6 +23533,8 @@ export type Programs_Bool_Exp = {
   program_amongus_mods_aggregate?: InputMaybe<Program_Amongus_Mods_Aggregate_Bool_Exp>;
   program_amongus_vanilla_versions?: InputMaybe<Program_Amongus_Vanilla_Versions_Bool_Exp>;
   program_amongus_vanilla_versions_aggregate?: InputMaybe<Program_Amongus_Vanilla_Versions_Aggregate_Bool_Exp>;
+  program_game_exchange_parties?: InputMaybe<Program_Game_Exchange_Parties_Bool_Exp>;
+  program_game_exchange_parties_aggregate?: InputMaybe<Program_Game_Exchange_Parties_Aggregate_Bool_Exp>;
   program_live_archives?: InputMaybe<Program_Live_Archives_Bool_Exp>;
   program_live_archives_aggregate?: InputMaybe<Program_Live_Archives_Aggregate_Bool_Exp>;
   program_niconico_videos?: InputMaybe<Program_Niconico_Videos_Bool_Exp>;
@@ -20483,11 +23567,13 @@ export type Programs_Insert_Input = {
   game?: InputMaybe<Games_Obj_Rel_Insert_Input>;
   game_id?: InputMaybe<Scalars['uuid']['input']>;
   id?: InputMaybe<Scalars['uuid']['input']>;
+  lethalcompany_ships?: InputMaybe<Lethalcompany_Ships_Arr_Rel_Insert_Input>;
   mariokart8deluxe_battle_matches?: InputMaybe<Mariokart8deluxe_Battle_Matches_Arr_Rel_Insert_Input>;
   mariokart8deluxe_races?: InputMaybe<Mariokart8deluxe_Races_Arr_Rel_Insert_Input>;
   program_amongus_maps?: InputMaybe<Program_Amongus_Maps_Arr_Rel_Insert_Input>;
   program_amongus_mods?: InputMaybe<Program_Amongus_Mods_Arr_Rel_Insert_Input>;
   program_amongus_vanilla_versions?: InputMaybe<Program_Amongus_Vanilla_Versions_Arr_Rel_Insert_Input>;
+  program_game_exchange_parties?: InputMaybe<Program_Game_Exchange_Parties_Arr_Rel_Insert_Input>;
   program_live_archives?: InputMaybe<Program_Live_Archives_Arr_Rel_Insert_Input>;
   program_niconico_videos?: InputMaybe<Program_Niconico_Videos_Arr_Rel_Insert_Input>;
   program_persons?: InputMaybe<Program_Persons_Arr_Rel_Insert_Input>;
@@ -20556,11 +23642,13 @@ export type Programs_Order_By = {
   game?: InputMaybe<Games_Order_By>;
   game_id?: InputMaybe<Order_By>;
   id?: InputMaybe<Order_By>;
+  lethalcompany_ships_aggregate?: InputMaybe<Lethalcompany_Ships_Aggregate_Order_By>;
   mariokart8deluxe_battle_matches_aggregate?: InputMaybe<Mariokart8deluxe_Battle_Matches_Aggregate_Order_By>;
   mariokart8deluxe_races_aggregate?: InputMaybe<Mariokart8deluxe_Races_Aggregate_Order_By>;
   program_amongus_maps_aggregate?: InputMaybe<Program_Amongus_Maps_Aggregate_Order_By>;
   program_amongus_mods_aggregate?: InputMaybe<Program_Amongus_Mods_Aggregate_Order_By>;
   program_amongus_vanilla_versions_aggregate?: InputMaybe<Program_Amongus_Vanilla_Versions_Aggregate_Order_By>;
+  program_game_exchange_parties_aggregate?: InputMaybe<Program_Game_Exchange_Parties_Aggregate_Order_By>;
   program_live_archives_aggregate?: InputMaybe<Program_Live_Archives_Aggregate_Order_By>;
   program_niconico_videos_aggregate?: InputMaybe<Program_Niconico_Videos_Aggregate_Order_By>;
   program_persons_aggregate?: InputMaybe<Program_Persons_Aggregate_Order_By>;
@@ -21197,12 +24285,54 @@ export type Query_Root = {
   fediverse_accounts_aggregate: Fediverse_Accounts_Aggregate;
   /** fetch data from the table: "fediverse_accounts" using primary key columns */
   fediverse_accounts_by_pk?: Maybe<Fediverse_Accounts>;
+  /** fetch data from the table: "game_exchange_parties" */
+  game_exchange_parties: Array<Game_Exchange_Parties>;
+  /** fetch aggregated fields from the table: "game_exchange_parties" */
+  game_exchange_parties_aggregate: Game_Exchange_Parties_Aggregate;
+  /** fetch data from the table: "game_exchange_parties" using primary key columns */
+  game_exchange_parties_by_pk?: Maybe<Game_Exchange_Parties>;
+  /** fetch data from the table: "game_exchange_party_exchange" */
+  game_exchange_party_exchange: Array<Game_Exchange_Party_Exchange>;
+  /** fetch aggregated fields from the table: "game_exchange_party_exchange" */
+  game_exchange_party_exchange_aggregate: Game_Exchange_Party_Exchange_Aggregate;
+  /** fetch data from the table: "game_exchange_party_exchange" using primary key columns */
+  game_exchange_party_exchange_by_pk?: Maybe<Game_Exchange_Party_Exchange>;
+  /** An array relationship */
+  game_exchange_party_live_archives: Array<Game_Exchange_Party_Live_Archives>;
+  /** An aggregate relationship */
+  game_exchange_party_live_archives_aggregate: Game_Exchange_Party_Live_Archives_Aggregate;
+  /** fetch data from the table: "game_exchange_party_live_archives" using primary key columns */
+  game_exchange_party_live_archives_by_pk?: Maybe<Game_Exchange_Party_Live_Archives>;
   /** fetch data from the table: "games" */
   games: Array<Games>;
   /** fetch aggregated fields from the table: "games" */
   games_aggregate: Games_Aggregate;
   /** fetch data from the table: "games" using primary key columns */
   games_by_pk?: Maybe<Games>;
+  /** fetch data from the table: "lethalcompany_maps" */
+  lethalcompany_maps: Array<Lethalcompany_Maps>;
+  /** fetch aggregated fields from the table: "lethalcompany_maps" */
+  lethalcompany_maps_aggregate: Lethalcompany_Maps_Aggregate;
+  /** fetch data from the table: "lethalcompany_maps" using primary key columns */
+  lethalcompany_maps_by_pk?: Maybe<Lethalcompany_Maps>;
+  /** An array relationship */
+  lethalcompany_ship_days: Array<Lethalcompany_Ship_Days>;
+  /** An aggregate relationship */
+  lethalcompany_ship_days_aggregate: Lethalcompany_Ship_Days_Aggregate;
+  /** fetch data from the table: "lethalcompany_ship_days" using primary key columns */
+  lethalcompany_ship_days_by_pk?: Maybe<Lethalcompany_Ship_Days>;
+  /** An array relationship */
+  lethalcompany_ships: Array<Lethalcompany_Ships>;
+  /** An aggregate relationship */
+  lethalcompany_ships_aggregate: Lethalcompany_Ships_Aggregate;
+  /** fetch data from the table: "lethalcompany_ships" using primary key columns */
+  lethalcompany_ships_by_pk?: Maybe<Lethalcompany_Ships>;
+  /** fetch data from the table: "lethalcompany_weathers" */
+  lethalcompany_weathers: Array<Lethalcompany_Weathers>;
+  /** fetch aggregated fields from the table: "lethalcompany_weathers" */
+  lethalcompany_weathers_aggregate: Lethalcompany_Weathers_Aggregate;
+  /** fetch data from the table: "lethalcompany_weathers" using primary key columns */
+  lethalcompany_weathers_by_pk?: Maybe<Lethalcompany_Weathers>;
   /** fetch data from the table: "mariokart8deluxe_battle_courses" */
   mariokart8deluxe_battle_courses: Array<Mariokart8deluxe_Battle_Courses>;
   /** fetch aggregated fields from the table: "mariokart8deluxe_battle_courses" */
@@ -21383,6 +24513,12 @@ export type Query_Root = {
   program_amongus_vanilla_versions_aggregate: Program_Amongus_Vanilla_Versions_Aggregate;
   /** fetch data from the table: "program_amongus_vanilla_versions" using primary key columns */
   program_amongus_vanilla_versions_by_pk?: Maybe<Program_Amongus_Vanilla_Versions>;
+  /** An array relationship */
+  program_game_exchange_parties: Array<Program_Game_Exchange_Parties>;
+  /** An aggregate relationship */
+  program_game_exchange_parties_aggregate: Program_Game_Exchange_Parties_Aggregate;
+  /** fetch data from the table: "program_game_exchange_parties" using primary key columns */
+  program_game_exchange_parties_by_pk?: Maybe<Program_Game_Exchange_Parties>;
   /** An array relationship */
   program_live_archives: Array<Program_Live_Archives>;
   /** An aggregate relationship */
@@ -21959,6 +25095,75 @@ export type Query_RootFediverse_Accounts_By_PkArgs = {
 };
 
 
+export type Query_RootGame_Exchange_PartiesArgs = {
+  distinct_on?: InputMaybe<Array<Game_Exchange_Parties_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Game_Exchange_Parties_Order_By>>;
+  where?: InputMaybe<Game_Exchange_Parties_Bool_Exp>;
+};
+
+
+export type Query_RootGame_Exchange_Parties_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Game_Exchange_Parties_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Game_Exchange_Parties_Order_By>>;
+  where?: InputMaybe<Game_Exchange_Parties_Bool_Exp>;
+};
+
+
+export type Query_RootGame_Exchange_Parties_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Query_RootGame_Exchange_Party_ExchangeArgs = {
+  distinct_on?: InputMaybe<Array<Game_Exchange_Party_Exchange_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Game_Exchange_Party_Exchange_Order_By>>;
+  where?: InputMaybe<Game_Exchange_Party_Exchange_Bool_Exp>;
+};
+
+
+export type Query_RootGame_Exchange_Party_Exchange_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Game_Exchange_Party_Exchange_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Game_Exchange_Party_Exchange_Order_By>>;
+  where?: InputMaybe<Game_Exchange_Party_Exchange_Bool_Exp>;
+};
+
+
+export type Query_RootGame_Exchange_Party_Exchange_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Query_RootGame_Exchange_Party_Live_ArchivesArgs = {
+  distinct_on?: InputMaybe<Array<Game_Exchange_Party_Live_Archives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Game_Exchange_Party_Live_Archives_Order_By>>;
+  where?: InputMaybe<Game_Exchange_Party_Live_Archives_Bool_Exp>;
+};
+
+
+export type Query_RootGame_Exchange_Party_Live_Archives_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Game_Exchange_Party_Live_Archives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Game_Exchange_Party_Live_Archives_Order_By>>;
+  where?: InputMaybe<Game_Exchange_Party_Live_Archives_Bool_Exp>;
+};
+
+
+export type Query_RootGame_Exchange_Party_Live_Archives_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
 export type Query_RootGamesArgs = {
   distinct_on?: InputMaybe<Array<Games_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -21978,6 +25183,98 @@ export type Query_RootGames_AggregateArgs = {
 
 
 export type Query_RootGames_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Query_RootLethalcompany_MapsArgs = {
+  distinct_on?: InputMaybe<Array<Lethalcompany_Maps_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Lethalcompany_Maps_Order_By>>;
+  where?: InputMaybe<Lethalcompany_Maps_Bool_Exp>;
+};
+
+
+export type Query_RootLethalcompany_Maps_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Lethalcompany_Maps_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Lethalcompany_Maps_Order_By>>;
+  where?: InputMaybe<Lethalcompany_Maps_Bool_Exp>;
+};
+
+
+export type Query_RootLethalcompany_Maps_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Query_RootLethalcompany_Ship_DaysArgs = {
+  distinct_on?: InputMaybe<Array<Lethalcompany_Ship_Days_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Lethalcompany_Ship_Days_Order_By>>;
+  where?: InputMaybe<Lethalcompany_Ship_Days_Bool_Exp>;
+};
+
+
+export type Query_RootLethalcompany_Ship_Days_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Lethalcompany_Ship_Days_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Lethalcompany_Ship_Days_Order_By>>;
+  where?: InputMaybe<Lethalcompany_Ship_Days_Bool_Exp>;
+};
+
+
+export type Query_RootLethalcompany_Ship_Days_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Query_RootLethalcompany_ShipsArgs = {
+  distinct_on?: InputMaybe<Array<Lethalcompany_Ships_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Lethalcompany_Ships_Order_By>>;
+  where?: InputMaybe<Lethalcompany_Ships_Bool_Exp>;
+};
+
+
+export type Query_RootLethalcompany_Ships_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Lethalcompany_Ships_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Lethalcompany_Ships_Order_By>>;
+  where?: InputMaybe<Lethalcompany_Ships_Bool_Exp>;
+};
+
+
+export type Query_RootLethalcompany_Ships_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Query_RootLethalcompany_WeathersArgs = {
+  distinct_on?: InputMaybe<Array<Lethalcompany_Weathers_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Lethalcompany_Weathers_Order_By>>;
+  where?: InputMaybe<Lethalcompany_Weathers_Bool_Exp>;
+};
+
+
+export type Query_RootLethalcompany_Weathers_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Lethalcompany_Weathers_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Lethalcompany_Weathers_Order_By>>;
+  where?: InputMaybe<Lethalcompany_Weathers_Bool_Exp>;
+};
+
+
+export type Query_RootLethalcompany_Weathers_By_PkArgs = {
   id: Scalars['uuid']['input'];
 };
 
@@ -22672,6 +25969,29 @@ export type Query_RootProgram_Amongus_Vanilla_Versions_By_PkArgs = {
 };
 
 
+export type Query_RootProgram_Game_Exchange_PartiesArgs = {
+  distinct_on?: InputMaybe<Array<Program_Game_Exchange_Parties_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Game_Exchange_Parties_Order_By>>;
+  where?: InputMaybe<Program_Game_Exchange_Parties_Bool_Exp>;
+};
+
+
+export type Query_RootProgram_Game_Exchange_Parties_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Game_Exchange_Parties_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Game_Exchange_Parties_Order_By>>;
+  where?: InputMaybe<Program_Game_Exchange_Parties_Bool_Exp>;
+};
+
+
+export type Query_RootProgram_Game_Exchange_Parties_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
 export type Query_RootProgram_Live_ArchivesArgs = {
   distinct_on?: InputMaybe<Array<Program_Live_Archives_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -23186,6 +26506,30 @@ export type Subscription_Root = {
   fediverse_accounts_by_pk?: Maybe<Fediverse_Accounts>;
   /** fetch data from the table in a streaming manner: "fediverse_accounts" */
   fediverse_accounts_stream: Array<Fediverse_Accounts>;
+  /** fetch data from the table: "game_exchange_parties" */
+  game_exchange_parties: Array<Game_Exchange_Parties>;
+  /** fetch aggregated fields from the table: "game_exchange_parties" */
+  game_exchange_parties_aggregate: Game_Exchange_Parties_Aggregate;
+  /** fetch data from the table: "game_exchange_parties" using primary key columns */
+  game_exchange_parties_by_pk?: Maybe<Game_Exchange_Parties>;
+  /** fetch data from the table in a streaming manner: "game_exchange_parties" */
+  game_exchange_parties_stream: Array<Game_Exchange_Parties>;
+  /** fetch data from the table: "game_exchange_party_exchange" */
+  game_exchange_party_exchange: Array<Game_Exchange_Party_Exchange>;
+  /** fetch aggregated fields from the table: "game_exchange_party_exchange" */
+  game_exchange_party_exchange_aggregate: Game_Exchange_Party_Exchange_Aggregate;
+  /** fetch data from the table: "game_exchange_party_exchange" using primary key columns */
+  game_exchange_party_exchange_by_pk?: Maybe<Game_Exchange_Party_Exchange>;
+  /** fetch data from the table in a streaming manner: "game_exchange_party_exchange" */
+  game_exchange_party_exchange_stream: Array<Game_Exchange_Party_Exchange>;
+  /** An array relationship */
+  game_exchange_party_live_archives: Array<Game_Exchange_Party_Live_Archives>;
+  /** An aggregate relationship */
+  game_exchange_party_live_archives_aggregate: Game_Exchange_Party_Live_Archives_Aggregate;
+  /** fetch data from the table: "game_exchange_party_live_archives" using primary key columns */
+  game_exchange_party_live_archives_by_pk?: Maybe<Game_Exchange_Party_Live_Archives>;
+  /** fetch data from the table in a streaming manner: "game_exchange_party_live_archives" */
+  game_exchange_party_live_archives_stream: Array<Game_Exchange_Party_Live_Archives>;
   /** fetch data from the table: "games" */
   games: Array<Games>;
   /** fetch aggregated fields from the table: "games" */
@@ -23194,6 +26538,38 @@ export type Subscription_Root = {
   games_by_pk?: Maybe<Games>;
   /** fetch data from the table in a streaming manner: "games" */
   games_stream: Array<Games>;
+  /** fetch data from the table: "lethalcompany_maps" */
+  lethalcompany_maps: Array<Lethalcompany_Maps>;
+  /** fetch aggregated fields from the table: "lethalcompany_maps" */
+  lethalcompany_maps_aggregate: Lethalcompany_Maps_Aggregate;
+  /** fetch data from the table: "lethalcompany_maps" using primary key columns */
+  lethalcompany_maps_by_pk?: Maybe<Lethalcompany_Maps>;
+  /** fetch data from the table in a streaming manner: "lethalcompany_maps" */
+  lethalcompany_maps_stream: Array<Lethalcompany_Maps>;
+  /** An array relationship */
+  lethalcompany_ship_days: Array<Lethalcompany_Ship_Days>;
+  /** An aggregate relationship */
+  lethalcompany_ship_days_aggregate: Lethalcompany_Ship_Days_Aggregate;
+  /** fetch data from the table: "lethalcompany_ship_days" using primary key columns */
+  lethalcompany_ship_days_by_pk?: Maybe<Lethalcompany_Ship_Days>;
+  /** fetch data from the table in a streaming manner: "lethalcompany_ship_days" */
+  lethalcompany_ship_days_stream: Array<Lethalcompany_Ship_Days>;
+  /** An array relationship */
+  lethalcompany_ships: Array<Lethalcompany_Ships>;
+  /** An aggregate relationship */
+  lethalcompany_ships_aggregate: Lethalcompany_Ships_Aggregate;
+  /** fetch data from the table: "lethalcompany_ships" using primary key columns */
+  lethalcompany_ships_by_pk?: Maybe<Lethalcompany_Ships>;
+  /** fetch data from the table in a streaming manner: "lethalcompany_ships" */
+  lethalcompany_ships_stream: Array<Lethalcompany_Ships>;
+  /** fetch data from the table: "lethalcompany_weathers" */
+  lethalcompany_weathers: Array<Lethalcompany_Weathers>;
+  /** fetch aggregated fields from the table: "lethalcompany_weathers" */
+  lethalcompany_weathers_aggregate: Lethalcompany_Weathers_Aggregate;
+  /** fetch data from the table: "lethalcompany_weathers" using primary key columns */
+  lethalcompany_weathers_by_pk?: Maybe<Lethalcompany_Weathers>;
+  /** fetch data from the table in a streaming manner: "lethalcompany_weathers" */
+  lethalcompany_weathers_stream: Array<Lethalcompany_Weathers>;
   /** fetch data from the table: "mariokart8deluxe_battle_courses" */
   mariokart8deluxe_battle_courses: Array<Mariokart8deluxe_Battle_Courses>;
   /** fetch aggregated fields from the table: "mariokart8deluxe_battle_courses" */
@@ -23434,6 +26810,14 @@ export type Subscription_Root = {
   program_amongus_vanilla_versions_by_pk?: Maybe<Program_Amongus_Vanilla_Versions>;
   /** fetch data from the table in a streaming manner: "program_amongus_vanilla_versions" */
   program_amongus_vanilla_versions_stream: Array<Program_Amongus_Vanilla_Versions>;
+  /** An array relationship */
+  program_game_exchange_parties: Array<Program_Game_Exchange_Parties>;
+  /** An aggregate relationship */
+  program_game_exchange_parties_aggregate: Program_Game_Exchange_Parties_Aggregate;
+  /** fetch data from the table: "program_game_exchange_parties" using primary key columns */
+  program_game_exchange_parties_by_pk?: Maybe<Program_Game_Exchange_Parties>;
+  /** fetch data from the table in a streaming manner: "program_game_exchange_parties" */
+  program_game_exchange_parties_stream: Array<Program_Game_Exchange_Parties>;
   /** An array relationship */
   program_live_archives: Array<Program_Live_Archives>;
   /** An aggregate relationship */
@@ -24187,6 +27571,96 @@ export type Subscription_RootFediverse_Accounts_StreamArgs = {
 };
 
 
+export type Subscription_RootGame_Exchange_PartiesArgs = {
+  distinct_on?: InputMaybe<Array<Game_Exchange_Parties_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Game_Exchange_Parties_Order_By>>;
+  where?: InputMaybe<Game_Exchange_Parties_Bool_Exp>;
+};
+
+
+export type Subscription_RootGame_Exchange_Parties_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Game_Exchange_Parties_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Game_Exchange_Parties_Order_By>>;
+  where?: InputMaybe<Game_Exchange_Parties_Bool_Exp>;
+};
+
+
+export type Subscription_RootGame_Exchange_Parties_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootGame_Exchange_Parties_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Game_Exchange_Parties_Stream_Cursor_Input>>;
+  where?: InputMaybe<Game_Exchange_Parties_Bool_Exp>;
+};
+
+
+export type Subscription_RootGame_Exchange_Party_ExchangeArgs = {
+  distinct_on?: InputMaybe<Array<Game_Exchange_Party_Exchange_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Game_Exchange_Party_Exchange_Order_By>>;
+  where?: InputMaybe<Game_Exchange_Party_Exchange_Bool_Exp>;
+};
+
+
+export type Subscription_RootGame_Exchange_Party_Exchange_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Game_Exchange_Party_Exchange_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Game_Exchange_Party_Exchange_Order_By>>;
+  where?: InputMaybe<Game_Exchange_Party_Exchange_Bool_Exp>;
+};
+
+
+export type Subscription_RootGame_Exchange_Party_Exchange_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootGame_Exchange_Party_Exchange_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Game_Exchange_Party_Exchange_Stream_Cursor_Input>>;
+  where?: InputMaybe<Game_Exchange_Party_Exchange_Bool_Exp>;
+};
+
+
+export type Subscription_RootGame_Exchange_Party_Live_ArchivesArgs = {
+  distinct_on?: InputMaybe<Array<Game_Exchange_Party_Live_Archives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Game_Exchange_Party_Live_Archives_Order_By>>;
+  where?: InputMaybe<Game_Exchange_Party_Live_Archives_Bool_Exp>;
+};
+
+
+export type Subscription_RootGame_Exchange_Party_Live_Archives_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Game_Exchange_Party_Live_Archives_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Game_Exchange_Party_Live_Archives_Order_By>>;
+  where?: InputMaybe<Game_Exchange_Party_Live_Archives_Bool_Exp>;
+};
+
+
+export type Subscription_RootGame_Exchange_Party_Live_Archives_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootGame_Exchange_Party_Live_Archives_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Game_Exchange_Party_Live_Archives_Stream_Cursor_Input>>;
+  where?: InputMaybe<Game_Exchange_Party_Live_Archives_Bool_Exp>;
+};
+
+
 export type Subscription_RootGamesArgs = {
   distinct_on?: InputMaybe<Array<Games_Select_Column>>;
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -24214,6 +27688,126 @@ export type Subscription_RootGames_StreamArgs = {
   batch_size: Scalars['Int']['input'];
   cursor: Array<InputMaybe<Games_Stream_Cursor_Input>>;
   where?: InputMaybe<Games_Bool_Exp>;
+};
+
+
+export type Subscription_RootLethalcompany_MapsArgs = {
+  distinct_on?: InputMaybe<Array<Lethalcompany_Maps_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Lethalcompany_Maps_Order_By>>;
+  where?: InputMaybe<Lethalcompany_Maps_Bool_Exp>;
+};
+
+
+export type Subscription_RootLethalcompany_Maps_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Lethalcompany_Maps_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Lethalcompany_Maps_Order_By>>;
+  where?: InputMaybe<Lethalcompany_Maps_Bool_Exp>;
+};
+
+
+export type Subscription_RootLethalcompany_Maps_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootLethalcompany_Maps_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Lethalcompany_Maps_Stream_Cursor_Input>>;
+  where?: InputMaybe<Lethalcompany_Maps_Bool_Exp>;
+};
+
+
+export type Subscription_RootLethalcompany_Ship_DaysArgs = {
+  distinct_on?: InputMaybe<Array<Lethalcompany_Ship_Days_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Lethalcompany_Ship_Days_Order_By>>;
+  where?: InputMaybe<Lethalcompany_Ship_Days_Bool_Exp>;
+};
+
+
+export type Subscription_RootLethalcompany_Ship_Days_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Lethalcompany_Ship_Days_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Lethalcompany_Ship_Days_Order_By>>;
+  where?: InputMaybe<Lethalcompany_Ship_Days_Bool_Exp>;
+};
+
+
+export type Subscription_RootLethalcompany_Ship_Days_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootLethalcompany_Ship_Days_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Lethalcompany_Ship_Days_Stream_Cursor_Input>>;
+  where?: InputMaybe<Lethalcompany_Ship_Days_Bool_Exp>;
+};
+
+
+export type Subscription_RootLethalcompany_ShipsArgs = {
+  distinct_on?: InputMaybe<Array<Lethalcompany_Ships_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Lethalcompany_Ships_Order_By>>;
+  where?: InputMaybe<Lethalcompany_Ships_Bool_Exp>;
+};
+
+
+export type Subscription_RootLethalcompany_Ships_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Lethalcompany_Ships_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Lethalcompany_Ships_Order_By>>;
+  where?: InputMaybe<Lethalcompany_Ships_Bool_Exp>;
+};
+
+
+export type Subscription_RootLethalcompany_Ships_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootLethalcompany_Ships_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Lethalcompany_Ships_Stream_Cursor_Input>>;
+  where?: InputMaybe<Lethalcompany_Ships_Bool_Exp>;
+};
+
+
+export type Subscription_RootLethalcompany_WeathersArgs = {
+  distinct_on?: InputMaybe<Array<Lethalcompany_Weathers_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Lethalcompany_Weathers_Order_By>>;
+  where?: InputMaybe<Lethalcompany_Weathers_Bool_Exp>;
+};
+
+
+export type Subscription_RootLethalcompany_Weathers_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Lethalcompany_Weathers_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Lethalcompany_Weathers_Order_By>>;
+  where?: InputMaybe<Lethalcompany_Weathers_Bool_Exp>;
+};
+
+
+export type Subscription_RootLethalcompany_Weathers_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootLethalcompany_Weathers_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Lethalcompany_Weathers_Stream_Cursor_Input>>;
+  where?: InputMaybe<Lethalcompany_Weathers_Bool_Exp>;
 };
 
 
@@ -25114,6 +28708,36 @@ export type Subscription_RootProgram_Amongus_Vanilla_Versions_StreamArgs = {
   batch_size: Scalars['Int']['input'];
   cursor: Array<InputMaybe<Program_Amongus_Vanilla_Versions_Stream_Cursor_Input>>;
   where?: InputMaybe<Program_Amongus_Vanilla_Versions_Bool_Exp>;
+};
+
+
+export type Subscription_RootProgram_Game_Exchange_PartiesArgs = {
+  distinct_on?: InputMaybe<Array<Program_Game_Exchange_Parties_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Game_Exchange_Parties_Order_By>>;
+  where?: InputMaybe<Program_Game_Exchange_Parties_Bool_Exp>;
+};
+
+
+export type Subscription_RootProgram_Game_Exchange_Parties_AggregateArgs = {
+  distinct_on?: InputMaybe<Array<Program_Game_Exchange_Parties_Select_Column>>;
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  offset?: InputMaybe<Scalars['Int']['input']>;
+  order_by?: InputMaybe<Array<Program_Game_Exchange_Parties_Order_By>>;
+  where?: InputMaybe<Program_Game_Exchange_Parties_Bool_Exp>;
+};
+
+
+export type Subscription_RootProgram_Game_Exchange_Parties_By_PkArgs = {
+  id: Scalars['uuid']['input'];
+};
+
+
+export type Subscription_RootProgram_Game_Exchange_Parties_StreamArgs = {
+  batch_size: Scalars['Int']['input'];
+  cursor: Array<InputMaybe<Program_Game_Exchange_Parties_Stream_Cursor_Input>>;
+  where?: InputMaybe<Program_Game_Exchange_Parties_Bool_Exp>;
 };
 
 
@@ -27445,7 +31069,7 @@ export type GetProgramPageQueryVariables = Exact<{
 }>;
 
 
-export type GetProgramPageQuery = { __typename?: 'query_root', program?: { __typename?: 'programs', id: any, title: string, startTime?: any | null, endTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, game?: { __typename?: 'games', id: any, name: string } | null, programTwitterAnnouncements: Array<{ __typename?: 'program_twitter_announcements', twitterTweet: { __typename?: 'twitter_tweets', id: any, remoteTweetId: string } }>, programPersons: Array<{ __typename?: 'program_persons', id: any, isAbsent?: boolean | null, person: { __typename?: 'persons', id: any, name: string } }>, programNiconicoVideos: Array<{ __typename?: 'program_niconico_videos', niconicoVideo: { __typename?: 'niconico_videos', id: any, title: string, remoteNiconicoContentId: string, startTime: any }, person?: { __typename?: 'persons', id: any, name: string } | null }>, programLiveArchives: Array<{ __typename?: 'program_live_archives', id: any, person: { __typename?: 'persons', id: any, name: string }, youtubeLive?: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null, youtubeVideo?: { __typename?: 'youtube_videos', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null, niconicoLive?: { __typename?: 'niconico_lives', title: string, remoteNiconicoContentId: string } | null }>, amongusMatches: Array<{ __typename?: 'amongus_matches', id: any, startTime: any, endTime?: any | null, isAborted?: boolean | null }>, amongusHidenseekMatches: Array<{ __typename?: 'amongus_hidenseek_matches', id: any, startTime: any, endTime?: any | null, isAborted?: boolean | null }>, amongusvrMatches: Array<{ __typename?: 'amongusvr_matches', id: any, startTime: any, endTime?: any | null }>, fallguysMatches: Array<{ __typename?: 'fallguys_matches', id: any, startTime: any, endTime?: any | null, fallguysMatchRounds: Array<{ __typename?: 'fallguys_match_rounds', id: any, fallguysRound?: { __typename?: 'fallguys_rounds', id: any, name: string } | null, fallguysCustomRound?: { __typename?: 'fallguys_custom_rounds', id: any, name: string } | null }> }>, mariokart8deluxeRaces: Array<{ __typename?: 'mariokart8deluxe_races', id: any, startTime: any, endTime?: any | null, mariokart8deluxeRaceRule?: { __typename?: 'mariokart8deluxe_race_rules', id: any, name: string } | null, mariokart8deluxeCourse?: { __typename?: 'mariokart8deluxe_courses', id: any, name: string, mariokart8deluxeConsole?: { __typename?: 'mariokart8deluxe_consoles', id: any, name: string } | null } | null }>, mariokart8deluxeBattleMatches: Array<{ __typename?: 'mariokart8deluxe_battle_matches', id: any, startTime: any, endTime?: any | null, mariokart8deluxeBattleRule?: { __typename?: 'mariokart8deluxe_battle_rules', id: any, name: string } | null, mariokart8deluxeBattleCourse?: { __typename?: 'mariokart8deluxe_battle_courses', id: any, name: string, mariokart8deluxeConsole?: { __typename?: 'mariokart8deluxe_consoles', id: any, name: string } | null } | null }> } | null };
+export type GetProgramPageQuery = { __typename?: 'query_root', program?: { __typename?: 'programs', id: any, title: string, startTime?: any | null, endTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, game?: { __typename?: 'games', id: any, name: string } | null, programTwitterAnnouncements: Array<{ __typename?: 'program_twitter_announcements', twitterTweet: { __typename?: 'twitter_tweets', id: any, remoteTweetId: string } }>, programPersons: Array<{ __typename?: 'program_persons', id: any, isAbsent?: boolean | null, person: { __typename?: 'persons', id: any, name: string } }>, programNiconicoVideos: Array<{ __typename?: 'program_niconico_videos', niconicoVideo: { __typename?: 'niconico_videos', id: any, title: string, remoteNiconicoContentId: string, startTime: any }, person?: { __typename?: 'persons', id: any, name: string } | null }>, programLiveArchives: Array<{ __typename?: 'program_live_archives', id: any, person: { __typename?: 'persons', id: any, name: string }, youtubeLive?: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null, youtubeVideo?: { __typename?: 'youtube_videos', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null, niconicoLive?: { __typename?: 'niconico_lives', title: string, remoteNiconicoContentId: string } | null }>, amongusMatches: Array<{ __typename?: 'amongus_matches', id: any, startTime: any, endTime?: any | null, isAborted?: boolean | null }>, amongusHidenseekMatches: Array<{ __typename?: 'amongus_hidenseek_matches', id: any, startTime: any, endTime?: any | null, isAborted?: boolean | null }>, amongusvrMatches: Array<{ __typename?: 'amongusvr_matches', id: any, startTime: any, endTime?: any | null }>, fallguysMatches: Array<{ __typename?: 'fallguys_matches', id: any, startTime: any, endTime?: any | null, fallguysMatchRounds: Array<{ __typename?: 'fallguys_match_rounds', id: any, fallguysRound?: { __typename?: 'fallguys_rounds', id: any, name: string } | null, fallguysCustomRound?: { __typename?: 'fallguys_custom_rounds', id: any, name: string } | null }> }>, lethalCompanyShips: Array<{ __typename?: 'lethalcompany_ships', id: any, startTime?: any | null, endTime?: any | null, lethalCompanyShipDays: Array<{ __typename?: 'lethalcompany_ship_days', id: any, lethalcompanyMap?: { __typename?: 'lethalcompany_maps', id: any, name: string } | null, lethalcompanyWeather?: { __typename?: 'lethalcompany_weathers', id: any, name: string } | null }> }>, mariokart8deluxeRaces: Array<{ __typename?: 'mariokart8deluxe_races', id: any, startTime: any, endTime?: any | null, mariokart8deluxeRaceRule?: { __typename?: 'mariokart8deluxe_race_rules', id: any, name: string } | null, mariokart8deluxeCourse?: { __typename?: 'mariokart8deluxe_courses', id: any, name: string, mariokart8deluxeConsole?: { __typename?: 'mariokart8deluxe_consoles', id: any, name: string } | null } | null }>, mariokart8deluxeBattleMatches: Array<{ __typename?: 'mariokart8deluxe_battle_matches', id: any, startTime: any, endTime?: any | null, mariokart8deluxeBattleRule?: { __typename?: 'mariokart8deluxe_battle_rules', id: any, name: string } | null, mariokart8deluxeBattleCourse?: { __typename?: 'mariokart8deluxe_battle_courses', id: any, name: string, mariokart8deluxeConsole?: { __typename?: 'mariokart8deluxe_consoles', id: any, name: string } | null } | null }> } | null };
 
 export type GetProgramPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -28628,6 +32252,24 @@ export const GetProgramPageDocument = gql`
           name
         }
         fallguysCustomRound: fallguys_custom_round {
+          id
+          name
+        }
+      }
+    }
+    lethalCompanyShips: lethalcompany_ships(order_by: {index: asc, start_time: asc}) {
+      id
+      startTime: start_time
+      endTime: end_time
+      lethalCompanyShipDays: lethalcompany_ship_days(
+        order_by: {day_number: asc, sub_day_number: asc}
+      ) {
+        id
+        lethalcompanyMap: lethalcompany_map {
+          id
+          name
+        }
+        lethalcompanyWeather: lethalcompany_weather {
           id
           name
         }

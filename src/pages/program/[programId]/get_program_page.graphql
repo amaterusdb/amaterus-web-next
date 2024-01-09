@@ -167,6 +167,36 @@ query GetProgramPage(
       }
     }
 
+    lethalCompanyShips: lethalcompany_ships(
+      order_by: {
+        index: asc
+        start_time: asc
+      }
+    ) {
+      id
+      startTime: start_time
+      endTime: end_time
+
+      lethalCompanyShipDays: lethalcompany_ship_days(
+        order_by: {
+          day_number: asc
+          sub_day_number: asc
+        }
+      ) {
+        id
+
+        lethalcompanyMap: lethalcompany_map {
+          id
+          name
+        }
+
+        lethalcompanyWeather: lethalcompany_weather {
+          id
+          name
+        }
+      }
+    }
+
     mariokart8deluxeRaces: mariokart8deluxe_races(
       order_by: {
         start_time: asc
