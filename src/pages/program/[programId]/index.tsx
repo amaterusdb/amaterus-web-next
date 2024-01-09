@@ -411,7 +411,7 @@ export default function ProgramPage({ programId }: { programId: string }) {
               Lethal Company
             </Typography>
             <Typography variant='h6' component='h4' sx={{ mt: 1 }}>
-              船と日数
+              航海日
             </Typography>
             <Box sx={{ mt: 2 }}>
               <Table sx={{ minWidth: 650 }} size='small' aria-label='simple table'>
