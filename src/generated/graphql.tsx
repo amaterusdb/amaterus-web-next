@@ -31028,6 +31028,18 @@ export type GetIndexPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetIndexPageQuery = { __typename?: 'query_root', projects: Array<{ __typename?: 'projects', id: any, name: string }> };
 
+export type GetLethalcompanyShipDayPageQueryVariables = Exact<{
+  lethalcompanyShipDayId: Scalars['uuid']['input'];
+}>;
+
+
+export type GetLethalcompanyShipDayPageQuery = { __typename?: 'query_root', lethalcompanyShipDay?: { __typename?: 'lethalcompany_ship_days', id: any, startTime?: any | null, endTime?: any | null, lethalcompanyShip: { __typename?: 'lethalcompany_ships', program: { __typename?: 'programs', id: any, title: string, startTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, programLiveArchives: Array<{ __typename?: 'program_live_archives', id: any, startTime?: any | null, person: { __typename?: 'persons', id: any, name: string }, youtubeLive?: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null, youtubeVideo?: { __typename?: 'youtube_videos', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null }> } } } | null };
+
+export type GetLethalcompanyShipDayPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetLethalcompanyShipDayPageStaticParamQuery = { __typename?: 'query_root', lethalcompanyShipDays: Array<{ __typename?: 'lethalcompany_ship_days', id: any }> };
+
 export type GetMariokart8deluxeBattleMatchPageQueryVariables = Exact<{
   mariokart8deluxeBattleMatchId: Scalars['uuid']['input'];
 }>;
@@ -31725,6 +31737,116 @@ export function useGetIndexPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptio
 export type GetIndexPageQueryHookResult = ReturnType<typeof useGetIndexPageQuery>;
 export type GetIndexPageLazyQueryHookResult = ReturnType<typeof useGetIndexPageLazyQuery>;
 export type GetIndexPageQueryResult = Apollo.QueryResult<GetIndexPageQuery, GetIndexPageQueryVariables>;
+export const GetLethalcompanyShipDayPageDocument = gql`
+    query GetLethalcompanyShipDayPage($lethalcompanyShipDayId: uuid!) {
+  lethalcompanyShipDay: lethalcompany_ship_days_by_pk(id: $lethalcompanyShipDayId) {
+    id
+    startTime: start_time
+    endTime: end_time
+    lethalcompanyShip: lethalcompany_ship {
+      program {
+        id
+        title
+        startTime: start_time
+        programProjects: program_projects(order_by: {project: {start_time: asc}}) {
+          project {
+            id
+            name
+          }
+        }
+        programLiveArchives: program_live_archives(order_by: {person: {name: asc}}) {
+          id
+          startTime: start_time
+          person {
+            id
+            name
+          }
+          youtubeLive: youtube_live {
+            remoteYoutubeVideoId: remote_youtube_video_id
+            title
+            youtubeChannel: youtube_channel {
+              id
+              remoteYoutubeChannelId: remote_youtube_channel_id
+              name
+            }
+          }
+          youtubeVideo: youtube_video {
+            remoteYoutubeVideoId: remote_youtube_video_id
+            title
+            youtubeChannel: youtube_channel {
+              id
+              remoteYoutubeChannelId: remote_youtube_channel_id
+              name
+            }
+          }
+        }
+      }
+    }
+  }
+}
+    `;
+
+/**
+ * __useGetLethalcompanyShipDayPageQuery__
+ *
+ * To run a query within a React component, call `useGetLethalcompanyShipDayPageQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetLethalcompanyShipDayPageQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetLethalcompanyShipDayPageQuery({
+ *   variables: {
+ *      lethalcompanyShipDayId: // value for 'lethalcompanyShipDayId'
+ *   },
+ * });
+ */
+export function useGetLethalcompanyShipDayPageQuery(baseOptions: Apollo.QueryHookOptions<GetLethalcompanyShipDayPageQuery, GetLethalcompanyShipDayPageQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetLethalcompanyShipDayPageQuery, GetLethalcompanyShipDayPageQueryVariables>(GetLethalcompanyShipDayPageDocument, options);
+      }
+export function useGetLethalcompanyShipDayPageLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetLethalcompanyShipDayPageQuery, GetLethalcompanyShipDayPageQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetLethalcompanyShipDayPageQuery, GetLethalcompanyShipDayPageQueryVariables>(GetLethalcompanyShipDayPageDocument, options);
+        }
+export type GetLethalcompanyShipDayPageQueryHookResult = ReturnType<typeof useGetLethalcompanyShipDayPageQuery>;
+export type GetLethalcompanyShipDayPageLazyQueryHookResult = ReturnType<typeof useGetLethalcompanyShipDayPageLazyQuery>;
+export type GetLethalcompanyShipDayPageQueryResult = Apollo.QueryResult<GetLethalcompanyShipDayPageQuery, GetLethalcompanyShipDayPageQueryVariables>;
+export const GetLethalcompanyShipDayPageStaticParamDocument = gql`
+    query GetLethalcompanyShipDayPageStaticParam {
+  lethalcompanyShipDays: lethalcompany_ship_days {
+    id
+  }
+}
+    `;
+
+/**
+ * __useGetLethalcompanyShipDayPageStaticParamQuery__
+ *
+ * To run a query within a React component, call `useGetLethalcompanyShipDayPageStaticParamQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetLethalcompanyShipDayPageStaticParamQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGetLethalcompanyShipDayPageStaticParamQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGetLethalcompanyShipDayPageStaticParamQuery(baseOptions?: Apollo.QueryHookOptions<GetLethalcompanyShipDayPageStaticParamQuery, GetLethalcompanyShipDayPageStaticParamQueryVariables>) {
+        const options = {...defaultOptions, ...baseOptions}
+        return Apollo.useQuery<GetLethalcompanyShipDayPageStaticParamQuery, GetLethalcompanyShipDayPageStaticParamQueryVariables>(GetLethalcompanyShipDayPageStaticParamDocument, options);
+      }
+export function useGetLethalcompanyShipDayPageStaticParamLazyQuery(baseOptions?: Apollo.LazyQueryHookOptions<GetLethalcompanyShipDayPageStaticParamQuery, GetLethalcompanyShipDayPageStaticParamQueryVariables>) {
+          const options = {...defaultOptions, ...baseOptions}
+          return Apollo.useLazyQuery<GetLethalcompanyShipDayPageStaticParamQuery, GetLethalcompanyShipDayPageStaticParamQueryVariables>(GetLethalcompanyShipDayPageStaticParamDocument, options);
+        }
+export type GetLethalcompanyShipDayPageStaticParamQueryHookResult = ReturnType<typeof useGetLethalcompanyShipDayPageStaticParamQuery>;
+export type GetLethalcompanyShipDayPageStaticParamLazyQueryHookResult = ReturnType<typeof useGetLethalcompanyShipDayPageStaticParamLazyQuery>;
+export type GetLethalcompanyShipDayPageStaticParamQueryResult = Apollo.QueryResult<GetLethalcompanyShipDayPageStaticParamQuery, GetLethalcompanyShipDayPageStaticParamQueryVariables>;
 export const GetMariokart8deluxeBattleMatchPageDocument = gql`
     query GetMariokart8deluxeBattleMatchPage($mariokart8deluxeBattleMatchId: uuid!) {
   mariokart8deluxeBattleMatch: mariokart8deluxe_battle_matches_by_pk(

@@ -1,0 +1,5 @@
+query GetLethalcompanyShipDayPageStaticParam {
+  lethalcompanyShipDays: lethalcompany_ship_days {
+    id
+  }
+}
