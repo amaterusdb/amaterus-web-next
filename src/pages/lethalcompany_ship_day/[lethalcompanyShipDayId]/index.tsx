@@ -163,6 +163,22 @@ export default function LethalcompanyShipDayPage({
               ) : (
                 ''
               )}
+              <TableRow>
+                <TableCell component='th' scope='row'>
+                  相対日数
+                </TableCell>
+                <TableCell>
+                  {lethalcompanyShipDay.dayNumber}-{lethalcompanyShipDay.subDayNumber}
+                </TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell component='th' scope='row'>
+                  ゲーム内日数
+                </TableCell>
+                <TableCell>
+                  {lethalcompanyShipDay.absoluteDayNumber}-{lethalcompanyShipDay.subDayNumber}
+                </TableCell>
+              </TableRow>
               {lethalcompanyShipDay.lethalcompanyMap != null ? (
                 <TableRow>
                   <TableCell component='th' scope='row'>

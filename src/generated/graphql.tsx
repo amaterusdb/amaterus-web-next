@@ -31033,7 +31033,7 @@ export type GetLethalcompanyShipDayPageQueryVariables = Exact<{
 }>;
 
 
-export type GetLethalcompanyShipDayPageQuery = { __typename?: 'query_root', lethalcompanyShipDay?: { __typename?: 'lethalcompany_ship_days', id: any, startTime?: any | null, endTime?: any | null, lethalcompanyMap?: { __typename?: 'lethalcompany_maps', id: any, name: string } | null, lethalcompanyWeather?: { __typename?: 'lethalcompany_weathers', id: any, name: string } | null, lethalcompanyShip: { __typename?: 'lethalcompany_ships', program: { __typename?: 'programs', id: any, title: string, startTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, programLiveArchives: Array<{ __typename?: 'program_live_archives', id: any, startTime?: any | null, person: { __typename?: 'persons', id: any, name: string }, youtubeLive?: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null, youtubeVideo?: { __typename?: 'youtube_videos', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null }> } } } | null };
+export type GetLethalcompanyShipDayPageQuery = { __typename?: 'query_root', lethalcompanyShipDay?: { __typename?: 'lethalcompany_ship_days', id: any, startTime?: any | null, endTime?: any | null, dayNumber: number, subDayNumber: number, absoluteDayNumber?: number | null, lethalcompanyMap?: { __typename?: 'lethalcompany_maps', id: any, name: string } | null, lethalcompanyWeather?: { __typename?: 'lethalcompany_weathers', id: any, name: string } | null, lethalcompanyShip: { __typename?: 'lethalcompany_ships', program: { __typename?: 'programs', id: any, title: string, startTime?: any | null, programProjects: Array<{ __typename?: 'program_projects', project: { __typename?: 'projects', id: any, name: string } }>, programLiveArchives: Array<{ __typename?: 'program_live_archives', id: any, startTime?: any | null, person: { __typename?: 'persons', id: any, name: string }, youtubeLive?: { __typename?: 'youtube_lives', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null, youtubeVideo?: { __typename?: 'youtube_videos', title: string, remoteYoutubeVideoId: string, youtubeChannel: { __typename?: 'youtube_channels', id: any, name: string, remoteYoutubeChannelId: string } } | null }> } } } | null };
 
 export type GetLethalcompanyShipDayPageStaticParamQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -31743,6 +31743,9 @@ export const GetLethalcompanyShipDayPageDocument = gql`
     id
     startTime: start_time
     endTime: end_time
+    dayNumber: day_number
+    subDayNumber: sub_day_number
+    absoluteDayNumber: absolute_day_number
     lethalcompanyMap: lethalcompany_map {
       id
       name
