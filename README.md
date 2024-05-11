@@ -1,5 +1,10 @@
 # amaterus-web-next
 
+## Dependencies
+
+- Node.js 20
+- npm 10
+
 ## Getting Started
 
 ```bash
