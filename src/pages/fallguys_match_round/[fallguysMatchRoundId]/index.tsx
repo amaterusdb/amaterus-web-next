@@ -11,77 +11,23 @@ import {
   Breadcrumbs,
 } from '@mui/material'
 import { parseISO, format, intervalToDuration, isBefore } from 'date-fns'
+import { InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 import NextLink from 'next/link'
 import Script from 'next/script'
 import DrawerAppBar from '@/components/drawer_app_bar'
 import { Tweet } from '@/components/tweet'
 import {
+  GetFallguysMatchRoundPageDocument,
+  GetFallguysMatchRoundPageQuery,
   GetFallguysMatchRoundPageStaticParamDocument,
   GetFallguysMatchRoundPageStaticParamQuery,
-  useGetFallguysMatchRoundPageQuery,
 } from '@/generated/graphql'
 import { createApolloClient } from '@/lib/apollo'
 
-export async function getStaticPaths() {
-  const apolloClient = createApolloClient()
-
-  const { data } = await apolloClient.query<GetFallguysMatchRoundPageStaticParamQuery>({
-    query: GetFallguysMatchRoundPageStaticParamDocument,
-  })
-  const fallguysMatchRounds = data?.fallguysMatchRounds
-  if (fallguysMatchRounds == null) {
-    throw Error('Invalid response for GetFallguysMatchRoundPageStaticParamQuery')
-  }
-
-  const paths = fallguysMatchRounds.map((fallguysMatchRound) => ({
-    params: {
-      fallguysMatchRoundId: String(fallguysMatchRound.id),
-    },
-  }))
-
-  return {
-    paths,
-    fallback: false,
-  }
-}
-
-export async function getStaticProps({
-  params,
-}: {
-  params: {
-    fallguysMatchRoundId: string
-  }
-}) {
-  const fallguysMatchRoundId = params.fallguysMatchRoundId
-
-  return {
-    props: {
-      fallguysMatchRoundId,
-    },
-  }
-}
-
 export default function FallguysMatchRoundPage({
-  fallguysMatchRoundId,
-}: {
-  fallguysMatchRoundId: string
-}) {
-  const { data, loading } = useGetFallguysMatchRoundPageQuery({
-    variables: {
-      fallguysMatchRoundId,
-    },
-  })
-
-  if (loading) {
-    return (
-      <Box component='main' sx={{ p: 3 }}>
-        Loading...
-      </Box>
-    )
-  }
-
-  const fallguysMatchRound = data?.fallguysMatchRound
+  fallguysMatchRound,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   if (fallguysMatchRound == null) {
     return (
       <Box component='main' sx={{ p: 3 }}>
@@ -424,4 +370,53 @@ export default function FallguysMatchRoundPage({
       </Box>
     </>
   )
+}
+
+export async function getStaticProps({
+  params,
+}: {
+  params: {
+    fallguysMatchRoundId: string
+  }
+}) {
+  const fallguysMatchRoundId = params.fallguysMatchRoundId
+  const apolloClient = createApolloClient()
+
+  const { data } = await apolloClient.query<GetFallguysMatchRoundPageQuery>({
+    query: GetFallguysMatchRoundPageDocument,
+    variables: {
+      fallguysMatchRoundId,
+    },
+  })
+
+  const fallguysMatchRound = data?.fallguysMatchRound
+
+  return {
+    props: {
+      fallguysMatchRound,
+    },
+  }
+}
+
+export async function getStaticPaths() {
+  const apolloClient = createApolloClient()
+
+  const { data } = await apolloClient.query<GetFallguysMatchRoundPageStaticParamQuery>({
+    query: GetFallguysMatchRoundPageStaticParamDocument,
+  })
+  const fallguysMatchRounds = data?.fallguysMatchRounds
+  if (fallguysMatchRounds == null) {
+    throw Error('Invalid response for GetFallguysMatchRoundPageStaticParamQuery')
+  }
+
+  const paths = fallguysMatchRounds.map((fallguysMatchRound) => ({
+    params: {
+      fallguysMatchRoundId: String(fallguysMatchRound.id),
+    },
+  }))
+
+  return {
+    paths,
+    fallback: false,
+  }
 }
