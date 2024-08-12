@@ -4,16 +4,20 @@ const NEXT_PUBLIC_AMATERUS_HASURA_GRAPHQL_SCHEMA_URL =
   process.env.NEXT_PUBLIC_AMATERUS_HASURA_GRAPHQL_SCHEMA_URL
 const AMATERUS_HASURA_GRAPHQL_ADMIN_SECRET = process.env.AMATERUS_HASURA_GRAPHQL_ADMIN_SECRET
 
-const config: CodegenConfig = {
-  schema: [
+const schema: CodegenConfig["schema"] = NEXT_PUBLIC_AMATERUS_HASURA_GRAPHQL_SCHEMA_URL !== undefined ? (
+  [
     {
-      [NEXT_PUBLIC_AMATERUS_HASURA_GRAPHQL_SCHEMA_URL]: {
+      [NEXT_PUBLIC_AMATERUS_HASURA_GRAPHQL_SCHEMA_URL]: AMATERUS_HASURA_GRAPHQL_ADMIN_SECRET !== undefined ? {
         headers: {
           'X-Hasura-Admin-Secret': AMATERUS_HASURA_GRAPHQL_ADMIN_SECRET,
         },
-      },
+      } : {},
     },
-  ],
+  ]
+) : {};
+
+const config: CodegenConfig = {
+  schema,
   documents: ['./src/**/*.graphql'],
   overwrite: true,
   generates: {
