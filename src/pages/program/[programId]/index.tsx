@@ -338,8 +338,8 @@ export default function ProgramPage({ programId }: { programId: string }) {
                         {amongusHidenseekMatch.isAborted === null
                           ? ''
                           : amongusHidenseekMatch.isAborted
-                          ? '×'
-                          : '〇'}
+                            ? '×'
+                            : '〇'}
                       </TableCell>
                     </TableRow>
                   ))}
