@@ -11,75 +11,21 @@ import {
   Breadcrumbs,
 } from '@mui/material'
 import { parseISO, format, intervalToDuration, isBefore } from 'date-fns'
+import { InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 import NextLink from 'next/link'
 import DrawerAppBar from '@/components/drawer_app_bar'
 import {
+  GetLethalcompanyShipDayPageDocument,
+  GetLethalcompanyShipDayPageQuery,
   GetLethalcompanyShipDayPageStaticParamDocument,
   GetLethalcompanyShipDayPageStaticParamQuery,
-  useGetLethalcompanyShipDayPageQuery,
 } from '@/generated/graphql'
 import { createApolloClient } from '@/lib/apollo'
 
-export async function getStaticPaths() {
-  const apolloClient = createApolloClient()
-
-  const { data } = await apolloClient.query<GetLethalcompanyShipDayPageStaticParamQuery>({
-    query: GetLethalcompanyShipDayPageStaticParamDocument,
-  })
-  const lethalcompanyShipDays = data?.lethalcompanyShipDays
-  if (lethalcompanyShipDays == null) {
-    throw Error('Invalid response for GetLethalcompanyShipDayPageStaticParamQuery')
-  }
-
-  const paths = lethalcompanyShipDays.map((lethalcompanyShipDay) => ({
-    params: {
-      lethalcompanyShipDayId: String(lethalcompanyShipDay.id),
-    },
-  }))
-
-  return {
-    paths,
-    fallback: false,
-  }
-}
-
-export async function getStaticProps({
-  params,
-}: {
-  params: {
-    lethalcompanyShipDayId: string
-  }
-}) {
-  const lethalcompanyShipDayId = params.lethalcompanyShipDayId
-
-  return {
-    props: {
-      lethalcompanyShipDayId,
-    },
-  }
-}
-
 export default function LethalcompanyShipDayPage({
-  lethalcompanyShipDayId,
-}: {
-  lethalcompanyShipDayId: string
-}) {
-  const { data, loading } = useGetLethalcompanyShipDayPageQuery({
-    variables: {
-      lethalcompanyShipDayId,
-    },
-  })
-
-  if (loading) {
-    return (
-      <Box component='main' sx={{ p: 3 }}>
-        Loading...
-      </Box>
-    )
-  }
-
-  const lethalcompanyShipDay = data?.lethalcompanyShipDay
+  lethalcompanyShipDay,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   if (lethalcompanyShipDay == null) {
     return (
       <Box component='main' sx={{ p: 3 }}>
@@ -377,4 +323,53 @@ export default function LethalcompanyShipDayPage({
       </Box>
     </>
   )
+}
+
+export async function getStaticProps({
+  params,
+}: {
+  params: {
+    lethalcompanyShipDayId: string
+  }
+}) {
+  const lethalcompanyShipDayId = params.lethalcompanyShipDayId
+  const apolloClient = createApolloClient()
+
+  const { data } = await apolloClient.query<GetLethalcompanyShipDayPageQuery>({
+    query: GetLethalcompanyShipDayPageDocument,
+    variables: {
+      lethalcompanyShipDayId,
+    },
+  })
+
+  const lethalcompanyShipDay = data?.lethalcompanyShipDay
+
+  return {
+    props: {
+      lethalcompanyShipDay,
+    },
+  }
+}
+
+export async function getStaticPaths() {
+  const apolloClient = createApolloClient()
+
+  const { data } = await apolloClient.query<GetLethalcompanyShipDayPageStaticParamQuery>({
+    query: GetLethalcompanyShipDayPageStaticParamDocument,
+  })
+  const lethalcompanyShipDays = data?.lethalcompanyShipDays
+  if (lethalcompanyShipDays == null) {
+    throw Error('Invalid response for GetLethalcompanyShipDayPageStaticParamQuery')
+  }
+
+  const paths = lethalcompanyShipDays.map((lethalcompanyShipDay) => ({
+    params: {
+      lethalcompanyShipDayId: String(lethalcompanyShipDay.id),
+    },
+  }))
+
+  return {
+    paths,
+    fallback: false,
+  }
 }
