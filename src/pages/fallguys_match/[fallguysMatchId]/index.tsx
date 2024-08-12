@@ -11,71 +11,21 @@ import {
   Breadcrumbs,
 } from '@mui/material'
 import { parseISO, format, intervalToDuration, isBefore } from 'date-fns'
+import { InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 import NextLink from 'next/link'
 import DrawerAppBar from '@/components/drawer_app_bar'
 import {
+  GetFallguysMatchPageDocument,
+  GetFallguysMatchPageQuery,
   GetFallguysMatchPageStaticParamDocument,
   GetFallguysMatchPageStaticParamQuery,
-  useGetFallguysMatchPageQuery,
 } from '@/generated/graphql'
 import { createApolloClient } from '@/lib/apollo'
 
-export async function getStaticPaths() {
-  const apolloClient = createApolloClient()
-
-  const { data } = await apolloClient.query<GetFallguysMatchPageStaticParamQuery>({
-    query: GetFallguysMatchPageStaticParamDocument,
-  })
-  const fallguysMatches = data?.fallguysMatches
-  if (fallguysMatches == null) {
-    throw Error('Invalid response for GetFallguysMatchPageStaticParamQuery')
-  }
-
-  const paths = fallguysMatches.map((fallguysMatch) => ({
-    params: {
-      fallguysMatchId: String(fallguysMatch.id),
-    },
-  }))
-
-  return {
-    paths,
-    fallback: false,
-  }
-}
-
-export async function getStaticProps({
-  params,
-}: {
-  params: {
-    fallguysMatchId: string
-  }
-}) {
-  const fallguysMatchId = params.fallguysMatchId
-
-  return {
-    props: {
-      fallguysMatchId,
-    },
-  }
-}
-
-export default function FallguysMatchPage({ fallguysMatchId }: { fallguysMatchId: string }) {
-  const { data, loading } = useGetFallguysMatchPageQuery({
-    variables: {
-      fallguysMatchId,
-    },
-  })
-
-  if (loading) {
-    return (
-      <Box component='main' sx={{ p: 3 }}>
-        Loading...
-      </Box>
-    )
-  }
-
-  const fallguysMatch = data?.fallguysMatch
+export default function FallguysMatchPage({
+  fallguysMatch,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   if (fallguysMatch == null) {
     return (
       <Box component='main' sx={{ p: 3 }}>
@@ -390,4 +340,53 @@ export default function FallguysMatchPage({ fallguysMatchId }: { fallguysMatchId
       </Box>
     </>
   )
+}
+
+export async function getStaticProps({
+  params,
+}: {
+  params: {
+    fallguysMatchId: string
+  }
+}) {
+  const fallguysMatchId = params.fallguysMatchId
+  const apolloClient = createApolloClient()
+
+  const { data } = await apolloClient.query<GetFallguysMatchPageQuery>({
+    query: GetFallguysMatchPageDocument,
+    variables: {
+      fallguysMatchId,
+    },
+  })
+
+  const fallguysMatch = data?.fallguysMatch
+
+  return {
+    props: {
+      fallguysMatch,
+    },
+  }
+}
+
+export async function getStaticPaths() {
+  const apolloClient = createApolloClient()
+
+  const { data } = await apolloClient.query<GetFallguysMatchPageStaticParamQuery>({
+    query: GetFallguysMatchPageStaticParamDocument,
+  })
+  const fallguysMatches = data?.fallguysMatches
+  if (fallguysMatches == null) {
+    throw Error('Invalid response for GetFallguysMatchPageStaticParamQuery')
+  }
+
+  const paths = fallguysMatches.map((fallguysMatch) => ({
+    params: {
+      fallguysMatchId: String(fallguysMatch.id),
+    },
+  }))
+
+  return {
+    paths,
+    fallback: false,
+  }
 }
