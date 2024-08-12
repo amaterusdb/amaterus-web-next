@@ -13,7 +13,8 @@ export const Tweet: React.FC<{ tweetId: string }> = ({ tweetId }) => {
 }
 
 const generateEmbedHtml = (tweetId: string): string => {
-  if (!/^\d+$/u.test(tweetId)) {
+  const idRegex = new RegExp('^\\d+$', 'u')
+  if (!idRegex.test(tweetId)) {
     throw new Error(`Invalid tweet ID: ${tweetId}`)
   }
 
