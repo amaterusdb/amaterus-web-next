@@ -1,8 +1,10 @@
+import type { CodegenConfig } from "@graphql-codegen/cli";
+
 const NEXT_PUBLIC_AMATERUS_HASURA_GRAPHQL_SCHEMA_URL =
   process.env.NEXT_PUBLIC_AMATERUS_HASURA_GRAPHQL_SCHEMA_URL
 const AMATERUS_HASURA_GRAPHQL_ADMIN_SECRET = process.env.AMATERUS_HASURA_GRAPHQL_ADMIN_SECRET
 
-module.exports = {
+const config: CodegenConfig = {
   schema: [
     {
       [NEXT_PUBLIC_AMATERUS_HASURA_GRAPHQL_SCHEMA_URL]: {
@@ -29,3 +31,5 @@ module.exports = {
     },
   },
 }
+
+export default config;
