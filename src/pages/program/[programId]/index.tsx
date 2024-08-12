@@ -11,73 +11,21 @@ import {
   Breadcrumbs,
 } from '@mui/material'
 import { parseISO, format } from 'date-fns'
+import { InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 import NextLink from 'next/link'
 import Script from 'next/script'
 import DrawerAppBar from '@/components/drawer_app_bar'
 import { Tweet } from '@/components/tweet'
 import {
-  useGetProgramPageQuery,
   GetProgramPageStaticParamDocument,
   GetProgramPageStaticParamQuery,
+  GetProgramPageQuery,
+  GetProgramPageDocument,
 } from '@/generated/graphql'
 import { createApolloClient } from '@/lib/apollo'
 
-export async function getStaticPaths() {
-  const apolloClient = createApolloClient()
-
-  const { data } = await apolloClient.query<GetProgramPageStaticParamQuery>({
-    query: GetProgramPageStaticParamDocument,
-  })
-  const programs = data?.programs
-  if (programs == null) {
-    throw Error('Invalid response for GetProgramPageStaticParamQuery')
-  }
-
-  const paths = programs.map((program) => ({
-    params: {
-      programId: String(program.id),
-    },
-  }))
-
-  return {
-    paths,
-    fallback: false,
-  }
-}
-
-export async function getStaticProps({
-  params,
-}: {
-  params: {
-    programId: string
-  }
-}) {
-  const programId = params.programId
-
-  return {
-    props: {
-      programId,
-    },
-  }
-}
-
-export default function ProgramPage({ programId }: { programId: string }) {
-  const { data, loading } = useGetProgramPageQuery({
-    variables: {
-      programId,
-    },
-  })
-
-  if (loading) {
-    return (
-      <Box component='main' sx={{ p: 3 }}>
-        Loading...
-      </Box>
-    )
-  }
-
-  const program = data?.program
+export default function ProgramPage({ program }: InferGetStaticPropsType<typeof getStaticProps>) {
   if (program == null) {
     return (
       <Box component='main' sx={{ p: 3 }}>
@@ -895,4 +843,53 @@ export default function ProgramPage({ programId }: { programId: string }) {
       </Box>
     </>
   )
+}
+
+export async function getStaticProps({
+  params,
+}: {
+  params: {
+    programId: string
+  }
+}) {
+  const programId = params.programId
+  const apolloClient = createApolloClient()
+
+  const { data } = await apolloClient.query<GetProgramPageQuery>({
+    query: GetProgramPageDocument,
+    variables: {
+      programId,
+    },
+  })
+
+  const program = data?.program
+
+  return {
+    props: {
+      program,
+    },
+  }
+}
+
+export async function getStaticPaths() {
+  const apolloClient = createApolloClient()
+
+  const { data } = await apolloClient.query<GetProgramPageStaticParamQuery>({
+    query: GetProgramPageStaticParamDocument,
+  })
+  const programs = data?.programs
+  if (programs == null) {
+    throw Error('Invalid response for GetProgramPageStaticParamQuery')
+  }
+
+  const paths = programs.map((program) => ({
+    params: {
+      programId: String(program.id),
+    },
+  }))
+
+  return {
+    paths,
+    fallback: false,
+  }
 }
