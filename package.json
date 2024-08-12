@@ -15,7 +15,7 @@
     "generate": "graphql-codegen --require dotenv/config --config codegen.ts dotenv_config_path=.env.local"
   },
   "dependencies": {
-    "@apollo/client": "3.7.17",
+    "@apollo/client": "3.11.4",
     "@emotion/react": "11.11.1",
     "@emotion/styled": "11.11.0",
     "@fontsource/roboto": "5.0.7",
