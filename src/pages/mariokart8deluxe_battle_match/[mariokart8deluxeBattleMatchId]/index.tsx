@@ -11,75 +11,21 @@ import {
   Breadcrumbs,
 } from '@mui/material'
 import { parseISO, format, intervalToDuration, isBefore } from 'date-fns'
+import { InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 import NextLink from 'next/link'
 import DrawerAppBar from '@/components/drawer_app_bar'
 import {
+  GetMariokart8deluxeBattleMatchPageDocument,
+  GetMariokart8deluxeBattleMatchPageQuery,
   GetMariokart8deluxeBattleMatchPageStaticParamDocument,
   GetMariokart8deluxeBattleMatchPageStaticParamQuery,
-  useGetMariokart8deluxeBattleMatchPageQuery,
 } from '@/generated/graphql'
 import { createApolloClient } from '@/lib/apollo'
 
-export async function getStaticPaths() {
-  const apolloClient = createApolloClient()
-
-  const { data } = await apolloClient.query<GetMariokart8deluxeBattleMatchPageStaticParamQuery>({
-    query: GetMariokart8deluxeBattleMatchPageStaticParamDocument,
-  })
-  const mariokart8deluxeBattleMatches = data?.mariokart8deluxeBattleMatches
-  if (mariokart8deluxeBattleMatches == null) {
-    throw Error('Invalid response for GetMariokart8deluxeBattleMatchPageStaticParamQuery')
-  }
-
-  const paths = mariokart8deluxeBattleMatches.map((mariokart8deluxeBattleMatch) => ({
-    params: {
-      mariokart8deluxeBattleMatchId: String(mariokart8deluxeBattleMatch.id),
-    },
-  }))
-
-  return {
-    paths,
-    fallback: false,
-  }
-}
-
-export async function getStaticProps({
-  params,
-}: {
-  params: {
-    mariokart8deluxeBattleMatchId: string
-  }
-}) {
-  const mariokart8deluxeBattleMatchId = params.mariokart8deluxeBattleMatchId
-
-  return {
-    props: {
-      mariokart8deluxeBattleMatchId,
-    },
-  }
-}
-
 export default function Mariokart8deluxeBattleMatchPage({
-  mariokart8deluxeBattleMatchId,
-}: {
-  mariokart8deluxeBattleMatchId: string
-}) {
-  const { data, loading } = useGetMariokart8deluxeBattleMatchPageQuery({
-    variables: {
-      mariokart8deluxeBattleMatchId,
-    },
-  })
-
-  if (loading) {
-    return (
-      <Box component='main' sx={{ p: 3 }}>
-        Loading...
-      </Box>
-    )
-  }
-
-  const mariokart8deluxeBattleMatch = data?.mariokart8deluxeBattleMatch
+  mariokart8deluxeBattleMatch,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   if (mariokart8deluxeBattleMatch == null) {
     return (
       <Box component='main' sx={{ p: 3 }}>
@@ -417,4 +363,53 @@ export default function Mariokart8deluxeBattleMatchPage({
       </Box>
     </>
   )
+}
+
+export async function getStaticProps({
+  params,
+}: {
+  params: {
+    mariokart8deluxeBattleMatchId: string
+  }
+}) {
+  const mariokart8deluxeBattleMatchId = params.mariokart8deluxeBattleMatchId
+  const apolloClient = createApolloClient()
+
+  const { data } = await apolloClient.query<GetMariokart8deluxeBattleMatchPageQuery>({
+    query: GetMariokart8deluxeBattleMatchPageDocument,
+    variables: {
+      mariokart8deluxeBattleMatchId,
+    },
+  })
+
+  const mariokart8deluxeBattleMatch = data?.mariokart8deluxeBattleMatch
+
+  return {
+    props: {
+      mariokart8deluxeBattleMatch,
+    },
+  }
+}
+
+export async function getStaticPaths() {
+  const apolloClient = createApolloClient()
+
+  const { data } = await apolloClient.query<GetMariokart8deluxeBattleMatchPageStaticParamQuery>({
+    query: GetMariokart8deluxeBattleMatchPageStaticParamDocument,
+  })
+  const mariokart8deluxeBattleMatches = data?.mariokart8deluxeBattleMatches
+  if (mariokart8deluxeBattleMatches == null) {
+    throw Error('Invalid response for GetMariokart8deluxeBattleMatchPageStaticParamQuery')
+  }
+
+  const paths = mariokart8deluxeBattleMatches.map((mariokart8deluxeBattleMatch) => ({
+    params: {
+      mariokart8deluxeBattleMatchId: String(mariokart8deluxeBattleMatch.id),
+    },
+  }))
+
+  return {
+    paths,
+    fallback: false,
+  }
 }
