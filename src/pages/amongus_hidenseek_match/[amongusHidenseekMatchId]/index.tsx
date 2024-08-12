@@ -11,75 +11,21 @@ import {
   Breadcrumbs,
 } from '@mui/material'
 import { parseISO, format, intervalToDuration, isBefore } from 'date-fns'
+import { InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 import NextLink from 'next/link'
 import DrawerAppBar from '@/components/drawer_app_bar'
 import {
+  GetAmongusHidenseekMatchPageDocument,
+  GetAmongusHidenseekMatchPageQuery,
   GetAmongusHidenseekMatchPageStaticParamDocument,
   GetAmongusHidenseekMatchPageStaticParamQuery,
-  useGetAmongusHidenseekMatchPageQuery,
 } from '@/generated/graphql'
 import { createApolloClient } from '@/lib/apollo'
 
-export async function getStaticPaths() {
-  const apolloClient = createApolloClient()
-
-  const { data } = await apolloClient.query<GetAmongusHidenseekMatchPageStaticParamQuery>({
-    query: GetAmongusHidenseekMatchPageStaticParamDocument,
-  })
-  const amongusHidenseekMatches = data?.amongusHidenseekMatches
-  if (amongusHidenseekMatches == null) {
-    throw Error('Invalid response for GetMatchPageStaticParamQuery')
-  }
-
-  const paths = amongusHidenseekMatches.map((amongusHidenseekMatch) => ({
-    params: {
-      amongusHidenseekMatchId: String(amongusHidenseekMatch.id),
-    },
-  }))
-
-  return {
-    paths,
-    fallback: false,
-  }
-}
-
-export async function getStaticProps({
-  params,
-}: {
-  params: {
-    amongusHidenseekMatchId: string
-  }
-}) {
-  const amongusHidenseekMatchId = params.amongusHidenseekMatchId
-
-  return {
-    props: {
-      amongusHidenseekMatchId,
-    },
-  }
-}
-
-export default function MatchPage({
-  amongusHidenseekMatchId,
-}: {
-  amongusHidenseekMatchId: string
-}) {
-  const { data, loading } = useGetAmongusHidenseekMatchPageQuery({
-    variables: {
-      amongusHidenseekMatchId,
-    },
-  })
-
-  if (loading) {
-    return (
-      <Box component='main' sx={{ p: 3 }}>
-        Loading...
-      </Box>
-    )
-  }
-
-  const amongusHidenseekMatch = data?.amongusHidenseekMatch
+export default function AmongusHidenseekMatchPage({
+  amongusHidenseekMatch,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   if (amongusHidenseekMatch == null) {
     return (
       <Box component='main' sx={{ p: 3 }}>
@@ -364,4 +310,53 @@ export default function MatchPage({
       </Box>
     </>
   )
+}
+
+export async function getStaticProps({
+  params,
+}: {
+  params: {
+    amongusHidenseekMatchId: string
+  }
+}) {
+  const amongusHidenseekMatchId = params.amongusHidenseekMatchId
+  const apolloClient = createApolloClient()
+
+  const { data } = await apolloClient.query<GetAmongusHidenseekMatchPageQuery>({
+    query: GetAmongusHidenseekMatchPageDocument,
+    variables: {
+      amongusHidenseekMatchId,
+    },
+  })
+
+  const amongusHidenseekMatch = data?.amongusHidenseekMatch
+
+  return {
+    props: {
+      amongusHidenseekMatch,
+    },
+  }
+}
+
+export async function getStaticPaths() {
+  const apolloClient = createApolloClient()
+
+  const { data } = await apolloClient.query<GetAmongusHidenseekMatchPageStaticParamQuery>({
+    query: GetAmongusHidenseekMatchPageStaticParamDocument,
+  })
+  const amongusHidenseekMatches = data?.amongusHidenseekMatches
+  if (amongusHidenseekMatches == null) {
+    throw Error('Invalid response for GetMatchPageStaticParamQuery')
+  }
+
+  const paths = amongusHidenseekMatches.map((amongusHidenseekMatch) => ({
+    params: {
+      amongusHidenseekMatchId: String(amongusHidenseekMatch.id),
+    },
+  }))
+
+  return {
+    paths,
+    fallback: false,
+  }
 }

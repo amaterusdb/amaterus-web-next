@@ -11,71 +11,21 @@ import {
   Breadcrumbs,
 } from '@mui/material'
 import { parseISO, format, intervalToDuration, isBefore } from 'date-fns'
+import { InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 import NextLink from 'next/link'
 import DrawerAppBar from '@/components/drawer_app_bar'
 import {
+  GetAmongusvrMatchPageDocument,
+  GetAmongusvrMatchPageQuery,
   GetAmongusvrMatchPageStaticParamDocument,
   GetAmongusvrMatchPageStaticParamQuery,
-  useGetAmongusvrMatchPageQuery,
 } from '@/generated/graphql'
 import { createApolloClient } from '@/lib/apollo'
 
-export async function getStaticPaths() {
-  const apolloClient = createApolloClient()
-
-  const { data } = await apolloClient.query<GetAmongusvrMatchPageStaticParamQuery>({
-    query: GetAmongusvrMatchPageStaticParamDocument,
-  })
-  const amongusvrMatches = data?.amongusvrMatches
-  if (amongusvrMatches == null) {
-    throw Error('Invalid response for GetMatchPageStaticParamQuery')
-  }
-
-  const paths = amongusvrMatches.map((amongusvrMatch) => ({
-    params: {
-      amongusvrMatchId: String(amongusvrMatch.id),
-    },
-  }))
-
-  return {
-    paths,
-    fallback: false,
-  }
-}
-
-export async function getStaticProps({
-  params,
-}: {
-  params: {
-    amongusvrMatchId: string
-  }
-}) {
-  const amongusvrMatchId = params.amongusvrMatchId
-
-  return {
-    props: {
-      amongusvrMatchId,
-    },
-  }
-}
-
-export default function MatchPage({ amongusvrMatchId }: { amongusvrMatchId: string }) {
-  const { data, loading } = useGetAmongusvrMatchPageQuery({
-    variables: {
-      amongusvrMatchId,
-    },
-  })
-
-  if (loading) {
-    return (
-      <Box component='main' sx={{ p: 3 }}>
-        Loading...
-      </Box>
-    )
-  }
-
-  const amongusvrMatch = data?.amongusvrMatch
+export default function AmongusvrMatchPage({
+  amongusvrMatch,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   if (amongusvrMatch == null) {
     return (
       <Box component='main' sx={{ p: 3 }}>
@@ -358,4 +308,53 @@ export default function MatchPage({ amongusvrMatchId }: { amongusvrMatchId: stri
       </Box>
     </>
   )
+}
+
+export async function getStaticProps({
+  params,
+}: {
+  params: {
+    amongusvrMatchId: string
+  }
+}) {
+  const amongusvrMatchId = params.amongusvrMatchId
+  const apolloClient = createApolloClient()
+
+  const { data } = await apolloClient.query<GetAmongusvrMatchPageQuery>({
+    query: GetAmongusvrMatchPageDocument,
+    variables: {
+      amongusvrMatchId,
+    },
+  })
+
+  const amongusvrMatch = data?.amongusvrMatch
+
+  return {
+    props: {
+      amongusvrMatch,
+    },
+  }
+}
+
+export async function getStaticPaths() {
+  const apolloClient = createApolloClient()
+
+  const { data } = await apolloClient.query<GetAmongusvrMatchPageStaticParamQuery>({
+    query: GetAmongusvrMatchPageStaticParamDocument,
+  })
+  const amongusvrMatches = data?.amongusvrMatches
+  if (amongusvrMatches == null) {
+    throw Error('Invalid response for GetMatchPageStaticParamQuery')
+  }
+
+  const paths = amongusvrMatches.map((amongusvrMatch) => ({
+    params: {
+      amongusvrMatchId: String(amongusvrMatch.id),
+    },
+  }))
+
+  return {
+    paths,
+    fallback: false,
+  }
 }

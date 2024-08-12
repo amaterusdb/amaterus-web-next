@@ -5,7 +5,6 @@ import {
   Link as MuiLink,
   Breadcrumbs,
   Table,
-  TableHead,
   TableRow,
   TableCell,
   TableBody,

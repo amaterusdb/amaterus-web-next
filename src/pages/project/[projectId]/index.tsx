@@ -11,73 +11,19 @@ import {
   Breadcrumbs,
 } from '@mui/material'
 import { parseISO, format } from 'date-fns'
+import { InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 import NextLink from 'next/link'
-import Script from 'next/script'
 import DrawerAppBar from '@/components/drawer_app_bar'
-import { Tweet } from '@/components/tweet'
 import {
-  useGetProjectPageQuery,
   GetProjectPageStaticParamDocument,
   GetProjectPageStaticParamQuery,
+  GetProjectPageQuery,
+  GetProjectPageDocument,
 } from '@/generated/graphql'
 import { createApolloClient } from '@/lib/apollo'
 
-export async function getStaticPaths() {
-  const apolloClient = createApolloClient()
-
-  const { data } = await apolloClient.query<GetProjectPageStaticParamQuery>({
-    query: GetProjectPageStaticParamDocument,
-  })
-  const projects = data?.projects
-  if (projects == null) {
-    throw Error('Invalid response for GetProjectPageStaticParamQuery')
-  }
-
-  const paths = projects.map((project) => ({
-    params: {
-      projectId: String(project.id),
-    },
-  }))
-
-  return {
-    paths,
-    fallback: false,
-  }
-}
-
-export async function getStaticProps({
-  params,
-}: {
-  params: {
-    projectId: string
-  }
-}) {
-  const projectId = params.projectId
-
-  return {
-    props: {
-      projectId,
-    },
-  }
-}
-
-export default function ProjectPage({ projectId }: { projectId: string }) {
-  const { data, loading } = useGetProjectPageQuery({
-    variables: {
-      projectId,
-    },
-  })
-
-  if (loading) {
-    return (
-      <Box component='main' sx={{ p: 3 }}>
-        Loading...
-      </Box>
-    )
-  }
-
-  const project = data?.project
+export default function ProjectPage({ project }: InferGetStaticPropsType<typeof getStaticProps>) {
   if (project == null) {
     return (
       <Box component='main' sx={{ p: 3 }}>
@@ -145,4 +91,53 @@ export default function ProjectPage({ projectId }: { projectId: string }) {
       </Box>
     </>
   )
+}
+
+export async function getStaticProps({
+  params,
+}: {
+  params: {
+    projectId: string
+  }
+}) {
+  const projectId = params.projectId
+  const apolloClient = createApolloClient()
+
+  const { data } = await apolloClient.query<GetProjectPageQuery>({
+    query: GetProjectPageDocument,
+    variables: {
+      projectId,
+    },
+  })
+
+  const project = data?.project
+
+  return {
+    props: {
+      project,
+    },
+  }
+}
+
+export async function getStaticPaths() {
+  const apolloClient = createApolloClient()
+
+  const { data } = await apolloClient.query<GetProjectPageStaticParamQuery>({
+    query: GetProjectPageStaticParamDocument,
+  })
+  const projects = data?.projects
+  if (projects == null) {
+    throw Error('Invalid response for GetProjectPageStaticParamQuery')
+  }
+
+  const paths = projects.map((project) => ({
+    params: {
+      projectId: String(project.id),
+    },
+  }))
+
+  return {
+    paths,
+    fallback: false,
+  }
 }

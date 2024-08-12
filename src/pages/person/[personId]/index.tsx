@@ -10,71 +10,19 @@ import {
   Link as MuiLink,
   Breadcrumbs,
 } from '@mui/material'
+import { InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 import NextLink from 'next/link'
 import DrawerAppBar from '@/components/drawer_app_bar'
 import {
   GetPersonPageStaticParamQuery,
-  useGetPersonPageQuery,
   GetPersonPageStaticParamDocument,
+  GetPersonPageQuery,
+  GetPersonPageDocument,
 } from '@/generated/graphql'
 import { createApolloClient } from '@/lib/apollo'
 
-export async function getStaticPaths() {
-  const apolloClient = createApolloClient()
-
-  const { data } = await apolloClient.query<GetPersonPageStaticParamQuery>({
-    query: GetPersonPageStaticParamDocument,
-  })
-  const persons = data?.persons
-  if (persons == null) {
-    throw Error('Invalid response for GetPersonPageStaticParamQuery')
-  }
-
-  const paths = persons.map((person) => ({
-    params: {
-      personId: String(person.id),
-    },
-  }))
-
-  return {
-    paths,
-    fallback: false,
-  }
-}
-
-export async function getStaticProps({
-  params,
-}: {
-  params: {
-    personId: string
-  }
-}) {
-  const personId = params.personId
-
-  return {
-    props: {
-      personId,
-    },
-  }
-}
-
-export default function PersonPage({ personId }: { personId: string }) {
-  const { data, loading } = useGetPersonPageQuery({
-    variables: {
-      personId,
-    },
-  })
-
-  if (loading) {
-    return (
-      <Box component='main' sx={{ p: 3 }}>
-        Loading...
-      </Box>
-    )
-  }
-
-  const person = data?.person
+export default function PersonPage({ person }: InferGetStaticPropsType<typeof getStaticProps>) {
   if (person == null) {
     return (
       <Box component='main' sx={{ p: 3 }}>
@@ -439,4 +387,53 @@ export default function PersonPage({ personId }: { personId: string }) {
       </Box>
     </>
   )
+}
+
+export async function getStaticProps({
+  params,
+}: {
+  params: {
+    personId: string
+  }
+}) {
+  const personId = params.personId
+  const apolloClient = createApolloClient()
+
+  const { data } = await apolloClient.query<GetPersonPageQuery>({
+    query: GetPersonPageDocument,
+    variables: {
+      personId,
+    },
+  })
+
+  const person = data?.person
+
+  return {
+    props: {
+      person,
+    },
+  }
+}
+
+export async function getStaticPaths() {
+  const apolloClient = createApolloClient()
+
+  const { data } = await apolloClient.query<GetPersonPageStaticParamQuery>({
+    query: GetPersonPageStaticParamDocument,
+  })
+  const persons = data?.persons
+  if (persons == null) {
+    throw Error('Invalid response for GetPersonPageStaticParamQuery')
+  }
+
+  const paths = persons.map((person) => ({
+    params: {
+      personId: String(person.id),
+    },
+  }))
+
+  return {
+    paths,
+    fallback: false,
+  }
 }
