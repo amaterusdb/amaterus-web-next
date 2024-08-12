@@ -11,71 +11,21 @@ import {
   Breadcrumbs,
 } from '@mui/material'
 import { parseISO, format, intervalToDuration, isBefore } from 'date-fns'
+import { InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 import NextLink from 'next/link'
 import DrawerAppBar from '@/components/drawer_app_bar'
 import {
+  GetAmongusMatchPageDocument,
+  GetAmongusMatchPageQuery,
   GetAmongusMatchPageStaticParamDocument,
   GetAmongusMatchPageStaticParamQuery,
-  useGetAmongusMatchPageQuery,
 } from '@/generated/graphql'
 import { createApolloClient } from '@/lib/apollo'
 
-export async function getStaticPaths() {
-  const apolloClient = createApolloClient()
-
-  const { data } = await apolloClient.query<GetAmongusMatchPageStaticParamQuery>({
-    query: GetAmongusMatchPageStaticParamDocument,
-  })
-  const amongusMatches = data?.amongusMatches
-  if (amongusMatches == null) {
-    throw Error('Invalid response for GetMatchPageStaticParamQuery')
-  }
-
-  const paths = amongusMatches.map((amongusMatch) => ({
-    params: {
-      amongusMatchId: String(amongusMatch.id),
-    },
-  }))
-
-  return {
-    paths,
-    fallback: false,
-  }
-}
-
-export async function getStaticProps({
-  params,
-}: {
-  params: {
-    amongusMatchId: string
-  }
-}) {
-  const amongusMatchId = params.amongusMatchId
-
-  return {
-    props: {
-      amongusMatchId,
-    },
-  }
-}
-
-export default function MatchPage({ amongusMatchId }: { amongusMatchId: string }) {
-  const { data, loading } = useGetAmongusMatchPageQuery({
-    variables: {
-      amongusMatchId,
-    },
-  })
-
-  if (loading) {
-    return (
-      <Box component='main' sx={{ p: 3 }}>
-        Loading...
-      </Box>
-    )
-  }
-
-  const amongusMatch = data?.amongusMatch
+export default function AmongusMatchPage({
+  amongusMatch,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   if (amongusMatch == null) {
     return (
       <Box component='main' sx={{ p: 3 }}>
@@ -358,4 +308,53 @@ export default function MatchPage({ amongusMatchId }: { amongusMatchId: string }
       </Box>
     </>
   )
+}
+
+export async function getStaticProps({
+  params,
+}: {
+  params: {
+    amongusMatchId: string
+  }
+}) {
+  const amongusMatchId = params.amongusMatchId
+  const apolloClient = createApolloClient()
+
+  const { data } = await apolloClient.query<GetAmongusMatchPageQuery>({
+    query: GetAmongusMatchPageDocument,
+    variables: {
+      amongusMatchId,
+    },
+  })
+
+  const amongusMatch = data?.amongusMatch
+
+  return {
+    props: {
+      amongusMatch,
+    },
+  }
+}
+
+export async function getStaticPaths() {
+  const apolloClient = createApolloClient()
+
+  const { data } = await apolloClient.query<GetAmongusMatchPageStaticParamQuery>({
+    query: GetAmongusMatchPageStaticParamDocument,
+  })
+  const amongusMatches = data?.amongusMatches
+  if (amongusMatches == null) {
+    throw Error('Invalid response for GetMatchPageStaticParamQuery')
+  }
+
+  const paths = amongusMatches.map((amongusMatch) => ({
+    params: {
+      amongusMatchId: String(amongusMatch.id),
+    },
+  }))
+
+  return {
+    paths,
+    fallback: false,
+  }
 }
