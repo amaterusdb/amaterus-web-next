@@ -168,7 +168,7 @@ export default function PrivacyPolicyPage() {
         </Typography>
         <Typography sx={{ mt: 2 }}>
           X（Twitter）によるデータ収集や処理についての詳細は、「
-          <NextLink href='https://twitter.com/privacy' passHref legacyBehavior>
+          <NextLink href='https://x.com/privacy' passHref legacyBehavior>
             <MuiLink>X（Twitter）のプライバシーポリシー</MuiLink>
           </NextLink>
           」をご参照ください。

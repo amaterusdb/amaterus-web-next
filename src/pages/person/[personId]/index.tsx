@@ -71,7 +71,7 @@ export default function PersonPage({ person }: InferGetStaticPropsType<typeof ge
                     >
                       <TableCell component='th' scope='row'>
                         <NextLink
-                          href={`https://twitter.com/intent/user?user_id=${personTwitterAccount.twitterAccount.remoteTwitterUserId}`}
+                          href={`https://x.com/intent/user?user_id=${personTwitterAccount.twitterAccount.remoteTwitterUserId}`}
                           passHref
                           legacyBehavior
                         >
