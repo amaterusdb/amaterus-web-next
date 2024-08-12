@@ -9,15 +9,14 @@ import {
   TableCell,
   TableBody,
 } from '@mui/material'
+import { InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 import NextLink from 'next/link'
 import DrawerAppBar from '@/components/drawer_app_bar'
-import { useGetIndexPageQuery } from '@/generated/graphql'
+import { GetIndexPageDocument, GetIndexPageQuery } from '@/generated/graphql'
+import { createApolloClient } from '@/lib/apollo'
 
-export default function IndexPage() {
-  const { data } = useGetIndexPageQuery()
-  const projects = data?.projects
-
+export default function IndexPage({ projects }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
       <Head>
@@ -62,4 +61,20 @@ export default function IndexPage() {
       </Box>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const apolloClient = createApolloClient()
+
+  const { data } = await apolloClient.query<GetIndexPageQuery>({
+    query: GetIndexPageDocument,
+  })
+
+  const projects = data?.projects
+
+  return {
+    props: {
+      projects,
+    },
+  }
 }
