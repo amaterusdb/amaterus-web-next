@@ -65,7 +65,7 @@ export default function AboutPage() {
             <TableRow>
               <TableCell>X (Twitter)</TableCell>
               <TableCell>
-                <NextLink href='https://twitter.com/aoirint' passHref legacyBehavior>
+                <NextLink href='https://x.com/aoirint' passHref legacyBehavior>
                   <MuiLink>@aoirint</MuiLink>
                 </NextLink>
               </TableCell>
