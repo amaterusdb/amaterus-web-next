@@ -11,71 +11,21 @@ import {
   Breadcrumbs,
 } from '@mui/material'
 import { parseISO, format, intervalToDuration, isBefore } from 'date-fns'
+import { InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
 import NextLink from 'next/link'
 import DrawerAppBar from '@/components/drawer_app_bar'
 import {
+  GetMariokart8deluxeRacePageDocument,
+  GetMariokart8deluxeRacePageQuery,
   GetMariokart8deluxeRacePageStaticParamDocument,
   GetMariokart8deluxeRacePageStaticParamQuery,
-  useGetMariokart8deluxeRacePageQuery,
 } from '@/generated/graphql'
 import { createApolloClient } from '@/lib/apollo'
 
-export async function getStaticPaths() {
-  const apolloClient = createApolloClient()
-
-  const { data } = await apolloClient.query<GetMariokart8deluxeRacePageStaticParamQuery>({
-    query: GetMariokart8deluxeRacePageStaticParamDocument,
-  })
-  const mariokart8deluxeRaces = data?.mariokart8deluxeRaces
-  if (mariokart8deluxeRaces == null) {
-    throw Error('Invalid response for GetMatchPageStaticParamQuery')
-  }
-
-  const paths = mariokart8deluxeRaces.map((mariokart8deluxeRace) => ({
-    params: {
-      mariokart8deluxeRaceId: String(mariokart8deluxeRace.id),
-    },
-  }))
-
-  return {
-    paths,
-    fallback: false,
-  }
-}
-
-export async function getStaticProps({
-  params,
-}: {
-  params: {
-    mariokart8deluxeRaceId: string
-  }
-}) {
-  const mariokart8deluxeRaceId = params.mariokart8deluxeRaceId
-
-  return {
-    props: {
-      mariokart8deluxeRaceId,
-    },
-  }
-}
-
-export default function MatchPage({ mariokart8deluxeRaceId }: { mariokart8deluxeRaceId: string }) {
-  const { data, loading } = useGetMariokart8deluxeRacePageQuery({
-    variables: {
-      mariokart8deluxeRaceId,
-    },
-  })
-
-  if (loading) {
-    return (
-      <Box component='main' sx={{ p: 3 }}>
-        Loading...
-      </Box>
-    )
-  }
-
-  const mariokart8deluxeRace = data?.mariokart8deluxeRace
+export default function Mariokart8deluxeRacePage({
+  mariokart8deluxeRace,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   if (mariokart8deluxeRace == null) {
     return (
       <Box component='main' sx={{ p: 3 }}>
@@ -406,4 +356,53 @@ export default function MatchPage({ mariokart8deluxeRaceId }: { mariokart8deluxe
       </Box>
     </>
   )
+}
+
+export async function getStaticProps({
+  params,
+}: {
+  params: {
+    mariokart8deluxeRaceId: string
+  }
+}) {
+  const mariokart8deluxeRaceId = params.mariokart8deluxeRaceId
+  const apolloClient = createApolloClient()
+
+  const { data } = await apolloClient.query<GetMariokart8deluxeRacePageQuery>({
+    query: GetMariokart8deluxeRacePageDocument,
+    variables: {
+      mariokart8deluxeRaceId,
+    },
+  })
+
+  const mariokart8deluxeRace = data?.mariokart8deluxeRace
+
+  return {
+    props: {
+      mariokart8deluxeRace,
+    },
+  }
+}
+
+export async function getStaticPaths() {
+  const apolloClient = createApolloClient()
+
+  const { data } = await apolloClient.query<GetMariokart8deluxeRacePageStaticParamQuery>({
+    query: GetMariokart8deluxeRacePageStaticParamDocument,
+  })
+  const mariokart8deluxeRaces = data?.mariokart8deluxeRaces
+  if (mariokart8deluxeRaces == null) {
+    throw Error('Invalid response for GetMatchPageStaticParamQuery')
+  }
+
+  const paths = mariokart8deluxeRaces.map((mariokart8deluxeRace) => ({
+    params: {
+      mariokart8deluxeRaceId: String(mariokart8deluxeRace.id),
+    },
+  }))
+
+  return {
+    paths,
+    fallback: false,
+  }
 }
