@@ -10,7 +10,7 @@
     "dev": "next dev",
     "build": "next build && next-sitemap",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "next lint && prettier --check './**/*.{js,jsx,ts,tsx,json}'",
     "format": "next lint --fix && prettier --write './**/*.{js,jsx,ts,tsx,json}'",
     "generate": "graphql-codegen --require dotenv/config --config codegen.ts dotenv_config_path=.env.local"
   },
